@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Scripts executed on server only.
 */
+if (not LR_start) exitWith{};
 
 enableSaving [false, false];
 

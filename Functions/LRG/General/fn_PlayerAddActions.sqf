@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Includes AddActions for players. Also called on respawn.
 */
+if (not LR_start) exitWith{};
 
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitwith {};
 	

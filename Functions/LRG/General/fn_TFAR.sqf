@@ -4,6 +4,7 @@
 	Author: MitchJC, MartinCo
 	Description: Sets Long range and short range TFAR radio presets dependent on group.
 */
+if (not LR_start) exitWith{};
 
 if !(isClass (configFile >> "CfgPatches" >> "task_force_radio")) exitwith {};
 

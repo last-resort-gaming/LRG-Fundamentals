@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Creates an area around LRGMedicalFacilities where players are healed or revived after a time delay.
 */
+if (not LR_start) exitWith{};
 
 	if (!(EnableLRGMedFacility) || !(isClass (configFile >> "CfgPatches" >> "ace_main"))) exitwith {};
 	

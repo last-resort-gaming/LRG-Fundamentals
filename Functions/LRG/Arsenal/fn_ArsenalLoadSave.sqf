@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Removes Load/Save function from the Virtual Arsenal.
 */
+if (not LR_start) exitWith{};
 
 If ((ArsenalLoadSave) || (!hasInterface)) exitwith {};	
 

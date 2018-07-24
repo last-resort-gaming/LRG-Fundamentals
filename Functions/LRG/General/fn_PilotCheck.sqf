@@ -4,7 +4,7 @@
 	Author: MitchJC
 	Description: Allows only Pilots to fly aircraft.
 */
-
+if (not LR_start) exitWith{};
 
 if (!hasInterface) exitwith {};
 

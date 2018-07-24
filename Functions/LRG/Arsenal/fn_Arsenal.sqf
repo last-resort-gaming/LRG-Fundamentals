@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Fills Arsenal with predefined equipment dependent on ArsenalType.
 */
+if (not LR_start) exitWith{};
 
 if (EnableArsenal) then {
 

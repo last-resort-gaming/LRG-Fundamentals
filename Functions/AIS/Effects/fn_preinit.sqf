@@ -1,4 +1,5 @@
-﻿// from domination
+﻿if (not LR_start) exitWith{};
+// from domination
 ais_help_screaming = [
 	[
 		"Person0",

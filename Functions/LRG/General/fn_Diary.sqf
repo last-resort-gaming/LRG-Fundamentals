@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Creates Diary Subjects and Records as required.
 */
+if (not LR_start) exitWith{};
 
 
 if (!hasInterface) exitWith {};

@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Scripts executed on players only.
 */
+if (not LR_start) exitWith{};
 
 if (!hasInterface) exitWith {};
 

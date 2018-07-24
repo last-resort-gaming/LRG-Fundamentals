@@ -1,3 +1,4 @@
+if (not LR_start) exitWith{};
 [] spawn {
 	if (!hasInterface) exitWith {};
 	//Wait for mission init, in case there are variables defined some place else

@@ -18,6 +18,7 @@ Examples:
 Author:
 	Martin, inspired by Liberation's FPS meter
 */
+if (not LR_start) exitWith{};
 
 private _markerLocal = false;
 private _source = "";

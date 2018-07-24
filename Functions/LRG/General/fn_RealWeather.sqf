@@ -5,6 +5,7 @@
 			MitchJC - Conversion to PFH & Function
 	Description: Randomizes Weather
 */
+if (not LR_start) exitWith{};
 
 if !(EnableDynamicWeather) exitwith {};
 	

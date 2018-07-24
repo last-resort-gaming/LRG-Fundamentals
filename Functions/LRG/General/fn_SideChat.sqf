@@ -4,11 +4,11 @@
 	Author: MitchJC
 	Description: Temp enable Sidechat for selected roles to allow briefing.
 */
+if (not LR_start) exitWith{};
 
-	if (!(EnableSideChat) || !(isClass (configFile >> "CfgPatches" >> "task_force_radio"))) exitwith {};
-
+if (!(EnableSideChat) || !(isClass (configFile >> "CfgPatches" >> "task_force_radio"))) exitwith {};
 		
-	_PlayerGroup =  group player getVariable ["LRG_section","null"];
+_PlayerGroup =  group player getVariable ["LRG_section","null"];
 
 
 if (_PlayerGroup in SideChatGroups) then { 1 enableChannel [true, false];};

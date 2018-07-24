@@ -1,3 +1,4 @@
+if (not LR_start) exitWith{};
 if (isDedicated || !hasInterface) exitWith {};
 if (ais_ace_shutdown) exitWith {diag_log ["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."]};
 /*

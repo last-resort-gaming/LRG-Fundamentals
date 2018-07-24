@@ -4,7 +4,7 @@
 	Author: MitchJC, Flare exceptions by MartinCo
 	Description: Prevents players from using weapons within safezoneArea of "respawn_west."
 */
-
+if (not LR_start) exitWith{};
 
 if !(safezoneEnabled) exitwith {};
 

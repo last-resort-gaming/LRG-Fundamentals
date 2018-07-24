@@ -50,6 +50,7 @@ class LR {
 
 				file = "LRG Fundamentals\Functions\LRG\PreInit";
 				class PreInit {preInit = 1;};
+				class fileExists {};
 			};
 			
 			class UsefulFuncs {

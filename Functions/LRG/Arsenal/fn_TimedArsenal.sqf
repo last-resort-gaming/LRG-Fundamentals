@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Arsenal will be removed after ArsenalDuration unless set to -1.
 */
+if (not LR_start) exitWith{};
 
 if ((!EnableArsenal) || (!isServer)) exitwith {};
 _handle = [

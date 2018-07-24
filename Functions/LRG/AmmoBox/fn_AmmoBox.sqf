@@ -4,6 +4,7 @@
 	Author: MitchJC
 	Description: Fills Ammoboxes with predefined equipment dependent on ArsenalType.
 */
+if (not LR_start) exitWith{};
 
 if (EnableAmmoBox) then {
 
