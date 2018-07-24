@@ -2,10 +2,10 @@ class CfgPatches
 {
 	class LRGFundamentals
 	{
+		requiredVersion=0.1;
+		requiredAddons[]={"A3_Data_F"};
 		units[]={};
 		weapons[]={};
-		requiredVersion=0.1;
-		requiredAddons[] = {};
 	};
 };
 
@@ -15,6 +15,7 @@ class CfgFunctions {
 	#include "Functions\DERP\CfgFunctions.hpp"	
     #include "Functions\LRG\CfgFunctions.hpp"
     #include "Functions\YAINA\CfgFunctions.hpp"
+    #include "Functions\AIS\cfgFunctions.hpp"
 };
 
 #include "Functions\CHVD\dialog.hpp"
