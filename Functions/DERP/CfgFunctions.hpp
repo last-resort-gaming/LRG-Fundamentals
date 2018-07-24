@@ -2,7 +2,7 @@ class DERP {
     tag = "DERP";
 
     class General {
-        file = "Functions\DERP";
+        file = "LRG Fundamentals\Functions\DERP";
         class AIOccupyBuilding {};
         class randomPos {};
         class ZenOccupy {};

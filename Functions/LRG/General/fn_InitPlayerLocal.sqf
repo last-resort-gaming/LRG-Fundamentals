@@ -9,10 +9,10 @@ if (!hasInterface) exitWith {};
 
 //=================================== GENERAL =====================================================
 
-	if (ShowMapIcons) 		then {_null = [] execVM "scripts\QS\QS_icons.sqf";};	
+	if (ShowMapIcons) 		then {_null = [] execVM "LRG Fundamentals\scripts\QS\QS_icons.sqf";};	
 
 	if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
-		[] execVM "scripts\YAINA\earplugs.sqf";
+		[] execVM "LRG Fundamentals\scripts\YAINA\earplugs.sqf";
 		["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 		player enableFatigue false;
 	};

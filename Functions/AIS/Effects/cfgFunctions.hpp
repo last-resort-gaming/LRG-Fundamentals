@@ -2,7 +2,7 @@ class AIS_Effects
 {
     class AIS_Effects
     {
-        file = "Functions\AIS\Effects";
+        file = "LRG Fundamentals\Functions\AIS\Effects";
 		class preInit { preInit = 1; };
 		class bleeding;
 		class BloodSplatterScreen;

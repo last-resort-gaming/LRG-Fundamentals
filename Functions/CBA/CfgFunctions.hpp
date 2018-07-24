@@ -1,7 +1,7 @@
 class CBAP {
 
     class AI {
-        file = "Functions\CBA\AI";
+        file = "LRG Fundamentals\Functions\CBA\AI";
         class addWaypoint {};
         class clearWaypoints {};
         class taskDefend {};
@@ -9,7 +9,7 @@ class CBAP {
     };
 
     class PFH {
-        file = "Functions\CBA\PFH";
+        file = "LRG Fundamentals\Functions\CBA\PFH";
         class directCall {};
         class pfhPreInit { preInit = 1; };
         class addPerFrameHandler {};
@@ -21,7 +21,7 @@ class CBAP {
 	};
 
     class Common {
-        file = "Functions\CBA\Common";
+        file = "LRG Fundamentals\Functions\CBA\Common";
         class createNamespace {};
         class formatNumber {};
         class getGroup {};
@@ -30,14 +30,14 @@ class CBAP {
     };
 
 	class Hashes {
-	    file = "Functions\CBA\Hashes";
+	    file = "LRG Fundamentals\Functions\CBA\Hashes";
         class hashCreate {};
 	    class hashGet {};
 	    class hashSet {};
 	};
 
     class Events {
-        file = "Functions\CBA\Events";
+        file = "LRG Fundamentals\Functions\CBA\Events";
 
         class addEventHandler { description = "Registers an event handler for a specific CBA event."; };
         class addEventHandlerArgs { description = "Registers an event handler for a specific CBA event with arguments."; };

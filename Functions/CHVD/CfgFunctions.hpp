@@ -3,7 +3,7 @@ class CHVD
 	tag = "CHVD";
 	class script
 	{
-		file = "Functions\CHVD";
+		file = "LRG Fundamentals\Functions\CHVD";
 		class onSliderChange {};
 		class onLBSelChanged {};
 		class onLBSelChanged_syncmode {};

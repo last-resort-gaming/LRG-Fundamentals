@@ -2,7 +2,7 @@ class AIS_Core
 {
     class AIS_Core
     {
-        file = "Functions\AIS\Core";
+        file = "LRG Fundamentals\Functions\AIS\Core";
         class preInit { preInit = 1; };
         class postInit { postInit = 1; };
 		class addAction;

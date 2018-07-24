@@ -5,7 +5,7 @@
 	Description: Arsenal will be removed after ArsenalDuration unless set to -1.
 */
 
-if ((!EnableArsenal) || {(!isServer))} exitwith {};
+if ((!EnableArsenal) || (!isServer)) exitwith {};
 _handle = [
 {
 	if (ArsenalDuration == -1) exitwith {};

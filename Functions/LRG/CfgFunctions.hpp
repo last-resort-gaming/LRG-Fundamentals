@@ -2,7 +2,7 @@ class LR {
 
 			tag = "LR";
 			class AI {
-				file = "Functions\LRG\AI";
+				file = "LRG Fundamentals\Functions\LRG\AI";
 				class InfantryGarrison {};
 				class SetUnitSkill {};
 				class SpawnAI {};		
@@ -10,13 +10,13 @@ class LR {
 			
 			class AmmoBox {
 
-				file = "Functions\LRG\AmmoBox";
+				file = "LRG Fundamentals\Functions\LRG\AmmoBox";
 				class AmmoBox {postInit = 1;};
 			};
 			
 			class Arsenal {
 
-				file = "Functions\LRG\Arsenal";
+				file = "LRG Fundamentals\Functions\LRG\Arsenal";
 				class Arsenal {postInit = 1;};
 				class TimedArsenal {postInit = 1;};
 				class ArsenalLoadSave {postInit = 1;};
@@ -24,7 +24,7 @@ class LR {
 
 			class General {
 
-				file = "Functions\LRG\General";
+				file = "LRG Fundamentals\Functions\LRG\General";
 				class Confirmation {postInit = 1;};
 				class Diary { postInit = 1; };
 				class initPlayerLocal {postInit = 1;};
@@ -40,7 +40,7 @@ class LR {
 			
 			class Messages {
 
-				file = "Functions\LRG\Messages";
+				file = "LRG Fundamentals\Functions\LRG\Messages";
 				class globalhint {};
 				class globalhintc {};
 				class globalhintsilent {};
@@ -48,13 +48,13 @@ class LR {
 			
 			class PreInit {
 
-				file = "Functions\LRG\PreInit";
+				file = "LRG Fundamentals\Functions\LRG\PreInit";
 				class PreInit {preInit = 1;};
 			};
 			
 			class UsefulFuncs {
 
-				file = "Functions\LRG\UsefulFuncs";
+				file = "LRG Fundamentals\Functions\LRG\UsefulFuncs";
 				class CrashSite {};
 				class InitInspectableIntel {};
 				class LaptopHoldActions {};

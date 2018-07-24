@@ -2,7 +2,7 @@ class AIS_Damage
 {
     class AIS_Damage
     {
-        file = "Functions\AIS\Damage";
+        file = "LRG Fundamentals\Functions\AIS\Damage";
 		class exitDamageHandler;
 		class getHitIndexValue;
 		class goToDead;
