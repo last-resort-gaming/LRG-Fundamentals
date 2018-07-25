@@ -35,6 +35,7 @@ Author:
 	Martin
     MitchJC
 */
+if (!isserver) exitwith {};
 
 params [
         "_grpPrefix", "_center", "_radius",

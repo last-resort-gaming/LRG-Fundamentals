@@ -4,7 +4,7 @@
 	Author: MitchJC
 	Description: Temp enable Sidechat for selected roles to allow briefing.
 */
-if (not LR_start) exitWith{};
+if ((not LR_start) || {(!hasinterface)}) exitWith{};
 
 if (!(EnableSideChat) || !(isClass (configFile >> "CfgPatches" >> "task_force_radio"))) exitwith {};
 		

@@ -27,6 +27,7 @@ Author:
 	MartinCo
 	MitchJC
 */
+if (!isserver) exitwith {};
 
 params ["_pos", ["_radius", [0, 30]], "_army", ["_groupCount", 1], ["_AIOB_Positioning", 2], ["_skill", "LRG Default"], ["_maxFill", 4], ["_excludes", []], ["_units", []]];
 

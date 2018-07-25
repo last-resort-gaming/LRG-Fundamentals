@@ -6,7 +6,7 @@
 */
 if (not LR_start) exitWith{};
 
-If ((ArsenalLoadSave) || (!hasInterface)) exitwith {};	
+If ((ArsenalLoadSave) || {(!hasInterface)}) exitwith {};	
 
 	[missionNamespace, "arsenalOpened", {
 		disableSerialization;

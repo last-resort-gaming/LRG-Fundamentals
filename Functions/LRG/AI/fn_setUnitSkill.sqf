@@ -17,6 +17,7 @@ Examples:
 Author:
 	Martin
 */
+if (!isserver) exitwith {};
 
 params ["_target", ["_skillLevel", 2]];
 
