@@ -50,7 +50,21 @@ params [
         ["_vehlight", [0,0]],
         ["_vehheavy", [0,0]]
        ];
-	   
+
+
+_typeNameCenter = typeName _center;
+
+if (_typeNameCenter isEqualTo "OBJECT") then {
+    _center = getPos _center;
+} else if (_typeNameCenter isEqualTo "STRING") then {
+    _center = getMarkerPos _center;
+    if (_center isEqualTo [0, 0, 0]) exitWith { 
+        systemChat "fn_SpawnAI: Invalid marker."; 
+        diag_log "fn_SpawnAI: Invalid marker."; 
+    };
+};
+
+_center resize 2;
 
 _garrisons params ["_garrisonGroupCount", ["_garrisonMinRad", 0], ["_garrisonMaxRad", 60], ["_garrisonSkill", 2], ["_garrisonFill", 4], ["_garrisonExcludes", []]];
 _inf params ["_infMin", ["_infRand", 0], ["_infSkill", "LRG Default"]];
