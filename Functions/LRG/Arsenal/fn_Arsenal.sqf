@@ -1,42 +1,46 @@
 /*
 	LRG MISSION TEMPLATE
-	fn_Arsenal.sqf
+	LR_fnc_Arsenal.sqf
 	Author: MitchJC
-	Description: Fills Arsenal with predefined equipment dependent on ArsenalType.
-*/
-if (not LR_start) exitWith{};
+	Description: Fills Arsenal with predefined equipment dependent on _Type. Each Arsenal can be a different type and have a different duration. 
 
-if (EnableArsenal) then {
-
-        {
-                _box = missionNamespace getVariable[_x, objNull];
-
-                if (isServer) then {
-                        ["AmmoboxInit", [_box, true]] call BIS_fnc_arsenal;
-                };
-
-                [_box, [true], false] call BIS_fnc_removeVirtualItemCargo;
-                [_box, [true], false] call BIS_fnc_removeVirtualWeaponCargo;
-                [_box, [true], false] call BIS_fnc_removeVirtualBackpackCargo;
-                [_box, [true], false] call BIS_fnc_removeVirtualMagazineCargo;
-        }
-        foreach ArsenalName;
-
-_AvailableArsenalHeadGear = [];
-_AvailableArsenalGoggles = [];
-_AvailableArsenalUniforms = [];
-_AvailableArsenalVests = [];
-_AvailableArsenalItems = [];
-_AvailableArsenalAttachments = [];
-_AvailableArsenalWeapons = [];
-_AvailableArsenalBackpacks = [];
-_AvailableArsenalMagazines = [];
-
-switch (ArsenalType) do {
-
-    case "VANILLA": {
 	
-			_AvailableArsenalItems = [
+	Syntax
+	[_object, _type, _Duration] call LR_fnc_Arsenal;
+	
+	Parameters
+	_object - Object the Arsenal is applied to.  <OBJECT>
+	_type- Type of Arsenal, can be "VANILLA", "RHS" or "3CB". <STRING>
+	_Duration- How long in minutes until the Arsenal is removed. 0 makes it permanent. <NUMBER>
+
+	Example 1:	[this] call LR_fnc_Arsenal;	
+	Example 2:	[this, "3CB", 50] call LR_fnc_Arsenal;
+	Example 3:	[this, "VANILLA"] call LR_fnc_Arsenal;
+	Example 4:	[MyAmmoCrate, "RHS", 0] call LR_fnc_Arsenal;
+*/
+
+
+
+params [
+		"_object",
+		["_Type", "Vanilla"],
+		["_Duration", 0]
+];
+
+if (isServer) then {
+["AmmoboxInit", [_object, true]] call BIS_fnc_arsenal;
+	};
+
+[_object, [true], false] call BIS_fnc_removeVirtualItemCargo;
+[_object, [true], false] call BIS_fnc_removeVirtualWeaponCargo;
+[_object, [true], false] call BIS_fnc_removeVirtualBackpackCargo;
+[_object, [true], false] call BIS_fnc_removeVirtualMagazineCargo;
+
+private ["_AvailableItems", "_AvailableHeadgear", "_AvailableGoggles", "_AvailableUniforms", "_AvailableVests", "_AvailableBackpacks", "_AvailableAttachments", "_AvailableMagazines", "_AvailableWeapons"];
+
+_ArsenalType = call {
+if (_Type == "Vanilla") exitwith {
+			_AvailableItems = [
 				"ItemWatch", 
 				"ItemCompass", 
 				"ItemGPS", 
@@ -53,7 +57,7 @@ switch (ArsenalType) do {
 				"B_UavTerminal"
 			];
 
-			_AvailableArsenalHeadgear = [
+			_AvailableHeadgear = [
 				"H_HelmetB", 
 				"H_HelmetB_camo", 
 				"H_HelmetB_paint", 
@@ -123,7 +127,7 @@ switch (ArsenalType) do {
 				"H_Bandanna_gry" 
 			];
 
-			_AvailableArsenalGoggles = [
+			_AvailableGoggles = [
 				"G_Balaclava_blk", 
 				"G_Balaclava_combat", 
 				"G_Balaclava_lowprofile", 
@@ -165,7 +169,7 @@ switch (ArsenalType) do {
 			
 			];
 
-			_AvailableArsenalUniforms = [
+			_AvailableUniforms = [
 				"U_B_CombatUniform_mcam", 
 				"U_B_CombatUniform_mcam_tshirt", 
 				"U_B_CombatUniform_mcam_vest", 
@@ -203,7 +207,7 @@ switch (ArsenalType) do {
 				"U_B_T_Sniper_F"			
 			];
 
-			_AvailableArsenalVests = [
+			_AvailableVests = [
 				"V_PlateCarrier1_rgr", 
 				"V_PlateCarrier2_rgr", 
 				"V_PlateCarrier3_rgr", 
@@ -258,7 +262,7 @@ switch (ArsenalType) do {
 
 			];
 
-			_AvailableArsenalBackpacks = [
+			_AvailableBackpacks = [
 				"B_AssaultPack_khk", 
 				"B_AssaultPack_rgr", 
 				"B_AssaultPack_sgg", 
@@ -308,7 +312,7 @@ switch (ArsenalType) do {
 			
 			];
 
-			_AvailableArsenalAttachments = [
+			_AvailableAttachments = [
 				"optic_Arco", 
 				"optic_Arco_blk_F", 
 				"optic_Arco_ghex_F", 
@@ -384,7 +388,7 @@ switch (ArsenalType) do {
 			
 			];
 
-			_AvailableArsenalMagazines = [
+			_AvailableMagazines = [
 				"HandGrenade", 
 				"MiniGrenade", 
 				"SmokeShell", 
@@ -514,7 +518,7 @@ switch (ArsenalType) do {
 			
 			];
 
-			_AvailableArsenalWeapons = [
+			_AvailableWeapons = [
 				"hgun_ACPC2_F", 
 				"hgun_P07_F", 
 				"hgun_Pistol_heavy_01_F", 
@@ -709,14 +713,12 @@ switch (ArsenalType) do {
 				"srifle_DMR_05_ARCO_F",
 				"Laserdesignator",
 				"Laserdesignator_01_khk_F"
-			];
-	
-	
+			];	
+
 	};
 	
-    case "3CB": {
-	
-	        _AvailableArsenalItems = [
+	if (_type == "3CB") exitwith {
+	        _AvailableItems = [
                 "ItemWatch",
                 "ItemCompass",
                 "ItemGPS",
@@ -777,7 +779,7 @@ switch (ArsenalType) do {
                 "B_UavTerminal"
         ];
 
-        _AvailableArsenalHeadgear = [
+        _AvailableHeadgear = [
                 "UK3CB_BAF_H_CrewHelmet_A",
                 "UK3CB_BAF_H_CrewHelmet_ESS_A",
                 "UK3CB_BAF_H_CrewHelmet_B",
@@ -821,7 +823,7 @@ switch (ArsenalType) do {
                 "UK3CB_BAF_H_Mk7_Win_ESS_A"
         ];
 
-        _AvailableArsenalGoggles = [
+        _AvailableGoggles = [
                 "G_Combat",
                 "G_Lowprofile",
                 "G_Tactical_Black",
@@ -850,7 +852,7 @@ switch (ArsenalType) do {
                 "UK3CB_BAF_G_Tactical_Black",
                 "UK3CB_BAF_G_Balaclava_Win"
         ];
-        _AvailableArsenalUniforms = [
+        _AvailableUniforms = [
                 "UK3CB_BAF_U_CombatUniform_Arctic_Ghillie_RM",
                 "UK3CB_BAF_U_CombatUniform_MTP",
                 "UK3CB_BAF_U_CombatUniform_MTP_Ghillie_RM",
@@ -869,7 +871,7 @@ switch (ArsenalType) do {
                 "UK3CB_BAF_U_RolledUniform_MTP"
         ];
 
-        _AvailableArsenalVests = [
+        _AvailableVests = [
                 "UK3CB_BAF_V_Osprey",
                 "UK3CB_BAF_V_Osprey_Belt_A",
                 "UK3CB_BAF_V_Osprey_Holster",
@@ -900,7 +902,7 @@ switch (ArsenalType) do {
                 "UK3CB_BAF_V_PLCE_Webbing_Winter"
         ];
 
-        _AvailableArsenalBackpacks = [
+        _AvailableBackpacks = [
                 "UK3CB_BAF_B_Bergen_MTP_Rifleman_H_A",
                 "UK3CB_BAF_B_Bergen_MTP_Rifleman_H_B",
                 "UK3CB_BAF_B_Bergen_MTP_Rifleman_H_C",
@@ -947,7 +949,7 @@ switch (ArsenalType) do {
                 "UK3CB_BAF_B_Carryall_OLI"
         ];
 
-        _AvailableArsenalAttachments = [
+        _AvailableAttachments = [
                 "optic_NVS",
                 "UK3CB_BAF_Eotech",
                 "UK3CB_BAF_Kite",
@@ -985,7 +987,7 @@ switch (ArsenalType) do {
 
         ];
 
-        _AvailableArsenalMagazines = [
+        _AvailableMagazines = [
 
                 "UK3CB_BAF_SmokeShell",
                 "SmokeShellYellow",
@@ -1058,7 +1060,7 @@ switch (ArsenalType) do {
 
         ];
 
-        _AvailableArsenalWeapons = [
+        _AvailableWeapons = [
                 "Binocular",		
                 "UK3CB_BAF_L1A1",
                 "UK3CB_BAF_L1A1_Wood",
@@ -1129,13 +1131,11 @@ switch (ArsenalType) do {
                 "ACE_Vector",
                 "ACE_Yardage450"
 
-        ];
-	
+        ];			
 	};
 	
-    case "RHS": {
-	
-	        _AvailableArsenalItems = [
+	if (_type == "RHS") exitwith {
+	        _AvailableItems = [
                 "ItemWatch",
                 "ItemCompass",
                 "ItemGPS",
@@ -1198,7 +1198,7 @@ switch (ArsenalType) do {
 				"rhsusf_Rhino"
 			];
 			
-				_AvailableArsenalHeadgear = [
+				_AvailableHeadgear = [
 				"rhs_Booniehat_m81",
 				"rhs_Booniehat_marpatd",
 				"rhs_Booniehat_marpatwd",
@@ -1304,7 +1304,7 @@ switch (ArsenalType) do {
 				"rhsusf_opscore_ut"
 			];
 				
-				_AvailableArsenalGoggles = [
+				_AvailableGoggles = [
 				"G_Balaclava_blk",
 				"G_Balaclava_combat",
 				"G_Balaclava_lowprofile",
@@ -1345,7 +1345,7 @@ switch (ArsenalType) do {
 				"G_Balaclava_TI_tna_F"
 				
 			];
-				_AvailableArsenalUniforms = [
+				_AvailableUniforms = [
 				"rhs_uniform_acu_ucp",
 				"rhs_uniform_cu_ocp",
 				"rhs_uniform_cu_ocp_101st",
@@ -1366,7 +1366,7 @@ switch (ArsenalType) do {
 				"rhs_uniform_g3_tan"
 			];
 				
-				_AvailableArsenalVests = [
+				_AvailableVests = [
 				
 				"rhsusf_iotv_ocp_Grenadier",
 				"rhsusf_iotv_ucp_Grenadier",
@@ -1409,7 +1409,7 @@ switch (ArsenalType) do {
 				
 			];
 				
-				_AvailableArsenalBackpacks = [
+				_AvailableBackpacks = [
 				
 				"ACE_TacticalLadder_Pack",
 				"ACE_ReserveParachute",
@@ -1445,7 +1445,7 @@ switch (ArsenalType) do {
 				"tf_rt1523g_sage"
 			];
 				
-				_AvailableArsenalAttachments = [
+				_AvailableAttachments = [
 				"optic_NVS",
 				"ACE_optic_MRCO_PIP",
 				"ACE_optic_Hamr_PIP",
@@ -1482,7 +1482,7 @@ switch (ArsenalType) do {
 				"rhsusf_acc_ACOG"
 			];
 				
-				_AvailableArsenalMagazines = [
+				_AvailableMagazines = [
 
 				"rhs_mag_an_m8hc",
 				"rhs_mag_m18_green",
@@ -1564,7 +1564,7 @@ switch (ArsenalType) do {
 				"rhsusf_mag_15Rnd_9x19_JHP"
 			];
 				
-				_AvailableArsenalWeapons = [
+				_AvailableWeapons = [
 				"Binocular",				
 				"rhs_weap_hk416d10",
 				"rhs_weap_hk416d10_m320",
@@ -1694,45 +1694,53 @@ switch (ArsenalType) do {
 				"lerca_1200_tan",
 				"Leupold_Mk4",
 				"rhsusf_lrf_Vector21"
-			];
+			];	
 	};
-
-	};
-
-        {
-
-                _box = missionNamespace getVariable[_x, objNull];
-
-                [_box, _AvailableArsenalHeadGear, false] call BIS_fnc_addVirtualItemCargo;
+};
 
 
-                [_box, _AvailableArsenalGoggles, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableHeadGear, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableArsenalUniforms, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableGoggles, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableArsenalVests, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableUniforms, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableArsenalItems, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableVests, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableArsenalAttachments, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableItems, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableArsenalWeapons, false] call BIS_fnc_addVirtualWeaponCargo;
+                [_object, _AvailableAttachments, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableArsenalBackpacks, false] call BIS_fnc_addVirtualBackpackCargo;
+                [_object, _AvailableWeapons, false] call BIS_fnc_addVirtualWeaponCargo;
 
 
-                [_box, _AvailableArsenalMagazines, false] call BIS_fnc_addVirtualMagazineCargo;
+                [_object, _AvailableBackpacks, false] call BIS_fnc_addVirtualBackpackCargo;
 
-				{_x addCuratorEditableObjects [[_box], false];} ForEach allcurators;				
+
+                [_object, _AvailableMagazines, false] call BIS_fnc_addVirtualMagazineCargo;
+
+				{_x addCuratorEditableObjects [[_object], false];} ForEach allcurators;				
 				
-        }
-        foreach ArsenalName;
 
-
+If (isserver) then {
+	_handle = [
+	{
+		(_this select 0) params ["_object", "_duration"];
+	
+		if (_duration == 0) exitwith {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		};
+	
+		if (time > (_duration * 60)) exitwith {
+		deletevehicle _object;
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		};
+	
+	}, 60, [_object, _duration]] call CBA_fnc_addPerFrameHandler;
 };
