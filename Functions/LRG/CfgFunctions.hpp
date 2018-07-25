@@ -36,6 +36,7 @@ class LR {
 				class SideChat {postInit = 1;};
 				class TFAR {postInit = 1;};
 				class PilotCheck {postInit = 1;};
+				class AISpawns {postInit = 1;};
 			};
 			
 			class Messages {
