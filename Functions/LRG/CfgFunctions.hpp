@@ -18,7 +18,7 @@ class LR {
 
 				file = "LRG Fundamentals\Functions\LRG\Arsenal";
 				class Arsenal {};
-				class TimedArsenal {postInit = 1;};
+				class ArsenalLoadSave {postInit = 1;};
 			};
 
 			class General {
