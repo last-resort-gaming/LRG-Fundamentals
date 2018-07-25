@@ -1,42 +1,46 @@
 /*
 	LRG MISSION TEMPLATE
-	fn_AmmoBox.sqf
+	LR_fnc_Ammobox.sqf
 	Author: MitchJC
-	Description: Fills Ammoboxes with predefined equipment dependent on ArsenalType.
-*/
-if (not LR_start) exitWith{};
+	Description: Fills an Ammobox with predefined equipment dependent on _Type. Each Ammobox can be a different type and have a different duration.  This function is almost identical to LR_fnc_Arsenal, only the items in the container change.
 
-if (EnableAmmoBox) then {
-
-        {
-                _box = missionNamespace getVariable[_x, objNull];
-
-                if (isServer) then {
-                        ["AmmoboxInit", [_box, true]] call BIS_fnc_arsenal;
-                };
-
-                [_box, [true], false] call BIS_fnc_removeVirtualItemCargo;
-                [_box, [true], false] call BIS_fnc_removeVirtualWeaponCargo;
-                [_box, [true], false] call BIS_fnc_removeVirtualBackpackCargo;
-                [_box, [true], false] call BIS_fnc_removeVirtualMagazineCargo;
-        }
-        foreach AmmoBoxName;
-
-_AvailableAmmoHeadGear = [];
-_AvailableAmmoGoggles = [];
-_AvailableAmmoUniforms = [];
-_AvailableAmmoVests = [];
-_AvailableAmmoItems = [];
-_AvailableAmmoAttachments = [];
-_AvailableAmmoWeapons = [];
-_AvailableAmmoBackpacks = [];
-_AvailableAmmoMagazines = [];
-
-switch (ArsenalType) do {
-
-    case "VANILLA": {
 	
-			_AvailableAmmoItems = [
+	Syntax
+	[_object, _type, _Duration] call LR_fnc_Ammobox;
+	
+	Parameters
+	_object - Object the Ammobox is applied to.  <OBJECT>
+	_type- Type of Ammobox, can be "VANILLA", "RHS" or "3CB". <STRING>
+	_Duration- How long in minutes until the Ammobox is removed. 0 makes it permanent. <NUMBER>
+
+	Example 1:	[this] call LR_fnc_Ammobox;
+	Example 2:	[this, "3CB", 50] call LR_fnc_Ammobox;
+	Example 3:	[this, "VANILLA"] call LR_fnc_Ammobox;
+	Example 4:	[MyAmmoCrate, "RHS", 0] call LR_fnc_Ammobox;
+*/
+
+
+
+params [
+		"_object",
+		["_Type", "Vanilla"],
+		["_Duration", 0]
+];
+
+if (isServer) then {
+["AmmoboxInit", [_object, true]] call BIS_fnc_arsenal;
+	};
+
+[_object, [true], false] call BIS_fnc_removeVirtualItemCargo;
+[_object, [true], false] call BIS_fnc_removeVirtualWeaponCargo;
+[_object, [true], false] call BIS_fnc_removeVirtualBackpackCargo;
+[_object, [true], false] call BIS_fnc_removeVirtualMagazineCargo;
+
+private ["_AvailableItems", "_AvailableHeadgear", "_AvailableGoggles", "_AvailableUniforms", "_AvailableVests", "_AvailableBackpacks", "_AvailableAttachments", "_AvailableMagazines", "_AvailableWeapons"];
+
+_ArsenalType = call {
+if (_Type == "Vanilla") exitwith {
+			_AvailableItems = [
 				"ItemWatch", 
 				"ItemCompass", 
 				"ItemGPS", 
@@ -50,7 +54,7 @@ switch (ArsenalType) do {
 				"B_UavTerminal"
 			];
 
-			_AvailableAmmoMagazines = [
+			_AvailableMagazines = [
 				"Laserbatteries",
 				"30Rnd_545x39_Mag_Tracer_F", 
 				"30Rnd_556x45_Stanag_red", 
@@ -80,12 +84,19 @@ switch (ArsenalType) do {
 				"Titan_AT",
 				"Titan_AA"		
 			];
-	
+			
+			_AvailableHeadGear = [];
+			_AvailableGoggles = [];
+			_AvailableUniforms = [];
+			_AvailableVests = [];
+			_AvailableAttachments = [];
+			_AvailableWeapons = [];
+			_AvailableBackpacks = [];
+
 	};
 	
-    case "3CB": {
-	
-	        _AvailableAmmoItems = [
+	if (_type == "3CB") exitwith {
+	        _AvailableItems = [
                 "ACE_elasticBandage",
                 "ACE_packingBandage",
                 "ACE_quikclot",
@@ -98,7 +109,7 @@ switch (ArsenalType) do {
                 "optic_NVS"
         ];
 
-			_AvailableAmmoMagazines = [
+			_AvailableMagazines = [
                 "UK3CB_BAF_SmokeShell",
                 "HandGrenade",
                 "DemoCharge_Remote_Mag",
@@ -111,7 +122,7 @@ switch (ArsenalType) do {
 
 			];
 
-			_AvailableAmmoWeapons = [
+			_AvailableWeapons = [
 				"ACE_VMH3",
 				"ACE_VMM3",			
                 "UK3CB_BAF_M6",
@@ -120,12 +131,17 @@ switch (ArsenalType) do {
                 "UK3CB_BAF_AT4_CS_AT_Launcher",
                 "UK3CB_BAF_Javelin_CLU"
 			];
-	
+			
+			_AvailableHeadGear = [];
+			_AvailableGoggles = [];
+			_AvailableUniforms = [];
+			_AvailableVests = [];
+			_AvailableAttachments = [];
+			_AvailableBackpacks = [];			
 	};
 	
-    case "RHS": {
-	
-	        _AvailableAmmoItems = [
+	if (_type == "RHS") exitwith {
+	        _AvailableItems = [
                 "ACE_elasticBandage",
                 "ACE_packingBandage",
                 "ACE_quikclot",
@@ -139,7 +155,7 @@ switch (ArsenalType) do {
 			];
 			
 							
-				_AvailableAmmoMagazines = [
+				_AvailableMagazines = [
 
 				"rhs_mag_an_m8hc",
 				"rhs_mag_m18_green",
@@ -221,7 +237,7 @@ switch (ArsenalType) do {
 				"rhsusf_mag_15Rnd_9x19_JHP"
 			];
 				
-				_AvailableAmmoWeapons = [				
+				_AvailableWeapons = [				
 				"rhs_weap_fgm148",
 				"rhs_weap_fim92",
 				"rhs_weap_M136",
@@ -230,47 +246,61 @@ switch (ArsenalType) do {
 				"rhs_weap_maaws",
 				"rhs_weap_m72a7",
 				"rhs_weap_smaw",
-				"rhs_weap_smaw_green"
-			
+				"rhs_weap_smaw_green"			
 			];
+			_AvailableHeadGear = [];
+			_AvailableGoggles = [];
+			_AvailableUniforms = [];
+			_AvailableVests = [];
+			_AvailableAttachments = [];
+			_AvailableWeapons = [];
+			_AvailableBackpacks = [];			
 	};
-
-	};
-
-        {
-
-                _box = missionNamespace getVariable[_x, objNull];
-
-                [_box, _AvailableAmmoHeadGear, false] call BIS_fnc_addVirtualItemCargo;
+};
 
 
-                [_box, _AvailableAmmoGoggles, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableHeadGear, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableAmmoUniforms, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableGoggles, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableAmmoVests, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableUniforms, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableAmmoItems, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableVests, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableAmmoAttachments, false] call BIS_fnc_addVirtualItemCargo;
+                [_object, _AvailableItems, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableAmmoWeapons, false] call BIS_fnc_addVirtualWeaponCargo;
+                [_object, _AvailableAttachments, false] call BIS_fnc_addVirtualItemCargo;
 
 
-                [_box, _AvailableAmmoBackpacks, false] call BIS_fnc_addVirtualBackpackCargo;
+                [_object, _AvailableWeapons, false] call BIS_fnc_addVirtualWeaponCargo;
 
 
-                [_box, _AvailableAmmoMagazines, false] call BIS_fnc_addVirtualMagazineCargo;
+                [_object, _AvailableBackpacks, false] call BIS_fnc_addVirtualBackpackCargo;
+
+
+                [_object, _AvailableMagazines, false] call BIS_fnc_addVirtualMagazineCargo;
+
+				{_x addCuratorEditableObjects [[_object], false];} ForEach allcurators;				
 				
-				{_x addCuratorEditableObjects [[_box], false];} ForEach allcurators;
 
-        }
-        foreach AmmoBoxName;
-
-
+If (isserver) then {
+	_handle = [
+	{
+		(_this select 0) params ["_object", "_duration"];
+	
+		if (_duration == 0) exitwith {
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		};
+	
+		if (time > (_duration * 60)) exitwith {
+		deletevehicle _object;
+		[_handle] call CBA_fnc_removePerFrameHandler;
+		};
+	
+	}, 60, [_object, _duration]] call CBA_fnc_addPerFrameHandler;
 };
