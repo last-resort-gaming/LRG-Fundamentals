@@ -11,15 +11,14 @@ class LR {
 			class AmmoBox {
 
 				file = "LRG Fundamentals\Functions\LRG\AmmoBox";
-				class AmmoBox {postInit = 1;};
+				class AmmoBox {};
 			};
 			
 			class Arsenal {
 
 				file = "LRG Fundamentals\Functions\LRG\Arsenal";
-				class Arsenal {postInit = 1;};
+				class Arsenal {};
 				class TimedArsenal {postInit = 1;};
-				class ArsenalLoadSave {postInit = 1;};
 			};
 
 			class General {
@@ -29,7 +28,7 @@ class LR {
 				class Diary { postInit = 1; };
 				class initPlayerLocal {postInit = 1;};
 				class initServer {postInit = 1;};
-				class MedicalFacility {postInit = 1;};
+				class MedicalFacility {};
 				class PlayerAddActions {};
 				class RealWeather {postInit = 1;};
 				class SafeZone {postInit = 1;};
