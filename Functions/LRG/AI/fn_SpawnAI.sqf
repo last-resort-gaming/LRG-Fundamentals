@@ -64,7 +64,7 @@ if (_typeNameCenter isEqualTo "OBJECT") then {
     };
 };
 
-_center resize 2;
+_center set [2, 0];
 
 _garrisons params ["_garrisonGroupCount", ["_garrisonMinRad", 0], ["_garrisonMaxRad", 60], ["_garrisonSkill", 2], ["_garrisonFill", 4], ["_garrisonExcludes", []]];
 _inf params ["_infMin", ["_infRand", 0], ["_infSkill", "LRG Default"]];
