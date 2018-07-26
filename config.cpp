@@ -21,3 +21,4 @@ class CfgFunctions {
 #include "Functions\CHVD\dialog.hpp"
 #include "Functions\AIS\Effects\BarDlg.hpp"
 #include "Functions\YAINA\General\crewNamesTitles.hpp"
+#include "CfgRespawnTemplates.hpp"
