@@ -32,12 +32,12 @@ if (YAINA_PlugsIn isEqualTo true) then {
     _nextAction = "Remove";
     _nextColor  = "#FF0000";
     if (!isNil "_target") then {
-        [" <img image='media\images\plugs_in.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Inserted</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
+        [" <img image='LRG Fundamentals\media\images\plugs_in.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Inserted</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
     };
 } else {
     ([2, 0] select isNil "_target") fadeSound 1;
     if (!isNil "_target") then {
-        ["<img image='media\images\plugs_out.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Removed</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
+        ["<img image='LRG Fundamentals\media\images\plugs_out.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Removed</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
     };
 };
 
