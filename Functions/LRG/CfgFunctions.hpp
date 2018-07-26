@@ -53,6 +53,13 @@ class LR {
 				class fileExists {};
 			};
 			
+			class Training {
+
+				file = "LRG Fundamentals\Functions\LRG\Training";
+				class Casualty {};	
+				class ResetTargets {};
+			};	
+			
 			class UsefulFuncs {
 
 				file = "LRG Fundamentals\Functions\LRG\UsefulFuncs";
