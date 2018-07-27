@@ -36,10 +36,11 @@ showSquadRadar = 0;
 
 //------------------------- Respawn
 
+respawnTemplates[] = {"LR_Respawning"}; 
 Respawn = 3;
-RespawnDelay = 10;
 RespawnDialog = 0;
 respawnOnStart = 0;
+RespawnDelay = 10;
 
 //------------------------- Garbage collector
 							
