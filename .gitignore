@@ -1,0 +1,6 @@
+# Exclude documentation output and temp data
+docs/
+tools/lrg-fundamentals/Working Data
+
+# Exclude the Natural Docs binary files
+tools/Natural Docs
