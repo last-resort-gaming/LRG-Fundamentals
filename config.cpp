@@ -22,3 +22,5 @@ class CfgFunctions {
 #include "Functions\AIS\Effects\BarDlg.hpp"
 #include "Functions\YAINA\General\crewNamesTitles.hpp"
 #include "CfgRespawnTemplates.hpp"
+#include "CfgMusic.hpp"
+#include "CfgSounds.hpp"
