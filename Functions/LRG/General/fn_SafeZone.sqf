@@ -36,6 +36,7 @@ _handle = [
 	if (_checkObject distance2D SafeZonePosition < safezoneArea) exitWith {
 		deleteVehicle _projectile;
 		hintC "Denied.";
+		playSound "Denied"; 
 	
 	}}];
   

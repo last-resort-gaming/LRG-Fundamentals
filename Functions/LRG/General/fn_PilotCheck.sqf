@@ -35,7 +35,8 @@ player addEventHandler ["GetInMan", {
 		
 		if ((_playerPos isEqualTo "driver") && !(player getUnitTrait "Pilot")) exitwith {
 		    moveOut _unit;
-			["<t color='#FFBB00' size = '.5'>You're not a Pilot.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;
+			playSound "Denied"; 
+			["<t color='#FFBB00' size = '.5'>You're not a Pilot.</t>",-1,0.8,5,0.5,0,789] spawn BIS_fnc_dynamicText;
 		};
 	};		
 }];
@@ -50,6 +51,7 @@ player addEventHandler ["SeatSwitchedMan", {
 	if ((_vehicle isKindOf "Air") && !(_vehicle isKindOf "ParachuteBase")) then {
 		if ((_playerPos isEqualTo "driver") && !(player getUnitTrait "Pilot")) exitwith {
 	    moveOut _unit1;
+		playSound "Denied";
 		};
 	};	
 }];
