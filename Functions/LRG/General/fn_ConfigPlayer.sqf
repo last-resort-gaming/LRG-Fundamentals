@@ -24,9 +24,10 @@
 params [
 	"_unit",
 	["_Section", "Support"],
-	["_Traits", []]
+	["_Traits", []],
+	["_Loadout", []]
 ];
-
+//========== Section Config
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
 
 	private ["_ShortRange", "_LongRange"];
@@ -62,7 +63,13 @@ if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
 	group _unit setVariable ["tf_sw_frequency", _ShortRange, true];
 	group _unit setVariable ["tf_lr_frequency", _LongRange, true];
 };
-
-{
-	_unit setUnitTrait [_x, true, true];
-} forEach _Traits;
+//========== Trait Config
+if !(_Traits isEqualTo []) then {	
+	{
+		_unit setUnitTrait [_x, true, true];
+	} forEach _Traits;
+};
+//========== Loadout Config
+if !(_Loadout isEqualto []) then {
+	[_unit, _Loadout] call LR_fnc_Loadouts;
+};

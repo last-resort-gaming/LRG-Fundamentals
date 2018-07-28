@@ -32,6 +32,7 @@ class LR {
 				class DynamicSim {postInit = 1;};
 				class initPlayerLocal {postInit = 1;};
 				class initServer {postInit = 1;};
+				class Loadouts {};
 				class Logs {postInit = 1;};
 				class MedicalFacility {};
 				class PilotCheck {postInit = 1;};
