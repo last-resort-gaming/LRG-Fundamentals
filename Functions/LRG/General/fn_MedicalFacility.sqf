@@ -17,7 +17,7 @@
 	Example 2:	[this, 10, 5, 5] call LR_fnc_MedicalFacility;
 	Example 3:	[MyMedicalBuilding, 10, 5, 5] call LR_fnc_MedicalFacility;
 */
-	if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
+if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
 	
 params [
 	"_object",
@@ -29,13 +29,12 @@ params [
 
 LR_FNC_Medical = {
 
-if (player getVariable "ACE_isUnconscious") then {
-	[format ["<t color='#ed1b2e' size = '.4'>%1<br />is being revived at the LRG Medical Facility.</t>", profileName],1,-0.2,10,0,0,789] remoteExec ["BIS_fnc_dynamicText",0,false];
-	[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 10] call CBAP_fnc_waitAndExecute;
+	if (player getVariable "ACE_isUnconscious") then {
+		[format ["<t color='#ed1b2e' size = '.4'>%1<br />is being revived at the LRG Medical Facility.</t>", profileName],1,-0.2,10,0,0,789] remoteExec ["BIS_fnc_dynamicText",0,false];
+		[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 10] call CBAP_fnc_waitAndExecute;
 	} else {
-	[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 5] call CBAP_fnc_waitAndExecute;
+		[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 5] call CBAP_fnc_waitAndExecute;
 	};
-
 };
 
 _trg = createTrigger ["EmptyDetector",_object];

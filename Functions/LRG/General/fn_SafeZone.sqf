@@ -10,38 +10,39 @@ if !(safezoneEnabled) exitwith {};
 
 SafeZonePosition = (getMarkerPos "BASE");
 
-	
 _handle = [
-{
+	{
   
-  _SafeZoneEH = player getVariable ["SafeZoneEH", nil];
+  		_SafeZoneEH = player getVariable ["SafeZoneEH", nil];
   
-	if !(safezoneEnabled) exitwith {
-		if !(isNil "_SafeZoneEH") then {
-		player removeAllEventHandlers "FiredMan";
-		player setVariable ["SafeZoneEH", nil];
+		if !(safezoneEnabled) exitwith {
+			if !(isNil "_SafeZoneEH") then {
+				player removeAllEventHandlers "FiredMan";
+				player setVariable ["SafeZoneEH", nil];
+			};
 		};
-	};
 	
-	if !(isNil "_SafeZoneEH") exitwith {};
+		if !(isNil "_SafeZoneEH") exitwith {};
 
-	_SafeZoneEH = player addEventHandler["FiredMan", {
-    params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_mag", "_projectile", "_veh"];
+		_SafeZoneEH = player addEventHandler[
+			"FiredMan", {
+		    	params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_mag", "_projectile", "_veh"];
 
-    if (_weapon in ["CMFlareLauncher", "CMFlareLauncher_Singles", "CMFlareLauncher_Triples","UK3CB_BAF_CMFlareLauncher","UK3CB_BAF_IRJammer","rhsusf_weap_CMFlareLauncher"])  exitWith {true};
-    if !(cameraOn isEqualTo (vehicle player)) exitWith {true};
+			    if (_weapon in ["CMFlareLauncher", "CMFlareLauncher_Singles", "CMFlareLauncher_Triples","UK3CB_BAF_CMFlareLauncher","UK3CB_BAF_IRJammer","rhsusf_weap_CMFlareLauncher"])  exitWith {true};
+			    if !(cameraOn isEqualTo (vehicle player)) exitWith {true};
 
-    _checkObject = [_veh, _unit] select isNull _veh;
+			    _checkObject = [_veh, _unit] select isNull _veh;
 	
-	if (_checkObject distance2D SafeZonePosition < safezoneArea) exitWith {
-		deleteVehicle _projectile;
-		hintC "Denied.";
-		playSound "Denied"; 
-	
-	}}];
-  
-  player setVariable ["SafezoneEH", _SafeZoneEH];
-	
-}, 60, []] call CBA_fnc_addPerFrameHandler;
+				if (_checkObject distance2D SafeZonePosition < safezoneArea) exitWith {
+					deleteVehicle _projectile;
+					hintC "Denied.";
+					playSound "Denied"; 
+				}
+			}
+		];
+		
+		player setVariable ["SafezoneEH", _SafeZoneEH];
+	}, 60, []
+] call CBA_fnc_addPerFrameHandler;
 	
 	

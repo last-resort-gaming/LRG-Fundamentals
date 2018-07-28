@@ -50,5 +50,5 @@ private _units = call {
 {
     _a = _x;
     _b = _skillv select _forEachIndex;
-    { _x setSkill [_a, _b]; true } count _units;
+    {_x setSkill [_a, _b]; true } count _units;
 } forEach _skillt;

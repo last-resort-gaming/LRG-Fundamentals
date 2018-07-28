@@ -48,8 +48,8 @@ player createDiaryRecord ["Diary", ["Short Range Frequencies",
 "
 ]];
 
-	_PlayerGroup =  group player getVariable ["LRG_section","null"];
-	if !(_PlayerGroup == "Command") exitwith {};
+_PlayerGroup =  group player getVariable ["LRG_section","null"];
+if !(_PlayerGroup == "Command") exitwith {};
 
 player createDiarySubject ["LRG Commands","LRG Commands"];
 

@@ -38,6 +38,7 @@ LRG MISSION TEMPLATE
     _vehheavy - Heavy/Armoured Vehicle Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
 	
 	Example 1:
+	--- Code
 	["Objective 1",
 	[2955.43,6010.11,0],
 	500,
@@ -59,6 +60,7 @@ LRG MISSION TEMPLATE
 	[2, 3],
 	[2, 3],
 	[5, 6]] call LR_fnc_SpawnAI;
+	---
 
 Available _army so far:
 // Vanilla
@@ -77,33 +79,34 @@ Available _army so far:
 if (!isserver) exitwith {};
 
 params [
-        "_grpPrefix", "_center", "_radius",
-		["_army", "CSAT"],
-        ["_garrisons", [1,0,60, "LRG Default", 4, []]],
-        ["_inf", [3,3]],
-        ["_infaa", [0,0]],
-        ["_infat", [0,0]],
-        ["_sniper", [0,0]],
-        ["_vehaa", [0,0]],
-        ["_vehmrap", [0,0]],
-        ["_vehrand", [0,0]],
-        ["_vehlight", [0,0]],
-        ["_vehheavy", [0,0]]
-       ];
-
+	"_grpPrefix", "_center", "_radius",
+	["_army", "CSAT"],
+	["_garrisons", [1,0,60, "LRG Default", 4, []]],
+	["_inf", [3,3]],
+	["_infaa", [0,0]],
+	["_infat", [0,0]],
+	["_sniper", [0,0]],
+	["_vehaa", [0,0]],
+	["_vehmrap", [0,0]],
+	["_vehrand", [0,0]],
+	["_vehlight", [0,0]],
+	["_vehheavy", [0,0]]
+];
 
 _typeNameCenter = typeName _center;
 
 if (_typeNameCenter isEqualTo "OBJECT") then {
     _center = getPos _center;
-} else { if (_typeNameCenter isEqualTo "STRING") then {
-    _center = getMarkerPos _center;
+} else { 
+	if (_typeNameCenter isEqualTo "STRING") then {
+    	_center = getMarkerPos _center;
 		if (_center isEqualTo [0, 0, 0]) exitWith { 
 			systemChat "fn_SpawnAI: Invalid marker."; 
 			diag_log "fn_SpawnAI: Invalid marker."; 
 		};
 	};
 };
+
 _center set [2, 0];
 
 _garrisons params ["_garrisonGroupCount", ["_garrisonMinRad", 0], ["_garrisonMaxRad", 60], ["_garrisonSkill", 2], ["_garrisonFill", 4], ["_garrisonExcludes", []]];
@@ -126,7 +129,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 // TODO: UAVs ?
 
 	
-	_Armyresult = call {
+_Armyresult = call {
 	
 	_side = east;
 	
@@ -140,7 +143,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["O_MRAP_02_F", "O_MRAP_02_hmg_F", "O_MRAP_02_gmg_F", "O_LSV_02_armed_F", "O_Truck_03_transport_F", "O_Truck_03_covered_F"];
 		_vehRandList  = ["O_APC_Tracked_02_cannon_F", "O_APC_Wheeled_02_rcws_F"];
 		_vehLightList = ["O_LSV_02_armed_F", "O_G_Offroad_01_armed_F"];
-		_vehHeavyList = ["O_MBT_02_cannon_F", "O_MBT_04_cannon_F", "O_MBT_04_command_F"];	
+		_vehHeavyList = ["O_MBT_02_cannon_F", "O_MBT_04_cannon_F", "O_MBT_04_command_F"];
 	};
 		
 	if (_army == "CSAT Pacific") exitwith {
@@ -153,7 +156,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["O_T_MRAP_02_ghex_F","O_T_MRAP_02_gmg_ghex_F","O_T_MRAP_02_hmg_ghex_F","O_T_LSV_02_AT_F","O_T_LSV_02_armed_F","O_T_LSV_02_unarmed_F"];
 		_vehRandList  = ["O_T_APC_Tracked_02_cannon_ghex_F","O_T_APC_Wheeled_02_rcws_v2_ghex_F"];
 		_vehLightList = ["O_T_LSV_02_armed_F","O_T_LSV_02_unarmed_F"];
-		_vehHeavyList = ["O_T_MBT_02_cannon_ghex_F","O_T_MBT_04_cannon_F","O_T_MBT_04_command_F"];		
+		_vehHeavyList = ["O_T_MBT_02_cannon_ghex_F","O_T_MBT_04_cannon_F","O_T_MBT_04_command_F"];
 	};
 
 	if (_army == "AAF") exitwith {
@@ -167,7 +170,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["I_MRAP_03_F", "I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F", "I_Truck_02_transport_F", "I_Truck_02_transport_F"];
 		_vehRandList  = ["I_APC_Tracked_C03_cannon_F"];
 		_vehLightList = ["I_G_Offroad_01_armed_F"];
-		_vehHeavyList = ["I_MBT_03_cannon_F", "I_LT_01_AT_F", "I_LT_01_cannon_F"];	
+		_vehHeavyList = ["I_MBT_03_cannon_F", "I_LT_01_AT_F", "I_LT_01_cannon_F"];
 	};
 	
 	if (_army == "Syndikat") exitwith {
@@ -181,7 +184,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["I_MRAP_03_F", "I_MRAP_03_gmg_F", "I_MRAP_03_hmg_F", "I_Truck_02_transport_F", "I_Truck_02_transport_F"];
 		_vehRandList  = ["I_APC_Tracked_C03_cannon_F"];
 		_vehLightList = ["I_G_Offroad_01_armed_F"];
-		_vehHeavyList = ["I_MBT_03_cannon_F", "I_LT_01_AT_F", "I_LT_01_cannon_F"];	
+		_vehHeavyList = ["I_MBT_03_cannon_F", "I_LT_01_AT_F", "I_LT_01_cannon_F"];
 	};
 	
 	if (_army == "TM") exitwith {
@@ -194,7 +197,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["CUP_O_BTR40_TKM", "CUP_O_BTR40_MG_TKM"];
 		_vehRandList  = ["CUP_O_LR_MG_TKM","CUP_O_LR_SPG9_TKM","CUP_O_LR_Transport_TKM","CUP_O_V3S_Open_TKM","CUP_O_V3S_Covered_TKM"];
 		_vehLightList = ["CUP_O_LR_MG_TKM","CUP_O_LR_SPG9_TKM","CUP_O_LR_Transport_TKM","CUP_O_V3S_Open_TKM","CUP_O_V3S_Covered_TKM"];
-		_vehHeavyList = [];		
+		_vehHeavyList = [];
 	};
 	
 	if (_army == "CRS") exitwith {
@@ -207,7 +210,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["CUP_O_BMP2_CHDKZ","CUP_O_BMP_HQ_CHDKZ","CUP_O_BMP2_AMB_CHDKZ","CUP_O_BRDM2_CHDKZ","CUP_O_BRDM2_HQ_CHDKZ","CUP_O_BRDM2_ATGM_CHDKZ"];
 		_vehRandList  = ["CUP_O_UAZ_SPG9_CHDKZ","CUP_O_UAZ_MG_CHDKZ"];
 		_vehLightList = ["CUP_O_Datsun_PK","CUP_O_Datsun_PK_Random","CUP_O_UAZ_METIS_CHDKZ","CUP_O_UAZ_SPG9_CHDKZ","CUP_O_UAZ_MG_CHDKZ"];
-		_vehHeavyList = ["CUP_O_T72_CHDKZ"];	
+		_vehHeavyList = ["CUP_O_T72_CHDKZ"];
 	};
 	
 	if (_army == "CUP AFRF") exitwith {
@@ -220,8 +223,8 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  	= ["CUP_O_BMP2_RU","CUP_O_BMP_HQ_RU","CUP_O_BMP2_AMB_RU","CUP_O_BMP3_RU","CUP_O_BRDM2_RUS","CUP_O_BRDM2_ATGM_RUS","CUP_O_BRDM2_HQ_RUS","CUP_O_BTR90_RU","CUP_O_BTR90_HQ_RU","CUP_O_GAZ_Vodnik_PK_RU","CUP_O_GAZ_Vodnik_AGS_RU","CUP_O_GAZ_Vodnik_BPPU_RU","CUP_O_GAZ_Vodnik_MedEvac_RU"];
 		_vehRandList  	= ["CUP_O_UAZ_MG_RU","CUP_O_GAZ_Vodnik_BPPU_RU","CUP_O_BRDM2_RUS","CUP_O_BMP2_RU"];
 		_vehLightList	= ["CUP_O_UAZ_Unarmed_RU","CUP_O_UAZ_MG_RU","CUP_O_UAZ_AMB_RU","CUP_O_UAZ_METIS_RU","CUP_O_UAZ_Open_RU","CUP_O_UAZ_SPG9_RU","CUP_O_Ural_RU","CUP_O_Ural_Open_RU"];
-		_vehHeavyList 	= ["CUP_O_T72_RU","CUP_O_T90_RU"];	
-	};	
+		_vehHeavyList 	= ["CUP_O_T72_RU","CUP_O_T90_RU"];
+	};
 	
 	if (_army == "SLA") exitwith {
 		_confBase     = configfile >> "CfgGroups" >> "East" >> "CUP_O_SLA" >> "Infantry";
@@ -233,7 +236,7 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["CUP_O_BMP2_SLA", "CUP_O_BMP_HQ_sla", "CUP_O_BMP2_AMB_sla", "CUP_O_BRDM2_SLA", "CUP_O_BRDM2_ATGM_SLA", "CUP_O_BRDM2_HQ_SLA", "CUP_O_BTR60_SLA"];
 		_vehRandList  = ["CUP_O_UAZ_MG_SLA", "CUP_O_UAZ_METIS_SLA", "CUP_O_BTR60_SLA"];
 		_vehLightList = ["CUP_O_UAZ_Unarmed_SLA", "CUP_O_UAZ_MG_SLA", "CUP_O_UAZ_METIS_SLA", "CUP_O_UAZ_Militia_SLA", "CUP_O_UAZ_SPG9_SLA", "CUP_O_Ural_SLA", "CUP_O_Ural_Open_SLA"];
-		_vehHeavyList = ["CUP_O_T55_SLA", "CUP_O_T72_SLA"];	
+		_vehHeavyList = ["CUP_O_T55_SLA", "CUP_O_T72_SLA"];
 	};
 	
 	if (_army == "TA") exitwith {
@@ -246,10 +249,8 @@ private ["_side", "_infList", "_confBase", "_infaaList", "_infatList", "_sniperL
 		_vehMrapList  = ["CUP_O_BMP1_TKA", "CUP_O_BMP1P_TKA", "CUP_O_BMP2_TKA", "CUP_O_BMP_HQ_TKA", "CUP_O_BMP2_AMB_TKA", "CUP_O_BMP2_ZU_TKA", "CUP_O_BRDM2_TKA", "CUP_O_BRDM2_ATGM_TKA", "CUP_O_BRDM2_HQ_TKA", "CUP_O_BTR40_MG_TKA", "CUP_O_BTR40_TKA", "CUP_O_BTR60_TK", "CUP_O_M113_TKA", "CUP_O_M113_Med_TKA"];
 		_vehRandList  = ["CUP_O_LR_MG_TKA", "CUP_O_LR_SPG9_TKA", "CUP_O_BMP1_TKA", "CUP_O_BMP1P_TKA"];
 		_vehLightList = ["CUP_O_LR_MG_TKA", "CUP_O_LR_SPG9_TKA", "CUP_O_LR_Transport_TKA", "CUP_O_V3S_Open_TKA", "CUP_O_V3S_Covered_TKA", "CUP_O_UAZ_Unarmed_TKA", "CUP_O_UAZ_MG_TKA", "CUP_O_UAZ_METIS_TKA", "CUP_O_UAZ_Open_TKA", "CUP_O_Ural_TKA"];
-		_vehHeavyList = ["CUP_O_T72_TKA", "CUP_O_T55_TK", "CUP_O_T34_TKA"];			
-
+		_vehHeavyList = ["CUP_O_T72_TKA", "CUP_O_T55_TK", "CUP_O_T34_TKA"];
 	};
-		
 };
 	
 private ["_x","_g","_pos","_flatPos","_rpos","_v"];
@@ -471,8 +472,16 @@ if (_vehHeavyList isEqualTo []) then {
 };
 
 {
-if !(dynamicSimulationEnabled (group _x)) then {(group _x) enableDynamicSimulation true;};
-_x 	disableAI "AUTOCOMBAT";
+	if !(dynamicSimulationEnabled (group _x)) then {
+		(group _x) enableDynamicSimulation true;
+	};
+	_x 	disableAI "AUTOCOMBAT";
 } forEach _units;
-{if !(dynamicSimulationEnabled (group _x)) then {(group _x) enableDynamicSimulation true;};} forEach _vehicles;
+
+{
+	if !(dynamicSimulationEnabled (group _x)) then {
+		(group _x) enableDynamicSimulation true;
+	};
+} forEach _vehicles;
+
 [_units, _vehicles]

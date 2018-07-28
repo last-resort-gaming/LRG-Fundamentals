@@ -8,27 +8,28 @@ if ((not LR_start) || {(!hasInterface)})exitWith{};
 
 //=================================== GENERAL =====================================================
 
-	if (ShowMapIcons) 		then {_null = [] execVM "LRG Fundamentals\scripts\QS\QS_icons.sqf";};	
+if (ShowMapIcons) then {
+	_null = [] execVM "LRG Fundamentals\scripts\QS\QS_icons.sqf";
+};	
 
-	if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
-		[] execVM "LRG Fundamentals\scripts\YAINA\earplugs.sqf";
-		["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
-		player enableFatigue false;
-	};
+if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+	[] execVM "LRG Fundamentals\scripts\YAINA\earplugs.sqf";
+	["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
+	player enableFatigue false;
+};
 	  
-	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
-		player setVariable ["tf_sendingDistanceMultiplicator", RadioRange];
-	} else {
+if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
+	player setVariable ["tf_sendingDistanceMultiplicator", RadioRange];
+} else {
 	1 enableChannel [true, true];
 	2 enableChannel [true, true];
 	3 enableChannel [true, true];
 	4 enableChannel [true, true];
 	5 enableChannel [true, true];
-	};
+};
 
-	if (servername == "[LRG] Last Resort Gaming || EU 3 || Operations") then {
+if (servername == "[LRG] Last Resort Gaming || EU 3 || Operations") then {
 	
 	_log = format ["%1 attended as %2.",name player, roleDescription player ];	
 	[_log,"LRG_CONNECTLOG"] remoteExecCall ["A3Log", 2];
-	
-	};
+};

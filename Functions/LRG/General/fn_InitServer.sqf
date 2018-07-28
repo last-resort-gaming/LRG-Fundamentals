@@ -13,8 +13,7 @@ if (!isserver) exitwith {};
 {_x setSpeaker "NoVoice"} forEach playableUnits;
 
 //=================================== VANILLA ONLY =====================================================
-		
-		
-	if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+
+if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 	["Initialize"] call BIS_fnc_dynamicGroups;
-	};
+};

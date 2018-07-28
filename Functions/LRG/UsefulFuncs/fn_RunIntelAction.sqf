@@ -59,6 +59,7 @@ for "_i" from 0 to 1 do {
 	_state = animationstate _caller;
 	waituntil {_state != animationstate _caller};
 };
+
 deletevehicle _object;
 
 [_var,"diary"] remoteExec ["BIS_fnc_initIntelObject", _recipients, _persistent];

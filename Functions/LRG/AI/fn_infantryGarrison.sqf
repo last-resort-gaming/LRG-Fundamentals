@@ -27,60 +27,68 @@ Author:
 	MartinCo
 	MitchJC
 */
-if (!isserver) exitwith {};
+if (!isServer) exitWith {};
 
-params ["_pos", ["_radius", [0, 30]], "_army", ["_groupCount", 1], ["_AIOB_Positioning", 2], ["_skill", "LRG Default"], ["_maxFill", 4], ["_excludes", []], ["_units", []]];
+params [
+    "_pos",
+    ["_radius", [0, 30]],
+    "_army",
+    ["_groupCount", 1],
+    ["_AIOB_Positioning", 2],
+    ["_skill", "LRG Default"],
+    ["_maxFill", 4],
+    ["_excludes", []],
+    ["_units", []]
+];
 
 if (_units isEqualTo []) then {
 
-private ["_groupType", "_side"];
-	
-
+    private ["_groupType", "_side"];
 	
 	_Armyresult = call {
 
-	_side = east;
-	
-	if (_army == "CSAT") exitwith {
-		_groupType = (configFile >> "CfgGroups" >> "East" >> "OPF_F" >> "UInfantry" >> "OIA_GuardSquad");
-	};
-	
-	if (_army == "CSAT Pacific") exitwith {
-		_groupType = (configfile >> "CfgGroups" >> "East" >> "OPF_T_F" >> "Infantry" >> "O_T_InfSquad");
-	};
-	
-	if (_army == "AAF") exitwith {
-		_side = resistance;
-		_groupType = (configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad");
-	};	
-	
-	if (_army == "Syndikat") exitwith {
-		_side = resistance;
-		_groupType = (configfile >> "CfgGroups" >> "Indep" >> "IND_C_F" >> "Infantry" >> "BanditCombatGroup");		
-	};	
-	
-	if (_army == "TM") exitwith {
-		_groupType = (configfile >> "CfgGroups" >> "East" >> "CUP_O_TK_MILITIA" >> "Infantry" >> "CUP_O_TK_MILITIA_Group");	
-	};
-	
-	if (_army == "CRS") exitwith {
-		_groupType = (configfile >> "CfgGroups" >> "East" >> "CUP_O_ChDKZ" >> "Infantry" >> "CUP_O_ChDKZ_InfSquad");	
-	};
-	
-	if (_army == "CUP AFRF") exitwith {
-		_groupType = (configfile >> "CfgGroups" >> "East" >> "CUP_O_RU" >> "Infantry" >> "CUP_O_RU_InfSquad_EMR");	
-	};
-	
-	if (_army == "SLA") exitwith {
-		_groupType = (configfile >> "CfgGroups" >> "East" >> "CUP_O_SLA" >> "Infantry_Urban" >> "CUP_O_SLA_InfantrySquad_Urban");
-	};
-	
-	if (_army == "TA") exitwith {
-		_groupType = (configfile >> "CfgGroups" >> "East" >> "CUP_O_TK" >> "Infantry" >> "CUP_O_TK_InfantrySquad");
-	};
-};
+		_side = east;
 
-		
+		if (_army == "CSAT") exitWith {
+			_groupType = (configFile >> "CfgGroups" >> "East" >> "OPF_F" >> "UInfantry" >> "OIA_GuardSquad");
+		};
+
+		if (_army == "CSAT Pacific") exitWith {
+			_groupType = (configFile >> "CfgGroups" >> "East" >> "OPF_T_F" >> "Infantry" >> "O_T_InfSquad");
+		};
+
+		if (_army == "AAF") exitWith {
+			_side = resistance;
+			_groupType = (configFile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad");
+		};
+
+		if (_army == "Syndikat") exitWith {
+			_side = resistance;
+			_groupType = (configFile >> "CfgGroups" >> "Indep" >> "IND_C_F" >> "Infantry" >> "BanditCombatGroup");
+		};
+
+		if (_army == "TM") exitWith {
+			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_TK_MILITIA" >> "Infantry" >> "CUP_O_TK_MILITIA_Group");
+		};
+
+		if (_army == "CRS") exitWith {
+			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_ChDKZ" >> "Infantry" >> "CUP_O_ChDKZ_InfSquad");
+		};
+
+		if (_army == "CUP AFRF") exitWith {
+			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_RU" >> "Infantry" >> "CUP_O_RU_InfSquad_EMR");
+		};
+
+		if (_army == "SLA") exitWith {
+			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_SLA" >> "Infantry_Urban" >> "CUP_O_SLA_InfantrySquad_Urban");
+		};
+
+		if (_army == "TA") exitWith {
+			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_TK" >> "Infantry" >> "CUP_O_TK_InfantrySquad");
+		};
+	};
+
+
     for "_x" from 1 to _groupCount do {
         private _g = [_pos, _side, _groupType] call BIS_fnc_spawnGroup;
         _units append (units _g);
@@ -99,6 +107,6 @@ _allUnits = _units - _failed;
 [_allUnits, _skill] call LR_fnc_setUnitSkill;
 
 // Add units to zeus
-{_x addCuratorEditableObjects [_allUnits, false];} ForEach allcurators;
+{_x addCuratorEditableObjects [_allUnits, false];} forEach allCurators;
 
 _allUnits;

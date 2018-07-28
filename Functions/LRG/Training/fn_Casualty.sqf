@@ -28,18 +28,18 @@ _RandomInjuryType = ["bullet", "grenade", "explosive", "shell", "vehiclecrash"];
 if (!hasinterface) exitwith {};
 //========================= T1
 
-_object addAction 
-	[
+_object addAction [
     "<t color='#e74c3c'>T1 Casualty</t>", 
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 
 		for "_i" from 1 to 6 do {
-		[_target, 0.5, selectRandom ((_this select 3) select 0), selectRandom ((_this select 3) select 1)] remoteExecCall ["ace_medical_fnc_addDamageToUnit", 0];
+		    [_target, 0.5, selectRandom ((_this select 3) select 0), selectRandom ((_this select 3) select 1)] remoteExecCall ["ace_medical_fnc_addDamageToUnit", 0];
 		};
+
 		[_target, true, 10, true] remoteExecCall ["ace_medical_fnc_setUnconscious", 2];
 		[_target] remoteExecCall ["ace_medical_fnc_setCardiacArrest", 2];
-				_target setVariable ["CasualtyHealed", False, True];
+		_target setVariable ["CasualtyHealed", False, True];
     },
     [_RandomBodyPart,_RandomInjuryType],
     1.5, 
@@ -51,24 +51,22 @@ _object addAction
     false,
     "",
     ""
-	];
+];
 
 
 
 //========================= T2
 
 
-_object addAction 
-[
+_object addAction [
     "<t color='#f1c40f'>T2 Casualty</t>", 
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 		for "_i" from 1 to 3 do {
-		[_target, 0.7, selectRandom ((_this select 3) select 0), selectRandom ((_this select 3) select 1)] remoteExecCall ["ace_medical_fnc_addDamageToUnit", 0];
+		    [_target, 0.7, selectRandom ((_this select 3) select 0), selectRandom ((_this select 3) select 1)] remoteExecCall ["ace_medical_fnc_addDamageToUnit", 0];
 		};
 		
 		[_target, true, 10, true] remoteExecCall ["ace_medical_fnc_setUnconscious", 2];
-		
 		
 		_target setVariable ["CasualtyHealed", False, True];
     },
@@ -89,15 +87,15 @@ _object addAction
 
 
 
-_object addAction 
-[
+_object addAction [
     "<t color='#27ae60'>T3 Casualty</t>", 
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
 		
 		for "_i" from 1 to 2 do {
-		[_target, 0.2, selectRandom ((_this select 3) select 0), selectRandom ((_this select 3) select 1)] remoteExecCall ["ace_medical_fnc_addDamageToUnit", 0];		
+		    [_target, 0.2, selectRandom ((_this select 3) select 0), selectRandom ((_this select 3) select 1)] remoteExecCall ["ace_medical_fnc_addDamageToUnit", 0];		
 		};
+
 		_target setVariable ["CasualtyHealed", False, True];
     },
     [_RandomBodyPart,_RandomInjuryType],
@@ -110,7 +108,6 @@ _object addAction
     false,
     "",
     ""
-	
 ];
 
 

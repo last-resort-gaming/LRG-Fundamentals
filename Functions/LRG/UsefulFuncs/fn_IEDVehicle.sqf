@@ -59,7 +59,7 @@ if (!isServer) exitWith {};
 // Check if we are using a valid vehicle.
 if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 	systemChat "LR_fnc_IEDVehicle: Invalid vehicle passed, needs to be a land vehicle!";
-	};
+};
 
 // Add PFH for proximity checking
 [
@@ -168,7 +168,7 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 	,{ ["<t color='#FFBB00' size = '.5'>You're disarming the IED.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;}
 	,{}
 	,{ 	
-		(_this select 0) setvariable ["IEDdisarmed", true, true];
+		(_this select 0) setVariable ["IEDdisarmed", true, true];
 		["<t color='#339900' size = '.5'>You've disarmed the IED.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;
 	},
 	{["<t color='#cc3232' size = '.5'>You've stopped disarming the IED.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;}

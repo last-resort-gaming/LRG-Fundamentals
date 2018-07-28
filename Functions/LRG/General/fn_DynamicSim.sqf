@@ -18,4 +18,4 @@ if !(dynamicSimulationSystemEnabled) exitwith {
 
 	"IsMoving" setDynamicSimulationDistanceCoef 3;
 
-	};
+};
