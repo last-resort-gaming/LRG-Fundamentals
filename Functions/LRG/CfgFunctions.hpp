@@ -26,6 +26,8 @@ class LR {
 				file = "LRG Fundamentals\Functions\LRG\General";
 				class AISpawns {postInit = 1;};
 				class Confirmation {postInit = 1;};
+				class ConfigPlayer {};
+				class ConfigZeus {};
 				class Diary { postInit = 1; };
 				class DynamicSim {postInit = 1;};
 				class initPlayerLocal {postInit = 1;};
@@ -36,9 +38,7 @@ class LR {
 				class PlayerAddActions {};
 				class RealWeather {postInit = 1;};
 				class SafeZone {postInit = 1;};
-				class SideChat {postInit = 1;};
-				class TFAR {postInit = 1;};
-				class ZeusEH {};								
+				class SideChat {postInit = 1;};												
 			};
 			
 			class Messages {
