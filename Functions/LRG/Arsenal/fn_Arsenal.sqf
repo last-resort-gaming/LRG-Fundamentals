@@ -1039,8 +1039,6 @@ if (_Type == "Vanilla") exitwith {
                 "UK3CB_BAF_762_L42A1_10Rnd_T",
                 "UK3CB_BAF_762_L42A1_20Rnd",
                 "UK3CB_BAF_762_L42A1_20Rnd_T",
-                "UK3CB_BAF_1Rnd_HE_Grenade_Shell",
-                "UK3CB_BAF_1Rnd_HEDP_Grenade_Shell",
                 "UK3CB_BAF_UGL_FlareWhite_F",
                 "UK3CB_BAF_UGL_FlareRed_F",
                 "UK3CB_BAF_UGL_FlareGreen_F",
@@ -1056,6 +1054,15 @@ if (_Type == "Vanilla") exitwith {
                 "UK3CB_BAF_1Rnd_81mm_Mo_Smoke_White",
                 "UK3CB_BAF_1Rnd_81mm_Mo_Guided",
                 "UK3CB_BAF_1Rnd_81mm_Mo_LG",
+				"UK3CB_BAF_1Rnd_HE_Grenade_Shell",
+				"UK3CB_BAF_1Rnd_HEDP_Grenade_Shell",
+				"UK3CB_BAF_1Rnd_Smoke_Grenade_shell",
+				"UK3CB_BAF_1Rnd_SmokeBlue_Grenade_shell",
+				"UK3CB_BAF_1Rnd_SmokeGreen_Grenade_shell",
+				"UK3CB_BAF_1Rnd_SmokeOrange_Grenade_shell",
+				"UK3CB_BAF_1Rnd_SmokePurple_Grenade_shell",
+				"UK3CB_BAF_1Rnd_SmokeRed_Grenade_shell",
+				"UK3CB_BAF_1Rnd_SmokeYellow_Grenade_shell",
                 "Laserbatteries"
 
         ];
