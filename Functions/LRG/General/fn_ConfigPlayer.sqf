@@ -37,23 +37,23 @@ _LongRange = [0,9,[LR1,LR2,LR4,LR3,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
 };
 if (_Section == "1 Section") exitwith {
 _ShortRange = [0,9,["100","125","150","425",LR0,LR0,LR0,LR0],0,nil,-1,0,false];
-_LongRange = [0,9,[LR1,LR2,LR4,LR3,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
+_LongRange = [0,9,[LR1,LR4,LR0,LR0,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
 };
 if (_Section == "2 Section") exitwith {
 _ShortRange = [0,9,["200","225","250","425",LR0,LR0,LR0,LR0],0,nil,-1,0,false];
-_LongRange = [0,9,[LR1,LR2,LR4,LR3,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
+_LongRange = [0,9,[LR1,LR4,LR0,LR0,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
 };
 if (_Section == "3 Section") exitwith {
 _ShortRange = [0,9,["300","325","350","425",LR0,LR0,LR0,LR0],0,nil,-1,0,false];
-_LongRange = [0,9,[LR1,LR2,LR4,LR3,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
+_LongRange = [0,9,[LR1,LR4,LR0,LR0,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
 };
 if (_Section == "909 EAW") exitwith {
 _ShortRange = [0,9,["401","402","403","404","405","406","407","425"],0,nil,-1,0,false];
-_LongRange = [0,9,[LR1,LR2,LR4,LR3,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
+_LongRange = [0,9,[LR3,LR4,LR2,LR0,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
 };
 if (_Section == "Support") exitwith {
 _ShortRange = [0,9,["70","75","425",LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
-_LongRange = [0,9,[LR1,LR2,LR4,LR3,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
+_LongRange = [0,9,[LR1,LR4,LR0,LR0,LR0,LR0,LR0,LR0,LR0],0,nil,-1,0,false];
 	};
 };
 	
