@@ -1,14 +1,14 @@
 /*
 	LRG MISSION TEMPLATE
-	LR_fnc_ZeusEH.sqf
+	LR_fnc_Zeus.sqf
 	Author: MitchJC
 	Description: Applies Skill Level and DynamicSimulation to units placed by Zeus.
 */
 params [
-"_Object"
+"_object"
 ];
 
-_Object addEventHandler ["CuratorObjectPlaced", {
+_object addEventHandler ["CuratorObjectPlaced", {
 	params ["_curator", "_entity"];
 	
 _class = typeOf (_entity);
@@ -20,16 +20,19 @@ _result  = call {
 				if ((typeName _entity) isEqualTo "OBJECT") exitWith { group _entity };
 				_entity;
 				};
-			[_Group, "LRG Default"] call LR_fnc_SetUnitSkill;
-			_Group enableDynamicSimulation true;
+			[_Group, "LRG Default"] remoteExec ["LR_fnc_SetUnitSkill",2];
+			[_Group, true] remoteExec ["enableDynamicSimulation",2];
 			};
 			
 		if (_class isKindOf "AllVehicles") exitWith {
-			{[_x, "LRG Default"] call LR_fnc_SetUnitSkill;
+			{[_x, "LRG Default"] remoteExec ["LR_fnc_SetUnitSkill",2];
 			} foreach crew _entity;
-			group _entity enableDynamicSimulation true;	
+			[group _entity , true] remoteExec ["enableDynamicSimulation",2];	
 			};					
 		};	
 	}];
+
+_object setVariable ["showNotification", false];
+_object setVariable ["birdType", "", true];
 	
 
