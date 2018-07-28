@@ -66,3 +66,6 @@ if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
 {
 _unit setUnitTrait [_x, true, true];
 } foreach _Traits;
+
+// This is required for backwards-compability!
+_unit setVariable ["LRG_section", _section, true];
