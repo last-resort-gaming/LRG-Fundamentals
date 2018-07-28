@@ -24,18 +24,21 @@ class LR {
 			class General {
 
 				file = "LRG Fundamentals\Functions\LRG\General";
+				class AISpawns {postInit = 1;};
 				class Confirmation {postInit = 1;};
 				class Diary { postInit = 1; };
+				class DynamicSim {postInit = 1;};
 				class initPlayerLocal {postInit = 1;};
 				class initServer {postInit = 1;};
+				class Logs {postInit = 1;};
 				class MedicalFacility {};
+				class PilotCheck {postInit = 1;};
 				class PlayerAddActions {};
 				class RealWeather {postInit = 1;};
 				class SafeZone {postInit = 1;};
 				class SideChat {postInit = 1;};
 				class TFAR {postInit = 1;};
-				class PilotCheck {postInit = 1;};
-				class AISpawns {postInit = 1;};
+				class ZeusEH {};								
 			};
 			
 			class Messages {
@@ -44,6 +47,7 @@ class LR {
 				class globalhint {};
 				class globalhintc {};
 				class globalhintsilent {};
+				class Sound3D {};				
 			};
 			
 			class PreInit {
