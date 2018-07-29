@@ -17,6 +17,6 @@ Author:
 	Mokka
 */
 
-if (! (LR_start && (["AISpawns.sqf"] call LR_fnc_fileExists))) exitWith {};
+if ((not LR_start) || (not ["AISpawns.sqf"] call LR_fnc_fileExists)) exitWith {};
 
 call compile preprocessFileLineNumbers "AISpawns.sqf";
