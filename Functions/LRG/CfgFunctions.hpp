@@ -4,6 +4,7 @@ class LR {
 			class AI {
 				file = "LRG Fundamentals\Functions\LRG\AI";
 				class InfantryGarrison {};
+				class SetInitialAI {postinit = 1;};
 				class SetUnitSkill {};
 				class SpawnAI {};		
 			};
