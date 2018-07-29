@@ -76,5 +76,6 @@ class LR {
 				class SetIntelAction {};
 				class IEDVehicle {};
 				class SpawnExplosives {};
+				class MakeIED {};
 			};
 };

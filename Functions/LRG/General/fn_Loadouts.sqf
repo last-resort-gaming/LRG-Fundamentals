@@ -62,7 +62,7 @@ _LoadoutSelect = call {
 	};
 	if (_Loadout == "3CB Spotter") exitwith {
 		_Equipment = [["UK3CB_BAF_L129A1","UK3CB_BAF_Silencer_L115A3","UK3CB_BAF_LLM_IR_Black","RKSL_optic_PMII_312",["UK3CB_BAF_762_L42A1_20Rnd_T",20],[],"UK3CB_underbarrel_acc_fgrip_bipod"],[],["UK3CB_BAF_L131A1","","","",["UK3CB_BAF_9_17Rnd",17],[],""],["UK3CB_BAF_U_CombatUniform_MTP_Ghillie_RM",[["ACE_CableTie",1],["ACE_EarPlugs",1],["ACE_Flashlight_XL50",1],["ACE_MapTools",1],["UK3CB_BAF_SmokeShell",5,1]]],["UK3CB_BAF_V_Osprey_Marksman_A",[["UK3CB_BAF_762_L42A1_20Rnd_T",8,20],["HandGrenade",2,1]]],["UK3CB_BAF_B_Bergen_MTP_Radio_L_A",[["ACE_elasticBandage",15],["ACE_quikclot",15],["ACE_epinephrine",1],["ACE_morphine",5],["ACE_packingBandage",10],["ACE_tourniquet",4],["UK3CB_BAF_HMNVS",1],["ACE_IR_Strobe_Item",2],["ACE_EntrenchingTool",1],["ACE_Kestrel4500",1],["ACE_SpottingScope",1],["ACE_microDAGR",1],["ACE_Chemlight_HiWhite",2,1],["ACE_Chemlight_IR",2,1],["SmokeShellBlue",2,1],["SmokeShellGreen",2,1]]],"UK3CB_BAF_H_Mk7_Scrim_C","",["Rangefinder","","","",[],[],""],["ItemMap","ItemGPS","tf_anprc152","ItemCompass","tf_microdagr",""]];
-		};
+	};
 };
 
 _unit setUnitLoadout _Equipment;

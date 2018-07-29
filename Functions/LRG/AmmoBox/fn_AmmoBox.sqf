@@ -39,7 +39,7 @@ if (isServer) then {
 private ["_AvailableItems", "_AvailableHeadgear", "_AvailableGoggles", "_AvailableUniforms", "_AvailableVests", "_AvailableBackpacks", "_AvailableAttachments", "_AvailableMagazines", "_AvailableWeapons"];
 
 _ArsenalType = call {
-	if (_Type == "Vanilla") exitwith {
+	if (_Type isEqualTo "Vanilla") exitwith {
 		_AvailableItems = [
 			"ItemWatch", 
 			"ItemCompass", 
@@ -94,7 +94,7 @@ _ArsenalType = call {
 		_AvailableBackpacks = [];
 	};
 	
-	if (_type == "3CB") exitwith {
+	if (_type isEqualTo "3CB") exitwith {
 	    _AvailableItems = [
             "ACE_elasticBandage",
             "ACE_packingBandage",
@@ -138,7 +138,7 @@ _ArsenalType = call {
 		_AvailableBackpacks = [];			
 	};
 	
-	if (_type == "RHS") exitwith {
+	if (_type isEqualTo "RHS") exitwith {
 	    _AvailableItems = [
             "ACE_elasticBandage",
             "ACE_packingBandage",
