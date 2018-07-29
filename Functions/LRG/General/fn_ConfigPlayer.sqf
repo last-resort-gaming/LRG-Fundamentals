@@ -2,23 +2,24 @@
 	LRG MISSION TEMPLATE
 	LR_fnc_ConfigPlayer.sqf
 	Author: MitchJC
-	Description: Used to configure basic player attributes.
+	Description: Used to configure basic player attributes and equipment.
 	
 	Syntax
-	[_unit, _Section, [_Traits]] call LR_fnc_ConfigPlayer;
+	[_unit, _Section, [_Traits], _Loadout] call LR_fnc_ConfigPlayer;
 	
 	Parameters
 	_unit - Player the setup is applied to.  <OBJECT>
 	_Section - The Section the Player is in. <STRING>
 	_Traits - Which Traits the player has, can be more than one. <ARRAY>
+	_Loadout - Name of Loadout to call. Changes player equipment to Loadout from LRG Fundamentals. <STRING>
+
 	
 	Example 1:	[this] call LR_fnc_ConfigPlayer;
 	Example 2:	[this, "1 Section"] call LR_fnc_ConfigPlayer;
 	Example 3:	[this, "909 EAW", ["Pilot"]] call LR_fnc_ConfigPlayer;
 	Example 4;	[this, "Command", ["Pilot", "Mission Maker"]] call LR_fnc_ConfigPlayer;
+	Example 5:	[this, "909 EAW", ["Pilot"], "3CB Pilot"] call LR_fnc_ConfigPlayer;
 	
-	_Section = ["1 Section", "2 Section", "3 Section", "909 EAW", "Support"];
-	_Trait = ["Mission Maker", "Pilot"];
 */
 
 params [
