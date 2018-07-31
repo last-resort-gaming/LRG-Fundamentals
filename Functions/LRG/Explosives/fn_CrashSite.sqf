@@ -15,10 +15,7 @@
 	
 	Example 1:	["", [CrashPlane, getPos crashSite]] call LR_fnc_crashSite;
 	Example 2:	["", [MyPlane, [1234,4321,0]]] call LR_fnc_crashSite;
-	
-	TODO:
-	_soundeffect
-	_RespawnDistance
+
 	
 */
 
@@ -104,7 +101,7 @@ switch (_stage) do {
   	case "teleport": {
     	{
     		// https://community.bistudio.com/wiki/vectorAdd
-      		_randomPos = _crashSite vectorAdd [random 200, random 200, 0];
+      		_randomPos = _crashSite vectorAdd [random 300, random 300, 0];
         
         	// preliminary shit, test if people lose their stuff or no
         	_x action ["Eject", _vehicle];

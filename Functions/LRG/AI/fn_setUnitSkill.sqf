@@ -1,5 +1,5 @@
 /*
-Function: YAINA_SPAWNS_fnc_setUnitSkill
+Function: LR_fnc_SetUnitSkill
 
 Description:
 	Set the given unit's skill level to the desired one.

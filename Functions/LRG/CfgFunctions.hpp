@@ -1,57 +1,65 @@
 class LR {
 
 			tag = "LR";
+			class AddActions {
+				file = "LRG Fundamentals\Functions\LRG\AddActions";
+				class InitInspectableIntel {};				
+				class LaptopHoldActions {};
+				class PlayerAddActions {};
+				class RunIntelAction {};
+				class SetIntelAction {};
+			};
+
 			class AI {
 				file = "LRG Fundamentals\Functions\LRG\AI";
-				class InfantryGarrison {};
-				class SetInitialAI {postinit = 1;};
+				class InfantryGarrison {};				
 				class SetUnitSkill {};
 				class SpawnAI {};		
 			};
 			
-			class AmmoBox {
+			class Equipment {
 
-				file = "LRG Fundamentals\Functions\LRG\AmmoBox";
+				file = "LRG Fundamentals\Functions\LRG\Equipment";
 				class AmmoBox {};
+				class Arsenal {};
+				class Loadouts {};
 			};
 			
-			class Arsenal {
+			class Explosives {
 
-				file = "LRG Fundamentals\Functions\LRG\Arsenal";
-				class Arsenal {};
-				class ArsenalLoadSave {postInit = 1;};
+				file = "LRG Fundamentals\Functions\LRG\Explosives";
+				class CrashSite {};
+				class IEDVehicle {};
+				class MakeIED {};
+				class SpawnExplosives {};
 			};
-
 			class General {
 
 				file = "LRG Fundamentals\Functions\LRG\General";
-				class AISpawns {postInit = 1;};
-				class Confirmation {postInit = 1;};
 				class ConfigPlayer {};
-				class ConfigZeus {};
-				class Diary { postInit = 1; };
-				class DynamicSim {postInit = 1;};
-				class initPlayerLocal {postInit = 1;};
-				class initServer {postInit = 1;};
-				class Loadouts {};
-				class Logs {postInit = 1;};
+				class ConfigZeus {};			
 				class MedicalFacility {};
+				class Sound3D {};
+			};
+			
+			class PostInit {
+
+				file = "LRG Fundamentals\Functions\LRG\PostInit";
+				class AISpawns {postinit = 1;};
+				class ArsenalLoadSave {postInit = 1;};
+				class Confirmation {postInit = 1;};
+				class Diary {postInit = 1;};
+				class DynamicSim { postInit = 1; };
+				class InitPlayerLocal {postInit = 1;};
+				class InitServer {postInit = 1;};
+				class Logs {postInit = 1;};
 				class PilotCheck {postInit = 1;};
-				class PlayerAddActions {};
 				class RealWeather {postInit = 1;};
 				class SafeZone {postInit = 1;};
-				class SideChat {postInit = 1;};												
+				class SetInitialAI {postInit = 1;};
+				class SideChat {postInit = 1;};
 			};
-			
-			class Messages {
 
-				file = "LRG Fundamentals\Functions\LRG\Messages";
-				class globalhint {};
-				class globalhintc {};
-				class globalhintsilent {};
-				class Sound3D {};				
-			};
-			
 			class PreInit {
 
 				file = "LRG Fundamentals\Functions\LRG\PreInit";
@@ -64,18 +72,5 @@ class LR {
 				file = "LRG Fundamentals\Functions\LRG\Training";
 				class Casualty {};	
 				class ResetTargets {};
-			};	
-			
-			class UsefulFuncs {
-
-				file = "LRG Fundamentals\Functions\LRG\UsefulFuncs";
-				class CrashSite {};
-				class InitInspectableIntel {};
-				class LaptopHoldActions {};
-				class RunIntelAction {};
-				class SetIntelAction {};
-				class IEDVehicle {};
-				class SpawnExplosives {};
-				class MakeIED {};
 			};
 };

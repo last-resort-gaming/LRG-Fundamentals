@@ -1,8 +1,18 @@
 /*
 	LRG MISSION TEMPLATE
-	LR_fnc_Zeus.sqf
+	LR_fnc_ConfigZeus.sqf
 	Author: MitchJC
-	Description: Applies Skill Level and DynamicSimulation to units placed by Zeus.
+	Description: Used to configure a Zeus Module. Ensures that any AI placed down by that Zeus have Dynamic Sim enabled and their difficulty settings configured to the LRG Default. 
+	
+	Syntax
+	[_object] call LR_fnc_ConfigZeus;
+	
+	Parameters
+	_object - Zeus Module to apply the function to.  <OBJECT>
+	
+	Example 1:	[this] call LR_fnc_ConfigZeus;
+
+	
 */
 params [
 "_object"
