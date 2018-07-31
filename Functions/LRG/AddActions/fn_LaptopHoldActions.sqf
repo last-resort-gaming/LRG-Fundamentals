@@ -11,7 +11,9 @@
 	_object - Object the addaction is applied to.  <OBJECT>
 	_title - The name of the addaction, visable to players. <STRING>
 	_time - How long the action must be held to complete. <NUMBER>
-	_sound -  Path to Sound file. only A3 sound files supported. https://community.bistudio.com/wiki/Arma_3:_SoundFiles <STRING>
+	_SoundClass - Class name of sound from CfgSounds <STRING>
+	_distance - How far away the sound can be heard from _object. <NUMBER>
+	_pitch - pitch of the sound. Should usually be 1. <NUMBER>
 	
 	Example 1:	[this] call LR_fnc_LaptopHoldActions;
 	Example 2:	[MyLaptopName] call LR_fnc_LaptopHoldActions;
@@ -26,7 +28,10 @@ params [
 	"_object",
 	["_Title", "Close the Laptop"],
 	["_Time", 10],
-	["_sound", "A3\Missions_F_Bootcamp\data\sounds\vr_shutdown.wss"]
+	["_SoundClass", "AirRaid"],
+	["_distance", 250],
+	["_pitch", 1]
+
 ];
 
 [
@@ -49,10 +54,13 @@ params [
 		_Newobject SetPosATL _OriginalPos;
 		_Newobject setDir _OriginalDir;
 		{_x addCuratorEditableObjects [[_Newobject], false];} ForEach allcurators;
-		playSound3D [((_this select 3) select 3), _Newobject, false, getposATL _Newobject, 1, 1, 200];
-	},
+//		playSound3D [((_this select 3) select 3), _Newobject, false, getposATL _Newobject, 1, 1, 200];
+		[_Newobject, (_this select 3) select 3, (_this select 3) select 4, (_this select 3) select 5] call LR_fnc_Sound3D;
+//		[_Newobject, "AirRaid"] call LR_fnc_Sound3D;
+		
+		},
 	{[format["<t color='#cc3232' size = '.5'>Aborted</t>",(_this select 3) select 1],-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;},
-	[_object, _Title, _Time, _sound],
+	[_object, _Title, _Time, _SoundClass, _distance, _pitch],
 	_Time,
 	0,
 	true,
