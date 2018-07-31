@@ -1,3 +1,5 @@
+if (!isserver) exitwith {};
+
 params [
 "_unit",
 "_Loadout"
