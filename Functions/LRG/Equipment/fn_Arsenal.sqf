@@ -19,7 +19,7 @@
 	Example 4:	[MyAmmoCrate, "RHS", 0] call LR_fnc_Arsenal;
 */
 
-
+if (!isServer) exitwith {};
 
 params [
 	"_object",
@@ -27,14 +27,7 @@ params [
 	["_Duration", 0]
 ];
 
-if (isServer) then {
-	["AmmoboxInit", [_object, true]] call BIS_fnc_arsenal;
-};
-
-[_object, [true], false] call BIS_fnc_removeVirtualItemCargo;
-[_object, [true], false] call BIS_fnc_removeVirtualWeaponCargo;
-[_object, [true], false] call BIS_fnc_removeVirtualBackpackCargo;
-[_object, [true], false] call BIS_fnc_removeVirtualMagazineCargo;
+	["AmmoboxInit", [_object, false]] call BIS_fnc_arsenal;
 
 private ["_AvailableItems", "_AvailableHeadgear", "_AvailableGoggles", "_AvailableUniforms", "_AvailableVests", "_AvailableBackpacks", "_AvailableAttachments", "_AvailableMagazines", "_AvailableWeapons"];
 
@@ -1692,38 +1685,21 @@ _ArsenalType = call {
 };
 
 
-[_object, _AvailableHeadGear, false] call BIS_fnc_addVirtualItemCargo;
-
-
-[_object, _AvailableGoggles, false] call BIS_fnc_addVirtualItemCargo;
-
-
-[_object, _AvailableUniforms, false] call BIS_fnc_addVirtualItemCargo;
-
-
-[_object, _AvailableVests, false] call BIS_fnc_addVirtualItemCargo;
-
-
-[_object, _AvailableItems, false] call BIS_fnc_addVirtualItemCargo;
-
-
-[_object, _AvailableAttachments, false] call BIS_fnc_addVirtualItemCargo;
-
-
-[_object, _AvailableWeapons, false] call BIS_fnc_addVirtualWeaponCargo;
-
-
-[_object, _AvailableBackpacks, false] call BIS_fnc_addVirtualBackpackCargo;
-
-
-[_object, _AvailableMagazines, false] call BIS_fnc_addVirtualMagazineCargo;
+[_object, _AvailableHeadGear, true] call BIS_fnc_addVirtualItemCargo;
+[_object, _AvailableGoggles, true] call BIS_fnc_addVirtualItemCargo;
+[_object, _AvailableUniforms, true] call BIS_fnc_addVirtualItemCargo;
+[_object, _AvailableVests, true] call BIS_fnc_addVirtualItemCargo;
+[_object, _AvailableItems, true] call BIS_fnc_addVirtualItemCargo;
+[_object, _AvailableAttachments, true] call BIS_fnc_addVirtualItemCargo;
+[_object, _AvailableWeapons, true] call BIS_fnc_addVirtualWeaponCargo;
+[_object, _AvailableBackpacks, true] call BIS_fnc_addVirtualBackpackCargo;
+[_object, _AvailableMagazines, true] call BIS_fnc_addVirtualMagazineCargo;
 
 {
 	_x addCuratorEditableObjects [[_object], false];
 } forEach allCurators;				
 				
 
-If (isServer) then {
 	_handle = [
 	{
 		(_this select 0) params ["_object", "_duration"];
@@ -1737,4 +1713,3 @@ If (isServer) then {
 			[_handle] call CBA_fnc_removePerFrameHandler;
 		};
 	}, 60, [_object, _duration]] call CBA_fnc_addPerFrameHandler;
-};
