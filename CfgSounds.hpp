@@ -20,5 +20,12 @@ class CfgSounds
 		name		= "NukeAlarm";
 		sound[]		= { "LRG Fundamentals\Media\Sounds\NukeAlarm.ogg", 1, 1, 100 };
 		titles[]	= { 0, "" };
-	};	
+	};
+
+	class Windows
+	{
+		name		= "Windows";
+		sound[]		= { "LRG Fundamentals\Media\Sounds\Windows.ogg", 1, 1, 100 };
+		titles[]	= { 0, "" };
+	};		
 };
