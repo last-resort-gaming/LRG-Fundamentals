@@ -36,6 +36,7 @@ class LR {
 			
 			class Interaction {
 				file = "LRG Fundamentals\Functions\LRG\Interation";
+				class DynamicText {};
 				class InitInspectableIntel {};				
 				class LaptopHoldActions {};
 				class PlayerAddActions {};
