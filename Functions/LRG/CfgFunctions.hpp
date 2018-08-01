@@ -1,15 +1,6 @@
 class LR {
 
 			tag = "LR";
-			class AddActions {
-				file = "LRG Fundamentals\Functions\LRG\AddActions";
-				class InitInspectableIntel {};				
-				class LaptopHoldActions {};
-				class PlayerAddActions {};
-				class RunIntelAction {};
-				class SetIntelAction {};
-			};
-
 			class AI {
 				file = "LRG Fundamentals\Functions\LRG\AI";
 				class InfantryGarrison {};				
@@ -33,6 +24,7 @@ class LR {
 				class MakeIED {};
 				class SpawnExplosives {};
 			};
+
 			class General {
 
 				file = "LRG Fundamentals\Functions\LRG\General";
@@ -42,6 +34,15 @@ class LR {
 				class Sound3D {};
 			};
 			
+			class Interaction {
+				file = "LRG Fundamentals\Functions\LRG\Interation";
+				class InitInspectableIntel {};				
+				class LaptopHoldActions {};
+				class PlayerAddActions {};
+				class RunIntelAction {};
+				class SetIntelAction {};
+			};
+
 			class PostInit {
 
 				file = "LRG Fundamentals\Functions\LRG\PostInit";
