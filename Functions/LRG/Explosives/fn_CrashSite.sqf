@@ -65,7 +65,7 @@ switch (_stage) do {
 			{
 				["fadeOut", _this] call LR_fnc_crashSite;
 			}, [_vehicle, _crashSite, _players], 2
-		] call CBA_fnc_waitAndExecute;
+		] call CBAP_fnc_waitAndExecute;
 	};
   
 	case "fadeOut": {
@@ -82,7 +82,7 @@ switch (_stage) do {
 			{
 				["fadeSound", _this] call LR_fnc_crashSite;
 			}, _args, 9
-		] call CBA_fnc_waitAndExecute;
+		] call CBAP_fnc_waitAndExecute;
 	};
   
 	case "fadeSound": {
@@ -95,7 +95,7 @@ switch (_stage) do {
     	  	{
     	    	["teleport", _this] call LR_fnc_crashSite;
     	  	}, _args, 2
-    	] call CBA_fnc_waitAndExecute;
+    	] call CBAP_fnc_waitAndExecute;
 	};
   
   	case "teleport": {
@@ -114,7 +114,7 @@ switch (_stage) do {
       		{
       	    	["woundAndEnable", _this] call LR_fnc_crashSite;
       	  	}, _args, 1
-      	] call CBA_fnc_waitAndExecute;
+      	] call CBAP_fnc_waitAndExecute;
   	};
   
   	case "woundAndEnable": {
@@ -136,7 +136,7 @@ switch (_stage) do {
     	  	{
     	    	["effects", _this] call LR_fnc_crashSite;
     	  	}, _args, 3
-    	] call CBA_fnc_waitAndExecute;
+    	] call CBAP_fnc_waitAndExecute;
   	};
   
   	case "effects": {
@@ -152,7 +152,7 @@ switch (_stage) do {
       		{
         		["finish", _this] call LR_fnc_crashSite;
 	      	}, _args, 1
-    	] call CBA_fnc_waitAndExecute;
+    	] call CBAP_fnc_waitAndExecute;
 	};
   
   	case "finish": {

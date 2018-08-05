@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
-Function: CBA_fnc_getTurret
+Function: CBAP_fnc_getTurret
 
 Description:
     A function used to find out which config turret is turretpath.
@@ -10,7 +10,7 @@ Parameters:
 
 Example:
     (begin example)
-    _config = [vehicle player, [0]] call CBA_fnc_getTurret
+    _config = [vehicle player, [0]] call CBAP_fnc_getTurret
     (end)
 
 Returns:

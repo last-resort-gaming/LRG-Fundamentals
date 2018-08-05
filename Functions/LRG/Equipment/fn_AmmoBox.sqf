@@ -33,7 +33,7 @@ params [
 	
 private ["_AvailableItems", "_AvailableHeadgear", "_AvailableGoggles", "_AvailableUniforms", "_AvailableVests", "_AvailableBackpacks", "_AvailableAttachments", "_AvailableMagazines", "_AvailableWeapons"];
 
-_ArsenalType = call {
+call {
 	if (_Type isEqualTo "Vanilla") exitwith {
 		_AvailableItems = [
 			"ItemWatch", 

@@ -45,7 +45,7 @@ if (_units isEqualTo []) then {
 
     private ["_groupType", "_side"];
 	
-	_Armyresult = call {
+	call {
 
 		_side = east;
 

@@ -83,7 +83,7 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 	},
 	5,
 	[_vehicle, _proximityRadius, _detonationTime, _announce]
-] call CBA_fnc_addPerFrameHandler;
+] call CBAP_fnc_addPerFrameHandler;
 
 // Add PFH to check for explosives armed
 [
@@ -152,7 +152,7 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 	},
 	1,
 	[_vehicle, _detonationTime, _secondaries, _announce, _announceInterval]
-] call CBA_fnc_addPerFrameHandler;
+] call CBAP_fnc_addPerFrameHandler;
 
 // Add a holdAction for disarming the bomb.
 [

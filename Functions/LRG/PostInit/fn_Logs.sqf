@@ -24,7 +24,7 @@ if (isClass (configFile >> "CfgPatches" >> "a3log")) then {
 				[_log,"LRG_DEATHLOG"] call A3Log;
 			};
 		}
-	] call CBA_fnc_addEventHandler;
+	] call CBAP_fnc_addEventHandler;
 	
 	_log = format ["********************* %1 *********************",briefingName];	
 	[_log,"LRG_CONNECTLOG"] remoteExecCall ["A3Log", 2];
