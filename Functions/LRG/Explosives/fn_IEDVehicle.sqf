@@ -74,9 +74,9 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 				if (_announce) then {
 					// Tell everyone that this is a thing that happened if the user so wishes:
 					[
-						format ["<t color='#cc3232' size = '.5'>The IED has been armed and will detonate in %1 seconds!</t>",_detonationTime],
-						-1,0.8,5,2,0,789
-					] remoteExec ["BIS_fnc_dynamicText", 0];
+						format ["The IED has been armed and will detonate in %1 seconds!",_detonationTime],
+						[-1, 0.8],"#cc3232", 0.5
+					] call LR_fnc_dynamicText;
 				};
 			};
 		} forEach allPlayers;
@@ -115,9 +115,9 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 			&& (not (_timeLeft == _detonationTime)) 
 			&& (_timeLeft != 0)) then {
 			[
-				format ["<t color='#cc3232' size = '.5'>The IED will detonate in %1 seconds!</t>",_timeLeft],
-				-1,0.8,5,2,0,789
-			] remoteExec ["BIS_fnc_dynamicText", 0];
+				format ["The IED will detonate in %1 seconds!",_timeLeft],
+				[-1, 0.8], "#cc3232", 0.5
+			] call LR_fnc_dynamicText;
 		};
 
 		// If the delta of startTime and current time exceeds the detonation timer,
@@ -129,9 +129,9 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 
 			if (_announce) then {
 				[
-					"<t color='#cc3232' size = '.5'>Time's out, the IED could detonate any second!</t>",
-					-1,0.8,5,2,0,789
-				] remoteExec ["BIS_fnc_dynamicText", 0];
+					"Time's out, the IED could detonate any second!",
+					[-1, 0.8], "#cc3232", 0.5
+				] call LR_fnc_dynamicText;
 			};
 
 			// Set the amount of secondary explosions according to the param.
@@ -165,13 +165,13 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 	&& {_target getVariable [""IEDarmed"",false]} 
 	&& {not (_target getVariable [""IEDdetonated"",false])}"
 	,"true"
-	,{ ["<t color='#FFBB00' size = '.5'>You're disarming the IED.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;}
+	,{ ["You're disarming the IED.", [-1, 0.8], "#FFBB00", 0.5, false] call LR_fnc_dynamicText;}
 	,{}
 	,{ 	
 		(_this select 0) setVariable ["IEDdisarmed", true, true];
-		["<t color='#339900' size = '.5'>You've disarmed the IED.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;
+		["You've disarmed the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;
 	},
-	{["<t color='#cc3232' size = '.5'>You've stopped disarming the IED.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;}
+	{["You've stopped disarming the IED.", [-1, 0.8], "#cc3232"] call LR_fnc_dynamicText;}
 	,[]
 	,random [5, 7.5, 10]
 	,-92

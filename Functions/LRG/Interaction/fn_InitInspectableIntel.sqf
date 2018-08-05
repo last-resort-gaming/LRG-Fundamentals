@@ -121,7 +121,7 @@ if (_notifySide) then {
 		"IntelObjectFound",
 		{
 			params[ "", "_foundBy" ];
-			[format ["<t color='#339900' size = '.5'>Intel collected by %1</t>", name _foundBy],1,-0.2,5,0,0,790] remoteExec ["BIS_fnc_dynamicText",0,false];	
+			[format ["Intel collected by %1", name _foundBy], [1, -0.2], "#339900", 0.5] call LR_fnc_dynamicText;	
 		}
 	] call BIS_fnc_addScriptedEventHandler;
 };

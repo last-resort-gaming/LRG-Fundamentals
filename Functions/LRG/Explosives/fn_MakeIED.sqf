@@ -6,6 +6,10 @@ Description:
 	primed for detonation if any player comes within the given radius.
 	The explosives will detonate roughly after the time given has passed.
 	The detonation may also produce smaller secondary detonations. 
+
+	If the time until detonation is a negative number (eg. -5), the actual time
+	until detonation is randomised between 0 and that number, in our example a
+	value somewhere between 0 and 5.
 	
 	If _announce is set to true, an announcement will be made once the IED has 
 	been armed, indicating the approximate time until detonation and when it is 
@@ -23,7 +27,7 @@ Description:
 
 Parameters:
 	_object - The object which shall be initialized as an IED
-	_detonationTime - The time in seconds after which the explosives will go off once armed
+	_detonationTime - The time in seconds after which the explosives will go off once armed, negative for random time up to that value
 	_proximityRadius - The IED will be armed if any player comes closer to the vehicle than this radius (in metres)
 	_secondaries - Set to true to have the detonation of the IED also produce a random amount of secondary explosions around the main detonation
 	_announce - Set to true to enable announcements about the state of the IED
@@ -63,6 +67,11 @@ params [
 
 if ((!isServer) || (!isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
 
+// Randomise detonation time if param is negative
+if (_detonationTime < 0) then {
+	_detonationTime = random (abs _detonationTime);
+};
+
 // Create the physical explosive
 _explosive = "ACE_Explosives_Place_SatchelCharge" createVehicle [0, 0, 0];
 _pos = getPos _object;
@@ -88,7 +97,7 @@ _action = [
 	"",
 	{
 		(_this select 0) setVariable ["IEDdisarmed", true, true];
-		["<t color='#339900' size = '.5'>You've disarmed the IED.</t>",-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;
+		["You've disarmed the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;
 	},
 	_condition
 ] call ace_interact_menu_fnc_createAction;
@@ -115,9 +124,9 @@ _action = [
 				// Tell everyone that this is a thing that happened if the user so wishes:
 				if (_announce) then {
 					[
-						format ["<t color='#cc3232' size = '.5'>The IED has been armed and will detonate in %1 seconds!</t>",_detonationTime],
-						-1,0.8,5,2,0,789
-					] remoteExec ["BIS_fnc_dynamicText", 0];
+						format ["The IED has been armed and will detonate in %1 seconds!",_detonationTime],
+						[-1, 0.8],"#cc3232", 0.5
+					] call LR_fnc_dynamicText;
 				};
 			};
 		} forEach allPlayers;
@@ -160,9 +169,9 @@ _action = [
 			&& (not (_timeLeft == _detonationTime)) 
 			&& (_timeLeft != 0)) then {
 			[
-				format ["<t color='#cc3232' size = '.5'>The IED will detonate in %1 seconds!</t>",_timeLeft],
-				-1,0.8,5,2,0,789
-			] remoteExec ["BIS_fnc_dynamicText", 0];
+				format ["The IED will detonate in %1 seconds!",_timeLeft],
+				[-1, 0.8], "#cc3232", 0.5
+			] call LR_fnc_dynamicText;
 		};
 
 		// If the delta of startTime and current time exceeds the detonation timer,
@@ -174,9 +183,9 @@ _action = [
 
 			if (_announce) then {
 				[
-					"<t color='#cc3232' size = '.5'>Time's out, the IED could detonate any second!</t>",
-					-1,0.8,5,2,0,789
-				] remoteExec ["BIS_fnc_dynamicText", 0];
+					"Time's out, the IED could detonate any second!",
+					[-1, 0.8], "#cc3232", 0.5
+				] call LR_fnc_dynamicText;
 			};
 
 			_detIn = _timeLeft + random (3) - 1.5;
