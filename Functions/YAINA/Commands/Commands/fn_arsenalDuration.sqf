@@ -25,6 +25,7 @@ params ["_owner", "_caller", "_argStr"];
 _duration = parseNumber _argStr;
 
 ArsenalDuration = _duration;
+if (_duration < 0) then {_duration = 0;};
 
 _msg = format ["Duration of Arsenal has been set to %1", _duration];
 _msg remoteExecCall ["systemChat", _owner];

@@ -23,7 +23,7 @@ params ["_owner", "_caller", "_argStr"];
 
 _duration = parseNumber _argStr;
 
-if (_duration < -1 || _duration > 120) exitWith {};
+if (_duration < 0 || _duration > 120) then {_duration = 0};
 
 SideChatDuration = _duration;
 
