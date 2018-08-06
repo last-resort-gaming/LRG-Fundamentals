@@ -49,41 +49,41 @@ if (_units isEqualTo []) then {
 
 		_side = east;
 
-		if (_army == "CSAT") exitWith {
+		if (_army isEqualto "CSAT") exitWith {
 			_groupType = (configFile >> "CfgGroups" >> "East" >> "OPF_F" >> "UInfantry" >> "OIA_GuardSquad");
 		};
 
-		if (_army == "CSAT Pacific") exitWith {
+		if (_army isEqualto "CSAT Pacific") exitWith {
 			_groupType = (configFile >> "CfgGroups" >> "East" >> "OPF_T_F" >> "Infantry" >> "O_T_InfSquad");
 		};
 
-		if (_army == "AAF") exitWith {
+		if (_army isEqualto "AAF") exitWith {
 			_side = resistance;
 			_groupType = (configFile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry" >> "HAF_InfSquad");
 		};
 
-		if (_army == "Syndikat") exitWith {
+		if (_army isEqualto "Syndikat") exitWith {
 			_side = resistance;
 			_groupType = (configFile >> "CfgGroups" >> "Indep" >> "IND_C_F" >> "Infantry" >> "BanditCombatGroup");
 		};
 
-		if (_army == "TM") exitWith {
+		if (_army isEqualto "TM") exitWith {
 			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_TK_MILITIA" >> "Infantry" >> "CUP_O_TK_MILITIA_Group");
 		};
 
-		if (_army == "CRS") exitWith {
+		if (_army isEqualto "CRS") exitWith {
 			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_ChDKZ" >> "Infantry" >> "CUP_O_ChDKZ_InfSquad");
 		};
 
-		if (_army == "CUP AFRF") exitWith {
+		if (_army isEqualto "CUP AFRF") exitWith {
 			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_RU" >> "Infantry" >> "CUP_O_RU_InfSquad_EMR");
 		};
 
-		if (_army == "SLA") exitWith {
+		if (_army isEqualto "SLA") exitWith {
 			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_SLA" >> "Infantry_Urban" >> "CUP_O_SLA_InfantrySquad_Urban");
 		};
 
-		if (_army == "TA") exitWith {
+		if (_army isEqualto "TA") exitWith {
 			_groupType = (configFile >> "CfgGroups" >> "East" >> "CUP_O_TK" >> "Infantry" >> "CUP_O_TK_InfantrySquad");
 		};
 	};
