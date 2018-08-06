@@ -8,3 +8,5 @@ tools/Natural Docs
 # IDEA stuff
 .idea/
 *.iml
+
+\.vscode/
