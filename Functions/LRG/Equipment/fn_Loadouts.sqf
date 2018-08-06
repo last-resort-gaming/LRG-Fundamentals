@@ -1,9 +1,9 @@
-if (!isserver) exitwith {};
-
 params [
 "_unit",
 "_Loadout"
 ];
+
+if (!local _unit) exitwith {};
 
 private ["_Equipment"];
 
