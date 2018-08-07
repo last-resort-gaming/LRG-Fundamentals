@@ -3,8 +3,6 @@ params [
 "_Loadout"
 ];
 
-if (!local _unit) exitwith {};
-
 private ["_Equipment"];
 
 _LoadoutSelect = call {

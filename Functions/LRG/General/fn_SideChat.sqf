@@ -10,7 +10,7 @@ params [
 	["_Section", ""]
 ];
 
-if ((!local _unit) || !(isClass (configFile >> "CfgPatches" >> "task_force_radio"))) exitwith {};
+if !(isClass (configFile >> "CfgPatches" >> "task_force_radio")) exitwith {};
 
 if ((_Section == "Command") || (_Section == "909 EAW")) then {
 		1 enableChannel [true, false];
