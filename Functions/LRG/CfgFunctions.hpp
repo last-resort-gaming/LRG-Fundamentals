@@ -36,7 +36,7 @@ class LR {
 			};
 			
 			class Interaction {
-				file = "LRG Fundamentals\Functions\LRG\Interation";
+				file = "LRG Fundamentals\Functions\LRG\Interaction";
 				class DynamicText {};
 				class InitInspectableIntel {};				
 				class LaptopHoldActions {};
@@ -50,7 +50,6 @@ class LR {
 				file = "LRG Fundamentals\Functions\LRG\PostInit";
 				class AISpawns {postinit = 1;};
 				class ArsenalLoadSave {postInit = 1;};
-				class Confirmation {postInit = 1;};
 				class Diary {postInit = 1;};
 				class DynamicSim { postInit = 1; };
 				class InitPlayerLocal {postInit = 1;};
