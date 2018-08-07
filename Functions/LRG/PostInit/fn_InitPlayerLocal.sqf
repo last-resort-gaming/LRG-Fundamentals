@@ -20,6 +20,7 @@ if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 	  
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
 	player setVariable ["tf_sendingDistanceMultiplicator", RadioRange];
+	player setVariable ["TF_terrain_interception_coefficient", TerrainInterference];
 } else {
 	1 enableChannel [true, true];
 	2 enableChannel [true, true];
