@@ -15,8 +15,6 @@ class YAINA_CMD {
         file = "LRG Fundamentals\Functions\YAINA\Commands\Commands";
         class help {};
         class logfps {};
-        class disableArsenal {};
-        class arsenalDuration {};
         class safeZoneEnabled {};
         class safeZonePosition {};
         class safeZoneArea {};

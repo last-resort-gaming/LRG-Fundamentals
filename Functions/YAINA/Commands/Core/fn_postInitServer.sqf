@@ -24,8 +24,6 @@ if (not isServer) exitWith {};
 // Mapping of commands to individual owners
 YAINA_commands = [[], []];
 YAINA_allCommands = [
-    "arsenalDuration",
-    "disableArsenal",
     "logfps",
     "safeZoneArea",
     "safeZoneEnabled",
