@@ -17,6 +17,6 @@ Author:
 	Mokka
 */
 
-if ((not LR_start) || (not (["AISpawns.sqf", "IN_GAME"] call LR_fnc_fileExists))) exitWith {};
+if ((not LR_start) || (not isServer)) exitWith {};
 
 call compile preprocessFileLineNumbers "AISpawns.sqf";

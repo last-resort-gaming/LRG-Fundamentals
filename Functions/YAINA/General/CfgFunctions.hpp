@@ -6,5 +6,7 @@ class YAINA {
 		class crewNames { postInit = 1; };
 		class formatDuration {};
 		class showFPS { postInit = 1; };
+		class log {};
+		class hintC {};
     };
 };

@@ -3,9 +3,9 @@ class LR {
 			tag = "LR";
 			class AI {
 				file = "LRG Fundamentals\Functions\LRG\AI";
-				class InfantryGarrison {};				
+				class InfantryGarrison {};
 				class SetUnitSkill {};
-				class SpawnAI {};		
+				class SpawnAI {};
 			};
 			
 			class Equipment {
@@ -29,7 +29,7 @@ class LR {
 
 				file = "LRG Fundamentals\Functions\LRG\General";
 				class ConfigPlayer {};
-				class ConfigZeus {};			
+				class ConfigZeus {};
 				class MedicalFacility {};
 				class Sound3D {};
 			};
@@ -37,7 +37,7 @@ class LR {
 			class Interaction {
 				file = "LRG Fundamentals\Functions\LRG\Interaction";
 				class DynamicText {};
-				class InitInspectableIntel {};				
+				class InitInspectableIntel {};
 				class LaptopHoldActions {};
 				class PlayerAddActions {};
 				class RunIntelAction {};
@@ -71,7 +71,7 @@ class LR {
 			class Training {
 
 				file = "LRG Fundamentals\Functions\LRG\Training";
-				class Casualty {};	
+				class Casualty {};
 				class ResetTargets {};
 			};
 };
