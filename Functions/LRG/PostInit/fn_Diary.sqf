@@ -135,35 +135,6 @@ player createDiaryRecord ["LRG Commands", ["Safe Zone",
 "
 ]];
 
-player createDiaryRecord ["LRG Commands", ["Arsenal",
-"
-<br/><font face='PuristaLight' color='#40FFFF' font size='20'>Disable Arsenal</font>
-<br/>
-<br/><font face='PuristaLight' color='#6C8EBF'>- Used to turn off the Arsenal.</font>
-<br/><font face='PuristaLight' color='#6C8EBF'>- Once the Arsenal is off it can't be turned back on. </font>
-<br/><font face='PuristaLight' color='#6C8EBF'>- Can take a maximum of 60 seconds for the Arsenal to be removed.</font>
-<br/>
-<br/><font face='PuristaLight' color='#6C8EBF'>Example:</font>
-<br/><execute expression=""copyToClipboard '!disableArsenal'"">!disableArsenal</execute>
-<br/>
-
-
-
-<br/><font face='PuristaLight' color='#40FFFF' font size='20'>Arsenal Duration</font>
-<br/>
-<br/><font face='PuristaLight' color='#6C8EBF'>- Used to set when the Arsenal will be removed.</font>
-<br/><font face='PuristaLight' color='#6C8EBF'>- If set to '0' Arsenal will remain on.</font>
-<br/><font face='PuristaLight' color='#6C8EBF'>- Can take a maximum of 60 seconds for the Arsenal to move.</font>
-<br/>
-<br/><font face='PuristaLight' color='#6C8EBF'>Examples:</font>
-<br/><execute expression=""copyToClipboard '!arsenalDuration 50'"">!arsenalDuration 50</execute>
-<br/><execute expression=""copyToClipboard '!arsenalDuration 0'"">!arsenalDuration 0</execute>
-
-
-"
-
-]];
-
 player createDiaryRecord ["LRG Commands", ["Introduction",
 "
 <br/><font face='PuristaLight' color='#40FFFF' font size='20'>LRG Commands</font>
