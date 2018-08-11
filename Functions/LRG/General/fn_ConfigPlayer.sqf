@@ -29,7 +29,8 @@ params [
 	["_Loadout", []]
 ];
 
-if (!local _unit) then {
+
+if (local _unit) then {
 
 //========== Section Config
 	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
@@ -67,7 +68,6 @@ if (!local _unit) then {
 		group _unit setVariable ["tf_sw_frequency", _ShortRange, true];
 		group _unit setVariable ["tf_lr_frequency", _LongRange, true];
 	};
-
 //========== Trait Config
 	if !(_Traits isEqualTo []) then {	
 		{
@@ -82,7 +82,9 @@ if (!local _unit) then {
 };
 //========== SideChat Config
 if (hasinterface) then {
-	if (EnableSideChat) then {
-		[_unit, _section] call LR_fnc_SideChat;
+	if ((isClass (configFile >> "CfgPatches" >> "task_force_radio")) && (EnableSideChat)) then {
+		if ((_Section == "Command") || (_Section == "909 EAW")) then {
+			1 enablechannel [true, false];
+		};
 	};
 };

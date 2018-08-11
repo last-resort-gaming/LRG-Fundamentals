@@ -31,7 +31,6 @@ class LR {
 				class ConfigPlayer {};
 				class ConfigZeus {};			
 				class MedicalFacility {};
-				class SideChat {};
 				class Sound3D {};
 			};
 			
@@ -59,6 +58,7 @@ class LR {
 				class RealWeather {postInit = 1;};
 				class SafeZone {postInit = 1;};
 				class SetInitialAI {postInit = 1;};
+				class SideChat {postInit = 1;};				
 			};
 
 			class PreInit {
