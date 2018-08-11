@@ -19,6 +19,15 @@ if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 };
 	  
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
+
+	if (isNil "RadioRange") then {
+  		RadioRange = 3.5;
+	};
+
+	if (isNil "TerrainInterference") then {
+  	TerrainInterference = 1.0;
+	};
+
 	player setVariable ["tf_sendingDistanceMultiplicator", RadioRange];
 	player setVariable ["TF_terrain_interception_coefficient", TerrainInterference];
 } else {
