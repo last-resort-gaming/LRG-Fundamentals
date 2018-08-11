@@ -30,6 +30,7 @@ class LR {
 				file = "LRG Fundamentals\Functions\LRG\General";
 				class ConfigPlayer {};
 				class ConfigZeus {};
+				class fileExists {};
 				class MedicalFacility {};
 				class Sound3D {};
 			};
@@ -65,7 +66,6 @@ class LR {
 
 				file = "LRG Fundamentals\Functions\LRG\PreInit";
 				class PreInit {preInit = 1;};
-				class fileExists {};
 			};
 			
 			class Training {
