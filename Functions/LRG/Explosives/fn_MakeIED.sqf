@@ -79,30 +79,7 @@ _explosive setPos _pos;
 _explosive attachTo [_object];
 hideObjectGlobal _explosive;
 
-_condition = [{
-	((_this select 0) getVariable ["IEDarmed",false])
-	&& {not ((_this select 0) getVariable ["IEDdetonated",false])}
-	&& {not ((_this select 0) getVariable ["IEDdisarmed", false])}
-}, {
-	((_this select 0) getVariable ["IEDarmed",false])
-	&& {not ((_this select 0) getVariable ["IEDdetonated",false])}
-	&& {not ((_this select 0) getVariable ["IEDdisarmed", false])}
-	&& {[(_this select 1)] call ace_explosives_fnc_canDefuse}
-}] select (_requireDefusalKit);
-
-// Adds action to defuse the bomb
-_action = [
-	"DefuseIED",
-	"Defuse IED",
-	"",
-	{
-		(_this select 0) setVariable ["IEDdisarmed", true, true];
-		["You've disarmed the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;
-	},
-	_condition
-] call ace_interact_menu_fnc_createAction;
-
-[_object, 0, ["ACE_MainActions"], _action] remoteExec ["ace_interact_menu_fnc_addActionToObject",0,true];
+[_object, _requireDefusalKit] remoteExec ["LR_fnc_addACEDefuseOption", 0, true];
 
 // Add PFH for proximity checking
 [
