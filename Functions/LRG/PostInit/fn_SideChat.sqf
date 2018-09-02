@@ -20,7 +20,7 @@ _handle = [
 			[5] remoteExec ["setcurrentchannel",0,false];
 			[1, [false, false]] remoteExec ["enablechannel",0,true];
 			["<t color='#40FFFF' size = '.5'>Side Chat Disabled </t>",1,-0.2,10,2,0,789] remoteExec ["BIS_fnc_dynamicText", 0, false];
-			[_handle] call CBAP_fnc_removePerFrameHandler;
+			[_handle] call CBA_fnc_removePerFrameHandler;
 		};
 	}, 60, []
-] call CBAP_fnc_addPerFrameHandler;
+] call CBA_fnc_addPerFrameHandler;

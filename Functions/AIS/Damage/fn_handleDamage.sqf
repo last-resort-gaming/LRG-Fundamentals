@@ -182,7 +182,7 @@ if (_set_unconscious && {!(_unit getVariable ["ais_unconscious", false])}) then 
 	_unit setVariable ["ais_protector_delay", (diag_tickTime + 6)];
 
 	// Dispatch event so we can display who dun it
-	["AIS_Unconscious", [_unit, _source, _projectile, _damageType]] call CBAP_fnc_localEvent;
+	["AIS_Unconscious", [_unit, _source, _projectile, _damageType]] call CBA_fnc_localEvent;
 };
 
 if (isNil "_damage") then { _damage = 0.89; };

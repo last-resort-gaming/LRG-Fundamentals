@@ -26,7 +26,7 @@ player addEventHandler ["GetInMan", {
         params ["_args", "_pfhID"];
 
         if (isNull objectParent player) then {
-            [_pfhID] call CBAP_fnc_removePerFrameHandler;
+            [_pfhID] call CBA_fnc_removePerFrameHandler;
         } else {
             disableSerialization;
 
@@ -44,7 +44,7 @@ player addEventHandler ["GetInMan", {
                 if (_role isEqualTo "driver") then {
                     _name = format ["<t size='0.9' color='#f0e68c'>%1 %2</t> <img size='0.8' color='#6b8e23' image='a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa'/><br/>", _name, (name _unit)];
                 } else {
-                    if ((_role isEqualTo "Turret" || { _role isEqualTo "gunner" }) && { count (getArray (([_vehicle, _turretPath] call CBAP_fnc_getTurret) >> "weapons") select { !(_x isEqualTo "Laserdesignator_mounted") }) > 0 }) then {
+                    if ((_role isEqualTo "Turret" || { _role isEqualTo "gunner" }) && { count (getArray (([_vehicle, _turretPath] call CBA_fnc_getTurret) >> "weapons") select { !(_x isEqualTo "Laserdesignator_mounted") }) > 0 }) then {
                         _name = format ["<t size='0.9' color='#f0e68c'>%1 %2</t> <img size='0.8' color='#6b8e23' image='a3\ui_f\data\IGUI\Cfg\Actions\getingunner_ca.paa'/><br/>", _name, (name _unit)];
                     } else {
                         _name = format ["<t size='0.9' color='#f0e68c'>%1 %2</t> <img size='0.8' color='#6b8e23' image='a3\ui_f\data\IGUI\Cfg\Actions\getincargo_ca.paa'/><br/>", _name, (name _unit)];
@@ -57,5 +57,5 @@ player addEventHandler ["GetInMan", {
             _HudNames ctrlCommit 0;
 
         };
-    }, 0, []] call CBAP_fnc_addPerFrameHandler;
+    }, 0, []] call CBA_fnc_addPerFrameHandler;
 }];

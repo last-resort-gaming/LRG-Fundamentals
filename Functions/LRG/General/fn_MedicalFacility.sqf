@@ -31,9 +31,9 @@ LR_FNC_Medical = {
 
 	if (player getVariable "ACE_isUnconscious") then {
 		[format ["%1<br />is being revived at the LRG Medical Facility.", profileName], [1,-0.2], "#ed1b2e", 0.4] call LR_fnc_dynamicText;
-		[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 10] call CBAP_fnc_waitAndExecute;
+		[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 10] call CBA_fnc_waitAndExecute;
 	} else {
-		[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 5] call CBAP_fnc_waitAndExecute;
+		[ACE_medical_fnc_treatmentAdvanced_fullHealLocal, [objNull,player], 5] call CBA_fnc_waitAndExecute;
 	};
 };
 

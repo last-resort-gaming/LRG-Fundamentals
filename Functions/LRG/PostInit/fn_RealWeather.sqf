@@ -89,7 +89,7 @@ _handle = [
 			};
 		};
 	}, timesync, []
-] call CBAP_fnc_addPerFrameHandler;
+] call CBA_fnc_addPerFrameHandler;
 
 	
 lastrain = 0;
@@ -132,5 +132,5 @@ _handle = [
 
 		timeforecast = mintime + (random (maxtime - mintime));
 	}, timeforecast, []
-] call CBAP_fnc_addPerFrameHandler;
+] call CBA_fnc_addPerFrameHandler;
 	

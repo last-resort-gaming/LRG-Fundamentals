@@ -10,7 +10,6 @@ class CfgPatches
 };
 
 class CfgFunctions {
-    #include "Functions\CBA\CfgFunctions.hpp"
 	#include "Functions\CHVD\CfgFunctions.hpp"
 	#include "Functions\DERP\CfgFunctions.hpp"	
     #include "Functions\LRG\CfgFunctions.hpp"

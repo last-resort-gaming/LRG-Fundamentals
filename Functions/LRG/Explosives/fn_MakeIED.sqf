@@ -114,7 +114,7 @@ _action = [
 		_destroyed = _object getVariable ["IEDdetonated",false];
 
 		if (_disarmed || _destroyed) exitWith {
-			[_pfhID] call CBAP_fnc_removePerFrameHandler;
+			[_pfhID] call CBA_fnc_removePerFrameHandler;
 		};
 
 		{
@@ -133,7 +133,7 @@ _action = [
 	},
 	5,
 	[_object, _proximityRadius, _detonationTime, _announce]
-] call CBAP_fnc_addPerFrameHandler;
+] call CBA_fnc_addPerFrameHandler;
 
 // Add PFH to check for explosives armed
 [
@@ -146,7 +146,7 @@ _action = [
 		_destroyed = _object getVariable ["IEDdetonated",false];
 
 		if (_disarmed || _destroyed) exitWith {
-			[_pfhID] call CBAP_fnc_removePerFrameHandler;
+			[_pfhID] call CBA_fnc_removePerFrameHandler;
 		};
 		if ((not _armed)) exitWith {};
 
@@ -212,9 +212,9 @@ _action = [
 					_bomb setDamage 1;
 				}, [_object, _secondaries], (_detIn)
 				
-			] call CBAP_fnc_waitAndExecute;
+			] call CBA_fnc_waitAndExecute;
 		};
 	},
 	1,
 	[_explosive, _object, _detonationTime, _secondaries, _announce, _announceInterval]
-] call CBAP_fnc_addPerFrameHandler;
+] call CBA_fnc_addPerFrameHandler;
