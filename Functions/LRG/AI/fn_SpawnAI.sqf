@@ -279,7 +279,7 @@ if !(_infList isEqualTo []) then {
         _rpos = [[[_center, _radius],[]],["water","out"]] call BIS_fnc_randomPos;
         _g = [_rpos, _side, _confBase >> (selectRandom _infList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_inf%2", _grpPrefix, _x]];
-        [_g, _center, _radius/1.5, 3 + round (random 2), ["SAD", "MOVE"] select (random 1 > 0.33), ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+        [_g, _center, _radius/1.5, 3 + round (random 2), ["SAD", "MOVE"] select (random 1 > 0.33), ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
         [_g, _infSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
@@ -294,7 +294,7 @@ if !(_infaaList isEqualTo []) then {
         _rpos = [[[_center, _radius],[]],["water","out"]] call BIS_fnc_randomPos;
         _g = [_rpos, _side, _confBase >> (selectRandom _infaaList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_infaa%2", _grpPrefix, _x]];
-        [_g, _center, _radius/1.5, 3 + round (random 2), "SAD", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+        [_g, _center, _radius/1.5, 3 + round (random 2), "SAD", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
         [_g, _infaaSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
@@ -309,7 +309,7 @@ if !(_infatList isEqualTo []) then {
         _rpos = [[[_center, _radius],[]],["water","out"]] call BIS_fnc_randomPos;
         _g = [_rpos, _side, _confBase >> (selectRandom _infatList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_infat%2", _grpPrefix, _x]];
-        [_g, _center, _radius/1.5, 3 + round (random 2), "SAD", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+        [_g, _center, _radius/1.5, 3 + round (random 2), "SAD", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
         [_g, _infatSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
@@ -347,7 +347,7 @@ if !(_vehAAList isEqualTo []) then {
             _v lock 2;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
             [_g, _vehaaSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -374,7 +374,7 @@ if !(_vehmrapList isEqualTo []) then {
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
             [_g, _vehmrapSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -401,7 +401,7 @@ if (_vehRandList isEqualTo []) then {
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
             [_g, _vehrandSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -428,7 +428,7 @@ if (_vehLightList isEqualTo []) then {
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
             [_g, _vehLightSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -455,7 +455,7 @@ if (_vehHeavyList isEqualTo []) then {
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBAP_fnc_taskPatrol;
+            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
             [_g, _vehHeavySkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 

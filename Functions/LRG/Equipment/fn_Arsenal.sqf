@@ -1705,11 +1705,11 @@ _ArsenalType = call {
 		(_this select 0) params ["_object", "_duration"];
 	
 		if (_duration == 0) exitwith {
-			[_handle] call CBAP_fnc_removePerFrameHandler;
+			[_handle] call CBA_fnc_removePerFrameHandler;
 		};
 	
 		if (time > (_duration * 60)) exitwith {
 			deletevehicle _object;
-			[_handle] call CBAP_fnc_removePerFrameHandler;
+			[_handle] call CBA_fnc_removePerFrameHandler;
 		};
-	}, 60, [_object, _duration]] call CBAP_fnc_addPerFrameHandler;
+	}, 60, [_object, _duration]] call CBA_fnc_addPerFrameHandler;

@@ -43,6 +43,6 @@ _handle = [
 		
 		player setVariable ["SafezoneEH", _SafeZoneEH];
 	}, 60, []
-] call CBAP_fnc_addPerFrameHandler;
+] call CBA_fnc_addPerFrameHandler;
 	
 	

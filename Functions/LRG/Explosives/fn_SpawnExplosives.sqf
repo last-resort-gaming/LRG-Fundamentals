@@ -52,7 +52,7 @@ if !(isServer) exitWith {};
     					random 360
     				] call BIS_fnc_relPos, 
     				_csleep + _s
-    			] call CBAP_fnc_waitAndExecute;
+    			] call CBA_fnc_waitAndExecute;
     
                 if (_m isEqualTo 1) then {
                     _nsleep = _nsleep / 2;
@@ -61,4 +61,4 @@ if !(isServer) exitWith {};
             };
         };
     }, _this, _this select 0
-] call CBAP_fnc_waitAndExecute;
+] call CBA_fnc_waitAndExecute;
