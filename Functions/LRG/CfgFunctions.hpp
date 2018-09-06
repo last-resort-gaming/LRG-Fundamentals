@@ -23,7 +23,6 @@ class LR {
 				class IEDVehicle {};
 				class MakeIED {};
 				class SpawnExplosives {};
-				class addACEDefuseOption {};
 			};
 
 			class General {

@@ -65,7 +65,39 @@ params [
 	["_requireDefusalKit", true]
 ];
 
-if ((!isServer) || (!isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
+if (!isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {};
+
+if (hasInterface && {
+	(!(_object getVariable ["IEDdisarmed",false])) &&
+	(!(_object getVariable ["IEDdetonated", false]))
+}) then {
+	_condition = [{
+		((_this select 0) getVariable ["IEDarmed",false])
+		&& {not ((_this select 0) getVariable ["IEDdetonated",false])}
+		&& {not ((_this select 0) getVariable ["IEDdisarmed", false])}
+	}, {
+		((_this select 0) getVariable ["IEDarmed",false])
+		&& {not ((_this select 0) getVariable ["IEDdetonated",false])}
+		&& {not ((_this select 0) getVariable ["IEDdisarmed", false])}
+		&& {[(_this select 1)] call ace_explosives_fnc_canDefuse}
+	}] select (_requireDefusalKit);
+
+	// Adds action to defuse the bomb
+	_action = [
+		"DefuseIED",
+		"Defuse IED",
+		"",
+		{
+			(_this select 0) setVariable ["IEDdisarmed", true, true];
+			["You've disarmed the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;
+		},
+		_condition
+	] call ace_interact_menu_fnc_createAction;
+
+	[_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+};
+
+if (!isServer) exitWith {};
 
 // Randomise detonation time if param is negative
 if (_detonationTime < 0) then {
@@ -78,8 +110,6 @@ _pos = getPos _object;
 _explosive setPos _pos;
 _explosive attachTo [_object];
 hideObjectGlobal _explosive;
-
-[_object, _requireDefusalKit] remoteExec ["LR_fnc_addACEDefuseOption", 0, true];
 
 // Add PFH for proximity checking
 [
@@ -96,13 +126,13 @@ hideObjectGlobal _explosive;
 
 		{
 			if ((_object distance2D _x) < _proximityRadius && (not _disarmed) && (not _armed)) then {
-				_object setVariable ["IEDarmed", true];
+				_object setVariable ["IEDarmed", true, true];
 
 				// Tell everyone that this is a thing that happened if the user so wishes:
 				if (_announce) then {
 					[
 						format ["The IED has been armed and will detonate in %1 seconds!",_detonationTime],
-						[-1, 0.8],"#cc3232", 0.5
+						[-1, 0.8],"#cc3232", 0.5, true
 					] call LR_fnc_dynamicText;
 				};
 			};
@@ -131,7 +161,7 @@ hideObjectGlobal _explosive;
 
 		if (_startTime == 0) then {
 			_startTime = time;
-			_object setVariable ["startTime",_startTime];
+			_object setVariable ["startTime",_startTime, true];
 		};
 
 		// Delta time since the IED has been armed
@@ -147,7 +177,7 @@ hideObjectGlobal _explosive;
 			&& (_timeLeft != 0)) then {
 			[
 				format ["The IED will detonate in %1 seconds!",_timeLeft],
-				[-1, 0.8], "#cc3232", 0.5
+				[-1, 0.8], "#cc3232", 0.5, true
 			] call LR_fnc_dynamicText;
 		};
 
@@ -161,7 +191,7 @@ hideObjectGlobal _explosive;
 			if (_announce) then {
 				[
 					"Time's out, the IED could detonate any second!",
-					[-1, 0.8], "#cc3232", 0.5
+					[-1, 0.8], "#cc3232", 0.5, true
 				] call LR_fnc_dynamicText;
 			};
 
