@@ -138,7 +138,7 @@ hideObjectGlobal _explosive;
 			};
 		} forEach allPlayers;
 	},
-	5,
+	1,
 	[_object, _proximityRadius, _detonationTime, _announce]
 ] call CBA_fnc_addPerFrameHandler;
 
