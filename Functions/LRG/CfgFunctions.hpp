@@ -43,6 +43,7 @@ class LR {
 				class PlayerAddActions {};
 				class RunIntelAction {};
 				class SetIntelAction {};
+				class AddCreatorAction {};
 			};
 
 			class PostInit {
@@ -59,7 +60,8 @@ class LR {
 				class RealWeather {postInit = 1;};
 				class SafeZone {postInit = 1;};
 				class SetInitialAI {postInit = 1;};
-				class SideChat {postInit = 1;};				
+				class SideChat {postInit = 1;};
+				class InitCreatorActions {postInit = 1;};
 			};
 
 			class PreInit {
