@@ -22,7 +22,6 @@ Parameters:
 	_condition - Code in string which needs to be true for the action to show up, default: "true"
 	_removeCompleted - Remove the action after it has been completed/called, default: true
 	_distance - The radius in m around the object in which the object is visible, default: 10
-	
 
 Return Values:
 	None
@@ -77,10 +76,19 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		_id,
 		_title,
 		"",
-		_statement,
+		{
+			params ["_target", "_caller", "_arguments"];
+			_arguments params ["_code", "_args", "_id",  "_remove"];
+
+			[_target, _caller, _args] call _code;
+
+			if (_remove) then {
+				[_target,0,[_id]] call ace_interact_menu_fnc_removeActionFromObject;
+			};
+		},
 		compile _condition,
 		{},
-		_args,
+		[_statement, _args, _id, _removeCompleted],
 		"",
 		_distance
 	] call ace_interact_menu_fnc_createAction;
@@ -96,11 +104,15 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		_title,
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
-			_arguments params ["_code", "_args"];
+			_arguments params ["_code", "_args",  "_remove"];
 
 			[_target, _caller, _args] call _code;
+
+			if (_remove) then {
+				_target removeAction _actionId;
+			};
 		},
-		[_statement, _args],
+		[_statement, _args, _removeCompleted],
 		1.5,
 		true,
 		true,
