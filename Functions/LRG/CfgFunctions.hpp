@@ -33,6 +33,7 @@ class LR {
 				class fileExists {};
 				class MedicalFacility {};
 				class Sound3D {};
+				class FindReplaceString {};
 			};
 			
 			class Interaction {
@@ -44,6 +45,7 @@ class LR {
 				class RunIntelAction {};
 				class SetIntelAction {};
 				class AddCreatorAction {};
+				class AddAction {};
 			};
 
 			class PostInit {
