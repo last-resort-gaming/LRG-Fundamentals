@@ -220,6 +220,8 @@ hideObjectGlobal _explosive;
 				}, [_object, _secondaries], (_detIn)
 				
 			] call CBA_fnc_waitAndExecute;
+
+			deleteVehicle _explosive;
 		};
 	},
 	1,
