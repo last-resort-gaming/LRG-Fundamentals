@@ -46,6 +46,7 @@ class LR {
 				class SetIntelAction {};
 				class AddCreatorAction {};
 				class AddAction {};
+				class AddSelfAction {};
 				class AddHoldAction {};
 			};
 
