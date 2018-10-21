@@ -17,6 +17,6 @@ Author:
 	Mokka
 */
 
-if (not isServer) exitWith {};
+if ((not LR_start) || (not isServer)) exitWith {};
 
 call compile preprocessFileLineNumbers "AISpawns.sqf";
