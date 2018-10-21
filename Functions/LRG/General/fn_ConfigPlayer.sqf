@@ -69,10 +69,15 @@ if (local _unit) then {
 		group _unit setVariable ["tf_lr_frequency", _LongRange, true];
 	};
 //========== Trait Config
-	if !(_Traits isEqualTo []) then {	
+	private _TraitsArray = call {
+	if ((typeName _Traits) isEqualTo "STRING") exitWith { [_Traits]};
+	_Traits
+	};	
+	
+	if !(_TraitsArray isEqualTo []) then {
 		{
 			_unit setUnitTrait [_x, true, true];
-		} forEach _Traits;
+		} forEach _TraitsArray;
 	};
 
 //========== Loadout Config
