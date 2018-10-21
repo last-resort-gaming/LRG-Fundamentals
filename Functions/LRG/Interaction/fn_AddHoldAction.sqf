@@ -92,7 +92,7 @@ if (isServer && isMultiplayer) exitWith {
 		_codeStart,
 		_codeProgress,
 		_codeCompleted,
-		_codeInterrupted
+		_codeInterrupted,
 		_args,
 		_duration,
 		_removeCompleted,
