@@ -66,6 +66,7 @@ class LR {
 				class SetInitialAI {postInit = 1;};
 				class SideChat {postInit = 1;};
 				class InitCreatorActions {postInit = 1;};
+				class AddCueCards {postInit = 1;};
 			};
 
 			class PreInit {
