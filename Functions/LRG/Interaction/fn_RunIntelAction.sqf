@@ -9,7 +9,6 @@ Description:
 Parameters:
 	_object - The object to which the addAction was attached
 	_caller - The player that interacted with the addAction
-	_id - The ID of the addAction
 	_arguments - Array of arguments passed to the addAction
 
 Return Values:
@@ -26,8 +25,7 @@ Modified by:
 
 _object = _this select 0;
 _caller = _this select 1;
-_id = _this select 2;
-_arguments = _this select 3;
+_arguments = _this select 2;
 _callerName = if (_caller == player) then {profilename} else {name _caller};
 _var = (_fnc_scriptName + str _object) call bis_fnc_filterString;
 

@@ -121,7 +121,7 @@ if (_notifySide) then {
 		"IntelObjectFound",
 		{
 			params[ "", "_foundBy" ];
-			[format ["Intel collected by %1", name _foundBy], [1, -0.2], "#339900", 0.5] call LR_fnc_dynamicText;	
+			[format ["Intel collected by %1", name _foundBy], [1, -0.2], "#339900", 0.5] call LR_fnc_dynamicText;
 		}
 	] call BIS_fnc_addScriptedEventHandler;
 };

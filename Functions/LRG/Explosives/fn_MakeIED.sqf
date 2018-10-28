@@ -82,19 +82,26 @@ if (hasInterface && {
 		&& {[(_this select 1)] call ace_explosives_fnc_canDefuse}
 	}] select (_requireDefusalKit);
 
-	// Adds action to defuse the bomb
-	_action = [
-		"DefuseIED",
+	[
+		_object,
+		"DefuseIED" + str (floor (random 360)),
 		"Defuse IED",
 		"",
+		_condition,
+		"true",
+		{["You've started disarming the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;},
+		{["Disarming the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;},
 		{
 			(_this select 0) setVariable ["IEDdisarmed", true, true];
 			["You've disarmed the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;
 		},
-		_condition
-	] call ace_interact_menu_fnc_createAction;
-
-	[_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+		{["The IED was not disarmed.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;},
+		[],
+		10 + random 10,
+		true,
+		"Disarming IED",
+		false
+	] call LR_fnc_AddHoldAction;
 };
 
 if (!isServer) exitWith {};

@@ -36,36 +36,35 @@ params [
 
 [
 	_object,
+	"laptop" + str (floor (random 360)),
 	format ["<t color='#00FFFF'>%1</t>", _Title],
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-	"_this distance _target < 3",
-	"_caller distance _target < 3",
-	{ [format["<t color='#FFBB00' size = '.5'>Processing</t>",(_this select 3) select 1],-1,0.8,(_this select 3) select 2,2,0,789] spawn BIS_fnc_dynamicText;},
+	"true",
+	"true",
+	{ [format["<t color='#FFBB00' size = '.5'>Processing</t>",(_this select 2) select 1],-1,0.8,(_this select 2) select 2,2,0,789] spawn BIS_fnc_dynamicText;},
 	{},
 	{
-		[format["<t color='#339900' align='center' size = '.4'>%1</t><t color='#FFBB00' align='center' size = '.4'><br/>%2 has completed this action</t>",(_this select 3) select 1, (name _caller)],1,-0.2,10,0,0,789] remoteExec ["BIS_fnc_dynamicText",0,false];
+		[format["<t color='#339900' align='center' size = '.4'>%1</t><t color='#FFBB00' align='center' size = '.4'><br/>%2 has completed this action</t>",(_this select 2) select 1, (name _caller)],1,-0.2,10,0,0,789] remoteExec ["BIS_fnc_dynamicText",0,false];
 
-		_OriginalPos = getPosATL ((_this select 3) select 0);
-		_OriginalDir = getDir ((_this select 3) select 0);
-		deleteVehicle ((_this select 3) select 0);
+		_OriginalPos = getPosATL ((_this select 2) select 0);
+		_OriginalDir = getDir ((_this select 2) select 0);
+		deleteVehicle ((_this select 2) select 0);
 		_Newobject = createVehicle ["Land_Laptop_F", [0,0,0], [], 0,"NONE"];
 		{[_Newobject, false] remoteExec [_x, 2];} foreach ["enableSimulationGlobal","allowDamage"];
 		_Newobject SetPosATL _OriginalPos;
 		_Newobject setDir _OriginalDir;
 		{_x addCuratorEditableObjects [[_Newobject], false];} ForEach allcurators;
-//		playSound3D [((_this select 3) select 3), _Newobject, false, getposATL _Newobject, 1, 1, 200];
-		[_Newobject, (_this select 3) select 3, (_this select 3) select 4, (_this select 3) select 5] call LR_fnc_Sound3D;
+//		playSound3D [((_this select 2) select 3), _Newobject, false, getposATL _Newobject, 1, 1, 200];
+		[_Newobject, (_this select 2) select 3, (_this select 2) select 4, (_this select 2) select 5] call LR_fnc_Sound3D;
 //		[_Newobject, "AirRaid"] call LR_fnc_Sound3D;
-		
-		},
-	{[format["<t color='#cc3232' size = '.5'>Aborted</t>",(_this select 3) select 1],-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;},
+	},
+	{[format["<t color='#cc3232' size = '.5'>Aborted</t>",(_this select 2) select 1],-1,0.8,5,2,0,789] spawn BIS_fnc_dynamicText;},
 	[_object, _Title, _Time, _SoundClass, _distance, _pitch],
 	_Time,
-	0,
 	true,
+	"Processing",
 	false
-] remoteExec ["BIS_fnc_holdActionAdd", 0, _object];
+] remoteExec ["LR_fnc_AddHoldAction", 0, _object];
 
 {
 	_x addCuratorEditableObjects [[_object], false];

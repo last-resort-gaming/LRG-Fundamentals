@@ -2,12 +2,12 @@
 Function: LR_fnc_AddHoldAction
 
 Description:
-	Adds a timed action to an object. The action will only complete after a 
+	Adds a timed action to an object. The action will only complete after a
 	certain amount of time, wich progresses only if certain conditions are met.
-	The player executing the action is informed about the progress. 
+	The player executing the action is informed about the progress.
 	The action is added only to the clients on which the function was originally
-	called. If the function is called on the server the action is added globally
-	and added to the JIP queue.
+	called. If the function is called with _global set to true the action will
+	be added to every player and JIP.
 
 	The condition for showing the action has the following keywords available:
 
@@ -37,6 +37,7 @@ Parameters:
 	_duration - The duration in seconds it takes to complete the action, default: 10
 	_removeCompleted - Remove the action once it's completed, default: true
 	_progressTitle - Shown in the ACE progress bar, optional
+	_global - Set to true to add the action to every player
 
 Return Values:
 	None
@@ -56,6 +57,8 @@ Examples:
 		{hint "Couldn't unlock Car!";},
 		[],
 		14,
+		true,
+		"Unlocking Car...",
 		true
 	] call LR_fnc_AddHoldAction;
 	---
@@ -78,10 +81,11 @@ params [
 	["_args",[]],
 	["_duration", 10],
 	["_removeCompleted", true],
-	["_progressTitle", ""]
+	["_progressTitle", ""],
+	["_global", false]
 ];
 
-if (isServer && isMultiplayer) exitWith {
+if (_global) exitWith {
 	[
 		_object,
 		_id,
@@ -96,13 +100,22 @@ if (isServer && isMultiplayer) exitWith {
 		_args,
 		_duration,
 		_removeCompleted,
-		_progressTitle
-	] remoteExec ["LR_fnc_AddHoldAction", -2, _id];
+		_progressTitle,
+		false
+	] remoteExec ["LR_fnc_AddHoldAction", 0, _id];
 };
 
 if (!hasInterface) exitWith {};
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+
+	if (_conditionShow isEqualType "") then {
+		_conditionShow = compileFinal _conditionShow;
+	};
+
+	if (_conditionProgress isEqualType "") then {
+		_conditionProgress = compileFinal _conditionProgress;
+	};
 
 	_action = [
 		_id,
@@ -128,23 +141,46 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 
 			[
 				_duration,
-				_args,
-				_codeCompleted,
-				_codeInterrupted,
+				[_args, _codeCompleted, _codeInterrupted, _remove, _target, _caller],
+				{
+					(_this select 0) params [
+						"_parameters",
+						"_codeCompleted",
+						"_codeInterrupted",
+						"_remove",
+						"_target",
+						"_caller"
+					];
+
+					[_target, _caller, _parameters] call _codeCompleted;
+
+					if (_remove) then {
+						[_target,0,["ACE_MainActions", _id]] call ace_interact_menu_fnc_removeActionFromObject;
+					};
+				},
+				{
+					(_this select 0) params [
+						"_parameters",
+						"_codeCompleted",
+						"_codeInterrupted",
+						"_remove",
+						"_target",
+						"_caller"
+					];
+
+					[_target, _caller, _parameters] call _codeCompleted;
+				},
 				_progressTitle,
-				compile format ["_nul = _this call %1; _bool = _this call %2; _bool", _codeProgress, _conditionProgress]
+				compile format ["(_this select 0) params [""_parameters"",""_codeCompleted"",""_codeInterrupted"",""_remove"",""_target"",""_caller""]; _nul = [_target, _caller, _parameters] call %1; _bool = [_target, _caller, _parameters] call %2; _bool", _codeProgress, _conditionProgress]
 			] call ace_common_fnc_progressBar;
 
-			if (_remove) then {
-				[_target,0,[_id]] call ace_interact_menu_fnc_removeActionFromObject;
-			};
 		},
-		compile _conditionShow,
+		_conditionShow,
 		{},
 		[_args, _conditionProgress, _codeStart, _codeProgress, _codeCompleted, _codeInterrupted, _id, _removeCompleted, _duration, _progressTitle]
 	] call ace_interact_menu_fnc_createAction;
 
-	[_object, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 } else {
 
 	// Fix the condition string (replace _player with _this)

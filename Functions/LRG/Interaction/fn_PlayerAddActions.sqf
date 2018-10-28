@@ -7,11 +7,11 @@
 if (not LR_start) exitWith{};
 
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitwith {};
-	
+
 [
 	player,
+	"missionComplete",
 	"<t color='#27e833'>Mission Complete</t>",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsUp_ca.paa",
 	"true",
 	"true",
@@ -21,15 +21,15 @@ if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitwith {};
 	{ hint "You've Cancelled Mission Completion." },
 	[],
 	5,
-	-96,
 	true,
+	"Completing Mission",
 	false
-] call BIS_fnc_holdActionAdd;
+] call LR_fnc_AddHoldAction;
 
 [
 	player,
+	"missionFail",
 	"<t color='#cc3232'>Mission Failed</t>",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsDown_ca.paa",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_thumbsDown_ca.paa",
 	"true",
 	"true",
@@ -39,7 +39,7 @@ if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitwith {};
 	{ hint "You've Cancelled Mission Failure." },
 	[],
 	5,
-	-96,
 	true,
+	"Failing Mission",
 	false
-] call BIS_fnc_holdActionAdd;
+] call LR_fnc_AddHoldAction;

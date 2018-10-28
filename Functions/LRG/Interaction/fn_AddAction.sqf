@@ -2,9 +2,9 @@
 Function: LR_fnc_AddAction
 
 Description:
-	Adds an action to an object. The action is added only to the clients on 
-	which the function was originally called. If the function is called on the 
-	server the action is added globally and added to the JIP queue.
+	Adds an action to an object. The action is added only to the clients on
+	which the function was originally called. If the function is called with
+	_global set to true the action will be added to every player and JIP.
 
 	The condition has the following keywords available:
 
@@ -22,6 +22,7 @@ Parameters:
 	_condition - Code in string which needs to be true for the action to show up, default: "true"
 	_removeCompleted - Remove the action after it has been completed/called, default: true
 	_distance - The radius in m around the object in which the object is visible, default: 10
+	_global - Set to true to add the action to every player
 
 Return Values:
 	None
@@ -36,7 +37,8 @@ Examples:
 		[],
 		"true",
 		true,
-		15
+		15,
+		true
 	] call LR_fnc_AddAction;
 	---
 
@@ -52,25 +54,31 @@ params [
 	["_args", []],
 	["_condition", "true"],
 	["_removeCompleted", true],
-	["_distance", 10]
+	["_distance", 10],
+	["_global", false]
 ];
 
-if (isServer && isMultiplayer) exitWith {
+if (_global) exitWith {
 	[
-		_object, 
-		_id, 
-		_title, 
-		_statement, 
-		_args, 
-		_condition, 
-		_removeCompleted, 
-		_distance
-	] remoteExec ["LR_fnc_AddAction", -2, _id];
+		_object,
+		_id,
+		_title,
+		_statement,
+		_args,
+		_condition,
+		_removeCompleted,
+		_distance,
+		false
+	] remoteExec ["LR_fnc_AddAction", 0, _id];
 };
 
 if (!hasInterface) exitWith {};
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+
+	if (_condition isEqualType "") then {
+		_condition = compileFinal _condition;
+	};
 
 	_action = [
 		_id,
@@ -83,17 +91,17 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 			[_target, _caller, _args] call _code;
 
 			if (_remove) then {
-				[_target,0,[_id]] call ace_interact_menu_fnc_removeActionFromObject;
+				[_target,0,["ACE_MainActions", _id]] call ace_interact_menu_fnc_removeActionFromObject;
 			};
 		},
-		compile _condition,
+		_condition,
 		{},
 		[_statement, _args, _id, _removeCompleted],
 		"",
 		_distance
 	] call ace_interact_menu_fnc_createAction;
 
-	[_object, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;
+	[_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 } else {
 

@@ -2,7 +2,7 @@
 Function: LR_fnc_AddSelfAction
 
 Description:
-	Adds an action to a player. The action is added only to the clients on 
+	Adds an action to a player. The action is added only to the clients on
 	which the function was originally called. The action is only visible to the
 	player(s) this function was called on.
 
@@ -66,9 +66,11 @@ if (player != _player) exitWith {
 	] remoteExec ["LR_fnc_AddSelfAction", _player];
 };
 
-_condition = "(_player == _target) && (" + _condition + ")";
-
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+
+	if (_condition isEqualType "") then {
+		_condition = compileFinal _condition;
+	};
 
 	_action = [
 		_id,
@@ -81,10 +83,10 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 			[_target, _caller, _args] call _code;
 
 			if (_remove) then {
-				[_target,0,[_id]] call ace_interact_menu_fnc_removeActionFromObject;
+				[_target,0,["ACE_MainActions", _id]] call ace_interact_menu_fnc_removeActionFromObject;
 			};
 		},
-		compile _condition,
+		_condition,
 		{},
 		[_statement, _args, _id, _removeCompleted],
 		""

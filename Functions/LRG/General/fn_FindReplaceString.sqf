@@ -40,7 +40,7 @@ while {-1 != _src find _find && _i < _numLimit} do {
 	_src = _splitStr joinString "";
 
 	if (_limit) then {
-		_i += 1;
+		_i = _i + 1;
 	};
 };
 
