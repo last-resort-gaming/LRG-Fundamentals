@@ -11,7 +11,7 @@ class CfgPatches
 
 class CfgFunctions {
 	#include "Functions\CHVD\CfgFunctions.hpp"
-	#include "Functions\DERP\CfgFunctions.hpp"	
+	#include "Functions\DERP\CfgFunctions.hpp"
     #include "Functions\LRG\CfgFunctions.hpp"
     #include "Functions\YAINA\CfgFunctions.hpp"
     #include "Functions\AIS\cfgFunctions.hpp"
@@ -23,3 +23,10 @@ class CfgFunctions {
 #include "CfgRespawnTemplates.hpp"
 #include "CfgMusic.hpp"
 #include "CfgSounds.hpp"
+#include "CfgDisplays.hpp"
+
+// This needs to look the way it does. Yes, it sucks.
+class CfgScriptPaths
+{
+	LRGDisplays = "LRG Fundamentals\Scripts\UI\Displays\";
+};

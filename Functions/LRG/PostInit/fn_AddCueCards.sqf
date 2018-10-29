@@ -25,41 +25,31 @@ _cueCardsData = [
 	// 	0 - CASEVAC Request Card
 	[
 		"LRG Fundamentals\Media\images\Cue Cards\casevac_request_CA.paa",
-		"CASEVAC Request Card",
-		"",
-		-1
+		"CASEVAC Request Card"
 	],
 	
 	//	1 - Contact Report Card
 	[
 		"LRG Fundamentals\Media\images\Cue Cards\contact_card_CA.paa",
-		"Contact Report Card",
-		"",
-		-1
+		"Contact Report Card"
 	],
 	
 	// 	2 - FAC 5-Liner Request Card
 	[
 		"LRG Fundamentals\Media\images\Cue Cards\fac_5_liner_request_CA.paa",
-		"FAC 5-Liner Request Card",
-		"",
-		-1
+		"FAC 5-Liner Request Card"
 	],
 	
 	// 	3 - Fire Control Orders Card
 	[
 		"LRG Fundamentals\Media\images\Cue Cards\fire_control_orders_CA.paa",
-		"Fire Control Orders Card",
-		"",
-		-1
+		"Fire Control Orders Card"
 	],
 	
 	// 	4 - Reorg (GASCARD) Card
 	[
 		"LRG Fundamentals\Media\images\Cue Cards\reorg_gascard_CA.paa",
-		"Reorg (GASCARD) Card",
-		"",
-		-1
+		"Reorg (GASCARD) Card"
 	]
 ];
 
@@ -90,17 +80,17 @@ _parentAction = [
 	_action = [
 		_id,
 		_title,
-		"",
+		_texture, // see if this looks nice or not TODO
 		{
 			_this spawn {
 				params ["_target", "_caller", "_data"];
 
 				diag_log format ["[[LOGGING]] Target: %2    Data: %1", _data, _target];
-			
+
 				disableserialization;
-				missionNamespace setVariable ["RscDisplayRead_data", _data];
-				([] call bis_fnc_displayMission) createdisplay "RscDisplayRead";
-				[missionnamespace,"objectInspected",[_target] + _data] spawn bis_fnc_callScriptedEventHandler;
+				missionNamespace setVariable ["RscDisplayCueCard_data", _data];
+				([] call bis_fnc_displayMission) createdisplay "RscDisplayCueCard";
+				[missionnamespace,"cueCardShown",[_target] + _data] spawn bis_fnc_callScriptedEventHandler;
 			};
 		},
 		{true},
