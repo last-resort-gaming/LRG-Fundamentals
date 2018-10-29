@@ -18,12 +18,25 @@ Author:
 */
 
 #include "\a3\UI_F_Orange\UI\resincl.inc"
+#include "\a3\UI_F_Orange\UI\dikCodes.inc"
 
 #define PREVIEW_SOUNDVOLUME	0.25
 
 _mode = _this select 0;
 _params = _this select 1;
 _class = _this select 2;
+
+fnc_updatePos = {
+	params ["_displayorcontrol", "_button", "_xPos", "_yPos", "_shift", "_ctrl", "_alt"];
+	systemChat format ["Display: %1, Button: %2, X: %3, Y: %4", _displayorcontrol, _button, _xPos, _yPos];
+
+	_displayorcontrol ctrlSetPosition [_XPos, _yPos];
+	_displayorcontrol ctrlCommit 2;
+
+	_ctrl = (findDisplay 20305) displayCtrl 1200;
+	_ctrl ctrlSetPosition [_XPos, _yPos];
+	_ctrl ctrlCommit 2;
+};
 
 switch _mode do {
 	case "onLoad": {
@@ -38,11 +51,15 @@ switch _mode do {
 		];
 
 		_ctrlTexture = _display displayctrl 1001;
-		_ctrlTextGroup = _display displayctrl 1003;
-		_ctrlText = _display displayctrl 1005;
+		_ctrlNotepadIn = _display displayCtrl 1002;
+		_ctrlNotepadBack = _display displayCtrl 1200;
+
+		ctrlSetFocus _ctrlTexture;
+		_ctrlTexture ctrlEnable true;
+		_ctrlNotepadIn ctrlEnable true;
+
 
 		_ctrlTexture ctrlsettext _texture;
-		_ctrlTextGroup ctrlshow false;
 
 		missionnamespace setvariable ["RscDisplayCueCard_data",nil];
 

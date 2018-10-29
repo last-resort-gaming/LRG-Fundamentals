@@ -90,6 +90,7 @@ _parentAction = [
 				disableserialization;
 				missionNamespace setVariable ["RscDisplayCueCard_data", _data];
 				([] call bis_fnc_displayMission) createdisplay "RscDisplayCueCard";
+				([] call bis_fnc_displayMission) createdisplay "NotepadDialog";
 				[missionnamespace,"cueCardShown",[_target] + _data] spawn bis_fnc_callScriptedEventHandler;
 			};
 		},
