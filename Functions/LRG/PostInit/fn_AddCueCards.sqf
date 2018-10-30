@@ -64,6 +64,30 @@ _parentAction = [
 
 [player, 1, ["ACE_SelfActions"], _parentAction] call ace_interact_menu_fnc_addActionToObject;
 
+// Add Action to open notepad
+_npAction = [
+	"openNotepad",
+	"Open Notepad",
+	"", // see if this looks nice or not TODO
+	{
+			_this spawn {
+			params ["_target", "_caller"];
+
+			diag_log format ["[[LOGGING]] Target: %1", _target];
+
+			disableserialization;
+			([] call bis_fnc_displayMission) createdisplay "RscNotepad";
+			[missionnamespace,"cueCardShown",[_target] + ["Notepad"]] spawn bis_fnc_callScriptedEventHandler;
+		};
+	},
+	{true},
+	{},
+	[],
+	""
+] call ace_interact_menu_fnc_createAction;
+
+[player, 1, ["ACE_SelfActions", "CueCardAction"], _npAction] call ace_interact_menu_fnc_addActionToObject;
+
 // Add Cue Card Actions
 {
 

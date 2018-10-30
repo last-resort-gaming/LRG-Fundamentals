@@ -1,8 +1,8 @@
 /*
-Script: RscDisplayCueCard
+Script: RscNotepad
 
 Description:
-	Display script for showing cue cards on-screen.
+	Display script for showing the notepad on-screen.
 
 Parameters:
 	None
@@ -30,35 +30,19 @@ switch _mode do {
 	case "onLoad": {
 		_display = _params select 0;
 
-		_data = missionnamespace getvariable ["RscDisplayCueCard_data",[]];
-		_data params [
-			["_textureData","",["",[]]]
-		];
-		_textureData params [
-			["_texture","",[""]]
-		];
+		_ctrlNotepadIn = _display displayCtrl 1004;
+		_ctrlNotepadBack = _display displayCtrl 1201;
 
-		_ctrlTexture = _display displayctrl 1001;
-		_ctrlNotepadIn = _display displayCtrl 1002;
-		_ctrlNotepadBack = _display displayCtrl 1200;
-
-		ctrlSetFocus _ctrlTexture;
-		_ctrlTexture ctrlEnable true;
 		_ctrlNotepadIn ctrlEnable true;
 
 		_notepadContents = missionNamespace getVariable ["LRG_Notepad_Content", ""];
 
 		_ctrlNotepadIn ctrlSetText _notepadContents;
-
-		_ctrlTexture ctrlsettext _texture;
-
-		missionnamespace setvariable ["RscDisplayCueCard_data",nil];
 	};
 	case "onUnload": {
 		_display = _params select 0;
-		ppeffectdestroy (_display getvariable ["pp",-1]);
 
-		_ctrlNotepadIn = _display displayCtrl 1002;
+		_ctrlNotepadIn = _display displayCtrl 1004;
 		_notepadContents = ctrlText _ctrlNotepadIn;
 
 		// Save the contents of the notepad to the missionNamespace
