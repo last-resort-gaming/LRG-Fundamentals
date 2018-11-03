@@ -112,7 +112,7 @@ if (hasinterface) then {
 				_PatchClass = "3Section";
 			};
 			if (_Section == "909 EAW") exitwith {
-				_PatchClass = "909 EAW";
+				_PatchClass = "909EAW";
 			};
 			_PatchClass = "LRGLogo";
 		};
