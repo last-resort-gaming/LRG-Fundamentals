@@ -27,9 +27,11 @@ params [
 		["_Duration", 0]
 ];
 
-
+if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+	[_object, false] call ace_arsenal_fnc_initBox;
+} else {
 	["AmmoboxInit", [_object, false]] call BIS_fnc_arsenal;
-
+	};
 	
 private ["_AvailableItems", "_AvailableHeadgear", "_AvailableGoggles", "_AvailableUniforms", "_AvailableVests", "_AvailableBackpacks", "_AvailableAttachments", "_AvailableMagazines", "_AvailableWeapons"];
 
@@ -252,6 +254,17 @@ call {
 };
 
 
+if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+[_object, _AvailableHeadGear] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableGoggles] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableUniforms] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableVests] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableItems] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableAttachments] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableWeapons] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableBackpacks] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableMagazines] call ace_arsenal_fnc_addVirtualItems;
+} else {
 [_object, _AvailableHeadGear, true] call BIS_fnc_addVirtualItemCargo;
 [_object, _AvailableGoggles, true] call BIS_fnc_addVirtualItemCargo;
 [_object, _AvailableUniforms, true] call BIS_fnc_addVirtualItemCargo;
@@ -261,6 +274,7 @@ call {
 [_object, _AvailableWeapons, true] call BIS_fnc_addVirtualWeaponCargo;
 [_object, _AvailableBackpacks, true] call BIS_fnc_addVirtualBackpackCargo;
 [_object, _AvailableMagazines, true] call BIS_fnc_addVirtualMagazineCargo;
+};
 
 {
 	_x addCuratorEditableObjects [[_object], false];
