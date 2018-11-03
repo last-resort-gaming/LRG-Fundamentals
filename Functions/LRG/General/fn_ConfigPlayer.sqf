@@ -93,3 +93,28 @@ if (hasinterface) then {
 		};
 	};
 };
+//=========== Patches
+
+		private ["_PatchClass"];
+
+		call {
+
+			if (_Section == "Command") exitwith {
+				_PatchClass = "Command";
+			};
+			if (_Section == "1 Section") exitwith {
+				_PatchClass = "1Section";
+			};
+			if (_Section == "2 Section") exitwith {
+				_PatchClass = "2Section";
+			};
+			if (_Section == "3 Section") exitwith {
+				_PatchClass = "3Section";
+			};
+			if (_Section == "909 EAW") exitwith {
+				_PatchClass = "909 EAW";
+			};
+			_PatchClass = "LRGLogo";
+		};
+
+[_unit,_PatchClass] call BIS_fnc_setUnitInsignia;

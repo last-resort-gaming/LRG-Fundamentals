@@ -24,6 +24,7 @@ class CfgFunctions {
 #include "CfgMusic.hpp"
 #include "CfgSounds.hpp"
 #include "CfgDisplays.hpp"
+#include "CfgUnitInsignia.hpp"
 
 // This needs to look the way it does. Yes, it sucks.
 class CfgScriptPaths
