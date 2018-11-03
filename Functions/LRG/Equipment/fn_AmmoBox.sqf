@@ -255,15 +255,15 @@ call {
 
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
-[_object, _AvailableHeadGear] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableGoggles] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableUniforms] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableVests] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableItems] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableAttachments] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableWeapons] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableBackpacks] call ace_arsenal_fnc_addVirtualItems;
-[_object, _AvailableMagazines] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableHeadGear, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableGoggles, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableUniforms, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableVests, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableItems, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableAttachments, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableWeapons, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableBackpacks, true] call ace_arsenal_fnc_addVirtualItems;
+[_object, _AvailableMagazines, true] call ace_arsenal_fnc_addVirtualItems;
 } else {
 [_object, _AvailableHeadGear, true] call BIS_fnc_addVirtualItemCargo;
 [_object, _AvailableGoggles, true] call BIS_fnc_addVirtualItemCargo;
