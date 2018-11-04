@@ -22,9 +22,6 @@ params [
 	["_Section", "Support"]
 ];
 
-
-if (local _unit) then {
-
 	private ["_PatchClass"];
 	call {
 		if (_Section == "Command") exitwith {
@@ -53,13 +50,7 @@ if (local _unit) then {
 	_unit addEventHandler ["Respawn", {
 		params ["_unit", "_corpse"];
 		_OldPatch = _corpse call BIS_fnc_getUnitInsignia;
-		systemchat "Respawn EH Triggered";
-		systemchat format ["OldPatch %1", _OldPatch];
 
 		[_unit, ""] call BIS_fnc_setUnitInsignia;
-		[_unit, _OldPatch] call BIS_fnc_setUnitInsignia;
-
-		[BIS_fnc_setUnitInsignia, [_unit,""], 3] call CBA_fnc_waitAndExecute;
 		[BIS_fnc_setUnitInsignia, [_unit,_OldPatch], 5] call CBA_fnc_waitAndExecute;
 	}];
-};
