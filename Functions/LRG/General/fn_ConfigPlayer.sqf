@@ -86,47 +86,9 @@ if (local _unit) then {
 	};
 
 //=========== Patches
-	private ["_PatchClass"];
-	call {
-		if (_Section == "Command") exitwith {
-			_PatchClass = "Command";
-		};
-		if (_Section == "1 Section") exitwith {
-			_PatchClass = "1Section";
-		};
-		if (_Section == "2 Section") exitwith {
-			_PatchClass = "2Section";
-		};
-		if (_Section == "3 Section") exitwith {
-			_PatchClass = "3Section";
-		};
-		if (_Section == "909 EAW") exitwith {
-			_PatchClass = "909EAW";
-		};
-		_PatchClass = "LRGLogo";
-	};
-// === Apply _PatchName to Variable.
-	_unit setVariable ["Patch", _PatchClass, true];
-
-// ===== Apply the Patch to player.	
-	[BIS_fnc_setUnitInsignia, [_unit,_PatchClass], 5] call CBA_fnc_waitAndExecute;
-
-// ====== Check when player is killed which patch they had.
-	_unit addEventHandler ["Killed", {
-		params ["_unit", "_killer", "_instigator", "_useEffects"];
-
-		_PatchClass = _unit call BIS_fnc_getUnitInsignia;
-		_unit setVariable ["Patch", _PatchClass, true];
-	}];
-
-// ======= When Player Repsawns, apply the patch they had when they died.
-	_unit addEventHandler ["Respawn", {
-		params ["_unit", "_corpse"];
-		
-		_PatchClass = _unit getVariable ["Patch", "LRGLogo"];
-		[BIS_fnc_setUnitInsignia, [_unit,_PatchClass], 5] call CBA_fnc_waitAndExecute;
-	}];
+	[_unit, _Section] call LR_fnc_Patches;
 };
+
 //========== SideChat Config
 if (hasinterface) then {
 	if ((isClass (configFile >> "CfgPatches" >> "task_force_radio")) && (EnableSideChat)) then {

@@ -34,6 +34,7 @@ class LR {
 				class MedicalFacility {};
 				class Sound3D {};
 				class FindReplaceString {};
+				class Patches {};
 			};
 			
 			class Interaction {
