@@ -27,5 +27,13 @@ class CfgSounds
 		name		= "Windows";
 		sound[]		= { "LRG Fundamentals\Media\Sounds\Windows.ogg", 1, 1, 100 };
 		titles[]	= { 0, "" };
-	};		
+	};
+
+	class CallToPrayer
+	{
+		name 		= "CallToPrayer";
+		sound[]		= { "LRG Fundamentals\Media\Sounds\CallToPrayer.ogg", 1, 1, 100 };
+		titles[]	= { 0, "" };
+		length		= 73;
+	};
 };
