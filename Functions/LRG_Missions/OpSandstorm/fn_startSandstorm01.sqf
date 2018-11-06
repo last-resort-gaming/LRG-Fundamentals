@@ -23,6 +23,11 @@ Author:
 #define DEST_MARKER "S2"
 #define RADIUS 200
 
+// Run on server
+if (!isServer) exitWith {
+	remoteExec ["LR_Missions_startSandstorm01", 2];
+};
+
 fnc_blurEffects = {
 	"dynamicBlur" ppEffectEnable true;
 	"dynamicBlur" ppEffectAdjust [8];
@@ -60,11 +65,6 @@ publicVariable "fnc_Black_In";
 publicVariable "fnc_blurEffects";
 publicVariable "fnc_camShake";
 publicVariable "fnc_playSound";
-
-// Run on server
-if (!isServer) exitWith {
-	remoteExec ["LR_Missions_startSandstorm01", 2];
-};
 
 // systemChat "Starting up"; //Debug
 
