@@ -20,8 +20,10 @@
 
 */
 
-
-if (!isserver) exitwith {};
+// If run locally, run on server instead
+if (!isServer) exitWith {
+	_this remoteExec ["LR_fnc_Sound3D", 2];
+};
 
 params [
 	"_object",
@@ -30,8 +32,4 @@ params [
 	["_pitch", 1]
 ];
 
-
 [_object, [_SoundClass, _distance, _pitch]] remoteExec ["say3D",0,true];
-
-
-
