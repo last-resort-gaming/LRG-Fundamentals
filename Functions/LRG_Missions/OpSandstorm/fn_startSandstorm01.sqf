@@ -48,21 +48,25 @@ fnc_Black_Out = {
 
 fnc_camShake = {
 	enableCamShake true;
-	setCamShakeParams [0.1, 1, 1, 1, true];
-	addCamShake[10, 15, 10];
+	addCamShake[5, 25, 10];
+};
+
+fnc_playSound = {
+	playSound3D [_this, player];
 };
 
 publicVariable "fnc_Black_Out";
 publicVariable "fnc_Black_In";
 publicVariable "fnc_blurEffects";
 publicVariable "fnc_camShake";
+publicVariable "fnc_playSound";
 
 // Run on server
 if (!isServer) exitWith {
 	remoteExec ["LR_Missions_startSandstorm01", 2];
 };
 
-systemChat "Starting up"; //Debug
+// systemChat "Starting up"; //Debug
 
 // Base path for the explosive shell sounds (1-8)
 _shellSoundBasePath = "a3\sounds_f\weapons\Explosion\expl_shell_%1.wss";
@@ -71,7 +75,7 @@ _shellSoundBasePath = "a3\sounds_f\weapons\Explosion\expl_shell_%1.wss";
 _compoundPos = getMarkerPos PLAYER_START_MARKER;
 
 // Play the prayer sound
-[_compoundPos, "CallToPrayer", 250, 1] call LR_fnc_Sound3DFromPos;
+[_compoundPos, "CallToPrayer", 250, 1, 4] call LR_fnc_Sound3DFromPos;
 
 // Wait 16 seconds after the call kicks in and spawn the explosion sounds and
 // apply the fancy post-processing
@@ -79,35 +83,15 @@ _compoundPos = getMarkerPos PLAYER_START_MARKER;
 	{
 		params ["_shellSoundBasePath", "_compoundPos"];
 
-		systemChat "Spawning explosions"; //Debug
+		// systemChat "Spawning explosions"; //Debug
 
 		// Spawn some explosions around the players.
-		_nrOfExpl = (floor (random 5)) + 5;
+		_nrOfExpl = (floor (random 7)) + 7;
 
 		for "_i" from 0 to _nrOfExpl do {
 
 			// Select an explosion sound
 			_explSound = format [_shellSoundBasePath, (floor (random 7) + 1)];
-
-			// Get a position somewhere around the compound position
-			// Get a random angle
-			_explAngle = random 360;
-
-			// Get a random distance between 50 and 200 metres away from the
-			// marker position
-			_explDistance = 50 + floor (random 150);
-
-			// Now get the position
-			// x = distance * cos(angle) + x0
-			_explPosX = _explDistance * (cos _explAngle) + (_compoundPos select 0);
-
-			// y = distance * sin(angle) + y0
-			_explPosY = _explDistance * (sin _explAngle) + (_compoundPos select 1);
-
-			// On ground
-			_explPosZ = 0;
-
-			_explPos = [_explPosX, _explPosY, _explPosZ];
 
 			// Wait some random time if this isn't the first explosion
 			_explWait = random 12;
@@ -118,12 +102,14 @@ _compoundPos = getMarkerPos PLAYER_START_MARKER;
 
 			[
 				{
-					TRACE(_this); // Debug
-					_this remoteExec ["playSound3D", 0];
-					_strength = random 5;
-					[_strength] remoteExec ["ace_hearing_fnc_earRinging", 0];
+					// TRACE(_this); // Debug
+					{
+						_this remoteExec ["fnc_playSound", _x];
+						_strength = random 1 + 1;
+						[_strength] remoteExec ["ace_hearing_fnc_earRinging", _x];
+					} forEach allPlayers;
 				},
-				[_explSound, objNull, false, _explPos],
+				_explSound,
 				_explWait
 			] call CBA_fnc_waitAndExecute;
 		};
@@ -131,10 +117,10 @@ _compoundPos = getMarkerPos PLAYER_START_MARKER;
 		// Apply Post-Processing to all players
 		[
 			{
-				systemChat "Adding cam shake"; //Debug
+				// systemChat "Adding cam shake"; //Debug
 				// Cam shake and blur
 				remoteExec ["fnc_camShake", 0];
-				[15, -1] remoteExec ["fnc_blurEffects", 0];
+				[7, -1] remoteExec ["fnc_blurEffects", 0];
 			},
 			[],
 			1
@@ -143,10 +129,11 @@ _compoundPos = getMarkerPos PLAYER_START_MARKER;
 		// Fade sound and black out
 		[
 			{
-				systemChat "Fade sound and black out"; //Debug
+				// systemChat "Fade sound and black out"; //Debug
 				remoteExecCall ["fnc_Black_Out", 0];
 				[true] remoteExec ["disableUserInput", 0];
 				[2, 0] remoteExec ["fadeSound", 0];
+				[2, 0] remoteExec ["fadeMusic", 0];
 			},
 			[],
 			6+3
@@ -155,7 +142,7 @@ _compoundPos = getMarkerPos PLAYER_START_MARKER;
 		// Teleport all players
 		[
 			{
-				systemChat "Teleporting"; //Debug
+				// systemChat "Teleporting"; //Debug
 				{
 					// Get random position somewhere around the destination marker
 					_destDist = random RADIUS;
@@ -184,24 +171,24 @@ _compoundPos = getMarkerPos PLAYER_START_MARKER;
 		// Fade in and stuff
 		[
 			{
-				systemChat "Fading in"; //Debug
+				// systemChat "Fading in"; //Debug
 
 				{
 					[_x, "AidlPpneMstpSnonWnonDnon_AI"] remoteExec ["switchMove", _x];
-					[objnull, _x] remoteExecCall ["ACE_medical_fnc_treatmentAdvanced_fullHealLocal", _x];
 				} forEach allPlayers;
 
 				[0, 20] remoteExec ["fnc_blurEffects", 0];
 				[false] remoteExec ["disableUserInput", 0];
 				remoteExecCall ["fnc_Black_In", 0];
 	    		[10, 1] remoteExec ["fadeSound", 0];
+	    		[10, 1] remoteExec ["fadeMusic", 0];
 			},
 			[],
 			14+3
 		] call CBA_fnc_waitAndExecute;
 	},
 	[_shellSoundBasePath, _compoundPos],
-	16
+	30
 ] call CBA_fnc_waitAndExecute;
 
 

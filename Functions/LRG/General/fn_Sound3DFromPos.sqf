@@ -11,6 +11,7 @@ Parameters:
 	_sound - The name of the sound class (CfgSounds) <STRING>
 	_distance - How far away the sound can be heard from _object. <NUMBER>
 	_pitch - pitch of the sound. Should usually be 1. <NUMBER>
+	_volume - Volume of the sound. If volume above 1 sound is multiplied <NUMBER>
 
 Return Values:
 	Nothing
@@ -31,7 +32,8 @@ params [
 	"_pos",
 	["_SoundClass", "AirRaid"],
 	["_distance", 250],
-	["_pitch", 1]
+	["_pitch", 1],
+	["_volume", 1]
 ];
 
 // Get the length property from the sound config entry
