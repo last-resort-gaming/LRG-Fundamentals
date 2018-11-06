@@ -13,6 +13,7 @@ class CfgFunctions {
 	#include "Functions\CHVD\CfgFunctions.hpp"
 	#include "Functions\DERP\CfgFunctions.hpp"
     #include "Functions\LRG\CfgFunctions.hpp"
+    #include "Functions\LRG_Missions\CfgFunctions.hpp"
     #include "Functions\YAINA\CfgFunctions.hpp"
     #include "Functions\AIS\cfgFunctions.hpp"
 };
