@@ -21,7 +21,7 @@ Author:
 
 #define PLAYER_START_MARKER "S1"
 #define DEST_MARKER "S2"
-#define RADIUS 200
+#define RADIUS 50
 
 // Run on server
 if (!isServer) exitWith {
@@ -69,6 +69,7 @@ publicVariable "fnc_playSound";
 // systemChat "Starting up"; //Debug
 
 // Base path for the explosive shell sounds (1-8)
+// TODO: find better sounds
 _shellSoundBasePath = "a3\sounds_f\weapons\Explosion\expl_shell_%1.wss";
 
 // Get the position of the start compound
@@ -105,7 +106,7 @@ _compoundPos = getMarkerPos PLAYER_START_MARKER;
 					// TRACE(_this); // Debug
 					{
 						_this remoteExec ["fnc_playSound", _x];
-						_strength = random 1 + 1;
+						_strength = random 1 + 0.4;
 						[_strength] remoteExec ["ace_hearing_fnc_earRinging", _x];
 					} forEach allPlayers;
 				},

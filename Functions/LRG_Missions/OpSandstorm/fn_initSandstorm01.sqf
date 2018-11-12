@@ -21,7 +21,7 @@ Author:
 	"StartSandstorm01",
 	"Start Op Sandstorm Pt. I",
 	{
-		call LR_Missions_startSandstorm01;
+		call LR_Missions_fnc_startSandstorm01;
 	},
 	[]
 ] call LR_fnc_AddCreatorAction;

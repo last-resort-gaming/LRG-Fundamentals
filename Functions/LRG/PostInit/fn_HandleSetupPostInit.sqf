@@ -29,9 +29,6 @@ Author:
 	Mokka
 */
 
-// Only run on the server
-if (!isServer) exitWith {};
-
 // If onPostInit is not used (not set) exit
 if (isNil "onPostInit") exitWith {};
 
