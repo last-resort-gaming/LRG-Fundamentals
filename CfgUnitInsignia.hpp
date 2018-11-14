@@ -7,7 +7,7 @@ class CfgUnitInsignia
 		texture = "LRG Fundamentals\Media\images\Patches\Command.paa"; // Image path
 		textureVehicle = ""; // Does nothing currently, reserved for future use
 	};
-	
+
 	class 1Section
 	{
 		displayName = "1 Section"; // Name displayed in Arsenal

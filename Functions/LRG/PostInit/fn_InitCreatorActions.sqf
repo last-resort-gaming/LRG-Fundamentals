@@ -26,8 +26,6 @@ Author:
 	Mokka
 */
 
-CreatorActions = [];
-
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitWith {};
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
@@ -95,3 +93,5 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		player setVariable ["addedActions", _addedActions];
 	};
 };
+
+publicVariable "CreatorActions";

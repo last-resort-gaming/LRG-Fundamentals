@@ -73,4 +73,12 @@ class CfgSounds
 		sound[]	= { "LRG Fundamentals\Media\Music\BohemianRhapsody.ogg", 1, 1, 100 };
 		titles[]	= { 0, "" };
 	};			
+
+	class CallToPrayer
+	{
+		name 		= "CallToPrayer";
+		sound[]		= { "LRG Fundamentals\Media\Sounds\CallToPrayer.ogg", 1, 1, 100 };
+		titles[]	= { 0, "" };
+		length		= 73;
+	};
 };

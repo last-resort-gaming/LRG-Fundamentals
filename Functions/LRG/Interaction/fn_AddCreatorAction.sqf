@@ -37,6 +37,7 @@ params ["_title", "_name", "_statement", "_args"];
 CreatorActions pushBackUnique [_title, _name, _statement, _args];
 publicVariable "CreatorActions";
 
+/* // Remove from production code
 // Stuff for single-player testing, since publicVariable EH does not fire on the
 // machine where the broadcast happened (and in testing server == creator...)
 if ((!isMultiplayer) || ((count allPlayers) == 1)) then {
@@ -81,3 +82,4 @@ if ((!isMultiplayer) || ((count allPlayers) == 1)) then {
 		player setVariable ["addedActions", _addedActions];
 	};
 };
+*/
