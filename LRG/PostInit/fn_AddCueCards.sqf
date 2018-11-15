@@ -17,7 +17,7 @@ Examples:
 Author:
 	Mokka
 */
-
+if (not LR_start) exitWith {};
 if (not hasinterface) exitWith {};
 if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {};
 

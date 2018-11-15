@@ -28,7 +28,7 @@ Examples:
 Author:
 	Mokka
 */
-
+if (not LR_start) exitWith {};
 // If onPostInit is not used (not set) exit
 if (isNil "onPostInit") exitWith {};
 

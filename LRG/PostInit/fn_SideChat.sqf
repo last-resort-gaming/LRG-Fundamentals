@@ -4,7 +4,7 @@
 	Author: MitchJC
 	Description: Handle removing Side Chat.
 */
-
+if (not LR_start) exitWith {};
 if !(isClass (configFile >> "CfgPatches" >> "task_force_radio")) exitwith {};
 
 	if (isNil "EnableSideChat") then {
