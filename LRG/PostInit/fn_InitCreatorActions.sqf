@@ -26,6 +26,8 @@ Author:
 	Mokka
 */
 
+CreatorActions = [];
+
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitWith {};
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
