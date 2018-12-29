@@ -419,13 +419,14 @@ force force acex_volume_showNotification = true;
 // ADV - ACE CPR
 force force adv_aceCPR_addTime = 20;
 force force adv_aceCPR_AED_stationType = """Land_Defibrillator_F""";
-force force adv_aceCPR_chance_0 = 3;
-force force adv_aceCPR_chance_1 = 12;
-force force adv_aceCPR_chance_2 = 35;
+force force adv_aceCPR_chance_0 = 5;
+force force adv_aceCPR_chance_1 = 15;
+force force adv_aceCPR_chance_2 = 40;
 force force adv_aceCPR_chance_aed = 60;
 force force adv_aceCPR_enable = true;
-force force adv_aceCPR_maxTime = 600;
+force force adv_aceCPR_maxTime = 1200;
 force force adv_aceCPR_useLocation_AED = 3;
+
 // AIME Ammo Type Menu
 UPSL_aime_change_ammo_setting_ammo_class = true;
 UPSL_aime_change_ammo_setting_vehicle_ammo_class = true;
@@ -475,7 +476,7 @@ force diwako_unknownwp_cooldown = 60;
 force diwako_unknownwp_dispersion_add = 25;
 force diwako_unknownwp_enable = true;
 force diwako_unknownwp_jam_explosion = 2;
-force diwako_unknownwp_jamchance_add = 5;
+force diwako_unknownwp_jamchance_add = 1;
 force diwako_unknownwp_propagation = true;
 force diwako_unknownwp_reload_failure = 1;
 
@@ -489,12 +490,13 @@ L_Immerse_twitch = true;
 force force diwako_ragdoll_ai = true;
 force force diwako_ragdoll_ragdolling = true;
 force force diwako_ragdoll_server_only = true;
+
 // STUI Settings
 STHud_Settings_ColourBlindMode = "Normal";
-STHud_Settings_Font = "RobotoCondensedLight";
+STHud_Settings_Font = "PuristaSemibold";
 STHud_Settings_HUDMode = 3;
 STHud_Settings_Occlusion = true;
-STHud_Settings_RemoveDeadViaProximity = false;
+STHud_Settings_RemoveDeadViaProximity = true;
 STHud_Settings_SquadBar = false;
 STHud_Settings_TextShadow = 1;
 
