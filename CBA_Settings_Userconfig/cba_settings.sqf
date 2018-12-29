@@ -12,6 +12,7 @@ force force ace_advanced_fatigue_enableStaminaBar = true;
 force force ace_advanced_fatigue_loadFactor = 0.5;
 force force ace_advanced_fatigue_performanceFactor = 5;
 force force ace_advanced_fatigue_recoveryFactor = 5;
+force ace_advanced_fatigue_swayFactor = 1;
 force force ace_advanced_fatigue_terrainGradientFactor = 0.2;
 
 // ACE Advanced Throwing
@@ -97,13 +98,17 @@ ace_interact_menu_colorTextMin = [1,1,1,0.25];
 ace_interact_menu_cursorKeepCentered = false;
 ace_interact_menu_menuAnimationSpeed = 0;
 ace_interact_menu_menuBackground = 0;
+ace_interact_menu_selectorColor = [0.96,0.71,0];
 ace_interact_menu_shadowSetting = 2;
 ace_interact_menu_textSize = 2;
 force force ace_interact_menu_useListMenu = true;
 
 // ACE Logistics
 force force ace_cargo_enable = true;
+force force ace_cargo_loadTimeCoefficient = 5;
 force force ace_cargo_paradropTimeCoefficent = 0.2;
+force force ace_rearm_level = 0;
+force force ace_rearm_supply = 0;
 force force ace_refuel_hoseLength = 12;
 force force ace_refuel_rate = 1;
 force force ace_repair_addSpareParts = true;
@@ -128,7 +133,7 @@ force force ace_map_BFT_Enabled = false;
 force force ace_map_BFT_HideAiGroups = true;
 force force ace_map_BFT_Interval = 30;
 force force ace_map_BFT_ShowPlayerNames = false;
-force force ace_map_defaultChannel = 1;
+force force ace_map_DefaultChannel = 1;
 force force ace_map_mapGlow = true;
 force force ace_map_mapIllumination = true;
 force force ace_map_mapLimitZoom = false;
@@ -203,6 +208,11 @@ force force ace_mk6mortar_useAmmoHandling = true;
 
 // ACE Name Tags
 force force ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
+ace_nametags_nametagColorBlue = [0.67,0.67,1,1];
+ace_nametags_nametagColorGreen = [0.67,1,0.67,1];
+ace_nametags_nametagColorMain = [1,1,1,1];
+ace_nametags_nametagColorRed = [1,0.67,0.67,1];
+ace_nametags_nametagColorYellow = [1,1,0.67,1];
 force force ace_nametags_playerNamesMaxAlpha = 0.8;
 force force ace_nametags_playerNamesViewDistance = 50;
 force force ace_nametags_showCursorTagForVehicles = false;
@@ -237,7 +247,8 @@ force force ace_finger_indicatorForSelf = true;
 force force ace_finger_maxRange = 50;
 
 // ACE Pylons
-force force ace_pylons_enabled = false;
+force ace_pylons_enabledForZeus = true;
+force ace_pylons_enabledFromAmmoTrucks = true;
 force force ace_pylons_rearmNewPylons = false;
 force force ace_pylons_requireEngineer = false;
 force force ace_pylons_requireToolkit = true;
@@ -247,12 +258,9 @@ force force ace_pylons_timePerPylon = 5;
 // ACE Quick Mount
 force force ace_quickmount_distance = 5;
 force force ace_quickmount_enabled = true;
+ace_quickmount_enableMenu = 3;
 force force ace_quickmount_priority = 3;
 force force ace_quickmount_speed = 18;
-
-// ACE Rearm
-force force ace_rearm_level = 0;
-force force ace_rearm_supply = 0;
 
 // ACE Respawn
 force force ace_respawn_removeDeadBodiesDisconnected = true;
@@ -263,7 +271,7 @@ force force ace_scopes_correctZeroing = true;
 force force ace_scopes_deduceBarometricPressureFromTerrainAltitude = false;
 force force ace_scopes_defaultZeroRange = 100;
 force force ace_scopes_enabled = true;
-force force ace_scopes_force forceUseOfAdjustmentTurrets = false;
+force force ace_scopes_forceUseOfAdjustmentTurrets = false;
 force force ace_scopes_overwriteZeroRange = false;
 force force ace_scopes_simplifiedZeroing = false;
 force force ace_scopes_useLegacyUI = false;
@@ -289,14 +297,14 @@ force force ace_switchunits_switchToWest = false;
 force force ace_tagging_quickTag = 1;
 
 // ACE Uncategorized
-force force ace_gforce forces_enabledFor = 1;
+force force ace_gforces_enabledFor = 1;
 force force ace_hitreactions_minDamageToTrigger = 0.1;
 ace_inventory_inventoryDisplaySize = 0;
 force force ace_laser_dispersionCount = 2;
 force force ace_microdagr_mapDataAvailable = 2;
+force force ace_microdagr_waypointPrecision = 3;
 force force ace_optionsmenu_showNewsOnMainMenu = true;
 force force ace_overpressure_distanceCoefficient = 1;
-force force ace_weaponselect_displayText = true;
 
 // ACE User Interface
 force force ace_ui_allowSelectiveUI = true;
@@ -352,6 +360,7 @@ force force ace_viewdistance_viewDistanceOnFoot = 0;
 force force ace_common_persistentLaserEnabled = true;
 force force ace_laserpointer_enabled = true;
 force force ace_reload_displayText = true;
+force force ace_weaponselect_displayText = true;
 
 // ACE Weather
 force force ace_weather_enabled = false;
@@ -365,12 +374,23 @@ force force ace_winddeflection_vehicleEnabled = true;
 
 // ACE Zeus
 force force ace_zeus_autoAddObjects = true;
+force ace_zeus_canCreateZeus = -1;
 force force ace_zeus_radioOrdnance = false;
 force force ace_zeus_remoteWind = false;
 force force ace_zeus_revealMines = 0;
 force force ace_zeus_zeusAscension = false;
 force force ace_zeus_zeusBird = false;
 
+// ACEX Field Rations
+force force acex_field_rations_enabled = false;
+acex_field_rations_hudShowLevel = 0;
+acex_field_rations_hudTransparency = -1;
+acex_field_rations_hudType = 0;
+force force acex_field_rations_timeWithoutFood = 2;
+force force acex_field_rations_timeWithoutWater = 2;
+
+// ACEX Fortify
+acex_fortify_settingHint = 1;
 // ACEX Headless
 force force acex_headless_delay = 15;
 force force acex_headless_enabled = true;
@@ -386,6 +406,7 @@ force force acex_viewrestriction_modeSelectiveAir = 0;
 force force acex_viewrestriction_modeSelectiveFoot = 0;
 force force acex_viewrestriction_modeSelectiveLand = 0;
 force force acex_viewrestriction_modeSelectiveSea = 0;
+acex_viewrestriction_preserveView = false;
 
 // ACEX Volume
 force force acex_volume_enabled = false;
@@ -395,15 +416,16 @@ force force acex_volume_reduction = 6;
 force force acex_volume_remindIfLowered = false;
 force force acex_volume_showNotification = true;
 
-// Task Force Arrowhead Radio
-TF_default_radioVolume = 7;
-force force TF_give_microdagr_to_soldier = false;
-force force TF_give_personal_radio_to_regular_soldier = false;
-force force TF_no_auto_long_range_radio = true;
-force force TF_same_dd_frequencies_for_side = false;
-force force TF_same_lr_frequencies_for_side = false;
-force force TF_same_sw_frequencies_for_side = false;
-
+// ADV - ACE CPR
+force force adv_aceCPR_addTime = 20;
+force force adv_aceCPR_AED_stationType = """Land_Defibrillator_F""";
+force force adv_aceCPR_chance_0 = 3;
+force force adv_aceCPR_chance_1 = 12;
+force force adv_aceCPR_chance_2 = 35;
+force force adv_aceCPR_chance_aed = 60;
+force force adv_aceCPR_enable = true;
+force force adv_aceCPR_maxTime = 600;
+force force adv_aceCPR_useLocation_AED = 3;
 // AIME Ammo Type Menu
 UPSL_aime_change_ammo_setting_ammo_class = true;
 UPSL_aime_change_ammo_setting_vehicle_ammo_class = true;
@@ -443,11 +465,30 @@ UPSL_aime_vehicle_seats_setting_getin_action = true;
 UPSL_aime_vehicle_seats_setting_getout_action = true;
 UPSL_aime_vehicle_seats_setting_turnout_action = true;
 
+// CBA UI
+cba_ui_StorePasswords = 1;
+
+// Diwako's Punish unknown weapon
+force diwako_unknownwp_add_weapons = "arifle_Mk20_plain_F,arifle_CTAR_blk_F";
+force diwako_unknownwp_briefing = true;
+force diwako_unknownwp_cooldown = 60;
+force diwako_unknownwp_dispersion_add = 25;
+force diwako_unknownwp_enable = true;
+force diwako_unknownwp_jam_explosion = 2;
+force diwako_unknownwp_jamchance_add = 5;
+force diwako_unknownwp_propagation = true;
+force diwako_unknownwp_reload_failure = 1;
+
+// Laxemann Immerse
+L_Immerse_exShake = true;
+L_Immerse_force = true;
+L_Immerse_recoil = true;
+L_Immerse_twitch = true;
+
 // Diwako's ACE Ragdolling
 force force diwako_ragdoll_ai = true;
 force force diwako_ragdoll_ragdolling = true;
 force force diwako_ragdoll_server_only = true;
-
 // STUI Settings
 STHud_Settings_ColourBlindMode = "Normal";
 STHud_Settings_Font = "RobotoCondensedLight";
@@ -457,13 +498,11 @@ STHud_Settings_RemoveDeadViaProximity = false;
 STHud_Settings_SquadBar = false;
 STHud_Settings_TextShadow = 1;
 
-// ADV - ACE CPR
-force force adv_aceCPR_addTime = 20;
-force force adv_aceCPR_AED_stationType = """Land_Defibrillator_F""";
-force force adv_aceCPR_chance_0 = 5;
-force force adv_aceCPR_chance_1 = 10;
-force force adv_aceCPR_chance_2 = 25;
-force force adv_aceCPR_chance_aed = 55;
-force force adv_aceCPR_enable = true;
-force force adv_aceCPR_maxTime = 600;
-force force adv_aceCPR_useLocation_AED = 3;
+// Task Force Arrowhead Radio
+TF_default_radioVolume = 7;
+force force TF_give_microdagr_to_soldier = false;
+force force TF_give_personal_radio_to_regular_soldier = false;
+force force TF_no_auto_long_range_radio = true;
+force force TF_same_dd_frequencies_for_side = false;
+force force TF_same_lr_frequencies_for_side = false;
+force force TF_same_sw_frequencies_for_side = false;
