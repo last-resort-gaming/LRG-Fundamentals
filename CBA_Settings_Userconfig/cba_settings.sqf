@@ -189,7 +189,7 @@ force force ace_medical_menu_useMenu = 1;
 force force ace_medical_menuTypeStyle = 0;
 force force ace_medical_moveUnitsFromGroupOnUnconscious = true;
 force force ace_medical_painCoefficient = 1;
-ace_medical_painEffectType = 1;
+ace_medical_painEffectType = 0;
 force force ace_medical_painIsOnlySuppressed = true;
 force force ace_medical_playerDamageThreshold = 2.5;
 force force ace_medical_preventInstaDeath = true;
@@ -208,11 +208,11 @@ force force ace_mk6mortar_useAmmoHandling = true;
 
 // ACE Name Tags
 force force ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
-ace_nametags_nametagColorBlue = [0.67,0.67,1,1];
-ace_nametags_nametagColorGreen = [0.67,1,0.67,1];
+ace_nametags_nametagColorBlue = [0.27,0.53,0.95,1];
+ace_nametags_nametagColorGreen = [0.11,0.64,0.38,1];
 ace_nametags_nametagColorMain = [1,1,1,1];
-ace_nametags_nametagColorRed = [1,0.67,0.67,1];
-ace_nametags_nametagColorYellow = [1,1,0.67,1];
+ace_nametags_nametagColorRed = [0.85,0.13,0.15,1];
+ace_nametags_nametagColorYellow = [1,0.81,0.29,1];
 force force ace_nametags_playerNamesMaxAlpha = 0.8;
 force force ace_nametags_playerNamesViewDistance = 50;
 force force ace_nametags_showCursorTagForVehicles = false;
