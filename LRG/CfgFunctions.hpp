@@ -14,6 +14,7 @@ class LR {
 		file = "LRG Fundamentals\LRG\Equipment";
 		class AmmoBox {};
 		class Arsenal {};
+		class ConfigEquipment {};
 		class Loadouts {};
 	};
 
