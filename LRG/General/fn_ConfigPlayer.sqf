@@ -79,6 +79,17 @@ if (local _unit) then {
 			_unit setUnitTrait [_x, true, true];
 		} forEach _TraitsArray;
 	};
+//========ACE Player Traits
+	if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+
+	_unit setvariable ["ace_advanced_fatigue_performanceFactor",2.0,true];
+
+	if (_unit getunittrait "Medic") then { _unit setVariable ["ace_medical_medicClass", 1, true]};
+	if (_unit getunittrait "Doctor") then { _unit setVariable ["ace_medical_medicClass", 2, true]};
+	if (_unit getunittrait "Engineer") then { _unit setVariable ["ace_isEngineer", 1, true]};
+	if (_unit getunittrait "Adv Engineer") then { _unit setVariable ["ace_isEngineer", 2, true]};
+
+};
 
 //========== Loadout Config
 	if !(_Loadout isEqualto []) then {
