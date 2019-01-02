@@ -114,6 +114,9 @@ call {
             "UK3CB_BAF_762_L42A1_20Rnd_T",
             "UK3CB_BAF_1Rnd_HEDP_Grenade_Shell",
             "UK3CB_BAF_1Rnd_60mm_Mo_Shells",
+			"UK3CB_BAF_9_13Rnd",
+			"UK3CB_BAF_9_15Rnd",
+			"UK3CB_BAF_9_17Rnd",
             "Laserbatteries"
 		];
 

@@ -971,11 +971,16 @@ _ArsenalType = call {
 			"UK3CB_BAF_LLM_Flashlight_Tan",
 			"UK3CB_BAF_LLM_Flashlight_Black",
 			"UK3CB_BAF_Flashlight_L131A1",
+			"UK3CB_BAF_Flashlight_L105A1",
 			"UK3CB_BAF_SFFH",
 			"UK3CB_BAF_Silencer_L85",
 			"UK3CB_BAF_Silencer_L110",
 			"UK3CB_BAF_Silencer_L115A3",
-			"UK3CB_BAF_Silencer_L91A1"
+			"UK3CB_BAF_Silencer_L91A1",
+			"UK3CB_BAF_Silencer_L105A1",
+			"UK3CB_BAF_L105A1_LLM_IR_R",
+			"UK3CB_BAF_L105A1_LLM_IR_G",
+			"UK3CB_BAF_Laser_L131A1"
         ];
 
         _AvailableMagazines = [
@@ -1004,6 +1009,8 @@ _ArsenalType = call {
 			"APERSBoundingMine_Range_Mag",
 			"SLAMDirectionalMine_Wire_Mag",
 			"APERSTripMine_Wire_Mag",
+			"UK3CB_BAF_9_13Rnd",
+			"UK3CB_BAF_9_15Rnd",			
 			"UK3CB_BAF_9_17Rnd",
 			"UK3CB_BAF_9_30Rnd",
 			"UK3CB_BAF_127_10Rnd",
@@ -1057,6 +1064,14 @@ _ArsenalType = call {
         ];
 
         _AvailableWeapons = [
+			"UK3CB_BAF_L105A1",
+			"UK3CB_BAF_L105A2",
+			"UK3CB_BAF_L107A1",
+			"UK3CB_BAF_L117A1",
+			"UK3CB_BAF_L131A1",
+			"UK3CB_BAF_L9A1",
+		
+		
 			"Binocular",		
 			"UK3CB_BAF_L1A1",
 			"UK3CB_BAF_L1A1_Wood",
@@ -1104,7 +1119,6 @@ _ArsenalType = call {
 			"UK3CB_BAF_L129A1_Grippod",
 			"UK3CB_BAF_L129A1_AFG",
 			"UK3CB_BAF_L129A1_FGrip",
-			"UK3CB_BAF_L131A1",
 			"UK3CB_BAF_L82A1",
 			"UK3CB_BAF_AT4_CS_AT_Launcher",
 			"UK3CB_BAF_AT4_CS_AP_Launcher",
