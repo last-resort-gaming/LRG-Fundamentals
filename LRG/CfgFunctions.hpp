@@ -62,7 +62,7 @@ class LR {
 		class ArsenalLoadSave {postInit = 1;};
 		class Diary {postInit = 1;};
 		class DynamicSim { postInit = 1; };
-		class InitPlayerLocal {postInit = 1;};
+		class InitPlayerLocal {};
 		class InitServer {postInit = 1;};
 		class Logs {postInit = 1;};
 		class PilotCheck {postInit = 1;};

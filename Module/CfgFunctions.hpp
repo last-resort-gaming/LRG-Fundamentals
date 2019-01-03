@@ -5,5 +5,7 @@ class LR {
 
 		file = "LRG Fundamentals\Module\Functions";
 		class ModuleMain {};
+		class moduleAISpawns {};
+		class moduleSafeZone {};
 	};
 };

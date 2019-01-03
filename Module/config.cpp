@@ -68,20 +68,6 @@ class CfgVehicles
 				typeName = "BOOL";
 				defaultValue = 1;
 			};
-			class SafeZoneEnable
-			{
-				displayName =  "Safe Zone";
-				description = "Should players be restricted from shooting at base?";
-				typeName = "BOOL";
-				defaultValue = 1;
-			};
-			class SafeZoneSize
-			{
-				displayName = "Safe Zone - Size";
-				description = "Area of Safe Zone in meters.";
-				typeName = "NUMBER";
-				defaultValue = 150;
-			};
 			class ViewDistanceMaxDistance
 			{
 				displayName = "CHVD - Max View Distance";
@@ -192,12 +178,12 @@ class CfgVehicles
 	class LRG_ModuleAISpawns: Module_F
 	{
 		scope = 2;
-		displayName = "LRG AI Spawns";
+		displayName = "LRG AI Spawn";
 		icon = "LRG Fundamentals\Media\Images\LRG Logo.paa";
 		author = "MitchJC";
 		vehicleClass = "Modules";
 		category = "LRG_Modules";
-		function = "LR_fnc_moduleMain";
+		function = "LR_fnc_moduleAISpawns";
 		functionPriority = 1;
 		isGlobal = 1;
 		isTriggerActivated = 1;
@@ -400,6 +386,57 @@ class CfgVehicles
 				typeName = "Number";
 				defaultValue = 0;
 			};																											
+		};
+		class ModuleDescription: ModuleDescription
+		{
+			description = "LRG Fundamentals Module Description Goes Here.";
+			sync[] = {"LocationArea_F"};
+			class LocationArea_F
+			{
+				position = 0;
+				optional = 0;
+				duplicate = 1;
+				synced[] = {"Anything"};
+			};
+		};
+	};
+class LRG_ModuleSafeZone: Module_F
+	{
+		scope = 2;
+		displayName = "LRG Safe Zone";
+		icon = "LRG Fundamentals\Media\Images\LRG Logo.paa";
+		author = "MitchJC";
+		vehicleClass = "Modules";
+		category = "LRG_Modules";
+		function = "LR_fnc_moduleSafeZone";
+		functionPriority = 1;
+		isGlobal = 1;
+		isTriggerActivated = 1;
+		isDisposable = 0;
+		is3DEN = 0;
+		class Arguments: ArgumentsBaseUnits
+		{
+			class SafeZoneEnable
+			{
+				displayName =  "Safe Zone";
+				description = "Should players be restricted from shooting at base?";
+				typeName = "BOOL";
+				defaultValue = 1;
+			};
+			class SafeZoneSize
+			{
+				displayName = "Size";
+				description = "Area of Safe Zone around this module in meters.";
+				typeName = "NUMBER";
+				defaultValue = 150;
+			};
+			class SafeZoneDuration
+			{
+				displayName = "Duration";
+				description = "How long should the safe zone be active. -1 means permanent.";
+				typeName = "NUMBER";
+				defaultValue = -1;
+			};																																		
 		};
 		class ModuleDescription: ModuleDescription
 		{

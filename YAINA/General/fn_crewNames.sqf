@@ -17,9 +17,6 @@ Examples:
 Author:
 	Unknown, rewritten by Alganthe
 */
-if (not LR_start) exitWith{};
-
-if !(VehicleCrewList) exitwith {};
 
 player addEventHandler ["GetInMan", {
     [{
