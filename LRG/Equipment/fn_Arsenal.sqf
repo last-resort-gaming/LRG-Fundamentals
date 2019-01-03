@@ -707,7 +707,82 @@ _ArsenalType = call {
 			"Laserdesignator_01_khk_F"
 		];
 	};
-		
+
+	if (_Type isEqualTo "ACETFAR") exitwith {
+		_AvailableItems = [
+			"ItemWatch", 
+			"ItemCompass", 
+			"ItemGPS", 
+			"ItemRadio", 
+			"ItemMap", 
+			"NVGoggles", 
+			"NVGoggles_tna_F", 
+			"NVGoggles_OPFOR",
+			"NVGoggles_INDEP",
+			"FirstAidKit",
+			"Medikit",
+			"ToolKit",
+			"MineDetector",
+			"B_UavTerminal"
+		];
+
+		_AvailableHeadgear = [];
+
+		_AvailableGoggles = [
+			"G_Balaclava_blk", 
+			"G_Balaclava_combat", 
+			"G_Balaclava_lowprofile", 
+			"G_Balaclava_oli", 
+			"G_Bandanna_aviator", 
+			"G_Bandanna_beast", 
+			"G_Bandanna_blk", 
+			"G_Bandanna_khk", 
+			"G_Bandanna_oli", 
+			"G_Bandanna_shades", 
+			"G_Bandanna_sport", 
+			"G_Bandanna_tan", 
+			"G_Combat", 
+			"G_Lowprofile", 
+			"G_Tactical_Black", 
+			"G_Tactical_Clear", 
+			"G_Aviator", 
+			"G_Spectacles", 
+			"G_Spectacles_Tinted", 
+			"G_Squares", 
+			"G_Squares_Tinted", 
+			"G_Shades_Black", 
+			"G_Shades_Blue", 
+			"G_Shades_Green", 
+			"G_Shades_Red", 
+			"G_Sport_Blackred", 
+			"G_Sport_BlackWhite", 
+			"G_Sport_Blackyellow", 
+			"G_Sport_Checkered", 
+			"G_Sport_Greenblack", 
+			"G_Sport_Red", 
+			"G_B_Diving", 
+			"G_Combat_Goggles_tna_F", 
+			"G_Balaclava_oli", 
+			"G_Balaclava_TI_blk_F", 
+			"G_Balaclava_TI_G_blk_F", 
+			"G_Balaclava_TI_G_tna_F", 
+			"G_Balaclava_TI_tna_F"
+		];
+
+		_AvailableUniforms = [];
+
+		_AvailableVests = [];
+
+		_AvailableBackpacks = [];
+
+		_AvailableAttachments = [];
+
+		_AvailableMagazines = [];
+
+		_AvailableWeapons = [];
+	};
+
+
 	if (_type isEqualTo "3CB") exitwith {
 	    _AvailableItems = [
             "ItemWatch",

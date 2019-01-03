@@ -90,7 +90,75 @@ call {
 		_AvailableWeapons = [];
 		_AvailableBackpacks = [];
 	};
-	
+
+if (_Type isEqualTo "ACETFAR") exitwith {
+		_AvailableItems = [
+			"ItemWatch", 
+			"ItemCompass", 
+			"ItemGPS", 
+			"ItemRadio", 
+			"ItemMap", 
+			"NVGoggles", 
+			"FirstAidKit",
+			"Medikit",
+			"ToolKit",
+			"MineDetector",
+			"B_UavTerminal",
+			"ACE_elasticBandage",
+            "ACE_packingBandage",
+            "ACE_quikclot",
+            "ACE_bloodIV_500",
+            "ACE_epinephrine",
+            "ACE_morphine",
+            "ACE_tourniquet",
+            "ACE_CableTie",
+            "ACE_IR_Strobe_Item",
+            "optic_NVS"
+		];
+
+		_AvailableMagazines = [
+			"Laserbatteries",
+			"30Rnd_545x39_Mag_Tracer_F", 
+			"30Rnd_556x45_Stanag_red", 
+			"150Rnd_556x45_Drum_Mag_Tracer_F", 
+			"200Rnd_556x45_Box_Tracer_Red_F", 
+			"20Rnd_650x39_Cased_Mag_F", 
+			"30Rnd_65x39_caseless_mag_Tracer", 
+			"200Rnd_65x39_cased_Box_Tracer", 
+			"10Rnd_762x54_Mag", 
+			"20Rnd_762x51_Mag", 
+			"30Rnd_762x39_Mag_Tracer_Green_F", 
+			"150Rnd_762x51_Box", 
+			"130Rnd_338_Mag", 
+			"10Rnd_338_Mag", 
+			"30Rnd_9x21_Mag_SMG_02_Tracer_Red", 
+			"10Rnd_93x64_DMR_05_Mag", 
+			"5Rnd_127x108_Mag", 
+			"7Rnd_408_Mag", 
+			"HandGrenade", 
+			"SmokeShell", 
+			"SmokeShellGreen",
+			"1Rnd_HE_Grenade_shell", 
+			"3Rnd_HE_Grenade_shell",
+			"DemoCharge_Remote_Mag", 
+			"SatchelCharge_Remote_Mag",
+			"RPG32_HE_F",
+			"Titan_AT",
+			"Titan_AA"		
+		];
+			
+		_AvailableHeadGear = [];
+		_AvailableGoggles = [];
+		_AvailableUniforms = [];
+		_AvailableVests = [];
+		_AvailableAttachments = [];
+		_AvailableWeapons = [
+			"ACE_VMH3",
+			"ACE_VMM3"	
+		];
+		_AvailableBackpacks = [];
+	};
+
 	if (_type isEqualTo "3CB") exitwith {
 	    _AvailableItems = [
             "ACE_elasticBandage",
@@ -117,7 +185,16 @@ call {
 			"UK3CB_BAF_9_13Rnd",
 			"UK3CB_BAF_9_15Rnd",
 			"UK3CB_BAF_9_17Rnd",
-            "Laserbatteries"
+            "Laserbatteries",
+			"ACE_Chemlight_HiOrange",
+			"ACE_Chemlight_HiRed",
+			"ACE_Chemlight_HiWhite",
+			"ACE_Chemlight_HiYellow",
+			"ACE_Chemlight_IR",
+			"ACE_Chemlight_Orange",
+			"Chemlight_red",
+			"ACE_Chemlight_White",
+			"Chemlight_yellow"
 		];
 
 		_AvailableWeapons = [
