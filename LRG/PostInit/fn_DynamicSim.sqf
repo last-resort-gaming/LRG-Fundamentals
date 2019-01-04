@@ -5,7 +5,7 @@
 	Description: If Dynamic Simulation isn't set, this function will auto do it.
 */
 
-if ((not LR_start) || {(!isserver)}) exitWith{};
+if (!IsServer) exitwith {};
 
 if !(dynamicSimulationSystemEnabled) exitwith {
 
@@ -15,7 +15,6 @@ if !(dynamicSimulationSystemEnabled) exitwith {
 	"Vehicle" setDynamicSimulationDistance 1500;
 	"EmptyVehicle" setDynamicSimulationDistance 250;
 	"Prop" setDynamicSimulationDistance 50;
-
 	"IsMoving" setDynamicSimulationDistanceCoef 3;
 
 };

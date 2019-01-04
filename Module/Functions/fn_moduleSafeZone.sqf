@@ -14,12 +14,13 @@ params [
 
 //if (_localGroups isEqualTo []) exitWith {};
 
-_SafeZoneEnable = _logic getVariable ["SafeZoneEnable", "0"];
-_SafeZoneSize = _logic getVariable ["SafeZoneSize", "0"];
-_SafeZoneDuration = _logic getVariable ["SafeZoneDuration", "1"];
-_SafeZoneLocation = getPos _logic;
+SafeZoneEnable = _logic getVariable ["SafeZoneEnable", "0"];
+SafeZoneSize = _logic getVariable ["SafeZoneSize", "0"];
+SafeZoneDuration = _logic getVariable ["SafeZoneDuration", "1"];
+SafeZoneLocation = (getPos _logic);
+
+
 // Client Actions
-if (hasInterface) then {
 
 	_handle = [
 		{
@@ -44,7 +45,7 @@ if (hasInterface) then {
 
 				    _checkObject = [_veh, _unit] select isNull _veh;
 
-					if (_checkObject distance2D _SafeZoneLocation < _SafeZoneSize) exitWith {
+					if (_checkObject distance2D SafeZoneLocation < SafeZoneSize) exitWith {
 						deleteVehicle _projectile;
 						hintC "Denied.";
 						playSound "Denied"; 
@@ -55,4 +56,3 @@ if (hasInterface) then {
 			player setVariable ["SafezoneEH", _SafeZoneEH];
 		}, 60, []
 	] call CBA_fnc_addPerFrameHandler;
-};

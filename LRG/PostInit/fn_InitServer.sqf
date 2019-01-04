@@ -4,16 +4,16 @@
 	Author: MitchJC
 	Description: Scripts executed on server only.
 */
-if (not LR_start) exitWith{};
 
 enableSaving [false, false];
 
-if (!isserver) exitwith {};
-
-{_x setSpeaker "NoVoice"} forEach playableUnits;
-
-//=================================== VANILLA ONLY =====================================================
+call LR_fnc_DynamicSim;
+call LR_fnc_SetInitialAI;
+call LR_fnc_Logs;
 
 if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 	["Initialize"] call BIS_fnc_dynamicGroups;
 };
+
+{_x setSpeaker "NoVoice"} forEach playableUnits;
+

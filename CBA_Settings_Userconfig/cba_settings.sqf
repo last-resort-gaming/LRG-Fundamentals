@@ -23,8 +23,8 @@ force force ace_advanced_throwing_showMouseControls = true;
 force force ace_advanced_throwing_showThrowArc = true;
 
 // ACE Arsenal
-force force ace_arsenal_allowDefaultLoadouts = true;
-force force ace_arsenal_allowSharedLoadouts = true;
+force force ace_arsenal_allowDefaultLoadouts = false;
+force force ace_arsenal_allowSharedLoadouts = false;
 force force ace_arsenal_camInverted = false;
 force force ace_arsenal_enableIdentityTabs = true;
 force force ace_arsenal_enableModIcons = true;

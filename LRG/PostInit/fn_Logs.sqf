@@ -4,7 +4,7 @@
 	Author: MitchJC
 	Description: Starts Logging and handles DeathLogs.
 */
-if ((not LR_start) || {(!isserver)}) exitWith{};
+if (!isServer) exitwith {};
 
 if (isClass (configFile >> "CfgPatches" >> "a3log")) then {
 	

@@ -26,7 +26,6 @@ Author:
 	Mokka
 */
 
-if (not LR_start) exitWith {};
 CreatorActions = [];
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitWith {};
 

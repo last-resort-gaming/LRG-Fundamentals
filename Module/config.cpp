@@ -119,6 +119,7 @@ class CfgVehicles
 					{
 						name = "Clear";
 						value = "Clear";
+						default = 1;
 					};
 					class DWCloudy
 					{
@@ -131,7 +132,6 @@ class CfgVehicles
 						value = "Rain";
 					};
 				};
-				defaultValue = "Clear";
 			};
 			class TFARTransmitRange
 			{

@@ -21,6 +21,6 @@ class CHVD
 		class trueZoom {};
 		class keyDown {};
 		class keyDownTerrain {};
-		class init {postInit = 1;};
+		class init {postinit = 1;};
 	};
 };

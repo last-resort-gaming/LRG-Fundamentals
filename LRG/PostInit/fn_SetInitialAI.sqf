@@ -1,5 +1,3 @@
-
-if (not LR_start) exitWith{};
 if (!isserver) exitwith {};
 	
 	{
