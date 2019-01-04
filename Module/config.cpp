@@ -191,6 +191,13 @@ class CfgVehicles
 		is3DEN = 0;
 		class Arguments: ArgumentsBaseUnits
 		{
+			class ObjName
+			{
+				displayName = "Objective Name";
+				description = "Name of Objective/Spawn Position";
+				typeName = "STRING";
+				defaultValue = "Objective 1";
+			};
 			class EnemyType
 			{
 				displayName = "Enemy Faction";
