@@ -7,5 +7,6 @@ class LR {
 		class ModuleMain {};
 		class moduleAISpawns {};
 		class moduleSafeZone {};
+		class moduleChannels {};
 	};
 };

@@ -1,3 +1,6 @@
+if (isNil "CHVD_Enabled") exitwith {};
+if (not CHVD_Enabled) exitWith{};
+
 [] spawn {
 	if (!hasInterface) exitWith {};
 	//Wait for mission init, in case there are variables defined some place else

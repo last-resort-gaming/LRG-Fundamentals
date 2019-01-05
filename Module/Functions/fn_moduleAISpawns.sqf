@@ -4,29 +4,7 @@ params [
     ["_logic",objNull,[objNull]],
     ["_groups",[],[[]]],
     "_localGroups",
-    "_logic",
-    ["_ObjName", "Objective 1"],
-	["_EnemyType", "CSAT"],
-	["_Radius", 500],
-	["_GarrisonedGroups", 0],
-	["_GarrisonedGroupsMin", 0],
-	["_GarrisonedGroupsMax", 0],
-	["_EIPatrolsMin", 0],
-	["_EIPatrolsMax", 0],
-	["_EIAAMin", 0],
-	["_EIAAMax", 0],
-	["_EIATMin", 0],
-	["_EIATMax", 0],
-	["_VehAAMin", 0],
-	["_VehAAMax", 0],
-	["_VehMRAPMin", 0],
-	["_VehMRAPMax", 0],
-	["_VehLightMin", 0],
-	["_VehLightMax", 0],
-	["_VehHeavyMin", 0],
-	["_VehHeavyMax", 0],
-	["_VehRandomMin", 0],
-	["_VehRandomMax", 0]
+    "_logic"
 ];
 
 _ObjName = _logic getVariable ["ObjName", "Objective 1"];

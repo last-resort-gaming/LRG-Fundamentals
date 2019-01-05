@@ -18,6 +18,9 @@ Author:
 	Unknown, rewritten by Alganthe
 */
 
+if (isNil "VehicleCrewListEnable") exitwith {};
+if (not VehicleCrewListEnable) exitWith{};
+
 player addEventHandler ["GetInMan", {
     [{
         params ["_args", "_pfhID"];

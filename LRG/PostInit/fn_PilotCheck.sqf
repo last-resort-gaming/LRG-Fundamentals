@@ -4,6 +4,10 @@
 	Author: MitchJC
 	Description: Allows only Pilots to fly aircraft.
 */
+
+if (isNil "PilotCheck") exitwith {};
+if (not PilotCheck) exitWith{};
+
 if (!hasInterface) exitwith {};
 
 private ["_vehicle"];

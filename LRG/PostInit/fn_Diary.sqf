@@ -4,6 +4,9 @@
 	Author: MitchJC
 	Description: Creates Diary Subjects and Records as required.
 */
+if (isNil "DiaryEnable") exitwith {};
+if (not DiaryEnable) exitWith{};
+
 if (!hasInterface) exitWith {};
 
 player createDiaryRecord ["Diary", ["Long Range Frequencies",

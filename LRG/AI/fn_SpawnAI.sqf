@@ -181,7 +181,7 @@ call {
 		_vehHeavyList = ["I_MBT_03_cannon_F", "I_LT_01_AT_F", "I_LT_01_cannon_F"];
 	};
 	
-	if (_army isEqualto "TM") exitwith {
+	if (_army isEqualto "CUP TM") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "CUP_O_TK_MILITIA" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_TK_INS_Soldier_AA"];
@@ -194,7 +194,7 @@ call {
 		_vehHeavyList = [];
 	};
 	
-	if (_army isEqualto "CRS") exitwith {
+	if (_army isEqualto "CUP CMRS") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "CUP_O_ChDKZ" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_INS_Soldier_AA"];
@@ -220,7 +220,7 @@ call {
 		_vehHeavyList 	= ["CUP_O_T72_RU","CUP_O_T90_RU"];
 	};
 	
-	if (_army isEqualto "SLA") exitwith {
+	if (_army isEqualto "CUP SLA") exitwith {
 		_confBase     = configfile >> "CfgGroups" >> "East" >> "CUP_O_SLA" >> "Infantry";
 		_infList      = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_sla_Soldier_AA", "CUP_O_sla_Soldier_AA_desert"];
@@ -233,7 +233,7 @@ call {
 		_vehHeavyList = ["CUP_O_T55_SLA", "CUP_O_T72_SLA"];
 	};
 	
-	if (_army isEqualto "TA") exitwith {
+	if (_army isEqualto "CUP TA") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "CUP_O_TK" >> "Infantry" ;
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_TK_Soldier_AA"];

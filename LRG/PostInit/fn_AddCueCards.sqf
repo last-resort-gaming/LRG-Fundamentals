@@ -17,6 +17,11 @@ Examples:
 Author:
 	Mokka
 */
+if (isNil "CueCardsEnable") exitwith {};
+if (not CueCardsEnable) exitWith{};
+
+if !(hasinterface) exitwith {};
+if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
 
 _cueCardsData = [
 	// 	0 - CASEVAC Request Card

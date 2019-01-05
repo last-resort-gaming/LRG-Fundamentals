@@ -4,6 +4,12 @@
 	Author: MitchJC
 	Description: Removes Load/Save function from the Virtual Arsenal.
 */
+
+if (isNil "ArsenalSaveLoad") exitwith {};
+if (not ArsenalSaveLoad) exitWith{};
+
+if !(hasinterface) exitwith {};
+
 [
 	missionNamespace, "arsenalOpened", {
 		disableSerialization;

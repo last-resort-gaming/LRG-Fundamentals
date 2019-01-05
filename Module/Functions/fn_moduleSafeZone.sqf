@@ -2,10 +2,7 @@ params [
     ["_logic",objNull,[objNull]],
     ["_groups",[],[[]]],
     "_localGroups",
-    "_logic",
-    ["_SafeZoneEnable", true],
-	["_SafeZoneSize", 150],
-	["_SafeZoneDuration", -1]
+    "_logic"
 ];
 
 //if (hasInterface && !isServer) exitWith {};

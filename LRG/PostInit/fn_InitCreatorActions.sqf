@@ -26,6 +26,9 @@ Author:
 	Mokka
 */
 
+if (isNil "CreatorActionsEnable") exitwith {};
+if (not CreatorActionsEnable) exitWith{};
+
 CreatorActions = [];
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitWith {};
 

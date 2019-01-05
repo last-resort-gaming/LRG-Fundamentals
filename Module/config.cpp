@@ -41,15 +41,15 @@ class CfgVehicles
 	class LRG_ModuleMain: Module_F
 	{
 		scope = 2;
-		displayName = "LRG Mission Setup";
+		displayName = "Mission Setup";
 		icon = "LRG Fundamentals\Media\Images\LRG Logo.paa";
 		author = "MitchJC";
 		vehicleClass = "Modules";
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleMain";
 		functionPriority = 1;
-		isGlobal = 1;
-		isTriggerActivated = 1;
+		isGlobal = 0;
+		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;
 		class Arguments: ArgumentsBaseUnits
@@ -67,6 +67,20 @@ class CfgVehicles
 				description = "Shows player locations on the map";
 				typeName = "BOOL";
 				defaultValue = 1;
+			};
+			class PilotCheck
+			{
+				displayName = "Pilot Restrictions";
+				description = "Enable so only those with Pilot Trait can fly.";
+				typeName = "BOOL";
+				defaultValue = 1;
+			};			
+			class ViewDistanceEnable
+			{
+				displayName = "CH View Distance";
+				description = "Enable CHVD within LRG Fundamentals";
+				typeName = "BOOL";
+				defaultValue = true;
 			};
 			class ViewDistanceMaxDistance
 			{
@@ -147,20 +161,41 @@ class CfgVehicles
 				typeName = "NUMBER";
 				defaultValue = 1.0;
 			};
-			class SideChatEnable
+			class CueCardsEnable
 			{
-				displayName = "Side Chat";
-				description = "Should players be allowed to type/draw in side chat?";
+				displayName = "Cue Cards";
+				description = "Show/Hide Cue Cards in ACE Self Interaction Menu";
 				typeName = "BOOL";
 				defaultValue = 1;
 			};
-			class SideChatDuration
+			class DiaryEnable
 			{
-				displayName = "Side Chat - Duration";
-				description = "Time in minutes for how long Side Chat is active, -1 is permanent";
-				typeName = "NUMBER";
-				defaultValue = 60;
-			};																																	
+				displayName = "Diary Defaults";
+				description = "Show/Hide Default LRG Diary Entries.";
+				typeName = "BOOL";
+				defaultValue = 1;
+			};			
+			class CreatorActionsEnable
+			{
+				displayName = "Creator Actions";
+				description = "Show/Hide Creator Actions in ACE Self Interaction Menu";
+				typeName = "BOOL";
+				defaultValue = 1;
+			};
+			class FatigueVanilla
+			{
+				displayName = "Fatigue (Vanilla ONLY)";
+				description = "Enable/Disable Vanilla Fatigue System. Does not apply with @ACE.";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class FPSCounterEnable
+			{
+				displayName = "FPS Counter";
+				description = "Enable/Disable FPS Counter on Map";
+				typeName = "BOOL";
+				defaultValue = 1;
+			};																																										
 		};
 		class ModuleDescription: ModuleDescription
 		{
@@ -184,9 +219,9 @@ class CfgVehicles
 		vehicleClass = "Modules";
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleAISpawns";
-		functionPriority = 1;
-		isGlobal = 1;
-		isTriggerActivated = 1;
+		functionPriority = 2;
+		isGlobal = 0;
+		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;
 		class Arguments: ArgumentsBaseUnits
@@ -227,27 +262,27 @@ class CfgVehicles
 					};
 					class AI_CUP_AFRF
 					{
-						name = "CUP AFRF";
+						name = "@CUP - Russian Federation";
 						value = "CUP AFRF";
 					};					
 					class AI_CUP_CMRS
 					{
-						name = "CUP CMRS";
+						name = "@CUP - Chernarussian Movement of the Red Star";
 						value = "CUP CMRS";
 					};					
 					class AI_CUP_SLA
 					{
-						name = "CUP SLA";
+						name = "@CUP - Sahrani Liberation Army";
 						value = "CUP SLA";
 					};					
 					class AI_CUP_TA
 					{
-						name = "CUP TA";
+						name = "@CUP - Takistan Army";
 						value = "CUP TA";
 					};					
 					class AI_CUP_TM
 					{
-						name = "CUP TM";
+						name = "@CUP - Takistan Militia";
 						value = "CUP TM";
 					};					
 				};
@@ -410,15 +445,15 @@ class CfgVehicles
 class LRG_ModuleSafeZone: Module_F
 	{
 		scope = 2;
-		displayName = "LRG Safe Zone";
+		displayName = "Safe Zone";
 		icon = "LRG Fundamentals\Media\Images\LRG Logo.paa";
 		author = "MitchJC";
 		vehicleClass = "Modules";
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleSafeZone";
-		functionPriority = 1;
-		isGlobal = 1;
-		isTriggerActivated = 1;
+		functionPriority = 3;
+		isGlobal = 0;
+		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;
 		class Arguments: ArgumentsBaseUnits
@@ -457,7 +492,129 @@ class LRG_ModuleSafeZone: Module_F
 				synced[] = {"Anything"};
 			};
 		};
-	};	
+	};
+
+	class LRG_ModuleChannels: Module_F
+	{
+		scope = 2;
+		displayName = "Channels";
+		icon = "LRG Fundamentals\Media\Images\LRG Logo.paa";
+		author = "MitchJC";
+		vehicleClass = "Modules";
+		category = "LRG_Modules";
+		function = "LR_fnc_moduleChannels";
+		functionPriority = 4;
+		isGlobal = 0;
+		isTriggerActivated = 0;
+		isDisposable = 0;
+		is3DEN = 0;
+		class Arguments: ArgumentsBaseUnits
+		{
+			class GlobalText
+			{
+				displayName = "Global Text";
+				description = "Should players be allowed to type/draw in Global chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class GlobalVoice
+			{
+				displayName = "Global Voice";
+				description = "Should players be allowed to speak in Global chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class SideText
+			{
+				displayName = "Side Text";
+				description = "Should players be allowed to type/draw in Side chat?";
+				typeName = "BOOL";
+				defaultValue = 1;
+			};
+			class SideVoice
+			{
+				displayName = "Side Voice";
+				description = "Should players be allowed to speak in Side chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};	
+			class CommandText
+			{
+				displayName = "Command Text";
+				description = "Should players be allowed to type/draw in Command chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class CommandVoice
+			{
+				displayName = "Command Voice";
+				description = "Should players be allowed to speak in Command chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class GroupText
+			{
+				displayName = "Group Text";
+				description = "Should players be allowed to type/draw in Group chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class GroupVoice
+			{
+				displayName = "Group Voice";
+				description = "Should players be allowed to speak in Group chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class VehicleText
+			{
+				displayName = "Vehicle Text";
+				description = "Should players be allowed to type/draw in Vehicle chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class VehicleVoice
+			{
+				displayName = "Vehicle Voice";
+				description = "Should players be allowed to speak in Vehicle chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class DirectText
+			{
+				displayName = "Direct Text";
+				description = "Should players be allowed to type/draw in Direct chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};
+			class DirectVoice
+			{
+				displayName = "Direct Voice";
+				description = "Should players be allowed to speak in Direct chat?";
+				typeName = "BOOL";
+				defaultValue = 0;
+			};													
+			class SideChatDuration
+			{
+				displayName = "Side - Duration";
+				description = "Time in minutes for how long Side Chat is active, -1 is permanent";
+				typeName = "NUMBER";
+				defaultValue = 60;
+			};																																		
+		};
+		class ModuleDescription: ModuleDescription
+		{
+			description = "LRG Fundamentals Module Description Goes Here.";
+			sync[] = {"LocationArea_F"};
+			class LocationArea_F
+			{
+				position = 0;
+				optional = 0;
+				duplicate = 1;
+				synced[] = {"Anything"};
+			};
+		};
+	};		
 };
 
 class CfgFunctions {

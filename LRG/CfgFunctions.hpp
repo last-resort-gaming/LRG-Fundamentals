@@ -58,18 +58,17 @@ class LR {
 	class PostInit {
 
 		file = "LRG Fundamentals\LRG\PostInit";
-		class AddCueCards {};
-		class ArsenalLoadSave {};
-		class Diary {};
-		class DynamicSim {};
-		class InitPlayerLocal {};
-		class InitServer {};
-		class Logs {};
-		class PilotCheck {};
-		class RealWeather {};
-		class SetInitialAI {};
-		class SideChat {};
-		class InitCreatorActions {};
+		class AddCueCards {PostInit = 1;};
+		class ArsenalLoadSave {PostInit = 1;};
+		class Diary {PostInit = 1;};
+		class DynamicSim {PostInit = 1;};
+		class InitPlayerLocal {PostInit = 1;};
+		class InitServer {PostInit = 1;};
+		class Logs {PostInit = 1;};
+		class PilotCheck {PostInit = 1;};
+		class RealWeather {PostInit = 1;};
+		class SetInitialAI {PostInit = 1;};
+		class InitCreatorActions {PostInit = 1;};
 	};
 
 	class Training {
