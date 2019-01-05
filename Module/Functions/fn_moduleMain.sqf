@@ -6,7 +6,7 @@ params [
     "_logic"
 ];
 
-if (hasInterface && !isServer) exitWith {};
+// if (hasInterface && !isServer) exitWith {};
 
 //_localGroups = _groups select { local _x };
 

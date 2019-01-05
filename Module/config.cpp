@@ -5,8 +5,6 @@
 //http://dev-heaven.net/projects/list_files/mikero-pbodll
 ////////////////////////////////////////////////////////////////////
 
-#define _ARMA_
-
 class CfgPatches
 {
 	class LRG_Modules
@@ -48,7 +46,7 @@ class CfgVehicles
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleMain";
 		functionPriority = 1;
-		isGlobal = 0;
+		isGlobal = 2;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;
@@ -452,7 +450,7 @@ class LRG_ModuleSafeZone: Module_F
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleSafeZone";
 		functionPriority = 3;
-		isGlobal = 0;
+		isGlobal = 1;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;
@@ -594,13 +592,48 @@ class LRG_ModuleSafeZone: Module_F
 				typeName = "BOOL";
 				defaultValue = 0;
 			};													
-			class SideChatDuration
+			class GlobalDuration
 			{
-				displayName = "Side - Duration";
-				description = "Time in minutes for how long Side Chat is active, -1 is permanent";
+				displayName = "Global Duration";
+				description = "If enabled, time in minutes for how long Global Chat is active, -1 is permanent";
+				typeName = "NUMBER";
+				defaultValue = -1;
+			};
+			class SideDuration
+			{
+				displayName = "Side Duration";
+				description = "If enabled, time in minutes for how long Side Chat is active, -1 is permanent";
 				typeName = "NUMBER";
 				defaultValue = 60;
-			};																																		
+			};
+			class CommandDuration
+			{
+				displayName = "Command Duration";
+				description = "If enabled, time in minutes for how long Command Chat is active, -1 is permanent";
+				typeName = "NUMBER";
+				defaultValue = -1;
+			};
+			class GroupDuration
+			{
+				displayName = "Group Duration";
+				description = "If enabled, time in minutes for how long Group Chat is active, -1 is permanent";
+				typeName = "NUMBER";
+				defaultValue = -1;
+			};
+			class VehicleDuration
+			{
+				displayName = "Vehicle Duration";
+				description = "If enabled, time in minutes for how long Vehicle Chat is active, -1 is permanent";
+				typeName = "NUMBER";
+				defaultValue = -1;
+			};
+			class DirectDuration
+			{
+				displayName = "Direct Duration";
+				description = "If enabled, time in minutes for how long Direct Chat is active, -1 is permanent";
+				typeName = "NUMBER";
+				defaultValue = -1;
+			};																																														
 		};
 		class ModuleDescription: ModuleDescription
 		{

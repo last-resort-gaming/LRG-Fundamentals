@@ -12,8 +12,8 @@ params [
 //if (_localGroups isEqualTo []) exitWith {};
 
 _SafeZoneEnable = _logic getVariable ["SafeZoneEnable", "0"];
-_SafeZoneSize = _logic getVariable ["SafeZoneSize", "0"];
-_SafeZoneDuration = _logic getVariable ["SafeZoneDuration", "1"];
+_SafeZoneSize = _logic getVariable ["SafeZoneSize", "150"];
+_SafeZoneDuration = _logic getVariable ["SafeZoneDuration", "-1"];
 _SafeZoneLocation = (getPos _logic);
 
 if (!hasinterface) exitwith {};
