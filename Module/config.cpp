@@ -46,7 +46,7 @@ class CfgVehicles
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleMain";
 		functionPriority = 1;
-		isGlobal = 2;
+		isGlobal = 1;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;
@@ -450,7 +450,7 @@ class LRG_ModuleSafeZone: Module_F
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleSafeZone";
 		functionPriority = 3;
-		isGlobal = 1;
+		isGlobal = 0;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;

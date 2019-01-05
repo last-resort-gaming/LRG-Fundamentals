@@ -34,6 +34,7 @@ class LR {
 		class ConfigZeus {};
 		class fileExists {};
 		class MedicalFacility {};
+		class SafeZone {};
 		class Sound3D {};
 		class Sound3DFromPos {};
 		class FindReplaceString {};
