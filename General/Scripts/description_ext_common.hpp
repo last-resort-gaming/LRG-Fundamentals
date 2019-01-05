@@ -36,7 +36,7 @@ showSquadRadar = 0;
 
 //------------------------- Respawn
 
-respawnTemplates[] = {"LR_Respawning"}; 
+respawnTemplates[] = {"LRG_RespawnOnStartPosition"}; 
 Respawn = 3;
 RespawnDialog = 0;
 respawnOnStart = 0;

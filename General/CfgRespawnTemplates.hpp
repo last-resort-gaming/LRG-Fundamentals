@@ -1,6 +1,6 @@
 class CfgRespawnTemplates
 {
-	class LR_Respawning
+	class LRG_RespawnOnStartPosition
 	{
 
 		onPlayerRespawn = "LRG Fundamentals\General\Scripts\PlayerRespawn.sqf";
