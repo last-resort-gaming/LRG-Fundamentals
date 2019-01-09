@@ -222,7 +222,7 @@ call {
 	
 	if (_army isEqualto "CUP SLA") exitwith {
 		_confBase     = configfile >> "CfgGroups" >> "East" >> "CUP_O_SLA" >> "Infantry";
-		_infList      = ("true" configClasses _confBase) apply { configName _x };
+		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_sla_Soldier_AA", "CUP_O_sla_Soldier_AA_desert"];
 		_infatList    = ["CUP_O_sla_Soldier_HAT", "CUP_O_sla_Soldier_LAT", "CUP_O_sla_Soldier_AT", "CUP_O_sla_Soldier_AAT_desert", "CUP_O_sla_Soldier_LAT_desert", "CUP_O_sla_Soldier_AT_desert", "CUP_O_Partisans_Soldier_AT"];
 		_sniperList   = ["CUP_O_sla_Sniper", "CUP_O_sla_Sniper_KSVK", "CUP_O_SLA_Sniper_SVD_Night", "CUP_O_SLA_Spotter", "CUP_O_sla_Sniper_desert", "CUP_O_sla_Sniper_KSVK_desert", "CUP_O_SLA_Sniper_SVD_Night_desert", "CUP_O_SLA_Spotter_desert"];
@@ -245,6 +245,56 @@ call {
 		_vehLightList = ["CUP_O_LR_MG_TKA", "CUP_O_LR_SPG9_TKA", "CUP_O_LR_Transport_TKA", "CUP_O_V3S_Open_TKA", "CUP_O_V3S_Covered_TKA", "CUP_O_UAZ_Unarmed_TKA", "CUP_O_UAZ_MG_TKA", "CUP_O_UAZ_METIS_TKA", "CUP_O_UAZ_Open_TKA", "CUP_O_Ural_TKA"];
 		_vehHeavyList = ["CUP_O_T72_TKA", "CUP_O_T55_TK", "CUP_O_T34_TKA"];
 	};
+
+	if (_army isEqualto "RHS GREF ChDKZ") exitwith {
+		_confBase = configfile >> "CfgGroups" >> "East" >> "rhsgref_faction_chdkz" >> "rhsgref_group_chdkz_insurgents_infantry";
+		_infList	  =	["rhsgref_group_chdkz_infantry_mg","rhsgref_group_chdkz_infantry_patrol","rhsgref_group_chdkz_insurgents_squad"];
+		_infaaList    = ["rhsgref_ins_specialist_aa"];
+		_infatList    = ["rhsgref_ins_grenadier_rpg","rhsgref_ins_rifleman_RPG26"];
+		_sniperList   = ["rhsgref_ins_sniper", "rhsgref_ins_spotter"];
+		_vehAAList    = ["rhsgref_ins_zsu234","rhsgref_ins_gaz66_zu23","rhsgref_ins_ural_Zu23"];
+		_vehMrapList  = ["rhsgref_BRDM2_ins","rhsgref_BRDM2_ATGM_ins","rhsgref_BRDM2UM_ins","rhsgref_BRDM2_HQ_ins"];
+		_vehRandList  = ["rhsgref_BRDM2_ins","rhsgref_BRDM2_ATGM_ins","rhsgref_BRDM2UM_ins","rhsgref_BRDM2_HQ_ins"];
+		_vehLightList = ["rhsgref_ins_ural_Zu23","rhsgref_ins_ural_work_open","rhsgref_ins_ural_work","rhsgref_ins_ural_open","rhsgref_ins_ural","rhsgref_ins_gaz66_repair","rhsgref_ins_gaz66_ap2","rhsgref_ins_gaz66_r142","rhsgref_ins_gaz66o_flat","rhsgref_ins_gaz66o","rhsgref_ins_gaz66_flat","rhsgref_ins_gaz66_ammo","rhsgref_ins_gaz66"];
+		_vehHeavyList = ["rhsgref_ins_bmp2k","rhsgref_ins_bmp2d","rhsgref_ins_bmp2","rhsgref_ins_bmp2e","rhsgref_ins_bmp1p","rhsgref_ins_bmp1k","rhsgref_ins_bmp1d","rhsgref_ins_bmd1p","rhsgref_ins_bmd1","rhsgref_ins_bmp1","rhsgref_ins_bmd2","rhsgref_ins_t72ba","rhsgref_ins_t72bb","rhsgref_ins_t72bc"];
+	};
+
+	if (_army isEqualto "AI_RHS_AFRF_MSV") exitwith {
+		_confBase = configfile >> "CfgGroups" >> "East" >> "rhs_faction_msv" >> "rhs_group_rus_msv_infantry";
+		_infList	  =	["rhs_group_rus_msv_infantry_chq", "rhs_group_rus_msv_infantry_fireteam", "rhs_group_rus_msv_infantry_MANEUVER", "rhs_group_rus_msv_infantry_section_marksman", "rhs_group_rus_msv_infantry_section_mg", "rhs_group_rus_msv_infantry_squad", "rhs_group_rus_msv_infantry_squad_2mg", "rhs_group_rus_msv_infantry_squad_mg_sniper", "rhs_group_rus_msv_infantry_squad_sniper"];
+		_infaaList    = ["rhs_msv_emr_aa"];
+		_infatList    = ["rhs_msv_emr_at","rhs_msv_emr_RShG2","rhs_msv_emr_LAT","rhs_msv_emr_grenadier_rpg"];
+		_sniperList   = ["rhs_msv_emr_marksman"];
+		_vehAAList    = ["RHS_Ural_Zu23_MSV_01","rhs_gaz66_zu23_msv"];
+		_vehMrapList  = ["rhs_bmp1_msv","rhs_bmp1d_msv","rhs_bmp1k_msv","rhs_bmp1p_msv","rhs_bmp2e_msv","rhs_bmp2_msv","rhs_bmp2d_msv","rhs_bmp2k_msv","rhs_bmp2k_msv","rhs_brm1k_msv","rhs_Ob_681_2","rhs_prp3_msv"];
+		_vehRandList  = ["RHS_BM21_MSV_01","rhs_gaz66_msv","rhs_gaz66_flat_msv","rhs_gaz66o_msv","rhs_gaz66o_flat_msv","rhs_gaz66_ammo_msv","rhs_gaz66_r142_msv","rhs_gaz66_ap2_msv","rhs_kamaz5350_msv","rhs_kamaz5350_flatbed_cover_msv","rhs_kamaz5350_open_msv","rhs_kamaz5350_flatbed_msv","RHS_Ural_MSV_01","RHS_Ural_Flat_MSV_01","RHS_Ural_Fuel_MSV_01","RHS_Ural_Open_MSV_01","RHS_Ural_Repair_MSV_01","rhs_zil131_msv","rhs_zil131_flatbed_cover_msv","rhs_zil131_open_msv","rhs_zil131_flatbed_msv"];
+		_vehLightList = ["rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv","RHS_UAZ_MSV_01","rhs_uaz_open_MSV_01"];
+		_vehHeavyList = ["rhs_bmp3_msv","rhs_bmp3_late_msv","rhs_bmp3mera_msv"];
+	};
+	if (_army isEqualto "AI_RHS_AFRF_VDV") exitwith {
+		_confBase = configfile >> "CfgGroups" >> "East" >> "rhs_faction_vdv" >> "rhs_group_rus_vdv_infantry";
+		_infList	  =	["rhs_group_rus_vdv_infantry_chq", "rhs_group_rus_vdv_infantry_fireteam", "rhs_group_rus_vdv_infantry_MANEUVER", "rhs_group_rus_vdv_infantry_section_marksman", "rhs_group_rus_vdv_infantry_section_mg", "rhs_group_rus_vdv_infantry_squad", "rhs_group_rus_vdv_infantry_squad_2mg", "rhs_group_rus_vdv_infantry_squad_mg_sniper", "rhs_group_rus_vdv_infantry_squad_sniper"];
+		_infaaList    = ["rhs_vdv_aa"];
+		_infatList    = ["rhs_vdv_at","rhs_vdv_RShG2","rhs_vdv_LAT","rhs_vdv_grenadier_rpg"];
+		_sniperList   = ["rhs_vdv_marksman","rhs_vdv_marksman_asval"];
+		_vehAAList    = ["rhs_gaz66_zu23_vdv","RHS_Ural_Zu23_VDV_01"];
+		_vehMrapList  = ["rhs_bmp1_vdv","rhs_bmp1d_vdv","rhs_bmp1k_vdv","rhs_bmp1p_vdv","rhs_bmp2e_vdv","rhs_bmp2_vdv","rhs_bmp2d_vdv","rhs_bmp2k_vdv","rhs_brm1k_vdv","rhs_prp3_vdv"];
+		_vehRandList  = ["RHS_BM21_vdv_01","rhs_gaz66_vdv","rhs_gaz66_flat_vdv","rhs_gaz66o_vdv","rhs_gaz66o_flat_vdv","rhs_gaz66_ammo_vdv","rhs_gaz66_r142_vdv","rhs_gaz66_ap2_vdv","rhs_kamaz5350_vdv","rhs_kamaz5350_flatbed_cover_vdv","rhs_kamaz5350_open_vdv","rhs_kamaz5350_flatbed_vdv","RHS_Ural_vdv_01","RHS_Ural_Flat_vdv_01","RHS_Ural_Fuel_vdv_01","RHS_Ural_Open_vdv_01","RHS_Ural_Repair_vdv_01","rhs_zil131_vdv","rhs_zil131_flatbed_cover_vdv","rhs_zil131_open_vdv","rhs_zil131_flatbed_vdv"];
+		_vehLightList = ["rhs_tigr_vdv","rhs_tigr_3camo_vdv","rhs_tigr_sts_vdv","rhs_tigr_sts_3camo_vdv","rhs_tigr_m_vdv","rhs_tigr_m_3camo_vdv","RHS_UAZ_vdv_01","rhs_uaz_open_vdv_01"];
+		_vehHeavyList = ["rhs_btr60_vdv","rhs_btr70_vdv","rhs_btr80_vdv","rhs_btr80a_vdv", "rhs_sprut_vdv"];
+	};
+	if (_army isEqualto "AI_RHS_AFRF_VMF") exitwith {
+		_confBase = configfile >> "CfgGroups" >> "East" >> "rhs_faction_vdv" >> "rhs_group_rus_vmf_infantry"; 
+		_infList	  =	["rhs_group_rus_vmf_infantry_chq","rhs_group_rus_vmf_infantry_fireteam","rhs_group_rus_vmf_infantry_MANEUVER","rhs_group_rus_vmf_infantry_section_marksman","rhs_group_rus_vmf_infantry_section_mg","rhs_group_rus_vmf_infantry_squad","rhs_group_rus_vmf_infantry_squad_2mg","rhs_group_rus_vmf_infantry_squad_mg_sniper","rhs_group_rus_vmf_infantry_squad_sniper"];
+		_infaaList    = ["rhs_vmf_flora_aa"];
+		_infatList    = ["rhs_vmf_flora_RShG2","rhs_vmf_flora_LAT","rhs_vmf_flora_at"];
+		_sniperList   = ["rhs_vmf_flora_marksman"];
+		_vehAAList    = ["RHS_Ural_Zu23_VMF_01","rhs_gaz66_zu23_vmf"];
+		_vehMrapList  = ["rhs_btr60_vmf","rhs_btr70_vmf","rhs_btr80_vmf","rhs_pts_vmf","rhs_btr80a_vmf"];
+		_vehRandList  = ["rhs_btr60_vmf","rhs_btr70_vmf","rhs_tigr_vmf","rhs_tigr_3camo_vmf","rhs_bmp1_vmf","rhs_bmp1d_vmf"];
+		_vehLightList = ["rhs_tigr_vmf","rhs_tigr_3camo_vmf","rhs_tigr_sts_vmf","rhs_tigr_sts_3camo_vmf","rhs_tigr_m_vmf","rhs_tigr_m_3camo_vmf","rhs_uaz_vmf","rhs_uaz_open_vmf"];
+		_vehHeavyList = ["rhs_bmp1_vmf","rhs_bmp1d_vmf","rhs_bmp1k_vmf","rhs_bmp1p_vmf","rhs_bmp2e_vmf","rhs_bmp2_vmf","rhs_bmp2d_vmf","rhs_bmp2k_vmf","rhs_brm1k_vmf","rhs_prp3_vmf"];
+	};			
 };
 	
 private ["_x","_g","_pos","_flatPos","_rpos","_v"];
