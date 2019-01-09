@@ -282,7 +282,27 @@ class CfgVehicles
 					{
 						name = "@CUP - Takistan Militia";
 						value = "CUP TM";
-					};					
+					};
+					class AI_RHS_GREF_ChDKZ
+					{
+						name = "@RHS GREF - ChDKZ Insurgents";
+						value = "RHS GREF ChDKZ";
+					};
+					class AI_RHS_AFRF_MSV
+					{
+						name = "@RHS AFRF - Russia - MSV";
+						value = "AI_RHS_AFRF_MSV";
+					};
+					class AI_RHS_AFRF_VDV
+					{
+						name = "@RHS AFRF - Russia - VDV";
+						value = "AI_RHS_AFRF_VDV";
+					};												
+					class AI_RHS_AFRF_VMF
+					{
+						name = "@RHS AFRF - Russia - VMF";
+						value = "AI_RHS_AFRF_VMF";
+					};											
 				};
 				defaultValue = "CSAT";
 			};
