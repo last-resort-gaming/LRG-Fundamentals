@@ -540,4 +540,9 @@ if (_vehHeavyList isEqualTo []) then {
 	};
 } forEach _vehicles;
 
+{
+	_x addCuratorEditableObjects [_units, false];
+	_x addCuratorEditableObjects [_vehicles, true];
+} forEach allCurators;
+
 [_units, _vehicles]
