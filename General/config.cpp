@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class LRGFundamentals
+	class LRGFundamentals_General
 	{
 		requiredVersion=0.1;
 		requiredAddons[]={"A3_Data_F"};
@@ -18,4 +18,9 @@ class CfgPatches
 class CfgScriptPaths
 {
 	LRGDisplays = "LRG Fundamentals\General\Scripts\UI\Displays\";
+};
+
+class CfgFunctions {
+
+    #include "cfgFunctions.hpp"
 };

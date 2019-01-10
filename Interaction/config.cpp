@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class LRGFundamentals_Media
+	class LRGFundamentals_Interaction
 	{
 		// Use meta information from specified addon. Used to avoid repeated declarations.
 		addonRootClass = "LRG Fundamentals";
@@ -11,9 +11,6 @@ class CfgPatches
 		weapons[] = {};
 	};
 };
-
-#include "CfgMusic.hpp"
-#include "CfgSounds.hpp"
 
 class CfgFunctions {
 

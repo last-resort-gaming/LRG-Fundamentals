@@ -1,7 +1,7 @@
-class LR {
+class LRG_AI {
 
 	tag = "LR";
-	class AISpawns {
+	class AI {
 
 		file = "LRG Fundamentals\AI\Functions";
 		class InfantryGarrison {};
