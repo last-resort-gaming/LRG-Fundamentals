@@ -17,7 +17,7 @@
 params [
 "_object"
 ];
-
+if (ZeusAI) then {
 _object addEventHandler [
 	"CuratorObjectPlaced", {
 		params ["_curator", "_entity"];
@@ -45,7 +45,7 @@ _object addEventHandler [
 		};	
 	}
 ];
-
+};
 _object setVariable ["showNotification", false];
 _object setVariable ["birdType", "", true];
 	

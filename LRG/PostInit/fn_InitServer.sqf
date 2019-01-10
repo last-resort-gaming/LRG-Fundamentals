@@ -8,7 +8,6 @@
 enableSaving [false, false];
 
 call LR_fnc_DynamicSim;
-call LR_fnc_SetInitialAI;
 call LR_fnc_Logs;
 
 if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {

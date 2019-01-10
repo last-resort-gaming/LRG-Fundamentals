@@ -1,14 +1,6 @@
 class LR {
 
 	tag = "LR";
-	class AI {
-
-		file = "LRG Fundamentals\LRG\AI";
-		class InfantryGarrison {};
-		class SetUnitSkill {};
-		class SpawnAI {};
-	};
-
 	class Equipment {
 
 		file = "LRG Fundamentals\LRG\Equipment";
@@ -68,7 +60,6 @@ class LR {
 		class Logs {PostInit = 1;};
 		class PilotCheck {PostInit = 1;};
 		class RealWeather {PostInit = 1;};
-		class SetInitialAI {PostInit = 1;};
 		class InitCreatorActions {PostInit = 1;};
 	};
 
