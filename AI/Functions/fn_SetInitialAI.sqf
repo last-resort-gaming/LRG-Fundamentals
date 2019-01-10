@@ -1,5 +1,4 @@
 if (!isserver) exitwith {};
-	systemchat "Function called!";
 	{
 		_class = typeOf (_x);
 		_result  = call {

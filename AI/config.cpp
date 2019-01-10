@@ -123,7 +123,12 @@ class CfgVehicles
 					{
 						name = "@RHS AFRF - Russia - VMF";
 						value = "AI_RHS_AFRF_VMF";
-					};											
+					};
+					class AI_OPTRE_Insurrectionists
+					{
+						name = "@OPTRE - Insurrectionists";
+						value = "AI_OPTRE_Insurrectionists";
+					};																															
 				};
 				defaultValue = "CSAT";
 			};
@@ -153,7 +158,7 @@ class CfgVehicles
 				displayName = "Garrisoned Groups Max Radius";
 				description = "	The maximum radius in metres around the Spawn Position which shall be populated with garrisoned units.";
 				typeName = "Number";
-				defaultValue = 0;
+				defaultValue = 200;
 			};
 			class EIPatrolsMin
 			{

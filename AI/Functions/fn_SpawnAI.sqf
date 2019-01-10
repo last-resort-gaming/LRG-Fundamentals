@@ -295,8 +295,20 @@ call {
 		_vehLightList = ["rhs_tigr_vmf","rhs_tigr_3camo_vmf","rhs_tigr_sts_vmf","rhs_tigr_sts_3camo_vmf","rhs_tigr_m_vmf","rhs_tigr_m_3camo_vmf","rhs_uaz_vmf","rhs_uaz_open_vmf"];
 		_vehHeavyList = ["rhs_bmp1_vmf","rhs_bmp1d_vmf","rhs_bmp1k_vmf","rhs_bmp1p_vmf","rhs_bmp2e_vmf","rhs_bmp2_vmf","rhs_bmp2d_vmf","rhs_bmp2k_vmf","rhs_brm1k_vmf","rhs_prp3_vmf"];
 	};			
+		if (_army isEqualto "AI_OPTRE_Insurrectionists") exitwith {
+		_confBase     = configfile >> "CfgGroups" >> "East" >> "OPTRE_Ins" >> "Infantry_URF";
+		_infList      = ["OPTRE_Ins_URF_Inf_CmdSquad","OPTRE_Ins_URF_Inf_Fireteam", "OPTRE_Ins_URF_Inf_RifleSquad", "OPTRE_Ins_URF_Inf_Sentry"];
+		_infaaList    = ["OPTRE_Ins_URF_Inf_AntiAir"];
+		_infatList    = ["OPTRE_Ins_URF_Inf_AntiTank"];
+		_sniperList   = ["OPTRE_Ins_URF_Inf_Sniper"];
+		_vehAAList    = ["OPTRE_M12R_AA_ins"];
+		_vehMrapList  = ["OPTRE_M12A1_LRV_ins","OPTRE_M12_LRV_ins","OPTRE_M12_FAV_APC","OPTRE_M12_FAV_ins","OPTRE_M914_RV_ins"];
+		_vehRandList  = ["OPTRE_m1015_mule_ins","OPTRE_M12_FAV_APC","OPTRE_M12_FAV_ins","OPTRE_M12_LRV_ins","OPTRE_M12A1_LRV_ins","OPTRE_M12R_AA_ins","OPTRE_M274_ATV_Ins","OPTRE_M914_RV_ins"];
+		_vehLightList = ["OPTRE_m1015_mule_ins","OPTRE_M12_FAV_ins","OPTRE_M274_ATV_Ins","OPTRE_M914_RV_ins"];
+		_vehHeavyList = ["OPTRE_M12_LRV_ins","OPTRE_M12A1_LRV_ins"];
+	};
 };
-	
+
 private ["_x","_g","_pos","_flatPos","_rpos","_v"];
 
 // Simple protection for broken requests

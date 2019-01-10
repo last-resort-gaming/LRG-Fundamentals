@@ -5,11 +5,11 @@ class LRG_AI {
 
 		file = "LRG Fundamentals\AI\Functions";
 		class InfantryGarrison {};
+		class moduleAISettings {};
+		class moduleAISpawns {};
 		class SetInitialAI {};
 		class SetUnitSkill {};
-		class SpawnAI {};
-		class moduleAISpawns {};
-		class moduleAISettings {};
+		class SpawnAI {};		
 	};
 };
 

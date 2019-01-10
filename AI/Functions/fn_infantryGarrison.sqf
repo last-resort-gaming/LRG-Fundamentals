@@ -102,6 +102,10 @@ if (_units isEqualTo []) then {
 		if (_army isEqualto "AI_RHS_AFRF_VMF") exitwith {	
 			_groupType = (configfile >> "CfgGroups" >> "East" >> "rhs_faction_vmf" >> "rhs_group_rus_vmf_infantry" >> "rhs_group_rus_vmf_infantry_squad");
 		};
+		if (_army isEqualto "AI_OPTRE_Insurrectionists") exitwith {	
+			_groupType = (configfile >> "CfgGroups" >> "East" >> "OPTRE_Ins" >> "Infantry_URF" >> "OPTRE_Ins_URF_Inf_RifleSquad");
+		};
+
 
 	};
 
