@@ -300,17 +300,10 @@ class CfgVehicles
 			class InitialAI
 			{
 				displayName = "Include Initial AI";
-				description = "Any AI placed in the Editor will have difficulty set to this module on mission start.";
+				description = "This Module will automatically apply to AI Spawns and Zeus placed AI. If enabled it will also apply to any Editor placed AI at mission start.";
 				typeName = "BOOL";
 				defaultValue = 1;
 			};	
-			class ZeusAI
-			{
-				displayName = "Include Zeus placed AI";
-				description = "Any Zeus placed AI will have their difficulty set to this module as soon as placed (if used with ConfigZeus)";
-				typeName = "BOOL";
-				defaultValue = 1;
-			};					
 			class LRGAimingAccuracy
 			{
 				displayName = "Min Aiming Accuracy";

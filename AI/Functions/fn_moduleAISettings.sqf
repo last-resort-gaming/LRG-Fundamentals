@@ -8,7 +8,6 @@ params [
 ];
 
 _InitialAI = _logic getVariable ["InitialAI", true];
-ZeusAI = _logic getVariable ["ZeusAI", true];
 LRGaimingAccuracy = _logic getVariable ["LRGaimingAccuracy", 0.10 + random 0.20];
 LRGaimingShake = _logic getVariable ["LRGaimingShake", 0.45 + random 0.30];
 LRGaimingSpeed = _logic getVariable ["LRGaimingSpeed", 0.30 + random 0.20];
