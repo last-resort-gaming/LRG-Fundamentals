@@ -20,7 +20,7 @@ CHVD_loadingDialog = true;
 	sliderSetSpeed [_x select 3, 500, 500];
 	sliderSetPosition [_x select 0, _x select 1];
 	sliderSetPosition [_x select 3, (_x select 4) min (_x select 1)];
-} forEach [[1900,CHVD_foot,CHVD_maxView,1901,CHVD_footObj,CHVD_maxObj],[1902,CHVD_car,CHVD_maxView,1903,CHVD_carObj,CHVD_maxObj],[1904,CHVD_air,CHVD_maxView,1905,CHVD_airObj,CHVD_maxObj]];
+} forEach [[1900,CHVD_foot,LRG_Main_ViewDistanceMaxDistance,1901,CHVD_footObj,LRG_Main_ViewDistanceMaxObjectDistance],[1902,CHVD_car,LRG_Main_ViewDistanceMaxDistance,1903,CHVD_carObj,LRG_Main_ViewDistanceMaxObjectDistance],[1904,CHVD_air,LRG_Main_ViewDistanceMaxDistance,1905,CHVD_airObj,LRG_Main_ViewDistanceMaxObjectDistance]];
 
 {
 	_ctrl = ((findDisplay 2900) displayCtrl (_x select 0));
@@ -66,7 +66,7 @@ CHVD_loadingDialog = true;
 
 {
 	_ctrl = ((findDisplay 2900) displayCtrl (_x select 0));
-	if (CHVD_allowNoGrass) then {
+	if (LRG_Main_ViewDistanceNoGrass) then {
 		_textLow = if (isLocalized "STR_chvd_low") then {localize "STR_chvd_low"} else {"Low"};
 		_ctrl lbAdd _textLow;
 	};
@@ -80,7 +80,7 @@ CHVD_loadingDialog = true;
 	_ctrl lbAdd _textUltra;
 	
 	_sel = [_x select 1] call CHVD_fnc_selTerrainQuality;
-	if (CHVD_allowNoGrass) then {
+	if (LRG_Main_ViewDistanceNoGrass) then {
 		_ctrl lbSetCurSel _sel;
 	} else {
 		_ctrl lbSetCurSel (_sel - 1);

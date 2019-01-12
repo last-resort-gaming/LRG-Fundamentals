@@ -5,8 +5,8 @@
 	Description: Allows only Pilots to fly aircraft.
 */
 
-if (isNil "PilotCheck") exitwith {};
-if (not PilotCheck) exitWith{};
+if (isNil "LRG_Main_PilotCheck") exitwith {};
+if (not LRG_Main_PilotCheck) exitWith{};
 
 if (!hasInterface) exitwith {};
 

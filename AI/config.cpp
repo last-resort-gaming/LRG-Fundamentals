@@ -12,13 +12,27 @@ class CfgPatches
 		author = "Last Resort Gaming";
 		name = "LRG Fundamentals";
 		url = "https://www.lastresortgaming.net/";
-		units[] = {"LRG_ModuleAISpawns"};
+		units[] = {};
 		requiredVersion = 1.60;
-		requiredAddons[]={"A3_Data_F"};
+		requiredAddons[] = {"A3_UI_F","cba_main","cba_xeh"};
 		version = "1.0";
 		authors[] = {"MitchJC"};
 		weapons[] = {};
 	};
+};
+
+class Extended_PreInit_EventHandlers
+{
+	class LRG_AI_Event
+	{
+		init = "call compile preProcessFileLineNumbers '\LRG Fundamentals\AI\XEH_preInit.sqf'";
+	};
+};
+
+class Extended_PostInit_EventHandlers {
+    class LRG_AI_Event {
+        init = "call compile preprocessFileLineNumbers '\LRG Fundamentals\AI\XEH_postInit.sqf'";
+    };
 };
 
 class CfgVehicles
@@ -288,7 +302,7 @@ class CfgVehicles
 	};
 	class LRG_ModuleAISettings: Module_F
 	{
-		scope = 2;
+		scope = 1;
 		displayName = "AI Difficulty Settings";
 		icon = "LRG Fundamentals\Media\Images\LRG Logo.paa";
 		author = "MitchJC";

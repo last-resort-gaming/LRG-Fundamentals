@@ -26,8 +26,8 @@ if (count _this < 7) then {
 _textValue = [ctrlText _text1, "0123456789"] call BIS_fnc_filterString;
 _textValue = if (_textValue == "") then {1} else {call compile _textValue min 12000 max 0};
 
-_viewDistValue = _textValue min CHVD_maxView;
-_objViewDistValue = if (_modeVar isEqualTo 1) then {_textValue  * (call compile _percentVar) min CHVD_maxObj} else {_textValue min CHVD_maxObj};  // Check if percentage sync mode is used, if so use a percentage coefficient
+_viewDistValue = _textValue min LRG_Main_ViewDistanceMaxDistance;
+_objViewDistValue = if (_modeVar isEqualTo 1) then {_textValue  * (call compile _percentVar) min LRG_Main_ViewDistanceMaxObjectDistance} else {_textValue min LRG_Main_ViewDistanceMaxObjectDistance};  // Check if percentage sync mode is used, if so use a percentage coefficient
 
 switch (_updateType) do {  // 1 - VIEW, 2 - OBJ, 3 - BOTH, 0 - BOTH AND TERRAIN
 	case 1: {

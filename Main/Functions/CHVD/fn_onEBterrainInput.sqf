@@ -7,7 +7,7 @@ _textValue = [ctrlText _textCtrl, "0123456789."] call BIS_fnc_filterString;
 _textValue = if (_textValue == "") then {50} else {call compile _textValue min 50 max 3.125};
 
 
-if (!CHVD_allowNoGrass) then {
+if (!LRG_Main_ViewDistanceNoGrass) then {
 	_textValue = _textValue min 48.99;
 };
 
@@ -16,7 +16,7 @@ _listboxCtrl = (finddisplay 2900) displayCtrl _listbox;
 //remove EH not to cause huge lag
 _listboxCtrl ctrlRemoveAllEventHandlers "LBSelChanged";
 _sel = [_textValue] call CHVD_fnc_selTerrainQuality;
-if (CHVD_allowNoGrass) then {
+if (LRG_Main_ViewDistanceNoGrass) then {
 	_listboxCtrl lbSetCurSel _sel;	
 } else {
 	_listboxCtrl lbSetCurSel (_sel - 1);

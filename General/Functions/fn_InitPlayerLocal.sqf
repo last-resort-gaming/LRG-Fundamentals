@@ -19,17 +19,17 @@ if !(hasinterface) exitwith {};
 
 		[] execVM "LRG Fundamentals\General\scripts\YAINA\earplugs.sqf";
 		["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
-		if (isNil "FatigueVanilla") then {FatigueVanilla = true};
-		player enableFatigue FatigueVanilla;
+		if (isNil "LRG_Main_FatigueVanilla") then {LRG_Main_FatigueVanilla = true};
+		player enableFatigue LRG_Main_FatigueVanilla;
 	};
 
 	// ====== TFAR Only Client Calls
 
 		if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
-			if (isNil "TFARTransmitRange") exitwith {};
-			player setVariable ["tf_sendingDistanceMultiplicator", TFARTransmitRange];
-			if (isNil "TFARTerrainInterference") exitwith {};
-			player setVariable ["TF_terrain_interception_coefficient", TFARTerrainInterference];
+			if (isNil "LRG_Main_TFARTransmitRange") exitwith {};
+			player setVariable ["tf_sendingDistanceMultiplicator", LRG_Main_TFARTransmitRange];
+			if (isNil "LRG_Main_TFARTerrainInterference") exitwith {};
+			player setVariable ["TF_terrain_interception_coefficient", LRG_Main_TFARTerrainInterference];
 	};
 
 enableSaving [false, false];

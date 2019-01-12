@@ -28,12 +28,12 @@ _vdDiff = _viewDist - _objViewDist;
 
 switch (_updateMode) do {
 	case 1: {
-		_viewDistValue = _viewDist + _updateValue min CHVD_maxView max 500;		
+		_viewDistValue = _viewDist + _updateValue min LRG_Main_ViewDistanceMaxDistance max 500;		
 		
 		_percentVar = "CHVD_" + _vehTypeString + "SyncPercentage";
 		_percentValue = call compile _percentVar;
 		
-		_objViewDistValue = _viewDistValue * _percentValue min CHVD_maxObj;
+		_objViewDistValue = _viewDistValue * _percentValue min LRG_Main_ViewDistanceMaxObjectDistance;
 		
 		if (_objViewDistValue >= 500) then {
 			call compile format ["%1 = %2", _viewDistVar, _viewDistValue];
@@ -45,15 +45,15 @@ switch (_updateMode) do {
 		};
 	};
 	case 2: {		
-		_objViewDistValue = _objViewDist + _updateValue min _viewDist min CHVD_maxObj max 500;
+		_objViewDistValue = _objViewDist + _updateValue min _viewDist min LRG_Main_ViewDistanceMaxObjectDistance max 500;
 		call compile format ["%1 = %2", _objViewDistVar, _objViewDistValue];
 		call compile format ["profileNamespace setVariable ['%1',%1]", _objViewDistVar];
 		
 		[4] call CHVD_fnc_updateSettings;
 	};
 	default {
-		_viewDistValue = _viewDist + _updateValue min CHVD_maxView max (500 + _vdDiff);
-		_objViewDistValue = _objViewDist + _updateValue min (_viewDistValue - _vdDiff) min CHVD_maxObj max 500;
+		_viewDistValue = _viewDist + _updateValue min LRG_Main_ViewDistanceMaxDistance max (500 + _vdDiff);
+		_objViewDistValue = _objViewDist + _updateValue min (_viewDistValue - _vdDiff) min LRG_Main_ViewDistanceMaxObjectDistance max 500;
 		call compile format ["%1 = %2", _viewDistVar, _viewDistValue];
 		call compile format ["profileNamespace setVariable ['%1',%1]", _viewDistVar];
 		
@@ -66,7 +66,7 @@ switch (_updateMode) do {
 
 _vdString = "";
 for "_i" from 1 to (35) step 1 do {
-	if ((call compile _viewDistVar) < CHVD_maxView / 35 * _i) then {
+	if ((call compile _viewDistVar) < LRG_Main_ViewDistanceMaxDistance / 35 * _i) then {
 		_vdString = _vdString + "·";
 	} else {	
 		_vdString = _vdString + "I";
@@ -75,7 +75,7 @@ for "_i" from 1 to (35) step 1 do {
 
 _ovdString = "";
 for "_i" from 1 to (35) step 1 do {
-	if ((call compile _objViewDistVar) < CHVD_maxObj / 35 * _i) then {
+	if ((call compile _objViewDistVar) < LRG_Main_ViewDistanceMaxObjectDistance / 35 * _i) then {
 		_ovdString = _ovdString + "·";
 	} else {	
 		_ovdString = _ovdString + "I";

@@ -19,8 +19,8 @@ Author:
 	Martin, inspired by Liberation's FPS meter
 */
 
-if (isNil "FPSCounterEnable") exitwith {};
-if (not FPSCounterEnable) exitWith{};
+if (isNil "LRG_Main_FPSCounter") exitwith {};
+if (not LRG_Main_FPSCounter) exitWith{};
 
 private _markerLocal = false;
 private _source = "";

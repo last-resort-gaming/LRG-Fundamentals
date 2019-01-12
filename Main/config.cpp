@@ -14,12 +14,19 @@ class CfgPatches
 		url = "https://www.lastresortgaming.net/";
 		units[] = {"LRG_ModuleMain"};
 		requiredVersion = 1.60;
-		requiredAddons[]={"A3_Data_F"};
+		requiredAddons[] = {"A3_UI_F","cba_main","cba_xeh"};
 		version = "1.0";
 		authors[] = {"MitchJC"};
 		weapons[] = {};
 	};
 };
+
+class Extended_PreInit_EventHandlers {
+    class LRG_Main_Event {
+        init = "call compile preprocessFileLineNumbers '\LRG Fundamentals\Main\XEH_preInit.sqf'";
+    };
+};
+
 class CfgFactionClasses
 {
 	class NO_CATEGORY;
@@ -38,7 +45,7 @@ class CfgVehicles
 	};
 	class LRG_ModuleMain: Module_F
 	{
-		scope = 2;
+		scope = 1;
 		displayName = "Mission Setup";
 		icon = "LRG Fundamentals\Media\Images\LRG Logo.paa";
 		author = "MitchJC";
@@ -52,14 +59,14 @@ class CfgVehicles
 		is3DEN = 0;
 		class Arguments: ArgumentsBaseUnits
 		{
-			class VehicleCrewListEnable
+			class LRG_Main_VehicleCrewList
 			{
 				displayName = "Vehicle Crew List";
 				description = "Shows a list of players in a vehicle.";
 				typeName = "BOOL";
 				defaultValue = 1;
 			};
-			class MapIconsEnable
+			class LRG_Main_MapIcons
 			{
 				displayName = "Map Icons";
 				description = "Shows player locations on the map";
@@ -101,21 +108,21 @@ class CfgVehicles
 				typeName = "BOOL";
 				defaultValue = false;
 			};			
-			class ArsenalSaveLoad
+			class LRG_Main_ArsenalSaveLoad
 			{
 				displayName = "Arsenal - Save/Load";
 				description = "Should a player be allowed to Save/Load Loadouts in the Arsenal?";
 				typeName = "BOOL";
 				defaultValue = 0;
 			};
-			class DynamicWeatherEnable
+			class LRG_Main_DynamicWeather
 			{
 				displayName = "Dynamic Weather";
 				description = "Allow randomised Weather";
 				typeName = "BOOL";
 				defaultValue = 0;
 			};
-			class DynamicWeatherStart
+			class LRG_Main_DynamicWeatherStart
 			{
 				displayName = "Dynamic Weather - Start";
 				description = "If Dynamic Weather enabled, what should the starting weather be?";
@@ -145,49 +152,49 @@ class CfgVehicles
 					};
 				};
 			};
-			class TFARTransmitRange
+			class LRG_Main_TFARTransmitRange
 			{
 				displayName = "TFAR - Range Multiplyer";
 				description = "Increase or decrease max Transmit Range. 0.1 = poor range, 3.5 = All of Altis";
 				typeName = "NUMBER";
 				defaultValue = 2.5;
 			};
-			class TFARTerrainInterference
+			class LRG_Main_TFARTerrainInterference
 			{
 				displayName = "TFAR - Terrain Interference";
 				description = "How much Terrain interferes with range. 0.1 = little impact, 2.0 = large impact.";
 				typeName = "NUMBER";
 				defaultValue = 1.0;
 			};
-			class CueCardsEnable
+			class LRG_Main_CueCards
 			{
 				displayName = "Cue Cards";
 				description = "Show/Hide Cue Cards in ACE Self Interaction Menu";
 				typeName = "BOOL";
 				defaultValue = 1;
 			};
-			class DiaryEnable
+			class LRG_Main_Diary
 			{
 				displayName = "Diary Defaults";
 				description = "Show/Hide Default LRG Diary Entries.";
 				typeName = "BOOL";
 				defaultValue = 1;
 			};			
-			class CreatorActionsEnable
+			class LRG_Main_CreatorActions
 			{
 				displayName = "Creator Actions";
 				description = "Show/Hide Creator Actions in ACE Self Interaction Menu";
 				typeName = "BOOL";
 				defaultValue = 1;
 			};
-			class FatigueVanilla
+			class LRG_Main_FatigueVanilla
 			{
 				displayName = "Fatigue (Vanilla ONLY)";
 				description = "Enable/Disable Vanilla Fatigue System. Does not apply with @ACE.";
 				typeName = "BOOL";
 				defaultValue = 0;
 			};
-			class FPSCounterEnable
+			class LRG_Main_FPSCounter
 			{
 				displayName = "FPS Counter";
 				description = "Enable/Disable FPS Counter on Map";

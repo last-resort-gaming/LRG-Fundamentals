@@ -6,8 +6,8 @@
 	Description: Randomizes Weather
 */
 
-if (isNil "DynamicWeatherEnable") exitwith {};
-if (not DynamicWeatherEnable) exitWith{};
+if (isNil "LRG_Main_DynamicWeather") exitwith {};
+if (not LRG_Main_DynamicWeather) exitWith{};
 
 // Real time vs fast time
 // true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
@@ -20,7 +20,7 @@ nighttimeratio = 1;							// Ratio 1 real time second for x game time seconds
 timesync = 60;								// send sync data across the network each xxx seconds
 //	startingdate = [2015, 07, 01, 06, 30];		// Mission starting date
 	
-if (DynamicWeatherStart == "RANDOM") then {DynamicWeatherStart = ["CLEAR", "CLOUDY", "RAIN"] call BIS_fnc_selectRandom;};
+if (LRG_Main_DynamicWeatherStart == "RANDOM") then {LRG_Main_DynamicWeatherStart = ["CLEAR", "CLOUDY", "RAIN"] call BIS_fnc_selectRandom;};
 	
 /////////////////////////////////////////////////////////////////
 // Do not edit below
@@ -30,7 +30,7 @@ if(mintime > maxtime) exitwith {hint format["Real weather: Max time: %1 can no b
 timeforecast = mintime;
 
 //	setdate startingdate;
-switch (DynamicWeatherStart) do {
+switch (LRG_Main_DynamicWeatherStart) do {
 	case "CLEAR": {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
 	case "CLOUDY": {wcweather = [0, 0, 0.6, [random 3, random 3, true], date];};
 	case "RAIN": {wcweather = [1, 0, 1, [random 3, random 3, true], date];};

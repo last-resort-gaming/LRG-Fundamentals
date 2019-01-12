@@ -4,8 +4,8 @@
 	Author: MitchJC
 	Description: Creates Diary Subjects and Records as required.
 */
-if (isNil "DiaryEnable") exitwith {};
-if (not DiaryEnable) exitWith{};
+if (isNil "LRG_Main_Diary") exitwith {};
+if (not LRG_Main_Diary) exitWith{};
 
 if (!hasInterface) exitWith {};
 

@@ -17,8 +17,8 @@ Examples:
 Author:
 	Mokka
 */
-if (isNil "CueCardsEnable") exitwith {};
-if (not CueCardsEnable) exitWith{};
+if (isNil "LRG_Main_CueCards") exitwith {};
+if (not LRG_Main_CueCards) exitWith{};
 
 if !(hasinterface) exitwith {};
 if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};

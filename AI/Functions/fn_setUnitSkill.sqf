@@ -25,8 +25,8 @@ params ["_target", ["_skillLevel", 2]];
 private _skillt = ["aimingAccuracy", "aimingShake", "aimingSpeed", "commanding", "courage", "endurance", "general", "reloadSpeed", "spotDistance", "spotTime"];
 private _skillv = [(0.10 + random 0.20), (0.45 + random 0.30),(0.30 + random 0.20), 1, 1, 1, 1, (0.50 + random 0.50), (0.40 + random 0.30), (0.20 + random 0.40)];
 
-if !(isNil "LRGaimingAccuracy") then {
-    _skillv = [(LRGaimingAccuracy + random 0.20), (LRGaimingShake + random 0.20),(LRGaimingSpeed + random 0.20), (LRGcommanding), (LRGcourage), 1, (LRGgeneral), (LRGreloadSpeed + random 0.50), (LRGspotDistance + random 0.30), (LRGspotTime + random 0.40)];
+if !(isNil "LRG_AI_AimingAccuracy") then {
+    _skillv = [(LRG_AI_AimingAccuracy + random 0.20), (LRG_AI_AimingShake + random 0.20),(LRG_AI_AimingSpeed + random 0.20), (LRG_AI_Commanding), (LRG_AI_Courage), 1, (LRG_AI_General), (LRG_AI_ReloadSpeed + random 0.50), (LRG_AI_SpotDistance + random 0.30), (LRG_AI_SpotTime + random 0.40)];
 };
 
  

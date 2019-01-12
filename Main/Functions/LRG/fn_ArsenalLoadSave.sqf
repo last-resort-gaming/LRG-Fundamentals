@@ -5,8 +5,8 @@
 	Description: Removes Load/Save function from the Virtual Arsenal.
 */
 
-if (isNil "ArsenalSaveLoad") exitwith {};
-if (not ArsenalSaveLoad) exitWith{};
+if (isNil "LRG_Main_ArsenalSaveLoad") exitwith {};
+if (not LRG_Main_ArsenalSaveLoad) exitWith{};
 
 if !(hasinterface) exitwith {};
 

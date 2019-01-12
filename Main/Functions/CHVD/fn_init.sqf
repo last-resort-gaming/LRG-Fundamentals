@@ -1,5 +1,5 @@
-if (isNil "CHVD_Enabled") exitwith {};
-if (not CHVD_Enabled) exitWith{};
+if (isNil "LRG_Main_CHViewDistance") exitwith {};
+if (not LRG_Main_CHViewDistance) exitWith{};
 
 [] spawn {
 	if (!hasInterface) exitWith {};
@@ -7,9 +7,9 @@ if (not CHVD_Enabled) exitWith{};
 	waitUntil {time > 0};
 	
 	//Define variables, load from profileNamespace
-	CHVD_allowNoGrass = if (isNil "CHVD_allowNoGrass") then {true} else {CHVD_allowNoGrass};
-	CHVD_maxView = if (isNil "CHVD_maxView") then {12000} else {CHVD_maxView};
-	CHVD_maxObj = if (isNil "CHVD_maxObj") then {12000} else {CHVD_maxObj};
+	LRG_Main_ViewDistanceNoGrass = if (isNil "LRG_Main_ViewDistanceNoGrass") then {true} else {LRG_Main_ViewDistanceNoGrass};
+	LRG_Main_ViewDistanceMaxDistance = if (isNil "LRG_Main_ViewDistanceMaxDistance") then {12000} else {LRG_Main_ViewDistanceMaxDistance};
+	LRG_Main_ViewDistanceMaxObjectDistance = if (isNil "LRG_Main_ViewDistanceMaxObjectDistance") then {12000} else {LRG_Main_ViewDistanceMaxObjectDistance};
 	
 	CHVD_footSyncMode = profileNamespace getVariable ["CHVD_footSyncMode",0];
 	CHVD_footSyncPercentage = profileNamespace getVariable ["CHVD_footSyncPercentage",0.8];	
@@ -18,20 +18,20 @@ if (not CHVD_Enabled) exitWith{};
 	CHVD_airSyncMode = profileNamespace getVariable ["CHVD_airSyncMode",0];
 	CHVD_airSyncPercentage = profileNamespace getVariable ["CHVD_airSyncPercentage",0.8];
 
-	CHVD_foot = (profileNamespace getVariable ["CHVD_foot",viewDistance]) min CHVD_maxView;
-	CHVD_car = (profileNamespace getVariable ["CHVD_car",viewDistance]) min CHVD_maxView;
-	CHVD_air = (profileNamespace getVariable ["CHVD_air",viewDistance]) min CHVD_maxView;
+	CHVD_foot = (profileNamespace getVariable ["CHVD_foot",viewDistance]) min LRG_Main_ViewDistanceMaxDistance;
+	CHVD_car = (profileNamespace getVariable ["CHVD_car",viewDistance]) min LRG_Main_ViewDistanceMaxDistance;
+	CHVD_air = (profileNamespace getVariable ["CHVD_air",viewDistance]) min LRG_Main_ViewDistanceMaxDistance;
 
-	CHVD_footObj = (profileNamespace getVariable ["CHVD_footObj",viewDistance]) min CHVD_maxObj min CHVD_maxView;
+	CHVD_footObj = (profileNamespace getVariable ["CHVD_footObj",viewDistance]) min LRG_Main_ViewDistanceMaxObjectDistance min LRG_Main_ViewDistanceMaxDistance;
 	CHVD_footObj = if (CHVD_footSyncMode isEqualTo 1) then {CHVD_foot * CHVD_footSyncPercentage} else {CHVD_footObj};	
-	CHVD_carObj = (profileNamespace getVariable ["CHVD_carObj",viewDistance]) min CHVD_maxObj min CHVD_maxView;
+	CHVD_carObj = (profileNamespace getVariable ["CHVD_carObj",viewDistance]) min LRG_Main_ViewDistanceMaxObjectDistance min LRG_Main_ViewDistanceMaxDistance;
 	CHVD_carObj = if (CHVD_carSyncMode isEqualTo 1) then {CHVD_car * CHVD_carSyncPercentage} else {CHVD_carObj};	
-	CHVD_airObj = (profileNamespace getVariable ["CHVD_airObj",viewDistance]) min CHVD_maxObj min CHVD_maxView;
+	CHVD_airObj = (profileNamespace getVariable ["CHVD_airObj",viewDistance]) min LRG_Main_ViewDistanceMaxObjectDistance min LRG_Main_ViewDistanceMaxDistance;
 	CHVD_airObj = if (CHVD_airSyncMode isEqualTo 1) then {CHVD_air * CHVD_airSyncPercentage} else {CHVD_airObj};
 
-	CHVD_footTerrain = if (CHVD_allowNoGrass) then {profileNamespace getVariable ["CHVD_footTerrain",25]} else {(profileNamespace getVariable ["CHVD_footTerrain",25]) min 48.99 max 3.125};
-	CHVD_carTerrain = if (CHVD_allowNoGrass) then {profileNamespace getVariable ["CHVD_carTerrain",25]} else {(profileNamespace getVariable ["CHVD_carTerrain",25]) min 48.99 max 3.125};
-	CHVD_airTerrain = if (CHVD_allowNoGrass) then {profileNamespace getVariable ["CHVD_airTerrain",25]} else {(profileNamespace getVariable ["CHVD_airTerrain",25]) min 48.99 max 3.125};
+	CHVD_footTerrain = if (LRG_Main_ViewDistanceNoGrass) then {profileNamespace getVariable ["CHVD_footTerrain",25]} else {(profileNamespace getVariable ["CHVD_footTerrain",25]) min 48.99 max 3.125};
+	CHVD_carTerrain = if (LRG_Main_ViewDistanceNoGrass) then {profileNamespace getVariable ["CHVD_carTerrain",25]} else {(profileNamespace getVariable ["CHVD_carTerrain",25]) min 48.99 max 3.125};
+	CHVD_airTerrain = if (LRG_Main_ViewDistanceNoGrass) then {profileNamespace getVariable ["CHVD_airTerrain",25]} else {(profileNamespace getVariable ["CHVD_airTerrain",25]) min 48.99 max 3.125};
 	
 	CHVD_vehType = 0; // 0 = foot, 1 = car, 2 = air
 

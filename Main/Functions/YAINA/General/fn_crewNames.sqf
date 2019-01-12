@@ -18,8 +18,8 @@ Author:
 	Unknown, rewritten by Alganthe
 */
 
-if (isNil "VehicleCrewListEnable") exitwith {};
-if (not VehicleCrewListEnable) exitWith{};
+if (isNil "LRG_Main_VehicleCrewList") exitwith {};
+if (not LRG_Main_VehicleCrewList) exitWith{};
 
 player addEventHandler ["GetInMan", {
     [{
