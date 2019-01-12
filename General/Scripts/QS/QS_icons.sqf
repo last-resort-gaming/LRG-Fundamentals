@@ -34,8 +34,8 @@ _________________________________________________________________/*/
 
 if (isDedicated || !hasInterface) exitWith {};
 
-if !(LRG_Main_MapIcons) exitwith {};
-
+if (isNil "LRG_Main_MapIcons") exitwith {};
+if (not LRG_Main_MapIcons) exitWith{};
 private [
 	'_side','_sides','_QS_ST_X','_QS_ST_map_enableUnitIcons','_QS_ST_gps_enableUnitIcons',	'_QS_ST_enableGroupIcons','_QS_ST_faction','_QS_ST_friendlySides_EAST',
 	'_QS_ST_friendlySides_WEST','_QS_ST_friendlySides_RESISTANCE','_QS_ST_friendlySides_CIVILIAN','_QS_ST_friendlySides_Dynamic','_QS_ST_iconColor_EAST','_QS_ST_iconColor_WEST',

@@ -1,5 +1,15 @@
 // Initial AI
-["LRG_AI_InitialAI", "CHECKBOX", ["Include Initial AI","This will automatically apply to AI Spawns and Zeus placed AI. If enabled it will also apply to any Editor placed AI at mission start."], "LRG AI", true, true,{}] call CBA_Settings_fnc_init;
+[
+    "LRG_AI_InitialAI",
+    "CHECKBOX",
+    ["Include Initial AI", "This will automatically apply to AI Spawns and Zeus placed AI. If enabled it will also apply to any Editor placed AI at mission start."],
+    "LRG AI",
+    true,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
 
 // AI Aiming Accuracy
 [

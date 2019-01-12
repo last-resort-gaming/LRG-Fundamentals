@@ -7,7 +7,7 @@ class LRG_AI {
 		class InfantryGarrison {};
 		class moduleAISettings {};
 		class moduleAISpawns {};
-		class SetInitialAI {};
+		class SetInitialAI {Postinit = 1;};
 		class SetUnitSkill {};
 		class SpawnAI {};		
 	};

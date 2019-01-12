@@ -29,12 +29,6 @@ class Extended_PreInit_EventHandlers
 	};
 };
 
-class Extended_PostInit_EventHandlers {
-    class LRG_AI_Event {
-        init = "call compile preprocessFileLineNumbers '\LRG Fundamentals\AI\XEH_postInit.sqf'";
-    };
-};
-
 class CfgVehicles
 {
 	class Logic;
