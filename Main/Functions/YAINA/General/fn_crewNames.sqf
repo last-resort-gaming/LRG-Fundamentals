@@ -17,6 +17,8 @@ Examples:
 Author:
 	Unknown, rewritten by Alganthe
 */
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
 
 if (isNil "LRG_Main_VehicleCrewList") exitwith {};
 if (not LRG_Main_VehicleCrewList) exitWith{};

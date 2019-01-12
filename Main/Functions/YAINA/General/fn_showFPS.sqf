@@ -18,6 +18,8 @@ Examples:
 Author:
 	Martin, inspired by Liberation's FPS meter
 */
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
 
 if (isNil "LRG_Main_FPSCounter") exitwith {};
 if (not LRG_Main_FPSCounter) exitWith{};

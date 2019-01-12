@@ -1,10 +1,10 @@
 // Master Enable
 [
-    "LRG_QSIcons_MaterEnable",
+    "LRG_QSIcons_MasterEnable",
     "CHECKBOX",
     ["QS Icons Master Enable", "Turn ON/OFF QS Icons function."],
     "LRG QS Icons",
-    true,
+    false,
     true,
     {  
 

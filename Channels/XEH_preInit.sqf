@@ -1,3 +1,16 @@
+// Master Enable
+[
+    "LRG_Channels_Master",
+    "CHECKBOX",
+    ["Channel Master Enable", "Turn ON/OFF Main Settings. MUST be enabled for any of these settings to work!"],
+    "LRG Channels",
+    false,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
 // Global Text
 [
     "LRG_Channels_GlobalText",

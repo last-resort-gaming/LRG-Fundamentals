@@ -5,6 +5,8 @@
 			MitchJC - Conversion to PFH & Function
 	Description: Randomizes Weather
 */
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
 
 if (isNil "LRG_Main_DynamicWeather") exitwith {};
 if (not LRG_Main_DynamicWeather) exitWith{};

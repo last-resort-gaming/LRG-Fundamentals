@@ -1,5 +1,8 @@
 if !(isserver) exitwith {};
 
+if (isNil "LRG_Channels_Master") exitwith {};
+if (not LRG_Channels_Master) exitWith{};
+
 // Enable/Disable Channels
 [0, [LRG_Channels_GlobalText, LRG_Channels_GlobalVoice]] remoteExec ["enablechannel",0,true];
 [1, [LRG_Channels_SideText, LRG_Channels_SideVoice]] remoteExec ["enablechannel",0,true];

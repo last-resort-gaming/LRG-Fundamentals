@@ -5,6 +5,9 @@
 	Description: Allows only Pilots to fly aircraft.
 */
 
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
+
 if (isNil "LRG_Main_PilotCheck") exitwith {};
 if (not LRG_Main_PilotCheck) exitWith{};
 

@@ -8,7 +8,10 @@
 //=================================== GENERAL =====================================================
 
 if !(hasinterface) exitwith {};
-	
+
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
+
 	if (servername == "[LRG] Last Resort Gaming || EU 3 || Operations") then {
 
 		_log = format ["%1 attended as %2.",name player, roleDescription player ];	

@@ -1,3 +1,16 @@
+// Master Enable
+[
+    "LRG_Main_Master",
+    "CHECKBOX",
+    ["Main Master Enable", "Turn ON/OFF Main Settings. MUST be enabled for any of these settings to work!"],
+    "LRG Main",
+    false,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
 // Vehicle Crew List
 [
     "LRG_Main_VehicleCrewList",
@@ -78,7 +91,7 @@
 
 // Arsenal - Save/Load
 [
-    "LRG_Main_LRG_Main_ArsenalSaveLoad",
+    "LRG_Main_ArsenalSaveLoad",
     "CHECKBOX",
     ["Arsenal - Save/Load", "Should a player be allowed to Save/Load Loadouts in the Arsenal?"],
     "LRG Main",
@@ -104,7 +117,7 @@
 
 // Dynamic Weather Start
 [
-    "LRG_Main_LRG_Main_DynamicWeatherStart",
+    "LRG_Main_DynamicWeatherStart",
     "LIST",
     ["Dynamic Weather - Start", "If Dynamic Weather enabled, what should the starting weather be?"],
     "LRG Main",
@@ -118,18 +131,18 @@
     {
         params ["_value"];
         call {
-            if (_value IsEqualTo 0) exitwith {LRG_Main_LRG_Main_DynamicWeatherStart = "Random"};
-            if (_value IsEqualTo 1) exitwith {LRG_Main_LRG_Main_DynamicWeatherStart = "Clear"};
-            if (_value IsEqualTo 2) exitwith {LRG_Main_LRG_Main_DynamicWeatherStart = "Cloudy"};
-            if (_value IsEqualTo 3) exitwith {LRG_Main_LRG_Main_DynamicWeatherStart = "Raining"};
-            LRG_Main_LRG_Main_DynamicWeatherStart = "Random";
+            if (_value IsEqualTo 0) exitwith {LRG_Main_DynamicWeatherStart = "Random"};
+            if (_value IsEqualTo 1) exitwith {LRG_Main_DynamicWeatherStart = "Clear"};
+            if (_value IsEqualTo 2) exitwith {LRG_Main_DynamicWeatherStart = "Cloudy"};
+            if (_value IsEqualTo 3) exitwith {LRG_Main_DynamicWeatherStart = "Raining"};
+            LRG_Main_DynamicWeatherStart = "Random";
         };
     }
 ] call CBA_Settings_fnc_init;
 
 // TFAR - Range Multiplyer
 [
-    "LRG_Main_LRG_Main_TFARTransmitRange",
+    "LRG_Main_TFARTransmitRange",
     "SLIDER",
     ["TFAR - Range Multiplyer", "Increase or decrease max Transmit Range. 0.1 = poor range, 3.5 = All of Altis"],
     "LRG Main",
@@ -142,7 +155,7 @@
 
 // TFAR - Terrain Interference
 [
-    "LRG_Main_LRG_Main_TFARTerrainInterference",
+    "LRG_Main_TFARTerrainInterference",
     "SLIDER",
     ["TFAR - Terrain Interference", "How much Terrain interferes with range. 0.1 = little impact, 2.0 = large impact."],
     "LRG Main",
@@ -194,7 +207,7 @@
 
 // Fatigue (Vanilla ONLY)
 [
-    "LRG_Main_LRG_Main_FatigueVanilla",
+    "LRG_Main_FatigueVanilla",
     "CHECKBOX",
     ["Fatigue (Vanilla ONLY)", "Enable/Disable Vanilla Fatigue System. Does not apply with @ACE."],
     "LRG Main",

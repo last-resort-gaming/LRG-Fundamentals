@@ -1,3 +1,6 @@
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
+
 if (isNil "LRG_Main_CHViewDistance") exitwith {};
 if (not LRG_Main_CHViewDistance) exitWith{};
 

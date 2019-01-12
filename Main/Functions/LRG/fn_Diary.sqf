@@ -4,6 +4,9 @@
 	Author: MitchJC
 	Description: Creates Diary Subjects and Records as required.
 */
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
+
 if (isNil "LRG_Main_Diary") exitwith {};
 if (not LRG_Main_Diary) exitWith{};
 

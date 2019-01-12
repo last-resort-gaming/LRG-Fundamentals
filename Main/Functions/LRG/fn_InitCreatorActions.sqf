@@ -25,6 +25,8 @@ Examples:
 Author:
 	Mokka
 */
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
 
 if (isNil "LRG_Main_CreatorActions") exitwith {};
 if (not LRG_Main_CreatorActions) exitWith{};

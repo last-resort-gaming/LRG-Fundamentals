@@ -34,8 +34,8 @@ _________________________________________________________________/*/
 
 if (isDedicated || !hasInterface) exitWith {};
 
-if (isNil "LRG_QSIcons_MaterEnable") exitwith {};
-if (not LRG_QSIcons_MaterEnable) exitWith{};
+if (isNil "LRG_QSIcons_MasterEnable") exitwith {};
+if (not LRG_QSIcons_MasterEnable) exitWith{};
 private [
 	'_side','_sides','_QS_ST_X','_QS_ST_enableGroupIcons','_QS_ST_faction','_QS_ST_friendlySides_EAST',
 	'_QS_ST_friendlySides_WEST','_QS_ST_friendlySides_RESISTANCE','_QS_ST_friendlySides_CIVILIAN','_QS_ST_friendlySides_Dynamic', '_QS_ST_showMedicalWounded','_QS_ST_iconShadowMap',
