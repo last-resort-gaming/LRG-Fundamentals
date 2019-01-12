@@ -44,5 +44,5 @@ if (YAINA_PlugsIn isEqualTo true) then {
 // Replace menu item
 _aid = player getVariable "YAINA_Earplugs_AID";
 if(!isNil "_aid") then { player removeAction _aid; };
-_aid = player addAction [("<t color=""" + _nextColor + """>" + _nextAction + " Earplugs</t>"),"Scripts\YAINA\earplugs.sqf","",-98,false,true,"",'_target isEqualTo vehicle _this'];
+_aid = player addAction [("<t color=""" + _nextColor + """>" + _nextAction + " Earplugs</t>"),"LRG Fundamentals\General\scripts\YAINA\earplugs.sqf","",-98,false,true,"",'_target isEqualTo vehicle _this'];
 player setVariable ["YAINA_Earplugs_AID", _aid];
