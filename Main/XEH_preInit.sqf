@@ -11,19 +11,6 @@
     }
 ] call CBA_Settings_fnc_init;
 
-// Map Icons
-[
-    "LRG_Main_MapIcons",
-    "CHECKBOX",
-    ["Map Icons", "Shows player locations on the map."],
-    "LRG Main",
-    true,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
 // PilotCheck
 [
     "LRG_Main_PilotCheck",
