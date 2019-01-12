@@ -33,7 +33,7 @@ timeforecast = mintime;
 switch (LRG_Main_DynamicWeatherStart) do {
 	case "CLEAR": {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
 	case "CLOUDY": {wcweather = [0, 0, 0.6, [random 3, random 3, true], date];};
-	case "RAIN": {wcweather = [1, 0, 1, [random 3, random 3, true], date];};
+	case "Raining": {wcweather = [1, 0, 1, [random 3, random 3, true], date];};
 	default {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
 };
 
