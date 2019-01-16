@@ -9,6 +9,7 @@ class LRG_Main {
 		class ArsenalLoadSave {PostInit = 1;};
 		class Diary {PostInit = 1;};
 		class InitCreatorActions {PostInit = 1;};
+		class Logs {PostInit = 1;};		
 		class ModuleMain {};
 		class PilotCheck {PostInit = 1;};
 		class RealWeather {PostInit = 1;};

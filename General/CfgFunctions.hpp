@@ -9,7 +9,6 @@ class LRG_General {
 		class DynamicSim {PostInit = 1;};
 		class InitPlayerLocal {PostInit = 1;};
 		class InitServer {PostInit = 1;};	
-		class Logs {PostInit = 1;};			
 		class MedicalFacility {};
 		class Patches {};
 	};

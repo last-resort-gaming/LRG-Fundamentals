@@ -230,3 +230,16 @@
 
     }
 ] call CBA_Settings_fnc_init;
+
+// LRG Logging
+[
+    "LRG_Main_Logging",
+    "CHECKBOX",
+    ["LRG Logging", "Log connected players, their roles and if they go unconcious with ACE. Requires @A3Log"],
+    "LRG Main",
+    false,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
