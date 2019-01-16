@@ -6,8 +6,6 @@
 */
 
 
-
-enableSaving [false, false];
 {_x setSpeaker "NoVoice"} forEach playableUnits;
 
 if (!IsServer) exitwith {};

@@ -28,5 +28,3 @@ if (not LRG_Main_Master) exitWith{};
 			if (isNil "LRG_Main_TFARTerrainInterference") exitwith {};
 			player setVariable ["TF_terrain_interception_coefficient", LRG_Main_TFARTerrainInterference];
 	};
-
-enableSaving [false, false];
