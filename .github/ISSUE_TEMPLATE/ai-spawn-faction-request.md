@@ -1,8 +1,8 @@
 ---
 name: AI Spawn Faction Request
 about: Create a request for a new Faction to be added to the AI Spawn Module.
-title: ''
-labels: AI Spawn Faction Request
+title: "[Faction Request] Faction/Mod Title"
+labels: Faction Request
 assignees: ''
 
 ---
