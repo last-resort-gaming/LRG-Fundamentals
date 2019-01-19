@@ -16,6 +16,18 @@ class CfgPatches
 	};
 };
 
+class CfgVehicles
+{
+	class Logic;
+	class Module_F: Logic
+	{
+		class ArgumentsBaseUnits;
+		class ModuleDescription;
+	};
+	#include "ServicingModule.hpp"		
+};
+
+
 class CfgFunctions {
 
     #include "cfgFunctions.hpp"
