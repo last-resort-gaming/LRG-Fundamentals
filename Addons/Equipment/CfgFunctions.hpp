@@ -6,7 +6,7 @@ class LRG_Equipment {
 		file = "z\LRG Fundamentals\Addons\Equipment\Functions";
 		class AmmoBox {};
 		class Arsenal {};
-		class ConfigEquipment {};
 		class Loadouts {};
+		class MedicalFacility {};
 	};
 };
