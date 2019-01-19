@@ -18,7 +18,7 @@ class CfgPatches
 
 #include "CfgMusic.hpp"
 #include "CfgSounds.hpp"
-
+#include "CfgUnitInsignia.hpp"
 class CfgFunctions {
 
     #include "cfgFunctions.hpp"

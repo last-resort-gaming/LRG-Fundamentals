@@ -6,5 +6,6 @@ class LRG_Media {
 		file = "z\LRG Fundamentals\Addons\Media\Functions";
 		class Sound3D {};
 		class Sound3DFromPos {};
+		class Patches {};
 	};
 };
