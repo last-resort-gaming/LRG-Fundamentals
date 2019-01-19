@@ -9,7 +9,7 @@
 
 class CfgPatches
 {
-	class LRG_Channels
+	class LRGFundamentals_Channels
 	{
 		author = AUTHOR;
 		name = NAME;
@@ -24,7 +24,7 @@ class CfgPatches
 };
 
 class Extended_PreInit_EventHandlers {
-    class LRG_Channels_Event {
+    class LRGFundamentals_Channels_Event {
         init = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Channels\XEH_preInit.sqf'";
     };
 };

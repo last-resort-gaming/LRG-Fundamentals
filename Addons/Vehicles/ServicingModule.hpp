@@ -8,7 +8,7 @@
 		category = "LRG_Modules";
 		function = "LR_fnc_moduleServicing";
 		functionPriority = 4;
-		isGlobal = 0;
+		isGlobal = 1;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 		is3DEN = 0;
