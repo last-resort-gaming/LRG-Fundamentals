@@ -23,10 +23,18 @@ class CfgPatches
 	};
 };
 
+#include "CfgRespawnTemplates.hpp"
+#include "CfgDisplays.hpp"
+
 class Extended_PreInit_EventHandlers {
     class LRG_Main_Event {
         init = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Main\XEH_preInit.sqf'";
     };
+};
+
+class CfgScriptPaths
+{
+	LRGDisplays = "z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\";
 };
 
 class CfgFactionClasses

@@ -7,4 +7,4 @@ if (not LRG_Main_Earplugs) exitWith{};
 if (!hasInterface) exitwith {};
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
 
-[] execVM "LRG Fundamentals\General\scripts\YAINA\earplugs.sqf";
+[] execVM "z\LRG Fundamentals\Addons\Main\Scripts\Earplugs\earplugs.sqf";

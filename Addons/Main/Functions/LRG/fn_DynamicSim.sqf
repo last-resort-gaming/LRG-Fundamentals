@@ -2,7 +2,7 @@
 	LRG MISSION TEMPLATE - @OpScripts
 	LR_fnc_DynamicSim.sqf
 	Author: MitchJC
-	Description: If Dynamic Simulation isn't set, this function will auto do it.
+	Description: If Dynamic Simulation isn't set, this function will auto config to LRG Defaults.
 */
 
 if (!IsServer) exitwith {};

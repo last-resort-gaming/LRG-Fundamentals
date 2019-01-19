@@ -32,17 +32,17 @@ if (YAINA_PlugsIn isEqualTo true) then {
     _nextAction = "Remove";
     _nextColor  = "#FF0000";
     if (!isNil "_target") then {
-        [" <img image='z\LRG Fundamentals\addons\Media\images\plugs_in.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Inserted</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
+        [" <img image='z\LRG Fundamentals\Addons\Main\Scripts\Earplugs\plugs_in.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Inserted</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
     };
 } else {
     ([2, 0] select isNil "_target") fadeSound 1;
     if (!isNil "_target") then {
-        ["<img image='z\LRG Fundamentals\addons\Media\images\plugs_out.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Removed</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
+        ["<img image='z\LRG Fundamentals\Addons\Main\Scripts\Earplugs\plugs_out.paa' /><br/><t valign='middle' align='center' size='.4'>Earplugs Removed</t>",0,0.6, 2,1,0,0] spawn BIS_fnc_dynamicText;
     };
 };
 
 // Replace menu item
 _aid = player getVariable "YAINA_Earplugs_AID";
 if(!isNil "_aid") then { player removeAction _aid; };
-_aid = player addAction [("<t color=""" + _nextColor + """>" + _nextAction + " Earplugs</t>"),"z\LRG Fundamentals\addons\General\scripts\YAINA\earplugs.sqf","",-98,false,true,"",'_target isEqualTo vehicle _this'];
+_aid = player addAction [("<t color=""" + _nextColor + """>" + _nextAction + " Earplugs</t>"),"z\LRG Fundamentals\Addons\Main\Scripts\Earplugs\earplugs.sqf","",-98,false,true,"",'_target isEqualTo vehicle _this'];
 player setVariable ["YAINA_Earplugs_AID", _aid];

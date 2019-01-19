@@ -8,6 +8,7 @@ class LRG_Main {
 		class AddCueCards {PostInit = 1;};
 		class ArsenalLoadSave {PostInit = 1;};
 		class Diary {PostInit = 1;};
+		class DynamicSim {};
 		class DynamicGroups {PostInit = 1;};
 		class Earplugs {PostInit = 1;};		
 		class InitCreatorActions {PostInit = 1;};
@@ -17,6 +18,7 @@ class LRG_Main {
 		class RealWeather {PostInit = 1;};
 		class TFARSettings {PostInit = 1;};
 		class VanillaFatigue {PostInit = 1;};
+
 	};
 };
 
