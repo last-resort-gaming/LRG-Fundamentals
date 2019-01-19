@@ -24,6 +24,31 @@
     }
 ] call CBA_Settings_fnc_init;
 
+// Dynamic Groups
+[
+    "LRG_Main_DynamicGroups",
+    "CHECKBOX",
+    ["BIS Dynamic Groups", "Enable Vanilla Dynamic Groups system (U Menu)"],
+    "LRG Main",
+    false,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
+// Dynamic Groups
+[
+    "LRG_Main_Earplugs",
+    "CHECKBOX",
+    ["YAINA Earplugs", "Enable YAINA Earplugs addactions. Cannot be used with @ACE."],
+    "LRG Main",
+    false,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
 // PilotCheck
 [
     "LRG_Main_PilotCheck",
