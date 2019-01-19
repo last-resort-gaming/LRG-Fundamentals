@@ -29,24 +29,8 @@ params [
 	["_Loadout", []]
 ];
 
-systemchat format ["_Section Pre Check 1: %1", _Section];
-
-if (_Section isEqualto -1) exitwith {};
-
-call {
-
-	if (_Section isEqualto 0) exitwith {_Section = "Command"};
-	if (_Section isEqualto 1) exitwith {_Section = "1 Section"};
-	if (_Section isEqualto 2) exitwith {_Section = "2 Section"};
-	if (_Section isEqualto 3) exitwith {_Section = "3 Section"};
-	if (_Section isEqualto 4) exitwith {_Section = "909 EAW"};
-	if (_Section isEqualto 5) exitwith {_Section = "Support"};
-};
-systemchat format ["_Section Post Check 1: %1", _Section];
 
 if (local _unit) then {
-
-systemchat format ["_Section Post local: %1", _Section];
 
 //========== Section Config
 	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {

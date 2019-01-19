@@ -96,7 +96,7 @@
     "CHECKBOX",
     ["Group Map Enable", "Group icons displayed on map."],
     "LRG QS Icons",
-    true,
+    false,
     true,
     {  
 
