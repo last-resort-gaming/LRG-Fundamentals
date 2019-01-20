@@ -16,8 +16,6 @@ class CfgPatches
 	};
 };
 
-#include "Cfg3DEN.hpp"
-
 class CfgVehicles
 {
 	class Logic;

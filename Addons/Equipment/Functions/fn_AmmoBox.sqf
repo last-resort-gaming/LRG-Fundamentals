@@ -27,6 +27,13 @@ params [
 		["_Duration", 0]
 ];
 
+call {
+
+	if (_Type isEqualto 0) exitwith {_Type = "Vanilla"};
+	if (_Type isEqualto 1) exitwith {_Type = "3CB"};
+	if (_Type isEqualto 2) exitwith {_Type = "RHS"};
+};
+
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 	[_object, false] call ace_arsenal_fnc_initBox;
 } else {
