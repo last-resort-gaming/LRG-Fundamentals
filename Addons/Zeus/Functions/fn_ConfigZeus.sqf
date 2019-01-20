@@ -15,9 +15,10 @@
 	
 */
 params [
-"_object"
+"_object",
+["_switch", true]
 ];
-
+if (_switch isequalto false) exitwith {};
 _object addEventHandler [
 	"CuratorObjectPlaced", {
 		params ["_curator", "_entity"];
