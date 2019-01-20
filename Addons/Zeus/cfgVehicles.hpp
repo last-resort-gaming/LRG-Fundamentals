@@ -1,5 +1,3 @@
-
-
 class CfgVehicles {
     class Module_F;
     class ModuleEmpty_F;
@@ -14,7 +12,7 @@ class CfgVehicles {
                 tooltip = "Enable to allow this Zeus to have placed units use LRG AI Difficulty Settings (Settings - Addon Options)";
                 expression = "[_this] call LR_fnc_ConfigZeus;";
                 typeName = "BOOL";
-                condition = "1";
+                condition = "logicModule";
                 defaultValue = "true";
 			};
 		};
