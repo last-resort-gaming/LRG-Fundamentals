@@ -29,6 +29,17 @@ params [
 	["_Loadout", []]
 ];
 
+if (_Section isEqualto -1) exitwith {};
+
+call {
+
+	if (_Section isEqualto 0) exitwith {_Section = "Command"};
+	if (_Section isEqualto 1) exitwith {_Section = "1 Section"};
+	if (_Section isEqualto 2) exitwith {_Section = "2 Section"};
+	if (_Section isEqualto 3) exitwith {_Section = "3 Section"};
+	if (_Section isEqualto 4) exitwith {_Section = "909 EAW"};
+	if (_Section isEqualto 5) exitwith {_Section = "Support"};
+};
 
 if (local _unit) then {
 

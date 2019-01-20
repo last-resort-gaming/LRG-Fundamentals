@@ -1,4 +1,4 @@
-/*
+
 class LRG_Player {
 
 	tag = "LR";
@@ -8,4 +8,3 @@ class LRG_Player {
 		class ConfigPlayer {};
 	};
 };
-*/

@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-	class LRG_Config
+	class LRG_Zeus
 	{
 		author = AUTHOR;
 		name = NAME;
@@ -20,3 +20,5 @@ class CfgFunctions {
 
     #include "cfgFunctions.hpp"
 };
+
+#include "cfgVehicles.hpp"

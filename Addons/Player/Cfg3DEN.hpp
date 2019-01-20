@@ -1,48 +1,3 @@
-/*
-class Cfg3DEN {
-    class Object {
-        class AttributeCategories {
-            class LRG_Object_attributes {
-                displayName = "LRG Fundamentals";
-                collapsed = 1;
-                class Attributes {
-                    class LRG_Pilot {
-                        property = QUOTE(LRG_Pilot);
-                        control = "Checkbox";
-                        displayName = "Pilot";
-                        tooltip = "Set the player to Pilot to allow them in the Pilot seat of aircraft.";
-                        expression = "_this setUnitTrait ['Pilot', _value, true];";   
-                        typeName = "BOOL";
-                        condition = "objectBrain";
-                        defaultValue = "(false)";
-                    };
-                    class LRG_Mission_Maker {
-                        property = QUOTE(LRG_Mission_Maker);
-                        control = "Checkbox";
-                        displayName = "Mission Maker";
-                        tooltip = "Define this player as Mission Maker to allow access to further mission controls.";
-                        expression = "_this setUnitTrait ['Mission Maker', _value, true];";   
-                        typeName = "BOOL";
-                        condition = "objectBrain";
-                        defaultValue = "(false)";
-                    };
-                    class LRG_Instructor {
-                        property = QUOTE(LRG_Instructor);
-                        control = "Checkbox";
-                        displayName = "Instructor";
-                        tooltip = "Define this player as Instructor to allow access to any valid Instructor Controls - Only used with Training Functions.";
-                        expression = "_this setUnitTrait ['Instructor', _value, true];";  
-                        typeName = "BOOL";
-                        condition = "objectBrain";
-                        defaultValue = "(false)";
-                    };					
-                };
-            };
-        };
-    };
-
-*/
-
 class ctrlToolbox;
 
 class Cfg3DEN {
@@ -54,7 +9,7 @@ class Cfg3DEN {
             };
         };
         class GroupSelect: Title {
-            attributeLoad = "(_this controlsGroupCtrl 100) lbSetCurSel (((_value + 1) min 3) max 0);";
+            attributeLoad = "(_this controlsGroupCtrl 100) lbSetCurSel (((_value + 1) min 7) max 0);";
             attributeSave = "(lbCurSel (_this controlsGroupCtrl 100)) - 1";
             class Controls: Controls {
                 class Title: Title{};

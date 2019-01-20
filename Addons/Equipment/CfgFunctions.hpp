@@ -7,6 +7,5 @@ class LRG_Equipment {
 		class AmmoBox {};
 		class Arsenal {};
 		class Loadouts {};
-		class MedicalFacility {};
 	};
 };

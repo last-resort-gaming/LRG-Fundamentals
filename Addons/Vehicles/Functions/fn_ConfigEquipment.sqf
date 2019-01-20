@@ -27,6 +27,14 @@ params [
 	["_isMedicalFacility", false]
 ];
 
+if (_Type isEqualto -1) exitwith {};
+
+call {
+
+	if (_Type isEqualto 0) exitwith {_Type = "Basic Medical"};
+	if (_Type isEqualto 1) exitwith {_Type = "Full MERT"};
+
+};
 
 private ["_ContainerItems"];
 

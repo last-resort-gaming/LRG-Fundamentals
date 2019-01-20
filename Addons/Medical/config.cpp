@@ -2,7 +2,7 @@
 
 class CfgPatches
 {
-	class LRG_Vehicles
+	class LRG_Medical
 	{
 		author = AUTHOR;
 		name = NAME;
@@ -17,18 +17,6 @@ class CfgPatches
 };
 
 #include "Cfg3DEN.hpp"
-
-class CfgVehicles
-{
-	class Logic;
-	class Module_F: Logic
-	{
-		class ArgumentsBaseUnits;
-		class ModuleDescription;
-	};
-	#include "ServicingModule.hpp"		
-};
-
 
 class CfgFunctions {
 
