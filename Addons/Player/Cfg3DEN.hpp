@@ -75,9 +75,9 @@ class Cfg3DEN {
                          class LRG_DefaultLoadout {
                         property = QUOTE(LRG_DefaultLoadout);
                         control = "Checkbox";
-                        displayName = "Default Loadout";
-                        tooltip = "Use Default Loadout for this player type if available.";
-                        expression = "_this setUnitTrait ['Instructor', _value, true];";  
+                        displayName = "LRG Preset Loadout";
+                        tooltip = "Use Preset Loadout for this player type if available.";
+                        expression = "if (_value IsEqualTo true) then { [_this] call LR_fnc_Loadouts;}";
                         typeName = "BOOL";
                         condition = "objectBrain";
                         defaultValue = "(false)";

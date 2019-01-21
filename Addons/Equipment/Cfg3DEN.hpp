@@ -74,7 +74,7 @@ class Cfg3DEN {
                         control = EquipmentSelect;
                         displayName = "LRG Equipment Selection:";
                         tooltip = "Suppliments the equipment is this object with a preset equipment loadout. This doesn't remove currently selected equipment.";
-                        expression = "[_this, _value] call LR_fnc_ConfigEquipment;";
+                        expression = "if (_value > -1) then {[_this, _value] call LR_fnc_ConfigEquipment;}";
                         typeName = "STRING";
                         condition = "objectHasInventoryCargo";
                         defaultValue = "-1";

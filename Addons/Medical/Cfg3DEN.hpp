@@ -39,7 +39,7 @@ class Cfg3DEN {
                         tooltip = "Define this object as an Emergency Medical Facility. If a player enters this area, they will be revived and fully healed. @ACE Only.";
                         expression = "if (_value > -1) then {[_this] call LR_fnc_MedicalFacility};";
                         typeName = "STRING";
-						condition = "(1 - objectBrain) * (1 - objectVehicle) - objectHasInventoryCargo";      
+						condition = "(1 - objectBrain) * (1 - objectVehicle) * (1 - objectHasInventoryCargo)";      
                         defaultValue = "-1";
                   
                     };
