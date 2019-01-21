@@ -34,31 +34,6 @@ call {
 
 };
 
-private _oldLoadout = _container getVariable ["LRG_vehicleLoadout", []];
-
-_exit = call {
-	private _exit = false;
-
-	// Check if vehicle loadout has been set before...
-	if ((count _oldLoadout) == 2) then {
-		_oldLoadout params ["_oldType", "_oldItems"];
-
-		// If the vehicle already has the loadout type set that we want to add, 
-		// set the exit flag.
-		if (_Type isEqualTo _oldType) exitWith {_exit = true};
-
-		// Remove the items we previously added before adding new stuff in.
-		{
-			// TODO: Not sure if removeItems works globally, test in MP.
-			_container removeItems (_x select 0);
-		} forEach _oldItems;
-	};
-
-	_exit;
-};
-
-if (_exit) exitWith {};
-
 private ["_ContainerItems"];
 
 call {
@@ -107,9 +82,6 @@ call {
 };
 
 {_container addItemCargoGlobal _x} foreach _ContainerItems;
-
-// Set variable on container to signal we've already added a loadout to it.
-_container setVariable ["LRG_vehicleLoadout", [_Type, _ContainerItems]];
 
 //=========================== ACE Medical Building/_ContainerItems
 if (_isMedicalFacility) then {
