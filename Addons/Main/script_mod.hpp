@@ -1,4 +1,4 @@
-#define VERSION 1.4.0
+#define VERSION 1.4.1
 #define AUTHOR "Last Resort Gaming"
 #define LOGO_PATH "\z\LRG Fundamentals\addons\media\images\LRG Logo.paa"
 #define REQUIRED_VERSION 1.86
