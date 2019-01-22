@@ -27,8 +27,6 @@ params [
 	["_isMedicalFacility", false]
 ];
 
-if (_Type isEqualto -1) exitwith {};
-
 call {
 
 	if (_Type isEqualto 0) exitwith {_Type = "Basic Medical"};
