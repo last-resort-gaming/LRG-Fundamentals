@@ -25,6 +25,7 @@ class CfgPatches
 
 #include "CfgRespawnTemplates.hpp"
 #include "CfgDisplays.hpp"
+#include "CfgWLRequisitionPresets.hpp"
 
 class Extended_PreInit_EventHandlers {
     class LRG_Main_Event {
