@@ -27,7 +27,17 @@
 				description = "Enemy Faction Type for this Module.";
 				typeName = "STRING";
 				class values
-				{				
+				{
+					class TEC_CSAT
+					{
+						name = "@CSAT Mod Project - CSAT (Iran, Mediterranean)";
+						value = "TEC_CSAT";
+					};
+					class TEC_CSAT_Pacific
+					{
+						name = "@CSAT Mod Project - CSAT (Iran, Pacific)";
+						value = "TEC_CSAT_Pacific";
+					};					
 					class CUP_O_ChDKZ
 					{
 						name = "@CUP - Chernarussian Movement of the Red Star";
@@ -53,6 +63,11 @@
 						name = "@CUP - Takistan Militia";
 						value = "CUP_O_TK_MILITIA";
 					};
+					class OPTRE_Ins
+					{
+						name = "@OPTRE - Insurrectionists";
+						value = "OPTRE_Ins";
+					};						
 					class LOP_AFR_OPF
 					{
 						name = "@Project OPFOR - African Militia";
@@ -162,22 +177,7 @@
 					{
 						name = "@RHS AFRF - Russia - VMF";
 						value = "rhs_faction_vmf";
-					};
-					class TEC_CSAT
-					{
-						name = "@CSAT Mod Project - CSAT Iran, Mediterranean";
-						value = "TEC_CSAT";
-					};
-					class TEC_CSAT_Pacific
-					{
-						name = "@CSAT Mod Project - CSAT Iran, Pacific";
-						value = "TEC_CSAT_Pacific";
-					};																																	
-					class OPTRE_Ins
-					{
-						name = "@OPTRE - Insurrectionists";
-						value = "OPTRE_Ins";
-					};										
+					};																									
 					class OPF_F
 					{
 						name = "Vanilla - CSAT";
@@ -185,7 +185,7 @@
 					};
 					class OPF_T_F
 					{
-						name = "Vanilla - CSAT Pacific";
+						name = "Vanilla - CSAT (Pacific)";
 						value = "OPF_T_F";
 					};
 					class IND_F
