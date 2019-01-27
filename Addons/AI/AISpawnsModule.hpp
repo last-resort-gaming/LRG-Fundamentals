@@ -27,37 +27,17 @@
 				description = "Enemy Faction Type for this Module.";
 				typeName = "STRING";
 				class values
-				{
-					class OPF_F
+				{				
+					class CUP_O_ChDKZ
 					{
-						name = "CSAT";
-						value = "OPF_F";
-					};
-					class OPF_T_F
-					{
-						name = "CSAT Pacific";
-						value = "OPF_T_F";
-					};
-					class IND_F
-					{
-						name = "AAF";
-						value = "IND_F";
-					};
-					class IND_C_F
-					{
-						name = "Syndikat";
-						value = "IND_C_F";
+						name = "@CUP - Chernarussian Movement of the Red Star";
+						value = "CUP_O_ChDKZ";
 					};
 					class CUP_O_RU
 					{
 						name = "@CUP - Russian Federation";
 						value = "CUP_O_RU";
-					};					
-					class CUP_O_ChDKZ
-					{
-						name = "@CUP - Chernarussian Movement of the Red Star";
-						value = "CUP_O_ChDKZ";
-					};					
+					};										
 					class CUP_O_SLA
 					{
 						name = "@CUP - Sahrani Liberation Army";
@@ -72,41 +52,6 @@
 					{
 						name = "@CUP - Takistan Militia";
 						value = "CUP_O_TK_MILITIA";
-					};
-					class rhsgref_faction_chdkz
-					{
-						name = "@RHS GREF - ChDKZ Insurgents";
-						value = "rhsgref_faction_chdkz";
-					};
-					class rhs_faction_msv
-					{
-						name = "@RHS AFRF - Russia - MSV";
-						value = "rhs_faction_msv";
-					};
-					class rhs_faction_vdv
-					{
-						name = "@RHS AFRF - Russia - VDV";
-						value = "rhs_faction_vdv";
-					};												
-					class rhs_faction_vmf
-					{
-						name = "@RHS AFRF - Russia - VMF";
-						value = "rhs_faction_vmf";
-					};
-					class OPTRE_Ins
-					{
-						name = "@OPTRE - Insurrectionists";
-						value = "OPTRE_Ins";
-					};
-					class TEC_CSAT
-					{
-						name = "@CSAT Mod Project - CSAT Iran, Mediterranean";
-						value = "TEC_CSAT";
-					};
-					class TEC_CSAT_Pacific
-					{
-						name = "@CSAT Mod Project - CSAT Iran, Pacific";
-						value = "TEC_CSAT_Pacific";
 					};
 					class LOP_AFR_OPF
 					{
@@ -152,8 +97,117 @@
 					{
 						name = "@Project OPFOR - United Armed Forces of Novorossiya";
 						value = "LOP_US";
-					};																													
-
+					};
+					class LOP_IRAN
+					{
+						name = "@Project OPFOR - Iranian Armed Forces";
+						value = "LOP_IRAN";
+					};
+					class LOP_NAPA
+					{
+						name = "@Project OPFOR - Chernarussian National Insurgents";
+						value = "LOP_NAPA";
+					};
+					class LOP_PESH_IND
+					{
+						name = "@Project OPFOR - Kurdish Peshmerga Forces";
+						value = "LOP_PESH_IND";
+					};
+					class LOP_PMC
+					{
+						name = "@Project OPFOR - Private Military Company";
+						value = "LOP_PMC";
+					};
+					class LOP_RACS
+					{
+						name = "@Project OPFOR - Royal Army Corps of Sahrani";
+						value = "LOP_RACS";
+					};
+					class LOP_UA
+					{
+						name = "@Project OPFOR - Ultranationalists";
+						value = "LOP_UA";
+					};
+					class LOP_UKR
+					{
+						name = "@Project OPFOR - Ukrainian Armed Forces";
+						value = "LOP_UKR";
+					};	
+					class LOP_UN
+					{
+						name = "@Project OPFOR - United Nations";
+						value = "LOP_UN";
+					};
+					class LOP_UVF
+					{
+						name = "@Project OPFOR - Ulster Volunteer Force";
+						value = "LOP_UVF";
+					};						
+					class rhsgref_faction_chdkz
+					{
+						name = "@RHS GREF - ChDKZ Insurgents";
+						value = "rhsgref_faction_chdkz";
+					};
+					class rhs_faction_msv
+					{
+						name = "@RHS AFRF - Russia - MSV";
+						value = "rhs_faction_msv";
+					};
+					class rhs_faction_vdv
+					{
+						name = "@RHS AFRF - Russia - VDV";
+						value = "rhs_faction_vdv";
+					};												
+					class rhs_faction_vmf
+					{
+						name = "@RHS AFRF - Russia - VMF";
+						value = "rhs_faction_vmf";
+					};
+					class TEC_CSAT
+					{
+						name = "@CSAT Mod Project - CSAT Iran, Mediterranean";
+						value = "TEC_CSAT";
+					};
+					class TEC_CSAT_Pacific
+					{
+						name = "@CSAT Mod Project - CSAT Iran, Pacific";
+						value = "TEC_CSAT_Pacific";
+					};																																	
+					class OPTRE_Ins
+					{
+						name = "@OPTRE - Insurrectionists";
+						value = "OPTRE_Ins";
+					};										
+					class OPF_F
+					{
+						name = "Vanilla - CSAT";
+						value = "OPF_F";
+					};
+					class OPF_T_F
+					{
+						name = "Vanilla - CSAT Pacific";
+						value = "OPF_T_F";
+					};
+					class IND_F
+					{
+						name = "Vanilla - AAF";
+						value = "IND_F";
+					};
+					class IND_C_F
+					{
+						name = "Vanilla - Syndikat";
+						value = "IND_C_F";
+					};
+					class BLU_F
+					{
+						name = "Vanilla - NATO";
+						value = "BLU_F";
+					};
+					class BLU_T_F
+					{
+						name = "Vanilla - NATO (Pacific)";
+						value = "BLU_T_F";
+					};																			
 				};
 				defaultValue = "OPF_F";
 			};
