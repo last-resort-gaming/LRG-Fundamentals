@@ -342,8 +342,8 @@ private _vehicles = [];
 ///////////////////////////////////////////////////////////
 
 if (_garrisonGroupCount > 0) then {
-	private _garrisonGroupType = selectrandom _infList;
-    private _garrisonedUnits = ([_center, [_garrisonMinRad, _garrisonMaxRad], _faction, _garrisonGroupCount, nil, _garrisonSkill, _garrisonFill, _garrisonExcludes] call LR_fnc_infantryGarrison);
+
+    private _garrisonedUnits = ([_center, [_garrisonMinRad, _garrisonMaxRad], _side, _FactionSide,  _faction, _InfantryType, _infList, _garrisonGroupCount, nil, _garrisonSkill, _garrisonFill, _garrisonExcludes] call LR_fnc_infantryGarrison);
     _units append _garrisonedUnits;
 
     private _grps = [];

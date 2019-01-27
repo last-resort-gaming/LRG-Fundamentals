@@ -32,7 +32,11 @@ if (!isServer) exitWith {};
 params [
     "_pos",
     ["_radius", [0, 30]],
-    "_faction",
+	["_side", east],
+	["_FactionSide", "EAST"],
+    ["_faction", "OPF_F"],
+	["_InfantryType","UInfantry"],
+	["_infList", ["OIA_GuardSquad"]],
     ["_groupCount", 1],
     ["_AIOB_Positioning", 2],
     ["_skill", "LRG Default"],
@@ -43,111 +47,8 @@ params [
 
 if (_units isEqualTo []) then {
 
-
-// Set the Default Faction if all else fails
-private _side = East;
-private _FactionSide = "East";
-private _InfantryType = "UInfantry";
-private _InfantryGroup = "OIA_GuardSquad";
-
-// Check for Side from _faction
-private _SideNumber = getnumber (configfile >> "CfgFactionClasses" >> _faction >> "side");
-call {
- 	if (_sidenumber IsEqualTo 0) exitwith {
-		 _side = East;
-		 _FactionSide = "East";
-	}; 
- 	if (_sidenumber IsEqualTo 1) exitwith {
-		 _side = West;
-		 _FactionSide = "West";
-	}; 
- 	if (_sidenumber IsEqualTo 2) exitwith {
-		 _side = Resistance;
-		 _FactionSide = "Indep";
-	};	
-};
-
-// Check for matching Faction from _faction
-	call {
-		if (_faction isEqualto "OPF_F") exitWith {
-			_InfantryType = "UInfantry";
-			_InfantryGroup = "OIA_GuardSquad";
-		};
-			
-		if (_faction isEqualto "OPF_T_F") exitWith {
-			_InfantryType = "Infantry";
-			_InfantryGroup = "O_T_InfSquad";
-		};
-
-		if (_faction isEqualto "IND_F") exitWith {
-			_InfantryType = "Infantry";
-			_InfantryGroup = "HAF_InfSquad";
-		};
-
-		if (_faction isEqualto "IND_C_F") exitWith {
-			_InfantryType = "Infantry";
-			_InfantryGroup = "BanditCombatGroup";
-		};
-
-		if (_faction isEqualto "CUP_O_RU") exitWith {
-			_InfantryType = "Infantry";
-			_InfantryGroup = "CUP_O_RU_InfSquad_EMR";
-		};
-
-		if (_faction isEqualto "CUP_O_ChDKZ") exitWith {
-			_InfantryType = "Infantry";
-			_InfantryGroup = "CUP_O_ChDKZ_InfSquad";
-		};
-
-		if (_faction isEqualto "CUP_O_SLA") exitWith {
-			_InfantryType = "Infantry_Urban";
-			_InfantryGroup = "CUP_O_SLA_InfantrySquad_Urban";
-		};
-
-		if (_faction isEqualto "CUP_O_TK") exitWith {
-			_InfantryType = "Infantry";
-			_InfantryGroup = "CUP_O_TK_InfantrySquad";
-		};
-
-		if (_faction isEqualto "rhsgref_faction_chdkz") exitWith {
-			_InfantryType = "rhsgref_group_chdkz_insurgents_infantry";
-			_InfantryGroup = "rhsgref_group_chdkz_insurgents_squad";
-		};
-
-		if (_faction isEqualto "rhs_faction_msv") exitWith {
-			_InfantryType = "rhs_group_rus_msv_infantry";
-			_InfantryGroup = "rhs_group_rus_msv_infantry_squad";
-		};
-
-		if (_faction isEqualto "rhs_faction_vdv") exitWith {
-			_InfantryType = "rhs_group_rus_vdv_infantry";
-			_InfantryGroup = "rhs_group_rus_vdv_infantry_squad";
-		};
-
-		if (_faction isEqualto "rhs_faction_vmf") exitWith {
-			_InfantryType = "rhs_group_rus_vmf_infantry";
-			_InfantryGroup = "rhs_group_rus_vmf_infantry_squad";
-		};
-
-		if (_faction isEqualto "OPTRE_Ins") exitWith {
-			_InfantryType = "Infantry_URF";
-			_InfantryGroup = "OPTRE_Ins_URF_Inf_RifleSquad";
-		};
-
-		if (_faction isEqualto "CSAT TEC_CSAT") exitwith {
-			_InfantryType = "TEC_CSAT";
-			_InfantryGroup = "TEC_Infantry_SA";
-		};
-
-		if (_faction isEqualto "TEC_CSAT_Pacific") exitwith {
-			_InfantryType = "Infantry_URF";
-			_InfantryGroup = "OPTRE_Ins_URF_Inf_RifleSquad";
-		};
-	};
-
-	private _groupType = (configFile >> "CfgGroups" >> _FactionSide >> _faction >> _InfantryType >> _InfantryGroup);
-
     for "_x" from 1 to _groupCount do {
+		private _groupType = (configFile >> "CfgGroups" >> _FactionSide >> _faction >> _InfantryType >> (selectRandom _infList));
         private _g = [_pos, _side, _groupType] call BIS_fnc_spawnGroup;
         _units append (units _g);
     };
