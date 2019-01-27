@@ -51,6 +51,7 @@ class LRG_AI {
 		class rhsgref_faction_chdkz {};
 		class TEC_CSAT {};
 		class TEC_CSAT_Pacific {};
+		class UNSUNG_E_NVA {};
 	};	
 };
 

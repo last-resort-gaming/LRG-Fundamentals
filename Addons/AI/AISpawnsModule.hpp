@@ -177,7 +177,12 @@
 					{
 						name = "@RHS AFRF - Russia - VMF";
 						value = "rhs_faction_vmf";
-					};																									
+					};
+					class UNSUNG_E_NVA
+					{
+						name = "@UNSUNG - NVA";
+						value = "UNSUNG_E_NVA";
+					};																													
 					class OPF_F
 					{
 						name = "Vanilla - CSAT";
