@@ -107,8 +107,52 @@
 					{
 						name = "@CSAT Mod Project - CSAT Iran, Pacific";
 						value = "TEC_CSAT_Pacific";
-					};					
-
+					};
+					class LOP_AFR_OPF
+					{
+						name = "@Project OPFOR - African Militia";
+						value = "LOP_AFR_OPF";
+					};									
+					class LOP_AM_OPF
+					{
+						name = "@Project OPFOR - Middle Eastern Militia";
+						value = "LOP_AM_OPF";
+					};
+					class LOP_BH
+					{
+						name = "@Project OPFOR - Boko Haram";
+						value = "LOP_BH";
+					};
+					class LOP_ChDKZ
+					{
+						name = "@Project OPFOR - ChDKZ";
+						value = "LOP_ChDKZ";
+					};
+					class LOP_IRA
+					{
+						name = "@Project OPFOR - Irish Republican Army";
+						value = "LOP_IRA";
+					};
+					class LOP_ISTS_OPF
+					{
+						name = "@Project OPFOR - Islamic State";
+						value = "LOP_ISTS_OPF";
+					};
+					class LOP_SLA
+					{
+						name = "@Project OPFOR - Sahrani Liberation Army";
+						value = "LOP_SLA";
+					};
+					class LOP_TKA
+					{
+						name = "@Project OPFOR - Takistani Armed Forces";
+						value = "LOP_TKA";
+					};
+					class LOP_US
+					{
+						name = "@Project OPFOR - United Armed Forces of Novorossiya";
+						value = "LOP_US";
+					};																													
 
 				};
 				defaultValue = "OPF_F";
