@@ -126,10 +126,9 @@ private ["_infList", "_confBase", "_infaaList", "_infatList", "_sniperList", "_v
 // Set the Default Faction if all else fails
 private _side = East;
 private _FactionSide = "East";
-private _InfantryType = "UInfantry";
-private _InfantryGroup = "OIA_GuardSquad";
+private _InfantryType = "Infantry";
+private _InfantryGroup = "OIA_InfTeam";
 private _vehRandList = [];
-
 // Check for Side from _army
 private _SideNumber = getnumber (configfile >> "CfgFactionClasses" >> _army >> "side");
 call {
@@ -150,7 +149,6 @@ call {
 call {
 		
 	if (_army isEqualto "OPF_F") exitwith {
-		_confBase     = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
 		_infList      = ["OIA_InfTeam","OI_reconPatrol"];
 		_infaaList    = ["OIA_InfTeam_AA"];
 		_infatList    = ["OIA_InfTeam_AT"];
@@ -162,8 +160,6 @@ call {
 	};
 		
 	if (_army isEqualto "OPF_T_F") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
-		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["O_T_InfTeam_AA"];
 		_infatList    = ["O_T_InfTeam_AT","O_T_InfTeam_AT_Heavy"];
 		_sniperList   = ["O_T_SniperTeam"];
@@ -174,8 +170,6 @@ call {
 	};
 
 	if (_army isEqualto "IND_F") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
-		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["HAF_InfTeam_AA"];
 		_infatList    = ["HAF_InfTeam_AT"];
 		_sniperList   = ["HAF_SniperTeam"];
@@ -186,8 +180,6 @@ call {
 	};
 	
 	if (_army isEqualto "IND_C_F") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
-		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = [];
 		_infatList    = [];
 		_sniperList   = [];
@@ -198,8 +190,6 @@ call {
 	};
 	
 	if (_army isEqualto "CUP_O_TK_MILITIA") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
-		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_TK_INS_Soldier_AA"];
 		_infatList    = ["CUP_O_TK_INS_Soldier_AT"];
 		_sniperList   = ["CUP_O_TK_INS_Sniper"];
@@ -210,8 +200,6 @@ call {
 	};
 	
 	if (_army isEqualto "CUP_O_ChDKZ") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
-		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_INS_Soldier_AA"];
 		_infatList    = ["CUP_O_INS_Soldier_AT"];
 		_sniperList   = ["CUP_O_INS_Sniper"];
@@ -222,7 +210,6 @@ call {
 	};
 	
 	if (_army isEqualto "CUP_O_RU") exitwith {
-		_confBase		= configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
 		_infList 		= ["CUP_O_RU_InfSection","CUP_O_RU_InfSection_EMR","CUP_O_RU_InfSection_MG","CUP_O_RU_InfSection_MG_EMR","CUP_O_RU_InfSection_MG_VDV","CUP_O_RU_InfSection_MG_VDV_EMR","CUP_O_RU_InfSection_VDV","CUP_O_RU_InfSection_VDV_EMR","CUP_O_RU_InfSquad","CUP_O_RU_InfSquad_EMR","CUP_O_RU_InfSquad_VDV","CUP_O_RU_InfSquad_VDV_EMR"];
 		_infaaList		= ["CUP_O_RU_Soldier_AA_EMR","CUP_O_RU_Soldier_AA"];
 		_infatList    	= ["CUP_O_RU_Soldier_AT","CUP_O_RU_Soldier_LAT","CUP_O_RU_Soldier_HAT","CUP_O_RU_Soldier_HAT_EMR","CUP_O_RU_Soldier_AT_EMR","CUP_O_RU_Soldier_LAT_EMR"];
@@ -234,8 +221,6 @@ call {
 	};
 	
 	if (_army isEqualto "CUP_O_SLA") exitwith {
-		_confBase     = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry";
-		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_sla_Soldier_AA", "CUP_O_sla_Soldier_AA_desert"];
 		_infatList    = ["CUP_O_sla_Soldier_HAT", "CUP_O_sla_Soldier_LAT", "CUP_O_sla_Soldier_AT", "CUP_O_sla_Soldier_AAT_desert", "CUP_O_sla_Soldier_LAT_desert", "CUP_O_sla_Soldier_AT_desert", "CUP_O_Partisans_Soldier_AT"];
 		_sniperList   = ["CUP_O_sla_Sniper", "CUP_O_sla_Sniper_KSVK", "CUP_O_SLA_Sniper_SVD_Night", "CUP_O_SLA_Spotter", "CUP_O_sla_Sniper_desert", "CUP_O_sla_Sniper_KSVK_desert", "CUP_O_SLA_Sniper_SVD_Night_desert", "CUP_O_SLA_Spotter_desert"];
@@ -246,8 +231,7 @@ call {
 	};
 	
 	if (_army isEqualto "CUP_O_TK") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry" ;
-		_infList = ("true" configClasses _confBase) apply { configName _x };
+
 		_infaaList    = ["CUP_O_TK_Soldier_AA"];
 		_infatList    = ["CUP_O_TK_Soldier_HAT", "CUP_O_TK_Soldier_AT", "CUP_O_TK_Soldier_LAT"];
 		_sniperList   = ["CUP_O_TK_Sniper", "CUP_O_TK_Sniper_KSVK", "CUP_O_TK_Spotter", "CUP_O_TK_Sniper_SVD_Night"];
@@ -258,7 +242,7 @@ call {
 	};
 
 	if (_army isEqualto "rhsgref_faction_chdkz") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "rhsgref_group_chdkz_insurgents_infantry";
+		_InfantryType = "rhsgref_group_chdkz_insurgents_infantry";
 		_infList	  =	["rhsgref_group_chdkz_infantry_mg","rhsgref_group_chdkz_infantry_patrol","rhsgref_group_chdkz_insurgents_squad"];
 		_infaaList    = ["rhsgref_ins_specialist_aa"];
 		_infatList    = ["rhsgref_ins_grenadier_rpg","rhsgref_ins_rifleman_RPG26"];
@@ -270,7 +254,7 @@ call {
 	};
 
 	if (_army isEqualto "rhs_faction_msv") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "rhs_group_rus_msv_infantry";
+		_InfantryType = "rhs_group_rus_msv_infantry";
 		_infList	  =	["rhs_group_rus_msv_infantry_chq", "rhs_group_rus_msv_infantry_fireteam", "rhs_group_rus_msv_infantry_MANEUVER", "rhs_group_rus_msv_infantry_section_marksman", "rhs_group_rus_msv_infantry_section_mg", "rhs_group_rus_msv_infantry_squad", "rhs_group_rus_msv_infantry_squad_2mg", "rhs_group_rus_msv_infantry_squad_mg_sniper", "rhs_group_rus_msv_infantry_squad_sniper"];
 		_infaaList    = ["rhs_msv_emr_aa"];
 		_infatList    = ["rhs_msv_emr_at","rhs_msv_emr_RShG2","rhs_msv_emr_LAT","rhs_msv_emr_grenadier_rpg"];
@@ -281,7 +265,8 @@ call {
 		_vehHeavyList = ["rhs_bmp3_msv","rhs_bmp3_late_msv","rhs_bmp3mera_msv"];
 	};
 	if (_army isEqualto "rhs_faction_vdv") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "rhs_group_rus_vdv_infantry";
+
+		_InfantryType = "rhs_group_rus_vdv_infantry";
 		_infList	  =	["rhs_group_rus_vdv_infantry_chq", "rhs_group_rus_vdv_infantry_fireteam", "rhs_group_rus_vdv_infantry_MANEUVER", "rhs_group_rus_vdv_infantry_section_marksman", "rhs_group_rus_vdv_infantry_section_mg", "rhs_group_rus_vdv_infantry_squad", "rhs_group_rus_vdv_infantry_squad_2mg", "rhs_group_rus_vdv_infantry_squad_mg_sniper", "rhs_group_rus_vdv_infantry_squad_sniper"];
 		_infaaList    = ["rhs_vdv_aa"];
 		_infatList    = ["rhs_vdv_at","rhs_vdv_RShG2","rhs_vdv_LAT","rhs_vdv_grenadier_rpg"];
@@ -292,7 +277,7 @@ call {
 		_vehHeavyList = ["rhs_btr60_vdv","rhs_btr70_vdv","rhs_btr80_vdv","rhs_btr80a_vdv", "rhs_sprut_vdv"];
 	};
 	if (_army isEqualto "rhs_faction_vmf") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "rhs_group_rus_vmf_infantry"; 
+		_InfantryType = "rhs_group_rus_vmf_infantry";
 		_infList	  =	["rhs_group_rus_vmf_infantry_chq","rhs_group_rus_vmf_infantry_fireteam","rhs_group_rus_vmf_infantry_MANEUVER","rhs_group_rus_vmf_infantry_section_marksman","rhs_group_rus_vmf_infantry_section_mg","rhs_group_rus_vmf_infantry_squad","rhs_group_rus_vmf_infantry_squad_2mg","rhs_group_rus_vmf_infantry_squad_mg_sniper","rhs_group_rus_vmf_infantry_squad_sniper"];
 		_infaaList    = ["rhs_vmf_flora_aa"];
 		_infatList    = ["rhs_vmf_flora_RShG2","rhs_vmf_flora_LAT","rhs_vmf_flora_at"];
@@ -303,7 +288,7 @@ call {
 		_vehHeavyList = ["rhs_bmp1_vmf","rhs_bmp1d_vmf","rhs_bmp1k_vmf","rhs_bmp1p_vmf","rhs_bmp2e_vmf","rhs_bmp2_vmf","rhs_bmp2d_vmf","rhs_bmp2k_vmf","rhs_brm1k_vmf","rhs_prp3_vmf"];
 	};			
 		if (_army isEqualto "OPTRE_Ins") exitwith {
-		_confBase     = configfile >> "CfgGroups" >> _FactionSide >> _army >> "Infantry_URF";
+		_InfantryType = "Infantry_URF";
 		_infList      = ["OPTRE_Ins_URF_Inf_CmdSquad","OPTRE_Ins_URF_Inf_Fireteam", "OPTRE_Ins_URF_Inf_RifleSquad", "OPTRE_Ins_URF_Inf_Sentry"];
 		_infaaList    = ["OPTRE_Ins_URF_Inf_AntiAir"];
 		_infatList    = ["OPTRE_Ins_URF_Inf_AntiTank"];
@@ -315,7 +300,7 @@ call {
 	};
 
 	if (_army isEqualto "CSAT TEC_CSAT") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "TEC_Infantry_SA";
+		_InfantryType = "TEC_Infantry_SA";		
 		_infList      = ["TEC_AssaultSquad_SA","TEC_InfSquad_SA","TEC_WeapSquad_SA"];
 		_infaaList    = ["TEC_AATeam_SA"];
 		_infatList    = ["TEC_ATTeam_SA"];
@@ -325,10 +310,9 @@ call {
 		_vehLightList = ["TEC_VH_MRAP_Abda_HMG","TEC_VH_MRAP_Shir_GMG","TEC_VH_MRAP_Shir_HMG","TEC_VH_LSV_Qilin_SOF_Armed"];
 		_vehHeavyList = ["TEC_VH_Tank_Angara","TEC_VH_Tank_Varsuk_F"];
 	};
-	
-	
+		
 		if (_army isEqualto "TEC_CSAT_Pacific") exitwith {
-		_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> "TEC_Infantry_WL";
+		_InfantryType = "TEC_Infantry_WL";
 		_infList      = ["TEC_AssaultSquad_WL","TEC_InfSquad_WL","TEC_InfTeam_WL"];
 		_infaaList    = ["TEC_AATeam_WL"];
 		_infatList    = ["TEC_ATTeam_WL"];
@@ -346,6 +330,9 @@ private ["_x","_g","_pos","_flatPos","_rpos","_v"];
 // Simple protection for broken requests
 if (_center isEqualTo [0,0]) exitWith {};
 
+_confBase = configfile >> "CfgGroups" >> _FactionSide >> _army >> _InfantryType;
+if (isnil "_infList") then {_infList = ("true" configClasses _confBase) apply { configName _x };};
+
 // Prep return values
 private _units = [];
 private _vehicles = [];
@@ -355,6 +342,7 @@ private _vehicles = [];
 ///////////////////////////////////////////////////////////
 
 if (_garrisonGroupCount > 0) then {
+	private _garrisonGroupType = selectrandom _infList;
     private _garrisonedUnits = ([_center, [_garrisonMinRad, _garrisonMaxRad], _army, _garrisonGroupCount, nil, _garrisonSkill, _garrisonFill, _garrisonExcludes] call LR_fnc_infantryGarrison);
     _units append _garrisonedUnits;
 
