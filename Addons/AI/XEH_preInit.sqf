@@ -93,7 +93,7 @@
 [
     "LRG_AI_ReloadSpeed",
     "SLIDER",
-    ["Min Reload Speed", "Higher value improves the AI's decision making."],
+    ["Min Reload Speed", "Higher value means the AI can switch or reload weapons faster."],
     "LRG AI",
     [0, 1, 0.50, 2],
     true,
