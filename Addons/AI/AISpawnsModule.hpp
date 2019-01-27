@@ -28,78 +28,90 @@
 				typeName = "STRING";
 				class values
 				{
-					class AI_CSAT
+					class OPF_F
 					{
 						name = "CSAT";
-						value = "CSAT";
+						value = "OPF_F";
 					};
-					class AI_CSAT_Pacific
+					class OPF_T_F
 					{
 						name = "CSAT Pacific";
-						value = "CSAT Pacific";
+						value = "OPF_T_F";
 					};
-					class AI_AAF
+					class IND_F
 					{
 						name = "AAF";
-						value = "AAF";
+						value = "IND_F";
 					};
-					class AI_Syndikat
+					class IND_C_F
 					{
 						name = "Syndikat";
-						value = "Syndikat";
+						value = "IND_C_F";
 					};
-					class AI_CUP_AFRF
+					class CUP_O_RU
 					{
 						name = "@CUP - Russian Federation";
-						value = "CUP AFRF";
+						value = "CUP_O_RU";
 					};					
-					class AI_CUP_CMRS
+					class CUP_O_ChDKZ
 					{
 						name = "@CUP - Chernarussian Movement of the Red Star";
-						value = "CUP CMRS";
+						value = "CUP_O_ChDKZ";
 					};					
-					class AI_CUP_SLA
+					class CUP_O_SLA
 					{
 						name = "@CUP - Sahrani Liberation Army";
-						value = "CUP SLA";
+						value = "CUP_O_SLA";
 					};					
-					class AI_CUP_TA
+					class CUP_O_TK
 					{
 						name = "@CUP - Takistan Army";
-						value = "CUP TA";
+						value = "CUP_O_TK";
 					};					
-					class AI_CUP_TM
+					class CUP_O_TK_MILITIA
 					{
 						name = "@CUP - Takistan Militia";
-						value = "CUP TM";
+						value = "CUP_O_TK_MILITIA";
 					};
-					class AI_RHS_GREF_ChDKZ
+					class rhsgref_faction_chdkz
 					{
 						name = "@RHS GREF - ChDKZ Insurgents";
-						value = "RHS GREF ChDKZ";
+						value = "rhsgref_faction_chdkz";
 					};
-					class AI_RHS_AFRF_MSV
+					class rhs_faction_msv
 					{
 						name = "@RHS AFRF - Russia - MSV";
-						value = "AI_RHS_AFRF_MSV";
+						value = "rhs_faction_msv";
 					};
-					class AI_RHS_AFRF_VDV
+					class rhs_faction_vdv
 					{
 						name = "@RHS AFRF - Russia - VDV";
-						value = "AI_RHS_AFRF_VDV";
+						value = "rhs_faction_vdv";
 					};												
-					class AI_RHS_AFRF_VMF
+					class rhs_faction_vmf
 					{
 						name = "@RHS AFRF - Russia - VMF";
-						value = "AI_RHS_AFRF_VMF";
+						value = "rhs_faction_vmf";
 					};
-					class AI_OPTRE_Insurrectionists
+					class OPTRE_Ins
 					{
 						name = "@OPTRE - Insurrectionists";
-						value = "AI_OPTRE_Insurrectionists";
-					};																															
+						value = "OPTRE_Ins";
+					};
+					class TEC_CSAT
+					{
+						name = "@CSAT Mod Project - CSAT Iran, Mediterranean";
+						value = "TEC_CSAT";
+					};
+					class TEC_CSAT_Pacific
+					{
+						name = "@CSAT Mod Project - CSAT Iran, Pacific";
+						value = "TEC_CSAT_Pacific";
+					};					
+
+
 				};
-				defaultValue = "CSAT";
+				defaultValue = "OPF_F";
 			};
 			class Radius
 			{

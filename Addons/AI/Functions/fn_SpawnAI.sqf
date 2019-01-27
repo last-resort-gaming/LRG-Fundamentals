@@ -127,7 +127,7 @@ call {
 	
 	_side = east;
 	
-	if (_army isEqualto "CSAT") exitwith {
+	if (_army isEqualto "OPF_F") exitwith {
 		_confBase     = configfile >> "CfgGroups" >> "East" >> "OPF_F" >> "Infantry";
 		_infList      = ["OIA_InfTeam","OI_reconPatrol"];
 		_infaaList    = ["OIA_InfTeam_AA"];
@@ -140,7 +140,7 @@ call {
 		_vehHeavyList = ["O_MBT_02_cannon_F", "O_MBT_04_cannon_F", "O_MBT_04_command_F"];
 	};
 		
-	if (_army isEqualto "CSAT Pacific") exitwith {
+	if (_army isEqualto "OPF_T_F") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "OPF_T_F" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["O_T_InfTeam_AA"];
@@ -153,7 +153,7 @@ call {
 		_vehHeavyList = ["O_T_MBT_02_cannon_ghex_F","O_T_MBT_04_cannon_F","O_T_MBT_04_command_F"];
 	};
 
-	if (_army isEqualto "AAF") exitwith {
+	if (_army isEqualto "IND_F") exitwith {
 		_side = resistance;
 		_confBase = configfile >> "CfgGroups" >> "Indep" >> "IND_F" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
@@ -167,7 +167,7 @@ call {
 		_vehHeavyList = ["I_MBT_03_cannon_F", "I_LT_01_AT_F", "I_LT_01_cannon_F"];
 	};
 	
-	if (_army isEqualto "Syndikat") exitwith {
+	if (_army isEqualto "IND_C_F") exitwith {
 		_side = resistance;
 		_confBase = configfile >> "CfgGroups" >> "Indep" >> "IND_C_F" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
@@ -181,7 +181,7 @@ call {
 		_vehHeavyList = ["I_MBT_03_cannon_F", "I_LT_01_AT_F", "I_LT_01_cannon_F"];
 	};
 	
-	if (_army isEqualto "CUP TM") exitwith {
+	if (_army isEqualto "CUP_O_TK_MILITIA") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "CUP_O_TK_MILITIA" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_TK_INS_Soldier_AA"];
@@ -194,7 +194,7 @@ call {
 		_vehHeavyList = [];
 	};
 	
-	if (_army isEqualto "CUP CMRS") exitwith {
+	if (_army isEqualto "CUP_O_ChDKZ") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "CUP_O_ChDKZ" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_INS_Soldier_AA"];
@@ -207,7 +207,7 @@ call {
 		_vehHeavyList = ["CUP_O_T72_CHDKZ"];
 	};
 	
-	if (_army isEqualto "CUP AFRF") exitwith {
+	if (_army isEqualto "CUP_O_RU") exitwith {
 		_confBase		= configfile >> "CfgGroups" >> "East" >> "CUP_O_RU" >> "Infantry";
 		_infList 		= ["CUP_O_RU_InfSection","CUP_O_RU_InfSection_EMR","CUP_O_RU_InfSection_MG","CUP_O_RU_InfSection_MG_EMR","CUP_O_RU_InfSection_MG_VDV","CUP_O_RU_InfSection_MG_VDV_EMR","CUP_O_RU_InfSection_VDV","CUP_O_RU_InfSection_VDV_EMR","CUP_O_RU_InfSquad","CUP_O_RU_InfSquad_EMR","CUP_O_RU_InfSquad_VDV","CUP_O_RU_InfSquad_VDV_EMR"];
 		_infaaList		= ["CUP_O_RU_Soldier_AA_EMR","CUP_O_RU_Soldier_AA"];
@@ -220,7 +220,7 @@ call {
 		_vehHeavyList 	= ["CUP_O_T72_RU","CUP_O_T90_RU"];
 	};
 	
-	if (_army isEqualto "CUP SLA") exitwith {
+	if (_army isEqualto "CUP_O_SLA") exitwith {
 		_confBase     = configfile >> "CfgGroups" >> "East" >> "CUP_O_SLA" >> "Infantry";
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_sla_Soldier_AA", "CUP_O_sla_Soldier_AA_desert"];
@@ -233,7 +233,7 @@ call {
 		_vehHeavyList = ["CUP_O_T55_SLA", "CUP_O_T72_SLA"];
 	};
 	
-	if (_army isEqualto "CUP TA") exitwith {
+	if (_army isEqualto "CUP_O_TK") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "CUP_O_TK" >> "Infantry" ;
 		_infList = ("true" configClasses _confBase) apply { configName _x };
 		_infaaList    = ["CUP_O_TK_Soldier_AA"];
@@ -246,7 +246,7 @@ call {
 		_vehHeavyList = ["CUP_O_T72_TKA", "CUP_O_T55_TK", "CUP_O_T34_TKA"];
 	};
 
-	if (_army isEqualto "RHS GREF ChDKZ") exitwith {
+	if (_army isEqualto "rhsgref_faction_chdkz") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "rhsgref_faction_chdkz" >> "rhsgref_group_chdkz_insurgents_infantry";
 		_infList	  =	["rhsgref_group_chdkz_infantry_mg","rhsgref_group_chdkz_infantry_patrol","rhsgref_group_chdkz_insurgents_squad"];
 		_infaaList    = ["rhsgref_ins_specialist_aa"];
@@ -259,7 +259,7 @@ call {
 		_vehHeavyList = ["rhsgref_ins_bmp2k","rhsgref_ins_bmp2d","rhsgref_ins_bmp2","rhsgref_ins_bmp2e","rhsgref_ins_bmp1p","rhsgref_ins_bmp1k","rhsgref_ins_bmp1d","rhsgref_ins_bmd1p","rhsgref_ins_bmd1","rhsgref_ins_bmp1","rhsgref_ins_bmd2","rhsgref_ins_t72ba","rhsgref_ins_t72bb","rhsgref_ins_t72bc"];
 	};
 
-	if (_army isEqualto "AI_RHS_AFRF_MSV") exitwith {
+	if (_army isEqualto "rhs_faction_msv") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "rhs_faction_msv" >> "rhs_group_rus_msv_infantry";
 		_infList	  =	["rhs_group_rus_msv_infantry_chq", "rhs_group_rus_msv_infantry_fireteam", "rhs_group_rus_msv_infantry_MANEUVER", "rhs_group_rus_msv_infantry_section_marksman", "rhs_group_rus_msv_infantry_section_mg", "rhs_group_rus_msv_infantry_squad", "rhs_group_rus_msv_infantry_squad_2mg", "rhs_group_rus_msv_infantry_squad_mg_sniper", "rhs_group_rus_msv_infantry_squad_sniper"];
 		_infaaList    = ["rhs_msv_emr_aa"];
@@ -271,7 +271,7 @@ call {
 		_vehLightList = ["rhs_tigr_msv","rhs_tigr_3camo_msv","rhs_tigr_sts_msv","rhs_tigr_sts_3camo_msv","rhs_tigr_m_msv","rhs_tigr_m_3camo_msv","RHS_UAZ_MSV_01","rhs_uaz_open_MSV_01"];
 		_vehHeavyList = ["rhs_bmp3_msv","rhs_bmp3_late_msv","rhs_bmp3mera_msv"];
 	};
-	if (_army isEqualto "AI_RHS_AFRF_VDV") exitwith {
+	if (_army isEqualto "rhs_faction_vdv") exitwith {
 		_confBase = configfile >> "CfgGroups" >> "East" >> "rhs_faction_vdv" >> "rhs_group_rus_vdv_infantry";
 		_infList	  =	["rhs_group_rus_vdv_infantry_chq", "rhs_group_rus_vdv_infantry_fireteam", "rhs_group_rus_vdv_infantry_MANEUVER", "rhs_group_rus_vdv_infantry_section_marksman", "rhs_group_rus_vdv_infantry_section_mg", "rhs_group_rus_vdv_infantry_squad", "rhs_group_rus_vdv_infantry_squad_2mg", "rhs_group_rus_vdv_infantry_squad_mg_sniper", "rhs_group_rus_vdv_infantry_squad_sniper"];
 		_infaaList    = ["rhs_vdv_aa"];
@@ -283,8 +283,8 @@ call {
 		_vehLightList = ["rhs_tigr_vdv","rhs_tigr_3camo_vdv","rhs_tigr_sts_vdv","rhs_tigr_sts_3camo_vdv","rhs_tigr_m_vdv","rhs_tigr_m_3camo_vdv","RHS_UAZ_vdv_01","rhs_uaz_open_vdv_01"];
 		_vehHeavyList = ["rhs_btr60_vdv","rhs_btr70_vdv","rhs_btr80_vdv","rhs_btr80a_vdv", "rhs_sprut_vdv"];
 	};
-	if (_army isEqualto "AI_RHS_AFRF_VMF") exitwith {
-		_confBase = configfile >> "CfgGroups" >> "East" >> "rhs_faction_vdv" >> "rhs_group_rus_vmf_infantry"; 
+	if (_army isEqualto "rhs_faction_vmf") exitwith {
+		_confBase = configfile >> "CfgGroups" >> "East" >> "rhs_faction_vmf" >> "rhs_group_rus_vmf_infantry"; 
 		_infList	  =	["rhs_group_rus_vmf_infantry_chq","rhs_group_rus_vmf_infantry_fireteam","rhs_group_rus_vmf_infantry_MANEUVER","rhs_group_rus_vmf_infantry_section_marksman","rhs_group_rus_vmf_infantry_section_mg","rhs_group_rus_vmf_infantry_squad","rhs_group_rus_vmf_infantry_squad_2mg","rhs_group_rus_vmf_infantry_squad_mg_sniper","rhs_group_rus_vmf_infantry_squad_sniper"];
 		_infaaList    = ["rhs_vmf_flora_aa"];
 		_infatList    = ["rhs_vmf_flora_RShG2","rhs_vmf_flora_LAT","rhs_vmf_flora_at"];
@@ -295,7 +295,7 @@ call {
 		_vehLightList = ["rhs_tigr_vmf","rhs_tigr_3camo_vmf","rhs_tigr_sts_vmf","rhs_tigr_sts_3camo_vmf","rhs_tigr_m_vmf","rhs_tigr_m_3camo_vmf","rhs_uaz_vmf","rhs_uaz_open_vmf"];
 		_vehHeavyList = ["rhs_bmp1_vmf","rhs_bmp1d_vmf","rhs_bmp1k_vmf","rhs_bmp1p_vmf","rhs_bmp2e_vmf","rhs_bmp2_vmf","rhs_bmp2d_vmf","rhs_bmp2k_vmf","rhs_brm1k_vmf","rhs_prp3_vmf"];
 	};			
-		if (_army isEqualto "AI_OPTRE_Insurrectionists") exitwith {
+		if (_army isEqualto "OPTRE_Ins") exitwith {
 		_confBase     = configfile >> "CfgGroups" >> "East" >> "OPTRE_Ins" >> "Infantry_URF";
 		_infList      = ["OPTRE_Ins_URF_Inf_CmdSquad","OPTRE_Ins_URF_Inf_Fireteam", "OPTRE_Ins_URF_Inf_RifleSquad", "OPTRE_Ins_URF_Inf_Sentry"];
 		_infaaList    = ["OPTRE_Ins_URF_Inf_AntiAir"];
@@ -307,6 +307,34 @@ call {
 		_vehLightList = ["OPTRE_m1015_mule_ins","OPTRE_M12_FAV_ins","OPTRE_M274_ATV_Ins","OPTRE_M914_RV_ins"];
 		_vehHeavyList = ["OPTRE_M12_LRV_ins","OPTRE_M12A1_LRV_ins"];
 	};
+
+	if (_army isEqualto "CSAT TEC_CSAT") exitwith {
+		_confBase = configfile >> "CfgGroups" >> "East" >> "TEC_CSAT" >> "TEC_Infantry_SA";
+		_infList      = ["TEC_AssaultSquad_SA","TEC_InfSquad_SA","TEC_WeapSquad_SA"];
+		_infaaList    = ["TEC_AATeam_SA"];
+		_infatList    = ["TEC_ATTeam_SA"];
+		_sniperList   = ["TEC_O_Sniper_Scout_F","TEC_O_Spotter_Scout_F"];
+		_vehAAList    = ["TEC_VH_APC_Kamysh_AA_F"];
+		_vehMrapList  = ["TEC_VH_APC_Kamysh_F","TEC_VH_APC_Marid_F"];
+		_vehRandList  = ["TEC_VH_MRAP_Abda_HMG","TEC_VH_MRAP_Shir_GMG","TEC_VH_MRAP_Shir_HMG","TEC_VH_LSV_Qilin_SOF_Armed","TEC_VH_APC_Marid_F"];
+		_vehLightList = ["TEC_VH_MRAP_Abda_HMG","TEC_VH_MRAP_Shir_GMG","TEC_VH_MRAP_Shir_HMG","TEC_VH_LSV_Qilin_SOF_Armed"];
+		_vehHeavyList = ["TEC_VH_Tank_Angara","TEC_VH_Tank_Varsuk_F"];
+	};
+	
+	
+		if (_army isEqualto "TEC_CSAT_Pacific") exitwith {
+		_confBase = configfile >> "CfgGroups" >> "East" >> "TEC_CSAT_Pacific" >> "TEC_Infantry_WL";
+		_infList      = ["TEC_AssaultSquad_WL","TEC_InfSquad_WL","TEC_InfTeam_WL"];
+		_infaaList    = ["TEC_AATeam_WL"];
+		_infatList    = ["TEC_ATTeam_WL"];
+		_sniperList   = ["TEC_O_Sniper_Woodland_Scout_F","TEC_O_Spotter_Woodland_Scout_F"];
+		_vehAAList    = ["TEC_VH_WD_APC_Kamysh_AA"];
+		_vehMrapList  = ["TEC_VH_WD_APC_Kamysh","TEC_VH_WD_APC_Marid"];
+		_vehRandList  = ["TEC_VH_WD_APC_Marid","TEC_VH_WD_MRAP_Abda_GMG","TEC_VH_WD_MRAP_Abda_HMG","TEC_VH_WD_LSV_Qilin_Armed","TEC_VH_WD_MRAP_Shir_GMG","TEC_VH_WD_MRAP_Shir_HMG"];
+		_vehLightList = ["TEC_VH_WD_MRAP_Abda_GMG","TEC_VH_WD_MRAP_Abda_HMG","TEC_VH_WD_LSV_Qilin_Armed","TEC_VH_WD_MRAP_Shir_GMG","TEC_VH_WD_MRAP_Shir_HMG"];
+		_vehHeavyList = ["TEC_VH_WD_Tank_Angara","TEC_VH_WD_Tank_Angara_Command","TEC_VH_WD_Tank_Varsuk"];
+	};
+		
 };
 
 private ["_x","_g","_pos","_flatPos","_rpos","_v"];
