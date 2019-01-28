@@ -2,7 +2,7 @@
 	{
 		scope = 2;
 		displayName = "Vehicle Servicing";
-		icon = LOGO_PATH;
+		icon = "\z\LRG Fundamentals\addons\media\images\icons\Vehicle Service.paa";
 		author = "MitchJC";
 		vehicleClass = "Modules";
 		category = "LRG_Modules";

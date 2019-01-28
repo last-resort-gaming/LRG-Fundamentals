@@ -35,7 +35,7 @@ class LRG_ModuleSafeZone: Module_F
 	{
 		scope = 2;
 		displayName = "Safe Zone";
-		icon = LOGO_PATH;
+		icon = "\z\LRG Fundamentals\addons\media\images\icons\Safe Zone.paa";
 		author = "MitchJC";
 		vehicleClass = "Modules";
 		category = "LRG_Modules";

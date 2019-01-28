@@ -40,8 +40,9 @@ class CfgVehicles
 	};
 	
 	#include "AISettingsModule.hpp"
-	#include "AISpawnsModule.hpp"
-	
+	#include "AISpawnsEastModule.hpp"
+	#include "AISpawnsIndependentModule.hpp"
+	#include "AISpawnsWestModule.hpp"		
 };
 class CfgFunctions {
 
