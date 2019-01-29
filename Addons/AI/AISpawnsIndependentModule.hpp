@@ -28,6 +28,16 @@
 				typeName = "STRING";
 				class values
 				{
+					class CUP_I_NAPA
+					{
+						name = "@CUP - National Part of Chernarus";
+						value = "CUP_I_NAPA";
+					};
+					class CUP_I_TK_GUE
+					{
+						name = "@CUP - Takistani Locals";
+						value = "CUP_I_TK_GUE";
+					};										
 					class LOP_IRAN
 					{
 						name = "@Project OPFOR - Iranian Armed Forces";

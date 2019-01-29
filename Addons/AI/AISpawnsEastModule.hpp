@@ -108,11 +108,6 @@
 						name = "@Project OPFOR - Takistani Armed Forces";
 						value = "LOP_TKA";
 					};
-					class rhsgref_faction_chdkz
-					{
-						name = "@RHS GREF - ChDKZ Insurgents";
-						value = "rhsgref_faction_chdkz";
-					};
 					class rhs_faction_msv
 					{
 						name = "@RHS AFRF - Russia - MSV";
@@ -128,6 +123,11 @@
 						name = "@RHS AFRF - Russia - VMF";
 						value = "rhs_faction_vmf";
 					};
+					class rhsgref_faction_chdkz
+					{
+						name = "@RHS GREF - ChDKZ Insurgents";
+						value = "rhsgref_faction_chdkz";
+					};					
 					class UNSUNG_E_NVA
 					{
 						name = "@UNSUNG - NVA";

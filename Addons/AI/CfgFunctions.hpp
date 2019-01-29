@@ -17,6 +17,12 @@ class LRG_AI {
 		file = "z\LRG Fundamentals\addons\AI\Functions\Factions";
 		class BLU_F {};
 		class BLU_T_F {};
+		class CUP_B_CZ {};
+		class CUP_B_GB {};
+		class CUP_B_GER {};
+		class CUP_B_US_Army {};
+		class CUP_I_NAPA {};
+		class CUP_I_TK_GUE {};		
 		class CUP_O_ChDKZ {};
 		class CUP_O_RU {};
 		class CUP_O_SLA {};
@@ -24,10 +30,12 @@ class LRG_AI {
 		class CUP_O_TK_MILITIA {};
 		class IND_C_F {};
 		class IND_F {};
+		class LOP_AA {};
 		class LOP_AFR_OPF {};
 		class LOP_AM_OPF {};
 		class LOP_BH {};
 		class LOP_ChDKZ {};
+		class LOP_IA {};
 		class LOP_IRA {};
 		class LOP_IRAN {};
 		class LOP_ISTS_OPF {};

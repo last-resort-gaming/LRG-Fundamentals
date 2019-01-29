@@ -28,6 +28,36 @@
 				typeName = "STRING";
 				class values
 				{
+					class CUP_B_CZ
+					{
+						name = "@CUP - Army of the Czech Republic";
+						value = "CUP_B_CZ";
+					};
+					class CUP_B_GB
+					{
+						name = "@CUP - British Armed Forces";
+						value = "CUP_B_GB";
+					};
+					class CUP_B_GER
+					{
+						name = "@CUP - Bundeswehr";
+						value = "CUP_B_GER";
+					};
+					class CUP_B_US_Army
+					{
+						name = "@CUP - United States Army";
+						value = "CUP_B_US_Army";
+					};														
+					class LOP_AA
+					{
+						name = "@Project OPFOR - Afghan National Army";
+						value = "LOP_AA";
+					};
+					class LOP_IA
+					{
+						name = "@Project OPFOR - Iraqi Armed Forces";
+						value = "LOP_IA";
+					};					
 					class rhs_faction_usarmy_d
 					{
 						name = "@RHS USAF  - USA Army - Desert";
