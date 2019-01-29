@@ -28,6 +28,46 @@
 				typeName = "STRING";
 				class values
 				{
+					class rhs_faction_usarmy_d
+					{
+						name = "@RHS USAF  - USA Army - Desert";
+						value = "rhs_faction_usarmy_d";
+					};
+					class rhs_faction_usarmy_wd
+					{
+						name = "@RHS USAF  - USA Army - Woodland";
+						value = "rhs_faction_usarmy_wd";
+					};
+					class UK3CB_BAF_Faction_Army_Arctic
+					{
+						name = "@3CB BAF - Army - Arctic";
+						value = "UK3CB_BAF_Faction_Army_Arctic";
+					};
+					class UK3CB_BAF_Faction_Army_Desert
+					{
+						name = "@3CB BAF - Army - Desert";
+						value = "UK3CB_BAF_Faction_Army_Desert";
+					};
+					class UK3CB_BAF_Faction_Army_MTP
+					{
+						name = "@3CB BAF - Army - MTP";
+						value = "UK3CB_BAF_Faction_Army_MTP";
+					};
+					class UK3CB_BAF_Faction_Army_Temperate
+					{
+						name = "@3CB BAF - Army - Temperate";
+						value = "UK3CB_BAF_Faction_Army_Temperate";
+					};
+					class UK3CB_BAF_Faction_Army_Tropical
+					{
+						name = "@3CB BAF - Army - Tropical";
+						value = "UK3CB_BAF_Faction_Army_Tropical";
+					};
+					class UK3CB_BAF_Faction_Army_Woodland
+					{
+						name = "@3CB BAF - Army - Woodland";
+						value = "UK3CB_BAF_Faction_Army_Woodland";
+					};																						
 					class BLU_F
 					{
 						name = "Vanilla - NATO";
