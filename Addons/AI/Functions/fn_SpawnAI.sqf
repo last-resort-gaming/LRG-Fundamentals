@@ -146,6 +146,7 @@ call {
 		 _FactionSide = "Indep";
 	};	
 };
+if (isnil "_Faction") exitwith {systemchat format ["Faction missing from %1 at %2",_grpPrefix, _center]};
 
 _GetFactionArrays = compileFinal format ["call LR_fnc_%1", _faction];
 _FactionArrays = call _GetFactionArrays;
