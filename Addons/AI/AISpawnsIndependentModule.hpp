@@ -33,11 +33,26 @@
 						name = "@CUP - National Part of Chernarus";
 						value = "CUP_I_NAPA";
 					};
+					class CUP_I_PMC_ION
+					{
+						name = "@CUP - ION PMC";
+						value = "CUP_I_PMC_ION";
+					};
+					class CUP_I_RACS
+					{
+						name = "@CUP - Royal Army Corps of Sahrani";
+						value = "CUP_I_RACS";
+					};					
 					class CUP_I_TK_GUE
 					{
 						name = "@CUP - Takistani Locals";
 						value = "CUP_I_TK_GUE";
-					};										
+					};
+					class CUP_I_UN
+					{
+						name = "@CUP - United Nations";
+						value = "CUP_I_UN";
+					};											
 					class LOP_IRAN
 					{
 						name = "@Project OPFOR - Iranian Armed Forces";

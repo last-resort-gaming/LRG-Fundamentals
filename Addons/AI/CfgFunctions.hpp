@@ -22,7 +22,10 @@ class LRG_AI {
 		class CUP_B_GER {};
 		class CUP_B_US_Army {};
 		class CUP_I_NAPA {};
-		class CUP_I_TK_GUE {};		
+		class CUP_I_PMC_ION {};
+		class CUP_I_RACS {};
+		class CUP_I_TK_GUE {};
+		class CUP_I_UN {};
 		class CUP_O_ChDKZ {};
 		class CUP_O_RU {};
 		class CUP_O_SLA {};
