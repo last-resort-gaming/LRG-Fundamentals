@@ -61,7 +61,10 @@ class LRG_AI {
 		class rhs_faction_usarmy_wd {};
 		class rhs_faction_vdv {};
 		class rhs_faction_vmf {};
+		class rhsgref_faction_cdf_ground {};
 		class rhsgref_faction_chdkz {};
+		class rhsgref_faction_chdkz_g {};
+		class rhsgref_faction_nationalist {};
 		class TEC_CSAT {};
 		class TEC_CSAT_Pacific {};
 		class UK3CB_BAF_Faction_Army_Arctic {};

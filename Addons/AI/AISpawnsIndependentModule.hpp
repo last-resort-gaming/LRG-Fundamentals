@@ -97,7 +97,22 @@
 					{
 						name = "@Project OPFOR - Ulster Volunteer Force";
 						value = "LOP_UVF";
-					};						
+					};
+					class rhsgref_faction_cdf_ground
+					{
+						name = "@RHS GREF - Chernarus (Ground Forces)";
+						value = "rhsgref_faction_cdf_ground";
+					};
+					class rhsgref_faction_chdkz_g
+					{
+						name = "@RHS GREF - ChDKZ Insurgents";
+						value = "rhsgref_faction_chdkz_g";
+					};	
+					class rhsgref_faction_nationalist
+					{
+						name = "@RHS GREF - Nationalist Militia";
+						value = "rhsgref_faction_nationalist";
+					};																					
 					class IND_F
 					{
 						name = "Vanilla - AAF";
