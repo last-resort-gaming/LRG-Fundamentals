@@ -1,4 +1,4 @@
-_InfantryType = "Infantry";
+_InfantryType = "rhsgref_group_national_infantry";
 _infaaList    = ["rhsgref_group_national_infantry_at"];
 _infatList    = ["rhsgref_group_national_infantry_squad_2"];
 _sniperList   = [];

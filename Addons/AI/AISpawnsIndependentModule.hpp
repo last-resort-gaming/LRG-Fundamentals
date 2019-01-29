@@ -112,7 +112,17 @@
 					{
 						name = "@RHS GREF - Nationalist Militia";
 						value = "rhsgref_faction_nationalist";
-					};																					
+					};
+					class rhssaf_faction_army
+					{
+						name = "@RHS SAF - SAF (KOV)";
+						value = "rhssaf_faction_army";
+					};
+					class rhssaf_faction_un
+					{
+						name = "@RHS SAF - SAF (UN Peacekeepers)";
+						value = "rhssaf_faction_un";
+					};																											
 					class IND_F
 					{
 						name = "Vanilla - AAF";
