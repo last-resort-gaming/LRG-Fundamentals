@@ -1,6 +1,6 @@
 params [
 	"_SafeZoneSize",
-  	"_SafeZoneDuration",
+  "_SafeZoneDuration",
 	"_SafeZoneLocation"
 ];
 
@@ -20,7 +20,21 @@ _ehCode = compileFinal format [
 ];
 
 // Just use this code in the eh
-_SafeZoneEHID = player addEventHandler [
+private _SafeZoneEHID = player addEventHandler [
   "FiredMan", _ehCode
 ];
 
+
+// SafeZone Duration Check
+
+  [{
+		params ["_args", "_pfhID"];
+		_args params ["_SafeZoneDuration", "_SafeZoneEHID"];
+
+		if (_SafeZoneDuration isEqualTo 0) then {[_pfhID] call CBA_fnc_removePerFrameHandler;} else {
+			if (servertime > (_SafeZoneDuration * 60)) then {
+						player removeEventHandler ["FiredMan", _SafeZoneEHID];
+						[_pfhID] call CBA_fnc_removePerFrameHandler;
+			};
+		};
+  }, 60, [_SafeZoneDuration, _SafeZoneEHID]] call CBA_fnc_addPerFrameHandler;
