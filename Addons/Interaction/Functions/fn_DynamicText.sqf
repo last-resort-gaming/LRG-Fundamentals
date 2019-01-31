@@ -51,15 +51,15 @@ params [
 	["_pos", [-1, 0.8]],
 	["_colour", "#ffffff"],
 	["_size", 0.5],
-	["_global", true]
+	["_global", true],
+	["_duration",5],
+	["_fadeInFor",2]
 ];
 
 _pos params ["_posX", "_posY"];
 
 private _formString = "<t color='#%2' size='%3'>%1</t>";
 private _rscLayer = 789;
-private _duration = 5;
-private _fadeInFor = 2;
 
 _rExecTarget = 0;
 
