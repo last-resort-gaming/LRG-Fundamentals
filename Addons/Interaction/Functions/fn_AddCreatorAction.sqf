@@ -37,49 +37,52 @@ params ["_title", "_name", "_statement", "_args"];
 CreatorActions pushBackUnique [_title, _name, _statement, _args];
 publicVariable "CreatorActions";
 
-/* // Remove from production code
 // Stuff for single-player testing, since publicVariable EH does not fire on the
 // machine where the broadcast happened (and in testing server == creator...)
-if ((!isMultiplayer) || ((count allPlayers) == 1)) then {
-	if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
-		_addedActions = player getVariable ["addedActions", []];
+if (count allPlayers < 2) then {
+	[
+		{
+			params ["_title", "_name", "_statement", "_args"];
+			if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+				_addedActions = player getVariable ["addedActions", []];
 
-		if !(_title in _addedActions) then {
+				if !(_title in _addedActions) then {
 
-			_action = [
-				_title,
-				_name,
-				"",
-				_statement,
-				{true},
-				{},
-				_args
-			] call ace_interact_menu_fnc_createAction;
+					_action = [
+						_title,
+						_name,
+						"",
+						_statement,
+						{true},
+						{},
+						_args
+					] call ace_interact_menu_fnc_createAction;
 
-			[player, 1, ["ACE_SelfActions", "CreatorAction"], _action] call ace_interact_menu_fnc_addActionToObject;
-		};
+					[player, 1, ["ACE_SelfActions", "CreatorAction"], _action] call ace_interact_menu_fnc_addActionToObject;
+				};
 
-		_addedActions pushBackUnique _title;
-		player setVariable ["addedActions", _addedActions];
-	} else {
-		_addedActions = player getVariable ["addedActions", []];
+				_addedActions pushBackUnique _title;
+				player setVariable ["addedActions", _addedActions];
+			} else {
+				_addedActions = player getVariable ["addedActions", []];
 
-		if !(_title in _addedActions) then {
+				if !(_title in _addedActions) then {
 
-			player addAction [
-				_name,
-				_statement,
-				_args,
-				1.5,
-				false,
-				true,
-				"",
-				"true"
-			];
-		};
+					player addAction [
+						_name,
+						_statement,
+						_args,
+						1.5,
+						false,
+						true,
+						"",
+						"true"
+					];
+				};
 
-		_addedActions pushBackUnique _title;
-		player setVariable ["addedActions", _addedActions];
-	};
+				_addedActions pushBackUnique _title;
+				player setVariable ["addedActions", _addedActions];
+			};
+		}, [_title, _name, _statement, _args], 4
+	] call CBA_fnc_waitAndExecute;
 };
-*/
