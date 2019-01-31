@@ -31,7 +31,7 @@ private _SafeZoneEHID = player addEventHandler [
 		params ["_args", "_pfhID"];
 		_args params ["_SafeZoneDuration", "_SafeZoneEHID"];
 
-		if (_SafeZoneDuration isEqualTo 0) then {[_pfhID] call CBA_fnc_removePerFrameHandler;} else {
+		if (_SafeZoneDuration isEqualTo -1) then {[_pfhID] call CBA_fnc_removePerFrameHandler;} else {
 			if (servertime > (_SafeZoneDuration * 60)) then {
 						player removeEventHandler ["FiredMan", _SafeZoneEHID];
 						[_pfhID] call CBA_fnc_removePerFrameHandler;
