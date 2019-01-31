@@ -4,7 +4,7 @@ class LRG_Vehicles {
 	class Vehicles {
 
 		file = "z\LRG Fundamentals\Addons\Vehicles\Functions";
-		class ConfigEquipment {};
+		class VehicleLoadout {};
 		class moduleServicing {};
 		class ServiceVehicle {};
 	};

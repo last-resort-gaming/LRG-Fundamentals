@@ -32,3 +32,38 @@ class CfgFunctions {
 
     #include "cfgFunctions.hpp"
 };
+
+#include "cfg3Den.hpp"
+
+class Extended_InitPost_EventHandlers {
+    class Car {
+        class ADDON {
+            init = "[_this select 0] call LR_fnc_VehicleLoadout";
+        };
+    };
+    class Tank {
+        class ADDON {
+            init = "[_this select 0] call LR_fnc_VehicleLoadout";
+        };
+    };
+    class Motorcycle {
+        class ADDON {
+            init = "[_this select 0] call LR_fnc_VehicleLoadout";
+        };
+    };
+    class Helicopter {
+        class ADDON {
+            init = "[_this select 0] call LR_fnc_VehicleLoadout";
+        };
+    };
+    class Plane {
+        class ADDON {
+            init = "[_this select 0] call LR_fnc_VehicleLoadout";
+        };
+    };
+    class Ship_F {
+        class ADDON {
+            init = "[_this select 0] call LR_fnc_VehicleLoadout";
+        };
+    };
+};

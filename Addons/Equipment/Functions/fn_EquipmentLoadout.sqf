@@ -27,6 +27,10 @@ params [
 	["_isMedicalFacility", false]
 ];
 
+
+private _Type = _container getVariable ["LRG_Equipment_Select", -1];
+if (_Type isEqualto -1) exitwith {};
+
 call {
 
 	if (_Type isEqualto 0) exitwith {_Type = "Basic Medical"};

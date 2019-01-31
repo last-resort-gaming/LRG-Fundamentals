@@ -22,3 +22,12 @@ class CfgFunctions {
 };
 
 #include "cfg3Den.hpp"
+
+
+class Extended_InitPost_EventHandlers {
+    class ReammoBox_F {
+        class ADDON {
+            init = "[_this select 0] call LR_fnc_EquipmentLoadout";
+        };
+    };
+};
