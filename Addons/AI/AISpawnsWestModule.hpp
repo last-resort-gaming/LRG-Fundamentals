@@ -47,7 +47,12 @@
 					{
 						name = "@CUP - United States Army";
 						value = "CUP_B_US_Army";
-					};														
+					};
+					class OPTRE_UNSC
+					{
+						name = "@OPTRE - UNSCDF";
+						value = "OPTRE_UNSC";
+					};																			
 					class LOP_AA
 					{
 						name = "@Project OPFOR - Afghan National Army";

@@ -56,6 +56,7 @@ class LRG_AI {
 		class OPF_F {};
 		class OPF_T_F {};
 		class OPTRE_Ins {};
+		class OPTRE_UNSC {};
 		class rhs_faction_msv {};
 		class rhs_faction_usarmy_d {};
 		class rhs_faction_usarmy_wd {};
