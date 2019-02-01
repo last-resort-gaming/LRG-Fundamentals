@@ -1,5 +1,5 @@
 # LRG-Fundamentals
-Official LRG Fundamentals Arma 3 Mod.
+Official LRG Fundamentals Arma 3 Mod. Created by Mokka & MitchJC.
 
 
 This is the Arma 3 mission-making framework created by Last Resort Gaming. LRG Fundamentals allows the easy creation of modded missions
