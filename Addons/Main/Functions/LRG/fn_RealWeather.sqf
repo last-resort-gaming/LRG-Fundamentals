@@ -21,10 +21,14 @@ daytimeratio = 1;							// Ratio 1 real time second for x game time seconds
 nighttimeratio = 1;							// Ratio 1 real time second for x game time seconds
 timesync = 60;								// send sync data across the network each xxx seconds
 //	startingdate = [2015, 07, 01, 06, 30];		// Mission starting date
-	
-if (LRG_Main_DynamicWeatherStart == "RANDOM") then {LRG_Main_DynamicWeatherStart = ["CLEAR", "CLOUDY", "RAIN"] call BIS_fnc_selectRandom;};
-	
-/////////////////////////////////////////////////////////////////
+_StartingWeather = call {
+	if (LRG_Main_DynamicWeatherStart IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLOUDY", "RAIN"]};
+	if (LRG_Main_DynamicWeatherStart IsEqualTo 1) exitwith {"CLEAR"};
+	if (LRG_Main_DynamicWeatherStart IsEqualTo 2) exitwith {"CLOUDY"};
+	if (LRG_Main_DynamicWeatherStart IsEqualTo 3) exitwith {"RAIN"};
+	"Random";
+};
+///////////////////////////////////////////////////////////
 // Do not edit below
 /////////////////////////////////////////////////////////////////
 	
@@ -32,10 +36,10 @@ if(mintime > maxtime) exitwith {hint format["Real weather: Max time: %1 can no b
 timeforecast = mintime;
 
 //	setdate startingdate;
-switch (LRG_Main_DynamicWeatherStart) do {
+switch (_StartingWeather) do {
 	case "CLEAR": {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
 	case "CLOUDY": {wcweather = [0, 0, 0.6, [random 3, random 3, true], date];};
-	case "Raining": {wcweather = [1, 0, 1, [random 3, random 3, true], date];};
+	case "RAIN": {wcweather = [1, 0, 1, [random 3, random 3, true], date];};
 	default {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
 };
 
