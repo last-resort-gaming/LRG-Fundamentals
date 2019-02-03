@@ -154,14 +154,7 @@
     ], 0],
     true,
     {
-        params ["_value"];
-        call {
-            if (_value IsEqualTo 0) exitwith {LRG_Main_DynamicWeatherStart = "Random"};
-            if (_value IsEqualTo 1) exitwith {LRG_Main_DynamicWeatherStart = "Clear"};
-            if (_value IsEqualTo 2) exitwith {LRG_Main_DynamicWeatherStart = "Cloudy"};
-            if (_value IsEqualTo 3) exitwith {LRG_Main_DynamicWeatherStart = "Raining"};
-            LRG_Main_DynamicWeatherStart = "Random";
-        };
+
     }
 ] call CBA_Settings_fnc_init;
 
