@@ -36,11 +36,12 @@ if(mintime > maxtime) exitwith {hint format["Real weather: Max time: %1 can no b
 timeforecast = mintime;
 
 //	setdate startingdate;
-switch (_StartingWeather) do {
-	case "CLEAR": {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
-	case "CLOUDY": {wcweather = [0, 0, 0.6, [random 3, random 3, true], date];};
-	case "RAIN": {wcweather = [1, 0, 1, [random 3, random 3, true], date];};
-	default {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
+
+wcweather = call {
+	if (_StartingWeather IsEqualTo "CLEAR") exitwith {[0, 0, 0, [random 3, random 3, true], date];};
+	if (_StartingWeather IsEqualTo "CLOUDY") exitwith {[0, 0, 0.6, [random 3, random 3, true], date];};
+	if (_StartingWeather IsEqualTo "RAIN") exitwith {[1, 0, 1, [random 3, random 3, true], date];};
+	[0, 0, 0, [random 3, random 3, true], date];
 };
 
 	// add handler
