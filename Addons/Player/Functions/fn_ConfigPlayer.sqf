@@ -51,8 +51,8 @@ if (local _unit) then {
 		call {
 
 			if (_Section == "Command") exitwith {
-				_ShortRange = [0,9,["475","500","425","100","200","300","400","82"],0,nil,-1,0,false];
-				_LongRange = [0,9,["30","40","60","50","82","82","82","82","82"],0,nil,-1,0,false];
+				_ShortRange = [0,9,[LRG_TFAR_Cmd_SR1,LRG_TFAR_Cmd_SR2,LRG_TFAR_Cmd_SR3,LRG_TFAR_Cmd_SR4,LRG_TFAR_Cmd_SR5,LRG_TFAR_Cmd_SR6,LRG_TFAR_Cmd_SR7,LRG_TFAR_Cmd_SR8],0,nil,-1,0,false];
+				_LongRange = [0,9,[LRG_TFAR_Cmd_LR1,LRG_TFAR_Cmd_LR2,LRG_TFAR_Cmd_LR3,LRG_TFAR_Cmd_LR4,LRG_TFAR_Cmd_LR5,LRG_TFAR_Cmd_LR6,LRG_TFAR_Cmd_LR7,LRG_TFAR_Cmd_LR8,LRG_TFAR_Cmd_LR9],0,nil,-1,0,false];
 			};
 			if (_Section == "1 Section") exitwith {
 				_ShortRange = [0,9,["100","125","150","425","82","82","82","82"],0,nil,-1,0,false];
