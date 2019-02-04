@@ -10,8 +10,7 @@ class LRG_Main {
 		class Diary {PostInit = 1;};
 		class DynamicSim {};
 		class DynamicGroups {PostInit = 1;};
-		class Earplugs {PostInit = 1;};		
-		class InitCreatorActions {PostInit = 1;};
+		class Earplugs {PostInit = 1;};
 		class Logs {PostInit = 1;};		
 		class ModuleMain {};
 		class PilotCheck {PostInit = 1;};

@@ -9,11 +9,12 @@ class LRG_Interaction {
 		class AddHoldAction {};
 		class AddSelfAction {};
 		class DynamicText {};
-		class FindReplaceString {};		
+		class FindReplaceString {};
 		class InitInspectableIntel {};
 		class LaptopHoldActions {};
 		class PlayerAddActions {};
-		class preInitCreatorActions {preInit = 1;};		
+		class preInitCreatorActions {preInit = 1;};
+		class InitCreatorActions {PostInit = 1;};
 		class RunIntelAction {};
 		class SetIntelAction {};
 	};
