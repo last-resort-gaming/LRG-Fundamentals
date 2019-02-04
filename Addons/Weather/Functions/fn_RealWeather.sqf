@@ -5,34 +5,24 @@
 			MitchJC - Conversion to PFH & Function
 	Description: Randomizes Weather
 */
-if (isNil "LRG_Main_Master") exitwith {};
-if (not LRG_Main_Master) exitWith{};
+if (isNil "LRG_Weather_Master") exitwith {};
+if (not LRG_Weather_Master) exitWith{};
 
-if (isNil "LRG_Main_DynamicWeather") exitwith {};
-if (not LRG_Main_DynamicWeather) exitWith{};
-
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-private _realtime = false;
-private _mintime = 60;								// Min time seconds (real time) before a new weather forecast
-private _maxtime = 3600; 							// Max time seconds (real time) before a new weather forecast
-private _daytimeratio = 1;							// Ratio 1 real time second for x game time seconds
-private _nighttimeratio = 1;							// Ratio 1 real time second for x game time seconds
-private _timesync = 60;								// send sync data across the network each xxx seconds
-//	startingdate = [2015, 07, 01, 06, 30];		// Mission starting date
 private _StartingWeather = call {
-	if (LRG_Main_DynamicWeatherStart IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLOUDY", "RAIN"]};
-	if (LRG_Main_DynamicWeatherStart IsEqualTo 1) exitwith {"CLEAR"};
-	if (LRG_Main_DynamicWeatherStart IsEqualTo 2) exitwith {"CLOUDY"};
-	if (LRG_Main_DynamicWeatherStart IsEqualTo 3) exitwith {"RAIN"};
+	if (LRG_Weather_StartWeather IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLOUDY", "RAIN"]};
+	if (LRG_Weather_StartWeather IsEqualTo 1) exitwith {"CLEAR"};
+	if (LRG_Weather_StartWeather IsEqualTo 2) exitwith {"CLOUDY"};
+	if (LRG_Weather_StartWeather IsEqualTo 3) exitwith {"RAIN"};
 	"CLEAR";
 };
 ///////////////////////////////////////////////////////////
 // Do not edit below
 /////////////////////////////////////////////////////////////////
 	
-if(_mintime > _maxtime) exitwith {hint format["Real weather: Max time: %1 can no be higher than Min time: %2", _maxtime, _mintime];};
+if(LRG_Weather_MinTime > LRG_Weather_MaxTime) then {
+	hint format["Min Time cannot be highter than max time. Min Time set to %1 ", LRG_Weather_MaxTime, LRG_Weather_MinTime];
+	LRG_Weather_MinTime = LRG_Weather_MaxTime;
+	};
 
 wcweather = call {
 	if (_StartingWeather IsEqualTo "CLEAR") exitwith {[0, 0, 0, [random 3, random 3, true], date];};
@@ -85,30 +75,28 @@ setdate (wcweather select 4);
 [
 	{
 		params ["_args", "_pfhID"];
-		_args params ["_realtime","_nighttimeratio","_daytimeratio", "_maxtime", "_mintime"];
+		_args params [];
 
 		wcweather set [4, date];
 		publicvariable "wcweather";
-		if(!_realtime) then { 
+		if(!LRG_Weather_RealTime) then { 
 			if((date select 3 > 16) or (date select 3 <6)) then {
-				setTimeMultiplier _nighttimeratio;
+				setTimeMultiplier LRG_Weather_NightTimeAcc;
 			} else {
-				setTimeMultiplier _daytimeratio;
+				setTimeMultiplier LRG_Weather_DayTimeAcc;
 			};
 		};
-	}, _timesync, [_realtime, _nighttimeratio, _daytimeratio, _maxtime, _mintime]
+	}, LRG_Weather_SyncTime, []
 ] call CBA_fnc_addPerFrameHandler;
 
 private	_lastrain = 0;
 private	_rain = 0;
 private	_overcast = 0;
 
-
-
 [
 	{
 		params ["_args", "_pfhID"];
-		_args params ["_maxtime", "_mintime", "_lastrain", "_rain", "_overcast"];
+		_args params ["_lastrain", "_rain", "_overcast"];
 		
 		_Overcast = random 1;
 		if(_Overcast > 0.70) then {
@@ -143,6 +131,6 @@ private	_overcast = 0;
 		60 setOvercast (wcweather select 2);
 		setwind (wcweather select 3);
 
-	}, random (_maxtime - _mintime), [_maxtime, _mintime ,_lastrain, _rain, _overcast]
+	}, random (LRG_Weather_MaxTime - LRG_Weather_MinTime), [_lastrain, _rain, _overcast]
 ] call CBA_fnc_addPerFrameHandler;
 	

@@ -15,7 +15,6 @@ class LRG_Main {
 		class Logs {PostInit = 1;};		
 		class ModuleMain {};
 		class PilotCheck {PostInit = 1;};
-		class RealWeather {PostInit = 1;};
 		class TFARSettings {PostInit = 1;};
 		class VanillaFatigue {PostInit = 1;};
 	};

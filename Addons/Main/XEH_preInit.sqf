@@ -127,37 +127,6 @@
     }
 ] call CBA_Settings_fnc_init;
 
-// Dynamic Weather
-[
-    "LRG_Main_DynamicWeather",
-    "CHECKBOX",
-    ["Dynamic Weather", "Enable/Disable randomised Weather."],
-    "LRG Main",
-    false,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Dynamic Weather Start
-[
-    "LRG_Main_DynamicWeatherStart",
-    "LIST",
-    ["Dynamic Weather - Start", "If Dynamic Weather enabled, what should the starting weather be?"],
-    "LRG Main",
-    [[0, 1, 2, 3], [
-        ["Random", "Start with the Weather on a random setting."],
-        ["Clear", "Start with the Weather Clear."],
-        ["Cloudy", "Start with the Weather Cloudy."],
-        ["Rain", "Start with the Weather Raining"]
-    ], 0],
-    true,
-    {
-
-    }
-] call CBA_Settings_fnc_init;
-
 // TFAR - Range Multiplyer
 [
     "LRG_Main_TFARTransmitRange",
