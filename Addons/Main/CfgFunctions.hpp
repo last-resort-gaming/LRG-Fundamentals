@@ -18,8 +18,6 @@ class LRG_Main {
 		class RealWeather {PostInit = 1;};
 		class TFARSettings {PostInit = 1;};
 		class VanillaFatigue {PostInit = 1;};
-		class preInitCreatorActions {preInit = 1;};
-
 	};
 };
 

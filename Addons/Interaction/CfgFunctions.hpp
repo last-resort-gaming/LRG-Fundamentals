@@ -13,6 +13,7 @@ class LRG_Interaction {
 		class InitInspectableIntel {};
 		class LaptopHoldActions {};
 		class PlayerAddActions {};
+		class preInitCreatorActions {preInit = 1;};		
 		class RunIntelAction {};
 		class SetIntelAction {};
 	};
