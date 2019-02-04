@@ -150,7 +150,7 @@
         ["Random", "Start with the Weather on a random setting."],
         ["Clear", "Start with the Weather Clear."],
         ["Cloudy", "Start with the Weather Cloudy."],
-        ["Raining", "Start with the Weather Raining"]
+        ["Rain", "Start with the Weather Raining"]
     ], 0],
     true,
     {
