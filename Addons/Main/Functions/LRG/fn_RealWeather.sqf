@@ -14,33 +14,31 @@ if (not LRG_Main_DynamicWeather) exitWith{};
 // Real time vs fast time
 // true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
 // false: fast time give more different weather conditions (ideal for non persistent game) 
-realtime = false;
-mintime = 60;								// Min time seconds (real time) before a new weather forecast
-maxtime = 3600; 							// Max time seconds (real time) before a new weather forecast
-daytimeratio = 1;							// Ratio 1 real time second for x game time seconds
-nighttimeratio = 1;							// Ratio 1 real time second for x game time seconds
-timesync = 60;								// send sync data across the network each xxx seconds
+private _realtime = false;
+private _mintime = 60;								// Min time seconds (real time) before a new weather forecast
+private _maxtime = 3600; 							// Max time seconds (real time) before a new weather forecast
+private _daytimeratio = 1;							// Ratio 1 real time second for x game time seconds
+private _nighttimeratio = 1;							// Ratio 1 real time second for x game time seconds
+private _timesync = 60;								// send sync data across the network each xxx seconds
 //	startingdate = [2015, 07, 01, 06, 30];		// Mission starting date
-_StartingWeather = call {
+private _StartingWeather = call {
 	if (LRG_Main_DynamicWeatherStart IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLOUDY", "RAIN"]};
 	if (LRG_Main_DynamicWeatherStart IsEqualTo 1) exitwith {"CLEAR"};
 	if (LRG_Main_DynamicWeatherStart IsEqualTo 2) exitwith {"CLOUDY"};
 	if (LRG_Main_DynamicWeatherStart IsEqualTo 3) exitwith {"RAIN"};
-	"Random";
+	"CLEAR";
 };
 ///////////////////////////////////////////////////////////
 // Do not edit below
 /////////////////////////////////////////////////////////////////
 	
-if(mintime > maxtime) exitwith {hint format["Real weather: Max time: %1 can no be higher than Min time: %2", maxtime, mintime];};
-timeforecast = mintime;
+if(_mintime > _maxtime) exitwith {hint format["Real weather: Max time: %1 can no be higher than Min time: %2", _maxtime, _mintime];};
 
-//	setdate startingdate;
-switch (_StartingWeather) do {
-	case "CLEAR": {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
-	case "CLOUDY": {wcweather = [0, 0, 0.6, [random 3, random 3, true], date];};
-	case "RAIN": {wcweather = [1, 0, 1, [random 3, random 3, true], date];};
-	default {wcweather = [0, 0, 0, [random 3, random 3, true], date];};
+wcweather = call {
+	if (_StartingWeather IsEqualTo "CLEAR") exitwith {[0, 0, 0, [random 3, random 3, true], date];};
+	if (_StartingWeather IsEqualTo "CLOUDY") exitwith {[0, 0, 0.6, [random 3, random 3, true], date];};
+	if (_StartingWeather IsEqualTo "RAIN") exitwith {[1, 0, 1, [random 3, random 3, true], date];};
+	[0, 0, 0, [random 3, random 3, true], date];
 };
 
 	// add handler
@@ -82,61 +80,69 @@ simulweatherSync;
 setwind (wcweather select 3);
 setdate (wcweather select 4);
 
+
 // sync server & client weather & time
-_handle = [
+[
 	{
+		params ["_args", "_pfhID"];
+		_args params ["_realtime","_nighttimeratio","_daytimeratio", "_maxtime", "_mintime"];
+
 		wcweather set [4, date];
 		publicvariable "wcweather";
-		if(!realtime) then { 
+		if(!_realtime) then { 
 			if((date select 3 > 16) or (date select 3 <6)) then {
-				setTimeMultiplier nighttimeratio;
+				setTimeMultiplier _nighttimeratio;
 			} else {
-				setTimeMultiplier daytimeratio;
+				setTimeMultiplier _daytimeratio;
 			};
 		};
-	}, timesync, []
+	}, _timesync, [_realtime, _nighttimeratio, _daytimeratio, _maxtime, _mintime]
 ] call CBA_fnc_addPerFrameHandler;
 
-	
-lastrain = 0;
-Currentrain = 0;
-Currentovercast = 0;
+private	_lastrain = 0;
+private	_rain = 0;
+private	_overcast = 0;
 
-_handle = [
+
+
+[
 	{
-		Currentovercast = random 1;
-		if(Currentovercast > 0.70) then {
-			Currentrain = random 1;
+		params ["_args", "_pfhID"];
+		_args params ["_maxtime", "_mintime", "_lastrain", "_rain", "_overcast"];
+		
+		_Overcast = random 1;
+		if(_Overcast > 0.70) then {
+			_Rain = random 1;
 		} else {
-			Currentrain = 0;
+			_Rain = 0;
 		};
 		if((date select 3 > 2) and (date select 3 <6)) then {
 			if(random 1 > 0.9) then {
-				TheFog = 0.1 + (random 0.4);
+				_Fog = 0.1 + (random 0.4);
 			} else {
-				TheFog = 0.1 + (random 0.2);
+				_Fog = 0.1 + (random 0.2);
 			};
 		} else {
-			if((lastrain > 0.6) and (Currentrain < 0.2)) then {
-				TheFog = random 0.2;
+			if((_lastrain > 0.6) and (_Rain < 0.2)) then {
+				_Fog = random 0.2;
 			} else {
-				TheFog = 0;
+				_Fog = 0;
 			};
 		};
 		if(random 1 > 0.95) then {
-			TheWind = [random 7, random 7, true];
+			_wind = [random 7, random 7, true];
 		} else {
-			TheWind = [random 3, random 3, true];
+			_wind = [random 3, random 3, true];
 		};
-		lastrain = Currentrain;
+		_lastrain = _Rain;
 
-		wcweather = [Currentrain, TheFog, Currentovercast, TheWind, date];
+		wcweather = [_Rain, _Fog, _overcast, _wind, date];
+
 		60 setRain (wcweather select 0);
 		60 setfog (wcweather select 1);
 		60 setOvercast (wcweather select 2);
 		setwind (wcweather select 3);
 
-		timeforecast = mintime + (random (maxtime - mintime));
-	}, timeforecast, []
+	}, random (_maxtime - _mintime), [_maxtime, _mintime ,_lastrain, _rain, _overcast]
 ] call CBA_fnc_addPerFrameHandler;
 	
