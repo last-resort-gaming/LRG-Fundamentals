@@ -1,17 +1,19 @@
 # Travis Build Integration
 # https://docs.travis-ci.com
 
+install:
+  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+  - sudo apt install apt-transport-https
+  - echo "deb https://download.mono-project.com/repo/ubuntu stable-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+  - sudo apt update
+  - sudo apt install mono-complete
+
 script:
   - wget http://www.naturaldocs.org/download/natural_docs/2.0.1/Natural_Docs_2.0.1.zip
   - unzip Natural_Docs_2.0.1.zip
   - mv Natural\ Docs natural_docs
   - mkdir docs
   - mono natural_docs/naturaldocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
-
-addons:
-  apt:
-    packages:
-    - mono
 
 deploy:
   provider: pages
