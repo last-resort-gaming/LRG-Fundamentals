@@ -14,7 +14,7 @@ script:
   - unzip Natural_Docs_2.0.1.zip
   - mv Natural\ Docs natural_docs
   - mkdir docs
-  - mono natural_docs/naturaldocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
+  - mono natural_docs/NaturalDocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
 
 deploy:
   provider: pages
