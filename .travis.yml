@@ -9,11 +9,9 @@ language: csharp
 #   - sudo apt update
 #   - sudo apt install mono-complete
 
-install:
+script:
   - chmod +x ./tools/install_nd_linux.sh
   - ./tools/install_nd_linux.sh
-
-script:
   - mono natural_docs/NaturalDocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
 
 deploy:
