@@ -1,0 +1,20 @@
+# Travis Build Integration
+# https://docs.travis-ci.com
+
+script:
+- mkdir docs
+- naturaldocs -p ".\tools\lrg-fundamentals" -i ".\Addons" -o HTML ".\docs" -r
+
+addons:
+  apt:
+    packages:
+    - naturaldocs
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: docs/
+  on:
+    branch: master
