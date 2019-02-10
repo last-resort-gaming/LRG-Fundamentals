@@ -7,6 +7,12 @@
 
 if (!IsServer) exitwith {};
 
+if (isNil "LRG_Main_Master") exitwith {};
+if (not LRG_Main_Master) exitWith{};
+
+if (isNil "LRG_Main_DynamicSim") exitwith {};
+if (not LRG_Main_DynamicSim) exitWith{};
+
 if !(dynamicSimulationSystemEnabled) exitwith {
 
 	enableDynamicSimulationSystem true;

@@ -261,3 +261,16 @@
 
     }
 ] call CBA_Settings_fnc_init;
+
+// LRG_Main_DynamicSim
+[
+    "LRG_Main_DynamicSim",
+    "CHECKBOX",
+    ["LRG Dynamic Sim", "Simple check for Dynamic Sim enabled. If not enabled it will enable it to default LRG Values. "],
+    "LRG Main",
+    false,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
