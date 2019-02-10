@@ -3,7 +3,7 @@
 
 script:
 - mkdir docs
-- naturaldocs -p ".\tools\lrg-fundamentals" -i ".\Addons" -o HTML ".\docs" -r
+- naturaldocs -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
 
 addons:
   apt:
