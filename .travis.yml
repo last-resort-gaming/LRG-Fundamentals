@@ -9,11 +9,11 @@ language: csharp
 #   - sudo apt update
 #   - sudo apt install mono-complete
 
+install:
+  - chmod +x ./tools/install_nd_linux.sh
+  - ./tools/install_nd_linux.sh
+
 script:
-  - wget http://www.naturaldocs.org/download/natural_docs/2.0.1/Natural_Docs_2.0.1.zip
-  - unzip Natural_Docs_2.0.1.zip
-  - mv Natural\ Docs natural_docs
-  - mkdir docs
   - mono natural_docs/NaturalDocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
 
 deploy:
