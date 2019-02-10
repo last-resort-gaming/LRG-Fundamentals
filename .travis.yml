@@ -2,13 +2,16 @@
 # https://docs.travis-ci.com
 
 script:
-- mkdir docs
-- naturaldocs -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
+  - wget http://www.naturaldocs.org/download/natural_docs/2.0.1/Natural_Docs_2.0.1.zip
+  - unzip Natural_Docs_2.0.1.zip
+  - mv Natural\ Docs natural_docs
+  - mkdir docs
+  - mono natural_docs/naturaldocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
 
 addons:
   apt:
     packages:
-    - naturaldocs
+    - mono
 
 deploy:
   provider: pages
