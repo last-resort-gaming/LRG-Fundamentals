@@ -31,11 +31,6 @@ wcweather = call {
 	if (_StartingWeather IsEqualTo "CLOUDY") exitwith {[0, 0, 0.6, [random 3, random 3, true], date];};
 	if (_StartingWeather IsEqualTo "RAIN") exitwith {[1, 0, 1, [random 3, random 3, true], date];};
 	[0, 0, 0, [random 3, random 3, true], date];
-wcweather = call {
-	if (_StartingWeather IsEqualTo "CLEAR") exitwith {[0, 0, 0, [random 3, random 3, true], date];};
-	if (_StartingWeather IsEqualTo "CLOUDY") exitwith {[0, 0, 0.6, [random 3, random 3, true], date];};
-	if (_StartingWeather IsEqualTo "RAIN") exitwith {[1, 0, 1, [random 3, random 3, true], date];};
-	[0, 0, 0, [random 3, random 3, true], date];
 };
 
 	// add handler
