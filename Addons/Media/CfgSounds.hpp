@@ -14,7 +14,7 @@ class CfgSounds
 		sound[]		= { "z\LRG Fundamentals\addons\Media\Sounds\AirRaid.ogg", 1, 1, 100 };
 		titles[]	= { 0, "" };
 	};
-	
+
 	class NukeAlarm
 	{
 		name		= "NukeAlarm";
@@ -27,7 +27,7 @@ class CfgSounds
 		name		= "Windows";
 		sound[]		= { "z\LRG Fundamentals\addons\Media\Sounds\Windows.ogg", 1, 1, 100 };
 		titles[]	= { 0, "" };
-	};	
+	};
 	class CallToPrayer
 	{
 		name 		= "CallToPrayer";
