@@ -1,10 +1,10 @@
 Format: 1.52
 
 
-Title: lrg-opsfuncs
-SubTitle: Last Resort Gaming - Ops Scripts
+Title: LRG Fundamentals
+SubTitle: Last Resort Gaming - LRG Fundamentals
 
-Footer: Copyright (c) CBA team and contributors
+Footer: Copyright (c) MitchJC & Mokka and contributors
 Timestamp: year
 #   m     - One or two digit month.  January is "1"
 #   mm    - Always two digit month.  January is "01"
@@ -50,7 +50,8 @@ Macro Index: Index (Macros)
 
 Group: Project  {
 
-   Link: Project  (https://bitbucket.org/MitchJC/lrg-fundamentals/src/master/)
-   Link: Issues  (https://bitbucket.org/MitchJC/lrg-fundamentals/issues)
-   Link: Download  (https://bitbucket.org/MitchJC/lrg-fundamentals/downloads/?tab=downloads)
+   Link: Project  (https://github.com/last-resort-gaming/LRG-Fundamentals)
+   Link: Issues  (https://github.com/last-resort-gaming/LRG-Fundamentals/issues)
+   Link: Download  (https://github.com/last-resort-gaming/LRG-Fundamentals/releases)
+   Link: Reference (https://last-resort-gaming.github.io/LRG-Fundamentals/docs)
    }  # Group: Project
