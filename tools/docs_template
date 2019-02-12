@@ -1,0 +1,19 @@
+/*
+Function: _fnc_
+
+Description:
+    Description...
+
+Arguments:
+    _ - expl.
+
+Return Value:
+    None
+
+Example:
+    --- Code
+        [] call _fnc_;
+    ---
+
+Author: MitchJC & Mokka
+*/

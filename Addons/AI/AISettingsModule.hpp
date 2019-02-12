@@ -20,7 +20,7 @@ class LRG_ModuleAISettings: Module_F
 			description = "This Module will automatically apply to AI Spawns and Zeus placed AI. If enabled it will also apply to any Editor placed AI at mission start.";
 			typeName = "BOOL";
 			defaultValue = 1;
-		};	
+		};
 		class LRGAimingAccuracy
 		{
 			displayName = "Min Aiming Accuracy";
@@ -84,8 +84,8 @@ class LRG_ModuleAISettings: Module_F
 			typeName = "Number";
 			defaultValue = 0.20;
 		};
-																																																			
 	};
+
 	class ModuleDescription: ModuleDescription
 	{
 		description = "Short module description";
@@ -96,9 +96,9 @@ class LRG_ModuleAISettings: Module_F
 			optional = 0;
 			duplicate = 1;
 			synced[] = {"Anything"};
-		description[] = {
-			"When this Module is placed, all AI placed by Zeus wil use these difficulty settings.",
-			"This Module also applies a + random amount to any Min named value to add a bit of variation."
+			description[] = {
+				"When this Module is placed, all AI placed by Zeus wil use these difficulty settings.",
+				"This Module also applies a + random amount to any Min named value to add a bit of variation."
 			};
 		};
 	};

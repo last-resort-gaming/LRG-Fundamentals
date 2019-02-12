@@ -1,9 +1,3 @@
-////////////////////////////////////////////////////////////////////
-//DeRap: LRG_Modules\config.bin
-//Produced from mikero's Dos Tools Dll version 6.44
-//'now' is Thu Jan 03 16:49:44 2019 : 'file' last modified on Wed Dec 05 17:41:22 2018
-//http://dev-heaven.net/projects/list_files/mikero-pbodll
-////////////////////////////////////////////////////////////////////
 #include "script_component.hpp"
 
 class CfgPatches
@@ -38,13 +32,13 @@ class CfgVehicles
 		class ArgumentsBaseUnits;
 		class ModuleDescription;
 	};
-	
+
 	#include "AISettingsModule.hpp"
 	#include "AISpawnsEastModule.hpp"
 	#include "AISpawnsIndependentModule.hpp"
-	#include "AISpawnsWestModule.hpp"		
+	#include "AISpawnsWestModule.hpp"
 };
 class CfgFunctions {
 
-    #include "cfgFunctions.hpp"
+    #include "CfgFunctions.hpp"
 };

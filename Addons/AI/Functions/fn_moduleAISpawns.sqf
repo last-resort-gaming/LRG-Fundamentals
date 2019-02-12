@@ -1,3 +1,4 @@
+// not documented: module called
 if !(isserver) exitwith {};
 
 params [

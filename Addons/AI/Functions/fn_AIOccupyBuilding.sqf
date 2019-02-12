@@ -1,50 +1,66 @@
 /*
-  Function: derp_fnc_AIOccupyBuilding
+Function: derp_fnc_AIOccupyBuilding
 
-  Author: alganthe
 
-  Description:
+Description:
     Garrison function used to garrison AI inside buildings.
- 
-  Arguments:
-    _startingPos - The building(s) nearest this position are used [Position]
-    _buildingTypes - Limit the building search to those type of building [Array]
-    _unitsArray - Units that will be garrisoned [Array]
-    _fillingRadius - Radius to fill building(s) [Scalar, defaults to 50]
-    _fillingType - even filling, 1: building by building, 2: random filling [Scalar, defaults to 0]
-    _topDownFilling - True to fill building(s) from top to bottom [Boolean, defaults to False]
-    _maxFill - max number of positions to fill in any given building, [Scalar, defaults to 0 (all positions)]
-    _excludes - List of positions to exclude [Array]
-  
-  Return Value:
-    Array of units not garrisoned
- 
-  Example:
-    [position, nil, [unit1, unit2, unit3, unitN], 200, 1, false] call derp_fnc_AIOccupyBuilding
+
+Arguments:
+    _startingPos - The building(s) nearest this position are used <POSITION 3D>
+    _buildingTypes - Limit the building search to those type of building <ARRAY OF STRINGS>
+    _unitsArray - Units that will be garrisoned <ARRAY OF UNITS>
+    _fillingRadius - Radius to fill building(s) <SCALAR, defaults to 50>
+    _fillingType - even filling, 1: building by building, 2: random filling <SCALAR, defaults to 0>
+    _topDownFilling - True to fill building(s) from top to bottom <BOOLEAN, defaults to False>
+    _maxFill - max number of positions to fill in any given building, <SCALAR, defaults to 0 (all positions)>
+    _excludes - List of positions to exclude <ARRAY OF STRINGS>
+
+Return Value:
+    Array of units not garrisoned <ARRAY OF UNITS>
+
+Example:
+    --- Code
+        [position, nil, [unit1, unit2, unit3, unitN], 200, 1, false] call derp_fnc_AIOccupyBuilding
+    ---
+
+Author: alganthe, modified by Mokka
 */
 
-params [["_startingPos",[0,0,0], [[]], 3], ["_buildingTypes", ["Building"], [[]]], ["_unitsArray", [], [[]]], ["_fillingRadius", [0, 50], [[]]], ["_fillingType", 0, [0]], ["_topDownFilling", false, [true]], ["_maxFill", 0, [0]], ["_excludes", [], [[]]]];
+params [
+    ["_startingPos",[0,0,0], [[]], 3],
+    ["_buildingTypes", ["Building"], [[]]],
+    ["_unitsArray", [], [[]]],
+    ["_fillingRadius", [0, 50], [[]]],
+    ["_fillingType", 0, [0]],
+    ["_topDownFilling", false, [true]],
+    ["_maxFill", 0, [0]],
+    ["_excludes", [], [[]]]
+];
 
 _origUnits  = _unitsArray + [];
 _unitsArray = _unitsArray select {alive _x && {!isPlayer _x}};
 
 if (_startingPos isEqualTo [0,0,0]) exitWith {
-    diag_log "[derp_AIOccupyBuilding] Error: Position provided is invalid";
+    diag_log "[derp_fnc_AIOccupyBuilding] Error: Position provided is invalid";
 };
 
 if (count _unitsArray == 0 || {isNull (_unitsArray select 0)}) exitWith {
-    diag_log "[derp_AIOccupyBuilding] Error: No unit provided";
+    diag_log "[derp_fnc_AIOccupyBuilding] Error: No unit provided";
 };
 
 private _buildings = [];
 
 if ((_fillingRadius select 1) < 30) then { _fillingRadius set [1,30]; };
 
-_buildings = nearestObjects [_startingPos, _buildingTypes, _fillingRadius select 1] select { _x distance2D _startingPos > (_fillingRadius select 0) && { !(_x in _excludes) } };
+_buildings =
+    nearestObjects [_startingPos, _buildingTypes, _fillingRadius select 1] select {
+        _x distance2D _startingPos > (_fillingRadius select 0) && {!(_x in _excludes)}
+    };
+
 _buildings = _buildings call BIS_fnc_arrayShuffle;
 
 if (count _buildings == 0) exitWith {
-    diag_log "[derp_AIOccupyBuilding] Error: No valid building found";
+    diag_log "[derp_fnc_AIOccupyBuilding] Error: No valid building found";
     _unitsArray
 };
 
@@ -92,7 +108,7 @@ private _count = 0;
 {_count = _count + count _x;} forEach _buildingsIndexes;
 private _leftOverAICount = (count _unitsArray) - _count;
 if (_leftOverAICount > 0) then {
-    diag_log "[derp_AIOccupyBuilding] Warning: not enough positions to place all units";
+    diag_log "[derp_fnc_AIOccupyBuilding] Warning: not enough positions to place all units";
 };
 
 private _placedUnits = [];

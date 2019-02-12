@@ -1,80 +1,55 @@
 /*
-LRG MISSION TEMPLATE
-	LR_fnc_SpawnAI.sqf
-	Author: MitchJC, using functions from YAINA (MartinCo) and DERP (alganthe)
-	Description: Used to populate an area with a predefined enemy faction. This function has a large list of parameters to adjust the number of enemies spawned. It's advised to use the numbers in this function sparingly. It's easy to spawn in huge numbers which could cause a temporary drop in frames. This function works best when executed prior to mission start but can be executed during the mission in the Debug Console for on the fly objectives.
+Function: LR_fnc_SpawnAI
 
-	
-	Syntax
-	["Group Prefix Name",
-	[_Position],
-	_Radius,
-	"_faction",
-	[_GarrisonGroupCount, _minRadius, _MaxRadius],
-	[_MinInfAmmount, _MaxInfAmmount],
-	[_MinAAInfAmmount, _MaxAAInfAmmount],
-	[_MinATInfAmmount, _MaxATInfAmmount],
-	[_MinVehAA, _MaxVehAA],
-	[_MinVehMRAP, _MaxVehMRAP],
-	[_MinVehRandom, _MaxVehRandom],
-	[_MinVehLight, _MaxVehLight],
-	[_MinVehHeavy, _MaxVehHeavy]
-	] call LR_fnc_SpawnAI;
-	
-	Parameters
-	_grpPrefix - The prefix for the group IDs
-    _center - The center position of the area we want to populate
-    _radius - The radius of the area we want to populate
-    _faction - The faction which we want to use for populating the AO
-    _garrisons - Garrison Parameters,[Group Count, Min Radius, Max Radius, Skill Level of Garrisoned Units, Max Fill in Buildling, Exclusion List]
-    _inf - Infantry Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _infaa - AA Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _infat - AT Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _sniper - Sniper Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _vehaa - Vehicle-based AA Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _vehmrap - MRAP Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _vehran - Random Vehicles Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _vehlight - Light Vehicles Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-    _vehheavy - Heavy/Armoured Vehicle Parameters,[Min Amount of Groups, Random Upper Bound of Groups]
-	
-	Example 1:
+Description:
+    Used to populate an area with a predefined enemy faction. This function has a large list of parameters
+    to adjust the number of enemies spawned. It's advised to use the numbers in this function sparingly.
+    It's easy to spawn in huge numbers which could cause a temporary drop in frames.
+    This function works best when executed prior to mission start but can be executed during the mission
+    in the Debug Console for on the fly objectives.
+
+Parameters:
+	_grpPrefix - The prefix for the group IDs <STRING>
+    _center - The center position of the area we want to populate <POSITION 3D>
+    _radius - The radius of the area we want to populate <SCALAR>
+    _faction - The faction which we want to use for populating the AO <STRING>
+    _garrisons - Garrison Parameters <ARRAY OF [Group Count, Min Radius, Max Radius, Skill Level of Garrisoned Units, Max Fill in Buildling, Exclusion List]>
+    _inf - Infantry Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _infaa - AA Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _infat - AT Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _sniper - Sniper Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _vehaa - Vehicle-based AA Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _vehmrap - MRAP Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _vehran - Random Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _vehlight - Light Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _vehheavy - Heavy/Armoured Vehicle Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+
+Example:
 	--- Code
-	["Objective 1",
-	[2955.43,6010.11,0],
-	500,
-	"Sahrani Liberation Army",
-	[5, 100, 200],
-	[3, 5]
-	] call LR_fnc_SpawnAI;
-	Example 2:
-	["Kavala",
-	[2955.43,6010.11,0],
-	500,
-	"Chernarussian Red Star",
-	[5, 200, 400],
-	[5, 10],
-	[2, 3],
-	[3, 4],
-	[2, 3],
-	[4, 5],
-	[2, 3],
-	[2, 3],
-	[5, 6]] call LR_fnc_SpawnAI;
+	    [
+            "Objective 1",
+	        [2955.43,6010.11,0],
+	        500,
+	        "Sahrani Liberation Army",
+	        [5, 100, 200],
+	        [3, 5]
+	        ] call LR_fnc_SpawnAI;
+	        Example 2:
+	        ["Kavala",
+	        [2955.43,6010.11,0],
+	        500,
+	        "Chernarussian Red Star",
+	        [5, 200, 400],
+	        [5, 10],
+	        [2, 3],
+	        [3, 4],
+	        [2, 3],
+	        [4, 5],
+	        [2, 3],
+	        [2, 3],
+	        [5, 6]
+        ] call LR_fnc_SpawnAI;
 	---
-
-Available _faction so far:
-// Vanilla
-"CSAT"
-"CSAT Pacific"
-"AAF"
-"Syndikat"
-
-// CUP
-"TM" - Takistani Militia
-"CRS" - Chernarussian Movement of the Red Star
-"CUP AFRF" - Armed Forces of the Russian Federation
-"SLA" - Sahrani Liberation Army
-"TA" - Takistani Army
 */
 if (!isserver) exitwith {};
 
@@ -99,7 +74,6 @@ call {
 	if (_typeNameCenter isEqualTo "OBJECT") exitwith { _center = getPos _center;};
 	if (_typeNameCenter isEqualTo "STRING") exitwith { _center = getMarkerPos _center;};
 	if (_typeNameCenter isEqualTo [0, 0, 0]) exitwith {systemchat "AISpawns - Position is invalid";};
-
 };
 
 _center set [2, 0];
@@ -132,19 +106,20 @@ private _vehRandList = [];
 
 // Check for Side from _faction
 private _SideNumber = getnumber (configfile >> "CfgFactionClasses" >> _faction >> "side");
+
 call {
  	if (_sidenumber IsEqualTo 0) exitwith {
 		 _side = East;
 		 _FactionSide = "East";
-	}; 
+	};
  	if (_sidenumber IsEqualTo 1) exitwith {
 		 _side = West;
 		 _FactionSide = "West";
-	}; 
+	};
  	if (_sidenumber IsEqualTo 2) exitwith {
 		 _side = Resistance;
 		 _FactionSide = "Indep";
-	};	
+	};
 };
 if (isnil "_Faction") exitwith {systemchat format ["Faction missing from %1 at %2",_grpPrefix, _center]};
 
@@ -170,7 +145,17 @@ private _vehicles = [];
 
 if (_garrisonGroupCount > 0) then {
 
-    private _garrisonedUnits = ([_center, [_garrisonMinRad, _garrisonMaxRad], _side, _FactionSide,  _faction, _InfantryType, _infList, _garrisonGroupCount, nil, _garrisonSkill, _garrisonFill, _garrisonExcludes] call LR_fnc_infantryGarrison);
+    private _garrisonedUnits = (
+        [
+            _center,
+            [_garrisonMinRad, _garrisonMaxRad],
+            _side, _FactionSide,
+            _faction, _InfantryType,
+            _infList, _garrisonGroupCount,
+            nil, _garrisonSkill,
+            _garrisonFill, _garrisonExcludes
+        ] call LR_fnc_infantryGarrison
+    );
     _units append _garrisonedUnits;
 
     private _grps = [];
