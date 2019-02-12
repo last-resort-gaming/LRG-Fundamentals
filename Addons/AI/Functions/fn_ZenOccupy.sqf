@@ -1,24 +1,5 @@
-// Infantry Occupy House
-// by Zenophon
-// Modified by Mokka (lastresortgaming.net)
-// Released under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
-// http://creativecommons.org/licenses/by-nc/4.0/
-
-Teleports the units to random windows of the building(s) within the distance
-Faces units in the right direction and orders them to stand up or crouch on a roof
-Units will only fill the building to as many positions as are at windows
-Multiple buildings can be filled either evenly or to the limit of each sequentially
-// Usage : Call
-// Params: 1. Position (Array), the building(s) nearest this position is used
-//         2. Objects (Array), the units that will garrison the building(s)
-//         3. Scalar, radius in which to fill building(s), -1 for only nearest building
-//         4. Boolean, true to put units on the roof, false for only inside
-//         5. Boolean, true to fill all buildings in radius evenly, false for one by one
-//		   6. Number, mode setting (0: normal/1: by classname)
-//		   7. Class Name, if mode = 1
-// Return: Objects (Array), the units that were not garrisoned
 /*
-Function: DERP_fnc_ZenOccupy
+Function: derp_fnc_ZenOccupy
 
 Description:
     Teleports the units to random windows of the building(s) within the distance

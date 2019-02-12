@@ -10,10 +10,10 @@
 	Parameters
 	_object - Object the addaction is applied to.  <OBJECT>
 	_title - The name of the addaction, visable to players. <STRING>
-	_time - How long the action must be held to complete. <NUMBER>
+	_time - How long the action must be held to complete. <SCALAR>
 	_SoundClass - Class name of sound from CfgSounds <STRING>
-	_distance - How far away the sound can be heard from _object. <NUMBER>
-	_pitch - pitch of the sound. Should usually be 1. <NUMBER>
+	_distance - How far away the sound can be heard from _object. <SCALAR>
+	_pitch - pitch of the sound. Should usually be 1. <SCALAR>
 	
 	Example 1:	[this] call LR_fnc_LaptopHoldActions;
 	Example 2:	[MyLaptopName] call LR_fnc_LaptopHoldActions;

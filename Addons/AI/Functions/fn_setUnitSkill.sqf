@@ -4,7 +4,7 @@ Function: LR_fnc_SetUnitSkill
 Description:
 	Set the given unit's skill level to the desired one.
 
-Parameters:
+Arguments:
 	_target - The array of units or the group whose skill level we want to adjust <UNIT / ARRAY OF UNITS / GROUP>
     _skillLevel - The skill level which we want to set the units to <SCALAR>
 

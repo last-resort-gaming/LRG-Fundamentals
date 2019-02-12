@@ -5,7 +5,7 @@ Description:
 	Utility function for spawning explosions and secondaries on objects,
 	positions or objectives.
 
-Parameters:
+Arguments:
 	_delay - The delay in seconds until the explosives go off <SCALAR>
     _pos - The position of the objective about to blow up <POSITION 3D>
     _sub - Array containing the following information: [Amount of Secondaries, Delay after Main Explosion, Radius around _pos] <ARRAY>

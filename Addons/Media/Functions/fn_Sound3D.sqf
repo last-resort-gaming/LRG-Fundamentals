@@ -7,9 +7,9 @@ Description:
 Arguments:
 	_object - Object the Sound is played from. <OBJECT>
 	_SoundClass - Class name of sound from CfgSounds <STRING>
-	_distance - How far away the sound can be heard from _object. <NUMBER>
-	_pitch - pitch of the sound. Should usually be 1. <NUMBER>
-	_volume - Volume of the sound. If volume above 1 sound is multiplied <NUMBER>
+	_distance - How far away the sound can be heard from _object. <SCALAR>
+	_pitch - pitch of the sound. Should usually be 1. <SCALAR>
+	_volume - Volume of the sound. If volume above 1 sound is multiplied <SCALAR>
 
 Examples:
 	--- Code

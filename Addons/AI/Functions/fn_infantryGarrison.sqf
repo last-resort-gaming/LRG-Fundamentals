@@ -5,7 +5,7 @@ Description:
 	Garrison buildings in given radius around given position, using
 	units of the passed faction.
 
-Parameters:
+Arguments:
 	_pos - Position around which to garrison buildings <POSITION 3D>
 	_radius - Radius around the position in which to garrison buildings, in min-max <ARRAY OF SCALARS>
 	_side - Side of the units to garrison <SIDE>

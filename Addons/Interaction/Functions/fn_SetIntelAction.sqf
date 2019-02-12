@@ -6,7 +6,7 @@ Description:
 	LR_fnc_initInspectableIntel. Do not use this yourself, it's always to be
 	called directly through the aforementioned function.
 
-Parameters:
+Arguments:
 	_object - The object to set up the actions for
 	_actionTitle - The custom title of the action in the scroll-wheel menu
 	_itemName - The custom name of the intel item, displayed while picking up the intel

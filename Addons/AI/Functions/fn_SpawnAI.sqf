@@ -8,7 +8,7 @@ Description:
     This function works best when executed prior to mission start but can be executed during the mission
     in the Debug Console for on the fly objectives.
 
-Parameters:
+Arguments:
 	_grpPrefix - The prefix for the group IDs <STRING>
     _center - The center position of the area we want to populate <POSITION 3D>
     _radius - The radius of the area we want to populate <SCALAR>

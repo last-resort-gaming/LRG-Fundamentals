@@ -6,9 +6,9 @@ Description:
 
 Arguments:
 	_object - Object the MedicalFacility is created on. <OBJECT>
-	_length - Length of Area. <NUMBER>
-	_Width - Width of Area. <NUMBER>
-	_Height- Height of Area. <NUMBER>
+	_length - Length of Area. <SCALAR>
+	_Width - Width of Area. <SCALAR>
+	_Height- Height of Area. <SCALAR>
 
 Examples:
 	--- Code

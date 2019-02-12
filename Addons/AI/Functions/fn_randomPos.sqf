@@ -1,5 +1,5 @@
 /*
-Function: DERP_fnc_randomPos
+Function: derp_fnc_randomPos
 
 
 Description:
