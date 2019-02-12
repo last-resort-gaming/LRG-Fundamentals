@@ -1,0 +1,24 @@
+# Travis Build Integration
+# https://docs.travis-ci.com
+language: csharp
+
+# install:
+#   - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+#   - sudo apt install apt-transport-https
+#   - echo "deb https://download.mono-project.com/repo/ubuntu stable-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+#   - sudo apt update
+#   - sudo apt install mono-complete
+
+script:
+  - chmod +x ./tools/install_nd_linux.sh
+  - ./tools/install_nd_linux.sh
+  - mono natural_docs/NaturalDocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: docs/
+  on:
+    branch: master

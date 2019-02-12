@@ -24,6 +24,8 @@ if(LRG_Weather_MinTime > LRG_Weather_MaxTime) then {
 	LRG_Weather_MinTime = LRG_Weather_MaxTime;
 	};
 
+//	setdate startingdate;
+
 wcweather = call {
 	if (_StartingWeather IsEqualTo "CLEAR") exitwith {[0, 0, 0, [random 3, random 3, true], date];};
 	if (_StartingWeather IsEqualTo "CLOUDY") exitwith {[0, 0, 0.6, [random 3, random 3, true], date];};
