@@ -47,7 +47,7 @@ class Cfg3DEN {
                         control = "Checkbox";
                         displayName = "Pilot";
                         tooltip = "Set the player to Pilot to allow them in the Pilot seat of aircraft.";
-                        expression = "_this setUnitTrait ['Pilot', _value, true];";   
+                        expression = "_this setUnitTrait ['Pilot', _value, true];";
                         typeName = "BOOL";
                         condition = "objectBrain";
                         defaultValue = "(false)";
@@ -57,7 +57,7 @@ class Cfg3DEN {
                         control = "Checkbox";
                         displayName = "Mission Maker";
                         tooltip = "Define this player as Mission Maker to allow access to further mission controls.";
-                        expression = "_this setUnitTrait ['Mission Maker', _value, true];";   
+                        expression = "_this setUnitTrait ['Mission Maker', _value, true];";
                         typeName = "BOOL";
                         condition = "objectBrain";
                         defaultValue = "(false)";
@@ -67,7 +67,7 @@ class Cfg3DEN {
                         control = "Checkbox";
                         displayName = "Instructor";
                         tooltip = "Define this player as Instructor to allow access to any valid Instructor Controls - Only used with Training Functions.";
-                        expression = "_this setUnitTrait ['Instructor', _value, true];";  
+                        expression = "_this setUnitTrait ['Instructor', _value, true];";
                         typeName = "BOOL";
                         condition = "objectBrain";
                         defaultValue = "(false)";
