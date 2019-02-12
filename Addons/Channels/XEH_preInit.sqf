@@ -6,7 +6,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -19,7 +19,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -32,7 +32,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -45,7 +45,7 @@
     "LRG Channels",
     [0, 300, 0, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -58,7 +58,7 @@
     "LRG Channels",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -71,7 +71,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -84,7 +84,7 @@
     "LRG Channels",
     [0, 300, 60, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -97,7 +97,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -110,7 +110,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -123,7 +123,7 @@
     "LRG Channels",
     [0, 300, 0, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -136,7 +136,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -149,7 +149,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -162,7 +162,7 @@
     "LRG Channels",
     [0, 300, 0, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -175,7 +175,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -188,7 +188,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -201,7 +201,7 @@
     "LRG Channels",
     [0, 300, 0, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -214,7 +214,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -227,7 +227,7 @@
     "LRG Channels",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -240,7 +240,7 @@
     "LRG Channels",
     [0, 300, 0, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;

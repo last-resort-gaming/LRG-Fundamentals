@@ -41,7 +41,7 @@
 				description = "Should players be allowed to speak in Side chat?";
 				typeName = "BOOL";
 				defaultValue = 0;
-			};	
+			};
 			class CommandText
 			{
 				displayName = "Command Text";
@@ -97,7 +97,7 @@
 				description = "Should players be allowed to speak in Direct chat?";
 				typeName = "BOOL";
 				defaultValue = 0;
-			};													
+			};
 			class GlobalDuration
 			{
 				displayName = "Global Duration";
@@ -139,7 +139,7 @@
 				description = "If enabled, time in minutes for how long Direct Chat is active, -1 is permanent";
 				typeName = "NUMBER";
 				defaultValue = -1;
-			};																																														
+			};
 		};
 		class ModuleDescription: ModuleDescription
 		{
