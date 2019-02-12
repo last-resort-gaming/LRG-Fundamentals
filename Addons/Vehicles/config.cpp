@@ -24,7 +24,7 @@ class CfgVehicles
 		class ArgumentsBaseUnits;
 		class ModuleDescription;
 	};
-	#include "ServicingModule.hpp"		
+	#include "ServicingModule.hpp"
 };
 
 

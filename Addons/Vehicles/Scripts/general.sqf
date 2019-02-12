@@ -1,10 +1,35 @@
 /*
-	author: Martin
-	description: none
-	returns: nothing
+Function: general
+
+Description:
+    Service on general vehicles.
+
+Arguments:
+    _kind - Class name of the vehicle to service <STRING>
+    _veh - The vehicle to service <OBJECT>
+    _serviceTime - Time in seconds that it takes for the service to be completed <SCALAR>
+    _serviceRand - Additional random amount of time to add to the service time <SCALAR>
+    _sideChat - Announce servicing in the sideChat? <BOOLEAN>
+    _allowAny - Allow anyone in the vehicle to service? <BOOLEAN>
+
+Return Value:
+    None
+
+Example:
+    Nothing to see here
+
+Author: Martin
 */
 
-params ["_kind", "_veh", ["_serviceTime", 60], ["_serviceRand", 30], ["_sideChat", true], ["_allowAny", false], ["_playerDistance", 0]];
+params [
+    "_kind",
+    "_veh",
+    ["_serviceTime", 60],
+    ["_serviceRand", 30],
+    ["_sideChat", true],
+    ["_allowAny", false],
+    ["_playerDistance", 0]
+];
 
 if (isNil "_veh") exitWith {};
 if (isNull _veh)  exitWith {};

@@ -48,7 +48,7 @@
 				description = "How long to Repair at this module.";
 				typeName = "NUMBER";
 				defaultValue = 20;
-			};					
+			};
 			class ServicingGroundVehicles
 			{
 				displayName = "Ground Vehicles";

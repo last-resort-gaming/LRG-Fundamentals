@@ -1,10 +1,32 @@
 /*
-	author: Martin
-	description: none
-	returns: nothing
+Function: uav
+
+Description:
+    Service an UAV.
+
+Arguments:
+    _veh - The vehicle to service <OBJECT>
+    _serviceTime - Time in seconds that it takes for the service to be completed <SCALAR>
+    _serviceRand - Additional random amount of time to add to the service time <SCALAR>
+    _sideChat - Announce servicing in the sideChat? <BOOLEAN>
+    _playerDistance - Distance in metres that players need to be in for service to start, -1 for disabled <SCALAR>
+
+Return Value:
+    None
+
+Example:
+    Nothing to see here
+
+Author: Martin
 */
 
-params ["_veh", ["_serviceTime", 60], ["_serviceRand", 30], ["_sideChat", true], ["_playerDistance", 0]];
+params [
+    "_veh",
+    ["_serviceTime", 60],
+    ["_serviceRand", 30],
+    ["_sideChat", true],
+    ["_playerDistance", -1]
+];
 
 if (isNil "_veh") exitWith {};
 if (isNull _veh)  exitWith {};
@@ -32,7 +54,7 @@ if(_veh isKindOf "UAV") then {
     sleep _serviceTime + (floor random _serviceRand);
 
     // Handle player distance
-    if (_playerDistance > 0 && _veh distance2D player > _playerDistance) exitWith {
+    if (_playerDistance > -1 && _veh distance2D player > _playerDistance) exitWith {
         _msg = format ["Servicing Failed for %1, no longer in range", _type];
         if(_sideChat) then {
             _veh sideChat _msg;
@@ -53,5 +75,4 @@ if(_veh isKindOf "UAV") then {
     } else {
         systemChat _msg;
     };
-
 };
