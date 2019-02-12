@@ -22,45 +22,45 @@ Description:
 	_caller - The unit that activated the action
 	_args - The arguments passed through the function
 
-Parameters:
-	_object - The object to which the action is added
-	_id - The globally unique identifier of the action (used for ACE, JIP etc)
-	_title - The title of the action as shown to players
-	_icon - The icon that's shown to the player
-	_conditionShow - Condition for the action to be shown, default: "true"
-	_conditionProgress - Condition for the action to progress; if false is returned action progress is paused, default: "true"
-	_codeStart - Code executed when action starts
-	_codeProgress - Code executed on every progress tick
-	_codeCompleted - Code executed on completion
-	_codeInterrupted - Code executed on interrupted
-	_args - Arguments that are passed to the code blocks
-	_duration - The duration in seconds it takes to complete the action, default: 10
-	_removeCompleted - Remove the action once it's completed, default: true
-	_progressTitle - Shown in the ACE progress bar, optional
-	_global - Set to true to add the action to every player
+Arguments:
+	_object - The object to which the action is added <OBJECT>
+	_id - The globally unique identifier of the action (used for ACE, JIP etc) <STRING>
+	_title - The title of the action as shown to players <STRING>
+	_icon - The icon that's shown to the player <STRING>
+	_conditionShow - Condition for the action to be shown, default: "true" <STRING>
+	_conditionProgress - Condition for the action to progress; if false is returned action progress is paused, default: "true" <STRING>
+	_codeStart - Code executed when action starts <CODE>
+	_codeProgress - Code executed on every progress tick <CODE>
+	_codeCompleted - Code executed on completion <CODE>
+	_codeInterrupted - Code executed on interrupted <CODE>
+	_args - Arguments that are passed to the code blocks <ARRAY OF ANYTHING>
+	_duration - The duration in seconds it takes to complete the action, default: 10 <SCALAR>
+	_removeCompleted - Remove the action once it's completed, default: true <BOOLEAN>
+	_progressTitle - Shown in the ACE progress bar, optional <STRING>
+	_global - Set to true to add the action to every player <BOOLEAN>
 
 Return Values:
 	None
 
 Examples:
     --- Code
-	[
-		Car,
-		"UnlockCar",
-		"Unlock Car",
-		"",
-		"true",
-		"true",
-		{hint "Unlocking Car!";},
-		{hint "Still unlocking Car!";},
-		{hint "Car unlocked!";},
-		{hint "Couldn't unlock Car!";},
-		[],
-		14,
-		true,
-		"Unlocking Car...",
-		true
-	] call LR_fnc_AddHoldAction;
+		[
+			Car,
+			"UnlockCar",
+			"Unlock Car",
+			"",
+			"true",
+			"true",
+			{hint "Unlocking Car!";},
+			{hint "Still unlocking Car!";},
+			{hint "Car unlocked!";},
+			{hint "Couldn't unlock Car!";},
+			[],
+			14,
+			true,
+			"Unlocking Car...",
+			true
+		] call LR_fnc_AddHoldAction;
 	---
 
 Author:
@@ -195,7 +195,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		_conditionProgress,
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
-			
+
 			_arguments params [
 				"_args",
 				"_codeStart",
@@ -208,7 +208,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		},
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
-			
+
 			_arguments params [
 				"_args",
 				"_codeStart",
@@ -221,7 +221,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		},
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
-			
+
 			_arguments params [
 				"_args",
 				"_codeStart",
@@ -234,7 +234,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		},
 		{
 			params ["_target", "_caller", "_actionId", "_arguments"];
-			
+
 			_arguments params [
 				"_args",
 				"_codeStart",
