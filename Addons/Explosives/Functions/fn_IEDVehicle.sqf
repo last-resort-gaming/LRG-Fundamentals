@@ -5,40 +5,40 @@ Description:
 	Sets up a given vehicle as a driven IED. The explosive will be armed and
 	primed for detonation if any player comes within the given radius.
 	The explosives will detonate roughly after the time given has passed.
-	The detonation may also produce smaller secondary detonations. 
-	
-	If _announce is set to true, an announcement will be made on the sideChat 
-	once the IED has been armed, indicating the approximate time until 
-	detonation and when it is about to detonate. 
-	
-	Additionally, you can set the _announceInterval parameter to enable 
+	The detonation may also produce smaller secondary detonations.
+
+	If _announce is set to true, an announcement will be made on the sideChat
+	once the IED has been armed, indicating the approximate time until
+	detonation and when it is about to detonate.
+
+	Additionally, you can set the _announceInterval parameter to enable
 	occasional announcements about the time left until detonation.
 
-	The armed IED vehicle can be disarmed through a mouse-wheel action.  
+	The armed IED vehicle can be disarmed through a mouse-wheel action.
 	Once disarmed it cannot be primed again.
 
-Parameters:
-	_vehicle - The vehicle which shall be initialized
-	_detonationTime - The time in seconds after which the explosives will go off once armed
-	_proximityRadius - The IED will be armed if any player comes closer to the vehicle than this radius (in metres)
-	_secondaries - Set to true to have the detonation of the IED also produce a random amount of secondary explosions around the main detonation
-	_announce - Set to true to enable announcements about the state of the IED
-	_announceInterval - The interval in seconds in which players should be informed about the time left
+Arguments:
+	_vehicle - The vehicle which shall be initialized <OBJECT>
+	_detonationTime - The time in seconds after which the explosives will go off once armed <SCALAR>
+	_proximityRadius - The IED will be armed if any player comes closer to the vehicle than this radius (in metres) <SCALAR>
+	_secondaries - Set to true to have the detonation of the IED also produce a random amount of secondary explosions around the main detonation <BOOLEAN>
+	_announce - Set to true to enable announcements about the state of the IED <BOOLEAN>
+	_announceInterval - The interval in seconds in which players should be informed about the time left <SCALAR>
 
 Return Values:
 	None
 
 Examples:
     --- Code
-	// In the init field of a vehicle in the editor (e.g. a Truck)
-	[
-		this,
-		120,
-		20,
-		true,
-		true,
-		30
-	] call LR_fnc_IEDVehicle;
+		// In the init field of a vehicle in the editor (e.g. a Truck)
+		[
+			this,
+			120,
+			20,
+			true,
+			true,
+			30
+		] call LR_fnc_IEDVehicle;
 	---
 
 Author:
@@ -109,10 +109,10 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 		// Calculate time left until detonation
 		_timeLeft = floor (_detonationTime - _deltaTime);
 
-		if ((_announce) 
+		if ((_announce)
 			&& (_announceInterval > 0)
-			&& (_timeLeft % _announceInterval) == 0 
-			&& (not (_timeLeft == _detonationTime)) 
+			&& (_timeLeft % _announceInterval) == 0
+			&& (not (_timeLeft == _detonationTime))
 			&& (_timeLeft != 0)) then {
 			[
 				format ["The IED will detonate in %1 seconds!",_timeLeft],
@@ -160,14 +160,14 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 	,"Disarm IED"
 	,"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa"
 	,"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa"
-	,"isplayer _this 
-	&& {_this distance _target < 5} 
-	&& {_target getVariable [""IEDarmed"",false]} 
+	,"isplayer _this
+	&& {_this distance _target < 5}
+	&& {_target getVariable [""IEDarmed"",false]}
 	&& {not (_target getVariable [""IEDdetonated"",false])}"
 	,"true"
 	,{ ["You're disarming the IED.", [-1, 0.8], "#FFBB00", 0.5, false] call LR_fnc_dynamicText;}
 	,{}
-	,{ 	
+	,{
 		(_this select 0) setVariable ["IEDdisarmed", true, true];
 		["You've disarmed the IED.", [-1, 0.8], "#339900", 0.5, false] call LR_fnc_dynamicText;
 	},
