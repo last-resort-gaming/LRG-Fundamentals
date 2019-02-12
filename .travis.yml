@@ -9,6 +9,7 @@ script:
   - ./tools/install_nd_linux.sh
   - mono natural_docs/NaturalDocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
   - mv -v docs/ pages/
+  - cp README.md pages/
 
 deploy:
   provider: pages
