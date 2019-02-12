@@ -1,0 +1,21 @@
+# Travis Build Integration
+# https://docs.travis-ci.com
+language: csharp
+
+script:
+  - chmod +x ./tools/install_nd_linux.sh
+  - mkdir docs
+  - mkdir pages
+  - ./tools/install_nd_linux.sh
+  - mono natural_docs/NaturalDocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
+  - mv -v docs/ pages/
+  - cp README.md pages/
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  local-dir: pages/
+  on:
+    branch: master

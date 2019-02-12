@@ -3,7 +3,7 @@ Official LRG Fundamentals Arma 3 Mod.
 
 
 This is the Arma 3 mission-making framework created by Last Resort Gaming. LRG Fundamentals allows the easy creation of modded missions
-for Arma 3.
+for Arma 3. Documentation available [her][docs]
 
 ## Setting up and Building
 
@@ -18,3 +18,4 @@ If you have questions about the build process or encounter issues, please let us
 
 [pboproj]:https://mikero.bytex.digital/api/download?filename=pboProject.2.45.7.04.Installer.exe
 [discord]:http://discord.lastresortgaming.net
+[docs]:https://last-resort-gaming.github.io/LRG-Fundamentals/docs
