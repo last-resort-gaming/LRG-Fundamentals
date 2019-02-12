@@ -6,7 +6,7 @@
     "LRG Weather",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -37,7 +37,7 @@
     "LRG Weather",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -50,7 +50,7 @@
     "LRG Weather",
     [1, 120, 60, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -63,7 +63,7 @@
     "LRG Weather",
     [1, 120, 1, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -76,7 +76,7 @@
     "LRG Weather",
     [1, 240, 60, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -89,7 +89,7 @@
     "LRG Weather",
     [0, 60, 1, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -102,7 +102,7 @@
     "LRG Weather",
     [0, 60, 1, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;

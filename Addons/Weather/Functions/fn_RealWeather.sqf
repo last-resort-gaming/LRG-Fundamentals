@@ -5,6 +5,7 @@
 			MitchJC - Conversion to PFH & Function
 	Description: Randomizes Weather
 */
+// not documented: postInit
 if (isNil "LRG_Weather_Master") exitwith {};
 if (not LRG_Weather_Master) exitWith{};
 
@@ -18,7 +19,7 @@ private _StartingWeather = call {
 ///////////////////////////////////////////////////////////
 // Do not edit below
 /////////////////////////////////////////////////////////////////
-	
+
 if(LRG_Weather_MinTime > LRG_Weather_MaxTime) then {
 	hint format["Min Time cannot be highter than max time. Min Time set to %1 ", LRG_Weather_MaxTime, LRG_Weather_MinTime];
 	LRG_Weather_MinTime = LRG_Weather_MaxTime;
@@ -81,7 +82,7 @@ setdate (wcweather select 4);
 
 		wcweather set [4, date];
 		publicvariable "wcweather";
-		if(!LRG_Weather_RealTime) then { 
+		if(!LRG_Weather_RealTime) then {
 			if((date select 3 > 16) or (date select 3 <6)) then {
 				setTimeMultiplier LRG_Weather_NightTimeAcc;
 			} else {
@@ -99,7 +100,7 @@ private	_overcast = 0;
 	{
 		params ["_args", "_pfhID"];
 		_args params ["_lastrain", "_rain", "_overcast"];
-		
+
 		_Overcast = random 1;
 		if(_Overcast > 0.70) then {
 			_Rain = random 1;
@@ -135,4 +136,3 @@ private	_overcast = 0;
 
 	}, random (LRG_Weather_MaxTime - LRG_Weather_MinTime), [_lastrain, _rain, _overcast]
 ] call CBA_fnc_addPerFrameHandler;
-	
