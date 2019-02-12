@@ -34,7 +34,7 @@
 				description = "Enable so only those with Pilot Trait can fly.";
 				typeName = "BOOL";
 				defaultValue = 1;
-			};			
+			};
 			class ViewDistanceEnable
 			{
 				displayName = "CH View Distance";
@@ -62,7 +62,7 @@
 				description = "Should players be allowed to turn grass off?";
 				typeName = "BOOL";
 				defaultValue = false;
-			};			
+			};
 			class LRG_Main_ArsenalSaveLoad
 			{
 				displayName = "Arsenal - Save/Load";
@@ -134,7 +134,7 @@
 				description = "Show/Hide Default LRG Diary Entries.";
 				typeName = "BOOL";
 				defaultValue = 1;
-			};			
+			};
 			class LRG_Main_CreatorActions
 			{
 				displayName = "Creator Actions";
@@ -155,7 +155,7 @@
 				description = "Enable/Disable FPS Counter on Map";
 				typeName = "BOOL";
 				defaultValue = 1;
-			};																																										
+			};
 		};
 		class ModuleDescription: ModuleDescription
 		{
@@ -169,4 +169,4 @@
 				synced[] = {"Anything"};
 			};
 		};
-	};	
+	};

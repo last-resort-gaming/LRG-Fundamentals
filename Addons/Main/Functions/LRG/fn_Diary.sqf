@@ -1,9 +1,5 @@
-/*
-	LRG MISSION TEMPLATE
-	fn_Diary.sqf
-	Author: MitchJC
-	Description: Creates Diary Subjects and Records as required.
-*/
+// not documented: postInit
+
 if (isNil "LRG_Main_Master") exitwith {};
 if (not LRG_Main_Master) exitWith{};
 

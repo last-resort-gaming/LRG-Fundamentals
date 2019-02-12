@@ -6,7 +6,7 @@ Description:
 	Show the current FPS of the headless clients, the server and the player on the map,
     adding some coloured flair to indicate the smoothness.
 
-Parameters:
+Arguments:
 	None
 
 Return Values:
@@ -18,6 +18,7 @@ Examples:
 Author:
 	Martin, inspired by Liberation's FPS meter
 */
+
 if (isNil "LRG_Main_Master") exitwith {};
 if (not LRG_Main_Master) exitWith{};
 

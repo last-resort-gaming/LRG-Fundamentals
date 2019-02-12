@@ -4,7 +4,7 @@ Function: YAINA_CMD_fnc_findPlayer
 Description:
 	Find a player, using supplied prefix.
 
-Parameters:
+Arguments:
 	_prefix - The prefix of the wanted player
 
 Return Values:

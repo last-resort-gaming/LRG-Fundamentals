@@ -4,7 +4,7 @@ Function: AIS_Core_fnc_waitUntilAndExecute
 Description:
     Executes a code once in unscheduled environment after a condition is true.
 
-Parameters:
+Arguments:
     _condition - The function to evaluate as condition. <CODE>
     _statement - The function to run once the condition is true. <CODE>
     _args      - Parameters passed to the functions (statement and condition) executing. (optional) <ANY>

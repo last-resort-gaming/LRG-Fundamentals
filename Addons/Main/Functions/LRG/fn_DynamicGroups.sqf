@@ -1,3 +1,5 @@
+// not documented: postInit
+
 if (isNil "LRG_Main_Master") exitwith {};
 if (not LRG_Main_Master) exitWith{};
 

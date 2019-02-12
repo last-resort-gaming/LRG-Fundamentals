@@ -6,7 +6,7 @@ Description
     We handle confirmation of the hint with an EH, to stop a second, normal
     hint from appearing at the top of the screen.
 
-Parameters:
+Arguments:
 	_text - The message that is supposed to be displayed
 
 Return Values:

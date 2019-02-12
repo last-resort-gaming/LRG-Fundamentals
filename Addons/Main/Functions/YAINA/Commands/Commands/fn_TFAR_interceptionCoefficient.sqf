@@ -4,7 +4,7 @@ Function: YAINA_CMD_fnc_TFAR_interceptionCoefficient
 Description:
 	Sets the terrain interception coefficient for TFAR.
 
-Parameters:
+Arguments:
 	_caller - The player that called this command
     _owner - The owner of the player object that called this command
     _argStr - The terrain interception coefficient

@@ -4,7 +4,7 @@ Function: YAINA_CMD_fnc_safeZonePosition
 Description:
 	Sets the position of the safezone.
 
-Parameters:
+Arguments:
 	_caller - The player that called this command
     _owner - The owner of the player object that called this command
     _argStr - x and y coordinates of the new safezone position in the format x,y

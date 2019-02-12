@@ -5,7 +5,7 @@ Description:
 	Execute the given command with (optional) supplied arguments.
 	Runs some checks on whether command execution is actually allowed.
 
-Parameters:
+Arguments:
 	_command - The command we want to have executed
 	_argument - Arguments for the command
 

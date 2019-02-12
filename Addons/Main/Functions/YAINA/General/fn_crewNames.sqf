@@ -5,7 +5,7 @@ Description:
 	Display the crew and vehicle heading/target. Initialized during
     postInit phase.
 
-Parameters:
+Arguments:
 	None
 
 Return Values:

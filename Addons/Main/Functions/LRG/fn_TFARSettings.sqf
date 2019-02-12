@@ -1,3 +1,5 @@
+// not documented: postInit
+
 if (isserver) then {{_x setSpeaker "NoVoice"} forEach playableUnits;}; // Here because it has nowhere else to go!
 
 if (!hasinterface) exitwith {};

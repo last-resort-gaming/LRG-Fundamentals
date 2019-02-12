@@ -3,7 +3,7 @@ Function: AIS_Core_fnc_onNextFrame
 
 Description:
     Executes a code once in non sched environment on the next frame.
-Parameters:
+Arguments:
 
     _function - The function to run. <CODE>
     _args     - Parameters passed to the function executing. This will be the same array every execution. [optional] <ANY>

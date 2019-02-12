@@ -1,21 +1,4 @@
-/*
-Script: RscNotepad
-
-Description:
-	Display script for showing the notepad on-screen.
-
-Parameters:
-	None
-
-Return Values:
-	None
-
-Examples:
-    Nothing to see here, called by createDisplay
-
-Author:
-	Mokka
-*/
+// not documented: called at display creation
 
 #include "\a3\UI_F_Orange\UI\resincl.inc"
 #include "\a3\UI_F_Orange\UI\dikCodes.inc"

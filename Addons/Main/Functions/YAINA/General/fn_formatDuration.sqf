@@ -1,16 +1,20 @@
 /*
-	author: Martin
-	description: none
-	returns: String representation of seconds
+Function: YAINA_fnc_formatDuration
 
-    Output:
-      4 hours 23 minutes
-      1 minute 30 seconds
-      60 seconds
-      1 minute 1 second
-      etc.
+Description:
+    Formats given duration of time in seconds into a string with format hh:mm:ss
+
+Arguments:
+    _in - Duration to format in s
+
+Return Value:
+    Given duration in string format hh:mm:ss
+
+Example:
+    Nothing to see here
+
+Author: Martin
 */
-
 params ["_in"];
 
 _seconds = round(_in);

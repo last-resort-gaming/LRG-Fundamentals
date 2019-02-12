@@ -1,8 +1,19 @@
 /*
-	LRG MISSION TEMPLATE - @OpScripts
-	LR_fnc_DynamicSim.sqf
-	Author: MitchJC
-	Description: If Dynamic Simulation isn't set, this function will auto config to LRG Defaults.
+Function: LR_fnc_DynamicSim
+
+Description:
+    Globally enables or disables dynamic simulation and sets proper parameters.
+
+Arguments:
+    None
+
+Return Value:
+    None
+
+Example:
+    Nothing to see here
+
+Author: MitchJC
 */
 
 if (!IsServer) exitwith {};

@@ -5,21 +5,21 @@ Description:
 	Finds and replaces a certain substring in a given string with a different
 	string.
 
-Parameters:
-	_src - The source string
-	_find - The part to find in the source string
-	_replace - The string that _find shall be replaced with
-	_numLimit - The maximum number of substitutions, default: 1
-	_limit - Set to true to enable the substitution limit, false to disable, default: true
+Arguments:
+	_src - The source string <STRING>
+	_find - The part to find in the source string <STRING>
+	_replace - The string that _find shall be replaced with <STRING>
+	_numLimit - The maximum number of substitutions, default: 1 <SCALAR>
+	_limit - Set to true to enable the substitution limit, false to disable, default: true <BOOLEAN>
 
 Return Values:
 	The edited string
 
 Examples:
     --- Code
-	[
-		"123456123", "123", "abc", 1, true
-	] call LR_fnc_FindReplaceString; // returns "abc456123"
+		[
+			"123456123", "123", "abc", 1, true
+		] call LR_fnc_FindReplaceString; // returns "abc456123"
 	---
 
 Author:
