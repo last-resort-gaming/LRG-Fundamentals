@@ -1,24 +1,25 @@
 /*
-	LRG MISSION TEMPLATE
-	LR_fnc_MedicalFacility.sqf
-	Author: MitchJC
-	Description: Creates an area around _object where players are healed or revived after a time delay.
-	
-	Syntax
-	[_object, _length, _width, _height] call LR_fnc_MedicalFacility;
-	
-	Parameters
-	_object - Object the MedicalFacility is created on.  <OBJECT>
+Function: LR_fnc_MedicalFacility
+
+Description:
+	Creates an area around _object where players are healed or revived after a time delay.
+
+Arguments:
+	_object - Object the MedicalFacility is created on. <OBJECT>
 	_length - Length of Area. <NUMBER>
 	_Width - Width of Area. <NUMBER>
 	_Height- Height of Area. <NUMBER>
 
-	Example 1:	[this] call LR_fnc_MedicalFacility;
-	Example 2:	[this, 10, 5, 5] call LR_fnc_MedicalFacility;
-	Example 3:	[MyMedicalBuilding, 10, 5, 5] call LR_fnc_MedicalFacility;
+Examples:
+	--- Code
+		[this] call LR_fnc_MedicalFacility;
+		[this, 10, 5, 5] call LR_fnc_MedicalFacility;
+		[MyMedicalBuilding, 10, 5, 5] call LR_fnc_MedicalFacility;
+	---
+Author: MitchJC
 */
 if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
-	
+
 params [
 	"_object",
 	["_Length", 5],
