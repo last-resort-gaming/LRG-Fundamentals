@@ -1,3 +1,4 @@
+// not documented: postInit
 
 if (!hasinterface) exitwith {};
 if (isNil "LRG_Main_Master") exitwith {};

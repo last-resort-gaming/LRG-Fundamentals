@@ -14,7 +14,7 @@ class CfgMusic
 		sound[]		= { "z\LRG Fundamentals\addons\Media\Sounds\AirRaid.ogg", 1, 1, 100 };
 		titles[]	= { 0, "" };
 	};
-	
+
 	class NukeAlarm
 	{
 		name		= "NukeAlarm";

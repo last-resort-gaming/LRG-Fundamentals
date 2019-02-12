@@ -4,7 +4,7 @@ Function: YAINA_CMD_fnc_hasCommand
 Description:
 	Checks, if given player has access to the given command(s).
 
-Parameters:
+Arguments:
 	_player - The player which we want to check against
 	_check - Array of commands which we want to check for
 

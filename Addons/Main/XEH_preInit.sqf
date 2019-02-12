@@ -6,7 +6,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -19,7 +19,7 @@
     "LRG Main",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -32,7 +32,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -45,7 +45,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -57,7 +57,7 @@
     "LRG Main",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -70,7 +70,7 @@
     "LRG Main",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -83,7 +83,7 @@
     "LRG Main",
     [5000, 15000, 10000, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -96,7 +96,7 @@
     "LRG Main",
     [5000, 15000, 10000, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -109,7 +109,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -122,7 +122,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -135,7 +135,7 @@
     "LRG Main",
     [0, 5, 2.5, 1],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -148,7 +148,7 @@
     "LRG Main",
     [0, 5, 1, 1],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -161,7 +161,7 @@
     "LRG Main",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -174,7 +174,7 @@
     "LRG Main",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -187,7 +187,7 @@
     "LRG Main",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -200,7 +200,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -213,7 +213,7 @@
     "LRG Main",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -226,7 +226,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -239,7 +239,7 @@
     "LRG Main",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;

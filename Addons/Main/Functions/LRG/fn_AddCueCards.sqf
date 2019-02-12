@@ -1,22 +1,5 @@
-/*
-Function: LR_fnc_AddCueCards
+// not documented: postInit
 
-Description:
-	Adds the LRG Cue Cards for Operations to every player. Executed during postInit,
-	don't call directly!
-
-Parameters:
-	None
-
-Return Values:
-	None
-
-Examples:
-    Nothing to see here, called in postInit
-
-Author:
-	Mokka
-*/
 if (isNil "LRG_Main_Master") exitwith {};
 if (not LRG_Main_Master) exitWith{};
 
@@ -32,25 +15,25 @@ _cueCardsData = [
 		"z\LRG Fundamentals\addons\Media\images\Cue Cards\casevac_request_CA.paa",
 		"CASEVAC Request Card"
 	],
-	
+
 	//	1 - Contact Report Card
 	[
 		"z\LRG Fundamentals\addons\Media\images\Cue Cards\contact_card_CA.paa",
 		"Contact Report Card"
 	],
-	
+
 	// 	2 - FAC 5-Liner Request Card
 	[
 		"z\LRG Fundamentals\addons\Media\images\Cue Cards\fac_5_liner_request_CA.paa",
 		"FAC 5-Liner Request Card"
 	],
-	
+
 	// 	3 - Fire Control Orders Card
 	[
 		"z\LRG Fundamentals\addons\Media\images\Cue Cards\fire_control_orders_CA.paa",
 		"Fire Control Orders Card"
 	],
-	
+
 	// 	4 - Reorg (GASCARD) Card
 	[
 		"z\LRG Fundamentals\addons\Media\images\Cue Cards\reorg_gascard_CA.paa",

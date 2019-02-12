@@ -1,3 +1,4 @@
+// not documented: module called
 
 params [
     ["_logic",objNull,[objNull]],
@@ -32,15 +33,15 @@ systemchat format ["%1", _ServiceTypes];
 
 private _objects = synchronizedObjects _logic;
 
-    {
-        private _SpawnLocation = getPosATL _x;
+{
+    private _SpawnLocation = getPosATL _x;
 
-        _trg = createTrigger ["EmptyDetector",_SpawnLocation];
-        _trg setTriggerArea [_Area, _Area, getdir _x, false, _Height];
-        _trg setTriggerActivation ["ANY", "PRESENT", true];
-        _trg setTriggerStatements [
+    _trg = createTrigger ["EmptyDetector",_SpawnLocation];
+    _trg setTriggerArea [_Area, _Area, getdir _x, false, _Height];
+    _trg setTriggerActivation ["ANY", "PRESENT", true];
+    _trg setTriggerStatements [
         "_v = (thislist select 0); { _v isKindOf _x } count [""UAV"", ""Plane"", ""Helicopter"", ""LandVehicle""] > 0 && { speed _v < 1 } && { isTouchingGround _v };",
         "call { _v = (thisList select 0); if (_v isKindOf ""UAV"") exitWith { [_v] execVM ""z\LRG Fundamentals\Addons\Vehicles\Scripts\uav.sqf""; }; _type = { if (_v isKindOf _x) exitWith { _x } ; nil } count [""UAV"", ""Plane"", ""Helicopter"", ""LandVehicle""];if (_type isEqualTo 0) exitWith {};[_type, _v, 30, 30] execVM ""z\LRG Fundamentals\Addons\Vehicles\Scripts\general.sqf"";};",
-        ""];
-
-    } foreach _objects;
+        ""
+    ];
+} foreach _objects;

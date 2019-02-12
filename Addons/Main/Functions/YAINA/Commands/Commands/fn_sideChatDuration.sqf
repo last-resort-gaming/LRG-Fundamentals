@@ -4,7 +4,7 @@ Function: YAINA_CMD_fnc_sideChatDuration
 Description:
 	Sets the duration for how long the sidechat is active.
 
-Parameters:
+Arguments:
 	_caller - The player that called this command
     _owner - The owner of the player object that called this command
     _argStr - The duration for how long the sidechat is active

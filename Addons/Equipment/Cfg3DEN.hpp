@@ -24,7 +24,7 @@ class Cfg3DEN {
                     strings[] = {"None", "Vanilla", "3CB", "RHS"};
                 };
             };
-        };        
+        };
         class EquipmentSelect: Title {
             attributeLoad = "(_this controlsGroupCtrl 100) lbSetCurSel (((_value + 1) min 3) max 0);";
             attributeSave = "(lbCurSel (_this controlsGroupCtrl 100)) - 1";
@@ -78,7 +78,7 @@ class Cfg3DEN {
                         typeName = "STRING";
                         condition = "objectHasInventoryCargo - objectVehicle";
                         defaultValue = "-1";
-                    }; 
+                    };
                 };
             };
         };

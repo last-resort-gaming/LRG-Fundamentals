@@ -5,12 +5,12 @@ Description:
 	Plays a sound on an object by attaching a dummy object to said object. Dummy
 	object can be deleted later to stop the sound from playing.
 
-Parameters:
+Arguments:
 	_pos - The position at which to play the sound <ARRAY>
 	_sound - The name of the sound class (CfgSounds) <STRING>
-	_distance - How far away the sound can be heard from _object. <NUMBER>
-	_pitch - pitch of the sound. Should usually be 1. <NUMBER>
-	_volume - Volume of the sound. If volume above 1 sound is multiplied <NUMBER>
+	_distance - How far away the sound can be heard from _object. <SCALAR>
+	_pitch - pitch of the sound. Should usually be 1. <SCALAR>
+	_volume - Volume of the sound. If volume above 1 sound is multiplied <SCALAR>
 
 Return Values:
 	Dummy object playing the sound

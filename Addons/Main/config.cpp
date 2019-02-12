@@ -1,10 +1,3 @@
-////////////////////////////////////////////////////////////////////
-//DeRap: LRG_Modules\config.bin
-//Produced from mikero's Dos Tools Dll version 6.44
-//'now' is Thu Jan 03 16:49:44 2019 : 'file' last modified on Wed Dec 05 17:41:22 2018
-//http://dev-heaven.net/projects/list_files/mikero-pbodll
-////////////////////////////////////////////////////////////////////
-
 #include "script_component.hpp"
 
 class CfgPatches
@@ -30,11 +23,6 @@ class Extended_PreInit_EventHandlers {
     class LRG_Main_Event {
         init = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Main\XEH_preInit.sqf'";
     };
-};
-
-class CfgScriptPaths
-{
-	LRGDisplays = "z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\";
 };
 
 class CfgFactionClasses
@@ -68,3 +56,8 @@ class CfgFunctions {
 #include "Functions\AIS\Effects\BarDlg.hpp"
 #include "Functions\CHVD\dialog.hpp"
 #include "Functions\YAINA\General\crewNamesTitles.hpp"
+
+class CfgScriptPaths
+{
+	LRGDisplays = "z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\";
+};

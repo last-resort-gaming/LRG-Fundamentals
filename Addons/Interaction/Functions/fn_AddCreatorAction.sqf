@@ -5,23 +5,23 @@ Description:
 	Adds an action for the mission creator that allows executing code/functions
 	during the live mission.
 
-Parameters:
-	_title - The globally unique identifier of the action
-	_name - The name of the action as shown to players
-	_statement - The code executed upon calling the action, the following params are available: [_target, _caller, _args]
-	_args - Arguments for the statement script
+Arguments:
+	_title - The globally unique identifier of the action <STRING>
+	_name - The name of the action as shown to players <STRING>
+	_statement - The code executed upon calling the action, the following params are available: [_target, _caller, _args] <CODE>
+	_args - Arguments for the statement script <ARRAY OF ANYTHING>
 
 Return Values:
 	None
 
 Examples:
     --- Code
-	[
-		"MissionStart",
-		"Start Mission",
-		{hint "Mission started!";},
-		[]
-	] call LR_fnc_AddCreatorAction;
+		[
+			"MissionStart",
+			"Start Mission",
+			{hint "Mission started!";},
+			[]
+		] call LR_fnc_AddCreatorAction;
 	---
 
 Author:

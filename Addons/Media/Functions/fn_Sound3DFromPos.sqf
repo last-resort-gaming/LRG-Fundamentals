@@ -3,15 +3,15 @@ Function: LR_Sound3DFromPos
 
 Description:
 	Plays a sound in 3D Space at a given position on every player.
-	lenght property needs to be set for the sound in config. If value is 
+	lenght property needs to be set for the sound in config. If value is
 	omitted, sound won't play properly!
 
-Parameters:
+Arguments:
 	_pos - The position at which to play the sound <ARRAY>
 	_sound - The name of the sound class (CfgSounds) <STRING>
-	_distance - How far away the sound can be heard from _object. <NUMBER>
-	_pitch - pitch of the sound. Should usually be 1. <NUMBER>
-	_volume - Volume of the sound. If volume above 1 sound is multiplied <NUMBER>
+	_distance - How far away the sound can be heard from _object. <SCALAR>
+	_pitch - pitch of the sound. Should usually be 1. <SCALAR>
+	_volume - Volume of the sound. If volume above 1 sound is multiplied <SCALAR>
 
 Return Values:
 	Nothing

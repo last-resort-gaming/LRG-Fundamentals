@@ -1,10 +1,3 @@
-////////////////////////////////////////////////////////////////////
-//DeRap: LRG_Modules\config.bin
-//Produced from mikero's Dos Tools Dll version 6.44
-//'now' is Thu Jan 03 16:49:44 2019 : 'file' last modified on Wed Dec 05 17:41:22 2018
-//http://dev-heaven.net/projects/list_files/mikero-pbodll
-////////////////////////////////////////////////////////////////////
-
 #include "script_component.hpp"
 
 class CfgPatches
@@ -67,7 +60,7 @@ class LRG_ModuleSafeZone: Module_F
 				description = "How long should the safe zone be active. -1 means permanent.";
 				typeName = "NUMBER";
 				defaultValue = -1;
-			};																																		
+			};
 		};
 		class ModuleDescription: ModuleDescription
 		{

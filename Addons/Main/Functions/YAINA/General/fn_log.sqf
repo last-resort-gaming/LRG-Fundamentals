@@ -5,7 +5,7 @@ Description:
 	General purpose logging function, that logs the message either to
 	the rpt or to an external log using A3Log.
 
-Parameters:
+Arguments:
 	_message - The log message
 	_log - The log type, for example Kill Log, Admin Log or General Log
 

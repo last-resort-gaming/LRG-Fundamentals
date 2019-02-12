@@ -6,7 +6,7 @@
     "LRG AI",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -19,7 +19,7 @@
     "LRG AI",
     [0, 1, 0.10, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -32,7 +32,7 @@
     "LRG AI",
     [0, 1, 0.45, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -45,7 +45,7 @@
     "LRG AI",
     [0, 1, 0.30, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -58,7 +58,7 @@
     "LRG AI",
     [0, 1, 1.00, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -71,7 +71,7 @@
     "LRG AI",
     [0, 1, 1.00, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -84,7 +84,7 @@
     "LRG AI",
     [0, 1, 1.00, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -97,7 +97,7 @@
     "LRG AI",
     [0, 1, 0.50, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -110,7 +110,7 @@
     "LRG AI",
     [0, 1, 0.40, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -123,7 +123,7 @@
     "LRG AI",
     [0, 1, 0.20, 2],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;

@@ -6,7 +6,7 @@ Description:
     Setup is mainly concerned with handling post-ban messages 
     and display population.
 
-Parameters:
+Arguments:
 	None
 
 Return Values:

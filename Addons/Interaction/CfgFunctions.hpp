@@ -9,7 +9,6 @@ class LRG_Interaction {
 		class AddHoldAction {};
 		class AddSelfAction {};
 		class DynamicText {};
-		class FindReplaceString {};
 		class InitInspectableIntel {};
 		class LaptopHoldActions {};
 		class PlayerAddActions {};

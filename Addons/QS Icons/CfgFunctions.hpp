@@ -1,3 +1,4 @@
+// not documented: postInit
 
 class LRG_QSIcons {
 

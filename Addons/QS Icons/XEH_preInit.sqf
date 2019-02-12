@@ -6,7 +6,7 @@
     "LRG QS Icons",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -19,7 +19,7 @@
     "LRG QS Icons",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -32,7 +32,7 @@
     "LRG QS Icons",
     [0, 300, 60, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -46,7 +46,7 @@
     "LRG QS Icons",
     true,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -59,7 +59,7 @@
     "LRG QS Icons",
     [0, 500, 300, 0],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -72,7 +72,7 @@
     "LRG QS Icons",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -85,7 +85,7 @@
     "LRG QS Icons",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -98,7 +98,7 @@
     "LRG QS Icons",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -111,7 +111,7 @@
     "LRG QS Icons",
     false,
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -131,7 +131,7 @@
         ["AWS", "A3 Wounding System by Psycho."]
     ], 3],
     true,
-    {  
+    {
         params ["_value"];
         call {
             if (_value IsEqualTo 0) exitwith {LRG_QSIcons_MedicalSystem = ['BIS'];};
@@ -166,7 +166,7 @@
         ["TahomaB", "TahomaB."]
     ], 0],
     true,
-    {  
+    {
         params ["_value"];
         call {
             if (_value IsEqualTo 0) exitwith {LRG_QSIcons_IconTextFonts = ['EtelkaMonospacePro'];};
@@ -192,7 +192,7 @@
     "LRG QS Icons",
     [0.5,0,0,0.65],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -205,7 +205,7 @@
     "LRG QS Icons",
     [0,0.3,0.6,0.65],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -218,7 +218,7 @@
     "LRG QS Icons",
     [0,0.5,0,0.65],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -231,7 +231,7 @@
     "LRG QS Icons",
     [0.4,0,0.5,0.65],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -244,7 +244,7 @@
     "LRG QS Icons",
     [0.7,0.6,0,0.5],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -257,7 +257,7 @@
     "LRG QS Icons",
     [1,0.41,0,1],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;
@@ -270,7 +270,7 @@
     "LRG QS Icons",
     [0.75,0.55,0,0.75],
     true,
-    {  
+    {
 
     }
 ] call CBA_Settings_fnc_init;

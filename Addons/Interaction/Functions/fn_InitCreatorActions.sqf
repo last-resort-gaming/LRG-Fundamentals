@@ -1,30 +1,4 @@
-/*
-Function: LR_fnc_InitCreatorActions
-
-Description:
-	This functions initializes the creator action system which allows mission
-	creators to execute predefined functions/commands in (or, in general, 
-	interact with) the live mission.
-
-	Actions added using the function LR_fnc_AddCreatorAction can be executed at
-	any point in time after it was added. If ACE is in use the actions are added
-	directly to the self-actions, otherwise the mouse-wheel interaction menu is
-	used.
-
-	Executed during postInit, don't call directly!
-
-Parameters:
-	None
-
-Return Values:
-	None
-
-Examples:
-    Nothing to see here
-
-Author:
-	Mokka
-*/
+// not documented: postInit
 if (isNil "LRG_Main_Master") exitwith {};
 if (not LRG_Main_Master) exitWith{};
 

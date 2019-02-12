@@ -1,9 +1,5 @@
-/*
-	LRG MISSION TEMPLATE
-	fn_ArsenalLoadSave.sqf
-	Author: MitchJC
-	Description: Removes Load/Save function from the Virtual Arsenal.
-*/
+// not documented: postInit
+
 if (isNil "LRG_Main_Master") exitwith {};
 if (not LRG_Main_Master) exitWith{};
 

@@ -1,23 +1,31 @@
-// Infantry Occupy House
-// by Zenophon
-// Modified by Mokka (lastresortgaming.net)
-// Released under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
-// http://creativecommons.org/licenses/by-nc/4.0/
+/*
+Function: derp_fnc_ZenOccupy
 
-// Teleports the units to random windows of the building(s) within the distance
-// Faces units in the right direction and orders them to stand up or crouch on a roof
-// Units will only fill the building to as many positions as are at windows
-// Multiple buildings can be filled either evenly or to the limit of each sequentially
-// Usage : Call
-// Params: 1. Position (Array), the building(s) nearest this position is used
-//         2. Objects (Array), the units that will garrison the building(s)
-//         3. Scalar, radius in which to fill building(s), -1 for only nearest building
-//         4. Boolean, true to put units on the roof, false for only inside
-//         5. Boolean, true to fill all buildings in radius evenly, false for one by one
-//		   6. Number, mode setting (0: normal/1: by classname)
-//		   7. Class Name, if mode = 1
-// Return: Objects (Array), the units that were not garrisoned
+Description:
+    Teleports the units to random windows of the building(s) within the distance
+	Faces units in the right direction and orders them to stand up or crouch on a roof
+	Units will only fill the building to as many positions as are at windows
+	Multiple buildings can be filled either evenly or to the limit of each sequentially
 
+	Released under Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+	http://creativecommons.org/licenses/by-nc/4.0/
+
+Arguments:
+    _center - Buildings nearest to this position and within the radius will be used <POSITION 3D>
+	_units - The units that shall be garrisoned <ARRAY OF UNITS>
+	_buildingRadius - Radius in which to fill buildings, -1 to only use nearest building <SCALAR>
+	_putOnRoof - Put units on roofs of buildings? <BOOLEAN>
+	_fillEvenly - Fill buildings evenly or one by one? <BOOLEAN>
+	_mode - Mode setting, 1 for "by class name", 0 for normal <SCALAR 0/1>
+	_classRef - Class name of buildings to garrison <STRING>
+Return Value:
+    Array of units that were NOT garrisoned <ARRAY OF UNITS>
+
+Example:
+    Nothing to see here
+
+Author: Zenophon, modified by Mokka
+*/
 #define I(X) X = X + 1;
 #define EYE_HEIGHT 1.53
 #define CHECK_DISTANCE 5
@@ -25,7 +33,29 @@
 #define ROOF_CHECK 4
 #define ROOF_EDGE 2
 
-private ["_center", "_units", "_buildingRadius", "_putOnRoof", "_fillEvenly", "_Zen_ExtendPosition", "_buildingsArray", "_buildingPosArray", "_buildingPositions", "_posArray", "_unitIndex", "_j", "_building", "_posArray", "_randomIndex", "_housePos", "_startAngle", "_i", "_checkPos", "_hitCount", "_isRoof", "_edge", "_k", "_unUsedUnits"];
+private [
+	"_center",
+	"_units",
+	"_buildingRadius",
+	"_putOnRoof",
+	"_fillEvenly",
+	"_Zen_ExtendPosition",
+	"_buildingsArray",
+	"_buildingPosArray",
+	"_buildingPositions",
+	"_posArray",
+	"_unitIndex", "_j",
+	"_building",
+	"_posArray",
+	"_randomIndex",
+	"_housePos",
+	"_startAngle", "_i",
+	"_checkPos",
+	"_hitCount",
+	"_isRoof",
+	"_edge", "_k",
+	"_unUsedUnits"
+];
 
 _center = _this select 0;
 _units = _this select 1;

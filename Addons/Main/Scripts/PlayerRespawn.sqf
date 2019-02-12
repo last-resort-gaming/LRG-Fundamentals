@@ -1,20 +1,15 @@
-/*
-	LRG MISSION TEMPLATE
-	OnPlayerRespawn.sqf
-	Author: MitchJC
-	Description: Scripts executed when a player respawns.
-*/
-	player disableConversation true;
-	[player ,"NoVoice"] remoteExec ["setSpeaker",0,true];
-	
-	call LR_fnc_PlayerAddActions;
-	
-	{_x addCuratorEditableObjects [[player],FALSE];} count allCurators;
-	
-	if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
-		[] execVM "scripts\earplugs.sqf";
-		player enableFatigue false;
-	};
+// not documented: executed at player respawn
+player disableConversation true;
+[player ,"NoVoice"] remoteExec ["setSpeaker",0,true];
+
+call LR_fnc_PlayerAddActions;
+
+{_x addCuratorEditableObjects [[player],FALSE];} count allCurators;
+
+if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+	[] execVM "scripts\earplugs.sqf";
+	player enableFatigue false;
+};
 
 
 if (isNil { player getVariable "StartingPos"; } ) then {

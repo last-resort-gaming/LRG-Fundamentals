@@ -6,7 +6,7 @@ Description:
     This setup is mainly concerned with initializing the necessary
     variables and adding the required event handlers.
 
-Parameters:
+Arguments:
 	None
 
 Return Values:

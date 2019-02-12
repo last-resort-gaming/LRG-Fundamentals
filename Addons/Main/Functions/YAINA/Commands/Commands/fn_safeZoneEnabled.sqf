@@ -4,7 +4,7 @@ Function: YAINA_CMD_fnc_safeZoneEnabled
 Description:
 	Enabled or disabled the safezone around base.
 
-Parameters:
+Arguments:
 	_caller - The player that called this command
     _owner - The owner of the player object that called this command
     _argStr - True to enable the safezone, False to disable

@@ -6,7 +6,7 @@ Description:
 	to use LRG section names. Also, use remoteExec instead of the horrendously
 	old BIS_fnc_MP.
 
-Parameters:
+Arguments:
 	_object - The object to which the addAction was attached
 	_caller - The player that interacted with the addAction
 	_arguments - Array of arguments passed to the addAction

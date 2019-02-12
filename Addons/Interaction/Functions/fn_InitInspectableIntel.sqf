@@ -21,7 +21,7 @@ Description:
 	_sharedWith - The side with which the intel shall be shared (default: west)
 	_notifySide - Optional: Notify the player's side through systemChat? (default: no)
 
-Parameters:
+Arguments:
 	_object - The object to initialize
 	_args - Intel Argument Array (see above)
 

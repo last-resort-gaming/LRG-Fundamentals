@@ -13,33 +13,33 @@ Description:
 
 	The keyword "_this" is reserved, don't use it in the condition string!
 
-Parameters:
-	_object - The object to which the action is added
-	_id - The globally unique identifier of the action (used for ACE, JIP etc)
-	_title - The title of the action as shown to players
-	_statement - The code executed upon calling the action, the following params are available: [_target, _caller, _args]
-	_args - Arguments for the statement script (Optional), default: []
-	_condition - Code in string which needs to be true for the action to show up, default: "true"
-	_removeCompleted - Remove the action after it has been completed/called, default: true
-	_distance - The radius in m around the object in which the object is visible, default: 10
-	_global - Set to true to add the action to every player
+Arguments:
+	_object - The object to which the action is added <OBJECT>
+	_id - The globally unique identifier of the action (used for ACE, JIP etc) <STRING>
+	_title - The title of the action as shown to players <STRING>
+	_statement - The code executed upon calling the action, the following params are available: [_target, _caller, _args] <CODE>
+	_args - Arguments for the statement script (Optional), default: [] <ARRAY OF ANYTHING>
+	_condition - Code in string which needs to be true for the action to show up, default: "true" <STRING>
+	_removeCompleted - Remove the action after it has been completed/called, default: true <BOOLEAN>
+	_distance - The radius in m around the object in which the object is visible, default: 10 <SCALAR>
+	_global - Set to true to add the action to every player <BOOLEAN>
 
 Return Values:
 	None
 
 Examples:
     --- Code
-	[
-		Car,
-		"UnlockCar",
-		"Unlock Car",
-		{hint "Car unlocked!";},
-		[],
-		"true",
-		true,
-		15,
-		true
-	] call LR_fnc_AddAction;
+		[
+			Car,
+			"UnlockCar",
+			"Unlock Car",
+			{hint "Car unlocked!";},
+			[],
+			"true",
+			true,
+			15,
+			true
+		] call LR_fnc_AddAction;
 	---
 
 Author:

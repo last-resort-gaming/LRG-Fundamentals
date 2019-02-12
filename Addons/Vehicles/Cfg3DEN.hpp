@@ -42,7 +42,7 @@ class Cfg3DEN {
                         typeName = "STRING";
                         condition = "objectVehicle";
                         defaultValue = "-1";
-                    }; 
+                    };
                 };
             };
         };

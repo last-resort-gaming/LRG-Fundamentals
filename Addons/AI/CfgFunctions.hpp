@@ -9,7 +9,7 @@ class LRG_AI {
 		class moduleAISpawns {};
 		class SetInitialAI {Postinit = 1;};
 		class SetUnitSkill {};
-		class SpawnAI {};		
+		class SpawnAI {};
 	};
 
 	class Factions {
@@ -77,7 +77,7 @@ class LRG_AI {
 		class UK3CB_BAF_Faction_Army_Tropical {};
 		class UK3CB_BAF_Faction_Army_Woodland {};
 		class UNSUNG_E_NVA {};
-	};	
+	};
 };
 
 class DERP {

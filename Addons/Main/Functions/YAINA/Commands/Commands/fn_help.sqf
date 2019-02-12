@@ -4,7 +4,7 @@ Function: YAINA_CMD_fnc_help
 Description:
 	Displays the list of currently available commands for the caller.
 
-Parameters:
+Arguments:
 	_caller - The player that called this command
     _owner - The owner of the player object that called this command
     _argStr - Not used

@@ -1,20 +1,22 @@
 /*
-	LRG MISSION TEMPLATE
-	LR_fnc_ResetTargets.sqf
-	Author: MitchJC
-	Description: Used to set pop up targets to fall when hit and then up on laptop command.
-	
-	Syntax
-	[_object, _title, _center, _distance] call LR_fnc_ResetTargets;
-	
-	Parameters
-	_object - Object the addaction is applied to.  <OBJECT>
+Function: LR_fnc_ResetTargets
+
+Description:
+	Used to set pop up targets to fall when hit and then up on laptop command.
+
+Arguments:
+	_object - Object the addaction is applied to. <OBJECT>
 	_title - The name of the addaction, visable to players. <STRING>
 	_center - Center of area to check for Pop up targets <ARRAY>
-	_distance -  How far from center point to look for Pop Up targets<STRING>
-	
-	Example 1:	[this, "Reset Targets", [1200,4200,0], 250] call LR_fnc_ResetTargets;
-	Example 2:	[MyLaptopName, "Reset 300m Range", [5500,3522,0], 300] call LR_fnc_ResetTargets;
+	_distance -  How far from center point to look for Pop Up targets <STRING>
+
+Examples:
+	--- Code
+		[this, "Reset Targets", [1200,4200,0], 250] call LR_fnc_ResetTargets;
+		[MyLaptopName, "Reset 300m Range", [5500,3522,0], 300] call LR_fnc_ResetTargets;
+	---
+
+Author: MitchJC
 */
 
 if (!isServer) exitWith {};
