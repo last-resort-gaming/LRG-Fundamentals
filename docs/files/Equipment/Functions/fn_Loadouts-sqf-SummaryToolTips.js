@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Equipment/Functions/fn_Loadouts.sqf",{16:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Applies a specified loadout to the given unit. Loadouts are currently hardcoded, but will be replaced with config data later down the line.</div></div>"});

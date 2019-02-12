@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Vehicles/Functions/fn_VehicleLoadout.sqf",{110:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Used to configure basic container equipment and ACE medical state.</div></div>"});

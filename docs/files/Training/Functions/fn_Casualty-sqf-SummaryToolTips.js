@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Training/Functions/fn_Casualty.sqf",{108:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Used to set an AI to a triage state via hold add actions.</div></div>"});

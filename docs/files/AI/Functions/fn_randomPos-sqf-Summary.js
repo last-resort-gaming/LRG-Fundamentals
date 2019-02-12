@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:AI/Functions/fn_randomPos.sqf","fn_randomPos.sqf");NDSummary.OnSummaryLoaded("File:AI/Functions/fn_randomPos.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[3,0,1,"Functions","Functions"],[4,0,0,"derp_fnc_randomPos","derp_fnc_randomPos"]]);

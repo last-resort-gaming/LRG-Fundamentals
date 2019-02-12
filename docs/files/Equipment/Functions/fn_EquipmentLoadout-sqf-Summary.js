@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Equipment/Functions/fn_EquipmentLoadout.sqf","fn_EquipmentLoadout.sqf");NDSummary.OnSummaryLoaded("File:Equipment/Functions/fn_EquipmentLoadout.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[13,0,1,"Functions","Functions"],[14,0,0,"LR_fnc_ConfigEquipment","LR_fnc_ConfigEquipment"]]);

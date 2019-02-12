@@ -1,1 +1,1 @@
-NDSearch.OnPrefixDataLoaded("der",["Function"],[["derp_fnc_AIOccupyBuilding",,[[,,,,0,"File:AI/Functions/fn_AIOccupyBuilding.sqf:derp_fnc_AIOccupyBuilding"]]]]);
+NDSearch.OnPrefixDataLoaded("der",["Function"],[["derp_fnc_AIOccupyBuilding",,[[,,,,0,"File:AI/Functions/fn_AIOccupyBuilding.sqf:derp_fnc_AIOccupyBuilding"]]],["derp_fnc_randomPos",,[[,,,,0,"File:AI/Functions/fn_randomPos.sqf:derp_fnc_randomPos"]]],["derp_fnc_ZenOccupy",,[[,,,,0,"File:AI/Functions/fn_ZenOccupy.sqf:derp_fnc_ZenOccupy"]]]]);

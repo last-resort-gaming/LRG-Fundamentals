@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Vehicles/Scripts/general.sqf",{114:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Service on general vehicles.</div></div>"});

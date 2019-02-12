@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Media/Functions/fn_Patches.sqf",{98:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Apply Section Patches to Players/Vehicles</div></div>"});

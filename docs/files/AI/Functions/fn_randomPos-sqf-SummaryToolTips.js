@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:AI/Functions/fn_randomPos.sqf",{4:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Returns a random position around a given pos, searching in a circle around the original with given radius. Optionally, an arithmetic search term may also be supplied.</div></div>"});

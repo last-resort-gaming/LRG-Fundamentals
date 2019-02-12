@@ -1,1 +1,1 @@
-NDSearch.OnPrefixIndexLoaded(["ais","der","ear","lr_","rsc","sqf","yai"]);
+NDSearch.OnPrefixIndexLoaded(["ais","der","gen","lr_","uav","yai"]);

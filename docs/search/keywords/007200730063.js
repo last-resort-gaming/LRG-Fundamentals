@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("rsc",["File"],[["RscDisplayCueCard",,[[,,,,0,"File:Main/Scripts/UI/Displays/RscDisplayCueCard.sqf:RscDisplayCueCard"]]],["RscNotepad",,[[,,,,0,"File:Main/Scripts/UI/Displays/RscNotepad.sqf:RscNotepad"]]]]);
