@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Functions/LRG/fn_AddCueCards.sqf",{38:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Adds the LRG Cue Cards for Operations to every player. Executed during postInit, don\'t call directly!</div></div>"});

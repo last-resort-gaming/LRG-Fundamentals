@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Media/Functions/fn_Sound3DOnObject.sqf","fn_Sound3DOnObject.sqf");NDSummary.OnSummaryLoaded("File:Media/Functions/fn_Sound3DOnObject.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[78,0,1,"Functions","Functions"],[79,0,0,"LR_Sound3DOnObject","LR_Sound3DOnObject"]]);

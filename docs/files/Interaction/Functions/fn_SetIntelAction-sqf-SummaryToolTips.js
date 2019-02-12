@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Interaction/Functions/fn_SetIntelAction.sqf",{14:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Sets up the necessary action for the interactive intel created by LR_fnc_initInspectableIntel. Do not use this yourself, it\'s always to be called directly through the aforementioned function.</div></div>"});

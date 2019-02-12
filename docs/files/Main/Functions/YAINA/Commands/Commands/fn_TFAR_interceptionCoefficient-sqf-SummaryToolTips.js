@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/Commands/Commands/fn_TFAR_interceptionCoefficient.sqf",{52:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Sets the terrain interception coefficient for TFAR.</div></div>"});

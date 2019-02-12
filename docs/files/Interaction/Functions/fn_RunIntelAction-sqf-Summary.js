@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Interaction/Functions/fn_RunIntelAction.sqf","fn_RunIntelAction.sqf");NDSummary.OnSummaryLoaded("File:Interaction/Functions/fn_RunIntelAction.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[15,0,1,"Functions","Functions"],[16,0,0,"LR_fnc_RunIntelAction","LR_fnc_RunIntelAction"]]);

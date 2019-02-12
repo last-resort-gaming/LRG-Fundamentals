@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Scripts/Earplugs/earplugs.sqf",{75:"<div class=\"NDToolTip TFile LSQF\"><div class=\"TTSummary\">Handle the action of a user adding/removing earplugs.&nbsp; Parameters: _target, _caller, _id, _arguments from event action Returns: None Author: MartinCo</div></div>"});

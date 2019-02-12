@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/General/fn_showFPS.sqf",{68:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Handles initialization of the FPS meter during the postInit phase.&nbsp; Show the current FPS of the headless clients, the server and the player on the map, adding some coloured flair to indicate the smoothness.</div></div>"});

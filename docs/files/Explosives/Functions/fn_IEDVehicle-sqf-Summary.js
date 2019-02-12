@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Explosives/Functions/fn_IEDVehicle.sqf","fn_IEDVehicle.sqf");NDSummary.OnSummaryLoaded("File:Explosives/Functions/fn_IEDVehicle.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[9,0,1,"Functions","Functions"],[10,0,0,"LR_fnc_IEDVehicle","LR_fnc_IEDVehicle"]]);

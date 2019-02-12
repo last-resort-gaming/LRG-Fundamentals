@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Scripts/UI/Displays/RscNotepad.sqf",{76:"<div class=\"NDToolTip TFile LSQF\"><div class=\"TTSummary\">Display script for showing the notepad on-screen.</div></div>"});

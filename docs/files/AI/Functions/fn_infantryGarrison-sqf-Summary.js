@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:AI/Functions/fn_infantryGarrison.sqf","fn_infantryGarrison.sqf");NDSummary.OnSummaryLoaded("File:AI/Functions/fn_infantryGarrison.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[3,0,1,"Functions","Functions"],[4,0,0,"YAINA_SPAWNS_fnc_infantryGarrison","YAINA_SPAWNS_fnc_infantryGarrison"]]);

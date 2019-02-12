@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/Commands/Core/fn_postInit.sqf",{58:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Handles initialization for the commands system.&nbsp; Setup is mainly concerned with handling post-ban messages and display population.</div></div>"});

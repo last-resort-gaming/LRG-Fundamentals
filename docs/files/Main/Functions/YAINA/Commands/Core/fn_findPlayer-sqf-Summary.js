@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Main/Functions/YAINA/Commands/Core/fn_findPlayer.sqf","fn_findPlayer.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/YAINA/Commands/Core/fn_findPlayer.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[63,0,1,"Functions","Functions"],[64,0,0,"YAINA_CMD_fnc_findPlayer","YAINA_CMD_fnc_findPlayer"]]);

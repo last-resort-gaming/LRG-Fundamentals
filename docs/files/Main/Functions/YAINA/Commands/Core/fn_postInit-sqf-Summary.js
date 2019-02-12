@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Main/Functions/YAINA/Commands/Core/fn_postInit.sqf","fn_postInit.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/YAINA/Commands/Core/fn_postInit.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[57,0,1,"Functions","Functions"],[58,0,0,"YAINA_CMD_fnc_postInit","YAINA_CMD_fnc_postInit"]]);

@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Main/Functions/YAINA/Commands/Commands/fn_safeZoneArea.sqf","fn_safeZoneArea.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/YAINA/Commands/Commands/fn_safeZoneArea.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[45,0,1,"Functions","Functions"],[46,0,0,"YAINA_CMD_fnc_safeZoneArea","YAINA_CMD_fnc_safeZoneArea"]]);

@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:AI/Functions/fn_AIOccupyBuilding.sqf",{6:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Author: alganthe</div></div>"});

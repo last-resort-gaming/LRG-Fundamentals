@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Main/Functions/YAINA/General/fn_showFPS.sqf","fn_showFPS.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/YAINA/General/fn_showFPS.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[67,0,1,"Functions","Functions"],[68,0,0,"YAINA_fnc_showFPS","YAINA_fnc_showFPS"]]);

@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Main/Functions/AIS/Core/fn_waitUntilAndExecute.sqf","fn_waitUntilAndExecute.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/AIS/Core/fn_waitUntilAndExecute.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[35,0,1,"Functions","Functions"],[36,0,0,"AIS_Core_fnc_waitUntilAndExecute","AIS_Core_fnc_waitUntilAndExecute"]]);

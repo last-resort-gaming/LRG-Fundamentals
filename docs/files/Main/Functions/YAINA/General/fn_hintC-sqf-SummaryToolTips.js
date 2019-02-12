@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/General/fn_hintC.sqf",{72:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Description Show a cadet hint (hintC) on the machine that called this function.&nbsp; We handle confirmation of the hint with an EH, to stop a second, normal hint from appearing at the top of the screen.</div></div>"});

@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Interaction/Functions/fn_AddCreatorAction.sqf","fn_AddCreatorAction.sqf");NDSummary.OnSummaryLoaded("File:Interaction/Functions/fn_AddCreatorAction.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[27,0,1,"Functions","Functions"],[28,0,0,"LR_fnc_AddCreatorAction","LR_fnc_AddCreatorAction"]]);

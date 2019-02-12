@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("sqf",["File"],[["sqf",,[[,"earplugs.sqf",,,0,"File:Main/Scripts/Earplugs/earplugs.sqf:earplugs.sqf"]]]]);

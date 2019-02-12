@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Interaction/Functions/fn_FindReplaceString.sqf",{22:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Finds and replaces a certain substring in a given string with a different string.</div></div>"});

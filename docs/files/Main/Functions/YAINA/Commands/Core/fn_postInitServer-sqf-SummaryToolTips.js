@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/Commands/Core/fn_postInitServer.sqf",{56:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Handled server-side initialization of the commands system.&nbsp; This setup is mainly concerned with initializing the necessary variables and adding the required event handlers.</div></div>"});

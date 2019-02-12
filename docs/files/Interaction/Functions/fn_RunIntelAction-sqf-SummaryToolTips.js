@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Interaction/Functions/fn_RunIntelAction.sqf",{16:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Adapted version of the action part of BIS_fnc_initIntelObject to enable us to use LRG section names. Also, use remoteExec instead of the horrendously old BIS_fnc_MP.</div></div>"});

@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/Commands/Core/fn_log.sqf",{60:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">General purpose function for logging command useage.&nbsp; In essence just a nice formatter.</div></div>"});

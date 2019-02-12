@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Main/Scripts/UI/Displays/RscDisplayCueCard.sqf",{77:"<div class=\"NDToolTip TFile LSQF\"><div class=\"TTSummary\">Display script for showing cue cards on-screen.</div></div>"});

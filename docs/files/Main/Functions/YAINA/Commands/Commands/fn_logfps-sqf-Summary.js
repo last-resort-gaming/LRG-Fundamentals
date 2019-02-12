@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Main/Functions/YAINA/Commands/Commands/fn_logfps.sqf","fn_logfps.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/YAINA/Commands/Commands/fn_logfps.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[47,0,1,"Functions","Functions"],[48,0,0,"YAINA_CMD_fnc_logfps","YAINA_CMD_fnc_logfps"]]);

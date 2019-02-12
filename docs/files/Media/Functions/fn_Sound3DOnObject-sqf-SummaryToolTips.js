@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Media/Functions/fn_Sound3DOnObject.sqf",{79:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Plays a sound on an object by attaching a dummy object to said object. Dummy object can be deleted later to stop the sound from playing.</div></div>"});

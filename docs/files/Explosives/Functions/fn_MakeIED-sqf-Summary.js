@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Explosives/Functions/fn_MakeIED.sqf","fn_MakeIED.sqf");NDSummary.OnSummaryLoaded("File:Explosives/Functions/fn_MakeIED.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[11,0,1,"Functions","Functions"],[12,0,0,"LR_fnc_makeIED","LR_fnc_makeIED"]]);

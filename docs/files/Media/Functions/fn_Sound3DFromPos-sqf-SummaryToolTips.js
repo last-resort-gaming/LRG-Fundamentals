@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("File:Media/Functions/fn_Sound3DFromPos.sqf",{81:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Plays a sound in 3D Space at a given position on every player.&nbsp; lenght property needs to be set for the sound in config. If value is omitted, sound won\'t play properly!</div></div>"});

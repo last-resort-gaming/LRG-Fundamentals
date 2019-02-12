@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Main/Functions/YAINA/General/fn_log.sqf","fn_log.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/YAINA/General/fn_log.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[69,0,1,"Functions","Functions"],[70,0,0,"YAINA_fnc_log","YAINA_fnc_log"]]);
