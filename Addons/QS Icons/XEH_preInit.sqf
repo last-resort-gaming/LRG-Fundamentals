@@ -6,7 +6,20 @@
     "LRG QS Icons",
     false,
     true,
-    {
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
+// Enable GPS Icons
+[
+    "LRG_QSIcons_ShowAI",
+    "CHECKBOX",
+    ["Show AI", "Enable to show AI and Players, Disable to only show Players."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -19,7 +32,7 @@
     "LRG QS Icons",
     true,
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -30,13 +43,12 @@
     "SLIDER",
     ["Map Icons Refresh Rate", "How often should location of unit on the MAP be updated in seconds?"],
     "LRG QS Icons",
-    [0, 300, 60, 0],
+    [0, 300, 60, 2],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
-
 
 // Enable GPS Icons
 [
@@ -46,7 +58,7 @@
     "LRG QS Icons",
     true,
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -59,7 +71,7 @@
     "LRG QS Icons",
     [0, 500, 300, 0],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -72,7 +84,7 @@
     "LRG QS Icons",
     false,
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -85,7 +97,20 @@
     "LRG QS Icons",
     false,
     true,
-    {
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
+// Enable Group Icons
+[
+    "LRG_QSIcons_Group_Icons",
+    "CHECKBOX",
+    ["Group Icons Enable", "Group icons displayed on map/GPS."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -94,11 +119,11 @@
 [
     "LRG_QSIcons_Group_Map",
     "CHECKBOX",
-    ["Group Map Enable", "Group icons displayed on map."],
+    ["Group Map Enable", "Rectagular Group icons displayed on map."],
     "LRG QS Icons",
     false,
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -111,7 +136,20 @@
     "LRG QS Icons",
     false,
     true,
-    {
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
+// Enable Group Only
+[
+    "LRG_QSIcons_Group_Only",
+    "CHECKBOX",
+    ["Group Only Enable", "Set TRUE to show ONLY the unit icons of THE PLAYERS GROUP MEMBERS on the MAP, FALSE to show ALL your factions units."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -131,7 +169,7 @@
         ["AWS", "A3 Wounding System by Psycho."]
     ], 3],
     true,
-    {
+    {  
         params ["_value"];
         call {
             if (_value IsEqualTo 0) exitwith {LRG_QSIcons_MedicalSystem = ['BIS'];};
@@ -166,7 +204,7 @@
         ["TahomaB", "TahomaB."]
     ], 0],
     true,
-    {
+    {  
         params ["_value"];
         call {
             if (_value IsEqualTo 0) exitwith {LRG_QSIcons_IconTextFonts = ['EtelkaMonospacePro'];};
@@ -192,7 +230,7 @@
     "LRG QS Icons",
     [0.5,0,0,0.65],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -205,7 +243,7 @@
     "LRG QS Icons",
     [0,0.3,0.6,0.65],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -218,7 +256,7 @@
     "LRG QS Icons",
     [0,0.5,0,0.65],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -231,7 +269,7 @@
     "LRG QS Icons",
     [0.4,0,0.5,0.65],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -244,7 +282,7 @@
     "LRG QS Icons",
     [0.7,0.6,0,0.5],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -257,7 +295,7 @@
     "LRG QS Icons",
     [1,0.41,0,1],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
@@ -270,7 +308,7 @@
     "LRG QS Icons",
     [0.75,0.55,0,0.75],
     true,
-    {
+    {  
 
     }
 ] call CBA_Settings_fnc_init;
