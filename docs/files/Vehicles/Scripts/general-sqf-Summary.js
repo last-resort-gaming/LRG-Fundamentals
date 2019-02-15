@@ -1,1 +1,1 @@
-NDFramePage.OnPageTitleLoaded("File:Vehicles/Scripts/general.sqf","general.sqf");NDSummary.OnSummaryLoaded("File:Vehicles/Scripts/general.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[85,0,1,"Functions","Functions"],[86,0,0,"general","general"]]);
+NDFramePage.OnPageTitleLoaded("File:Vehicles/Scripts/general.sqf","general.sqf");NDSummary.OnSummaryLoaded("File:Vehicles/Scripts/general.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[83,0,1,"Functions","Functions"],[84,0,0,"general","general"]]);

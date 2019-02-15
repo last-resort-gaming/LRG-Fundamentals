@@ -1,1 +1,1 @@
-NDSummary.OnToolTipsLoaded("File:Explosives/Functions/fn_CrashSite.sqf",{28:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Simulates an aircraft being shot down. Players are knocked unconscious and awake near the crash location, basically like Lost.</div></div>"});
+NDSummary.OnToolTipsLoaded("File:Explosives/Functions/fn_CrashSite.sqf",{32:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Simulates an aircraft being shot down. Players are knocked unconscious and awake near the crash location, basically like Lost.</div></div>"});
