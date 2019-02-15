@@ -1,11 +1,6 @@
 // not documented: module called
 
-params [
-    ["_logic",objNull,[objNull]],
-    ["_groups",[],[[]]],
-    "_localGroups",
-    "_logic"
-];
+_logic = param [0,objNull,[objNull]];
 
 //if (hasInterface && !isServer) exitWith {};
 
