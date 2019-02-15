@@ -27,19 +27,3 @@ class Extended_PostInit_EventHandlers {
         init = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Channels\XEH_postInit.sqf'";
     };
 };
-
-class CfgVehicles
-{
-	class Logic;
-	class Module_F: Logic
-	{
-		class ArgumentsBaseUnits;
-		class ModuleDescription;
-	};
-	#include "ChannelsModule.hpp"
-};
-
-class CfgFunctions {
-
-    #include "cfgFunctions.hpp"
-};
