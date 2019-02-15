@@ -4,7 +4,6 @@ class LRG_Medical {
 	class Medical {
 
 		file = "z\LRG Fundamentals\Addons\Medical\Functions";
-		class MedicalFacility {};
 		class ModuleMedicalFacility {};
 	};
 };
