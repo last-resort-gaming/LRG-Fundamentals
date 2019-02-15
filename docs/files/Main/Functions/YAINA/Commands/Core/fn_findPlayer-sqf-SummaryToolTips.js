@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/Commands/Core/fn_findPlayer.sqf",{78:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Find a player, using supplied prefix.</div></div>"});
