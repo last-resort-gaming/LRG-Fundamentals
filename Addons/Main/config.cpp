@@ -33,16 +33,6 @@ class CfgFactionClasses
 		displayName = "LRG Fundamentals";
 	};
 };
-class CfgVehicles
-{
-	class Logic;
-	class Module_F: Logic
-	{
-		class ArgumentsBaseUnits;
-		class ModuleDescription;
-	};
-	#include "MainModule.hpp"
-};
 
 class CfgFunctions {
 
