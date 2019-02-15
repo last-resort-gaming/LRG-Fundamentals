@@ -12,7 +12,7 @@ force force ace_advanced_fatigue_enableStaminaBar = true;
 force force ace_advanced_fatigue_loadFactor = 0.5;
 force force ace_advanced_fatigue_performanceFactor = 5;
 force force ace_advanced_fatigue_recoveryFactor = 5;
-force ace_advanced_fatigue_swayFactor = 1;
+force force ace_advanced_fatigue_swayFactor = 1;
 force force ace_advanced_fatigue_terrainGradientFactor = 0.2;
 
 // ACE Advanced Throwing
@@ -151,7 +151,7 @@ force force ace_map_gestures_nameTextColor = [0.2,0.2,0.2,0.3];
 
 // ACE Map Tools
 force force ace_maptools_drawStraightLines = true;
-force force ace_maptools_rotateModifierKey = 1;
+ace_maptools_rotateModifierKey = 1;
 
 // ACE Medical
 force force ace_medical_ai_enabledFor = 2;
@@ -186,7 +186,7 @@ force force ace_medical_menu_allow = 1;
 force force ace_medical_menu_maxRange = 6.03832;
 force force ace_medical_menu_openAfterTreatment = true;
 force force ace_medical_menu_useMenu = 1;
-force force ace_medical_menuTypeStyle = 0;
+ace_medical_menuTypeStyle = 0;
 force force ace_medical_moveUnitsFromGroupOnUnconscious = true;
 force force ace_medical_painCoefficient = 1;
 ace_medical_painEffectType = 0;
@@ -207,7 +207,7 @@ force force ace_mk6mortar_allowComputerRangefinder = false;
 force force ace_mk6mortar_useAmmoHandling = true;
 
 // ACE Name Tags
-force force ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
+ace_nametags_defaultNametagColor = [0.77,0.51,0.08,1];
 ace_nametags_nametagColorBlue = [0.27,0.53,0.95,1];
 ace_nametags_nametagColorGreen = [0.11,0.64,0.38,1];
 ace_nametags_nametagColorMain = [1,1,1,1];
@@ -247,8 +247,8 @@ force force ace_finger_indicatorForSelf = true;
 force force ace_finger_maxRange = 50;
 
 // ACE Pylons
-force ace_pylons_enabledForZeus = true;
-force ace_pylons_enabledFromAmmoTrucks = true;
+force force ace_pylons_enabledForZeus = true;
+force force ace_pylons_enabledFromAmmoTrucks = true;
 force force ace_pylons_rearmNewPylons = false;
 force force ace_pylons_requireEngineer = false;
 force force ace_pylons_requireToolkit = true;
@@ -259,7 +259,7 @@ force force ace_pylons_timePerPylon = 5;
 force force ace_quickmount_distance = 5;
 force force ace_quickmount_enabled = true;
 ace_quickmount_enableMenu = 3;
-force force ace_quickmount_priority = 3;
+ace_quickmount_priority = 3;
 force force ace_quickmount_speed = 18;
 
 // ACE Respawn
@@ -271,7 +271,7 @@ force force ace_scopes_correctZeroing = true;
 force force ace_scopes_deduceBarometricPressureFromTerrainAltitude = false;
 force force ace_scopes_defaultZeroRange = 100;
 force force ace_scopes_enabled = true;
-force force ace_scopes_forceUseOfAdjustmentTurrets = false;
+force force ace_scopes_force forceUseOfAdjustmentTurrets = false;
 force force ace_scopes_overwriteZeroRange = false;
 force force ace_scopes_simplifiedZeroing = false;
 force force ace_scopes_useLegacyUI = false;
@@ -297,9 +297,9 @@ force force ace_switchunits_switchToWest = false;
 force force ace_tagging_quickTag = 1;
 
 // ACE Uncategorized
-force force ace_gforces_enabledFor = 1;
+force force ace_gforce forces_enabledFor = 1;
 force force ace_hitreactions_minDamageToTrigger = 0.1;
-ace_inventory_inventoryDisplaySize = 0;
+force force ace_inventory_inventoryDisplaySize = 0;
 force force ace_laser_dispersionCount = 2;
 force force ace_microdagr_mapDataAvailable = 2;
 force force ace_microdagr_waypointPrecision = 3;
@@ -374,7 +374,7 @@ force force ace_winddeflection_vehicleEnabled = true;
 
 // ACE Zeus
 force force ace_zeus_autoAddObjects = true;
-force ace_zeus_canCreateZeus = -1;
+force force ace_zeus_canCreateZeus = -1;
 force force ace_zeus_radioOrdnance = false;
 force force ace_zeus_remoteWind = false;
 force force ace_zeus_revealMines = 0;
@@ -383,14 +383,15 @@ force force ace_zeus_zeusBird = false;
 
 // ACEX Field Rations
 force force acex_field_rations_enabled = false;
-acex_field_rations_hudShowLevel = 0;
-acex_field_rations_hudTransparency = -1;
-acex_field_rations_hudType = 0;
+force force acex_field_rations_hudShowLevel = 0;
+force force acex_field_rations_hudTransparency = -1;
+force force acex_field_rations_hudType = 0;
 force force acex_field_rations_timeWithoutFood = 2;
 force force acex_field_rations_timeWithoutWater = 2;
 
 // ACEX Fortify
-acex_fortify_settingHint = 1;
+force force acex_fortify_settingHint = 1;
+
 // ACEX Headless
 force force acex_headless_delay = 15;
 force force acex_headless_enabled = true;
@@ -406,7 +407,7 @@ force force acex_viewrestriction_modeSelectiveAir = 0;
 force force acex_viewrestriction_modeSelectiveFoot = 0;
 force force acex_viewrestriction_modeSelectiveLand = 0;
 force force acex_viewrestriction_modeSelectiveSea = 0;
-acex_viewrestriction_preserveView = false;
+force force acex_viewrestriction_preserveView = false;
 
 // ACEX Volume
 force force acex_volume_enabled = false;
@@ -427,156 +428,108 @@ force force adv_aceCPR_enable = true;
 force force adv_aceCPR_maxTime = 1200;
 force force adv_aceCPR_useLocation_AED = 3;
 
-// AIME Ammo Type Menu
-UPSL_aime_change_ammo_setting_ammo_class = true;
-UPSL_aime_change_ammo_setting_vehicle_ammo_class = true;
-
-// AIME General
-UPSL_aime_setting_hide = true;
-
-// AIME GPS and UAV Terminal
-UPSL_aime_uav_terminal_setting_gps_action = true;
-UPSL_aime_uav_terminal_setting_term_action = true;
-UPSL_aime_uav_terminal_setting_uav_action = true;
-
-// AIME Group Management
-UPSL_aime_group_setting_drop_leader_action = true;
-
-// AIME Inventory
-UPSL_aime_inventory_setting_assemble_action = true;
-UPSL_aime_inventory_setting_backpack_action = true;
-UPSL_aime_inventory_setting_holder_action = true;
-UPSL_aime_inventory_setting_open_action = true;
-
-// AIME Vehicle Controls
-UPSL_aime_vehicle_controls_setting_arty_computer_action = true;
-UPSL_aime_vehicle_controls_setting_collision_action = true;
-UPSL_aime_vehicle_controls_setting_engine_action = true;
-UPSL_aime_vehicle_controls_setting_flaps_action = true;
-UPSL_aime_vehicle_controls_setting_gear_action = true;
-UPSL_aime_vehicle_controls_setting_hover_action = true;
-UPSL_aime_vehicle_controls_setting_lights_action = true;
-UPSL_aime_vehicle_controls_setting_manual_action = true;
-UPSL_aime_vehicle_controls_setting_user_actions = true;
-
-// AIME Vehicle Seats
-UPSL_aime_vehicle_seats_setting_change_action = true;
-UPSL_aime_vehicle_seats_setting_force_eject = true;
-UPSL_aime_vehicle_seats_setting_getin_action = true;
-UPSL_aime_vehicle_seats_setting_getout_action = true;
-UPSL_aime_vehicle_seats_setting_turnout_action = true;
-
 // CBA UI
 cba_ui_StorePasswords = 1;
 
-// Diwako's Punish unknown weapon
-force diwako_unknownwp_add_weapons = "arifle_Mk20_plain_F,arifle_CTAR_blk_F";
-force diwako_unknownwp_briefing = true;
-force diwako_unknownwp_cooldown = 60;
-force diwako_unknownwp_dispersion_add = 25;
-force diwako_unknownwp_enable = true;
-force diwako_unknownwp_jam_explosion = 2;
-force diwako_unknownwp_jamchance_add = 1;
-force diwako_unknownwp_propagation = true;
-force diwako_unknownwp_reload_failure = 1;
-
-// Laxemann Immerse
-L_Immerse_exShake = true;
-L_Immerse_force = true;
-L_Immerse_recoil = true;
-L_Immerse_twitch = true;
-
 // Diwako's ACE Ragdolling
-force force diwako_ragdoll_ai = true;
-force force diwako_ragdoll_ragdolling = true;
-force force diwako_ragdoll_server_only = true;
+force force diwako_ragdoll_ai = false;
+force force diwako_ragdoll_ragdolling = false;
+force force diwako_ragdoll_server_only = false;
 
-// STUI Settings
-STHud_Settings_ColourBlindMode = "Normal";
-STHud_Settings_Font = "PuristaSemibold";
-STHud_Settings_HUDMode = 3;
-STHud_Settings_Occlusion = true;
-STHud_Settings_RemoveDeadViaProximity = true;
-STHud_Settings_SquadBar = false;
-STHud_Settings_TextShadow = 1;
-
-// Task Force Arrowhead Radio
-TF_default_radioVolume = 7;
-force force TF_give_microdagr_to_soldier = false;
-force force TF_give_personal_radio_to_regular_soldier = false;
-force force TF_no_auto_long_range_radio = true;
-force force TF_same_dd_frequencies_for_side = false;
-force force TF_same_lr_frequencies_for_side = false;
-force force TF_same_sw_frequencies_for_side = false;
+// Diwako's Punish unknown weapon
+force force diwako_unknownwp_add_weapons = "UK3CB_BAF_L105A1,UK3CB_BAF_L105A2,UK3CB_BAF_L107A1,UK3CB_BAF_L117A1,UK3CB_BAF_L131A1,UK3CB_BAF_L9A1,UK3CB_BAF_L1A1,UK3CB_BAF_L1A1_Wood,UK3CB_BAF_L110A1,UK3CB_BAF_L110A2,UK3CB_BAF_L110A2RIS,UK3CB_BAF_L110A3,UK3CB_BAF_L110_762,UK3CB_BAF_L110A2_FIST,UK3CB_BAF_L115A3,UK3CB_BAF_L115A3_BL,UK3CB_BAF_L115A3_DE,UK3CB_BAF_L115A3_Ghillie,UK3CB_BAF_L115A3_DE_Ghillie,UK3CB_BAF_L115A3_BL_Ghillie,UK3CB_BAF_L118A1_Covert,UK3CB_BAF_L118A1_Covert_BL,UK3CB_BAF_L118A1_Covert_DE,UK3CB_BAF_L119A1,UK3CB_BAF_L119A1_CQB,UK3CB_BAF_L119A1_FG,UK3CB_BAF_L119A1_UKUGL,UK3CB_BAF_L22,UK3CB_BAF_L22A2,UK3CB_BAF_L7A2,UK3CB_BAF_L7A2_FIST,UK3CB_BAF_L135A1,UK3CB_BAF_L85A2,UK3CB_BAF_L85A2_UGL,UK3CB_BAF_L85A2_UGL_HWS,UK3CB_BAF_L85A2_RIS,UK3CB_BAF_L85A2_RIS_Tan,UK3CB_BAF_L85A2_RIS_Green,UK3CB_BAF_L85A2_EMAG,UK3CB_BAF_L85A2_RIS_AFG,UK3CB_BAF_L85A2_RIS_AFG_Tan,UK3CB_BAF_L85A2_RIS_AFG_Green,UK3CB_BAF_L86A2,UK3CB_BAF_L86A3,UK3CB_BAF_L91A1,UK3CB_BAF_L92A1,UK3CB_BAF_L103A2,UK3CB_BAF_L128A1,UK3CB_BAF_L129A1,UK3CB_BAF_L129A1_Grippod,UK3CB_BAF_L129A1_AFG,UK3CB_BAF_L129A1_FGrip,UK3CB_BAF_L82A1,UK3CB_BAF_AT4_CS_AT_Launcher,UK3CB_BAF_AT4_CS_AP_Launcher,UK3CB_BAF_AT4_Launcher_Used,UK3CB_BAF_AT4_CS_Launcher_Used,UK3CB_BAF_Javelin_Slung_Tube,UK3CB_BAF_Javelin_CLU,UK3CB_BAF_NLAW_Launcher,UK3CB_BAF_NLAW_Launcher_Used,UK3CB_BAF_Tripod,UK3CB_BAF_L16_Tripod,UK3CB_BAF_L111A1,UK3CB_BAF_L134A1,UK3CB_BAF_L16,UK3CB_BAF_M6,rhs_weap_hk416d10,rhs_weap_hk416d10_m320,rhs_weap_hk416d10_LMT,rhs_weap_hk416d10_LMT_d,rhs_weap_hk416d10_LMT_wd,rhs_weap_hk416d145,rhs_weap_hk416d145_d,rhs_weap_hk416d145_d_2,rhs_weap_hk416d145_m320,rhs_weap_hk416d145_wd,rhs_weap_hk416d145_wd_2,rhs_weap_M107,rhs_weap_M107_d,rhs_weap_M107_w,rhs_weap_m14ebrri,rhs_weap_m16a4,rhs_weap_m16a4_carryhandle,rhs_weap_m16a4_carryhandle_M203,rhs_weap_m16a4_carryhandle_pmag,rhs_weap_m16a4_pmag,rhs_weap_XM2010,rhs_weap_XM2010_wd,rhs_weap_XM2010_d,rhs_weap_XM2010_sa,rhs_weap_m24sws,rhs_weap_m24sws_blk,rhs_weap_m24sws_ghillie,rhs_weap_m240B,rhs_weap_m240B_CAP,rhs_weap_m240G,rhs_weap_m249,rhs_weap_m249_pip_L,rhs_weap_m249_pip_L_para,rhs_weap_m249_pip_L_vfg,rhs_weap_m249_pip_S,rhs_weap_m249_pip_S_para,rhs_weap_m249_pip_S_vfg,rhs_weap_m249_pip,rhs_weap_m27iar,rhs_weap_m27iar_grip,rhs_weap_m32,rhs_weap_m4,rhs_weap_m4_carryhandle,rhs_weap_m4_carryhandle_pmag,rhs_weap_m4_carryhandle_mstock,rhs_weap_m4_m203,rhs_weap_m4_m203S,rhs_weap_m4_m320,rhs_weap_m4_pmag,rhs_weap_m4_mstock,rhs_weap_m40a5,rhs_weap_m40a5_d,rhs_weap_m40a5_wd,rhs_weap_m4a1_carryhandle,rhs_weap_m4a1_carryhandle_m203,rhs_weap_m4a1_carryhandle_m203S,rhs_weap_m4a1_carryhandle_pmag,rhs_weap_m4a1_carryhandle_mstock,rhs_weap_m4a1_blockII,rhs_weap_m4a1_blockII_bk,rhs_weap_m4a1_blockII_M203_bk,rhs_weap_m4a1_blockII_KAC_bk,rhs_weap_m4a1_blockII_d,rhs_weap_m4a1_blockII_M203_d,rhs_weap_m4a1_blockII_KAC_d,rhs_weap_m4a1_blockII_M203,rhs_weap_m4a1_blockII_KAC,rhs_weap_m4a1_blockII_wd,rhs_weap_m4a1_blockII_M203_wd,rhs_weap_m4a1_blockII_KAC_wd,rhs_weap_m4a1,rhs_weap_m4a1_d,rhs_weap_m4a1_m203s_d,rhs_weap_m4a1_d_mstock,rhs_weap_m4a1_m203,rhs_weap_m4a1_m203s,rhs_weap_m4a1_m320,rhs_weap_m4a1_pmag,rhs_weap_m4a1_mstock,rhs_weap_m4a1_wd,rhs_weap_m4a1_m203s_wd,rhs_weap_m4a1_wd_mstock,rhs_weap_M590_8RD,rhs_weap_M590_5RD,rhs_weap_sr25,rhs_weap_sr25_d,rhs_weap_sr25_ec,rhs_weap_sr25_ec_d,rhs_weap_sr25_ec_wd,rhs_weap_sr25_wd,rhs_weap_mk18,rhs_weap_mk18_bk,rhs_weap_mk18_KAC_bk,rhs_weap_mk18_d,rhs_weap_mk18_KAC_d,rhs_weap_mk18_m320,rhs_weap_mk18_KAC,rhs_weap_mk18_wd,rhs_weap_mk18_KAC_wd,rhsusf_weap_MP7A2,rhsusf_weap_MP7A2_aor1,rhsusf_weap_MP7A2_desert,rhsusf_weap_MP7A2_winter,rhs_weap_fgm148,rhs_weap_fim92,rhs_weap_M136,rhs_weap_M136_hedp,rhs_weap_M136_hp,rhs_weap_maaws,rhs_weap_m72a7,rhs_weap_smaw,rhs_weap_smaw_green,rhsusf_weap_glock17g4,rhsusf_weap_m1911a1,rhs_weap_M320,rhsusf_weap_m9";
+force force diwako_unknownwp_briefing = true;
+force force diwako_unknownwp_cooldown = 120;
+force force diwako_unknownwp_dispersion_add = 25;
+force force diwako_unknownwp_enable = true;
+force force diwako_unknownwp_jam_explosion = 1;
+force force diwako_unknownwp_jamchance_add = 1;
+force force diwako_unknownwp_propagation = true;
+force force diwako_unknownwp_reload_failure = 10;
 
 // LRG AI
-Force Force LRG_AI_AimingAccuracy = 0.1;
-Force Force LRG_AI_AimingShake = 0.45;
-Force Force LRG_AI_AimingSpeed = 0.3;
-Force Force LRG_AI_Commanding = 1;
-Force Force LRG_AI_Courage = 1;
-Force Force LRG_AI_General = 1;
-Force Force LRG_AI_InitialAI = true;
-Force Force LRG_AI_ReloadSpeed = 0.5;
-Force Force LRG_AI_SpotDistance = 0.4;
-Force Force LRG_AI_SpotTime = 0.2;
+force force LRG_AI_AimingAccuracy = 0.1;
+force force LRG_AI_AimingShake = 0.45;
+force force LRG_AI_AimingSpeed = 0.3;
+force force LRG_AI_Commanding = 1;
+force force LRG_AI_Courage = 1;
+force force LRG_AI_General = 1;
+force force LRG_AI_InitialAI = true;
+force force LRG_AI_ReloadSpeed = 0.5;
+force force LRG_AI_SpotDistance = 0.4;
+force force LRG_AI_SpotTime = 0.2;
 
 // LRG Channels
-Force Force LRG_Channels_CommandDuration = 0;
-Force Force LRG_Channels_CommandText = false;
-Force Force LRG_Channels_CommandVoice = false;
-Force Force LRG_Channels_DirectDuration = 0;
-Force Force LRG_Channels_DirectText = false;
-Force Force LRG_Channels_DirectVoice = false;
-Force Force LRG_Channels_GlobalDuration = 0;
-Force Force LRG_Channels_GlobalText = false;
-Force Force LRG_Channels_GlobalVoice = false;
-Force Force LRG_Channels_GroupDuration = 0;
-Force Force LRG_Channels_GroupText = false;
-Force Force LRG_Channels_GroupVoice = false;
+force force LRG_Channels_CommandDuration = 0;
+force force LRG_Channels_CommandText = false;
+force force LRG_Channels_CommandVoice = false;
+force force LRG_Channels_DirectDuration = 0;
+force force LRG_Channels_DirectText = false;
+force force LRG_Channels_DirectVoice = false;
+force force LRG_Channels_GlobalDuration = 0;
+force force LRG_Channels_GlobalText = false;
+force force LRG_Channels_GlobalVoice = false;
+force force LRG_Channels_GroupDuration = 0;
+force force LRG_Channels_GroupText = false;
+force force LRG_Channels_GroupVoice = false;
 force force LRG_Channels_Master = true;
-Force Force LRG_Channels_SideDuration = 60;
-Force Force LRG_Channels_SideText = true;
-Force Force LRG_Channels_SideVoice = false;
-Force Force LRG_Channels_VehicleDuration = 0;
-Force Force LRG_Channels_VehicleText = false;
-Force Force LRG_Channels_VehicleVoice = false;
+force force LRG_Channels_SideDuration = 60;
+force force LRG_Channels_SideText = true;
+force force LRG_Channels_SideVoice = false;
+force force LRG_Channels_VehicleDuration = 0;
+force force LRG_Channels_VehicleText = false;
+force force LRG_Channels_VehicleVoice = false;
 
 // LRG Main
-Force Force LRG_Main_CHViewDistance = true;
-Force Force LRG_Main_CreatorActions = true;
-Force Force LRG_Main_CueCards = true;
-Force Force LRG_Main_Diary = true;
-Force Force LRG_Main_DynamicWeather = false;
-Force Force LRG_Main_FPSCounter = true;
+force force LRG_Main_ArsenalSaveLoad = false;
+force force LRG_Main_CHViewDistance = true;
+force force LRG_Main_CreatorActions = true;
+force force LRG_Main_CueCards = true;
+force force LRG_Main_Diary = true;
+force force LRG_Main_DynamicGroups = false;
+force force LRG_Main_DynamicSim = false;
+force force LRG_Main_Earplugs = false;
+force force LRG_Main_FatigueVanilla = false;
+force force LRG_Main_FPSCounter = true;
+force force LRG_Main_Logging = true;
 force force LRG_Main_Master = true;
-Force Force LRG_Main_ArsenalSaveLoad = false;
-Force Force LRG_Main_DynamicWeatherStart = 0;
-Force Force LRG_Main_FatigueVanilla = false;
-Force Force LRG_Main_TFARTerrainInterference = 1;
-Force Force LRG_Main_TFARTransmitRange = 2.5;
-Force Force LRG_Main_PilotCheck = true;
-Force Force LRG_Main_VehicleCrewList = true;
-Force Force LRG_Main_ViewDistanceMaxDistance = 10000;
-Force Force LRG_Main_ViewDistanceMaxObjectDistance = 10000;
-Force Force LRG_Main_ViewDistanceNoGrass = false;
+force force LRG_Main_PilotCheck = true;
+force force LRG_Main_TFARTerrainInterference = 1;
+force force LRG_Main_TFARTransmitRange = 2.5;
+force force LRG_Main_VehicleCrewList = true;
+force force LRG_Main_ViewDistanceMaxDistance = 10000;
+force force LRG_Main_ViewDistanceMaxObjectDistance = 10000;
+force force LRG_Main_ViewDistanceNoGrass = false;
 
 // LRG QS Icons
-Force Force LRG_QSIcons_GPS_EnableUnitIcons = true;
-Force Force LRG_QSIcons_GPS_GroupOnly = false;
-Force Force LRG_QSIcons_GPS_Range = 300;
-Force Force LRG_QSIcons_GPS_ShowNames = false;
-Force Force LRG_QSIcons_Group_HUD = false;
-Force Force LRG_QSIcons_Group_Map = true;
-Force Force LRG_QSIcons_IconColor_Civilian = [0.4,0,0.5,0.65];
-Force Force LRG_QSIcons_IconColor_East = [0.5,0,0,0.65];
-Force Force LRG_QSIcons_IconColor_Medical = [1,0.41,0,1];
-Force Force LRG_QSIcons_IconColor_Resistance = [0,0.5,0,0.65];
-Force Force LRG_QSIcons_IconColor_Unknown = [0.7,0.6,0,0.5];
-Force Force LRG_QSIcons_IconColor_West = [0,0.3,0.6,0.65];
-Force Force LRG_QSIcons_IconColor_Wounded = [0.75,0.55,0,0.75];
-Force Force LRG_QSIcons_IconTextFonts = 0;
-Force Force LRG_QSIcons_Map_Delay = 60;
-Force Force LRG_QSIcons_Map_EnableUnitIcons = true;
+force force LRG_QSIcons_GPS_EnableUnitIcons = true;
+force force LRG_QSIcons_GPS_GroupOnly = false;
+force force LRG_QSIcons_GPS_Range = 300;
+force force LRG_QSIcons_GPS_ShowNames = false;
+force force LRG_QSIcons_Group_HUD = false;
+force force LRG_QSIcons_Group_Icons = false;
+force force LRG_QSIcons_Group_Map = false;
+force force LRG_QSIcons_Group_Only = false;
+force force LRG_QSIcons_IconColor_Civilian = [0.4,0,0.5,0.65];
+force force LRG_QSIcons_IconColor_East = [0.5,0,0,0.65];
+force force LRG_QSIcons_IconColor_Medical = [1,0.41,0,1];
+force force LRG_QSIcons_IconColor_Resistance = [0,0.5,0,0.65];
+force force LRG_QSIcons_IconColor_Unknown = [0.7,0.6,0,0.5];
+force force LRG_QSIcons_IconColor_West = [0,0.3,0.6,0.65];
+force force LRG_QSIcons_IconColor_Wounded = [0.75,0.55,0,0.75];
+force force LRG_QSIcons_IconTextFonts = 0;
+force force LRG_QSIcons_Map_Delay = 60;
+force force LRG_QSIcons_Map_EnableUnitIcons = true;
 force force LRG_QSIcons_MasterEnable = true;
-Force Force LRG_QSIcons_MedicalSystem = 3;
+force force LRG_QSIcons_MedicalSystem = 3;
+force force LRG_QSIcons_ShowAI = false;
+
+// LRG Weather
+force force LRG_Weather_DayTimeAcc = 1;
+force force LRG_Weather_Master = false;
+force force LRG_Weather_MaxTime = 60;
+force force LRG_Weather_MinTime = 1;
+force force LRG_Weather_NightTimeAcc = 1;
+force force LRG_Weather_RealTime = true;
+force force LRG_Weather_StartWeather = 0;
+force force LRG_Weather_SyncTime = 60;
