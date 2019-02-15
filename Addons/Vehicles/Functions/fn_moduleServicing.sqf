@@ -7,8 +7,8 @@ params [
     "_logic"
 ];
 
-private _Area = _logic getVariable ["ServicingArea", 10];
-private _Height = _logic getVariable ["ServicingHeight", 6];
+//private _Area = _logic getVariable ["ServicingArea", 10];
+//private _Height = _logic getVariable ["ServicingHeight", 6];
 
 /* Future Stuff
 private _Rearm = _logic getVariable ["ServicingRearm", 20];
@@ -32,12 +32,15 @@ systemchat format ["%1", _ServiceTypes];
 */
 
 private _objects = synchronizedObjects _logic;
-
 {
     private _SpawnLocation = getPosATL _x;
-
+    private _GetObjectSize = boundingBoxReal _x;
+    private _Width = (_GetObjectSize select 1) select 0;
+    private _Length = (_GetObjectSize select 1) select 1;
+    private _Height = ((_GetObjectSize select 1) select 2) *2;   
+    
     _trg = createTrigger ["EmptyDetector",_SpawnLocation];
-    _trg setTriggerArea [_Area, _Area, getdir _x, false, _Height];
+    _trg setTriggerArea [_Width, _Length, getdir _x, false, _Height];
     _trg setTriggerActivation ["ANY", "PRESENT", true];
     _trg setTriggerStatements [
         "_v = (thislist select 0); { _v isKindOf _x } count [""UAV"", ""Plane"", ""Helicopter"", ""LandVehicle""] > 0 && { speed _v < 1 } && { isTouchingGround _v };",
