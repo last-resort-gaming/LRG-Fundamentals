@@ -1,11 +1,6 @@
 // not documented: module called
 
-params [
-    ["_logic",objNull,[objNull]],
-    ["_groups",[],[[]]],
-    "_localGroups",
-    "_logic"
-];
+_logic = param [0,objNull,[objNull]];
 
 //private _Area = _logic getVariable ["ServicingArea", 10];
 //private _Height = _logic getVariable ["ServicingHeight", 6];
