@@ -22,3 +22,14 @@ class CfgFunctions {
 
     #include "cfgFunctions.hpp"
 };
+
+class CfgVehicles
+{
+	class Logic;
+	class Module_F: Logic
+	{
+		class ArgumentsBaseUnits;
+		class ModuleDescription;
+	};
+	#include "MedicalModule.hpp"
+};
