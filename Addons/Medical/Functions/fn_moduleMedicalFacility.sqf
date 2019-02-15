@@ -7,9 +7,6 @@ params [
     "_logic"
 ];
 
-//private _HealTime = _logic getVariable ["HealTime", 10];
-//private _ReviveTime = _logic getVariable ["ReviveTime", 6];
-
 private _objects = synchronizedObjects _logic;
 {
     private _SpawnLocation = getPosATL _x;
