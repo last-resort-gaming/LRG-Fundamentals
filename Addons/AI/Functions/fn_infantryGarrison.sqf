@@ -34,7 +34,7 @@ if (!isServer) exitWith {};
 
 params [
     "_pos",
-    ["_radius", [0, 30]],
+    ["_radius", [0, 500]],
 	["_side", east],
 	["_FactionSide", "EAST"],
     ["_faction", "OPF_F"],

@@ -29,15 +29,28 @@ class CfgVehicles
 	class Logic;
 	class Module_F: Logic
 	{
-		class ArgumentsBaseUnits;
-		class ModuleDescription;
-	};
+		class AttributesBase
+		{
+			class Default;
+			class Edit;
+			class Combo;
+			class Checkbox;
+			class CheckboxNumber;
+			class ModuleDescription;
+			class Units;
+		};
 
-	#include "AISettingsModule.hpp"
+		class ModuleDescription
+		{
+			class AnyBrain;
+		};
+	};
+	//#include "AISettingsModule.hpp"
 	#include "AISpawnsEastModule.hpp"
 	#include "AISpawnsIndependentModule.hpp"
 	#include "AISpawnsWestModule.hpp"
 };
+
 class CfgFunctions {
 
     #include "CfgFunctions.hpp"

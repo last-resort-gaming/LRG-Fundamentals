@@ -148,7 +148,7 @@ if (_garrisonGroupCount > 0) then {
     private _garrisonedUnits = (
         [
             _center,
-            [_garrisonMinRad, _garrisonMaxRad],
+            [0, _radius],
             _side, _FactionSide,
             _faction, _InfantryType,
             _infList, _garrisonGroupCount,
