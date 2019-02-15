@@ -45,7 +45,6 @@ class CfgVehicles
 			class AnyBrain;
 		};
 	};
-	//#include "AISettingsModule.hpp"
 	#include "AISpawnsEastModule.hpp"
 	#include "AISpawnsIndependentModule.hpp"
 	#include "AISpawnsWestModule.hpp"
