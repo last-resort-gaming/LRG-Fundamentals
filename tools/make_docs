@@ -7,7 +7,7 @@ if [ ! -d ../docs ]
 then
   mkdir ../docs
 fi
-cp overview.txt LRG_Logo.png ../addons
+cp overview.txt LRG_Logo.png ../Addons
 
-naturaldocs -r -i "../addons" -xi "../addons/main/Functions/AIS" -o HTML "../docs" -p "lrg-fundamentals" -s Default lrg
-rm ../addons/{overview.txt,LRG_Logo.png}
+naturaldocs -r -i "../Addons" -xi "../Addons/Main/Functions/AIS" -o HTML "../docs" -p "lrg-fundamentals" -s Default lrg
+rm ../Addons/{overview.txt,LRG_Logo.png}
