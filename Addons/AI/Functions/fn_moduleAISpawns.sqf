@@ -13,6 +13,8 @@ _EIAAMin = _logic getVariable ["EIAAMin", 0];
 _EIAAMax = _logic getVariable ["EIAAMax", 0];
 _EIATMin = _logic getVariable ["EIATMin", 0];
 _EIATMax = _logic getVariable ["EIATMax", 0];
+_SniperMin = _logic getVariable ["SniperMin", 0];
+_SniperMax = _logic getVariable ["SniperMax", 0];
 _VehAAMin = _logic getVariable ["VehAAMin", 0];
 _VehAAMax = _logic getVariable ["VehAAMax", 0];
 _VehMRAPMin = _logic getVariable ["VehMRAPMin", 0];
@@ -35,6 +37,7 @@ _SpawnLocation = (getPos _logic);
     [_EIPatrolsMin, _EIPatrolsMax],
     [_EIAAMin, _EIAAMax],
     [_EIATMin, _EIATMax],
+    [_SniperMin, _SniperMax],
     [_VehAAMin, _VehAAMax],
     [_VehMRAPMin, _VehMRAPMax],
     [_VehLightMin, _VehLightMax],

@@ -115,6 +115,22 @@ class LRG_ModuleAISpawnsIndependent: Module_F
 			typeName = "Number";
 			defaultValue = 0;
 		};
+		class SniperMin: Edit
+		{
+			property = "LR_AI_SniperMin";
+			displayName = "Min Sniper Teams";
+			description = "Minimum Number of  Sniper Teams to Spawn";
+			typeName = "Number";
+			defaultValue = 0;
+		};
+		class SniperMax: Edit
+		{
+			property = "LR_AI_SniperMax";
+			displayName = "Max Sniper Teams";
+			description = "Maximum Number of  Sniper Teams to Spawn";
+			typeName = "Number";
+			defaultValue = 0;
+		};		
 		class VehAAMin: Edit
 		{
 			property = "LR_AI_VehAAMin";

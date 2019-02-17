@@ -63,9 +63,9 @@ params [
 	["_sniper", [0,0]],
 	["_vehaa", [0,0]],
 	["_vehmrap", [0,0]],
-	["_vehrand", [0,0]],
 	["_vehlight", [0,0]],
-	["_vehheavy", [0,0]]
+	["_vehheavy", [0,0]],
+   	["_vehrand", [0,0]] 
 ];
 
 _typeNameCenter = typeName _center;
