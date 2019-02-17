@@ -1,26 +1,30 @@
 /*
-	LRG MISSION TEMPLATE
-	LR_fnc_LaptopHoldActions.sqf
-	Author: MitchJC
-	Description: Adds Hold AddActions to a Laptop. Can be placed in the init field of a laptop or executed via script.
-	
-	Syntax
-	[_object, _title, _time, _sound] call LR_fnc_LaptopHoldActions;
-	
-	Parameters
-	_object - Object the addaction is applied to.  <OBJECT>
+Function: LR_fnc_LaptopHoldActions
+
+Description:
+    Adds Hold AddActions to a Laptop. Can be placed in the init field of a laptop or executed via script.
+
+Arguments:
+    _object - Object the addaction is applied to.  <OBJECT>
 	_title - The name of the addaction, visable to players. <STRING>
 	_time - How long the action must be held to complete. <SCALAR>
 	_SoundClass - Class name of sound from CfgSounds <STRING>
 	_distance - How far away the sound can be heard from _object. <SCALAR>
 	_pitch - pitch of the sound. Should usually be 1. <SCALAR>
-	
-	Example 1:	[this] call LR_fnc_LaptopHoldActions;
-	Example 2:	[MyLaptopName] call LR_fnc_LaptopHoldActions;
-	Example 3:	[this, "Download the Intel"] call LR_fnc_LaptopHoldActions;
-	Example 4;	[this, "Trigger the Alarm", 5, "A3\Sounds_F\sfx\alarm_blufor.wss"] call LR_fnc_LaptopHoldActions;
-*/
 
+Return Value:
+    None
+
+Examples:
+    --- Code
+        [this] call LR_fnc_LaptopHoldActions;
+		[MyLaptopName] call LR_fnc_LaptopHoldActions;
+		[this, "Download the Intel"] call LR_fnc_LaptopHoldActions;
+		[this, "Trigger the Alarm", 5, "A3\Sounds_F\sfx\alarm_blufor.wss"] call LR_fnc_LaptopHoldActions;
+    ---
+
+Author: MitchJC
+*/
 
 if (!isServer) exitWith {};
 

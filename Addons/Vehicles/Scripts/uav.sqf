@@ -1,24 +1,3 @@
-/*
-Function: uav
-
-Description:
-    Service an UAV.
-
-Arguments:
-    _veh - The vehicle to service <OBJECT>
-    _serviceTime - Time in seconds that it takes for the service to be completed <SCALAR>
-    _serviceRand - Additional random amount of time to add to the service time <SCALAR>
-    _sideChat - Announce servicing in the sideChat? <BOOLEAN>
-    _playerDistance - Distance in metres that players need to be in for service to start, -1 for disabled <SCALAR>
-
-Return Value:
-    None
-
-Example:
-    Nothing to see here
-
-Author: Martin
-*/
 
 params [
     "_veh",

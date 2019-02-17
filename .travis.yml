@@ -1,13 +1,13 @@
 # Travis Build Integration
 # https://docs.travis-ci.com
-language: csharp
+language: minimal
 
 script:
-  - chmod +x ./tools/install_nd_linux.sh
-  - mkdir docs
+  - chmod +x tools/make_docs
+  - chmod +x tools/install_nd
   - mkdir pages
-  - ./tools/install_nd_linux.sh
-  - mono natural_docs/NaturalDocs.exe -p "tools/lrg-fundamentals" -i "Addons" -o HTML "docs" -r
+  - ./tools/install_nd
+  - ./tools/make_docs
   - mv -v docs/ pages/
   - cp README.md pages/
 
