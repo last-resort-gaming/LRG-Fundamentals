@@ -2,7 +2,7 @@
 
 wget https://github.com/prantlf/NaturalDocs/archive/ext-1.52.2.zip
 ls
-unzip NaturalDocs-ext-1.52.2.zip
-ls NaturalDocs-ext-1.52.2
-mv NaturalDocs-ext-1.52.2/NaturalDocs-ext-1.52.2 natural_docs
+unzip ext-1.52.2.zip
+ls ext-1.52.2
+mv ext-1.52.2/NaturalDocs-ext-1.52.2 ./tools/natural_docs
 ls natural_docs
