@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Interaction/Functions/fn_AddSelfAction.sqf","fn_AddSelfAction.sqf");NDSummary.OnSummaryLoaded("File:Interaction/Functions/fn_AddSelfAction.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[37,0,1,"Functions","Functions"],[38,0,0,"LR_fnc_AddSelfAction","LR_fnc_AddSelfAction"]]);

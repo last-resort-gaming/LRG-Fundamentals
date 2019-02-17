@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("File:Zeus/Functions/fn_ConfigZeus.sqf",{86:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Used to configure a Zeus Module. Ensures that any AI placed down by that Zeus have Dynamic Sim enabled and their difficulty settings configured to the LRG Default.</div></div>"});

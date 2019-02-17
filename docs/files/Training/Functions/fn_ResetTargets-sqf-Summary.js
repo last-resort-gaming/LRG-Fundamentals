@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Training/Functions/fn_ResetTargets.sqf","fn_ResetTargets.sqf");NDSummary.OnSummaryLoaded("File:Training/Functions/fn_ResetTargets.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[75,0,1,"Functions","Functions"],[76,0,0,"LR_fnc_ResetTargets","LR_fnc_ResetTargets"]]);

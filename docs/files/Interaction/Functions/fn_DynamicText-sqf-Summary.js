@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Interaction/Functions/fn_DynamicText.sqf","fn_DynamicText.sqf");NDSummary.OnSummaryLoaded("File:Interaction/Functions/fn_DynamicText.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[33,0,1,"Functions","Functions"],[34,0,0,"LR_fnc_DynamicText","LR_fnc_DynamicText"]]);

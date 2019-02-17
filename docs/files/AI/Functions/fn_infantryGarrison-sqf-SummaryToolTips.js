@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("File:AI/Functions/fn_infantryGarrison.sqf",{6:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Garrison buildings in given radius around given position, using units of the passed faction.</div></div>"});

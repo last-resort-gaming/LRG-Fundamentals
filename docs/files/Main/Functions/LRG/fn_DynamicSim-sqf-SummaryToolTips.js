@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("File:Main/Functions/LRG/fn_DynamicSim.sqf",{52:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Globally enables or disables dynamic simulation and sets proper parameters.</div></div>"});

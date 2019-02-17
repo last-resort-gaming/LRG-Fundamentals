@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:AI/Functions/fn_SpawnAI.sqf","fn_SpawnAI.sqf");NDSummary.OnSummaryLoaded("File:AI/Functions/fn_SpawnAI.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[11,0,1,"Functions","Functions"],[12,0,0,"LR_fnc_SpawnAI","LR_fnc_SpawnAI"]]);

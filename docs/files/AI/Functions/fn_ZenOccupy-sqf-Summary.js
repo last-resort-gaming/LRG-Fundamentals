@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:AI/Functions/fn_ZenOccupy.sqf","fn_ZenOccupy.sqf");NDSummary.OnSummaryLoaded("File:AI/Functions/fn_ZenOccupy.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[7,0,1,"Functions","Functions"],[8,0,0,"derp_fnc_ZenOccupy","derp_fnc_ZenOccupy"]]);

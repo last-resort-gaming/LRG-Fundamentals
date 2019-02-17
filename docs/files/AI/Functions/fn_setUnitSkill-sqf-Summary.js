@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:AI/Functions/fn_setUnitSkill.sqf","fn_setUnitSkill.sqf");NDSummary.OnSummaryLoaded("File:AI/Functions/fn_setUnitSkill.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[1,0,1,"Functions","Functions"],[2,0,0,"LR_fnc_SetUnitSkill","LR_fnc_SetUnitSkill"]]);

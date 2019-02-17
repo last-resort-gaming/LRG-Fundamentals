@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Media/Functions/fn_Sound3DFromPos.sqf","fn_Sound3DFromPos.sqf");NDSummary.OnSummaryLoaded("File:Media/Functions/fn_Sound3DFromPos.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[65,0,1,"Functions","Functions"],[66,0,0,"LR_Sound3DFromPos","LR_Sound3DFromPos"]]);

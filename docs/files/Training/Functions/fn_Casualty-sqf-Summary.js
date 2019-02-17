@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Training/Functions/fn_Casualty.sqf","fn_Casualty.sqf");NDSummary.OnSummaryLoaded("File:Training/Functions/fn_Casualty.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[77,0,1,"Functions","Functions"],[78,0,0,"LR_fnc_Casualty","LR_fnc_Casualty"]]);

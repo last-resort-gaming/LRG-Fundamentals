@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Vehicles/Scripts/uav.sqf","uav.sqf");NDSummary.OnSummaryLoaded("File:Vehicles/Scripts/uav.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[81,0,1,"Functions","Functions"],[82,0,0,"uav","uav"]]);

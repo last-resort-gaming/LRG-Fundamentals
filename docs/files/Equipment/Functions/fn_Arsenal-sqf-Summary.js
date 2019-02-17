@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Equipment/Functions/fn_Arsenal.sqf","fn_Arsenal.sqf");NDSummary.OnSummaryLoaded("File:Equipment/Functions/fn_Arsenal.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[19,0,1,"Functions","Functions"],[20,0,0,"LR_fnc_Arsenal","LR_fnc_Arsenal"]]);

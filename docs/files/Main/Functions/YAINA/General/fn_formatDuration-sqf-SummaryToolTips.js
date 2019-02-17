@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("File:Main/Functions/YAINA/General/fn_formatDuration.sqf",{60:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Formats given duration of time in seconds into a string with format hh:mm:ss</div></div>"});

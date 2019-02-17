@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("File:Training/Functions/fn_ResetTargets.sqf",{76:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Used to set pop up targets to fall when hit and then up on laptop command.</div></div>"});

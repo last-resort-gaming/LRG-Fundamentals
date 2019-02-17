@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("File:Player/Functions/fn_ConfigPlayer.sqf",{72:"<div class=\"NDToolTip TFunction LSQF\"><div class=\"TTSummary\">Used to configure basic player attributes and equipment.</div></div>"});

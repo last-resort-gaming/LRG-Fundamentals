@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Main/Functions/YAINA/General/fn_crewNames.sqf","fn_crewNames.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/YAINA/General/fn_crewNames.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[61,0,1,"Functions","Functions"],[62,0,0,"YAINA_fnc_crewNames","YAINA_fnc_crewNames"]]);

@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Main/Functions/LRG/fn_FindReplaceString.sqf","fn_FindReplaceString.sqf");NDSummary.OnSummaryLoaded("File:Main/Functions/LRG/fn_FindReplaceString.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[49,0,1,"Functions","Functions"],[50,0,0,"LR_fnc_FindReplaceString","LR_fnc_FindReplaceString"]]);

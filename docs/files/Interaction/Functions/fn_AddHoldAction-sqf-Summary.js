@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Interaction/Functions/fn_AddHoldAction.sqf","fn_AddHoldAction.sqf");NDSummary.OnSummaryLoaded("File:Interaction/Functions/fn_AddHoldAction.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[39,0,1,"Functions","Functions"],[40,0,0,"LR_fnc_AddHoldAction","LR_fnc_AddHoldAction"]]);

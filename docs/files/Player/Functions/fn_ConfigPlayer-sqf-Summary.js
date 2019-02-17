@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Player/Functions/fn_ConfigPlayer.sqf","fn_ConfigPlayer.sqf");NDSummary.OnSummaryLoaded("File:Player/Functions/fn_ConfigPlayer.sqf",[["SQF","SQF"]],[["Functions","Function"],["Groups","Group"]],[[71,0,1,"Functions","Functions"],[72,0,0,"LR_fnc_ConfigPlayer","LR_fnc_ConfigPlayer"]]);
