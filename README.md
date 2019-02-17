@@ -85,10 +85,10 @@ LRG Fundamentals contains the following open source functions to make this mod a
 * Use of YAINA Crewnames and FPS counter Functions
 
 ### I have questions, how do I get in touch?
-If you have any questions about how to use this mod or want to know more, simply respond in the comments or come and speak to the Development Team on [url=https://discord.gg/S2phRhc] Discord.[/url].
+If you have any questions about how to use this mod or want to know more, simply respond in the comments or come and speak to the Development Team on [Discord.](http://Discord.LastResortGaming.net)
 
 ### Issues/Suggestions/Faction Requests
-If you come across any issues, have an idea for an improvement or simply want another faction added to the AI Spawn module, please submit your request [h1][url=https://github.com/MitchJC93/LRG-Fundamentals/issues/new/choose] here.[/url]
+If you come across any issues, have an idea for an improvement or simply want another faction added to the AI Spawn module, please submit your request [here.](https://github.com/last-resort-gaming/LRG-Fundamentals/issues/new/choose)
 
 ### Will this mod create a dependency?
 This Mod will create a dependency if you use modules, such as the Spawn AI or Safe Zone module. However, this mod is designed to be used in a multiplayer environment and for best results should be on both server and client.
