@@ -1,5 +1,5 @@
 /*
-Function: LR_fnc_ConfigEquipment
+Function: LR_fnc_VehicleLoadout
 
 Description:
 	Used to configure basic container equipment and ACE medical state.
@@ -11,9 +11,9 @@ Arguments:
 
 Examples:
 	--- Code
-		[this] call LR_fnc_ConfigEquipment;
-		[this, "Basic Medical", false] call LR_fnc_ConfigEquipment;
-		[this, "Full MERT", true] call LR_fnc_ConfigEquipment;
+		[this] call LR_fnc_VehicleLoadout;
+		[this, "Basic Medical", false] call LR_fnc_VehicleLoadout;
+		[this, "Full MERT", true] call LR_fnc_VehicleLoadout;
 	---
 
 Author: MitchJC

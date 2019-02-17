@@ -1,26 +1,4 @@
-/*
-Function: LR_fnc_SetIntelAction
-
-Description:
-	Sets up the necessary action for the interactive intel created by
-	LR_fnc_initInspectableIntel. Do not use this yourself, it's always to be
-	called directly through the aforementioned function.
-
-Arguments:
-	_object - The object to set up the actions for
-	_actionTitle - The custom title of the action in the scroll-wheel menu
-	_itemName - The custom name of the intel item, displayed while picking up the intel
-
-Return Values:
-	The ID of the hold action
-
-Examples:
-
-Author:
-	Mokka,
-	MitchJC
-*/
-
+// not documented: internal function
 if ( not hasInterface ) exitWith {};
 
 params [

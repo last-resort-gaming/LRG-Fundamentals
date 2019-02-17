@@ -1,5 +1,5 @@
 /*
-Function: LR_Sound3DOnObject
+Function: LR_fnc_Sound3DOnObject
 
 Description:
 	Plays a sound on an object by attaching a dummy object to said object. Dummy

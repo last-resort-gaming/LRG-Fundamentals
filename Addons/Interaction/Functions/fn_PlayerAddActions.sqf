@@ -1,9 +1,4 @@
-/*
-	LRG MISSION TEMPLATE
-	fn_PlayerAddActions.sqf
-	Author: MitchJC
-	Description: Includes AddActions for players. Also called on respawn.
-*/
+// not documented: postInit
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitwith {};
 
 [

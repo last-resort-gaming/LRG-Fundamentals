@@ -7,7 +7,7 @@ Description:
 Arguments:
 	_object - Object the addaction is applied to. <OBJECT>
 
-Examples:^
+Examples:
     --- Code
 	    [this] call LR_fnc_Casualty;
     ---
