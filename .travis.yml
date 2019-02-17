@@ -2,10 +2,6 @@
 # https://docs.travis-ci.com
 language: minimal
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y naturaldocs
-
 script:
   - chmod +x tools/make_docs
   - chmod +x tools/install_nd
