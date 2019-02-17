@@ -8,7 +8,9 @@ before_install:
 
 script:
   - chmod +x tools/make_docs
+  - chmod +x tools/install_nd
   - mkdir pages
+  - ./tools/install_nd
   - ./tools/make_docs
   - mv -v docs/ pages/
   - cp README.md pages/

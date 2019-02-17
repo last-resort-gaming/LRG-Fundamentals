@@ -1,4 +1,4 @@
-Format: 1.52
+Format: Development Release 07-07-2013 (1.52 base)
 
 
 Title: LRG Fundamentals
