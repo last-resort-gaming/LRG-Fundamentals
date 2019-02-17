@@ -1,13 +1,5 @@
 #!/bin/sh
 
-NATURALDOCS=`which NaturalDocs 2>/dev/null`
-
-if [ -z $NATURALDOCS ]
-then
-  echo "Could not find NaturalDocs in the PATH. Install it or adjust the PATH environment variable."
-  exit 1
-fi
-
 echo -e "\n=== Compiling documentation ===\n"
 if [ ! -d ../docs ]
 then
@@ -15,5 +7,5 @@ then
 fi
 cp overview.txt LRG_Logo.png ../addons
 
-$NATURALDOCS -r -i "../addons" -xi "../addons/main/Functions/AIS" -o HTML "../docs" -p "lrg-fundamentals" -s Default lrg
+naturaldocs -r -i "../addons" -xi "../addons/main/Functions/AIS" -o HTML "../docs" -p "lrg-fundamentals" -s Default lrg
 rm ../addons/{overview.txt,LRG_Logo.png}
