@@ -1,227 +1,227 @@
 Development Release 07-07-2013 (1.52 base)
 SQF
-P:\z\LRG Fundamentals\addons\Main\XEH_preInit.sqf	1550007708	0	P:\z\LRG Fundamentals\addons\Main\XEH_preInit.sqf
-P:\z\LRG Fundamentals\addons\Media\Functions\fn_Sound3DOnObject.sqf	1550422947	1	LR_fnc_Sound3DOnObject
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ISTS_OPF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ISTS_OPF.sqf
-P:\z\LRG Fundamentals\addons\Main\script_component.hpp	1549819459	0	P:\z\LRG Fundamentals\addons\Main\script_component.hpp
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_RunIntelAction.sqf	1550411485	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_RunIntelAction.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_AIOccupyBuilding.sqf	1550410629	1	derp_fnc_AIOccupyBuilding
-P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Presets.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Presets.hpp
-P:\z\LRG Fundamentals\addons\Player\Cfg3DEN.hpp	1550008216	0	P:\z\LRG Fundamentals\addons\Player\Cfg3DEN.hpp
-P:\z\LRG Fundamentals\addons\AI\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\AI\script_component.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_US.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_US.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PESH_IND.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PESH_IND.sqf
-P:\z\LRG Fundamentals\addons\Medical\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\config.cpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateTerrain.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateTerrain.sqf
+P:\z\LRG Fundamentals\addons\Warlords\Scripts\RespawnForWarlords.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Scripts\RespawnForWarlords.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_RACS.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_RACS.sqf
 P:\z\LRG Fundamentals\addons\Channels\XEH_preInit.sqf	1550005189	0	P:\z\LRG Fundamentals\addons\Channels\XEH_preInit.sqf
 P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_msv.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_msv.sqf
-P:\z\LRG Fundamentals\addons\Warlords\Params.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Params.hpp
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_InitInspectableIntel.sqf	1550007226	1	LR_fnc_initInspectableIntel
-P:\z\LRG Fundamentals\addons\Explosives\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Explosives\script_component.hpp
-P:\z\LRG Fundamentals\addons\Training\config.cpp	1549819460	0	P:\z\LRG Fundamentals\addons\Training\config.cpp
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_PlayerAddActions.sqf	1550411522	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_PlayerAddActions.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ChDKZ.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ChDKZ.sqf
-P:\z\LRG Fundamentals\addons\Zeus\config.cpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\config.cpp
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\dialog.hpp	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\dialog.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UA.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_un.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_un.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_fovViewDistance.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_fovViewDistance.sqf
-P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_EquipmentLoadout.sqf	1550005867	1	LR_fnc_ConfigEquipment
-P:\z\LRG Fundamentals\addons\Training\Functions\fn_Casualty.sqf	1550419173	1	LR_fnc_Casualty
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT_Pacific.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT_Pacific.sqf
-P:\z\LRG Fundamentals\addons\QS Icons\XEH_preInit.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\QS Icons\XEH_preInit.sqf
-P:\z\LRG Fundamentals\addons\Explosives\CfgFunctions.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Explosives\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_UNSC.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_UNSC.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_SpawnAI.sqf	1550410666	1	LR_fnc_SpawnAI
-P:\z\LRG Fundamentals\addons\Zeus\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\script_component.hpp
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_InitCreatorActions.sqf	1550006973	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_InitCreatorActions.sqf
-P:\z\LRG Fundamentals\addons\Media\CfgFunctions.hpp	1549819459	0	P:\z\LRG Fundamentals\addons\Media\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Weather\config.cpp	1550009363	0	P:\z\LRG Fundamentals\addons\Weather\config.cpp
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_TFARSettings.sqf	1550007191	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_TFARSettings.sqf
-P:\z\LRG Fundamentals\addons\Safe Zone\SafeZoneModule.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Safe Zone\SafeZoneModule.hpp
-P:\z\LRG Fundamentals\addons\Equipment\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Equipment\script_component.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UKR.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UKR.sqf
-P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_VehicleLoadout.sqf	1550419286	1	LR_fnc_VehicleLoadout
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_ZenOccupy.sqf	1550410642	1	derp_fnc_ZenOccupy
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_RACS.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_RACS.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GB.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GB.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_trueZoom.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_trueZoom.sqf
-P:\z\LRG Fundamentals\addons\Vehicles\Cfg3DEN.hpp	1550009281	0	P:\z\LRG Fundamentals\addons\Vehicles\Cfg3DEN.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_T_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_T_F.sqf
-P:\z\LRG Fundamentals\addons\Zeus\cfgVehicles.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\cfgVehicles.hpp
 P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_FindReplaceString.sqf	1550006919	1	LR_fnc_FindReplaceString
-P:\z\LRG Fundamentals\addons\overview.txt	1550419902	1	Overview
-P:\z\LRG Fundamentals\addons\Media\CfgSounds.hpp	1550007944	0	P:\z\LRG Fundamentals\addons\Media\CfgSounds.hpp
-P:\z\LRG Fundamentals\addons\Equipment\CfgFunctions.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Equipment\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Vehicles\CfgFunctions.hpp	1550009284	0	P:\z\LRG Fundamentals\addons\Vehicles\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Vehicles\Scripts\uav.sqf	1550422927	0	P:\z\LRG Fundamentals\addons\Vehicles\Scripts\uav.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_C_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_C_F.sqf
-P:\z\LRG Fundamentals\addons\Main\CfgDisplays.hpp	1550007588	0	P:\z\LRG Fundamentals\addons\Main\CfgDisplays.hpp
-P:\z\LRG Fundamentals\addons\Vehicles\Scripts\general.sqf	1550422901	0	P:\z\LRG Fundamentals\addons\Vehicles\Scripts\general.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_TKA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_TKA.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\crewNamesTitles.hpp	1550007295	0	P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\crewNamesTitles.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UNSUNG_E_NVA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UNSUNG_E_NVA.sqf
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_LaptopHoldActions.sqf	1550411619	1	LR_fnc_LaptopHoldActions
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_AddAction.sqf	1550006676	1	LR_fnc_AddAction
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_selTerrainQuality.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_selTerrainQuality.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Woodland.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Woodland.sqf
-P:\z\LRG Fundamentals\addons\Main\CfgFunctions.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\Main\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_crewNames.sqf	1550412027	0	P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_crewNames.sqf
-P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscDisplayCueCard.sqf	1550007542	0	P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscDisplayCueCard.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_showFPS.sqf	1550412038	0	P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_showFPS.sqf
-P:\z\LRG Fundamentals\addons\Main\script_mod.hpp	1549987429	0	P:\z\LRG Fundamentals\addons\Main\script_mod.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateSettings.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateSettings.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_UN.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_UN.sqf
-P:\z\LRG Fundamentals\addons\Player\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Player\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK.sqf
-P:\z\LRG Fundamentals\addons\Main\CfgRespawnTemplates.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Main\CfgRespawnTemplates.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_UAVstatus.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_UAVstatus.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PMC.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PMC.sqf
-P:\z\LRG Fundamentals\addons\Media\CfgMusic.hpp	1550007940	0	P:\z\LRG Fundamentals\addons\Media\CfgMusic.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateTerrain.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateTerrain.sqf
-P:\z\LRG Fundamentals\addons\Media\Functions\fn_Sound3DFromPos.sqf	1550422944	1	LR_fnc_Sound3DFromPos
-P:\z\LRG Fundamentals\addons\QS Icons\Scripts\QS_icons.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\QS Icons\Scripts\QS_icons.sqf
-P:\z\LRG Fundamentals\addons\Vehicles\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Vehicles\config.cpp
-P:\z\LRG Fundamentals\addons\Player\Functions\fn_ConfigPlayer.sqf	1550008212	1	LR_fnc_ConfigPlayer
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_setUnitSkill.sqf	1550006308	1	LR_fnc_SetUnitSkill
-P:\z\LRG Fundamentals\addons\Channels\config.cpp	1550410666	0	P:\z\LRG Fundamentals\addons\Channels\config.cpp
-P:\z\LRG Fundamentals\addons\Warlords\Scripts\RespawnForWarlords.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Scripts\RespawnForWarlords.sqf
+P:\z\LRG Fundamentals\addons\AI\AISpawnsIndependentModule.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\AISpawnsIndependentModule.hpp
+P:\z\LRG Fundamentals\addons\Zeus\cfgVehicles.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\cfgVehicles.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_PilotCheck.sqf	1550007175	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_PilotCheck.sqf
+P:\z\LRG Fundamentals\addons\Player\config.cpp	1549819460	0	P:\z\LRG Fundamentals\addons\Player\config.cpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Arctic.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Arctic.sqf
+P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_ServiceVehicle.sqf	1550008748	0	P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_ServiceVehicle.sqf
+P:\z\LRG Fundamentals\addons\Player\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Player\script_component.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_ZenOccupy.sqf	1550410642	1	derp_fnc_ZenOccupy
+P:\z\LRG Fundamentals\addons\Warlords\Functions\fn_SaveLoadout.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Functions\fn_SaveLoadout.sqf
+P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscNotepad.sqf	1550007558	0	P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscNotepad.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_army.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_army.sqf
+P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_CrashSite.sqf	1550006229	1	LR_fnc_CrashSite
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT_Pacific.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT_Pacific.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT.sqf
+P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_MakeIED.sqf	1550006489	1	LR_fnc_makeIED
 P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_AddSelfAction.sqf	1550006852	1	LR_fnc_AddSelfAction
 P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_init.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_init.sqf
 P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IA.sqf
-P:\z\LRG Fundamentals\addons\AI\AISpawnsIndependentModule.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\AISpawnsIndependentModule.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_T_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_T_F.sqf
-P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscNotepad.sqf	1550007558	0	P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscNotepad.sqf
-P:\z\LRG Fundamentals\addons\Media\Functions\fn_Sound3D.sqf	1550008064	1	LR_fnc_Sound3D
-P:\z\LRG Fundamentals\addons\Zeus\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Weather\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Weather\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_DynamicSim.sqf	1550007666	1	LR_fnc_DynamicSim
-P:\z\LRG Fundamentals\addons\Weather\Functions\fn_RealWeather.sqf	1550009346	0	P:\z\LRG Fundamentals\addons\Weather\Functions\fn_RealWeather.sqf
-P:\z\LRG Fundamentals\addons\Weather\XEH_preInit.sqf	1550009366	0	P:\z\LRG Fundamentals\addons\Weather\XEH_preInit.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBterrainInput.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBterrainInput.sqf
-P:\z\LRG Fundamentals\addons\Safe Zone\Functions\fn_SafeZone.sqf	1550008527	1	LR_fnc_SafeZone
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_RACS.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_RACS.sqf
-P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_Loadouts.sqf	1550006051	1	LR_fnc_Loadouts
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_F.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_hintC.sqf	1550007226	1	YAINA_fnc_hintC
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_US_Army.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_US_Army.sqf
-P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_AmmoBox.sqf	1550005476	1	LR_fnc_Ammobox
-P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_IEDVehicle.sqf	1550006494	1	LR_fnc_IEDVehicle
-P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_CrashSite.sqf	1550006229	1	LR_fnc_CrashSite
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Tropical.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Tropical.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_SLA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_SLA.sqf
-P:\z\LRG Fundamentals\addons\QS Icons\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\QS Icons\script_component.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_openDialog.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_openDialog.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_PilotCheck.sqf	1550007175	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_PilotCheck.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_AddCueCards.sqf	1550007103	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_AddCueCards.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_NAPA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_NAPA.sqf
-P:\z\LRG Fundamentals\addons\Main\Scripts\RespawnOnStartPosition.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Main\Scripts\RespawnOnStartPosition.sqf
-P:\z\LRG Fundamentals\addons\Channels\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Channels\script_component.hpp
-P:\z\LRG Fundamentals\addons\QS Icons\CfgFunctions.hpp	1550008262	0	P:\z\LRG Fundamentals\addons\QS Icons\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Warlords\Functions\fn_SaveLoadout.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Functions\fn_SaveLoadout.sqf
-P:\z\LRG Fundamentals\addons\Channels\XEH_PostInit.sqf	1550005182	0	P:\z\LRG Fundamentals\addons\Channels\XEH_PostInit.sqf
-P:\z\LRG Fundamentals\addons\Warlords\CfgFunctions.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Safe Zone\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Safe Zone\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_BH.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_BH.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_DynamicGroups.sqf	1550007128	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_DynamicGroups.sqf
-P:\z\LRG Fundamentals\addons\AI\AISpawnsEastModule.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\AISpawnsEastModule.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vdv.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vdv.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Temperate.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Temperate.sqf
-P:\z\LRG Fundamentals\addons\Explosives\config.cpp	1549819458	0	P:\z\LRG Fundamentals\addons\Explosives\config.cpp
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_preInitCreatorActions.sqf	1550006985	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_preInitCreatorActions.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UN.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UN.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_RU.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_RU.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AA.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AFR_OPF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AFR_OPF.sqf
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_AddHoldAction.sqf	1550006817	1	LR_fnc_AddHoldAction
-P:\z\LRG Fundamentals\addons\QS Icons\config.cpp	1550008281	0	P:\z\LRG Fundamentals\addons\QS Icons\config.cpp
-P:\z\LRG Fundamentals\addons\Medical\CfgFunctions.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_ChDKZ.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_ChDKZ.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_NAPA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_NAPA.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRAN.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRAN.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Desert.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Desert.sqf
-P:\z\LRG Fundamentals\addons\Interaction\CfgFunctions.hpp	1550006958	0	P:\z\LRG Fundamentals\addons\Interaction\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\AI\CfgFunctions.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Player\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Player\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Player\Cfg3DEN.hpp	1550008216	0	P:\z\LRG Fundamentals\addons\Player\Cfg3DEN.hpp
+P:\z\LRG Fundamentals\addons\Main\CfgFunctions.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\Main\CfgFunctions.hpp
 P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Earplugs.sqf	1550007144	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Earplugs.sqf
-P:\z\LRG Fundamentals\addons\Media\config.cpp	1549819459	0	P:\z\LRG Fundamentals\addons\Media\config.cpp
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_randomPos.sqf	1550410642	1	derp_fnc_randomPos
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_nationalist.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_nationalist.sqf
-P:\z\LRG Fundamentals\addons\AI\AISpawnsWestModule.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\AISpawnsWestModule.hpp
-P:\z\LRG Fundamentals\addons\Weather\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Weather\script_component.hpp
-P:\z\LRG Fundamentals\addons\QS Icons\Functions\fn_MapIcons.sqf	1550412623	0	P:\z\LRG Fundamentals\addons\QS Icons\Functions\fn_MapIcons.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_TEC_CSAT.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_F.sqf
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_InitInspectableIntel.sqf	1550007226	1	LR_fnc_initInspectableIntel
+P:\z\LRG Fundamentals\addons\Zeus\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\script_component.hpp
+P:\z\LRG Fundamentals\addons\Main\script_mod.hpp	1549987429	0	P:\z\LRG Fundamentals\addons\Main\script_mod.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_hintC.sqf	1550007226	1	YAINA_fnc_hintC
+P:\z\LRG Fundamentals\addons\Training\config.cpp	1549819460	0	P:\z\LRG Fundamentals\addons\Training\config.cpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_wd.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_wd.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Temperate.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Temperate.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_ChDKZ.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_ChDKZ.sqf
 P:\z\LRG Fundamentals\addons\Medical\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Medical\script_component.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_keyDownTerrain.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_keyDownTerrain.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Logs.sqf	1550007155	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Logs.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged_syncmode.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged_syncmode.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Woodland.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Woodland.sqf
+P:\z\LRG Fundamentals\addons\Vehicles\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Vehicles\config.cpp
+P:\z\LRG Fundamentals\addons\Media\Functions\fn_Sound3DFromPos.sqf	1550422944	1	LR_fnc_Sound3DFromPos
+P:\z\LRG Fundamentals\addons\Medical\Functions\fn_moduleMedicalFacility.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\Functions\fn_moduleMedicalFacility.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_openDialog.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_openDialog.sqf
+P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_Loadouts.sqf	1550006051	1	LR_fnc_Loadouts
+P:\z\LRG Fundamentals\addons\Equipment\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Equipment\script_component.hpp
+P:\z\LRG Fundamentals\addons\Vehicles\Cfg3DEN.hpp	1550009281	0	P:\z\LRG Fundamentals\addons\Vehicles\Cfg3DEN.hpp
+P:\z\LRG Fundamentals\addons\Zeus\config.cpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\config.cpp
+P:\z\LRG Fundamentals\addons\Media\config.cpp	1549819459	0	P:\z\LRG Fundamentals\addons\Media\config.cpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_UNSC.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_UNSC.sqf
+P:\z\LRG Fundamentals\addons\Vehicles\Scripts\uav.sqf	1550422927	0	P:\z\LRG Fundamentals\addons\Vehicles\Scripts\uav.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateVehType.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateVehType.sqf
+P:\z\LRG Fundamentals\addons\Media\CfgMusic.hpp	1550007940	0	P:\z\LRG Fundamentals\addons\Media\CfgMusic.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_BH.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_BH.sqf
 P:\z\LRG Fundamentals\addons\Safe Zone\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Safe Zone\script_component.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Arctic.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Arctic.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Diary.sqf	1550007116	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Diary.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_PMC_ION.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_PMC_ION.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_moduleAISpawns.sqf	1550410666	0	P:\z\LRG Fundamentals\addons\AI\Functions\fn_moduleAISpawns.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_SetInitialAI.sqf	1550003025	0	P:\z\LRG Fundamentals\addons\AI\Functions\fn_SetInitialAI.sqf
-P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Pacific_Presets.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Pacific_Presets.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_TK_GUE.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_TK_GUE.sqf
-P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_Arsenal.sqf	1550005754	1	LR_fnc_Arsenal
-P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_moduleServicing.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_moduleServicing.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_d.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_d.sqf
-P:\z\LRG Fundamentals\addons\Main\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Main\config.cpp
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_VanillaFatigue.sqf	1550007199	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_VanillaFatigue.sqf
+P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_VehicleLoadout.sqf	1550419286	1	LR_fnc_VehicleLoadout
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput_syncmode.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput_syncmode.sqf
+P:\z\LRG Fundamentals\addons\Safe Zone\SafeZoneModule.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Safe Zone\SafeZoneModule.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_TFARSettings.sqf	1550007191	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_TFARSettings.sqf
+P:\z\LRG Fundamentals\addons\AI\CfgFunctions.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\crewNamesTitles.hpp	1550007295	0	P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\crewNamesTitles.hpp
+P:\z\LRG Fundamentals\addons\Warlords\script_component.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\script_component.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Tropical.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Tropical.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRAN.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRAN.sqf
+P:\z\LRG Fundamentals\addons\AI\XEH_preInit.sqf	1550004909	0	P:\z\LRG Fundamentals\addons\AI\XEH_preInit.sqf
 P:\z\LRG Fundamentals\addons\Media\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Media\script_component.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AM_OPF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AM_OPF.sqf
-P:\z\LRG Fundamentals\addons\Equipment\Cfg3DEN.hpp	1550006063	0	P:\z\LRG Fundamentals\addons\Equipment\Cfg3DEN.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_localize.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_localize.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_CZ.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_CZ.sqf
+P:\z\LRG Fundamentals\addons\Channels\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Channels\script_component.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UVF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UVF.sqf
+P:\z\LRG Fundamentals\addons\Vehicles\ServicingModule.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Vehicles\ServicingModule.hpp
+P:\z\LRG Fundamentals\addons\Media\Functions\fn_Sound3DOnObject.sqf	1550422947	1	LR_fnc_Sound3DOnObject
+P:\z\LRG Fundamentals\addons\Main\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Main\config.cpp
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_preInitCreatorActions.sqf	1550006985	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_preInitCreatorActions.sqf
+P:\z\LRG Fundamentals\addons\Medical\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\config.cpp
+P:\z\LRG Fundamentals\addons\Weather\XEH_preInit.sqf	1550009366	0	P:\z\LRG Fundamentals\addons\Weather\XEH_preInit.sqf
+P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_AmmoBox.sqf	1550005476	1	LR_fnc_Ammobox
+P:\z\LRG Fundamentals\addons\Warlords\CfgRespawnTemplates.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\CfgRespawnTemplates.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_SLA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_SLA.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz_g.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz_g.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GER.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GER.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_trueZoom.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_trueZoom.sqf
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_AddCreatorAction.sqf	1550006810	1	LR_fnc_AddCreatorAction
+P:\z\LRG Fundamentals\addons\Training\Functions\fn_Casualty.sqf	1550419173	1	LR_fnc_Casualty
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_AddCueCards.sqf	1550007103	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_AddCueCards.sqf
+P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Pacific_Presets.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Pacific_Presets.hpp
+P:\z\LRG Fundamentals\addons\Weather\Functions\fn_RealWeather.sqf	1550009346	0	P:\z\LRG Fundamentals\addons\Weather\Functions\fn_RealWeather.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_formatDuration.sqf	1550007389	1	YAINA_fnc_formatDuration
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_DynamicSim.sqf	1550007666	1	LR_fnc_DynamicSim
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_moduleAISpawns.sqf	1550410666	0	P:\z\LRG Fundamentals\addons\AI\Functions\fn_moduleAISpawns.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PESH_IND.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PESH_IND.sqf
+P:\z\LRG Fundamentals\addons\Interaction\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Interaction\script_component.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_F.sqf
+P:\z\LRG Fundamentals\addons\Zeus\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Zeus\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Main\XEH_preInit.sqf	1550007708	0	P:\z\LRG Fundamentals\addons\Main\XEH_preInit.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UKR.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UKR.sqf
+P:\z\LRG Fundamentals\addons\Medical\CfgFunctions.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\AI\AISpawnsWestModule.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\AISpawnsWestModule.hpp
+P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscDisplayCueCard.sqf	1550007542	0	P:\z\LRG Fundamentals\addons\Main\Scripts\UI\Displays\RscDisplayCueCard.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_US_Army.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_US_Army.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateSettings.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateSettings.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_DynamicGroups.sqf	1550007128	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_DynamicGroups.sqf
+P:\z\LRG Fundamentals\addons\Media\CfgSounds.hpp	1550007944	0	P:\z\LRG Fundamentals\addons\Media\CfgSounds.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AA.sqf
+P:\z\LRG Fundamentals\addons\Medical\MedicalModule.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\MedicalModule.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_d.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_d.sqf
+P:\z\LRG Fundamentals\addons\AI\AISpawnsEastModule.hpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\AISpawnsEastModule.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_keyDownTerrain.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_keyDownTerrain.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRA.sqf
+P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_EquipmentLoadout.sqf	1550005867	1	LR_fnc_ConfigEquipment
+P:\z\LRG Fundamentals\addons\Main\CfgRespawnTemplates.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Main\CfgRespawnTemplates.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_ArsenalLoadSave.sqf	1550007104	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_ArsenalLoadSave.sqf
+P:\z\LRG Fundamentals\addons\Weather\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Weather\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Explosives\config.cpp	1549819458	0	P:\z\LRG Fundamentals\addons\Explosives\config.cpp
+P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_moduleServicing.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_moduleServicing.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AFR_OPF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AFR_OPF.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK_MILITIA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK_MILITIA.sqf
+P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_SpawnExplosives.sqf	1550007226	1	LR_fnc_SpawnExplosives
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged.sqf
+P:\z\LRG Fundamentals\addons\Interaction\CfgFunctions.hpp	1550006958	0	P:\z\LRG Fundamentals\addons\Interaction\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_LaptopHoldActions.sqf	1550411619	1	LR_fnc_LaptopHoldActions
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_T_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_T_F.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_crewNames.sqf	1550412027	0	P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_crewNames.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\dialog.hpp	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\dialog.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_UN.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_UN.sqf
+P:\z\LRG Fundamentals\addons\Media\CfgUnitInsignia.hpp	1550007946	0	P:\z\LRG Fundamentals\addons\Media\CfgUnitInsignia.hpp
+P:\z\LRG Fundamentals\addons\Media\Functions\fn_Patches.sqf	1550007851	1	LR_fnc_Patches
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_InitCreatorActions.sqf	1550006973	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_InitCreatorActions.sqf
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_DynamicText.sqf	1550006889	1	LR_fnc_DynamicText
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_setUnitSkill.sqf	1550006308	1	LR_fnc_SetUnitSkill
+P:\z\LRG Fundamentals\addons\Training\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Training\script_component.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PMC.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_PMC.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_TKA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_TKA.sqf
+P:\z\LRG Fundamentals\addons\Warlords\Params.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Params.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GB.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GB.sqf
+P:\z\LRG Fundamentals\addons\AI\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\AI\script_component.hpp
+P:\z\LRG Fundamentals\addons\Interaction\config.cpp	1549819458	0	P:\z\LRG Fundamentals\addons\Interaction\config.cpp
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Logs.sqf	1550007155	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Logs.sqf
+P:\z\LRG Fundamentals\addons\Player\Functions\fn_ConfigPlayer.sqf	1550008212	1	LR_fnc_ConfigPlayer
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ChDKZ.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ChDKZ.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_T_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_T_F.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_log.sqf	1550007226	1	YAINA_fnc_log
+P:\z\LRG Fundamentals\addons\Media\CfgFunctions.hpp	1549819459	0	P:\z\LRG Fundamentals\addons\Media\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_VanillaFatigue.sqf	1550007199	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_VanillaFatigue.sqf
+P:\z\LRG Fundamentals\addons\Equipment\CfgFunctions.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Equipment\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_TK_GUE.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_TK_GUE.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Desert.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_Desert.sqf
 P:\z\LRG Fundamentals\addons\Warlords\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\config.cpp
 P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_keyDown.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_keyDown.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_Ins.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_Ins.sqf
-P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_MakeIED.sqf	1550006489	1	LR_fnc_makeIED
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UVF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UVF.sqf
-P:\z\LRG Fundamentals\addons\Zeus\Functions\fn_ConfigZeus.sqf	1550009440	1	LR_fnc_ConfigZeus
-P:\z\LRG Fundamentals\addons\AI\config.cpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\config.cpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPF_F.sqf
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_AddCreatorAction.sqf	1550006810	1	LR_fnc_AddCreatorAction
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onSliderChange.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onSliderChange.sqf
-P:\z\LRG Fundamentals\addons\Media\CfgUnitInsignia.hpp	1550007946	0	P:\z\LRG Fundamentals\addons\Media\CfgUnitInsignia.hpp
-P:\z\LRG Fundamentals\addons\Main\Scripts\Earplugs\earplugs.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Main\Scripts\Earplugs\earplugs.sqf
-P:\z\LRG Fundamentals\addons\Interaction\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Interaction\script_component.hpp
-P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_DynamicText.sqf	1550006889	1	LR_fnc_DynamicText
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_army.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_army.sqf
-P:\z\LRG Fundamentals\addons\Training\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Training\script_component.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_SLA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_SLA.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_wd.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_usarmy_wd.sqf
-P:\z\LRG Fundamentals\addons\Warlords\CfgRespawnTemplates.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\CfgRespawnTemplates.hpp
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateVehType.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_updateVehType.sqf
-P:\z\LRG Fundamentals\addons\Medical\MedicalModule.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\MedicalModule.hpp
-P:\z\LRG Fundamentals\addons\Medical\Functions\fn_moduleMedicalFacility.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Medical\Functions\fn_moduleMedicalFacility.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GER.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_GER.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_ArsenalLoadSave.sqf	1550007104	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_ArsenalLoadSave.sqf
-P:\z\LRG Fundamentals\addons\AI\XEH_preInit.sqf	1550004909	0	P:\z\LRG Fundamentals\addons\AI\XEH_preInit.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_IRA.sqf
-P:\z\LRG Fundamentals\addons\Player\config.cpp	1549819460	0	P:\z\LRG Fundamentals\addons\Player\config.cpp
-P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_log.sqf	1550007226	1	YAINA_fnc_log
-P:\z\LRG Fundamentals\addons\Training\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Training\CfgFunctions.hpp
-P:\z\LRG Fundamentals\addons\Safe Zone\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Safe Zone\config.cpp
-P:\z\LRG Fundamentals\addons\Player\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Player\script_component.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_cdf_ground.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_cdf_ground.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_formatDuration.sqf	1550007389	1	YAINA_fnc_formatDuration
-P:\z\LRG Fundamentals\addons\Equipment\config.cpp	1549819458	0	P:\z\LRG Fundamentals\addons\Equipment\config.cpp
-P:\z\LRG Fundamentals\addons\Safe Zone\Functions\fn_moduleSafeZone.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Safe Zone\Functions\fn_moduleSafeZone.sqf
-P:\z\LRG Fundamentals\addons\Media\Functions\fn_Patches.sqf	1550007851	1	LR_fnc_Patches
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK_MILITIA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_TK_MILITIA.sqf
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_AddAction.sqf	1550006676	1	LR_fnc_AddAction
+P:\z\LRG Fundamentals\addons\Channels\config.cpp	1550410666	0	P:\z\LRG Fundamentals\addons\Channels\config.cpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UNSUNG_E_NVA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UNSUNG_E_NVA.sqf
+P:\z\LRG Fundamentals\addons\QS Icons\config.cpp	1550008281	0	P:\z\LRG Fundamentals\addons\QS Icons\config.cpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AM_OPF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_AM_OPF.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_US.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_US.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_showFPS.sqf	1550412038	0	P:\z\LRG Fundamentals\addons\Main\Functions\YAINA\General\fn_showFPS.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_NAPA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_NAPA.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_nationalist.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_nationalist.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UA.sqf
+P:\z\LRG Fundamentals\addons\Safe Zone\Functions\fn_SafeZone.sqf	1550008527	1	LR_fnc_SafeZone
+P:\z\LRG Fundamentals\addons\Explosives\script_component.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Explosives\script_component.hpp
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_PlayerAddActions.sqf	1550411522	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_PlayerAddActions.sqf
 P:\z\LRG Fundamentals\addons\Vehicles\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Vehicles\script_component.hpp
-P:\z\LRG Fundamentals\addons\AI\Functions\fn_infantryGarrison.sqf	1550410666	1	LR_fnc_infantryGarrison
-P:\z\LRG Fundamentals\addons\Interaction\config.cpp	1549819458	0	P:\z\LRG Fundamentals\addons\Interaction\config.cpp
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vmf.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vmf.sqf
-P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_ServiceVehicle.sqf	1550008748	0	P:\z\LRG Fundamentals\addons\Vehicles\Functions\fn_ServiceVehicle.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz_g.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz_g.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_SetInitialAI.sqf	1550003025	0	P:\z\LRG Fundamentals\addons\AI\Functions\fn_SetInitialAI.sqf
+P:\z\LRG Fundamentals\addons\Warlords\CfgFunctions.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput.sqf
+P:\z\LRG Fundamentals\addons\overview.txt	1550419902	1	Overview
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ISTS_OPF.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_ISTS_OPF.sqf
 P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_MTP.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_UK3CB_BAF_Faction_Army_MTP.sqf
-P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_CZ.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_B_CZ.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Diary.sqf	1550007116	0	P:\z\LRG Fundamentals\addons\Main\Functions\LRG\fn_Diary.sqf
+P:\z\LRG Fundamentals\addons\Weather\config.cpp	1550009363	0	P:\z\LRG Fundamentals\addons\Weather\config.cpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_UAVstatus.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_UAVstatus.sqf
+P:\z\LRG Fundamentals\addons\Equipment\Cfg3DEN.hpp	1550006063	0	P:\z\LRG Fundamentals\addons\Equipment\Cfg3DEN.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_fovViewDistance.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_fovViewDistance.sqf
+P:\z\LRG Fundamentals\addons\Training\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Training\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged_syncmode.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onLBSelChanged_syncmode.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_SpawnAI.sqf	1550410666	1	LR_fnc_SpawnAI
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_PMC_ION.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_PMC_ION.sqf
+P:\z\LRG Fundamentals\addons\Safe Zone\Functions\fn_moduleSafeZone.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Safe Zone\Functions\fn_moduleSafeZone.sqf
+P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Presets.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\Presets\RHS_Presets.hpp
+P:\z\LRG Fundamentals\addons\QS Icons\CfgFunctions.hpp	1550008262	0	P:\z\LRG Fundamentals\addons\QS Icons\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_chdkz.sqf
+P:\z\LRG Fundamentals\addons\Channels\XEH_PostInit.sqf	1550005182	0	P:\z\LRG Fundamentals\addons\Channels\XEH_PostInit.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_Ins.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_OPTRE_Ins.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_un.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhssaf_faction_un.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_RU.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_O_RU.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_NAPA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_NAPA.sqf
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBterrainInput.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBterrainInput.sqf
+P:\z\LRG Fundamentals\addons\QS Icons\XEH_preInit.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\QS Icons\XEH_preInit.sqf
 P:\z\LRG Fundamentals\addons\Training\Functions\fn_ResetTargets.sqf	1550008668	1	LR_fnc_ResetTargets
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput_syncmode.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onEBinput_syncmode.sqf
-P:\z\LRG Fundamentals\addons\Vehicles\ServicingModule.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Vehicles\ServicingModule.hpp
+P:\z\LRG Fundamentals\addons\Equipment\config.cpp	1549819458	0	P:\z\LRG Fundamentals\addons\Equipment\config.cpp
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_infantryGarrison.sqf	1550410666	1	LR_fnc_infantryGarrison
+P:\z\LRG Fundamentals\addons\Safe Zone\config.cpp	1550410667	0	P:\z\LRG Fundamentals\addons\Safe Zone\config.cpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_SLA.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_SLA.sqf
+P:\z\LRG Fundamentals\addons\Main\script_component.hpp	1549819459	0	P:\z\LRG Fundamentals\addons\Main\script_component.hpp
+P:\z\LRG Fundamentals\addons\Main\Scripts\RespawnOnStartPosition.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Main\Scripts\RespawnOnStartPosition.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vmf.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vmf.sqf
+P:\z\LRG Fundamentals\addons\QS Icons\Scripts\QS_icons.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\QS Icons\Scripts\QS_icons.sqf
+P:\z\LRG Fundamentals\addons\AI\config.cpp	1550410666	0	P:\z\LRG Fundamentals\addons\AI\config.cpp
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_AddHoldAction.sqf	1550006817	1	LR_fnc_AddHoldAction
+P:\z\LRG Fundamentals\addons\Weather\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Weather\script_component.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_randomPos.sqf	1550410642	1	derp_fnc_randomPos
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onSliderChange.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_onSliderChange.sqf
+P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_RunIntelAction.sqf	1550411485	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_RunIntelAction.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UN.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_LOP_UN.sqf
+P:\z\LRG Fundamentals\addons\Main\Scripts\Earplugs\earplugs.sqf	1550410667	0	P:\z\LRG Fundamentals\addons\Main\Scripts\Earplugs\earplugs.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_C_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_C_F.sqf
+P:\z\LRG Fundamentals\addons\Vehicles\CfgFunctions.hpp	1550009284	0	P:\z\LRG Fundamentals\addons\Vehicles\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\QS Icons\Functions\fn_MapIcons.sqf	1550412623	0	P:\z\LRG Fundamentals\addons\QS Icons\Functions\fn_MapIcons.sqf
+P:\z\LRG Fundamentals\addons\Zeus\Functions\fn_ConfigZeus.sqf	1550009440	1	LR_fnc_ConfigZeus
+P:\z\LRG Fundamentals\addons\Vehicles\Scripts\general.sqf	1550422901	0	P:\z\LRG Fundamentals\addons\Vehicles\Scripts\general.sqf
+P:\z\LRG Fundamentals\addons\Safe Zone\CfgFunctions.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\Safe Zone\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\Main\CfgDisplays.hpp	1550007588	0	P:\z\LRG Fundamentals\addons\Main\CfgDisplays.hpp
+P:\z\LRG Fundamentals\addons\Equipment\Functions\fn_Arsenal.sqf	1550005754	1	LR_fnc_Arsenal
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_cdf_ground.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhsgref_faction_cdf_ground.sqf
 P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_SetIntelAction.sqf	1550411499	0	P:\z\LRG Fundamentals\addons\Interaction\Functions\fn_SetIntelAction.sqf
-P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_localize.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_localize.sqf
-P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_SpawnExplosives.sqf	1550007226	1	LR_fnc_SpawnExplosives
-P:\z\LRG Fundamentals\addons\Warlords\script_component.hpp	1550410667	0	P:\z\LRG Fundamentals\addons\Warlords\script_component.hpp
+P:\z\LRG Fundamentals\addons\Media\Functions\fn_Sound3D.sqf	1550008064	1	LR_fnc_Sound3D
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_BLU_F.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_RACS.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_CUP_I_RACS.sqf
+P:\z\LRG Fundamentals\addons\Explosives\CfgFunctions.hpp	1549819458	0	P:\z\LRG Fundamentals\addons\Explosives\CfgFunctions.hpp
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_F.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_IND_F.sqf
+P:\z\LRG Fundamentals\addons\QS Icons\script_component.hpp	1549819460	0	P:\z\LRG Fundamentals\addons\QS Icons\script_component.hpp
+P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_selTerrainQuality.sqf	1549819459	0	P:\z\LRG Fundamentals\addons\Main\Functions\CHVD\fn_selTerrainQuality.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vdv.sqf	1549819458	0	P:\z\LRG Fundamentals\addons\AI\Functions\Factions\fn_rhs_faction_vdv.sqf
+P:\z\LRG Fundamentals\addons\AI\Functions\fn_AIOccupyBuilding.sqf	1550410629	1	derp_fnc_AIOccupyBuilding
+P:\z\LRG Fundamentals\addons\Explosives\Functions\fn_IEDVehicle.sqf	1550006494	1	LR_fnc_IEDVehicle
