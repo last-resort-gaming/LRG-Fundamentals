@@ -2,18 +2,30 @@
 # https://docs.travis-ci.com
 language: minimal
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y naturaldocs
+stages:
+  - build
+  - name: deploy_dev
+    if: branch != master
+  - name: deploy
+    if: branch = master
 
-script:
-  - chmod +x tools/make_docs
-  - chmod +x tools/install_nd
-  - mkdir pages
-  - ./tools/install_nd
-  - ./tools/make_docs
-  - mv -v docs/ pages/
-  - cp README.md pages/
+
+jobs:
+  include:
+    - stage: build
+    - script:
+      - chmod +x tools/make_docs
+      - chmod +x tools/install_nd
+      - mkdir pages
+      - ./tools/install_nd
+      - ./tools/make_docs
+      - cp README.md pages/
+    - stage: deploy_dev
+    - script:
+      - mv -v ./docs ./docs_dev
+    - stage: deploy
+    - script:
+      - mv -v docs/ pages/
 
 deploy:
   provider: pages
@@ -21,5 +33,3 @@ deploy:
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   keep-history: true
   local-dir: pages/
-  on:
-    branch: master
