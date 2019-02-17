@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd tools
+
 echo -e "\n=== Compiling documentation ===\n"
 if [ ! -d ../docs ]
 then
