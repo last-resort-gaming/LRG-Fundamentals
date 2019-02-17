@@ -4,7 +4,7 @@ Format: 1.52
 Title: LRG Fundamentals
 SubTitle: Last Resort Gaming - LRG Fundamentals
 
-Footer: Copyright (c) MitchJC & Mokka and contributors
+Footer: Copyright (c) MitchJC &amp; Mokka and contributors
 Timestamp: year
 #   m     - One or two digit month.  January is "1"
 #   mm    - Always two digit month.  January is "01"
@@ -46,12 +46,96 @@ Don't Index: Files
 File: Overview  (no auto-title, overview.txt)
 Index: Index (Everything)
 Function Index: Index (Functions)
-Macro Index: Index (Macros)
 
 Group: Project  {
 
    Link: Project  (https://github.com/last-resort-gaming/LRG-Fundamentals)
    Link: Issues  (https://github.com/last-resort-gaming/LRG-Fundamentals/issues)
    Link: Download  (https://github.com/last-resort-gaming/LRG-Fundamentals/releases)
-   Link: Reference (https://last-resort-gaming.github.io/LRG-Fundamentals/docs)
+   Link: Reference  (https://last-resort-gaming.github.io/LRG-Fundamentals/docs)
    }  # Group: Project
+
+Group: Functions  {
+
+   Group: AI  {
+
+      File: derp_fnc_AIOccupyBuilding  (AI\Functions\fn_AIOccupyBuilding.sqf)
+      File: LR_fnc_infantryGarrison  (AI\Functions\fn_infantryGarrison.sqf)
+      File: derp_fnc_randomPos  (AI\Functions\fn_randomPos.sqf)
+      File: LR_fnc_SetUnitSkill  (AI\Functions\fn_setUnitSkill.sqf)
+      File: LR_fnc_SpawnAI  (AI\Functions\fn_SpawnAI.sqf)
+      File: derp_fnc_ZenOccupy  (AI\Functions\fn_ZenOccupy.sqf)
+      }  # Group: AI
+
+   Group: Equipment  {
+
+      File: LR_fnc_Ammobox  (Equipment\Functions\fn_AmmoBox.sqf)
+      File: LR_fnc_Arsenal  (Equipment\Functions\fn_Arsenal.sqf)
+      File: LR_fnc_ConfigEquipment  (Equipment\Functions\fn_EquipmentLoadout.sqf)
+      File: LR_fnc_Loadouts  (Equipment\Functions\fn_Loadouts.sqf)
+      }  # Group: Equipment
+
+   Group: Explosives  {
+
+      File: LR_fnc_CrashSite  (Explosives\Functions\fn_CrashSite.sqf)
+      File: LR_fnc_IEDVehicle  (Explosives\Functions\fn_IEDVehicle.sqf)
+      File: LR_fnc_makeIED  (Explosives\Functions\fn_MakeIED.sqf)
+      File: LR_fnc_SpawnExplosives  (Explosives\Functions\fn_SpawnExplosives.sqf)
+      }  # Group: Explosives
+
+   Group: Interaction  {
+
+      File: LR_fnc_AddAction  (Interaction\Functions\fn_AddAction.sqf)
+      File: LR_fnc_AddCreatorAction  (Interaction\Functions\fn_AddCreatorAction.sqf)
+      File: LR_fnc_AddHoldAction  (Interaction\Functions\fn_AddHoldAction.sqf)
+      File: LR_fnc_AddSelfAction  (Interaction\Functions\fn_AddSelfAction.sqf)
+      File: LR_fnc_DynamicText  (Interaction\Functions\fn_DynamicText.sqf)
+      File: LR_fnc_initInspectableIntel  (Interaction\Functions\fn_InitInspectableIntel.sqf)
+      File: LR_fnc_LaptopHoldActions  (Interaction\Functions\fn_LaptopHoldActions.sqf)
+      }  # Group: Interaction
+
+   Group: Main  {
+
+      File: YAINA_fnc_formatDuration  (Main\Functions\YAINA\General\fn_formatDuration.sqf)
+      File: YAINA_fnc_log  (Main\Functions\YAINA\General\fn_log.sqf)
+      File: YAINA_fnc_hintC  (Main\Functions\YAINA\General\fn_hintC.sqf)
+      File: LR_fnc_DynamicSim  (Main\Functions\LRG\fn_DynamicSim.sqf)
+      File: LR_fnc_FindReplaceString  (Main\Functions\LRG\fn_FindReplaceString.sqf)
+      }  # Group: Main
+
+   Group: Media  {
+
+      File: LR_fnc_Patches  (Media\Functions\fn_Patches.sqf)
+      File: LR_fnc_Sound3D  (Media\Functions\fn_Sound3D.sqf)
+      File: LR_fnc_Sound3DFromPos  (Media\Functions\fn_Sound3DFromPos.sqf)
+      File: LR_fnc_Sound3DOnObject  (Media\Functions\fn_Sound3DOnObject.sqf)
+      }  # Group: Media
+
+   Group: Player  {
+
+      File: LR_fnc_ConfigPlayer  (Player\Functions\fn_ConfigPlayer.sqf)
+      }  # Group: Player
+
+   Group: Safe Zone  {
+
+      File: LR_fnc_SafeZone  (Safe Zone\Functions\fn_SafeZone.sqf)
+      }  # Group: Safe Zone
+
+   Group: Training  {
+
+      File: LR_fnc_Casualty  (Training\Functions\fn_Casualty.sqf)
+      File: LR_fnc_ResetTargets  (Training\Functions\fn_ResetTargets.sqf)
+      }  # Group: Training
+
+   Group: Vehicles  {
+
+      File: LR_fnc_VehicleLoadout  (Vehicles\Functions\fn_VehicleLoadout.sqf)
+      }  # Group: Vehicles
+
+   Group: Zeus  {
+
+      File: LR_fnc_ConfigZeus  (Zeus\Functions\fn_ConfigZeus.sqf)
+      }  # Group: Zeus
+
+   }  # Group: Functions
+

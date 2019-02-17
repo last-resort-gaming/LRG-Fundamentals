@@ -1,0 +1,14 @@
+File: Overview
+
+(see LRG_Logo.png)
+
+LRG Fundamentals is a complete mission makers tool, used to create complex missions with ease. 
+Using the huge Library of functions, settings and modules you can create almost any type of mission.
+LRG Fundamentals is designed to be entirely modular, meaning you can use as much or as little as you want.
+By default, the master switches are set to off so only what you want to use will be used.
+LRG Fundamentals has been used by the LRG in one form or another for nearly 3 years.
+At the turn of 2019 we decided to publish our work and make all our files open source.
+That means you're free to download, edit, change and create your own work, based on what we've already made.
+
+This mod is the LRG's one stop shop for all functionality to complement any mission.
+We use it extensively with <@ACE at https://http://ace3mod.com> and <@TFAR at http://radio.task-force.ru/en/> and this is where it works best, however you only need <@CBA at https://steamcommunity.com/workshop/filedetails/?id=450814997> to use this mod. 
