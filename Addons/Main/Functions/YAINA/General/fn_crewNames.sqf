@@ -1,22 +1,4 @@
-/*
-Function: YAINA_fnc_crewNames
-
-Description:
-	Display the crew and vehicle heading/target. Initialized during
-    postInit phase.
-
-Arguments:
-	None
-
-Return Values:
-	None
-
-Examples:
-    Nothing to see here
-
-Author:
-	Unknown, rewritten by Alganthe
-*/
+// not documented: postInit
 if (isNil "LRG_Main_Master") exitwith {};
 if (not LRG_Main_Master) exitWith{};
 

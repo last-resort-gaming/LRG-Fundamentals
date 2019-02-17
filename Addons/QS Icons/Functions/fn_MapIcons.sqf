@@ -1,3 +1,5 @@
+// not documented: postInit Function
+
 if !(hasinterface) exitwith {};
 
 if (isNil "LRG_QSIcons_MasterEnable") exitwith {};

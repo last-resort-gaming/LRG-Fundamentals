@@ -1,5 +1,5 @@
 /*
-Function: LR_Sound3DFromPos
+Function: LR_fnc_Sound3DFromPos
 
 Description:
 	Plays a sound in 3D Space at a given position on every player.

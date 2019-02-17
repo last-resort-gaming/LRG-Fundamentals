@@ -1,0 +1,16 @@
+#!/bin/sh
+
+pwd
+cd tools
+pwd
+
+echo -e "\n=== Compiling documentation ===\n"
+if [ ! -d ../docs ]
+then
+  mkdir ../docs
+fi
+cp overview.txt LRG_Logo.png ../Addons
+
+perl natural_docs/NaturalDocs -r -i "../Addons" -xi "../Addons/Main/Functions/AIS" -o HTML "../docs" -p "lrg-fundamentals" -s Default -s lrg
+rm ../Addons/overview.txt
+rm ../Addons/LRG_Logo.png

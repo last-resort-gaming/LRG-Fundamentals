@@ -1,28 +1,4 @@
-/*
-Function: LR_fnc_RunIntelAction
-
-Description:
-	Adapted version of the action part of BIS_fnc_initIntelObject to enable us
-	to use LRG section names. Also, use remoteExec instead of the horrendously
-	old BIS_fnc_MP.
-
-Arguments:
-	_object - The object to which the addAction was attached
-	_caller - The player that interacted with the addAction
-	_arguments - Array of arguments passed to the addAction
-
-Return Values:
-	None.
-
-Examples:
-
-Author:
-	Karel Moricky
-
-Modified by:
-	Mokka
-*/
-
+// not documented: internal function
 _object = _this select 0;
 _caller = _this select 1;
 _arguments = _this select 2;
