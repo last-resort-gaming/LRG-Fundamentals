@@ -56,8 +56,8 @@ if (!isserver) exitwith {};
 params [
 	"_grpPrefix", "_center", "_radius",
 	["_faction", "CSAT"],
-	["_garrisons", [1,0,60, "LRG Default", 4, []]],
-	["_inf", [3,3]],
+	["_garrisons", [0,0]],
+	["_inf", [0,0]],
 	["_infaa", [0,0]],
 	["_infat", [0,0]],
 	["_sniper", [0,0]],
@@ -65,7 +65,7 @@ params [
 	["_vehmrap", [0,0]],
 	["_vehlight", [0,0]],
 	["_vehheavy", [0,0]],
-   	["_vehrand", [0,0]] 
+	["_vehrand", [0,0]]    
 ];
 
 _typeNameCenter = typeName _center;
@@ -78,22 +78,22 @@ call {
 
 _center set [2, 0];
 
-_garrisons params ["_garrisonGroupCount", ["_garrisonMinRad", 0], ["_garrisonMaxRad", 60], ["_garrisonSkill", 2], ["_garrisonFill", 4], ["_garrisonExcludes", []]];
+_garrisons params ["_GarrisonedGroupsMin", ["_GarrisonedGroupsMax", 0], ["_infSkill", "LRG Default"]];
 _inf params ["_infMin", ["_infRand", 0], ["_infSkill", "LRG Default"]];
 _infaa params ["_infaaMin", ["_infaaRand",0], ["_infaaSkill", "LRG Default"]];
 _infat params ["_infatMin", ["_infatRand",0], ["_infatSkill", "LRG Default"]];
 _sniper params ["_sniperMin", ["_sniperRand",0], ["_sniperSkill", "LRG Default"]];
 _vehaa params ["_vehaaMin", ["_vehaaRand",0], ["_vehaaSkill", "LRG Default"]];
 _vehmrap params ["_vehmrapMin", ["_vehmrapRand",0], ["_vehmrapSkill", "LRG Default"]];
-_vehrand params ["_vehrandMin", ["_vehrandRand",0], ["_vehrandSkill", "LRG Default"]];
 _vehlight params ["_vehlightMin", ["_vehlightRand",0], ["_vehlightSkill", "LRG Default"]];
 _vehheavy params ["_vehheavyMin", ["_vehheavyRand",0], ["_vehheavySkill", "LRG Default"]];
+_vehrand params ["_vehrandMin", ["_vehrandRand",0], ["_vehrandSkill", "LRG Default"]];
 
 ///////////////////////////////////////////////////////////
 // UNIT TYPES
 ///////////////////////////////////////////////////////////
 
-private ["_infList", "_confBase", "_infaaList", "_infatList", "_sniperList", "_vehAAList", "_vehMrapList", "_vehRandList", "_vehLightList", "_vehHeavyList"];
+private ["_infList", "_confBase", "_infaaList", "_infatList", "_sniperList", "_vehAAList", "_vehMrapList", "_vehLightList", "_vehHeavyList", "_vehRandList"];
 
 // TODO: UAVs ?
 
@@ -142,34 +142,40 @@ private _vehicles = [];
 ///////////////////////////////////////////////////////////
 // GARRISONS
 ///////////////////////////////////////////////////////////
-
-if (_garrisonGroupCount > 0) then {
-
-    private _garrisonedUnits = (
-        [
-            _center,
-            [0, _radius],
-            _side, _FactionSide,
-            _faction, _InfantryType,
-            _infList, _garrisonGroupCount,
-            nil, _garrisonSkill,
-            _garrisonFill, _garrisonExcludes
-        ] call LR_fnc_infantryGarrison
-    );
-    _units append _garrisonedUnits;
-
-    private _grps = [];
-    { _grps pushBackUnique (group _x); nil } count _units;
-
-    // tag groups
-    { _x setGroupIdGlobal [format["%1_gar%2", _grpPrefix, _forEachIndex]]; } forEach _grps;
+if !(_infList isEqualTo []) then {
+    if (_GarrisonedGroupsMax > 0) then {
+       private _GarDif = _GarrisonedGroupsMax - _GarrisonedGroupsMin +1;
+        if (_GarDif <0) then {_GarDif = 0};
+    
+        private _GarrisonedGroupsExact = _GarrisonedGroupsMin + floor (random _GarDif);
+        private _garrisonedUnits = (
+            [
+                _center,
+                [0, _radius],
+                _side, _FactionSide,
+                _faction, _InfantryType,
+                _infList, _GarrisonedGroupsExact,
+                nil, 2,
+                4, []
+            ] call LR_fnc_infantryGarrison
+        );
+        _units append _garrisonedUnits;
+    
+        private _grps = [];
+        { _grps pushBackUnique (group _x); nil } count _units;
+    
+        // tag groups
+        { _x setGroupIdGlobal [format["%1_gar%2", _grpPrefix, _forEachIndex]]; } forEach _grps;
+    };
 };
-
 ///////////////////////////////////////////////////////////
 // STANDARD INFANTRY
 ///////////////////////////////////////////////////////////
 if !(_infList isEqualTo []) then {
-    for "_x" from 1 to (_infMin + floor(random (_infRand+1))) do {
+   private _InfDif = _infRand - _infMin +1;
+    if (_InfDif <0) then {_InfDif = 0};
+
+    for "_x" from 1 to (_infMin + floor(random _InfDif)) do {
         _rpos = [[[_center, _radius],[]],["water"]] call BIS_fnc_randomPos;
         _g = [_rpos, _side, _confBase >> (selectRandom _infList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_inf%2", _grpPrefix, _x]];
@@ -184,7 +190,10 @@ if !(_infList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_infaaList isEqualTo []) then {
-    for "_x" from 1 to (_infaaMin + floor(random (_infaaRand+1))) do {
+   private _InfaaDif = _InfaaRand - _InfaaMin +1;
+    if (_InfaaDif <0) then {_InfaaDif = 0};
+
+    for "_x" from 1 to (_InfaaMin + floor(random _InfaaDif)) do {
         _rpos = [[[_center, _radius],[]],["water"]] call BIS_fnc_randomPos;
         _g = [_rpos, _side, _confBase >> (selectRandom _infaaList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_infaa%2", _grpPrefix, _x]];
@@ -199,7 +208,10 @@ if !(_infaaList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_infatList isEqualTo []) then {
-    for "_x" from 1 to (_infatMin + floor(random (_infatRand+1))) do {
+   private _InfatDif = _InfatRand - _InfatMin +1;
+    if (_InfatDif <0) then {_InfatDif = 0};
+
+    for "_x" from 1 to (_InfatMin + floor(random _InfatDif)) do {
         _rpos = [[[_center, _radius],[]],["water"]] call BIS_fnc_randomPos;
         _g = [_rpos, _side, _confBase >> (selectRandom _infatList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_infat%2", _grpPrefix, _x]];
@@ -213,7 +225,10 @@ if !(_infatList isEqualTo []) then {
 // SNIPER TEAMS
 ///////////////////////////////////////////////////////////
 if !(_sniperList isEqualTo []) then {
-    for "_x" from 1 to (_sniperMin + floor(random (_sniperRand+1))) do {
+   private _SniperDif = _SniperRand - _SniperMin +1;
+    if (_SniperDif <0) then {_SniperDif = 0};
+
+    for "_x" from 1 to (_SniperMin + floor(random _SniperDif)) do {
         _rpos = [_center, _radius, 100, 20] call BIS_fnc_findOverwatch;
         _g = [_rpos, _side, _confBase >> (selectRandom _sniperList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_sniper%2", _grpPrefix, _x]];
@@ -229,7 +244,10 @@ if !(_sniperList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehAAList isEqualTo []) then {
-    for "_x" from 1 to (_vehaaMin + floor(random (_vehaaRand+1))) do {
+   private _VehAADif = _VehAARand - _VehAAMin +1;
+    if (_VehAADif <0) then {_VehAADif = 0};
+
+    for "_x" from 1 to (_VehAAMin + floor(random _VehAADif)) do {
 
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_VehAA%2", _grpPrefix, _x]];
@@ -256,7 +274,10 @@ if !(_vehAAList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehmrapList isEqualTo []) then {
-    for "_x" from 1 to (_vehmrapMin + floor(random (_vehmrapRand+1))) do {
+   private _VehMRAPDif = _VehMRAPRand - _VehMRAPMin +1;
+    if (_VehMRAPDif <0) then {_VehMRAPDif = 0};
+
+    for "_x" from 1 to (_VehMRAPMin + floor(random _VehMRAPDif)) do {
 
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehmrap%2", _grpPrefix, _x]];
@@ -279,41 +300,16 @@ if !(_vehmrapList isEqualTo []) then {
 };
 
 ///////////////////////////////////////////////////////////
-// RANDOM VEHS
-///////////////////////////////////////////////////////////
-
-if (_vehRandList isEqualTo []) then {
-	{_vehRandList append _x} foreach [_vehAAList, _vehMrapList, _vehLightList, _vehHeavyList];
-
-    for "_x" from 1 to (_vehrandMin + floor(random (_vehrandRand+1))) do {
-
-        _g = createGroup _side;
-        _g setGroupIdGlobal [format ["%1_vehrand%2", _grpPrefix, _x]];
-
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call BIS_fnc_randomPos;
-
-        if !(_rpos isEqualTo [0,0]) then {
-            _v = (selectRandom _vehRandList) createVehicle _rpos ;
-            _v lock 3;
-
-            [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
-            [_g, _vehrandSkill] call LR_fnc_SetUnitSkill;
-            if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
-
-            _units append (units _g);
-            _vehicles pushBack _v;
-        };
-    };
-};
-
-///////////////////////////////////////////////////////////
 // LIGHT VEHS
 ///////////////////////////////////////////////////////////
 
-if (_vehLightList isEqualTo []) then {
-    for "_x" from 1 to (_vehLightMin + floor(random (_vehLightRand+1))) do {
+if !(_vehLightList isEqualTo []) then {
 
+   private _VehLightDif = _VehLightRand - _VehLightMin +1;
+    if (_VehLightDif <0) then {_VehLightDif = 0};
+
+    for "_x" from 1 to (_VehLightMin + floor(random _VehLightDif)) do {
+ 
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehLight%2", _grpPrefix, _x]];
 
@@ -335,11 +331,14 @@ if (_vehLightList isEqualTo []) then {
 };
 
 ///////////////////////////////////////////////////////////
-// RANDOM VEHS
+// HEAVY VEHS
 ///////////////////////////////////////////////////////////
 
-if (_vehHeavyList isEqualTo []) then {
-    for "_x" from 1 to (_vehHeavyMin + floor(random (_vehHeavyRand+1))) do {
+if !(_vehHeavyList isEqualTo []) then {
+   private _VehHeavyDif = _VehHeavyRand - _VehHeavyMin +1;
+    if (_VehHeavyDif <0) then {_VehHeavyDif = 0};
+
+    for "_x" from 1 to (_VehHeavyMin + floor(random _VehHeavyDif)) do {
 
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehHeavy%2", _grpPrefix, _x]];
@@ -353,6 +352,38 @@ if (_vehHeavyList isEqualTo []) then {
             [_v, _g] call BIS_fnc_spawnCrew;
             [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
             [_g, _vehHeavySkill] call LR_fnc_SetUnitSkill;
+            if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
+
+            _units append (units _g);
+            _vehicles pushBack _v;
+        };
+    };
+};
+
+///////////////////////////////////////////////////////////
+// RANDOM VEHS
+///////////////////////////////////////////////////////////
+{_vehRandList append _x} foreach [_vehAAList, _vehMrapList, _vehLightList, _vehHeavyList];
+
+if !(_vehRandList isEqualTo []) then {
+	
+   private _VehRandDif = _VehRandRand - _VehRandMin +1;
+    if (_VehRandDif <0) then {_VehRandDif = 0};
+
+    for "_x" from 1 to (_VehRandMin + floor(random _VehRandDif)) do {
+
+        _g = createGroup _side;
+        _g setGroupIdGlobal [format ["%1_vehrand%2", _grpPrefix, _x]];
+
+        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call BIS_fnc_randomPos;
+
+        if !(_rpos isEqualTo [0,0]) then {
+            _v = (selectRandom _vehRandList) createVehicle _rpos ;
+            _v lock 3;
+
+            [_v, _g] call BIS_fnc_spawnCrew;
+            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+            [_g, _vehrandSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
             _units append (units _g);

@@ -6,7 +6,8 @@ _logic = param [0,objNull,[objNull]];
 _ObjName = _logic getVariable ["ObjName", "Objective 1"];
 _Faction = _logic getVariable ["EnemyType", "CSAT"];
 _Radius = _logic getVariable ["Radius", 500];
-_GarrisonedGroups = _logic getVariable ["GarrisonedGroups", 0];
+_GarrisonedGroupsMin = _logic getVariable ["GarrisonedGroupsMin", 0];
+_GarrisonedGroupsMax = _logic getVariable ["GarrisonedGroupsMax", 0];
 _EIPatrolsMin = _logic getVariable ["EIPatrolsMin", 0];
 _EIPatrolsMax = _logic getVariable ["EIPatrolsMax", 0];
 _EIAAMin = _logic getVariable ["EIAAMin", 0];
@@ -26,14 +27,13 @@ _VehHeavyMax = _logic getVariable ["VehHeavyMax", 0];
 _VehRandomMin = _logic getVariable ["VehRandomMin", 0];
 _VehRandomMax = _logic getVariable ["VehRandomMax", 0];
 
+
 _SpawnLocation = (getPos _logic);
 
 [
-    _ObjName,
-    _SpawnLocation,
-    _Radius,
+    _ObjName,_SpawnLocation,_Radius,
     _Faction,
-    [_GarrisonedGroups],
+    [_GarrisonedGroupsMin, _GarrisonedGroupsMax],
     [_EIPatrolsMin, _EIPatrolsMax],
     [_EIAAMin, _EIAAMax],
     [_EIATMin, _EIATMax],

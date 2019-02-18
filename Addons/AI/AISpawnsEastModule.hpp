@@ -60,14 +60,22 @@ class LRG_ModuleAISpawns: Module_F
 				typeName = "NUMBER";
 				defaultValue = 500;
 			};
-		class GarrisonedGroups: Edit
+		class GarrisonedGroupsMin: Edit
 		{
-			property = "LR_AI_GarrisonedGroups";
-			displayName = "Garrisoned Groups";
-			description = "Exact number of Garrisoned AI Groups to Spawn";
+			property = "LR_AI_GarrisonedGroupsMin";
+			displayName = "Min Garrisoned Groups";
+			description = "Minimum Number of Garrisoned AI Groups to Spawn";
 			typeName = "Number";
 			defaultValue = 0;
 		};
+		class GarrisonedGroupsMax: Edit
+		{
+			property = "LR_AI_GarrisonedGroupsMax";
+			displayName = "Max Garrisoned Groups";
+			description = "Maximum Number of Garrisoned AI Groups to Spawn";
+			typeName = "Number";
+			defaultValue = 0;
+		};		
 		class EIPatrolsMin: Edit
 		{
 			property = "LR_AI_EIPatrolsMin";
