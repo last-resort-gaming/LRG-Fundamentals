@@ -15,7 +15,7 @@ Return Value:
 Example:
 	Nothing to see here
 
-Author: MitchJC
+Author: MitchJC, Matth
 */
 
 params [
