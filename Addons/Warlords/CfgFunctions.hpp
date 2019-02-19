@@ -5,6 +5,6 @@ class LRG_Warlords {
 	class Warlords {
 
 		file = "z\LRG Fundamentals\Addons\Warlords\Functions";
-		class SaveLoadout {PostInit = 1;};
+		class Loadouts {PostInit = 1;};
 	};
 };
