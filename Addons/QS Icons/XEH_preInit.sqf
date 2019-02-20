@@ -11,7 +11,7 @@
     }
 ] call CBA_Settings_fnc_init;
 
-// Enable GPS Icons
+// Show AI
 [
     "LRG_QSIcons_ShowAI",
     "CHECKBOX",
@@ -24,11 +24,37 @@
     }
 ] call CBA_Settings_fnc_init;
 
+// Show AI Names
+[
+    "LRG_QSIcons_Map_AINames",
+    "CHECKBOX",
+    ["Show AI Names", "Show the AI's human name or disable to just say AI."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
 // Enable Map Icons
 [
     "LRG_QSIcons_Map_EnableUnitIcons",
     "CHECKBOX",
     ["Map Icons Enable", "Enable MAP unit/vehicle Icons."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+
+    }
+] call CBA_Settings_fnc_init;
+
+// Map Faction Only
+[
+    "LRG_QSIcons_Map_FactionOnly",
+    "CHECKBOX",
+    ["Map Faction Only", "Enable to show only the players FACTION, not SIDE."],
     "LRG QS Icons",
     true,
     true,

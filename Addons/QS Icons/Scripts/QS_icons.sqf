@@ -45,8 +45,8 @@ private [
 	'_QS_ST_showGroupMapText','_QS_ST_groupIconScale','_QS_ST_groupIconOffset','_QS_ST_groupIconText','_QS_ST_autonomousVehicles','_QS_fnc_iconColor','_QS_fnc_iconType',				
 	'_QS_fnc_iconSize','_QS_fnc_iconPosDir','_QS_fnc_iconText','_QS_fnc_iconUnits','_QS_fnc_onMapSingleClick','_QS_fnc_mapVehicleShowCrew','_QS_fnc_iconDrawMap',			
 	'_QS_fnc_iconDrawGPS','_QS_fnc_groupIconText','_QS_fnc_groupIconType','_QS_fnc_configGroupIcon','_QS_fnc_onGroupIconClick','_QS_fnc_onGroupIconOverLeave',	
-	'_QS_ST_iconMapClickShowDetail','_QS_ST_showFriendlySides','_QS_fnc_onGroupIconOverEnter','_QS_ST_showCivilianGroups','_QS_ST_iconTextFont','_QS_ST_showAll','_QS_ST_showFactionOnly','_QS_ST_showMOS','_QS_ST_iconMapText','_QS_ST_showMOS_range',
-	'_QS_fnc_isIncapacitated','_QS_ST_htmlColorMedical','_QS_ST_R','_QS_ST_showAINames','_QS_ST_AINames',
+	'_QS_ST_iconMapClickShowDetail','_QS_ST_showFriendlySides','_QS_fnc_onGroupIconOverEnter','_QS_ST_showCivilianGroups','_QS_ST_iconTextFont','_QS_ST_showAll','_QS_ST_showMOS','_QS_ST_iconMapText','_QS_ST_showMOS_range',
+	'_QS_fnc_isIncapacitated','_QS_ST_htmlColorMedical','_QS_ST_R','_QS_ST_showAINames',
 	'_QS_ST_groupTextFactionOnly','_QS_ST_showCivilianIcons','_QS_ST_showOnlyVehicles','_QS_ST_showOwnGroup','_QS_ST_iconColor_empty',
 	'_QS_ST_iconSize_empty','_QS_ST_showEmptyVehicles','_QS_ST_htmlColorInjured','_QS_fnc_iconColorGroup','_QS_ST_otherDisplays','_QS_ST_MAPrequireGPSItem',
 	'_QS_ST_GPSrequireGPSItem','_QS_ST_GRPrequireGPSItem','_QS_ST_admin'
@@ -99,8 +99,6 @@ _QS_ST_showMedicalWounded = TRUE;								// BOOL. TRUE to show wounded on the ma
 //=========================== CONFIGURE MAP (UNIT/VEHICLE) ICONS ===================//
 //==================================================================================//
 
-_QS_ST_showFactionOnly = FALSE;									// BOOL. will override ST_showFriendlySides TRUE. If TRUE then will only show players faction. If FALSE then can show friendly factions. Default FALSE.
-_QS_ST_AINames = FALSE;											// BOOL. Set TRUE to show human names for AI with the map/vehicle icons. Set FALSE and will be named 'AI'. Default FALSE.
 _QS_ST_showCivilianIcons = FALSE;								// BOOL. Set TRUE to allow showing of civilians, only works if Dynamic Diplomacy is enabled above. Default FALSE.
 _QS_ST_iconMapText = TRUE;										// BOOL. TRUE to show unit/vehicle icon text on the map. FALSE to only show the icon and NO text (name/class). Default TRUE.
 _QS_ST_showMOS = TRUE;											// BOOL. TRUE = show Military Occupational Specialty text(unit/vehicle class/role display name), FALSE = disable and only show icons and names. Default FALSE.
@@ -130,7 +128,7 @@ _QS_ST_GPSrequireGPSItem = FALSE;								// BOOL. TRUE to require player have GP
 //============================= CONFIGURE GROUP ICONS ==============================//
 //==================================================================================//
 
-_QS_ST_showAIGroups = FALSE;										// BOOL. Show Groups with AI leaders. Default TRUE.
+_QS_ST_showAIGroups = FALSE;									// BOOL. Show Groups with AI leaders. Default TRUE.
 _QS_ST_showAINames = FALSE;										// BOOL. Show AI Names. If FALSE, when names are listed with Group features, will only display as '[AI]'. Default FALSE.
 _QS_ST_groupInteractiveIcons = TRUE;							// BOOL. Group icons are interactable (mouse hover and mouse click for group details). Default TRUE.
 _QS_ST_groupInteractiveIcons_showClass = TRUE;					// BOOL. TRUE to show units vehicle class when revealing group details with interactive map group click. Default TRUE.
@@ -1411,7 +1409,7 @@ _QS_ST_R = [
 	
 	_QS_ST_iconTextFont,
 	_QS_ST_showAll,
-	_QS_ST_showFactionOnly,
+	LRG_QSIcons_Map_FactionOnly,
 	LRG_QSIcons_ShowAI,
 	_QS_ST_showMOS,
 	LRG_QSIcons_Group_Only,
@@ -1421,7 +1419,7 @@ _QS_ST_R = [
 	_QS_fnc_isIncapacitated,
 	
 	_QS_ST_htmlColorMedical,
-	_QS_ST_AINames,
+	LRG_QSIcons_Map_AINames,
 	_QS_ST_showAINames,
 	_QS_ST_groupTextFactionOnly,
 	_QS_ST_showCivilianIcons,
