@@ -16,6 +16,7 @@ class LRG_Main {
 		class TFARSettings {PostInit = 1;};
 		class VanillaFatigue {PostInit = 1;};
 		class FindReplaceString {};
+		class voyagerCompass {PostInit = 1;};
 		class clientRepackMagazines {};
 	};
 };
