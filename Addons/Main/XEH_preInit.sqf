@@ -37,7 +37,7 @@
     }
 ] call CBA_Settings_fnc_init;
 
-// Dynamic Groups
+// YAINA Earplugs
 [
     "LRG_Main_Earplugs",
     "CHECKBOX",
@@ -49,11 +49,38 @@
 
     }
 ] call CBA_Settings_fnc_init;
+
 // PilotCheck
 [
     "LRG_Main_PilotCheck",
     "CHECKBOX",
     ["Pilot Restrictions", "Restrict aircraft so only those with 'Pilot' Trait can fly."],
+    "LRG Main",
+    true,
+    true,
+    {
+
+    }
+] call CBA_Settings_fnc_init;
+
+// Voyager Compass
+[
+    "LRG_Main_VoyagerCompass",
+    "CHECKBOX",
+    ["Voyager Compass HUD", "Enable Voyager Compass HUD. Players can still disable locally."],
+    "LRG Main",
+    true,
+    true,
+    {
+
+    }
+] call CBA_Settings_fnc_init;
+
+// QS Mag Repack
+[
+    "LRG_Main_QSMagRepack",
+    "CHECKBOX",
+    ["QS Repack Magazines", "Allows players to repack magazines through an add action. Not used with ACE."],
     "LRG Main",
     true,
     true,
