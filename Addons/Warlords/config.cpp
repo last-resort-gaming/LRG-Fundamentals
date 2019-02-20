@@ -24,10 +24,6 @@ class CfgWLRequisitionPresets
 
 #include "CfgRespawnTemplates.hpp"
 
-class CfgFunctions {
-    #include "cfgFunctions.hpp"
-};
-
 class Params {
 	#include "Params.hpp"
 };
