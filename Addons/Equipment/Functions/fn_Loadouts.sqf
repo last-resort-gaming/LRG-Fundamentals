@@ -23,9 +23,22 @@ params [
 	"_Loadout"
 ];
 
-private ["_Equipment"];
+private _Equipment = call {
+	//================ Warlords Loadouts
 
-_Equipment = call {
+	// Vanilla Standard
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "B_T_Soldier_SL_F") exitwith {[["arifle_MX_khk_F","","acc_pointer_IR","optic_ERCO_khk_F",["30Rnd_65x39_caseless_mag",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",16],[],""],["U_B_T_Soldier_F",[["FirstAidKit",4]]],["V_PlateCarrier2_tna_F",[["HandGrenade",2,1],["30Rnd_65x39_caseless_mag",6,30],["SmokeShell",2,1]]],[],"H_HelmetB_tna_F","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","NVGoggles_tna_F"]];};
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "O_T_Soldier_SL_F") exitwith {[["arifle_CTAR_ghex_F","","acc_pointer_IR","optic_Arco_ghex_F",["30Rnd_580x42_Mag_F",30],[],""],[],["hgun_Rook40_F","","","",["16Rnd_9x21_Mag",16],[],""],["U_O_T_Soldier_F",[["FirstAidKit",4]]],["V_HarnessO_ghex_F",[["HandGrenade",2,1],["SmokeShell",2,1],["30Rnd_580x42_Mag_F",6,30]]],[],"H_HelmetLeaderO_ghex_F","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","O_NVGoggles_ghex_F"]];};
+	// Vanilla Tanoa	
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "B_Soldier_SL_F") exitwith {[["arifle_MX_F","","acc_pointer_IR","optic_Hamr",["30Rnd_65x39_caseless_mag",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",16],[],""],["U_B_CombatUniform_mcam",[["FirstAidKit",4]]],["V_PlateCarrierH_CTRG",[["HandGrenade",2,1],["SmokeShell",2,1],["30Rnd_65x39_caseless_mag",6,30]]],[],"H_HelmetSpecB_paint2","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","NVGoggles"]];};
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "O_Soldier_SL_F") exitwith {[["arifle_Katiba_F","","acc_pointer_IR","optic_Arco_blk_F",["30Rnd_65x39_caseless_green",30],[],""],[],["hgun_Rook40_F","","","",["16Rnd_9x21_Mag",16],[],""],["U_O_CombatUniform_ocamo",[["FirstAidKit",4]]],["V_TacVest_khk",[["30Rnd_65x39_caseless_green",6,30],["HandGrenade",2,1],["SmokeShell",2,1]]],[],"H_HelmetLeaderO_ocamo","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","NVGoggles_OPFOR"]];};
+	// RHS Standard
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "rhsusf_army_ocp_squadleader") exitwith {[["rhs_weap_m4a1_carryhandle","","rhsusf_acc_anpeq15_top","rhsusf_acc_T1_high",["rhs_mag_30Rnd_556x45_M855A1_Stanag",30],[],""],[],[],["rhs_uniform_cu_ocp",[["FirstAidKit",4]]],["rhsusf_iotv_ocp_Squadleader",[["rhs_mag_30Rnd_556x45_M855A1_Stanag",8,30],["rhs_mag_m67",2,1]]],[],"rhsusf_ach_helmet_headset_ocp","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","rhsusf_ANPVS_14"]];};
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "rhs_msv_emr_sergeant") exitwith {[["rhs_weap_ak105_zenitco01_b33","rhs_acc_dtk","","rhs_acc_1p87",["rhs_30Rnd_545x39_7N10_AK",30],[],""],[],["rhs_weap_makarov_pm","","","",["rhs_mag_9x18_8_57N181S",8],[],""],["rhs_uniform_msv_emr",[["FirstAidKit",4]]],["rhs_6b23_digi_6sh92_headset_mapcase",[["rhs_mag_rgn",2,1],["rhs_30Rnd_545x39_7N10_AK",8,30]]],[],"rhs_6b27m_green","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","rhs_1PN138"]];};
+	// RHS Tanoa
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "rhsusf_usmc_marpat_wd_squadleader") exitwith {[["rhs_weap_m4a1_carryhandle","","rhsusf_acc_anpeq15_top","rhsusf_acc_T1_high",["rhs_mag_30Rnd_556x45_M855A1_Stanag",30],[],""],[],[],["rhs_uniform_cu_ocp",[["FirstAidKit",4]]],["rhsusf_iotv_ocp_Squadleader",[["rhs_mag_30Rnd_556x45_M855A1_Stanag",8,30],["rhs_mag_m67",2,1]]],[],"rhsusf_ach_helmet_headset_ocp","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","rhsusf_ANPVS_14"]];};
+	If (!(isnil "BIS_WL_sidesPool") && (typeof _unit) isequalto "rhs_vmf_flora_sergeant") exitwith {[["rhs_weap_ak105_zenitco01_b33","rhs_acc_dtk","","rhs_acc_1p87",["rhs_30Rnd_545x39_7N10_AK",30],[],""],[],["rhs_weap_makarov_pm","","","",["rhs_mag_9x18_8_57N181S",8],[],""],["rhs_uniform_msv_emr",[["FirstAidKit",4]]],["rhs_6b23_digi_6sh92_headset_mapcase",[["rhs_mag_rgn",2,1],["rhs_30Rnd_545x39_7N10_AK",8,30]]],[],"rhs_6b27m_green","",["Binocular","","","",[],[],""],["ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch","rhs_1PN138"]];};
+
 	//================ 3CB Loadouts
 
 		// Operational Loadouts
