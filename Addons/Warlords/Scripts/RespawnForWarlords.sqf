@@ -11,8 +11,6 @@
 	
 	{_x addCuratorEditableObjects [[player],FALSE];} count allCurators;
 
-[player, [missionNamespace, "LRG_LO"]] call BIS_fnc_loadInventory;
-
 // YAINA Earplugs
  
 if (isNil "LRG_Main_Master") exitwith {};
@@ -26,3 +24,4 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
 
 [] execVM "z\LRG Fundamentals\Addons\Main\Scripts\Earplugs\earplugs.sqf";
 
+player call LR_fnc_Loadouts;
