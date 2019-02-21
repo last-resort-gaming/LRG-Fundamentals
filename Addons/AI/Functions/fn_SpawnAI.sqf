@@ -20,9 +20,9 @@ Arguments:
     _sniper - Sniper Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehaa - Vehicle-based AA Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehmrap - MRAP Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
-    _vehran - Random Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehlight - Light Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehheavy - Heavy/Armoured Vehicle Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _vehran - Random Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
 
 Example:
 	--- Code
@@ -335,7 +335,7 @@ if (_vehLightList isEqualTo []) then {
 };
 
 ///////////////////////////////////////////////////////////
-// RANDOM VEHS
+// HEAVY VEHS
 ///////////////////////////////////////////////////////////
 
 if (_vehHeavyList isEqualTo []) then {
