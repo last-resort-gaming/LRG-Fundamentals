@@ -43,7 +43,7 @@ Return Values:
 	None
 
 Examples:
-    --- Code
+    (begin example)
 		[
 			Car,
 			"UnlockCar",
@@ -61,7 +61,7 @@ Examples:
 			"Unlocking Car...",
 			true
 		] call LR_fnc_AddHoldAction;
-	---
+	(end)
 
 Author:
 	Mokka

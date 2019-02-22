@@ -11,9 +11,9 @@ Return Value:
     None
 
 Example:
-    --- Code
+    (begin example)
         [] call _fnc_;
-    ---
+    (end)
 
 Author: MitchJC & Mokka
 */

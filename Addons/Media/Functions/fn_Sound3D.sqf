@@ -12,11 +12,11 @@ Arguments:
 	_volume - Volume of the sound. If volume above 1 sound is multiplied <SCALAR>
 
 Examples:
-	--- Code
+	(begin example)
 		[Speaker, "AirRaid", 500] call LR_fnc_Sound3D;
 		[Jason, "JohnCena", 250] call LR_fnc_Sound3D;
 		[this, "NukeAlarm", 250] call LR_fnc_Sound3D;
-	---
+	(end)
 
 Author: MitchJC & Mokka
 */

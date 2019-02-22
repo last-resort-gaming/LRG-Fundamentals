@@ -25,7 +25,7 @@ Arguments:
     _vehran - Random Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
 
 Example:
-	--- Code
+	(begin example)
 	    [
             "Objective 1",
 	        [2955.43,6010.11,0],
@@ -49,7 +49,7 @@ Example:
 	        [2, 3],
 	        [5, 6]
         ] call LR_fnc_SpawnAI;
-	---
+	(end)
 */
 if (!isserver) exitwith {};
 

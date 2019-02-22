@@ -12,10 +12,10 @@ Arguments:
 	_players - Returns players in _vehicle. <ARRAY>
 
 Examples:
-	--- Code
+	(begin example)
 		["", [CrashPlane, getPos crashSite]] call LR_fnc_crashSite;
 		["", [MyPlane, [1234,4321,0]]] call LR_fnc_crashSite;
-	---
+	(end)
 
 Authors: MitchJC & Mokka
 */

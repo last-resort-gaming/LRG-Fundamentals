@@ -9,9 +9,9 @@ Arguments:
 	_Section - The Section the Player is in. <STRING>
 
 Examples:
-	--- Code
+	(begin example)
 		[this, "1Section"] call LR_fnc_Patches;
-	---
+	(end)
 
 Author: MitchJC
 */

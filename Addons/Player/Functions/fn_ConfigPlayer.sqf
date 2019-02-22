@@ -11,13 +11,13 @@ Arguments:
 	_Loadout - Name of Loadout to call. Changes player equipment to Loadout from LRG Fundamentals. <STRING>
 
 Examples:
-	--- Code
+	(begin example)
 		[this] call LR_fnc_ConfigPlayer;
 		[this, "1 Section"] call LR_fnc_ConfigPlayer;
 		[this, "909 EAW", ["Pilot"]] call LR_fnc_ConfigPlayer;
 		[this, "Command", ["Pilot", "Mission Maker"]] call LR_fnc_ConfigPlayer;
 		[this, "909 EAW", ["Pilot"], "3CB Pilot"] call LR_fnc_ConfigPlayer;
-	---
+	(end)
 
 Author: MitchJC
 */

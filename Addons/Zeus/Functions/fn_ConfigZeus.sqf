@@ -9,9 +9,9 @@ Arguments:
 	_object - Zeus Module to apply the function to. <OBJECT>
 
 Examples:
-	--- Code
+	(begin example)
 		[this] call LR_fnc_ConfigZeus;
-	---
+	(end)
 
 Author: MitchJC
 */
