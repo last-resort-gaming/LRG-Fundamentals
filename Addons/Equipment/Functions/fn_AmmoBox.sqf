@@ -19,7 +19,8 @@ Examples:
 		[MyAmmoCrate, "RHS", 0] call LR_fnc_Ammobox;
 	(end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 
 if (!isServer) exitwith {};

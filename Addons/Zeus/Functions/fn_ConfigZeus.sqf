@@ -13,7 +13,8 @@ Examples:
 		[this] call LR_fnc_ConfigZeus;
 	(end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 params [
 "_object"

@@ -18,7 +18,8 @@ Examples:
 		[this, "NukeAlarm", 250] call LR_fnc_Sound3D;
 	(end)
 
-Author: MitchJC & Mokka
+Author:
+	MitchJC & Mokka
 */
 
 // If run locally, run on server instead

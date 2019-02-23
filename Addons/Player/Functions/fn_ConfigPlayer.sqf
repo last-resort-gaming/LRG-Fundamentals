@@ -19,7 +19,8 @@ Examples:
 		[this, "909 EAW", ["Pilot"], "3CB Pilot"] call LR_fnc_ConfigPlayer;
 	(end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 
 params [

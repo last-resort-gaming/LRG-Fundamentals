@@ -50,6 +50,9 @@ Example:
 	        [5, 6]
         ] call LR_fnc_SpawnAI;
 	(end)
+
+Author:
+    MitchJC
 */
 if (!isserver) exitwith {};
 

@@ -20,7 +20,8 @@ Example:
         [[0,0,0], 1000, "(1 - sea)"] call derp_fnc_randomPos;
     (end)
 
-Author: alganthe, modified by Mokka
+Author:
+	alganthe, modified by Mokka
 */
 
 params [["_pos", [0, 0, 0]], ["_radius", 0], ["_arithSearch", ""]];

@@ -34,7 +34,8 @@
 			"\t\t$7",
 			"\t(end)",
 			"",
-			"Author: ${8:MitchJC}",
+			"Author:",
+			"\t${8:MitchJC}",
 			"$BLOCK_COMMENT_END$0"
 		],
 		"description": "Documentation Header"
