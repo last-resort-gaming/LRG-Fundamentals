@@ -29,7 +29,7 @@ Return Values:
 	None
 
 Examples:
-    --- Code
+    (begin example)
 	// In the init field of an object in the editor (e.g. a Laptop or Documents)
 	[
 		this,
@@ -46,7 +46,7 @@ Examples:
 			,true
 		]
 	] call LR_fnc_initInspectableIntel;
-	---
+	(end)
 
 Author:
 	Mokka,

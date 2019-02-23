@@ -11,12 +11,12 @@ Arguments:
 	_Duration - How long in minutes until the Arsenal is removed. 0 makes it permanent. <SCALAR>
 
 Examples:
-	--- Code
+	(begin example)
 		[this] call LR_fnc_Arsenal;
 		[this, "3CB", 50] call LR_fnc_Arsenal;
 		[this, "VANILLA"] call LR_fnc_Arsenal;
 		[MyAmmoCrate, "RHS", 0] call LR_fnc_Arsenal;
-	---
+	(end)
 
 Author: MitchJC
 */

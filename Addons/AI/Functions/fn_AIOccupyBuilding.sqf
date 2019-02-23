@@ -19,9 +19,9 @@ Return Value:
     Array of units not garrisoned <ARRAY OF UNITS>
 
 Example:
-    --- Code
+    (begin example)
         [position, nil, [unit1, unit2, unit3, unitN], 200, 1, false] call derp_fnc_AIOccupyBuilding
-    ---
+    (end)
 
 Author: alganthe, modified by Mokka
 */

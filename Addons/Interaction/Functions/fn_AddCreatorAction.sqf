@@ -15,14 +15,14 @@ Return Values:
 	None
 
 Examples:
-    --- Code
+    (begin example)
 		[
 			"MissionStart",
 			"Start Mission",
 			{hint "Mission started!";},
 			[]
 		] call LR_fnc_AddCreatorAction;
-	---
+	(end)
 
 Author:
 	Mokka

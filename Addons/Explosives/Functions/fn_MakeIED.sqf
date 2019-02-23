@@ -38,7 +38,7 @@ Return Values:
 	None
 
 Examples:
-    --- Code
+    (begin example)
 		// In the init field of an object in the editor (e.g. a Crate)
 		[
 			this,
@@ -49,7 +49,7 @@ Examples:
 			30,
 			true
 		] call LR_fnc_makeIED;
-	---
+	(end)
 
 Author:
 	Mokka

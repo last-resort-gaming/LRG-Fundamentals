@@ -29,7 +29,7 @@ Return Values:
 	None
 
 Examples:
-    --- Code
+    (begin example)
 		// In the init field of a vehicle in the editor (e.g. a Truck)
 		[
 			this,
@@ -39,7 +39,7 @@ Examples:
 			true,
 			30
 		] call LR_fnc_IEDVehicle;
-	---
+	(end)
 
 Author:
 	Mokka

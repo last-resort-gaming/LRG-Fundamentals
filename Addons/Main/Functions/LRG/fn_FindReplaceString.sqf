@@ -16,11 +16,11 @@ Return Values:
 	The edited string
 
 Examples:
-    --- Code
+    (begin example)
 		[
 			"123456123", "123", "abc", 1, true
 		] call LR_fnc_FindReplaceString; // returns "abc456123"
-	---
+	(end)
 
 Author:
 	Mokka

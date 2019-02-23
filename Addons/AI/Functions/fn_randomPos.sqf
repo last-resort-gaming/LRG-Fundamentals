@@ -16,9 +16,9 @@ Return Value:
     Best result selected by selectBestPlaces in the format <POSITION 2D>
 
 Example:
-    --- Code
+    (begin example)
         [[0,0,0], 1000, "(1 - sea)"] call derp_fnc_randomPos;
-    ---
+    (end)
 
 Author: alganthe, modified by Mokka
 */

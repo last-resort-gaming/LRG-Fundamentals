@@ -10,11 +10,11 @@ Arguments:
 	_isMedicalFacility - Should _container be treated as a medical facilty/vehicle? <BOOLEAN>
 
 Examples:
-	--- Code
+	(begin example)
 		[this] call LR_fnc_VehicleLoadout;
 		[this, "Basic Medical", false] call LR_fnc_VehicleLoadout;
 		[this, "Full MERT", true] call LR_fnc_VehicleLoadout;
-	---
+	(end)
 
 Author: MitchJC
 */

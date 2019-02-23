@@ -26,7 +26,7 @@ Return Values:
 	None
 
 Examples:
-    --- Code
+    (begin example)
 		[
 			player,
 			"HealUp",
@@ -36,7 +36,7 @@ Examples:
 			"true",
 			true
 		] call LR_fnc_AddSelfAction;
-	---
+	(end)
 
 Author:
 	Mokka

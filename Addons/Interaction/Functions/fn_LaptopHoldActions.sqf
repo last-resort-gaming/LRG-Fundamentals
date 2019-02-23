@@ -16,12 +16,12 @@ Return Value:
     None
 
 Examples:
-    --- Code
+    (begin example)
         [this] call LR_fnc_LaptopHoldActions;
 		[MyLaptopName] call LR_fnc_LaptopHoldActions;
 		[this, "Download the Intel"] call LR_fnc_LaptopHoldActions;
 		[this, "Trigger the Alarm", 5, "A3\Sounds_F\sfx\alarm_blufor.wss"] call LR_fnc_LaptopHoldActions;
-    ---
+    (end)
 
 Author: MitchJC
 */

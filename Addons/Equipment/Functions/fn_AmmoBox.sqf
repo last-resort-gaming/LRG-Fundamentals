@@ -12,12 +12,12 @@ Arguments:
 	_Duration- How long in minutes until the Ammobox is removed. 0 makes it permanent. <SCALAR>
 
 Examples:
-	--- Code
+	(begin example)
 		[this] call LR_fnc_Ammobox;
 		[this, "3CB", 50] call LR_fnc_Ammobox;
 		[this, "VANILLA"] call LR_fnc_Ammobox;
 		[MyAmmoCrate, "RHS", 0] call LR_fnc_Ammobox;
-	---
+	(end)
 
 Author: MitchJC
 */

@@ -25,7 +25,7 @@ Return Values:
 	None
 
 Examples:
-    --- Code
+    (begin example)
 		[
 			"Lorem Ipsum Dolor Sit Amet",
 			[-1, 0.8], 	// This is the bottom-centre position on the screen
@@ -33,7 +33,7 @@ Examples:
 			0.5,
 			true
 		] call LR_fnc_DynamicText;
-	---
+	(end)
 
 Author:
 	MitchJC, Mokka

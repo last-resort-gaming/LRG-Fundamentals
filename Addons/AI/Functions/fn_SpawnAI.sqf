@@ -20,12 +20,12 @@ Arguments:
     _sniper - Sniper Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehaa - Vehicle-based AA Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehmrap - MRAP Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
-    _vehran - Random Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehlight - Light Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehheavy - Heavy/Armoured Vehicle Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _vehran - Random Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
 
 Example:
-	--- Code
+	(begin example)
 	    [
             "Objective 1",
 	        [2955.43,6010.11,0],
@@ -49,7 +49,7 @@ Example:
 	        [2, 3],
 	        [5, 6]
         ] call LR_fnc_SpawnAI;
-	---
+	(end)
 */
 if (!isserver) exitwith {};
 
@@ -361,7 +361,7 @@ if !(_vehHeavyList isEqualTo []) then {
 };
 
 ///////////////////////////////////////////////////////////
-// RANDOM VEHS
+// HEAVY VEHS
 ///////////////////////////////////////////////////////////
 {_vehRandList append _x} foreach [_vehAAList, _vehMrapList, _vehLightList, _vehHeavyList];
 

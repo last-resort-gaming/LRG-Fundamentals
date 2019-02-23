@@ -11,10 +11,10 @@ Arguments:
 	_distance -  How far from center point to look for Pop Up targets <STRING>
 
 Examples:
-	--- Code
+	(begin example)
 		[this, "Reset Targets", [1200,4200,0], 250] call LR_fnc_ResetTargets;
 		[MyLaptopName, "Reset 300m Range", [5500,3522,0], 300] call LR_fnc_ResetTargets;
-	---
+	(end)
 
 Author: MitchJC
 */

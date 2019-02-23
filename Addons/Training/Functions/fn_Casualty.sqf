@@ -8,9 +8,9 @@ Arguments:
 	_object - Object the addaction is applied to. <OBJECT>
 
 Examples:
-    --- Code
+    (begin example)
 	    [this] call LR_fnc_Casualty;
-    ---
+    (end)
 
 Author: MitchJC
 */
