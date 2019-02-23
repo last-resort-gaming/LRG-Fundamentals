@@ -11,3 +11,4 @@ tools/_Natural Docs
 *.iml
 
 \.vscode/launch.json
+out/
