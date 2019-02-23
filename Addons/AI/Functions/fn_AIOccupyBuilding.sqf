@@ -23,7 +23,8 @@ Example:
         [position, nil, [unit1, unit2, unit3, unitN], 200, 1, false] call derp_fnc_AIOccupyBuilding
     (end)
 
-Author: alganthe, modified by Mokka
+Author:
+	alganthe, modified by Mokka
 */
 
 params [

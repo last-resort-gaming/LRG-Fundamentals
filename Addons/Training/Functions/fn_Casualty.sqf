@@ -12,7 +12,8 @@ Examples:
 	    [this] call LR_fnc_Casualty;
     (end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 
 params ["_object"];

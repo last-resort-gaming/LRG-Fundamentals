@@ -23,7 +23,8 @@ Examples:
 		[this, "Trigger the Alarm", 5, "A3\Sounds_F\sfx\alarm_blufor.wss"] call LR_fnc_LaptopHoldActions;
     (end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 
 if (!isServer) exitWith {};

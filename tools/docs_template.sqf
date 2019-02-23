@@ -15,5 +15,6 @@ Example:
         [] call _fnc_;
     (end)
 
-Author: MitchJC & Mokka
+Author:
+	MitchJC & Mokka
 */
