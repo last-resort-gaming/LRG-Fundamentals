@@ -10,4 +10,4 @@ tools/_Natural Docs
 .idea/
 *.iml
 
-\.vscode/
+\.vscode/launch.json
