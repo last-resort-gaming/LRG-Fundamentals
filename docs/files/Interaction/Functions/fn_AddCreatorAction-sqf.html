@@ -11,7 +11,12 @@ if (browserType) {document.write("<div class=" + browserType + ">");if (browserV
 
 
 
-<div id=Content><div class="CFunction"><div class=CTopic id=MainTopic><h1 class=CTitle><a name="LR_fnc_AddCreatorAction"></a>LR_fnc_AddCreatorAction</h1><div class=CBody><h4 class=CHeading>Description</h4><p>Adds an action for the mission creator that allows executing code/functions during the live mission.</p><h4 class=CHeading>Arguments</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>_title</td><td class=CDLDescription>The globally unique identifier of the action &lt;STRING&gt;</td></tr><tr><td class=CDLEntry>_name</td><td class=CDLDescription>The name of the action as shown to players &lt;STRING&gt;</td></tr><tr><td class=CDLEntry>_statement</td><td class=CDLDescription>The code executed upon calling the action, the following params are available: [_target, _caller, _args] &lt;CODE&gt;</td></tr><tr><td class=CDLEntry>_args</td><td class=CDLDescription>Arguments for the statement script &lt;ARRAY OF ANYTHING&gt;</td></tr></table><h4 class=CHeading>Return Values</h4><p>None</p><h4 class=CHeading>Examples</h4><p>--- Code [ &ldquo;MissionStart&rdquo;, &ldquo;Start Mission&rdquo;, {hint &ldquo;Mission started!&rdquo;;}, [] ] call LR_fnc_AddCreatorAction; ---</p><h4 class=CHeading>Author</h4><p>Mokka</p></div></div></div>
+<div id=Content><div class="CFunction"><div class=CTopic id=MainTopic><h1 class=CTitle><a name="LR_fnc_AddCreatorAction"></a>LR_fnc_AddCreatorAction</h1><div class=CBody><h4 class=CHeading>Description</h4><p>Adds an action for the mission creator that allows executing code/functions during the live mission.</p><h4 class=CHeading>Arguments</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>_title</td><td class=CDLDescription>The globally unique identifier of the action &lt;STRING&gt;</td></tr><tr><td class=CDLEntry>_name</td><td class=CDLDescription>The name of the action as shown to players &lt;STRING&gt;</td></tr><tr><td class=CDLEntry>_statement</td><td class=CDLDescription>The code executed upon calling the action, the following params are available: [_target, _caller, _args] &lt;CODE&gt;</td></tr><tr><td class=CDLEntry>_args</td><td class=CDLDescription>Arguments for the statement script &lt;ARRAY OF ANYTHING&gt;</td></tr></table><h4 class=CHeading>Return Values</h4><p>None</p><h4 class=CHeading>Examples</h4><blockquote><pre>[
+    &quot;MissionStart&quot;,
+    &quot;Start Mission&quot;,
+    {hint &quot;Mission started!&quot;;},
+    []
+] call LR_fnc_AddCreatorAction;</pre></blockquote><h4 class=CHeading>Author</h4><p>Mokka</p></div></div></div>
 
 </div><!--Content-->
 
