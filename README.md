@@ -100,3 +100,5 @@ If you’re thinking of getting involved, either playing Official LRG Missions o
 [Discord.](http://Discord.LastResortGaming.net)
 
 [Forums.](http://www.LastResortGaming.net)
+
+[Documentation.](https://last-resort-gaming.github.io/LRG-Fundamentals/docs)
