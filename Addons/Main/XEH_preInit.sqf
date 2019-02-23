@@ -7,7 +7,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_Master", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -20,7 +20,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_VehicleCrewList", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -33,7 +33,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_DynamicGroups", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -46,7 +46,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_Earplugs", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -59,7 +59,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_PilotCheck", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -69,10 +69,10 @@
     "CHECKBOX",
     ["Voyager Compass HUD", "Enable Voyager Compass HUD. Players can still disable locally."],
     "LRG Main",
-    true,
+    false,
     true,
     {
-
+        uiNamespace setVariable ["LRG_Main_VoyagerCompass", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -82,10 +82,10 @@
     "CHECKBOX",
     ["QS Repack Magazines", "Allows players to repack magazines through an add action. Not used with ACE."],
     "LRG Main",
-    true,
+    false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_QSMagRepack", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -98,7 +98,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_CHViewDistance", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -111,7 +111,7 @@
     [5000, 15000, 10000, 0],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_ViewDistanceMaxDistance", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -124,7 +124,7 @@
     [5000, 15000, 10000, 0],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_ViewDistanceMaxObjectDistance", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -137,7 +137,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_ViewDistanceNoGrass", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -150,7 +150,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_ArsenalSaveLoad", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -163,7 +163,7 @@
     [0, 5, 2.5, 1],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_TFARTransmitRange", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -176,7 +176,7 @@
     [0, 5, 1, 1],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_TFARTerrainInterference", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -189,7 +189,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_CueCards", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -202,7 +202,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_Diary", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -215,7 +215,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_CreatorActions", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -228,7 +228,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_FatigueVanilla", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -241,7 +241,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_FPSCounter", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -254,7 +254,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_Logging", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -267,6 +267,6 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Main_DynamicSim", _this];
     }
 ] call CBA_Settings_fnc_init;

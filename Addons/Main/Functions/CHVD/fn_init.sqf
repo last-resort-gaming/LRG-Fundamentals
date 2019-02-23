@@ -1,8 +1,8 @@
-if (isNil "LRG_Main_Master") exitwith {};
-if (not LRG_Main_Master) exitWith{};
+private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
+if (not _LRG_Main_Master) exitWith{};
 
-if (isNil "LRG_Main_CHViewDistance") exitwith {};
-if (not LRG_Main_CHViewDistance) exitWith{};
+private _LRG_Main_CHViewDistance = uiNamespace getVariable ["LRG_Main_CHViewDistance", false];
+if (not _LRG_Main_CHViewDistance) exitWith{};
 
 [] spawn {
 	if (!hasInterface) exitWith {};

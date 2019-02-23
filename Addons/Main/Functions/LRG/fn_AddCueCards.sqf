@@ -1,10 +1,10 @@
 // not documented: postInit
 
-if (isNil "LRG_Main_Master") exitwith {};
-if (not LRG_Main_Master) exitWith{};
+private _LRG_Main_CueCards = uiNamespace getVariable ["LRG_Main_CueCards", false];
+if (not _LRG_Main_CueCards) exitWith{};
 
-if (isNil "LRG_Main_CueCards") exitwith {};
-if (not LRG_Main_CueCards) exitWith{};
+private _LRG_Main_VoyagerCompass = uiNamespace getVariable ["LRG_Main_VoyagerCompass", false];
+if (not _LRG_Main_VoyagerCompass) exitWith{};
 
 if !(hasinterface) exitwith {};
 if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};

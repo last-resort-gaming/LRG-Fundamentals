@@ -1,5 +1,6 @@
-if (isNil "LRG_Main_Master") exitwith {};
-if (not LRG_Main_Master) exitWith{};
+
+private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
+if (not _LRG_Main_Master) exitWith{};
 
 if (isDedicated || !hasInterface) exitWith {};
 if (ais_ace_shutdown) exitWith {diag_log ["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."]};

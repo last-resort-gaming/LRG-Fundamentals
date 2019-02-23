@@ -1,10 +1,10 @@
 // not documented: postInit
 
-if (isNil "LRG_Main_Master") exitwith {};
-if (not LRG_Main_Master) exitWith{};
+private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
+if (not _LRG_Main_Master) exitWith{};
 
-if (isNil "LRG_Main_FPSCounter") exitwith {};
-if (not LRG_Main_FPSCounter) exitWith{};
+private _LRG_Main_FPSCounter = uiNamespace getVariable ["LRG_Main_FPSCounter", false];
+if (not _LRG_Main_FPSCounter) exitWith{};
 
 private _markerLocal = false;
 private _source = "";
