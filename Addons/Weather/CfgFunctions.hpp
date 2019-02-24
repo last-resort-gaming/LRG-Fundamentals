@@ -5,7 +5,7 @@ class LRG_Weather {
 	class Weather {
 
 		file = "z\LRG Fundamentals\Addons\Weather\Functions";
-		class RealWeather {PostInit = 1;};
+		class RealWeather {};
 
 	};
 };

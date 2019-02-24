@@ -7,7 +7,7 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Weather_Master", _this];
+        if (_this) then { call LR_fnc_RealWeather};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -22,7 +22,7 @@
         ["Clear", "Start with the Weather Clear."],
         ["Cloudy", "Start with the Weather Cloudy."],
         ["Rain", "Start with the Weather Raining"]
-    ], 0],
+    ], 1],
     true,
     {
        uiNamespace setVariable ["LRG_Weather_StartWeather", _this];

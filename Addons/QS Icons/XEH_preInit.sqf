@@ -10,9 +10,8 @@
     "LRG QS Icons",
     true,
     true,
-    {  
-        if (!isserver) exitwith {};
-        if (_this) then {remoteExecCall ["LR_fnc_MapIcons", 0, true]};
+    { 
+    if (_this && { hasinterface }) then  {[] execVM "z\LRG Fundamentals\addons\QS Icons\Scripts\QS_icons.sqf";};
     }
 ] call CBA_Settings_fnc_init;
 
