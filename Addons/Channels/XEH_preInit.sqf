@@ -1,23 +1,10 @@
-// Master Enable
-[
-    "LRG_Channels_Master",
-    "CHECKBOX",
-    ["Channel Master Enable", "Turn ON/OFF Main Settings. MUST be enabled for any of these settings to work!"],
-    "LRG Channels",
-    false,
-    true,
-    {
-
-    }
-] call CBA_Settings_fnc_init;
-
 // Global Text
 [
     "LRG_Channels_GlobalText",
     "CHECKBOX",
     ["Global Text", "Allow players to use Global Text Channel and draw on map."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -30,7 +17,7 @@
     "CHECKBOX",
     ["Global Voice", "Allow players to speak in Global Voice Channel."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -69,7 +56,7 @@
     "CHECKBOX",
     ["Side Voice", "Allow players to speak in Side Voice Channel."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -82,7 +69,7 @@
     "SLIDER",
     ["Side Duration", "If enabled, how long till selected channels are disabled. 0 is permanent."],
     "LRG Channels",
-    [0, 300, 60, 0],
+    [0, 300, 0, 0],
     true,
     {
 
@@ -95,7 +82,7 @@
     "CHECKBOX",
     ["Command Text", "Allow players to use Command Text Channel and draw on map."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -108,7 +95,7 @@
     "CHECKBOX",
     ["Command Voice", "Allow players to speak in Command Voice Channel."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -134,7 +121,7 @@
     "CHECKBOX",
     ["Group Text", "Allow players to use Group Text Channel and draw on map."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -147,7 +134,7 @@
     "CHECKBOX",
     ["Group Voice", "Allow players to speak in Group Voice Channel."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -173,7 +160,7 @@
     "CHECKBOX",
     ["Vehicle Text", "Allow players to use Vehicle Text Channel and draw on map."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -186,7 +173,7 @@
     "CHECKBOX",
     ["Vehicle Voice", "Allow players to speak in Vehicle Voice Channel."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -212,7 +199,7 @@
     "CHECKBOX",
     ["Direct Text", "Allow players to use Direct Text Channel and draw on map."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 
@@ -225,7 +212,7 @@
     "CHECKBOX",
     ["Direct Voice", "Allow players to speak in Direct Voice Channel."],
     "LRG Channels",
-    false,
+    true,
     true,
     {
 

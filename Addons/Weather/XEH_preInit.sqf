@@ -7,7 +7,7 @@
     false,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_Master", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -25,7 +25,7 @@
     ], 0],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_StartWeather", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -38,7 +38,7 @@
     true,
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_RealTime", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -51,7 +51,7 @@
     [1, 120, 60, 0],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_SyncTime", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -64,7 +64,7 @@
     [1, 120, 1, 0],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_MinTime", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -77,7 +77,7 @@
     [1, 240, 60, 0],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_MaxTime", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -90,7 +90,7 @@
     [0, 60, 1, 2],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_DayTimeAcc", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -103,6 +103,6 @@
     [0, 60, 1, 2],
     true,
     {
-
+       uiNamespace setVariable ["LRG_Weather_NightTimeAcc", _this];
     }
 ] call CBA_Settings_fnc_init;

@@ -8,10 +8,10 @@ _logic = param [0,objNull,[objNull]];
 
 //if (_localGroups isEqualTo []) exitWith {};
 
-_SafeZoneEnable = _logic getVariable ["SafeZoneEnable", "0"];
-_SafeZoneSize = _logic getVariable ["SafeZoneSize", "150"];
-_SafeZoneDuration = _logic getVariable ["SafeZoneDuration", "-1"];
-_SafeZoneLocation = (getPos _logic);
+private _SafeZoneEnable = _logic getVariable ["SafeZoneEnable", "0"];
+private _SafeZoneSize = _logic getVariable ["SafeZoneSize", "150"];
+private _SafeZoneDuration = _logic getVariable ["SafeZoneDuration", "-1"];
+private _SafeZoneLocation = (getPos _logic);
 
 If !(_SafeZoneEnable) exitwith {};
 

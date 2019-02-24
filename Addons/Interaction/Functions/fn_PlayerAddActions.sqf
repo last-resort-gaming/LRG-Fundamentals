@@ -39,12 +39,3 @@ if (player getUnitTrait "Mission Maker") then {
 		false
 	] call LR_fnc_AddHoldAction;
 };
-
-if (isNil "LRG_Main_Master") exitwith {};
-if (not LRG_Main_Master) exitWith{};
-
-if (isNil "LRG_Main_QSMagRepack") exitwith {};
-if (not LRG_Main_QSMagRepack) exitWith{};
-if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
-
-player addAction ["Repack Magazines", "player spawn LR_fnc_clientRepackMagazines","",-98,false,true];

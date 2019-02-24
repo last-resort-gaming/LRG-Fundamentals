@@ -1,9 +1,6 @@
 // not documented: postInit function
 
 if (!isserver) exitwith {};
-
-if (isNil "LRG_AI_InitialAI") exitwith {};
-if (not LRG_AI_InitialAI) exitWith{};
 {
 	_class = typeOf (_x);
 

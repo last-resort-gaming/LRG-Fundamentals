@@ -247,7 +247,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 		},
 		[_args, _codeStart, _codeProgress, _codeCompleted, _codeInterrupted],
 		_duration,
-		1.5,
+		-99,
 		_removeCompleted
 	] call BIS_fnc_holdActionAdd;
 };

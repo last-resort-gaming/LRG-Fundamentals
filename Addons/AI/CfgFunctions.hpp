@@ -6,7 +6,7 @@ class LRG_AI {
 		file = "z\LRG Fundamentals\addons\AI\Functions";
 		class InfantryGarrison {};
 		class moduleAISpawns {};
-		class SetInitialAI {Postinit = 1;};
+		class SetInitialAI {};
 		class SetUnitSkill {};
 		class SpawnAI {};
 	};

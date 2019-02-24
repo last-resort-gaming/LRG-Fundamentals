@@ -6,23 +6,31 @@
 	Description: Randomizes Weather
 */
 // not documented: postInit
-if (isNil "LRG_Weather_Master") exitwith {};
-if (not LRG_Weather_Master) exitWith{};
+private _LRG_Weather_Master =  uiNamespace getVariable ["LRG_Weather_Master", false];
+if (not _LRG_Weather_Master) exitWith{};
+
+private _LRG_Weather_StartWeather = uiNamespace getVariable ["LRG_Weather_StartWeather", 0];
+private _LRG_Weather_RealTime = uiNamespace getVariable ["LRG_Weather_RealTime", true];
+private _LRG_Weather_SyncTime = uiNamespace getVariable ["LRG_Weather_SyncTime", 60];
+private _LRG_Weather_MinTime = uiNamespace getVariable ["LRG_Weather_MinTime", 1];
+private _LRG_Weather_MaxTime = uiNamespace getVariable ["LRG_Weather_MaxTime", 60];
+private _LRG_Weather_DayTimeAcc = uiNamespace getVariable ["LRG_Weather_DayTimeAcc", 1];
+private _LRG_Weather_NightTimeAcc = uiNamespace getVariable ["LRG_Weather_NightTimeAcc", 1];
 
 private _StartingWeather = call {
-	if (LRG_Weather_StartWeather IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLOUDY", "RAIN"]};
-	if (LRG_Weather_StartWeather IsEqualTo 1) exitwith {"CLEAR"};
-	if (LRG_Weather_StartWeather IsEqualTo 2) exitwith {"CLOUDY"};
-	if (LRG_Weather_StartWeather IsEqualTo 3) exitwith {"RAIN"};
+	if (_LRG_Weather_StartWeather IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLOUDY", "RAIN"]};
+	if (_LRG_Weather_StartWeather IsEqualTo 1) exitwith {"CLEAR"};
+	if (_LRG_Weather_StartWeather IsEqualTo 2) exitwith {"CLOUDY"};
+	if (_LRG_Weather_StartWeather IsEqualTo 3) exitwith {"RAIN"};
 	"CLEAR";
 };
 ///////////////////////////////////////////////////////////
 // Do not edit below
 /////////////////////////////////////////////////////////////////
 
-if(LRG_Weather_MinTime > LRG_Weather_MaxTime) then {
-	hint format["Min Time cannot be highter than max time. Min Time set to %1 ", LRG_Weather_MaxTime, LRG_Weather_MinTime];
-	LRG_Weather_MinTime = LRG_Weather_MaxTime;
+if(_LRG_Weather_MinTime > _LRG_Weather_MaxTime) then {
+	hint format["Min Time cannot be highter than max time. Min Time set to %1 ", _LRG_Weather_MaxTime, _LRG_Weather_MinTime];
+	_LRG_Weather_MinTime = _LRG_Weather_MaxTime;
 	};
 
 //	setdate startingdate;
@@ -82,14 +90,14 @@ setdate (wcweather select 4);
 
 		wcweather set [4, date];
 		publicvariable "wcweather";
-		if(!LRG_Weather_RealTime) then {
+		if(!_LRG_Weather_RealTime) then {
 			if((date select 3 > 16) or (date select 3 <6)) then {
-				setTimeMultiplier LRG_Weather_NightTimeAcc;
+				setTimeMultiplier _LRG_Weather_NightTimeAcc;
 			} else {
-				setTimeMultiplier LRG_Weather_DayTimeAcc;
+				setTimeMultiplier _LRG_Weather_DayTimeAcc;
 			};
 		};
-	}, LRG_Weather_SyncTime, []
+	}, _LRG_Weather_SyncTime, []
 ] call CBA_fnc_addPerFrameHandler;
 
 private	_lastrain = 0;
@@ -134,5 +142,5 @@ private	_overcast = 0;
 		60 setOvercast (wcweather select 2);
 		setwind (wcweather select 3);
 
-	}, random (LRG_Weather_MaxTime - LRG_Weather_MinTime), [_lastrain, _rain, _overcast]
+	}, random (_LRG_Weather_MaxTime - _LRG_Weather_MinTime), [_lastrain, _rain, _overcast]
 ] call CBA_fnc_addPerFrameHandler;

@@ -1,9 +1,4 @@
 // not documented: postInit
-if (isNil "LRG_Main_Master") exitwith {};
-if (not LRG_Main_Master) exitWith{};
-
-if (isNil "LRG_Main_CreatorActions") exitwith {};
-if (not LRG_Main_CreatorActions) exitWith{};
 
 CreatorActions = [];
 if ((!hasInterface) || !(player getUnitTrait "Mission Maker")) exitWith {};

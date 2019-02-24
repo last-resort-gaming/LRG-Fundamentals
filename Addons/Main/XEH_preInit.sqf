@@ -20,6 +20,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["YAINA_fnc_crewNames", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -33,6 +34,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_DynamicGroups", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -46,6 +48,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_Earplugs", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -59,6 +62,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_PilotCheck", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -72,6 +76,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_VoyagerCompass", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -85,6 +90,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_QSRepackMags", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -98,6 +104,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["CHVD_fnc_init", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -150,6 +157,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_ArsenalLoadSave", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -189,6 +197,7 @@
     true,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_AddCueCards", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -202,6 +211,7 @@
     true,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_Diary", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -215,6 +225,7 @@
     true,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["LR_fnc_InitCreatorActions", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -228,6 +239,7 @@
     true,
     true,
     {
+        if (!isserver) exitwith {};
         remoteExecCall ["LR_fnc_VanillaFatigue", 0, true];
     }
 ] call CBA_Settings_fnc_init;
@@ -241,6 +253,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
         if (_this) then {remoteExecCall ["YAINA_fnc_showFPS", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -254,6 +267,7 @@
     false,
     true,
     {
+        if (!isserver) exitwith {};
        if (_this) then {remoteExecCall ["LR_fnc_Logs", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
@@ -267,6 +281,7 @@
     false,
     true,
     {
-       if (_this) then {remoteExecCall ["LR_fnc_DynamicSim", 0, true]};
+        if (!isserver) exitwith {};
+        if (_this) then {remoteExecCall ["LR_fnc_DynamicSim", 0, true]};
     }
 ] call CBA_Settings_fnc_init;

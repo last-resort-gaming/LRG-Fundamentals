@@ -1,222 +1,186 @@
-// Master Enable
+//==================================================================================//
+//================================ MASTER SWITCHES ================================//
+//==================================================================================//
+
+// LRG_QS_ST_MasterEnable
 [
-    "LRG_QSIcons_MasterEnable",
+    "LRG_QS_ST_MasterEnable",
     "CHECKBOX",
-    ["QS Icons Master Enable", "Turn ON/OFF QS Icons function."],
+    ["Master - Enable", "Enable QS Icons. Deselect to turn off QS Icons."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+        if (!isserver) exitwith {};
+        if (_this) then {remoteExecCall ["LR_fnc_MapIcons", 0, true]};
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_map_enableUnitIcons
+[
+    "LRG_QS_ST_map_enableUnitIcons",
+    "CHECKBOX",
+    ["Master - Map Icons", "TRUE to enable MAP unit/vehicle Icons."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_map_enableUnitIcons", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_gps_enableUnitIcons
+[
+    "LRG_QS_ST_gps_enableUnitIcons",
+    "CHECKBOX",
+    ["Master - GPS Icons ", "TRUE to enable GPS unit/vehicle Icons."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_gps_enableUnitIcons", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_enableGroupIcons
+[
+    "LRG_QS_ST_enableGroupIcons",
+    "CHECKBOX",
+    ["Master - Group Icons", "TRUE to enable Group unit/vehicle Icons."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_enableGroupIcons", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+//==================================================================================//
+//================================ CONFIGURE MAP ================================//
+//==================================================================================//
+
+// LRG_QS_ST_showFactionOnly
+[
+    "LRG_QS_ST_showFactionOnly",
+    "CHECKBOX",
+    ["Map - Faction Only", "Enable to show only the players FACTION, not SIDE."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showFactionOnly", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_showAI
+[
+    "LRG_QS_ST_showAI",
+    "CHECKBOX",
+    ["Map - AI", "Show AI Units on Map"],
     "LRG QS Icons",
     false,
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_showAI", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Show AI
+// LRG_QS_ST_AINames
 [
-    "LRG_QSIcons_ShowAI",
+    "LRG_QS_ST_AINames",
     "CHECKBOX",
-    ["Show AI", "Enable to show AI and Players, Disable to only show Players."],
+    ["Map - AI Names", "Enable to show AI human names on map, otherwise map will only state AI."],
     "LRG QS Icons",
     false,
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_AINames", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Show AI Names
+// LRG_QS_ST_showCivilianIcons
 [
-    "LRG_QSIcons_Map_AINames",
+    "LRG_QS_ST_showCivilianIcons",
     "CHECKBOX",
-    ["Show AI Names", "Show the AI's human name or disable to just say AI."],
+    ["Map - Civilian Icons", "Show Civilian Icons on map."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showCivilianIcons", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_iconMapText
+[
+    "LRG_QS_ST_iconMapText",
+    "CHECKBOX",
+    ["Map - Icon Text", "Show Civilian Icons on map."],
     "LRG QS Icons",
     true,
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_iconMapText", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Enable Map Icons
+// LRG_QS_ST_showMOS
 [
-    "LRG_QSIcons_Map_EnableUnitIcons",
+    "LRG_QS_ST_showMOS",
     "CHECKBOX",
-    ["Map Icons Enable", "Enable MAP unit/vehicle Icons."],
+    ["Map - Military Occupational Specialty", "Show Military Occupational Specialty text(unit/vehicle class/role display name), FALSE = disable and only show icons and names."],
     "LRG QS Icons",
     true,
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_showMOS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Map Faction Only
+// LRG_QS_ST_showMOS_range
 [
-    "LRG_QSIcons_Map_FactionOnly",
-    "CHECKBOX",
-    ["Map Faction Only", "Enable to show only the players FACTION, not SIDE."],
-    "LRG QS Icons",
-    true,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Icon Refresh Rate
-[
-    "LRG_QSIcons_Map_Delay",
+    "LRG_QS_ST_showMOS_range",
     "SLIDER",
-    ["Map Icons Refresh Rate", "How often should location of unit on the MAP be updated in seconds?"],
+    ["Map - Military Occupational Specialty Range", "Range in meters to show MOS on the map."],
     "LRG QS Icons",
-    [0, 300, 60, 2],
+    [0, 5000, 3500, 0],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_showMOS_range", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Enable GPS Icons
+// LRG_QS_ST_showGroupOnly
 [
-    "LRG_QSIcons_GPS_EnableUnitIcons",
+    "LRG_QS_ST_showGroupOnly",
     "CHECKBOX",
-    ["GPS Icons Enable", "Enable GPS unit/vehicle Icons."],
+    ["Map - Group ONLY", "Show ONLY the unit icons of THE PLAYERS GROUP MEMBERS on the MAP, FALSE to show ALL your factions units."],
     "LRG QS Icons",
-    true,
+    false,
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_showGroupOnly", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// GPS Range
+// LRG_QS_ST_iconUpdatePulseDelay
 [
-    "LRG_QSIcons_GPS_Range",
+    "LRG_QS_ST_iconUpdatePulseDelay",
     "SLIDER",
-    ["GPS Icons Range", "Distance from player that units shown on GPS. Higher number = lower script performance."],
+    ["Map - Refresh Rate", "How often should location of unit on the MAP be updated in seconds?"],
     "LRG QS Icons",
-    [0, 500, 300, 0],
+    [0, 300, 0, 0],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_iconUpdatePulseDelay", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Enable GPS Icons
+// LRG_QS_ST_iconTextFonts
 [
-    "LRG_QSIcons_GPS_ShowNames",
-    "CHECKBOX",
-    ["GPS Icons Names", "TRUE to show unit names on the GPS display."],
-    "LRG QS Icons",
-    false,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Enable GPS Group Only
-[
-    "LRG_QSIcons_GPS_GroupOnly",
-    "CHECKBOX",
-    ["GPS Icons Group Only", "TRUE to show ONLY group members on the GPS display."],
-    "LRG QS Icons",
-    false,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Enable Group Icons
-[
-    "LRG_QSIcons_Group_Icons",
-    "CHECKBOX",
-    ["Group Icons Enable", "Group icons displayed on map/GPS."],
-    "LRG QS Icons",
-    false,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Enable Group Map
-[
-    "LRG_QSIcons_Group_Map",
-    "CHECKBOX",
-    ["Group Map Enable", "Rectagular Group icons displayed on map."],
-    "LRG QS Icons",
-    false,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Enable Group HUD
-[
-    "LRG_QSIcons_Group_HUD",
-    "CHECKBOX",
-    ["Group HUD Enable", "Group icons displayed on player 3D HUD."],
-    "LRG QS Icons",
-    false,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Enable Group Only
-[
-    "LRG_QSIcons_Group_Only",
-    "CHECKBOX",
-    ["Group Only Enable", "Set TRUE to show ONLY the unit icons of THE PLAYERS GROUP MEMBERS on the MAP, FALSE to show ALL your factions units."],
-    "LRG QS Icons",
-    false,
-    true,
-    {  
-
-    }
-] call CBA_Settings_fnc_init;
-
-// Medical System
-[
-    "LRG_QSIcons_MedicalSystem",
+    "LRG_QS_ST_iconTextFonts",
     "LIST",
-    ["Medical System", "Used to ensure QS Icons are used with a predefined medical system."],
-    "LRG QS Icons",
-    [[0, 1, 2, 3, 4, 5], [
-        ["BIS", "BIS Revive."],
-        ["BTC", "BTC Revive."],
-        ["AIS", "AIS Revive."],
-        ["ACE", "@ACE 3 Revive."],
-        ["FAR", "Farooq's Revive."],
-        ["AWS", "A3 Wounding System by Psycho."]
-    ], 3],
-    true,
-    {  
-        params ["_value"];
-        call {
-            if (_value IsEqualTo 0) exitwith {LRG_QSIcons_MedicalSystem = ['BIS'];};
-            if (_value IsEqualTo 1) exitwith {LRG_QSIcons_MedicalSystem = ['BTC'];};
-            if (_value IsEqualTo 2) exitwith {LRG_QSIcons_MedicalSystem = ['AIS'];};
-            if (_value IsEqualTo 3) exitwith {LRG_QSIcons_MedicalSystem = ['ACE'];};
-            if (_value IsEqualTo 4) exitwith {LRG_QSIcons_MedicalSystem = ['FAR'];};
-            if (_value IsEqualTo 5) exitwith {LRG_QSIcons_MedicalSystem = ['AWS'];};
-            LRG_QSIcons_MedicalSystem = ['BIS'];
-        };
-    }
-] call CBA_Settings_fnc_init;
-
-
-
-
-// Icon Text Fonts
-[
-    "LRG_QSIcons_IconTextFonts",
-    "LIST",
-    ["Icon Text Fonts", "Icon Text Font."],
+    ["Map - Font", "Map Icon Text Font."],
     "LRG QS Icons",
     [[0, 1, 2, 3, 4, 5, 6, 7, 8], [
         ["EtelkaMonospacePro", "EtelkaMonospacePro."],
@@ -228,113 +192,269 @@
         ["puristaMedium", "puristaMedium."],
         ["PuristaSemibold", "PuristaSemibold."],
         ["TahomaB", "TahomaB."]
-    ], 0],
+    ], 5],
     true,
     {  
-        params ["_value"];
-        call {
-            if (_value IsEqualTo 0) exitwith {LRG_QSIcons_IconTextFonts = ['EtelkaMonospacePro'];};
-            if (_value IsEqualTo 1) exitwith {LRG_QSIcons_IconTextFonts = ['EtelkaMonospaceProBold'];};
-            if (_value IsEqualTo 2) exitwith {LRG_QSIcons_IconTextFonts = ['EtelkaNarrowMediumPro'];};
-            if (_value IsEqualTo 3) exitwith {LRG_QSIcons_IconTextFonts = ['LucidaConsoleB'];};
-            if (_value IsEqualTo 4) exitwith {LRG_QSIcons_IconTextFonts = ['PuristaBold'];};
-            if (_value IsEqualTo 5) exitwith {LRG_QSIcons_IconTextFonts = ['PuristaLight'];};
-            if (_value IsEqualTo 6) exitwith {LRG_QSIcons_IconTextFonts = ['puristaMedium'];};
-            if (_value IsEqualTo 7) exitwith {LRG_QSIcons_IconTextFonts = ['PuristaSemibold'];};
-            if (_value IsEqualTo 8) exitwith {LRG_QSIcons_IconTextFonts = ['TahomaB'];};
-
-            LRG_QSIcons_IconTextFonts = ['TahomaB'];
-        };
+       uiNamespace setVariable ["LRG_QS_ST_iconTextFonts", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Icon Color - EAST
+
+//==================================================================================//
+//=========================== CONFIGURE GPS (UNIT/VEHICLE) ICONS ===================//
+//==================================================================================//
+
+// LRG_QS_ST_GPSDist
 [
-    "LRG_QSIcons_IconColor_East",
+    "LRG_QS_ST_GPSDist",
+    "SLIDER",
+    ["GPS - Range", "Distance from player that units shown on GPS"],
+    "LRG QS Icons",
+    [0, 1000, 300, 0],
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_GPSDist", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_GPSshowNames
+[
+    "LRG_QS_ST_GPSshowNames",
+    "CHECKBOX",
+    ["GPS - Names", "Show unit names on the GPS display."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_GPSshowNames", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_GPSshowGroupOnly
+[
+    "LRG_QS_ST_GPSshowGroupOnly",
+    "CHECKBOX",
+    ["GPS - Group ONLY", "Show only group members on the GPS display."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_GPSshowGroupOnly", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+
+//==================================================================================//
+//============================= CONFIGURE GROUP ICONS ==============================//
+//==================================================================================//
+
+// LRG_QS_ST_showGroupMapIcons
+[
+    "LRG_QS_ST_showGroupMapIcons",
+    "CHECKBOX",
+    ["Group - Map Icon", "Show rectangular group Icon on Map."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showGroupMapIcons", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_showGroupHudIcons
+[
+    "LRG_QS_ST_showGroupHudIcons",
+    "CHECKBOX",
+    ["Group - HUD", "Group icons displayed on player 3D HUD."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showGroupHudIcons", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_showAIGroups
+[
+    "LRG_QS_ST_showAIGroups",
+    "CHECKBOX",
+    ["Group - AI Groups", "Show Groups with AI leaders."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showAIGroups", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_showAINames
+[
+    "LRG_QS_ST_showAINames",
+    "CHECKBOX",
+    ["Group - AI Names", "Show AI Names."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showAINames", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_groupTextFactionOnly
+[
+    "LRG_QS_ST_groupTextFactionOnly",
+    "CHECKBOX",
+    ["Group - Faction ONLY", "Show group icon text from ONLY the PLAYERS faction."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_groupTextFactionOnly", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_showOwnGroup
+[
+    "LRG_QS_ST_showOwnGroup",
+    "CHECKBOX",
+    ["Group - Own Group", "Show players own group icon."],
+    "LRG QS Icons",
+    false,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showOwnGroup", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+//==================================================================================//
+//============================= CONFIGURE MEDICAL ICONS ==============================//
+//==================================================================================//
+
+// LRG_QS_ST_MedicalSystem
+[
+    "LRG_QS_ST_MedicalSystem",
+    "LIST",
+    ["Medical - System", "Used to ensure QS Icons are used with a predefined medical system."],
+    "LRG QS Icons",
+    [[0, 1, 2, 3, 4, 5], [
+        ["BIS", "BIS Revive."],
+        ["BTC", "BTC Revive."],
+        ["AIS", "AIS Revive."],
+        ["ACE", "@ACE 3 Revive."],
+        ["FAR", "Farooq's Revive."],
+        ["AWS", "A3 Wounding System by Psycho."]
+    ], 0],
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_MedicalSystem", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+// LRG_QS_ST_showMedicalWounded
+[
+    "LRG_QS_ST_showMedicalWounded",
+    "CHECKBOX",
+    ["Medical - Show Wounded", "Show wounded on the map and GPS."],
+    "LRG QS Icons",
+    true,
+    true,
+    {  
+       uiNamespace setVariable ["LRG_QS_ST_showMedicalWounded", _this];
+    }
+] call CBA_Settings_fnc_init;
+
+
+//==================================================================================//
+//=========================== CONFIGURE ICON COLOURS ===================//
+//==================================================================================//
+
+// LRG_QS_ST_iconColor_EAST
+[
+    "LRG_QS_ST_iconColor_EAST",
     "COLOR",
     ["Icon Color - EAST", "Icon Color for any East units."],
     "LRG QS Icons",
     [0.5,0,0,0.65],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_iconColor_EAST", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Icon Color - WEST
+// LRG_QS_ST_iconColor_WEST
 [
-    "LRG_QSIcons_IconColor_West",
+    "LRG_QS_ST_iconColor_WEST",
     "COLOR",
     ["Icon Color - WEST", "Icon Color for any West units."],
     "LRG QS Icons",
     [0,0.3,0.6,0.65],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_iconColor_WEST", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Icon Color - Resistance
+// LRG_QS_ST_iconColor_RESISTANCE
 [
-    "LRG_QSIcons_IconColor_Resistance",
+    "LRG_QS_ST_iconColor_RESISTANCE",
     "COLOR",
     ["Icon Color - RESISTANCE", "Icon Color for any Resistance units."],
     "LRG QS Icons",
     [0,0.5,0,0.65],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_iconColor_RESISTANCE", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Icon Color - Civilian
+// LRG_QS_ST_iconColor_CIVILIAN
 [
-    "LRG_QSIcons_IconColor_Civilian",
+    "LRG_QS_ST_iconColor_CIVILIAN",
     "COLOR",
     ["Icon Color - CIVILIAN", "Icon Color for any Civilian units."],
     "LRG QS Icons",
     [0.4,0,0.5,0.65],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_iconColor_CIVILIAN", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Icon Color - Unknown
+// LRG_QS_ST_iconColor_UNKNOWN
 [
-    "LRG_QSIcons_IconColor_Unknown",
+    "LRG_QS_ST_iconColor_UNKNOWN",
     "COLOR",
     ["Icon Color - UNKNOWN", "Icon Color for any Unknown units."],
     "LRG QS Icons",
     [0.7,0.6,0,0.5],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_iconColor_UNKNOWN", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Icon Color - Medical
+// LRG_QS_ST_MedicalIconColor
 [
-    "LRG_QSIcons_IconColor_Medical",
+    "LRG_QS_ST_MedicalIconColor",
     "COLOR",
     ["Icon Color - Medical", "Color of medical icons."],
     "LRG QS Icons",
     [1,0.41,0,1],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_MedicalIconColor", _this];
     }
 ] call CBA_Settings_fnc_init;
 
-// Icon Color - Wounded
+// LRG_QS_ST_colorInjured
 [
-    "LRG_QSIcons_IconColor_Wounded",
+    "LRG_QS_ST_colorInjured",
     "COLOR",
     ["Icon Color - Wounded", "Color of Wounded icons."],
     "LRG QS Icons",
     [0.75,0.55,0,0.75],
     true,
     {  
-
+       uiNamespace setVariable ["LRG_QS_ST_colorInjured", _this];
     }
 ] call CBA_Settings_fnc_init;

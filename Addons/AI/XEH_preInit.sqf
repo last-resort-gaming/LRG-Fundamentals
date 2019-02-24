@@ -7,7 +7,8 @@
     true,
     true,
     {
-
+        if (!isserver) exitwith {};
+        if (_this) then {call LR_fnc_SetInitialAI};
     }
 ] call CBA_Settings_fnc_init;
 

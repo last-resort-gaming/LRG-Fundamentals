@@ -33,25 +33,35 @@ Installation:
 _________________________________________________________________/*/
 
 if (isDedicated || !hasInterface) exitWith {};
-
-if (isNil "LRG_QSIcons_MasterEnable") exitwith {};
-if (not LRG_QSIcons_MasterEnable) exitWith{};
 private [
-	'_side','_sides','_QS_ST_X','_QS_ST_faction','_QS_ST_friendlySides_EAST',
-	'_QS_ST_friendlySides_WEST','_QS_ST_friendlySides_RESISTANCE','_QS_ST_friendlySides_CIVILIAN','_QS_ST_friendlySides_Dynamic', '_QS_ST_showMedicalWounded','_QS_ST_iconShadowMap',
-	'_QS_ST_iconShadowGPS','_QS_ST_iconTextSize_Map','_QS_ST_iconTextSize_GPS','_QS_ST_iconTextOffset','_QS_ST_iconSize_Man','_QS_ST_iconSize_LandVehicle',	
-	'_QS_ST_iconSize_Ship','_QS_ST_iconSize_Air','_QS_ST_iconSize_StaticWeapon','_QS_ST_showAIGroups',			
-	'_QS_ST_groupInteractiveIcons','_QS_ST_groupInteractiveIcons_showClass','_QS_ST_dynamicGroupID',			
-	'_QS_ST_showGroupMapText','_QS_ST_groupIconScale','_QS_ST_groupIconOffset','_QS_ST_groupIconText','_QS_ST_autonomousVehicles','_QS_fnc_iconColor','_QS_fnc_iconType',				
-	'_QS_fnc_iconSize','_QS_fnc_iconPosDir','_QS_fnc_iconText','_QS_fnc_iconUnits','_QS_fnc_onMapSingleClick','_QS_fnc_mapVehicleShowCrew','_QS_fnc_iconDrawMap',			
-	'_QS_fnc_iconDrawGPS','_QS_fnc_groupIconText','_QS_fnc_groupIconType','_QS_fnc_configGroupIcon','_QS_fnc_onGroupIconClick','_QS_fnc_onGroupIconOverLeave',	
-	'_QS_ST_iconMapClickShowDetail','_QS_ST_showFriendlySides','_QS_fnc_onGroupIconOverEnter','_QS_ST_showCivilianGroups','_QS_ST_iconTextFont','_QS_ST_showAll','_QS_ST_showMOS','_QS_ST_iconMapText','_QS_ST_showMOS_range',
-	'_QS_fnc_isIncapacitated','_QS_ST_htmlColorMedical','_QS_ST_R','_QS_ST_showAINames',
+	'_side',
+	'_sides',
+	'_QS_ST_X',
+	'_QS_ST_faction',			
+	'_QS_ST_showGroupMapText',
+	'_QS_ST_groupIconScale',
+	'_QS_ST_groupIconOffset',
+	'_QS_ST_groupIconText',
+	'_QS_ST_autonomousVehicles',
+	'_QS_fnc_iconColor',
+	'_QS_fnc_iconType',				
+	'_QS_fnc_iconSize',
+	'_QS_fnc_iconPosDir',
+	'_QS_fnc_iconText',
+	'_QS_fnc_iconUnits',
+	'_QS_fnc_onMapSingleClick',
+	'_QS_fnc_mapVehicleShowCrew',
+	'_QS_fnc_iconDrawMap',			
+	'_QS_fnc_iconDrawGPS',
+	'_QS_fnc_groupIconText',
+	'_QS_fnc_groupIconType','_QS_fnc_configGroupIcon','_QS_fnc_onGroupIconClick','_QS_fnc_onGroupIconOverLeave',	
+	'_QS_ST_iconMapClickShowDetail','_QS_ST_showFriendlySides','_QS_fnc_onGroupIconOverEnter','_QS_ST_showCivilianGroups','_QS_ST_iconTextFont','_QS_ST_showAll','_QS_ST_showFactionOnly',		
+	'_QS_ST_showAI','_QS_ST_showMOS','_QS_ST_showGroupOnly','_QS_ST_iconUpdatePulseDelay','_QS_ST_iconMapText','_QS_ST_showMOS_range',
+	'_QS_ST_iconTextFonts','_QS_fnc_isIncapacitated','_QS_ST_htmlColorMedical','_QS_ST_R','_QS_ST_showAINames','_QS_ST_AINames',
 	'_QS_ST_groupTextFactionOnly','_QS_ST_showCivilianIcons','_QS_ST_showOnlyVehicles','_QS_ST_showOwnGroup','_QS_ST_iconColor_empty',
-	'_QS_ST_iconSize_empty','_QS_ST_showEmptyVehicles','_QS_ST_htmlColorInjured','_QS_fnc_iconColorGroup','_QS_ST_otherDisplays','_QS_ST_MAPrequireGPSItem',
+	'_QS_ST_iconSize_empty','_QS_ST_showEmptyVehicles','_QS_ST_colorInjured','_QS_ST_htmlColorInjured','_QS_fnc_iconColorGroup','_QS_ST_otherDisplays','_QS_ST_MAPrequireGPSItem',
 	'_QS_ST_GPSrequireGPSItem','_QS_ST_GRPrequireGPSItem','_QS_ST_admin'
 ];
-
 //==============================================================================================================================//
 //=============================================================== CONFIGURATION START ==========================================//
 //==============================================================================================================================//
@@ -62,92 +72,140 @@ private [
 //================================ CONFIGURE COMMON ================================//
 //==================================================================================//
 
-//================= ADMIN
+//================== MASTER SWITCHES
+private _QS_ST_map_enableUnitIcons = uiNamespace getVariable ["LRG_QS_ST_map_enableUnitIcons", true];							// BOOL. TRUE to enable MAP unit/vehicle Icons. Default TRUE.
+private _QS_ST_gps_enableUnitIcons = uiNamespace getVariable ["LRG__QS_ST_gps_enableUnitIcons", true];							// BOOL. TRUE to enable MAP unit/vehicle Icons. Default TRUE.
+private _QS_ST_enableGroupIcons = uiNamespace getVariable ["LRG_QS_ST_enableGroupIcons", true];								// BOOL. TRUE to enable Map+GPS+HUD GROUP Icons. Default TRUE.
 
-_QS_ST_admin = FALSE;										// BOOL. TRUE to enable showing all units (even enemies) if logged in as admin on a server. Default FALSE;
-_QS_ST_showAll = 0;											// NUMBER. Intended for Debug / Development use only! Caution: Will cause lag if 1 or 2! Settings -  0 = Disabled (Recommended). 1 = Reveal all Units + vehicles. 2 = Reveal all mission objects + vehicles + units. May override below configurations if set at 1 or 2.
-	
+//================= ADMIN
+private _QS_ST_admin = uiNamespace getVariable ["LRG_QS_ST_admin", false];									// BOOL. TRUE to enable showing all units (even enemies) if logged in as admin on a server. Default FALSE;
+private _QS_ST_showAll = uiNamespace getVariable ["LRG_QS_ST_showAll", 0];									// NUMBER. Intended for Debug / Development use only! Caution: Will cause lag if 1 or 2! Settings -  0 = Disabled (Recommended). 1 = Reveal all Units + vehicles. 2 = Reveal all mission objects + vehicles + units. May override below configurations if set at 1 or 2.
+
 //================= DIPLOMACY - set the Friendly factions for each faction.
 
-_QS_ST_friendlySides_Dynamic = TRUE;						// BOOL. Set TRUE to allow faction alliances to change dynamically (IE. AAF may not always be loyal to NATO) and be represented on the map. Default TRUE.
-_QS_ST_friendlySides_EAST = [								// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
+private _QS_ST_friendlySides_Dynamic = uiNamespace getVariable ["LRG_QS_ST_friendlySides_Dynamic", true];						// BOOL. Set TRUE to allow faction alliances to change dynamically (IE. AAF may not always be loyal to NATO) and be represented on the map. Default TRUE.
+private _QS_ST_friendlySides_EAST = [								// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
 	//1,					//EAST is friendly to WEST
 	//2,					//EAST is friendly to INDEPENDENT/RESISTANCE
 	3						//EAST is friendly to CIVILIANS
 ];
-_QS_ST_friendlySides_WEST = [								// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
+private _QS_ST_friendlySides_WEST = [								// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
 	//0,					//WEST is friendly to EAST
 	//2						//WEST is friendly to INDEP/RESISTANCE
 	3						//WEST is friendly to CIVILIAN
 ];
-_QS_ST_friendlySides_RESISTANCE = [							// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
+private _QS_ST_friendlySides_RESISTANCE = [							// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
 	//0,					//RESISTANCE is friendly to EAST
 	//1,					//RESISTANCE is friendly to WEST
 	3						//RESISTANCE is friendly to CIVILIAN
 ];
-_QS_ST_friendlySides_CIVILIAN = [							// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
-	0,						//CIVILIAN is friendly to EAST
+private _QS_ST_friendlySides_CIVILIAN = [							// ARRAY (NUMBER). Uncomment the relevant number(s). Remove comma after last used entry (important!).
+	//0,					//CIVILIAN is friendly to EAST
 	//1,					//CIVILIAN is friendly to WEST
 	2						//CIVILIAN is friendly to INDEP/RESISTANCE
 ];
 
+//================= DEFAULT ICON COLORS by FACTION
+
+private _QS_ST_iconColor_EAST = uiNamespace getVariable ["LRG_QS_ST_iconColor_EAST", [0.5,0,0,0.65]];
+private _QS_ST_iconColor_WEST = uiNamespace getVariable ["LRG_QS_ST_iconColor_WEST", [0,0.3,0.6,0.65]];
+private _QS_ST_iconColor_RESISTANCE = uiNamespace getVariable ["LRG_QS_ST_iconColor_RESISTANCE", [0,0.5,0,0.65]];
+private _QS_ST_iconColor_CIVILIAN = uiNamespace getVariable ["LRG_QS_ST_iconColor_CIVILIAN", [0.4,0,0.5,0.65]];
+private _QS_ST_iconColor_UNKNOWN = uiNamespace getVariable ["LRG_QS_ST_iconColor_UNKNOWN", [0.7,0.6,0,0.5]];
+
 //================= MEDICAL
 
-_QS_ST_showMedicalWounded = TRUE;								// BOOL. TRUE to show wounded on the map and GPS. FALSE to not show wounded on the map with this script. Default TRUE.
+private _QS_ST_showMedicalWounded = uiNamespace getVariable ["LRG_QS_ST_showMedicalWounded", true];						// BOOL. TRUE to show wounded on the map and GPS. FALSE to not show wounded on the map with this script. Default TRUE.
+private _QS_ST_MedicalSystem = uiNamespace getVariable ["LRG_QS_ST_MedicalSystem", 0];
+_QS_ST_MedicalSystem = call {
+	if (_QS_ST_MedicalSystem IsEqualTo 0) exitwith {['BIS']};
+	if (_QS_ST_MedicalSystem IsEqualTo 1) exitwith {['BTC']};
+	if (_QS_ST_MedicalSystem IsEqualTo 2) exitwith {['AIS']};
+	if (_QS_ST_MedicalSystem IsEqualTo 3) exitwith {['ACE']};
+	if (_QS_ST_MedicalSystem IsEqualTo 4) exitwith {['FAR']};
+	if (_QS_ST_MedicalSystem IsEqualTo 5) exitwith {['AWS']};
+};
+
+private _QS_ST_MedicalIconColor = uiNamespace getVariable ["LRG_QS_ST_MedicalIconColor", [1,0.41,0,1]];							// ARRAY (NUMBER). Color of medical icons in RGBA format. Default [1,0.41,0,1];
+private _QS_ST_colorInjured = uiNamespace getVariable ["LRG_QS_ST_colorInjured", [0.75,0.55,0,0.75]];						// ARRAY (NUMBER). RGBA color code. Color of units with > 10% damage, in map group interactive interface. Default [0.7,0.6,0,0.5];
 
 //==================================================================================//
 //=========================== CONFIGURE MAP (UNIT/VEHICLE) ICONS ===================//
 //==================================================================================//
 
-_QS_ST_showCivilianIcons = FALSE;								// BOOL. Set TRUE to allow showing of civilians, only works if Dynamic Diplomacy is enabled above. Default FALSE.
-_QS_ST_iconMapText = TRUE;										// BOOL. TRUE to show unit/vehicle icon text on the map. FALSE to only show the icon and NO text (name/class). Default TRUE.
-_QS_ST_showMOS = TRUE;											// BOOL. TRUE = show Military Occupational Specialty text(unit/vehicle class/role display name), FALSE = disable and only show icons and names. Default FALSE.
-_QS_ST_showMOS_range = 3500;									// NUMBER. Range in distance to show MOS on the map. Default 3500.
-_QS_ST_showOnlyVehicles = FALSE;								// BOOL. Set TRUE to show ONLY vehicles, no foot-soldier units will be shown. May override other config. Default TRUE.
-_QS_ST_iconMapClickShowDetail = TRUE;							// BOOL. Set TRUE to show unit/vehicle detail when player clicks on their map near the vehicle. Only works for shown vehicles. Default TRUE.
-_QS_ST_iconShadowMap = 1;										// NUMBER. Icon Shadow on MAP. 0 = no shadow. 1 = shadow. 2 = outline. Must be 0, 1, or 2. Default 1.
-_QS_ST_iconTextSize_Map = 0.05;									// NUMBER. Icon Text Size on MAP display. Default is 0.05.
-_QS_ST_iconTextOffset = 'right';								// STRING. Icon Text Offset. Can be 'left' or 'center' or 'right'. Default is 'right'
-_QS_ST_iconSize_Man = 22;										// NUMBER. Icon Size by Vehicle Type. Man/Units. Default = 22
-_QS_ST_iconSize_LandVehicle = 26;								// NUMBER. Icon Size by Vehicle Type. Ground-based vehicles. Default = 26	
-_QS_ST_iconSize_Ship = 24;										// NUMBER. Icon Size by Vehicle Type. Water-based vehicles. Default = 24
-_QS_ST_iconSize_Air = 24;										// NUMBER. Icon Size by Vehicle Type. Air vehicles. Default = 24
-_QS_ST_iconSize_StaticWeapon = 22;								// NUMBER. Icon Size by Vehicle Type. Static Weapon (Mortar, remote designator, HMG/GMG. Default = 22
-_QS_ST_otherDisplays = TRUE;									// BOOL. TRUE to add Unit/Vehicle Icon support for UAV Terminal and Artillery Computer. Runs a separate script to handle these displays. Only works if  LRG_QSIcons_Map_EnableUnitIcons = TRUE;
-_QS_ST_MAPrequireGPSItem = FALSE;								// BOOL. TRUE to require player have GPS in his assigned items. Default FALSE.
+private _QS_ST_showFactionOnly = uiNamespace getVariable ["LRG_QS_ST_showFactionOnly", true];								// BOOL. will override ST_showFriendlySides TRUE. If TRUE then will only show players faction. If FALSE then can show friendly factions. Default FALSE.
+private _QS_ST_showAI = uiNamespace getVariable ["LRG_QS_ST_showAI", false];												// BOOL. FALSE = players only, TRUE = players and AI. Default TRUE.
+private _QS_ST_AINames = uiNamespace getVariable ["LRG_QS_ST_AINames", false];												// BOOL. Set TRUE to show human names for AI with the map/vehicle icons. Set FALSE and will be named 'AI'. Default FALSE.
+private _QS_ST_showCivilianIcons = uiNamespace getVariable ["LRG_QS_ST_showCivilianIcons", false];							// BOOL. Set TRUE to allow showing of civilians, only works if Dynamic Diplomacy is enabled above. Default FALSE.
+private _QS_ST_iconMapText = uiNamespace getVariable ["LRG_QS_ST_iconMapText", true];										// BOOL. TRUE to show unit/vehicle icon text on the map. FALSE to only show the icon and NO text (name/class). Default TRUE.
+private _QS_ST_showMOS = uiNamespace getVariable ["LRG_QS_ST_showMOS", true];												// BOOL. TRUE = Show Military Occupational Specialty text(unit/vehicle class/role display name), FALSE = disable and only show icons and names. Default FALSE.
+private _QS_ST_showMOS_range = uiNamespace getVariable ["LRG_QS_ST_showMOS_range", 3500];									// NUMBER. Range in distance to show MOS on the map. Default 3500.
+private _QS_ST_showGroupOnly = uiNamespace getVariable ["LRG_QS_ST_showGroupOnly", true];									// BOOL. Set TRUE to Show ONLY the unit icons of THE PLAYERS GROUP MEMBERS on the MAP, FALSE to show ALL your factions units. May override other config. Default TRUE.
+private _QS_ST_showOnlyVehicles = uiNamespace getVariable ["LRG_QS_ST_showOnlyVehicles", false];							// BOOL. Set TRUE to show ONLY vehicles, no foot-soldier units will be shown. May override other config. Default TRUE.
+private _QS_ST_iconMapClickShowDetail = uiNamespace getVariable ["LRG_QS_ST_iconMapClickShowDetail", true];				// BOOL. Set TRUE to show unit/vehicle detail when player clicks on their map near the vehicle. Only works for shown vehicles. Default TRUE.
+private _QS_ST_iconUpdatePulseDelay = uiNamespace getVariable ["LRG_QS_ST_iconUpdatePulseDelay", 60];						// NUMBER. How often should location of unit on the MAP be updated? 0 = as fast as possible, else if > 0 then it = time in seconds. Default 0.
+private _QS_ST_iconShadowMap = uiNamespace getVariable ["LRG_QS_ST_iconShadowMap", 1];										// NUMBER. Icon Shadow on MAP. 0 = no shadow. 1 = shadow. 2 = outline. Must be 0, 1, or 2. Default 1.
+private _QS_ST_iconTextSize_Map = uiNamespace getVariable ["LRG_QS_ST_iconTextSize_Map", 0.05];							// NUMBER. Icon Text Size on MAP display. Default is 0.05.
+private _QS_ST_iconTextOffset = uiNamespace getVariable ["LRG_QS_ST_iconTextOffset", 'right'];								// STRING. Icon Text Offset. Can be 'left' or 'center' or 'right'. Default is 'right'
+private _QS_ST_iconSize_Man = uiNamespace getVariable ["LRG_QS_ST_iconSize_Man", 22];										// NUMBER. Icon Size by Vehicle Type. Man/Units. Default = 22
+private _QS_ST_iconSize_LandVehicle = uiNamespace getVariable ["LRG_QS_ST_iconSize_LandVehicle", 26];						// NUMBER. Icon Size by Vehicle Type. Ground-based vehicles. Default = 26	
+private _QS_ST_iconSize_Ship = uiNamespace getVariable ["LRG_QS_ST_iconSize_Ship", 24];									// NUMBER. Icon Size by Vehicle Type. Water-based vehicles. Default = 24
+private _QS_ST_iconSize_Air = uiNamespace getVariable ["LRG_QS_ST_iconSize_Air", 24];										// NUMBER. Icon Size by Vehicle Type. Air vehicles. Default = 24
+private _QS_ST_iconSize_StaticWeapon = uiNamespace getVariable ["LRG_QS_ST_iconSize_StaticWeapon", 22];
+
+private _QS_ST_iconTextFonts = uiNamespace getVariable ["LRG_QS_ST_iconTextFonts", 5];
+_QS_ST_iconTextFonts = call {
+	if (_QS_ST_iconTextFonts IsEqualTo 0) exitwith {['EtelkaMonospacePro']};
+	if (_QS_ST_iconTextFonts IsEqualTo 1) exitwith {['EtelkaMonospaceProBold']};
+	if (_QS_ST_iconTextFonts IsEqualTo 2) exitwith {['EtelkaNarrowMediumPro']};
+	if (_QS_ST_iconTextFonts IsEqualTo 3) exitwith {['LucidaConsoleB']};
+	if (_QS_ST_iconTextFonts IsEqualTo 4) exitwith {['PuristaBold']};
+	if (_QS_ST_iconTextFonts IsEqualTo 5) exitwith {['PuristaLight']};
+	if (_QS_ST_iconTextFonts IsEqualTo 6) exitwith {['puristaMedium']};
+	if (_QS_ST_iconTextFonts IsEqualTo 7) exitwith {['PuristaSemibold']};
+	if (_QS_ST_iconTextFonts IsEqualTo 8) exitwith {['TahomaB']};
+};
+
+private _QS_ST_otherDisplays = uiNamespace getVariable ["LRG_QS_ST_otherDisplays", true];									// BOOL. TRUE to add Unit/Vehicle Icon support for UAV Terminal and Artillery Computer. Runs a separate script to handle these displays. Only works if  _QS_ST_map_enableUnitIcons = TRUE;
+private _QS_ST_MAPrequireGPSItem = uiNamespace getVariable ["LRG_QS_ST_MAPrequireGPSItem", false];							// BOOL. TRUE to require player have GPS in his assigned items. Default FALSE.
 
 //==================================================================================//
 //=========================== CONFIGURE GPS (UNIT/VEHICLE) ICONS ===================//
 //==================================================================================//
 
-_QS_ST_iconTextSize_GPS = 0.05;									// NUMBER. Icon Text Size on GPS display. Default is 0.05.
-_QS_ST_iconShadowGPS = 1;										// NUMBER. Icon Shadow on GPS. 0 = no shadow. 1 = shadow. 2 = outline. Must be 0, 1, or 2. Default 1.
-_QS_ST_GPSrequireGPSItem = FALSE;								// BOOL. TRUE to require player have GPS in his assigned items. Default FALSE.
+private _QS_ST_GPSDist = uiNamespace getVariable ["LRG_QS_ST_GPSDist", 300];												// NUMBER. Distance from player that units shown on GPS. Higher number = lower script performance. Not significant but every 1/10th of a frame counts! Default 300
+private _QS_ST_GPSshowNames = uiNamespace getVariable ["LRG_QS_ST_GPSshowNames", false];									// BOOL. TRUE to show unit names on the GPS display. Default FALSE.
+private _QS_ST_GPSshowGroupOnly = uiNamespace getVariable ["LRG_QS_ST_GPSshowGroupOnly", false];							// BOOL. TRUE to show only group members on the GPS display. Default TRUE.
+private _QS_ST_iconTextSize_GPS = uiNamespace getVariable ["LRG_QS_ST_iconTextSize_GPS", 0.05];							// NUMBER. Icon Text Size on GPS display. Default is 0.05.
+private _QS_ST_iconShadowGPS = uiNamespace getVariable ["LRG_QS_ST_iconShadowGPS", 1];										// NUMBER. Icon Shadow on GPS. 0 = no shadow. 1 = shadow. 2 = outline. Must be 0, 1, or 2. Default 1.
+private _QS_ST_GPSrequireGPSItem = uiNamespace getVariable ["LRG_QS_ST_GPSrequireGPSItem", false];							// BOOL. TRUE to require player have GPS in his assigned items. Default FALSE.
 
 //==================================================================================//
 //============================= CONFIGURE GROUP ICONS ==============================//
 //==================================================================================//
 
-_QS_ST_showAIGroups = FALSE;									// BOOL. Show Groups with AI leaders. Default TRUE.
-_QS_ST_showAINames = FALSE;										// BOOL. Show AI Names. If FALSE, when names are listed with Group features, will only display as '[AI]'. Default FALSE.
-_QS_ST_groupInteractiveIcons = TRUE;							// BOOL. Group icons are interactable (mouse hover and mouse click for group details). Default TRUE.
-_QS_ST_groupInteractiveIcons_showClass = TRUE;					// BOOL. TRUE to show units vehicle class when revealing group details with interactive map group click. Default TRUE.
-_QS_ST_dynamicGroupID = TRUE;									// BOOL. If TRUE, Script tries to utilize BIS-Dynamic-Groups Group Name for group info display (only available with QS_ST_groupInteractiveIcons), if available. Default TRUE. EDIT: Obsolete as of A3 1.48
-_QS_ST_showGroupMapText = TRUE;									// BOOL. TRUE to show Group Name on the map. If FALSE, name can still be seen by clicking on the group icon, if QS_ST_groupInteractiveIcons = TRUE. Default FALSE.
-_QS_ST_groupIconScale = 0.75;										// NUMBER. Group Icon Scale. Default = 0.75
-_QS_ST_groupIconOffset = [0.65,0.65];							// ARRAY (NUMBERS). [X,Y], offset position of icon from group leaders position. Can be positive or negative numbers. Default = [0.65,0.65];
-_QS_ST_groupTextFactionOnly = TRUE;								// BOOL. TRUE to show group icon text from ONLY the PLAYERS faction. FALSE will show text for all friendly/revealed factions. Default TRUE.
-_QS_ST_showCivilianGroups = FALSE;								// BOOL. TRUE to show Civilian groups. Must be whitelisted above in friendlySides. Default FALSE.
-_QS_ST_showOwnGroup = TRUE;									// BOOL. TRUE to show the Players own group icon. Default FALSE.
-_QS_ST_GRPrequireGPSItem = FALSE;								// BOOL. TRUE to require player have GPS in his assigned items. Default FALSE.
+private _QS_ST_showGroupMapIcons = uiNamespace getVariable ["LRG_QS_ST_showGroupMapIcons", true];									// BOOL. Group icons displayed on map. Default TRUE.
+private _QS_ST_showGroupHudIcons = uiNamespace getVariable ["LRG_QS_ST_showGroupHudIcons", false];									// BOOL. Group icons displayed on player 3D HUD. Default FALSE.
+private _QS_ST_showAIGroups = uiNamespace getVariable ["LRG_QS_ST_showAIGroups", true];											// BOOL. Show Groups with AI leaders. Default TRUE.
+private _QS_ST_showAINames = uiNamespace getVariable ["LRG_QS_ST_showAINames", false];												// BOOL. Show AI Names. If FALSE, when names are listed with Group features, will only display as '[AI]'. Default FALSE.
+private _QS_ST_groupInteractiveIcons = uiNamespace getVariable ["LRG_QS_ST_groupInteractiveIcons", true];							// BOOL. Group icons are interactable (mouse hover and mouse click for group details). Default TRUE.
+private _QS_ST_groupInteractiveIcons_showClass = uiNamespace getVariable ["LRG_QS_ST_groupInteractiveIcons_showClass", true];		// BOOL. TRUE to show units vehicle class when revealing group details with interactive map group click. Default TRUE.
+private _QS_ST_dynamicGroupID = TRUE;																									// BOOL. If TRUE, Script tries to utilize BIS-Dynamic-Groups Group Name for group info display (only available with QS_ST_groupInteractiveIcons), if available. Default TRUE. EDIT: Obsolete as of A3 1.48
+private _QS_ST_showGroupMapText = uiNamespace getVariable ["LRG_QS_ST_showGroupMapText", true];									// BOOL. TRUE to show Group Name on the map. If FALSE, name can still be seen by clicking on the group icon, if QS_ST_groupInteractiveIcons = TRUE. Default FALSE.
+private _QS_ST_groupIconScale = uiNamespace getVariable ["LRG_QS_ST_groupIconScale", 0.75];										// NUMBER. Group Icon Scale. Default = 0.75
+private _QS_ST_groupIconOffset = uiNamespace getVariable ["LRG_QS_ST_groupIconOffset", [0.65,0.65]];								// ARRAY (NUMBERS). [X,Y], offset position of icon from group leaders position. Can be positive or negative numbers. Default = [0.65,0.65];
+private _QS_ST_groupTextFactionOnly = uiNamespace getVariable ["LRG_QS_ST_groupTextFactionOnly", true];							// BOOL. TRUE to show group icon text from ONLY the PLAYERS faction. FALSE will show text for all friendly/revealed factions. Default TRUE.
+private _QS_ST_showCivilianGroups = uiNamespace getVariable ["LRG_QS_ST_showCivilianGroups", false];								// BOOL. TRUE to show Civilian groups. Must be whitelisted above in friendlySides. Default FALSE.
+private _QS_ST_showOwnGroup = uiNamespace getVariable ["LRG_QS_ST_showOwnGroup", false];											// BOOL. TRUE to show the Players own group icon. Default FALSE.
+private _QS_ST_GRPrequireGPSItem = uiNamespace getVariable ["LRG_QS_ST_GRPrequireGPSItem", false];									// BOOL. TRUE to require player have GPS in his assigned items. Default FALSE.
 
 //==================================================================================//
 //============================= CONFIGURE BONUS FEATURES ===========================//
 //==================================================================================//
 
-_QS_ST_showEmptyVehicles = FALSE;								// BOOL. TRUE to mark certain unoccupied vehicles on the map. The vehicle must be assigned this variable:    <vehicle> setVariable ['QS_ST_drawEmptyVehicle',TRUE,TRUE];    Default FALSE.   Only works if  LRG_QSIcons_Map_EnableUnitIcons = TRUE;
-_QS_ST_iconColor_empty = [0.7,0.6,0,0.5];						// ARRAY (NUMBERS). Color of unoccupied vehicles, in RGBA. Default = [0.7,0.6,0,0.5];
-_QS_ST_iconSize_empty = 20;										// NUMBER. Icon size of unoccupied vehicles, if shown.
+private _QS_ST_showEmptyVehicles = uiNamespace getVariable ["LRG_QS_ST_showEmptyVehicles", false];									// BOOL. TRUE to mark certain unoccupied vehicles on the map. The vehicle must be assigned this variable:    <vehicle> setVariable ['QS_ST_drawEmptyVehicle',TRUE,TRUE];    Default FALSE.   Only works if  _QS_ST_map_enableUnitIcons = TRUE;
+private _QS_ST_iconColor_empty = uiNamespace getVariable ["LRG_QS_ST_iconColor_empty", [0.7,0.6,0,0.5]];							// ARRAY (NUMBERS). Color of unoccupied vehicles, in RGBA. Default = [0.7,0.6,0,0.5];
+private _QS_ST_iconSize_empty = uiNamespace getVariable ["LRG_QS_ST_iconSize_empty", 20];											// NUMBER. Icon size of unoccupied vehicles, if shown.
 
 //==================================================================================//
 //================ TEXT (for LOCALIZATION / LANGUAGE TRANSLATION) ==================//
@@ -1327,38 +1385,38 @@ if (!(_QS_ST_iconShadowMap in [0,1,2])) then {
 if (!(_QS_ST_iconShadowGPS in [0,1,2])) then {
 	_QS_ST_iconShadowGPS = 1;
 };
-if (LRG_QSIcons_Map_Delay > 0) then {
+if (_QS_ST_iconUpdatePulseDelay > 0) then {
 	missionNamespace setVariable ['QS_ST_iconUpdatePulseTimer',diag_tickTime];
 };
-_QS_ST_iconTextFont = LRG_QSIcons_IconTextFonts select 0;
-if (LRG_QSIcons_Group_Icons) then {
-	if (!(LRG_QSIcons_Map_EnableUnitIcons)) then {
+_QS_ST_iconTextFont = _QS_ST_iconTextFonts select 0;
+if (_QS_ST_enableGroupIcons) then {
+	if (!(_QS_ST_map_enableUnitIcons)) then {
 		_QS_ST_groupIconOffset = [0,0];
 	};
 };
 _QS_ST_groupIconText = FALSE;
-_QS_ST_htmlColorMedical = [LRG_QSIcons_IconColor_Medical select 0,LRG_QSIcons_IconColor_Medical select 1,LRG_QSIcons_IconColor_Medical select 2,LRG_QSIcons_IconColor_Medical select 3] call (missionNamespace getVariable 'BIS_fnc_colorRGBtoHTML');
-_QS_ST_htmlColorInjured = [LRG_QSIcons_IconColor_Wounded select 0,LRG_QSIcons_IconColor_Wounded select 1,LRG_QSIcons_IconColor_Wounded select 2,LRG_QSIcons_IconColor_Wounded select 3] call (missionNamespace getVariable 'BIS_fnc_colorRGBtoHTML');
+_QS_ST_htmlColorMedical = [_QS_ST_MedicalIconColor select 0,_QS_ST_MedicalIconColor select 1,_QS_ST_MedicalIconColor select 2,_QS_ST_MedicalIconColor select 3] call (missionNamespace getVariable 'BIS_fnc_colorRGBtoHTML');
+_QS_ST_htmlColorInjured = [_QS_ST_colorInjured select 0,_QS_ST_colorInjured select 1,_QS_ST_colorInjured select 2,_QS_ST_colorInjured select 3] call (missionNamespace getVariable 'BIS_fnc_colorRGBtoHTML');
 
 _QS_ST_R = [
-	LRG_QSIcons_Map_EnableUnitIcons,
-	LRG_QSIcons_GPS_EnableUnitIcons,
-	LRG_QSIcons_Group_Icons,
+	_QS_ST_map_enableUnitIcons,
+	_QS_ST_gps_enableUnitIcons,
+	_QS_ST_enableGroupIcons,
 	_QS_ST_faction,
 	_QS_ST_friendlySides_EAST,
 	_QS_ST_friendlySides_WEST,
 	_QS_ST_friendlySides_RESISTANCE,
 	_QS_ST_friendlySides_CIVILIAN,
 	_QS_ST_friendlySides_Dynamic,
-	LRG_QSIcons_IconColor_East,
+	_QS_ST_iconColor_EAST,
 	
-	LRG_QSIcons_IconColor_West,
-	LRG_QSIcons_IconColor_Resistance,
-	LRG_QSIcons_IconColor_Civilian,
-	LRG_QSIcons_IconColor_Unknown,
+	_QS_ST_iconColor_WEST,
+	_QS_ST_iconColor_RESISTANCE,
+	_QS_ST_iconColor_CIVILIAN,
+	_QS_ST_iconColor_UNKNOWN,
 	_QS_ST_showMedicalWounded,
-	LRG_QSIcons_MedicalSystem,
-	LRG_QSIcons_IconColor_Medical,
+	_QS_ST_MedicalSystem,
+	_QS_ST_MedicalIconColor,
 	_QS_ST_iconShadowMap,
 	_QS_ST_iconShadowGPS,
 	_QS_ST_iconTextSize_Map,
@@ -1370,13 +1428,13 @@ _QS_ST_R = [
 	_QS_ST_iconSize_Ship,
 	_QS_ST_iconSize_Air,
 	_QS_ST_iconSize_StaticWeapon,
-	LRG_QSIcons_GPS_Range,
-	LRG_QSIcons_GPS_ShowNames,
-	LRG_QSIcons_GPS_GroupOnly,
+	_QS_ST_GPSDist,
+	_QS_ST_GPSshowNames,
+	_QS_ST_GPSshowGroupOnly,
 	
 	_QS_ST_showAIGroups,
-	LRG_QSIcons_Group_Map,
-	LRG_QSIcons_Group_HUD,
+	_QS_ST_showGroupMapIcons,
+	_QS_ST_showGroupHudIcons,
 	_QS_ST_groupInteractiveIcons,
 	_QS_ST_groupInteractiveIcons_showClass,
 	_QS_ST_dynamicGroupID,
@@ -1409,17 +1467,17 @@ _QS_ST_R = [
 	
 	_QS_ST_iconTextFont,
 	_QS_ST_showAll,
-	LRG_QSIcons_Map_FactionOnly,
-	LRG_QSIcons_ShowAI,
+	_QS_ST_showFactionOnly,
+	_QS_ST_showAI,
 	_QS_ST_showMOS,
-	LRG_QSIcons_Group_Only,
-	LRG_QSIcons_Map_Delay,
+	_QS_ST_showGroupOnly,
+	_QS_ST_iconUpdatePulseDelay,
 	_QS_ST_iconMapText,
 	_QS_ST_showMOS_range,
 	_QS_fnc_isIncapacitated,
 	
 	_QS_ST_htmlColorMedical,
-	LRG_QSIcons_Map_AINames,
+	_QS_ST_AINames,
 	_QS_ST_showAINames,
 	_QS_ST_groupTextFactionOnly,
 	_QS_ST_showCivilianIcons,
