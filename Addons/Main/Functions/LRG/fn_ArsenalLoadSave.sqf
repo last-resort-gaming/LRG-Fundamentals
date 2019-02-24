@@ -1,10 +1,4 @@
 // not documented: postInit
-private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
-if (not _LRG_Main_Master) exitWith{};
-
-private _LRG_Main_ArsenalSaveLoad = uiNamespace getVariable ["LRG_Main_ArsenalSaveLoad", false];
-if (not _LRG_Main_ArsenalSaveLoad) exitWith{};
-
 if !(hasinterface) exitwith {};
 
 [

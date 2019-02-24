@@ -1,4 +1,6 @@
-﻿if (not LR_start) exitWith{};
+﻿if (isNil "LRG_Main_AISRevive") exitwith {};
+if (not LRG_Main_AISRevive) exitWith{};
+
 // from domination
 ais_help_screaming = [
 	[

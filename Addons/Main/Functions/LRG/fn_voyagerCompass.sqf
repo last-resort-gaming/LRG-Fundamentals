@@ -1,9 +1,3 @@
-private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
-if (not _LRG_Main_Master) exitWith{};
-
-private _LRG_Main_VoyagerCompass = uiNamespace getVariable ["LRG_Main_VoyagerCompass", false];
-if (not _LRG_Main_VoyagerCompass) exitWith{};
-
 if (!hasInterface) exitwith {};
 
 fnc_removeString =

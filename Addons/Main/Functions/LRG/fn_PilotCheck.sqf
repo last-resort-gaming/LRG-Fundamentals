@@ -1,11 +1,5 @@
 // not documented: postInit
 
-private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
-if (not _LRG_Main_Master) exitWith{};
-
-private _LRG_Main_PilotCheck = uiNamespace getVariable ["LRG_Main_PilotCheck", false];
-if (not _LRG_Main_PilotCheck) exitWith{};
-
 if (!hasInterface) exitwith {};
 
 private ["_vehicle"];

@@ -5,18 +5,19 @@ class LRG_Main {
 	class Main {
 
 		file = "z\LRG Fundamentals\Addons\Main\Functions\LRG";
-		class AddCueCards {PostInit = 1;};
-		class ArsenalLoadSave {PostInit = 1;};
-		class Diary {PostInit = 1;};
+		class AddCueCards {};
+		class ArsenalLoadSave {};
+		class Diary {};
 		class DynamicSim {};
-		class DynamicGroups {PostInit = 1;};
-		class Earplugs {PostInit = 1;};
-		class Logs {PostInit = 1;};
-		class PilotCheck {PostInit = 1;};
-		class TFARSettings {PostInit = 1;};
-		class VanillaFatigue {PostInit = 1;};
+		class DynamicGroups {};
+		class Earplugs {};
+		class Logs {};
+		class PilotCheck {};
+		class QSRepackMags {};
+		class TFARSettings {};
+		class VanillaFatigue {};
 		class FindReplaceString {};
-		class voyagerCompass {PostInit = 1;};
+		class voyagerCompass {};
 		class clientRepackMagazines {};
 	};
 };
@@ -44,7 +45,7 @@ class CHVD
 		class trueZoom {};
 		class keyDown {};
 		class keyDownTerrain {};
-		class init {postinit = 1;};
+		class init {};
 	};
 };
 
@@ -53,9 +54,9 @@ class YAINA {
 
 	class General {
 		file = "z\LRG Fundamentals\Addons\Main\Functions\YAINA\General";
-		class crewNames {postInit = 1;};
+		class crewNames {};
 		class formatDuration {};
-		class showFPS {postInit = 1;};
+		class showFPS {};
 		class log {};
 		class hintC {};
     };

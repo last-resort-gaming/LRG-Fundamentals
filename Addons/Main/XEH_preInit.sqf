@@ -1,13 +1,13 @@
-// Master Enable
+// AIS Revive
 [
-    "LRG_Main_Master",
+    "LRG_Main_AISRevive",
     "CHECKBOX",
-    ["Main Master Enable", "Turn ON/OFF Main Settings. MUST be enabled for any of these settings to work!"],
+    ["AIS Revive", "Use AIS Revive System - Will not run with @ACE"],
     "LRG Main",
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_Master", _this];
+
     }
 ] call CBA_Settings_fnc_init;
 
@@ -17,10 +17,10 @@
     "CHECKBOX",
     ["Vehicle Crew List", "Shows a list of players in a vehicle."],
     "LRG Main",
-    true,
+    false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_VehicleCrewList", _this];
+        if (_this) then {remoteExecCall ["YAINA_fnc_crewNames", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -33,7 +33,7 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_DynamicGroups", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_DynamicGroups", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -46,7 +46,7 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_Earplugs", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_Earplugs", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -56,10 +56,10 @@
     "CHECKBOX",
     ["Pilot Restrictions", "Restrict aircraft so only those with 'Pilot' Trait can fly."],
     "LRG Main",
-    true,
+    false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_PilotCheck", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_PilotCheck", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -72,7 +72,7 @@
     false,
     true,
     {
-        uiNamespace setVariable ["LRG_Main_VoyagerCompass", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_VoyagerCompass", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -85,7 +85,7 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_QSMagRepack", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_QSRepackMags", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -95,10 +95,10 @@
     "CHECKBOX",
     ["CH View Distance", "Enable CHVD within LRG Fundamentals"],
     "LRG Main",
-    true,
+    false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_CHViewDistance", _this];
+        if (_this) then {remoteExecCall ["CHVD_fnc_init", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -111,7 +111,7 @@
     [5000, 15000, 10000, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_Main_ViewDistanceMaxDistance", _this];
+
     }
 ] call CBA_Settings_fnc_init;
 
@@ -124,7 +124,7 @@
     [5000, 15000, 10000, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_Main_ViewDistanceMaxObjectDistance", _this];
+
     }
 ] call CBA_Settings_fnc_init;
 
@@ -137,7 +137,7 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_ViewDistanceNoGrass", _this];
+
     }
 ] call CBA_Settings_fnc_init;
 
@@ -150,7 +150,7 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_ArsenalSaveLoad", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_ArsenalLoadSave", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -163,7 +163,7 @@
     [0, 5, 2.5, 1],
     true,
     {
-       uiNamespace setVariable ["LRG_Main_TFARTransmitRange", _this];
+
     }
 ] call CBA_Settings_fnc_init;
 
@@ -176,7 +176,7 @@
     [0, 5, 1, 1],
     true,
     {
-       uiNamespace setVariable ["LRG_Main_TFARTerrainInterference", _this];
+
     }
 ] call CBA_Settings_fnc_init;
 
@@ -189,7 +189,7 @@
     true,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_CueCards", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_AddCueCards", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -202,7 +202,7 @@
     true,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_Diary", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_Diary", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -215,7 +215,7 @@
     true,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_CreatorActions", _this];
+        if (_this) then {remoteExecCall ["LR_fnc_InitCreatorActions", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -225,10 +225,10 @@
     "CHECKBOX",
     ["Fatigue (Vanilla ONLY)", "Enable/Disable Vanilla Fatigue System. Does not apply with @ACE."],
     "LRG Main",
-    false,
+    true,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_FatigueVanilla", _this];
+        remoteExecCall ["LR_fnc_VanillaFatigue", 0, true];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -238,10 +238,10 @@
     "CHECKBOX",
     ["FPS Counter", "Show FPS counter of Player, Server & Headless Client on the map."],
     "LRG Main",
-    true,
+    false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_FPSCounter", _this];
+        if (_this) then {remoteExecCall ["YAINA_fnc_showFPS", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -254,7 +254,7 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_Logging", _this];
+       if (_this) then {remoteExecCall ["LR_fnc_Logs", 0, true]};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -267,6 +267,6 @@
     false,
     true,
     {
-       uiNamespace setVariable ["LRG_Main_DynamicSim", _this];
+       if (_this) then {remoteExecCall ["LR_fnc_DynamicSim", 0, true]};
     }
 ] call CBA_Settings_fnc_init;

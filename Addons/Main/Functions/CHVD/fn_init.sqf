@@ -1,9 +1,3 @@
-private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
-if (not _LRG_Main_Master) exitWith{};
-
-private _LRG_Main_CHViewDistance = uiNamespace getVariable ["LRG_Main_CHViewDistance", false];
-if (not _LRG_Main_CHViewDistance) exitWith{};
-
 [] spawn {
 	if (!hasInterface) exitWith {};
 	//Wait for mission init, in case there are variables defined some place else

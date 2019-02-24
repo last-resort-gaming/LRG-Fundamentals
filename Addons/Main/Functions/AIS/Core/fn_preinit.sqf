@@ -1,4 +1,7 @@
-if (not LR_start) exitWith{};
+
+if (isNil "LRG_Main_AISRevive") exitwith {};
+if (not LRG_Main_AISRevive) exitWith{};
+
 diag_log format ["############## %1 ############## - AIS init started", missionName];
 
 ais_ace_shutDown = false;

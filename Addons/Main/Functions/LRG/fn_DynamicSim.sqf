@@ -17,11 +17,6 @@ Author: MitchJC
 */
 
 if (!IsServer) exitwith {};
-private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
-if (not _LRG_Main_Master) exitWith{};
-
-private _LRG_Main_DynamicSim = uiNamespace getVariable ["LRG_Main_DynamicSim", false];
-if (not _LRG_Main_DynamicSim) exitWith{};
 
 if !(dynamicSimulationSystemEnabled) exitwith {
 

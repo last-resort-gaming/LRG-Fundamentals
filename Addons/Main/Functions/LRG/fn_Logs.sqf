@@ -1,8 +1,5 @@
 // not documented: postInit
 
-if (isNil "LRG_Main_Logging") exitwith {};
-if (not LRG_Main_Logging) exitwith {};
-
 //Server Log Check
 if (isserver) then {
 

@@ -1,10 +1,6 @@
 // not documented: postInit
 
-private _LRG_Main_Master = uiNamespace getVariable ["LRG_Main_Master", false];
-if (not _LRG_Main_Master) exitWith{};
-
-private _LRG_Main_VehicleCrewList = uiNamespace getVariable ["LRG_Main_VehicleCrewList", false];
-if (not _LRG_Main_VehicleCrewList) exitWith{};
+if (!hasInterface) exitwith {};
 
 player addEventHandler ["GetInMan", {
     [{
