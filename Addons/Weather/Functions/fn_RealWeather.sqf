@@ -6,9 +6,6 @@
 	Description: Randomizes Weather
 */
 // not documented: postInit
-private _LRG_Weather_Master =  uiNamespace getVariable ["LRG_Weather_Master", false];
-if (not _LRG_Weather_Master) exitWith{};
-
 private _LRG_Weather_StartWeather = uiNamespace getVariable ["LRG_Weather_StartWeather", 0];
 private _LRG_Weather_RealTime = uiNamespace getVariable ["LRG_Weather_RealTime", true];
 private _LRG_Weather_SyncTime = uiNamespace getVariable ["LRG_Weather_SyncTime", 60];
@@ -18,7 +15,7 @@ private _LRG_Weather_DayTimeAcc = uiNamespace getVariable ["LRG_Weather_DayTimeA
 private _LRG_Weather_NightTimeAcc = uiNamespace getVariable ["LRG_Weather_NightTimeAcc", 1];
 
 private _StartingWeather = call {
-	if (_LRG_Weather_StartWeather IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLOUDY", "RAIN"]};
+	if (_LRG_Weather_StartWeather IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLEAR", "CLOUDY", "CLOUDY", "RAIN"]};
 	if (_LRG_Weather_StartWeather IsEqualTo 1) exitwith {"CLEAR"};
 	if (_LRG_Weather_StartWeather IsEqualTo 2) exitwith {"CLOUDY"};
 	if (_LRG_Weather_StartWeather IsEqualTo 3) exitwith {"RAIN"};
