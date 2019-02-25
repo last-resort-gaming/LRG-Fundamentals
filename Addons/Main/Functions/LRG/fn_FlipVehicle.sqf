@@ -17,7 +17,7 @@
 		{},
 		[],
 		5,
-		-99,
+		-93,
 		false,
 		false
 	] call BIS_fnc_holdActionAdd;
@@ -41,7 +41,7 @@
 		{},
 		[],
 		5,
-		-99,
+		-93,
 		false,
 		false
 	] call BIS_fnc_holdActionAdd;

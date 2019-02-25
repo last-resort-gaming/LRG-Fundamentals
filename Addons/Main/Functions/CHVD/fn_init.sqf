@@ -37,8 +37,8 @@
 	waitUntil {!isNull findDisplay 46};
 
     _actionText = if (isLocalized "STR_chvd_title") then {localize "STR_chvd_title"} else {"View Distance Settings"};
-    player addAction [_actionText, CHVD_fnc_openDialog, [], -99, false, true, '', '_target isEqualTo vehicle _this'];
-    player addEventHandler ["Respawn", format ["player addAction ['%1', CHVD_fnc_openDialog, [], -99, false, true, '', '_target isEqualTo vehicle _this']", _actionText]];
+    player addAction [_actionText, CHVD_fnc_openDialog, [], -90, false, true, '', '_target isEqualTo vehicle _this'];
+    player addEventHandler ["Respawn", format ["player addAction ['%1', CHVD_fnc_openDialog, [], -90, false, true, '', '_target isEqualTo vehicle _this']", _actionText]];
 
 	(findDisplay 46) displayAddEventHandler ["Unload", {call CHVD_fnc_updateSettings}]; // Reset obj view distance so game doesn't lag when browsing menues and so on, if FOV method was used during the game
 	

@@ -37,7 +37,7 @@ if (YAINA_PlugsIn isEqualTo true) then {
 		{},
 		[],
 		0.5,
-		nil,
+		-91,
 		true,
 		false
 	] call BIS_fnc_holdActionAdd;
@@ -64,7 +64,7 @@ if (YAINA_PlugsIn isEqualTo false) then {
 		{},
 		[],
 		0.5,
-		nil,
+		-91,
 		true,
 		false
 	] call BIS_fnc_holdActionAdd;
