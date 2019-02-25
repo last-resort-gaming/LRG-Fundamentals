@@ -11,6 +11,7 @@ class LRG_Main {
 		class DynamicSim {};
 		class DynamicGroups {};
 		class Earplugs {};
+		class FlipVehicle {};
 		class Logs {};
 		class PilotCheck {};
 		class QSRepackMags {};

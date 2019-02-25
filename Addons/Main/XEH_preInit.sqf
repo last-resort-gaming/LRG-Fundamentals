@@ -154,6 +154,19 @@
     }
 ] call CBA_Settings_fnc_init;
 
+// Flip Vehicle
+[
+    "LRG_Main_FlipVehicle",
+    "CHECKBOX",
+    ["Flip Vehicle", "Add an action to players to allow them to flip land vehicles."],
+    "LRG Main",
+    false,
+    true,
+    {
+        if (_this && { hasinterface }) then  { call LR_fnc_FlipVehicle};
+    }
+] call CBA_Settings_fnc_init;
+
 // TFAR - Range Multiplyer
 [
     "LRG_Main_TFARTransmitRange",
