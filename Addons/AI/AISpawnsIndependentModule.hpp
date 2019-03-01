@@ -32,6 +32,7 @@ class LRG_ModuleAISpawnsIndependent: Module_F
 					class CUP_I_RACS 					{name = "@CUP - Royal Army Corps of Sahrani"; 					value = "CUP_I_RACS";};
 					class CUP_I_TK_GUE 					{name = "@CUP - Takistani Locals"; 								value = "CUP_I_TK_GUE";};
 					class CUP_I_UN 						{name = "@CUP - United Nations";								value = "CUP_I_UN";};
+					class LIB_US_ARMY 					{name = "@IFA3 - US Army";										value = "LIB_US_ARMY";};					
 					class LOP_IRAN 						{name = "@Project OPFOR - Iranian Armed Forces"; 				value = "LOP_IRAN";};
 					class LOP_NAPA 						{name = "@Project OPFOR - Chernarussian National Insurgents";	value = "LOP_NAPA";};
 					class LOP_PESH_IND 					{name = "@Project OPFOR - Kurdish Peshmerga Forces"; 			value = "LOP_PESH_IND";};
