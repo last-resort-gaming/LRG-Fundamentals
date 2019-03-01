@@ -31,6 +31,7 @@ class LRG_ModuleAISpawnsWest: Module_F
 					class CUP_B_GB 							{name = "@CUP - British Armed Forces"; 				value = "CUP_B_GB";};
 					class CUP_B_GER 						{name = "@CUP - Bundeswehr"; 						value = "CUP_B_GER";};
 					class CUP_B_US_Army 					{name = "@CUP - United States Army"; 				value = "CUP_B_US_Army";};
+					class LIB_WEHRMACHT 					{name = "@IFA3 - Wehrmacht";						value = "LIB_WEHRMACHT";};					
 					class OPTRE_UNSC 						{name = "@OPTRE - UNSCDF";							value = "OPTRE_UNSC";};
 					class LOP_AA 							{name = "@Project OPFOR - Afghan National Army";	value = "LOP_AA";};
 					class LOP_IA 							{name = "@Project OPFOR - Iraqi Armed Forces";		value = "LOP_IA";};
