@@ -34,6 +34,7 @@ class LRG_ModuleAISpawns: Module_F
 					class CUP_O_SLA 				{name = "@CUP - Sahrani Liberation Army";					value = "CUP_O_SLA";};
 					class CUP_O_TK 					{name = "@CUP - Takistan Army"; 							value = "CUP_O_TK";};
 					class CUP_O_TK_MILITIA 			{name = "@CUP - Takistan Militia"; 							value = "CUP_O_TK_MILITIA";};
+					class LIB_RKKA		 			{name = "@IFA3 - Red Army"; 								value = "LIB_RKKA";};					
 					class OPTRE_Ins 				{name = "@OPTRE - Insurrectionists"; 						value = "OPTRE_Ins";};
 					class LOP_AFR_OPF 				{name = "@Project OPFOR - African Militia"; 				value = "LOP_AFR_OPF";};
 					class LOP_AM_OPF 				{name = "@Project OPFOR - Middle Eastern Militia";			value = "LOP_AM_OPF";};
