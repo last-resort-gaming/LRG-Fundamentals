@@ -6,7 +6,7 @@
 	Description: Randomizes Weather
 */
 // not documented: postInit
-private _LRG_Weather_StartWeather = uiNamespace getVariable ["LRG_Weather_StartWeather", 0];
+private _LRG_Weather_StartWeather = uiNamespace getVariable ["LRG_Weather_StartWeather", 1];
 private _LRG_Weather_RealTime = uiNamespace getVariable ["LRG_Weather_RealTime", true];
 private _LRG_Weather_SyncTime = uiNamespace getVariable ["LRG_Weather_SyncTime", 60];
 private _LRG_Weather_MinTime = uiNamespace getVariable ["LRG_Weather_MinTime", 1];
@@ -83,7 +83,7 @@ setdate (wcweather select 4);
 [
 	{
 		params ["_args", "_pfhID"];
-		_args params [];
+		_args params ["_LRG_Weather_RealTime", "_LRG_Weather_NightTimeAcc", "_LRG_Weather_DayTimeAcc"];
 
 		wcweather set [4, date];
 		publicvariable "wcweather";
@@ -94,7 +94,7 @@ setdate (wcweather select 4);
 				setTimeMultiplier _LRG_Weather_DayTimeAcc;
 			};
 		};
-	}, _LRG_Weather_SyncTime, []
+	}, _LRG_Weather_SyncTime, [_LRG_Weather_RealTime, _LRG_Weather_NightTimeAcc, _LRG_Weather_DayTimeAcc]
 ] call CBA_fnc_addPerFrameHandler;
 
 private	_lastrain = 0;
