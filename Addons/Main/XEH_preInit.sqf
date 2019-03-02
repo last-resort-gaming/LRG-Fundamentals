@@ -150,7 +150,7 @@
     false,
     true,
     {
-        if (_this && { hasinterface }) then  { call LR_fnc_ArsenalLoadSave};
+        if (!_this && { hasinterface }) then  { call LR_fnc_ArsenalLoadSave};
     }
 ] call CBA_Settings_fnc_init;
 
