@@ -191,7 +191,7 @@ class LRG_RHS
 			};
 			class RHS_AH64D
 			{
-				cost=6000;
+				cost=10000;
 				requirements[]=
 				{
 					"H"
@@ -258,6 +258,21 @@ class LRG_RHS
 				cost=350;
 				requirements[]={};
 			};
+			class B_Slingload_01_Fuel_F
+			{
+				cost=250;
+				requirements[]={};
+			};
+			class B_Slingload_01_Repair_F
+			{
+				cost=500;
+				requirements[]={};
+			};
+			class B_Slingload_01_Ammo_F
+			{
+				cost=750;
+				requirements[]={};
+			};			
 		};
 		class Defences
 		{
@@ -528,6 +543,21 @@ class LRG_RHS
 				cost=350;
 				requirements[]={};
 			};
+			class Land_Pod_Heli_Transport_04_Fuel_F
+			{
+				cost=250;
+				requirements[]={};
+			};	
+			class Land_Pod_Heli_Transport_04_Repair_F
+			{
+				cost=500;
+				requirements[]={};
+			};
+			class Land_Pod_Heli_Transport_04_ammo_F
+			{
+				cost=750;
+				requirements[]={};
+			};											
 		};
 		class Defences
 		{
