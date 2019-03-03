@@ -12,3 +12,4 @@ tools/_Natural Docs
 
 \.vscode/launch.json
 out/
+\.vscode/settings\.json
