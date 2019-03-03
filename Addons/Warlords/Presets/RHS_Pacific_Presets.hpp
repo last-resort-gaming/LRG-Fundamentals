@@ -207,7 +207,7 @@
 				};
 				class RHS_AH1Z_wd
 				{
-					cost=6000;
+					cost=10000;
 					requirements[]=
 					{
 						"H"
@@ -257,24 +257,39 @@
 					};
 				};
 			};
-			class Gear
+		class Gear
+		{
+			class rhsusf_mags_crate
 			{
-				class rhsusf_mags_crate
-				{
-					cost=200;
-					requirements[]={};
-				};
-				class rhsusf_launcher_crate
-				{
-					cost=300;
-					requirements[]={};
-				};
-				class rhsusf_weapon_crate
-				{
-					cost=350;
-					requirements[]={};
-				};
+				cost=200;
+				requirements[]={};
 			};
+			class rhsusf_launcher_crate
+			{
+				cost=300;
+				requirements[]={};
+			};
+			class rhsusf_weapon_crate
+			{
+				cost=350;
+				requirements[]={};
+			};
+			class B_Slingload_01_Fuel_F
+			{
+				cost=250;
+				requirements[]={};
+			};
+			class B_Slingload_01_Repair_F
+			{
+				cost=500;
+				requirements[]={};
+			};
+			class B_Slingload_01_Ammo_F
+			{
+				cost=750;
+				requirements[]={};
+			};			
+		};
 			class Defences
 			{
 				class RHS_M2StaticMG_D
@@ -535,24 +550,39 @@
 					};
 				};
 			};
-			class Gear
+		class Gear
+		{
+			class rhs_mags_crate
 			{
-				class rhs_mags_crate
-				{
-					cost=200;
-					requirements[]={};
-				};
-				class rhs_launcher_crate
-				{
-					cost=300;
-					requirements[]={};
-				};
-				class rhs_weapon_crate
-				{
-					cost=350;
-					requirements[]={};
-				};
+				cost=200;
+				requirements[]={};
 			};
+			class rhs_launcher_crate
+			{
+				cost=300;
+				requirements[]={};
+			};
+			class rhs_weapon_crate
+			{
+				cost=350;
+				requirements[]={};
+			};
+			class Land_Pod_Heli_Transport_04_Fuel_F
+			{
+				cost=250;
+				requirements[]={};
+			};	
+			class Land_Pod_Heli_Transport_04_Repair_F
+			{
+				cost=500;
+				requirements[]={};
+			};
+			class Land_Pod_Heli_Transport_04_ammo_F
+			{
+				cost=750;
+				requirements[]={};
+			};											
+		};
 			class Defences
 			{
 				class rhs_KORD_high_MSV
