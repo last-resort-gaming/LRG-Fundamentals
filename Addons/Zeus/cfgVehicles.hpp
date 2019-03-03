@@ -11,7 +11,7 @@ class CfgVehicles {
 				typeName = "BOOL";
                 displayName = "LRG Fundamentals: Config Zeus:";
                 tooltip = "Enable to allow this Zeus to have placed units use LRG AI Difficulty Settings (Settings - Addon Options)";
-                expression = "if (_value isequalto true) then {[_this] call LR_fnc_ConfigZeus"};
+                expression = "if (_value isequalto true) then {[_this] call LR_fnc_ConfigZeus;}";
                 condition = "logicModule";
                 defaultValue = "(true)";
 			};
