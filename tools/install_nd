@@ -1,8 +1,7 @@
 #!/bin/sh
 
-wget https://github.com/prantlf/NaturalDocs/archive/ext-1.52.2.zip
-unzip ext-1.52.2.zip
+wget -q https://github.com/prantlf/NaturalDocs/archive/ext-1.52.2.zip
+unzip -q ext-1.52.2.zip
 mv NaturalDocs-ext-1.52.2 ./tools/
 cd tools
 mv NaturalDocs-ext-1.52.2 natural_docs
-ls
