@@ -20,7 +20,7 @@ Author:
 
 if (!isserver) exitwith {};
 
-params ["_target", ["_skillLevel", 2]];
+params ["_target", ["_skillLevel", 2]]
 
 private _skillt = [
     "aimingAccuracy",
