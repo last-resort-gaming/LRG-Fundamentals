@@ -1,0 +1,29 @@
+{
+    "Documentation Header": {
+		"prefix": "doc",
+		"body": [
+			"$BLOCK_COMMENT_START",
+			"Function: ${1:LR}_fnc_$2",
+			"",
+			"Description:",
+			"\t${3:Description...}",
+			"",
+			"Arguments:",
+			"\t_${4:var} - ${5:expl.}",
+			"",
+			"Return Value:",
+			"\t${6:None}",
+			"",
+			"Example:",
+			"\t(begin example)",
+			"\t\t$7",
+			"\t(end)",
+			"",
+			"Author:",
+			"\t${8:MitchJC}",
+			"$BLOCK_COMMENT_END$0"
+		],
+        "description": "Documentation Header",
+        "scope": "sqf"
+	}
+}

@@ -18,7 +18,8 @@ Examples:
 		[MyAmmoCrate, "RHS", 0] call LR_fnc_Arsenal;
 	(end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 
 if (!isServer) exitwith {};
