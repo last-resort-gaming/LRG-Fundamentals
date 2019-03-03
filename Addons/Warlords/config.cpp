@@ -27,3 +27,8 @@ class CfgWLRequisitionPresets
 class Params {
 	#include "Params.hpp"
 };
+
+class CfgFunctions {
+
+    #include "cfgFunctions.hpp"
+};
