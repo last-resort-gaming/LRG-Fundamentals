@@ -19,3 +19,8 @@ if (isNil { player getVariable "StartingPos"; } ) then {
     player setPosATL (player getVariable ["StartingPos", getPosATL player]);
     player setDir (player getVariable ["StartingDir", 0]);
 };
+
+if (LRG_Main_Earplugs) then {
+
+	[] execVM "z\LRG Fundamentals\Addons\Main\Scripts\Earplugs\earplugs.sqf";
+};
