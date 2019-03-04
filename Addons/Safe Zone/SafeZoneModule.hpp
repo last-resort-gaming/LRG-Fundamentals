@@ -32,9 +32,9 @@ class LRG_ModuleSafeZone: Module_F
   			{
 				property = "LR_SafeZoneDuration";
 				displayName = "Duration";
-				tooltip = "How long should the safe zone be active. -1 means permanent.";
+				tooltip = "How long should the safe zone be active. 0 means permanent.";
 				typeName = "NUMBER";
-				defaultValue = -1;
+				defaultValue = 0;
 			};
 		class ModuleDescription: ModuleDescription{};
 	};
