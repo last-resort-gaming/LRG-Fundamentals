@@ -1,5 +1,7 @@
 ![](https://i.ibb.co/kGvCrH0/LRG-Fundamentals.png)
 
+[![Build Status](https://api.travis-ci.com/last-resort-gaming/LRG-Fundamentals.svg?branch=master)](https://travis-ci.com/last-resort-gaming/LRG-Fundamentals)
+
 ### Download Links
 [![](https://i.ibb.co/DKmYP5K/steamworkshop.png)](https://steamcommunity.com/sharedfiles/filedetails/?id=1448755472)
 [![](https://i.ibb.co/v4sNmc1/news-download-a3-3.png)](http://www.armaholic.com/page.php?id=34783)
