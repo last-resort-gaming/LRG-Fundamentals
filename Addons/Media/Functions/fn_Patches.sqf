@@ -13,7 +13,8 @@ Examples:
 		[this, "1Section"] call LR_fnc_Patches;
 	(end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 
 params [

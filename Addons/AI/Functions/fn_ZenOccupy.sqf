@@ -24,7 +24,8 @@ Return Value:
 Example:
     Nothing to see here
 
-Author: Zenophon, modified by Mokka
+Author:
+	Zenophon, modified by Mokka
 */
 #define I(X) X = X + 1;
 #define EYE_HEIGHT 1.53

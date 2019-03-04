@@ -147,7 +147,7 @@
     "CHECKBOX",
     ["Arsenal - Save/Load", "Should a player be allowed to Save/Load Loadouts in the Arsenal?"],
     "LRG Main",
-    false,
+    true,
     true,
     {
         if (!_this && { hasinterface }) then  { call LR_fnc_ArsenalLoadSave};

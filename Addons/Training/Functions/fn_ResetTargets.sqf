@@ -16,7 +16,8 @@ Examples:
 		[MyLaptopName, "Reset 300m Range", [5500,3522,0], 300] call LR_fnc_ResetTargets;
 	(end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 
 if (!isServer) exitWith {};

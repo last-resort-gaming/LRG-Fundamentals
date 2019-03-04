@@ -16,7 +16,8 @@ Examples:
 		[this, "Full MERT", true] call LR_fnc_ConfigEquipment;
 	(end)
 
-Author: MitchJC
+Author:
+	MitchJC
 */
 if (!isServer) exitwith {};
 
