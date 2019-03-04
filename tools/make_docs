@@ -1,10 +1,8 @@
 #!/bin/sh
 
-pwd
 cd tools
-pwd
 
-echo -e "\n=== Compiling documentation ===\n"
+echo "\n=== Compiling documentation ===\n"
 if [ ! -d ../docs ]
 then
   mkdir ../docs

@@ -58,7 +58,7 @@ params [
 		{[_Newobject, false] remoteExec [_x, 2];} foreach ["enableSimulationGlobal","allowDamage"];
 		_Newobject SetPosATL _OriginalPos;
 		_Newobject setDir _OriginalDir;
-		{_x addCuratorEditableObjects [[_Newobject], false];} ForEach allcurators;
+		{_x addCuratorEditableObjects [[_Newobject], false];} forEach allcurators;
 //		playSound3D [((_this select 2) select 3), _Newobject, false, getposATL _Newobject, 1, 1, 200];
 		[_Newobject, (_this select 2) select 3, (_this select 2) select 4, (_this select 2) select 5] call LR_fnc_Sound3D;
 //		[_Newobject, "AirRaid"] call LR_fnc_Sound3D;

@@ -1,8 +1,14 @@
 # Travis Build Integration
 # https://docs.travis-ci.com
-language: minimal
+dist: trusty
+language: python
+python:
+  - '3.5'
+install: true
 
 script:
+  - python3 tools/sqf_validator.py
+  - python3 tools/config_style_checker.py
   - chmod +x tools/make_docs
   - chmod +x tools/install_nd
   - mkdir pages
@@ -19,3 +25,8 @@ deploy:
   local-dir: pages/
   on:
     branch: master
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
