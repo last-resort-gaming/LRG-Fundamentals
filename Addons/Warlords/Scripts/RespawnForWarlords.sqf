@@ -10,3 +10,5 @@
 	call LR_fnc_PlayerAddActions;
 	
 	{_x addCuratorEditableObjects [[player],FALSE];} count allCurators;
+
+	call LR_fnc_ProfileCredits;

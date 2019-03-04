@@ -4,5 +4,6 @@ class LRG_Warlords {
 	class Warlords {
 
 		file = "z\LRG Fundamentals\Addons\Warlords\Functions";
+		class ProfileCredits {};
 	};
 };
