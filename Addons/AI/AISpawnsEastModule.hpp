@@ -27,6 +27,10 @@ class LRG_ModuleAISpawns: Module_F
 				defaultValue = """OPF_F""";
 				class values
 				{
+					class UK3CB_CCM_O 				{name = "@3CB Factions - Chernarus Communist Militia";		value = "UK3CB_CCM_O";};
+					class UK3CB_TKA_O 				{name = "@3CB Factions - Takistan National Army";			value = "UK3CB_TKA_O";};	
+					class UK3CB_TKM_O 				{name = "@3CB Factions - Takistan Insurgents";				value = "UK3CB_TKM_O";};	
+					class UK3CB_TKP_O 				{name = "@3CB Factions - Takistan National Police";			value = "UK3CB_TKP_O";};																				
 					class TEC_CSAT 					{name = "@CSAT Mod Project - CSAT (Iran, Mediterranean)";	value = "TEC_CSAT";};
 					class TEC_CSAT_Pacific 			{name = "@CSAT Mod Project - CSAT (Iran, Pacific)"; 		value = "TEC_CSAT_Pacific";};
 					class CUP_O_ChDKZ 				{name = "@CUP - Chernarussian Movement of the Red Star"; 	value = "CUP_O_ChDKZ";};

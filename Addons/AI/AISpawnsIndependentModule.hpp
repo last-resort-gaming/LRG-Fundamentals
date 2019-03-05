@@ -27,6 +27,11 @@ class LRG_ModuleAISpawnsIndependent: Module_F
 				defaultValue = """IND_C_F""";
 				class values
 				{
+					class UK3CB_CCM_I 					{name = "@3CB Factions - Chernarus Nationalist Militia";		value = "UK3CB_CCM_I";};
+					class UK3CB_TKA_I 					{name = "@3CB Factions - Takistan National Army";				value = "UK3CB_TKA_I";};	
+					class UK3CB_TKM_I 					{name = "@3CB Factions - Takistan Tribal Fighters";				value = "UK3CB_TKM_I";};	
+					class UK3CB_TKP_I 					{name = "@3CB Factions - Takistan National Police";				value = "UK3CB_TKP_I";};
+					class UK3CB_UN_I 					{name = "@3CB Factions - UN Peacekeepers";						value = "UK3CB_UN_I";};					
 					class CUP_I_NAPA 					{name = "@CUP - National Part of Chernarus";					value = "CUP_I_NAPA";};
 					class CUP_I_PMC_ION 				{name = "@CUP - ION PMC"; 										value = "CUP_I_PMC_ION";};
 					class CUP_I_RACS 					{name = "@CUP - Royal Army Corps of Sahrani"; 					value = "CUP_I_RACS";};
