@@ -8,11 +8,15 @@ assignees: ''
 
 ---
 
+See the current list of [Factions](https://github.com/last-resort-gaming/LRG-Fundamentals/tree/master/Addons/AI/Functions/Factions) if you're unsure on how this file should look. Infantry Groups are found using CfgGroups in the Config Viewer of the editor.
+Vehicle classes are found by placing in the editor, right clicking and copying class name.
+
+```sqf
+
 // Steam Mod Link: 
 // Faction Name: @CUP - British Armed Forces
 // Faction Class Name:  CUP_B_GB
 
-```sqf
 _InfantryType = "Infantry";
 _infaaList    = ["AAGroup1Example", "AAGroup2Example"];
 _infatList    = [];
@@ -22,4 +26,6 @@ _vehMrapList  = [];
 _vehLightList = [];
 
 [_InfantryType, _infaaList, _infatList, _sniperList, _vehAAList, _vehMrapList, _vehLightList, _vehHeavyList]
+
+
 ```
