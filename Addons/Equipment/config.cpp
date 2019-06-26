@@ -29,5 +29,8 @@ class Extended_InitPost_EventHandlers {
         class ADDON {
             init = "[_this select 0] call LR_fnc_EquipmentLoadout";
         };
+        class LimitedAmmo {
+            init = "[_this select 0] call LR_fnc_LimitedAmmo";
+        };		
     };
 };
