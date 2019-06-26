@@ -27,10 +27,10 @@ class CfgFunctions {
 class Extended_InitPost_EventHandlers {
     class ReammoBox_F {
         class ADDON {
-            init = "[_this select 0] call LR_fnc_EquipmentLoadout";
+            init = "[_this select 0] call LR_fnc_MedicalSupplies";
         };
         class LimitedAmmo {
-            init = "[_this select 0] call LR_fnc_LimitedAmmo";
+            init = "[_this select 0] call LR_fnc_Ammobox";
         };		
     };
 };

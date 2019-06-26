@@ -1,5 +1,5 @@
 /*
-Function: LR_fnc_Arsenal
+Function: LR_fnc_FullArsenal
 
 Description:
 	Fills Arsenal with predefined equipment dependent on _Type. Each Arsenal can be a different type
@@ -12,10 +12,10 @@ Arguments:
 
 Examples:
 	(begin example)
-		[this] call LR_fnc_Arsenal;
-		[this, "3CB", 50] call LR_fnc_Arsenal;
-		[this, "VANILLA"] call LR_fnc_Arsenal;
-		[MyAmmoCrate, "RHS", 0] call LR_fnc_Arsenal;
+		[this] call LR_fnc_FullArsenal;
+		[this, "3CB", 50] call LR_fnc_FullArsenal;
+		[this, "VANILLA"] call LR_fnc_FullArsenal;
+		[MyAmmoCrate, "RHS", 0] call LR_fnc_FullArsenal;
 	(end)
 
 Author:

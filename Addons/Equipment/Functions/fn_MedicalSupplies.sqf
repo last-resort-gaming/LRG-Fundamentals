@@ -1,19 +1,17 @@
 /*
-Function: LR_fnc_ConfigEquipment
+Function: LR_fnc_MedicalSupplies
 
 Description:
-	Used to configure basic container equipment and ACE medical state.
+	Used to configure basic container medical state.
 
 Arguments:
 	_container - Container the setup is applied to. <OBJECT>
 	_Type - Equipment setup to add. <STRING>
-	_isMedicalFacility - Should _container be treated as a medical facilty/vehicle? <BOOLEAN>
 
 Examples:
 	(begin example)
-		[this] call LR_fnc_ConfigEquipment;
-		[this, "Basic Medical", false] call LR_fnc_ConfigEquipment;
-		[this, "Full MERT", true] call LR_fnc_ConfigEquipment;
+		[this] call LR_fnc_MedicalSupplies;
+		[this, "MERT"] call LR_fnc_MedicalSupplies;
 	(end)
 
 Author:
@@ -23,8 +21,7 @@ if (!isServer) exitwith {};
 
 params [
 	"_container",
-	["_Type", "Basic Medical"],
-	["_isMedicalFacility", false]
+	["_Type", "Standard"]
 ];
 
 private _Type = _container getVariable ["LRG_Equipment_Select", -1];
@@ -96,10 +93,3 @@ call {
 };
 
 {_container addItemCargoGlobal _x} foreach _ContainerItems;
-
-//=========================== ACE Medical Building/_ContainerItems
-if (_isMedicalFacility) then {
-	if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {
-		_container setVariable ["ace_medical_medicClass", 1, true];
-	};
-};

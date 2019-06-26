@@ -71,7 +71,7 @@ class Cfg3DEN {
                         control = ArsenalSelect;
                         displayName = "Full Arsenal Selection:";
                         tooltip = "Removes all items from this container and replaces them with a Full Arsenal of the selected gear.";
-                        expression = "if (_value > -1) then {[_this, _value] call LR_fnc_Arsenal;}";
+                        expression = "if (_value > -1) then {[_this, _value] call LR_fnc_FullArsenal;}";
                         typeName = "STRING";
                         condition = "objectHasInventoryCargo - objectVehicle";
                         defaultValue = "-1";
@@ -81,7 +81,7 @@ class Cfg3DEN {
                         control = ArsenalSelect;
                         displayName = "Limited Arsenal Selection:";
                         tooltip = "Removes all items from this container and replaces them with a Limited Arsenal of the selected gear, such as Weapons and Ammo.";
-                        expression = "if (_value > -1) then {[_this, _value] call LR_fnc_Ammobox;}";
+                        expression = "if (_value > -1) then {[_this, _value] call LR_fnc_LimitedArsenal;}";
                         typeName = "STRING";
                         condition = "objectHasInventoryCargo - objectVehicle";
                         defaultValue = "-1";
