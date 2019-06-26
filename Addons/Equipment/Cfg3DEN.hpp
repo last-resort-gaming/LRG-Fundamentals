@@ -93,7 +93,7 @@ class Cfg3DEN {
                         tooltip = "Suppliments the equipment is this object with preset ammunition. This doesn't remove currently selected equipment.";
                         expression = "_this setVariable ['%s',_value, true];";
                         typeName = "STRING";
-                        condition = "objectHasInventoryCargo - objectVehicle";
+                        condition = "objectHasInventoryCargo";
                         defaultValue = "-1";
                     };                     
                         class LRG_Equipment_Select {
@@ -103,7 +103,7 @@ class Cfg3DEN {
                         tooltip = "Suppliments the equipment is this object with a preset equipment loadout. This doesn't remove currently selected equipment.";
                         expression = "_this setVariable ['%s',_value, true];";
                         typeName = "STRING";
-                        condition = "objectHasInventoryCargo - objectVehicle";
+                        condition = "objectHasInventoryCargo";
                         defaultValue = "-1";
                     };
                    
