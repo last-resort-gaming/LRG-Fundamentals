@@ -145,8 +145,7 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 			[
 				_timeLeft + (random 2) - 1,
 				position _vehicle,
-				_secArray,
-				"R_TBG32V_F"							// This is an AP rocket warhead, bound to do some damage.
+				_secArray
 			] call LR_fnc_SpawnExplosives;
 		};
 	},
