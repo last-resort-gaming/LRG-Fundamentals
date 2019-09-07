@@ -175,7 +175,7 @@ if !(_infList isEqualTo []) then {
 // STANDARD INFANTRY
 ///////////////////////////////////////////////////////////
 if !(_infList isEqualTo []) then {
-   private _InfDif = _infRand - _infMin +1;
+   private _InfDif = _infRand - _infMin;
     if (_InfDif <0) then {_InfDif = 0};
 
     for "_x" from 1 to (_infMin + floor(random _InfDif)) do {
@@ -193,7 +193,7 @@ if !(_infList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_infaaList isEqualTo []) then {
-   private _InfaaDif = _InfaaRand - _InfaaMin +1;
+   private _InfaaDif = _InfaaRand - _InfaaMin;
     if (_InfaaDif <0) then {_InfaaDif = 0};
 
     for "_x" from 1 to (_InfaaMin + floor(random _InfaaDif)) do {
@@ -211,7 +211,7 @@ if !(_infaaList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_infatList isEqualTo []) then {
-   private _InfatDif = _InfatRand - _InfatMin +1;
+   private _InfatDif = _InfatRand - _InfatMin;
     if (_InfatDif <0) then {_InfatDif = 0};
 
     for "_x" from 1 to (_InfatMin + floor(random _InfatDif)) do {
@@ -228,7 +228,7 @@ if !(_infatList isEqualTo []) then {
 // SNIPER TEAMS
 ///////////////////////////////////////////////////////////
 if !(_sniperList isEqualTo []) then {
-   private _SniperDif = _SniperRand - _SniperMin +1;
+   private _SniperDif = _SniperRand - _SniperMin;
     if (_SniperDif <0) then {_SniperDif = 0};
 
     for "_x" from 1 to (_SniperMin + floor(random _SniperDif)) do {
@@ -247,7 +247,7 @@ if !(_sniperList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehAAList isEqualTo []) then {
-   private _VehAADif = _VehAARand - _VehAAMin +1;
+   private _VehAADif = _VehAARand - _VehAAMin;
     if (_VehAADif <0) then {_VehAADif = 0};
 
     for "_x" from 1 to (_VehAAMin + floor(random _VehAADif)) do {
@@ -277,7 +277,7 @@ if !(_vehAAList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehmrapList isEqualTo []) then {
-   private _VehMRAPDif = _VehMRAPRand - _VehMRAPMin +1;
+   private _VehMRAPDif = _VehMRAPRand - _VehMRAPMin;
     if (_VehMRAPDif <0) then {_VehMRAPDif = 0};
 
     for "_x" from 1 to (_VehMRAPMin + floor(random _VehMRAPDif)) do {
@@ -308,7 +308,7 @@ if !(_vehmrapList isEqualTo []) then {
 
 if !(_vehLightList isEqualTo []) then {
 
-   private _VehLightDif = _VehLightRand - _VehLightMin +1;
+   private _VehLightDif = _VehLightRand - _VehLightMin;
     if (_VehLightDif <0) then {_VehLightDif = 0};
 
     for "_x" from 1 to (_VehLightMin + floor(random _VehLightDif)) do {
@@ -338,7 +338,7 @@ if !(_vehLightList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehHeavyList isEqualTo []) then {
-   private _VehHeavyDif = _VehHeavyRand - _VehHeavyMin +1;
+   private _VehHeavyDif = _VehHeavyRand - _VehHeavyMin;
     if (_VehHeavyDif <0) then {_VehHeavyDif = 0};
 
     for "_x" from 1 to (_VehHeavyMin + floor(random _VehHeavyDif)) do {
@@ -364,13 +364,13 @@ if !(_vehHeavyList isEqualTo []) then {
 };
 
 ///////////////////////////////////////////////////////////
-// HEAVY VEHS
+// RANDOM VEHS
 ///////////////////////////////////////////////////////////
 {_vehRandList append _x} foreach [_vehAAList, _vehMrapList, _vehLightList, _vehHeavyList];
 
 if !(_vehRandList isEqualTo []) then {
 	
-   private _VehRandDif = _VehRandRand - _VehRandMin +1;
+   private _VehRandDif = _VehRandRand - _VehRandMin;
     if (_VehRandDif <0) then {_VehRandDif = 0};
 
     for "_x" from 1 to (_VehRandMin + floor(random _VehRandDif)) do {
