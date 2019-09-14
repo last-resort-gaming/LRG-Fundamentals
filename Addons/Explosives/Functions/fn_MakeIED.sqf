@@ -218,8 +218,7 @@ hideObjectGlobal _explosive;
 					[
 						0,
 						_pos,
-						_secArray,
-						"R_TBG32V_F"
+						_secArray
 					] call LR_fnc_SpawnExplosives;
 
 					_bomb = "SatchelCharge_Remote_Ammo_Scripted" createVehicle (_pos);

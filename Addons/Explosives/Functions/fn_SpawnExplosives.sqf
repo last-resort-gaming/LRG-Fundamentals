@@ -35,7 +35,7 @@ if !(isServer) exitWith {};
         // Bail if we are requested to
         if (!(isNil "_r") && { _r isEqualTo false }) exitWith {};
 
-        _method createVehicle (_pos vectorAdd [0,0,0.5]);
+        createVehicle [_method, _pos, [], 0, "CAN_COLLIDE"];
 
         private _csleep = _sub select 1;
         private _nsleep = (_sub select 1) * 2;
