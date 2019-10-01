@@ -283,3 +283,16 @@
         if (_this && { isserver }) then  { call LR_fnc_DynamicSim};
     }
 ] call CBA_Settings_fnc_init;
+
+// LRG_Main_DynamicSim
+[
+    "LRG_Main_LockCamVehicle",
+    "CHECKBOX",
+    ["LRG Lock Camera in Vehicle", "Locks the camera to first-person inside vehicles. If not enabled it will enable it to default LRG Values. "],
+    "LRG Main",
+    false,
+    true,
+    {
+        if (_this && {hasInterface}) then  { call LR_fnc_LockCamVehicle};
+    }
+] call CBA_Settings_fnc_init;

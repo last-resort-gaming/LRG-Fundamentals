@@ -184,7 +184,8 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 } else {
 
 	// Fix the condition string (replace _player with _this)
-	_condition = [_condition, "_player", "_this", nil, false] call LR_fnc_FindReplaceString;
+	_conditionShow = [_conditionShow, "_player", "_this", nil, false] call LR_fnc_FindReplaceString;
+	_conditionProgress = [_conditionProgress, "_player", "_this", nil, false] call LR_fnc_FindReplaceString;
 
 	[
 		_object,

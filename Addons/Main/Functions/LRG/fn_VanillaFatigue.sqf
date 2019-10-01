@@ -1,7 +1,9 @@
 // not documented: postInit
 
 if (!hasinterface) exitwith {};
-if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
+
+// don't run if ACE is running
+if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitwith {};
 
 player enableFatigue LRG_Main_FatigueVanilla;
 
