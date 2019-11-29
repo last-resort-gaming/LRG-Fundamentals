@@ -51,7 +51,7 @@ Group: Project  {
 
    Link: Project  (https://github.com/last-resort-gaming/LRG-Fundamentals)
    Link: Issues  (https://github.com/last-resort-gaming/LRG-Fundamentals/issues)
-   Link: Download  (https://github.com/last-resort-gaming/LRG-Fundamentals/releases)
+   Link: Download  (https://steamcommunity.com/sharedfiles/filedetails/?id=1448755472)
    Link: Reference  (https://last-resort-gaming.github.io/LRG-Fundamentals/docs)
    }  # Group: Project
 
@@ -70,16 +70,17 @@ Group: Functions  {
    Group: Equipment  {
 
       File: LR_fnc_Ammobox  (Equipment\Functions\fn_AmmoBox.sqf)
-      File: LR_fnc_Arsenal  (Equipment\Functions\fn_Arsenal.sqf)
-      File: LR_fnc_ConfigEquipment  (Equipment\Functions\fn_EquipmentLoadout.sqf)
+      File: LR_fnc_FullArsenal  (Equipment\Functions\fn_FullArsenal.sqf)
+      File: LR_fnc_LimitedArsenal  (Equipment\Functions\fn_LimitedArsenal.sqf)
       File: LR_fnc_Loadouts  (Equipment\Functions\fn_Loadouts.sqf)
+      File: LR_fnc_MedicalSupplies  (Equipment\Functions\fn_MedicalSupplies.sqf)
       }  # Group: Equipment
 
    Group: Explosives  {
 
       File: LR_fnc_CrashSite  (Explosives\Functions\fn_CrashSite.sqf)
       File: LR_fnc_IEDVehicle  (Explosives\Functions\fn_IEDVehicle.sqf)
-      File: LR_fnc_makeIED  (Explosives\Functions\fn_MakeIED.sqf)
+      File: LR_fnc_MakeIED  (Explosives\Functions\fn_MakeIED.sqf)
       File: LR_fnc_SpawnExplosives  (Explosives\Functions\fn_SpawnExplosives.sqf)
       }  # Group: Explosives
 
@@ -129,7 +130,7 @@ Group: Functions  {
 
    Group: Vehicles  {
 
-      File: LR_fnc_VehicleLoadout  (Vehicles\Functions\fn_VehicleLoadout.sqf)
+      File: LR_fnc_ServiceVehicle  (Vehicles\Functions\fn_ServiceVehicle.sqf)
       }  # Group: Vehicles
 
    Group: Zeus  {
