@@ -126,7 +126,7 @@ switch (_stage) do {
 			[true] remoteExec ["allowDamage", _x];
 			[false] remoteExec ["disableUserInput", _x];
 			[_x, "AidlPpneMstpSnonWnonDnon_AI"] remoteExec ["switchMove", _x];
-			[objnull, _x] remoteExecCall ["ACE_medical_fnc_treatmentAdvanced_fullHealLocal", _x];
+			[objnull, _x] remoteExecCall ["ACE_medical_treatment_fnc_fullHealLocal", _x];
 
 			for "_i" from 0 to (1+ random 4) do {
 				[_x, 0.2, selectRandom _bodyParts, selectRandom _injuryTypes] remoteExecCall ["ace_medical_fnc_addDamageToUnit",0];
