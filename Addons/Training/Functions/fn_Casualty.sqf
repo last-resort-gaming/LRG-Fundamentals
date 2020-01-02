@@ -40,7 +40,7 @@ _object addAction [
 		};
 
 		[_target, true, 10, true] remoteExecCall ["ace_medical_fnc_setUnconscious", 2];
-		[_target] remoteExecCall ["ace_medical_fnc_setCardiacArrest", 2];
+		[_target, true] remoteExecCall ["ace_medical_status_fnc_setCardiacArrestState", 2];
 		_target setVariable ["CasualtyHealed", False, True];
     },
     [_RandomBodyPart,_RandomInjuryType],
@@ -113,7 +113,7 @@ _object addAction
     "<t color='#666666'>Reset Casualty</t>",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
-		[_caller, _target] remoteExecCall ["ace_medical_fnc_treatmentAdvanced_fullHealLocal", 0];
+		[_caller, _target] remoteExecCall ["ace_medical_treatment_fnc_fullHealLocal", 0];
 		_target disableAI "MOVE";
 		_target setVariable ["CasualtyHealed", true, True];
     },
