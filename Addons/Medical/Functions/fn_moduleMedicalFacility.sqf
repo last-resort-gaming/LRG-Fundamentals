@@ -24,13 +24,13 @@ private _objects = synchronizedObjects _logic;
             [format [""%1<br />is being revived at the LRG Medical Facility."", profileName], [1,-0.2], ""#ed1b2e"", 0.4] call LR_fnc_dynamicText;
             [
                 {
-                    [objNull, player] call ACE_medical_treatment_fnc_fullHealLocal;
+                    [player] call ACE_medical_treatment_fnc_fullHealLocal;
                 }, [], 10
             ] call CBA_fnc_waitAndExecute;
         } else {
             [
                 {
-                    [objNull, player] call ACE_medical_treatment_fnc_fullHealLocal;
+                    [player] call ACE_medical_treatment_fnc_fullHealLocal;
                 }, [], 5
             ] call CBA_fnc_waitAndExecute;
 
