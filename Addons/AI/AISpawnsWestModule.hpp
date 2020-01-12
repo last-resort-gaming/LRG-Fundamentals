@@ -32,19 +32,19 @@ class LRG_ModuleAISpawnsWest: Module_F
 					class UK3CB_BAF_Faction_Army_MTP 		{name = "@3CB BAF - Army - MTP"; 								value = "UK3CB_BAF_Faction_Army_MTP";};
 					class UK3CB_BAF_Faction_Army_Temperate	{name = "@3CB BAF - Army - Temperate"; 							value = "UK3CB_BAF_Faction_Army_Temperate";};
 					class UK3CB_BAF_Faction_Army_Tropical 	{name = "@3CB BAF - Army - Tropical"; 							value = "UK3CB_BAF_Faction_Army_Tropical";};
-					class UK3CB_BAF_Faction_Army_Woodland	{name = "@3CB BAF - Army - Woodland"; 							value = "UK3CB_BAF_Faction_Army_Woodland";};				
+					class UK3CB_BAF_Faction_Army_Woodland	{name = "@3CB BAF - Army - Woodland"; 							value = "UK3CB_BAF_Faction_Army_Woodland";};
 					class UK3CB_ANA_B 						{name = "@3CB Factions - Afghan National Army";					value = "UK3CB_ANA_B";};
-					class UK3CB_ANP_B 						{name = "@3CB Factions - Afghan National Police";				value = "UK3CB_ANP_B";};	
-					class UK3CB_CCM_B 						{name = "@3CB Factions - Chernarus Local Defence Volunteers";	value = "UK3CB_CCM_B";};	
+					class UK3CB_ANP_B 						{name = "@3CB Factions - Afghan National Police";				value = "UK3CB_ANP_B";};
+					class UK3CB_CCM_B 						{name = "@3CB Factions - Chernarus Local Defence Volunteers";	value = "UK3CB_CCM_B";};
 					class UK3CB_TKA_B 						{name = "@3CB Factions - Takistan National Army";				value = "UK3CB_TKA_B";};
 					class UK3CB_TKM_B 						{name = "@3CB Factions - Takistan Pro-Government Militia";		value = "UK3CB_TKM_B";};
-					class UK3CB_TKP_B 						{name = "@3CB Factions - Takistan National Police";				value = "UK3CB_TKP_B";};	
+					class UK3CB_TKP_B 						{name = "@3CB Factions - Takistan National Police";				value = "UK3CB_TKP_B";};
 					class UK3CB_UN_B 						{name = "@3CB Factions - UN Peacekeepers";						value = "UK3CB_UN_B";};
 					class CUP_B_CZ 							{name = "@CUP - Army of the Czech Republic";					value = "CUP_B_CZ";};
 					class CUP_B_GB 							{name = "@CUP - British Armed Forces"; 							value = "CUP_B_GB";};
 					class CUP_B_GER 						{name = "@CUP - Bundeswehr"; 									value = "CUP_B_GER";};
 					class CUP_B_US_Army 					{name = "@CUP - United States Army"; 							value = "CUP_B_US_Army";};
-					class LIB_WEHRMACHT 					{name = "@IFA3 - Wehrmacht";									value = "LIB_WEHRMACHT";};					
+					class LIB_WEHRMACHT 					{name = "@IFA3 - Wehrmacht";									value = "LIB_WEHRMACHT";};
 					class OPTRE_UNSC 						{name = "@OPTRE - UNSCDF";										value = "OPTRE_UNSC";};
 					class LOP_AA 							{name = "@Project OPFOR - Afghan National Army";				value = "LOP_AA";};
 					class LOP_IA 							{name = "@Project OPFOR - Iraqi Armed Forces";					value = "LOP_IA";};
@@ -52,7 +52,7 @@ class LRG_ModuleAISpawnsWest: Module_F
 					class rhs_faction_usarmy_wd 			{name = "@RHS USAF  - USA Army - Woodland"; 					value = "rhs_faction_usarmy_wd";};
 					class BLU_F 							{name = "Vanilla - NATO"; 										value = "BLU_F";};
 					class BLU_T_F							{name = "Vanilla - NATO (Pacific)"; 							value = "BLU_T_F";};
-				};				
+				};
 			};
 		class Radius: Edit
   			{
@@ -205,7 +205,7 @@ class LRG_ModuleAISpawnsWest: Module_F
 			description = "Maximum Number of Random Vehicles to Spawn";
 			typeName = "Number";
 			defaultValue = 0;
-		};			
+		};
 		class ModuleDescription: ModuleDescription{};
 	};
 	class ModuleDescription: ModuleDescription
