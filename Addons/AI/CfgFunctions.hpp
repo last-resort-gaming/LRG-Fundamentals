@@ -9,6 +9,10 @@ class LRG_AI {
 		class SetInitialAI {};
 		class SetUnitSkill {};
 		class SpawnAI {};
+		class moduleAISpawnsEastZeus {};
+		class moduleAISpawnsIndepZeus {};
+		class moduleAISpawnsWestZeus {};
+		class SpawnAIZeusWrapper {};
 	};
 
 	class Factions {

@@ -3,7 +3,9 @@ Function: YAINA_fnc_log
 
 Description:
 	General purpose logging function, that logs the message either to
-	the rpt or to an external log using A3Log.
+	the rpt or to an external log using A3Log. Available logs are:
+
+	"GENERAL", "CommandsLog", "CleanupLog", "KillLog", "ErrorLog", "ZeusLog"
 
 Arguments:
 	_message - The log message

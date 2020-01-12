@@ -21,6 +21,9 @@ class LRG_Main {
 		class FindReplaceString {};
 		class voyagerCompass {};
 		class clientRepackMagazines {};
+		class showChooseDialog {};
+		class sum {};
+		class TextToVariableName {};
 	};
 };
 

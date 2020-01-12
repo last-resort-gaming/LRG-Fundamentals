@@ -16,8 +16,9 @@ class CfgPatches
 	};
 };
 
+#include "Dialogs/CfgDisplays.hpp"
+
 #include "CfgRespawnTemplates.hpp"
-#include "CfgDisplays.hpp"
 
 class Extended_PreInit_EventHandlers {
     class LRG_Main_Event {
