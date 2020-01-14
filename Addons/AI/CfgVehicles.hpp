@@ -22,8 +22,6 @@ class CfgVehicles
 		};
 	};
 
-    #include "AISpawnsZeusModules.hpp"
-
 	#include "AISpawnsEastModule.hpp"
 	#include "AISpawnsIndependentModule.hpp"
 	#include "AISpawnsWestModule.hpp"

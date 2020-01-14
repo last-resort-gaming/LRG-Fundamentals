@@ -21,6 +21,8 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 		isGlobal = 0;
 		isTriggerActivated = 0;
 		isDisposable = 0;
+
+		dlc = "LRG_Fundamentals";
 	};
 
 	class LRG_Module_AISpawnsIndepZeus : Module_F
@@ -46,6 +48,8 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 		isGlobal = 0;
 		isTriggerActivated = 0;
 		isDisposable = 0;
+
+		dlc = "LRG_Fundamentals";
 	};
 
 	class LRG_Module_AISpawnsWestZeus : Module_F
@@ -71,4 +75,6 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 		isGlobal = 0;
 		isTriggerActivated = 0;
 		isDisposable = 0;
+
+		dlc = "LRG_Fundamentals";
 	};

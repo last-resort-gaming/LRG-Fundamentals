@@ -16,6 +16,26 @@ class CfgPatches
 	};
 };
 
+class CfgMods {
+	class LRG_Fundamentals {
+		dir = "@LRG Fundamentals";
+		name = "LRG Fundamentals";
+
+		author = "LastResortGaming";
+
+		hidePicture = 0;
+		hideName = 1;
+
+		description = "LRG Fundamentals provides a simple-yet-effective mission making framework used by the LastResortGaming community.";
+		overview = "LRG Fundamentals provides a simple-yet-effective mission making framework used by the LastResortGaming community.";
+
+		picture = "\z\LRG Fundamentals\Addons\Media\images\LRG Logo.paa";
+		logo = "\z\LRG Fundamentals\Addons\Media\images\LRG Logo.paa";
+		logoOver = "\z\LRG Fundamentals\Addons\Media\images\LRG Logo.paa";
+		logoSmall = "\z\LRG Fundamentals\Addons\Media\images\Patches\LRGLogo.paa";
+	};
+};
+
 #include "Dialogs/CfgDisplays.hpp"
 
 #include "CfgRespawnTemplates.hpp"

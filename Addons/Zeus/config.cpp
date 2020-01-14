@@ -22,3 +22,9 @@ class CfgFunctions {
 };
 
 #include "cfgVehicles.hpp"
+
+class Extended_PreInit_EventHandlers {
+    class LRG_Main_Event {
+        init = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Zeus\XEH_preInit.sqf'";
+    };
+};
