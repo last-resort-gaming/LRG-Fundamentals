@@ -121,7 +121,7 @@ _procDiagResults params [
 	"_vehrandMin", "_vehrandMax"
 ];
 
-// Actually call SpawnAI
+// Actually call SpawnAI, do it remotely so the server has the units and takes care of them c:
 [
 	_grpPrefix, _pos, _radius, _faction,
 	[_garrisonsMin, _garrisonsMax],
@@ -134,4 +134,4 @@ _procDiagResults params [
 	[_vehlightMin, _vehlightMax],
 	[_vehheavyMin, _vehheavyMax],
 	[_vehrandMin, _vehrandMax]
-] call LR_fnc_SpawnAI;
+] remoteExec ["LR_fnc_SpawnAI", 2];
