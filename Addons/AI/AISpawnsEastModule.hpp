@@ -55,7 +55,7 @@ class LRG_ModuleAISpawns: Module_F
 					class UNSUNG_E_NVA 				{name = "@UNSUNG - NVA"; 									value = "UNSUNG_E_NVA";};
 					class OPF_F						{name = "Vanilla - CSAT"; 									value = "OPF_F";};
 					class OPF_T_F 					{name = "Vanilla - CSAT (Pacific)"; 						value = "OPF_T_F";};
-				};				
+				};
 			};
 		class Radius: Edit
   			{
@@ -80,7 +80,7 @@ class LRG_ModuleAISpawns: Module_F
 			description = "Maximum Number of Garrisoned AI Groups to Spawn";
 			typeName = "Number";
 			defaultValue = 0;
-		};		
+		};
 		class EIPatrolsMin: Edit
 		{
 			property = "LR_AI_EIPatrolsMin";
@@ -208,7 +208,7 @@ class LRG_ModuleAISpawns: Module_F
 			description = "Maximum Number of Random Vehicles to Spawn";
 			typeName = "Number";
 			defaultValue = 0;
-		};			
+		};
 		class ModuleDescription: ModuleDescription{};
 	};
 	class ModuleDescription: ModuleDescription

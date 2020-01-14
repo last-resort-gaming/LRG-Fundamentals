@@ -68,7 +68,7 @@ params [
 	["_vehmrap", [0,0]],
 	["_vehlight", [0,0]],
 	["_vehheavy", [0,0]],
-	["_vehrand", [0,0]]    
+	["_vehrand", [0,0]]
 ];
 
 _typeNameCenter = typeName _center;
@@ -82,15 +82,15 @@ call {
 _center set [2, 0];
 
 _garrisons params ["_GarrisonedGroupsMin", ["_GarrisonedGroupsMax", 0], ["_infSkill", "LRG Default"]];
-_inf params ["_infMin", ["_infRand", 0], ["_infSkill", "LRG Default"]];
-_infaa params ["_infaaMin", ["_infaaRand",0], ["_infaaSkill", "LRG Default"]];
-_infat params ["_infatMin", ["_infatRand",0], ["_infatSkill", "LRG Default"]];
-_sniper params ["_sniperMin", ["_sniperRand",0], ["_sniperSkill", "LRG Default"]];
-_vehaa params ["_vehaaMin", ["_vehaaRand",0], ["_vehaaSkill", "LRG Default"]];
-_vehmrap params ["_vehmrapMin", ["_vehmrapRand",0], ["_vehmrapSkill", "LRG Default"]];
-_vehlight params ["_vehlightMin", ["_vehlightRand",0], ["_vehlightSkill", "LRG Default"]];
-_vehheavy params ["_vehheavyMin", ["_vehheavyRand",0], ["_vehheavySkill", "LRG Default"]];
-_vehrand params ["_vehrandMin", ["_vehrandRand",0], ["_vehrandSkill", "LRG Default"]];
+_inf params ["_infMin", ["_infMax", 0], ["_infSkill", "LRG Default"]];
+_infaa params ["_infaaMin", ["_infaaMax",0], ["_infaaSkill", "LRG Default"]];
+_infat params ["_infatMin", ["_infatMax",0], ["_infatSkill", "LRG Default"]];
+_sniper params ["_sniperMin", ["_sniperMax",0], ["_sniperSkill", "LRG Default"]];
+_vehaa params ["_vehaaMin", ["_vehaaMax",0], ["_vehaaSkill", "LRG Default"]];
+_vehmrap params ["_vehmrapMin", ["_vehmrapMax",0], ["_vehmrapSkill", "LRG Default"]];
+_vehlight params ["_vehlightMin", ["_vehlightMax",0], ["_vehlightSkill", "LRG Default"]];
+_vehheavy params ["_vehheavyMin", ["_vehheavyMax",0], ["_vehheavySkill", "LRG Default"]];
+_vehrand params ["_vehrandMin", ["_vehrandMax",0], ["_vehrandSkill", "LRG Default"]];
 
 ///////////////////////////////////////////////////////////
 // UNIT TYPES
@@ -147,9 +147,9 @@ private _vehicles = [];
 ///////////////////////////////////////////////////////////
 if !(_infList isEqualTo []) then {
     if (_GarrisonedGroupsMax > 0) then {
-       private _GarDif = _GarrisonedGroupsMax - _GarrisonedGroupsMin +1;
+       private _GarDif = _GarrisonedGroupsMax - _GarrisonedGroupsMin;
         if (_GarDif <0) then {_GarDif = 0};
-    
+
         private _GarrisonedGroupsExact = _GarrisonedGroupsMin + floor (random _GarDif);
         private _garrisonedUnits = (
             [
@@ -163,10 +163,10 @@ if !(_infList isEqualTo []) then {
             ] call LR_fnc_infantryGarrison
         );
         _units append _garrisonedUnits;
-    
+
         private _grps = [];
         { _grps pushBackUnique (group _x); nil } count _units;
-    
+
         // tag groups
         { _x setGroupIdGlobal [format["%1_gar%2", _grpPrefix, _forEachIndex]]; } forEach _grps;
     };
@@ -175,7 +175,7 @@ if !(_infList isEqualTo []) then {
 // STANDARD INFANTRY
 ///////////////////////////////////////////////////////////
 if !(_infList isEqualTo []) then {
-   private _InfDif = _infRand - _infMin;
+   private _InfDif = _infMax - _infMin;
     if (_InfDif <0) then {_InfDif = 0};
 
     for "_x" from 1 to (_infMin + floor(random _InfDif)) do {
@@ -193,7 +193,7 @@ if !(_infList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_infaaList isEqualTo []) then {
-   private _InfaaDif = _InfaaRand - _InfaaMin;
+   private _InfaaDif = _InfaaMax - _InfaaMin;
     if (_InfaaDif <0) then {_InfaaDif = 0};
 
     for "_x" from 1 to (_InfaaMin + floor(random _InfaaDif)) do {
@@ -211,7 +211,7 @@ if !(_infaaList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_infatList isEqualTo []) then {
-   private _InfatDif = _InfatRand - _InfatMin;
+   private _InfatDif = _InfatMax - _InfatMin;
     if (_InfatDif <0) then {_InfatDif = 0};
 
     for "_x" from 1 to (_InfatMin + floor(random _InfatDif)) do {
@@ -228,7 +228,7 @@ if !(_infatList isEqualTo []) then {
 // SNIPER TEAMS
 ///////////////////////////////////////////////////////////
 if !(_sniperList isEqualTo []) then {
-   private _SniperDif = _SniperRand - _SniperMin;
+   private _SniperDif = _SniperMax - _SniperMin;
     if (_SniperDif <0) then {_SniperDif = 0};
 
     for "_x" from 1 to (_SniperMin + floor(random _SniperDif)) do {
@@ -247,7 +247,7 @@ if !(_sniperList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehAAList isEqualTo []) then {
-   private _VehAADif = _VehAARand - _VehAAMin;
+   private _VehAADif = _VehAAMax - _VehAAMin;
     if (_VehAADif <0) then {_VehAADif = 0};
 
     for "_x" from 1 to (_VehAAMin + floor(random _VehAADif)) do {
@@ -277,7 +277,7 @@ if !(_vehAAList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehmrapList isEqualTo []) then {
-   private _VehMRAPDif = _VehMRAPRand - _VehMRAPMin;
+   private _VehMRAPDif = _VehMRAPMax - _VehMRAPMin;
     if (_VehMRAPDif <0) then {_VehMRAPDif = 0};
 
     for "_x" from 1 to (_VehMRAPMin + floor(random _VehMRAPDif)) do {
@@ -308,11 +308,11 @@ if !(_vehmrapList isEqualTo []) then {
 
 if !(_vehLightList isEqualTo []) then {
 
-   private _VehLightDif = _VehLightRand - _VehLightMin;
+   private _VehLightDif = _VehLightMax - _VehLightMin;
     if (_VehLightDif <0) then {_VehLightDif = 0};
 
     for "_x" from 1 to (_VehLightMin + floor(random _VehLightDif)) do {
- 
+
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehLight%2", _grpPrefix, _x]];
 
@@ -338,7 +338,7 @@ if !(_vehLightList isEqualTo []) then {
 ///////////////////////////////////////////////////////////
 
 if !(_vehHeavyList isEqualTo []) then {
-   private _VehHeavyDif = _VehHeavyRand - _VehHeavyMin;
+   private _VehHeavyDif = _VehHeavyMax - _VehHeavyMin;
     if (_VehHeavyDif <0) then {_VehHeavyDif = 0};
 
     for "_x" from 1 to (_VehHeavyMin + floor(random _VehHeavyDif)) do {
@@ -369,8 +369,8 @@ if !(_vehHeavyList isEqualTo []) then {
 {_vehRandList append _x} foreach [_vehAAList, _vehMrapList, _vehLightList, _vehHeavyList];
 
 if !(_vehRandList isEqualTo []) then {
-	
-   private _VehRandDif = _VehRandRand - _VehRandMin;
+
+   private _VehRandDif = _VehRandMax - _VehRandMin;
     if (_VehRandDif <0) then {_VehRandDif = 0};
 
     for "_x" from 1 to (_VehRandMin + floor(random _VehRandDif)) do {

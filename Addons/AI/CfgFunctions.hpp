@@ -9,6 +9,7 @@ class LRG_AI {
 		class SetInitialAI {};
 		class SetUnitSkill {};
 		class SpawnAI {};
+		class SpawnAIZeusWrapper {};
 	};
 
 	class Factions {

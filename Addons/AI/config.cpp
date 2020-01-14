@@ -9,11 +9,21 @@ class CfgPatches
 		url = URL;
 		units[] = {};
 		requiredVersion = REQUIRED_VERSION;
-		requiredAddons[] = {"A3_UI_F","cba_main","cba_xeh"};
+		requiredAddons[] = {
+			"cba_main",
+			"cba_xeh"
+		};
 		version = VERSION;
 		authors[] = {"MitchJC"};
 		weapons[] = {};
 	};
+};
+
+#include "CfgVehicles.hpp"
+
+class CfgFunctions {
+
+    #include "CfgFunctions.hpp"
 };
 
 class Extended_PreInit_EventHandlers
@@ -22,35 +32,4 @@ class Extended_PreInit_EventHandlers
 	{
 		init = "call compile preProcessFileLineNumbers 'z\LRG Fundamentals\Addons\AI\XEH_preInit.sqf'";
 	};
-};
-
-class CfgVehicles
-{
-	class Logic;
-	class Module_F: Logic
-	{
-		class AttributesBase
-		{
-			class Default;
-			class Edit;
-			class Combo;
-			class Checkbox;
-			class CheckboxNumber;
-			class ModuleDescription;
-			class Units;
-		};
-
-		class ModuleDescription
-		{
-			class AnyBrain;
-		};
-	};
-	#include "AISpawnsEastModule.hpp"
-	#include "AISpawnsIndependentModule.hpp"
-	#include "AISpawnsWestModule.hpp"
-};
-
-class CfgFunctions {
-
-    #include "CfgFunctions.hpp"
 };

@@ -2,6 +2,8 @@ class CfgVehicles {
     class Module_F;
     class ModuleEmpty_F;
 
+    #include "AISpawnsZeusModules.hpp"
+
     class ModuleCurator_F: Module_F {
 		class Attributes
 		{
@@ -17,4 +19,6 @@ class CfgVehicles {
 			};
 		};
 	};
+
+
 };

@@ -5,5 +5,8 @@ class LRG_Zeus {
 
 		file = "z\LRG Fundamentals\Addons\Zeus\Functions";
 		class ConfigZeus {};
+		class moduleAISpawnsEastZeus {};
+		class moduleAISpawnsIndepZeus {};
+		class moduleAISpawnsWestZeus {};
 	};
 };
