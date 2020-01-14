@@ -18,7 +18,7 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 		portrait = "\z\LRG Fundamentals\addons\media\images\icons\AI EAST.paa";
 
 		functionPriority = 1;
-		isGlobal = 0;
+		isGlobal = 2;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 
@@ -45,7 +45,7 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 		portrait = "\z\LRG Fundamentals\addons\media\images\icons\AI INDEP.paa";
 
 		functionPriority = 1;
-		isGlobal = 0;
+		isGlobal = 2;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 
@@ -72,7 +72,7 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 		portrait = "\z\LRG Fundamentals\addons\media\images\icons\AI WEST.paa";
 
 		functionPriority = 1;
-		isGlobal = 0;
+		isGlobal = 2;
 		isTriggerActivated = 0;
 		isDisposable = 0;
 
