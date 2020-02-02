@@ -22,19 +22,26 @@ private _objects = synchronizedObjects _logic;
         "player in thislist",
         "if (player getVariable ""ACE_isUnconscious"") then {
             [format [""%1<br />is being revived at the LRG Medical Facility."", profileName], [1,-0.2], ""#ed1b2e"", 0.4] call LR_fnc_dynamicText;
+            };
+		[
+			""You are being treated at the LRG Medical Facility"",
+			[-1, 0.8],
+			""#FFA500"",
+			0.5,
+			false
+		] call LR_fnc_DynamicText;
             [
                 {
                     [player] call ACE_medical_treatment_fnc_fullHealLocal;
+                    [
+			        ""Treatment Complete"",
+			        [-1, 0.8],
+			        ""#228B22"",
+			        0.5,
+			        false
+		            ] call LR_fnc_DynamicText;
                 }, [], 10
-            ] call CBA_fnc_waitAndExecute;
-        } else {
-            [
-                {
-                    [player] call ACE_medical_treatment_fnc_fullHealLocal;
-                }, [], 5
-            ] call CBA_fnc_waitAndExecute;
-
-        };",
+            ] call CBA_fnc_waitAndExecute;",
         ""
     ];
 } foreach _objects;
