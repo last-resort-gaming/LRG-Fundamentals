@@ -255,7 +255,7 @@ if !(_vehAAList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_VehAA%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call BIS_fnc_randomPos;
+        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehAAList) createVehicle _rpos ;
@@ -285,7 +285,7 @@ if !(_vehmrapList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehmrap%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call BIS_fnc_randomPos;
+        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehmrapList) createVehicle _rpos ;
@@ -316,7 +316,7 @@ if !(_vehLightList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehLight%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call BIS_fnc_randomPos;
+        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehLightList) createVehicle _rpos ;
@@ -346,7 +346,7 @@ if !(_vehHeavyList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehHeavy%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call BIS_fnc_randomPos;
+        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehHeavyList) createVehicle _rpos ;
@@ -378,7 +378,7 @@ if !(_vehRandList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehrand%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call BIS_fnc_randomPos;
+        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehRandList) createVehicle _rpos ;
