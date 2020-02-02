@@ -30,9 +30,9 @@ Author:
 */
 
 params [
-	["_whitelist", nil],
-	["_blacklist", nil],
-	["_code", nil],
+	["_whitelist", [[0,0], 100]],
+	["_blacklist", ["water"]],
+	["_code", {true}],
 	["_timeout", 10]
 ];
 
