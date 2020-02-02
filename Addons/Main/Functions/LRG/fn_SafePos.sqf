@@ -46,4 +46,8 @@ if (_pos isEqualTo [0, 0]) then {
 	};
 };
 
+if (_pos isEqualTo [0,0]) then {
+	"Could not find a valid position!" remoteExec ["systemChat", 0];
+};
+
 _pos;
