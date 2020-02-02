@@ -1,3 +1,27 @@
+/*
+Function: general.sqf
+
+Description:
+	Script to service general vehicles (except UAVs).
+
+Arguments:
+	_kind - Base class name of the vehicle to service
+    _veh - The vehicle to service
+    _serviceTime - Time in seconds to service the vehicle for
+    _serviceRand - Random delay for the servicing duration
+    _sideChat - Announce servicing of vehicle in the side chat
+    _allowAny - Allow anyone in the vehicle to initiate servicing
+    _playerDistance - Players have to stay within this distance for servicing to continue
+
+Return Values:
+	Nothing
+
+Examples:
+    Nothing to see here.
+
+Author:
+	Mokka
+*/
 
 params [
     "_kind",

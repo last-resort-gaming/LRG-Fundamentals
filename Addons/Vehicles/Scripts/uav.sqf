@@ -1,3 +1,25 @@
+/*
+Function: uav.sqf
+
+Description:
+	Script to service UAVs.
+
+Arguments:
+    _veh - The vehicle to service
+    _serviceTime - Time in seconds to service the vehicle for
+    _serviceRand - Random delay for the servicing duration
+    _sideChat - Announce servicing of vehicle in the side chat
+    _playerDistance - Players have to stay within this distance for servicing to continue
+
+Return Values:
+	Nothing
+
+Examples:
+    Nothing to see here.
+
+Author:
+	Mokka
+*/
 
 params [
     "_veh",
