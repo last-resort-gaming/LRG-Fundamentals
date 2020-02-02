@@ -3,7 +3,7 @@ Function: LR_fnc_SafePos
 
 Description:
 	Finds a safe position based on the given parameters, using BIS_fnc_randomPos.
-	
+
 	White-/Blacklist can be:
 
 	Object - trigger
@@ -30,9 +30,9 @@ Author:
 */
 
 params [
-	"_whitelist",
-	"_blacklist",
-	"_code",
+	["_whitelist", nil],
+	["_blacklist", nil],
+	["_code", nil],
 	["_timeout", 10]
 ];
 
