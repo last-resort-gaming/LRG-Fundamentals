@@ -106,7 +106,6 @@ private _FactionSide = "East";
 private _InfantryType = "Infantry";
 private _InfantryGroup = "OIA_InfTeam";
 private _vehRandList = [];
-private _FactionName = gettext (configfile >> "CfgGroups" >> "Indep" >> _Faction >> "name");
 private _AIReporting = LRG_AI_Reporting;
 
 // Check for Side from _faction
@@ -139,7 +138,7 @@ if (_center isEqualTo [0,0]) exitWith {};
 
 _confBase = configfile >> "CfgGroups" >> _FactionSide >> _faction >> _InfantryType;
 if (isnil "_infList") then {_infList = ("true" configClasses _confBase) apply { configName _x };};
-
+private _FactionName = gettext (configfile >> "CfgGroups" >> _FactionSide >> _Faction >> "name");
 // Prep return values
 private _units = [];
 private _vehicles = [];
