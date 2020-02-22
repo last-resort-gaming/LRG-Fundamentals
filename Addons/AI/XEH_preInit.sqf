@@ -1,3 +1,16 @@
+// Reporting AI
+[
+    "LRG_AI_Reporting",
+    "CHECKBOX",
+    ["Spawn Reporting", "Receive a systemchat message for any groups or vehicles that fail to spawn."],
+    "LRG AI",
+    false,
+    true,
+    {
+
+    }
+] call CBA_Settings_fnc_init;
+
 // Initial AI
 [
     "LRG_AI_InitialAI",
