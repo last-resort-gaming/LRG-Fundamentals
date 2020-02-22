@@ -106,6 +106,8 @@ private _FactionSide = "East";
 private _InfantryType = "Infantry";
 private _InfantryGroup = "OIA_InfTeam";
 private _vehRandList = [];
+private _FactionName = gettext (configfile >> "CfgGroups" >> "Indep" >> _Faction >> "name");
+
 
 // Check for Side from _faction
 private _SideNumber = getnumber (configfile >> "CfgFactionClasses" >> _faction >> "side");
@@ -186,7 +188,9 @@ if !(_infList isEqualTo []) then {
         [_g, _infSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
-};
+} else {
+    if (_infMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Intantry Teams to select from. Step skipped.",_FactionName]};
+    };
 
 ///////////////////////////////////////////////////////////
 // AA INFANTRY
@@ -204,7 +208,9 @@ if !(_infaaList isEqualTo []) then {
         [_g, _infaaSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
-};
+} else {
+    if (_InfaaMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no AA Teams to select from. Step skipped.",_FactionName]};
+    };
 
 ///////////////////////////////////////////////////////////
 // AT INFANTRY
@@ -222,7 +228,9 @@ if !(_infatList isEqualTo []) then {
         [_g, _infatSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
-};
+} else {
+    if (_InfatMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no AT Teams to select from. Step skipped.",_FactionName]};
+    };
 
 ///////////////////////////////////////////////////////////
 // SNIPER TEAMS
@@ -240,7 +248,9 @@ if !(_sniperList isEqualTo []) then {
         [_g, _sniperSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
-};
+} else {
+    if (_SniperMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Sniper Teams to select from. Step skipped.",_FactionName]};
+    };
 
 ///////////////////////////////////////////////////////////
 // AA
@@ -270,7 +280,9 @@ if !(_vehAAList isEqualTo []) then {
             _vehicles pushBack _v;
         };
     };
-};
+} else {
+    if (_VehAAMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no AA Vehicles to select from. Step skipped.",_FactionName]};
+    };
 
 ///////////////////////////////////////////////////////////
 // MRAP
@@ -300,7 +312,9 @@ if !(_vehmrapList isEqualTo []) then {
             _vehicles pushBack _v;
         };
     };
-};
+} else {
+    if (_VehMRAPMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no MRAPs to select from. Step skipped.",_FactionName]};
+    };
 
 ///////////////////////////////////////////////////////////
 // LIGHT VEHS
@@ -331,7 +345,9 @@ if !(_vehLightList isEqualTo []) then {
             _vehicles pushBack _v;
         };
     };
-};
+} else {
+    if (_VehLightMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Light Vehicles to select from. Step skipped.",_FactionName]};
+    };
 
 ///////////////////////////////////////////////////////////
 // HEAVY VEHS
@@ -361,7 +377,12 @@ if !(_vehHeavyList isEqualTo []) then {
             _vehicles pushBack _v;
         };
     };
-};
+} else {
+    if (_VehHeavyMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Random Vehicles to select from. Step skipped.",_FactionName]};
+    };
+
+
+
 
 ///////////////////////////////////////////////////////////
 // RANDOM VEHS
@@ -393,7 +414,9 @@ if !(_vehRandList isEqualTo []) then {
             _vehicles pushBack _v;
         };
     };
-};
+} else {
+    if (_VehRandMin >0) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Random Vehicles to select from. Step skipped.",_FactionName]};
+    };
 
 {
 	if !(dynamicSimulationEnabled (group _x)) then {
