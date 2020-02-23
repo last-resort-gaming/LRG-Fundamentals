@@ -8,5 +8,6 @@ class LRG_Zeus {
 		class moduleAISpawnsEastZeus {};
 		class moduleAISpawnsIndepZeus {};
 		class moduleAISpawnsWestZeus {};
+		class moduleCivilianSpawnsZeus {};
 	};
 };

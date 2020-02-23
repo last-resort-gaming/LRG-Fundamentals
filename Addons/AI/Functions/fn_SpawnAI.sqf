@@ -171,6 +171,8 @@ if !(_infList isEqualTo []) then {
         // tag groups
         { _x setGroupIdGlobal [format["%1_gar%2", _grpPrefix, _forEachIndex]]; } forEach _grps;
     };
+} else {
+    if (_AIReporting && { _GarrisonedGroupsMax >0 }) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Infantry Teams to select from. Step skipped.",_FactionName]};
 };
 ///////////////////////////////////////////////////////////
 // STANDARD INFANTRY
@@ -188,7 +190,7 @@ if !(_infList isEqualTo []) then {
         _units append (units _g);
     };
 } else {
-    if (_AIReporting && { _infMax >0 }) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Intantry Teams to select from. Step skipped.",_FactionName]};
+    if (_AIReporting && { _infMax >0 }) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Infantry Teams to select from. Step skipped.",_FactionName]};
     };
 
 ///////////////////////////////////////////////////////////

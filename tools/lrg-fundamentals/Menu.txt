@@ -64,6 +64,10 @@ Group: Functions  {
       File: derp_fnc_randomPos  (AI\Functions\fn_randomPos.sqf)
       File: LR_fnc_SetUnitSkill  (AI\Functions\fn_setUnitSkill.sqf)
       File: LR_fnc_SpawnAI  (AI\Functions\fn_SpawnAI.sqf)
+      File: LR_fnc_SpawnCivilian (AI\Functions\Civilians\fn_SpawnCivilians.sqf)
+      File: LR_fnc_CivBreakPatrol (AI\Functions\Civilians\fn_CivBreakPatrol.sqf)
+      File: LR_fnc_CivilianGarrison (AI\Functions\Civilians\fn_CivilianGarrison.sqf)
+      File: LR_fnc_CivilianPatrol (AI\Functions\Civilians\fn_CivilianPatrol.sqf)
       File: derp_fnc_ZenOccupy  (AI\Functions\fn_ZenOccupy.sqf)
       }  # Group: AI
 
