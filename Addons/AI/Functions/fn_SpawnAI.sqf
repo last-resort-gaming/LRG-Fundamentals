@@ -188,7 +188,7 @@ if !(_infList isEqualTo []) then {
         _units append (units _g);
     };
 } else {
-    if if (_AIReporting && { _infMax >0 }) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Intantry Teams to select from. Step skipped.",_FactionName]};
+    if (_AIReporting && { _infMax >0 }) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Intantry Teams to select from. Step skipped.",_FactionName]};
     };
 
 ///////////////////////////////////////////////////////////
@@ -378,7 +378,7 @@ if !(_vehHeavyList isEqualTo []) then {
     };
 } else {
 
-     if (_AIReporting && { _VehHeavyMax >0 }) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Heavy Vehicles to select from. Step skipped.",_FactionName]};
+    if (_AIReporting && { _VehHeavyMax >0 }) exitwith {systemchat format ["LRG Fundamentals: INFO: %1 no Heavy Vehicles to select from. Step skipped.",_FactionName]};
     };
 
 
