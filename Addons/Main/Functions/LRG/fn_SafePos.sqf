@@ -33,7 +33,7 @@ params [
 	["_whitelist", [[0,0], 100]],
 	["_blacklist", ["water"]],
 	["_code", {true}],
-	["_timeout", 10]
+	["_timeout", 25]
 ];
 
 _pos = [0,0];
@@ -47,7 +47,7 @@ if (_pos isEqualTo [0, 0]) then {
 };
 
 if (_pos isEqualTo [0,0]) then {
-	"Could not find a valid position!" remoteExec ["systemChat", 0];
+	systemChat "Could not find a valid position!";
 };
 
 _pos;

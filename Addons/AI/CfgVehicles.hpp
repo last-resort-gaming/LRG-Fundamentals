@@ -25,4 +25,5 @@ class CfgVehicles
 	#include "AISpawnsEastModule.hpp"
 	#include "AISpawnsIndependentModule.hpp"
 	#include "AISpawnsWestModule.hpp"
+	#include "CivilianSpawnsModule.hpp"
 };
