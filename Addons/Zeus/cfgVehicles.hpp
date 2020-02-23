@@ -3,6 +3,7 @@ class CfgVehicles {
     class ModuleEmpty_F;
 
     #include "AISpawnsZeusModules.hpp"
+    #include "CivilianSpawnsZeusModule.hpp"
 
     class ModuleCurator_F: Module_F {
 		class Attributes

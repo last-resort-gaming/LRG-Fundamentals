@@ -10,7 +10,8 @@ class CfgPatches
 		units[] = {
 			"LRG_Module_AISpawnsEastZeus",
 			"LRG_Module_AISpawnsIndepZeus",
-			"LRG_Module_AISpawnsWestZeus"
+			"LRG_Module_AISpawnsWestZeus",
+			"LRG_Module_CivilianSpawnsZeus"
 		};
 		requiredVersion = REQUIRED_VERSION;
 		requiredAddons[] = {

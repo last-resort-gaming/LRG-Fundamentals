@@ -12,6 +12,17 @@ class LRG_AI {
 		class SpawnAIZeusWrapper {};
 	};
 
+	class Civilian {
+
+		file = "z\LRG Fundamentals\addons\AI\Functions\Civilians";
+		class CivBreakPatrol {};
+		class CivilianGarrison {};
+		class CivilianPatrol {};
+		class SpawnCivilians {};
+		class moduleCivilianSpawns {};
+		class SpawnCivZeusWrapper {};
+	};
+
 	class Factions {
 
 		file = "z\LRG Fundamentals\addons\AI\Functions\Factions";
@@ -44,7 +55,7 @@ class LRG_AI {
 		class CFP_I_SDRebelsrf {};
 		class CFP_I_SSArmy {};
 		class CFP_I_TUAREG {};
-		class CFP_I_WestUltra {};		
+		class CFP_I_WestUltra {};
 		class CFP_O_ABUSAYYAF {};
 		class CFP_O_ALQAEDA {};
 		class CFP_O_ALSHABAAB {};
@@ -65,7 +76,8 @@ class LRG_AI {
 		class CFP_O_SOREBEL {};
 		class CFP_O_SSREBELS {};
 		class CFP_O_SYARMY {};
-		class CFP_O_TBAN {};		
+		class CFP_O_TBAN {};
+		class CIV_Default {};
 		class CUP_B_CZ {};
 		class CUP_B_GB {};
 		class CUP_B_GER {};
