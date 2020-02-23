@@ -1,8 +1,8 @@
 class LRG_ModuleCivilianSpawns: Module_F
 {
 	scope = 2;
-	displayName = "Civilian Spawn";
-	icon = "\z\LRG Fundamentals\addons\media\images\LRG Logo.paa";
+	displayName = "AI Spawn - Civilian";
+	icon = "\z\LRG Fundamentals\addons\media\images\Icons\AI CIV.paa";
 	category = "LRG_Modules";
 	function = "LR_fnc_moduleCivilianSpawns";
 	functionPriority = 2;

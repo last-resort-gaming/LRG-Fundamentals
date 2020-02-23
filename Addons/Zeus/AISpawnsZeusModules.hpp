@@ -2,7 +2,7 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 	{
 	    scopeCurator = 1;
 	    _generalMacro = "LRG_Module_AISpawnsEastZeus";
-	    displayName = "Spawn AI (East)";
+	    displayName = "AI Spawn - East";
 	    function = "LR_fnc_moduleAISpawnsEastZeus";
 
 		mapSize = 1;
@@ -29,7 +29,7 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 	{
 	    scopeCurator = 1;
 	    _generalMacro = "LRG_Module_AISpawnsIndepZeus";
-	    displayName = "Spawn AI (Independent)";
+	    displayName = "AI Spawn - Independent";
 	    function = "LR_fnc_moduleAISpawnsIndepZeus";
 
 		mapSize = 1;
@@ -56,7 +56,7 @@ class LRG_Module_AISpawnsEastZeus : Module_F
 	{
 	    scopeCurator = 1;
 	    _generalMacro = "LRG_Module_AISpawnsWestZeus";
-	    displayName = "Spawn AI (West)";
+	    displayName = "AI Spawn - West";
 	    function = "LR_fnc_moduleAISpawnsWestZeus";
 
 		mapSize = 1;
