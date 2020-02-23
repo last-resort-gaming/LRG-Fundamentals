@@ -39,9 +39,9 @@ class LRG_ModuleCivilianSpawns: Module_F
 				class values
 				{
 					class CIVILIAN		{name = "Civilian";								value = "civilian";};
-					class WEST  		{name = "Blufor";								value = "west";};
+					/*class WEST  		{name = "Blufor";								value = "west";};
 					class EAST  		{name = "Opfor";								value = "east";};
-					class INDEPENDENT  	{name = "Independent";							value = "independent";};
+					class INDEPENDENT  	{name = "Independent";							value = "independent";};*/ // TODO: make this work
 				};
 			};
 		class Radius: Edit

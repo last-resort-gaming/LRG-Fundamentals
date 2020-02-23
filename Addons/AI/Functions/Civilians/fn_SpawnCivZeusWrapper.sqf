@@ -37,7 +37,7 @@ private _dialogResult = [
 	[
 		["Objective Name", "", "Objective Alpha"],
 		["Faction", _availableFactions],
-		["Side", ["Civilian", "Blufor", "Opfor", "Independent"], "Civilian"],
+		["Side", ["Civilian"/*, "Blufor", "Opfor", "Independent"*/], "Civilian"], // TODO: fix this someday
 		["Spawn Radius", "", "500"],
 		["Min. Garrisoned Units", "", "0"],
 		["Max. Garrisoned Units", "", "0"],
