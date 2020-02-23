@@ -184,6 +184,7 @@ if !((_motPool isEqualTo []) || (_pedPool isEqualTo [])) then {
 
 		private _g = createGroup [_side, true];
 		private _u = _g createUnit [selectRandom _pedPool, _rpos, [], 0, "CAN_COLLIDE"];
+		[_u] joinSilent _g;
 
         _g setGroupIdGlobal [format["%1_vehPatrol%2", _grpPrefix, _x]];
 
@@ -215,8 +216,11 @@ if !(_motPool isEqualTo []) then {
 
 		// Obtain direction stuff, bit of a pain...
 		if ((typeName _rpos) isEqualTo "OBJECT") then {
-			_adjRoad = (roadsConnectedTo _rpos) select 0;
-			_dir = [_rpos, _adjRoad] call BIS_fnc_dirTo;
+			private _connectedRoads = roadsConnectedTo _rpos;
+			if ((count _connectedRoads) > 0) then {
+				_adjRoad = _connectedRoads select 0;
+				_dir = [_rpos, _adjRoad] call BIS_fnc_dirTo;
+			};
 		};
 
 		private _v = createVehicle [(selectRandom _motPool), _rpos];
