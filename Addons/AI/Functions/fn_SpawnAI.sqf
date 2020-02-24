@@ -23,6 +23,7 @@ Arguments:
     _vehlight - Light Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehheavy - Heavy/Armoured Vehicle Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
     _vehran - Random Vehicles Parameters <ARRAY OF [Min Amount of Groups, Random Upper Bound of Groups]>
+    _patrolMethod - Method to use for plotting the patrol paths <STRING, one of ["RANDOM", "ROADS"], default: "RANDOM">
 
 Example:
 	(begin example)
@@ -47,13 +48,25 @@ Example:
 	        [4, 5],
 	        [2, 3],
 	        [2, 3],
-	        [5, 6]
+	        [5, 6],
+            "RANDOM"
         ] call LR_fnc_SpawnAI;
 	(end)
 
 Author:
     MitchJC
 */
+
+// SLACK provides us with some additional spawning positions later on, just to be safe...
+#define SLACK 2
+
+// MAX_SEARCH_ITS provides an upper bound for radius extensions when polling road positions,
+// so we don't have to search the entire map
+#define MAX_SEARCH_ITS 20
+
+// If we don't find enough road positions in the radius, extend radius step-wise by this amount
+#define EXT_RADIUS 100
+
 if (!isserver) exitwith {};
 
 params [
@@ -68,7 +81,8 @@ params [
 	["_vehmrap", [0,0]],
 	["_vehlight", [0,0]],
 	["_vehheavy", [0,0]],
-	["_vehrand", [0,0]]
+	["_vehrand", [0,0]],
+    ["_patrolMethod", "RANDOM"]
 ];
 
 _typeNameCenter = typeName _center;
@@ -91,6 +105,34 @@ _vehmrap params ["_vehmrapMin", ["_vehmrapMax",0], ["_vehmrapSkill", "LRG Defaul
 _vehlight params ["_vehlightMin", ["_vehlightMax",0], ["_vehlightSkill", "LRG Default"]];
 _vehheavy params ["_vehheavyMin", ["_vehheavyMax",0], ["_vehheavySkill", "LRG Default"]];
 _vehrand params ["_vehrandMin", ["_vehrandMax",0], ["_vehrandSkill", "LRG Default"]];
+
+_patrolMethod = toUpper _patrolMethod;
+
+private ["_fnc_patrol_EI", "_fnc_patrol_EI_spec", "_fnc_patrol_veh", "_fnc_pos_EI", "_fnc_pos_veh"];
+
+switch (_patrolMethod) do {
+    case "ROAD": {
+        _fnc_patrol_EI = compile "[(_this select 0), (_this select 3)] call LR_fnc_RoadPatrol;";
+        _fnc_patrol_EI_spec = compile "[(_this select 0), (_this select 3)] call LR_fnc_RoadPatrol;";
+        _fnc_patrol_veh = compile "[(_this select 0), (_this select 3)] call LR_fnc_RoadPatrol;";
+        _fnc_pos_EI = compile "selectRandom (_this select 2)";
+        _fnc_pos_veh = compile "selectRandom (_this select 2)";
+    };
+    case "RANDOM": {
+        _fnc_patrol_EI = compile "[(_this select 0), (_this select 1), (_this select 2)/1.5, 3 + round (random 2), [""SAD"", ""MOVE""] select (random 1 > 0.33), [""AWARE"", ""SAFE""] select (random 1 > 0.5), [""red"", ""white""] select (random 1 > 0.2), [""limited"", ""normal""] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;";
+        _fnc_patrol_EI_spec = compile "[(_this select 0), (_this select 1), (_this select 2)/1.5, 3 + round (random 2), ""SAD"", [""AWARE"", ""SAFE""] select (random 1 > 0.5), [""red"", ""white""] select (random 1 > 0.2), [""limited"", ""normal""] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;";
+        _fnc_patrol_veh = compile "[(_this select 0), (_this select 1), (_this select 2) / 2, 3 + round (random 2), ""MOVE"", [""AWARE"", ""SAFE""] select (random 1 > 0.5), [""red"", ""white""] select (random 1 > 0.2), [""limited"", ""normal""] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;";
+        _fnc_pos_EI = compile "[[[(_this select 0), (_this select 1)],[]],[""water""]] call LR_fnc_SafePos;";
+        _fnc_pos_veh = compile "[[[(_this select 0), (_this select 1)], []], [""water""], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;";
+    };
+    default {
+        _fnc_patrol_EI = compile "systemChat ""Error: Unknown patrol method supplied to LR_fnc_SpawnAI!"";";
+        _fnc_patrol_EI_spec = compile "systemChat ""Error: Unknown patrol method supplied to LR_fnc_SpawnAI!"";";
+        _fnc_patrol_veh = compile "systemChat ""Error: Unknown patrol method supplied to LR_fnc_SpawnAI!"";";
+        _fnc_pos_EI = compile "systemChat ""Error: Unknown patrol method supplied to LR_fnc_SpawnAI!"";";
+        _fnc_pos_veh = compile "systemChat ""Error: Unknown patrol method supplied to LR_fnc_SpawnAI!"";";
+    };
+};
 
 ///////////////////////////////////////////////////////////
 // UNIT TYPES
@@ -132,6 +174,45 @@ _FactionArrays = call _GetFactionArrays;
 _FactionArrays params ["_InfantryType", "_infaaList", "_infatList", "_sniperList", "_vehAAList", "_vehMrapList", "_vehLightList", "_vehHeavyList"];
 
 private ["_x","_g","_pos","_flatPos","_rpos","_v"];
+
+// If we want to plot patrol routes along roads, populate the waypoints
+private _waypoints = [];
+
+if (_patrolMethod isEqualTo "ROAD") then {
+
+    // Obtain as many positions as we need
+    _minPositions = _GarrisonedGroupsMax + _infMax + _infaaMax + _infatMax + _sniperMax + _vehaaMax + _vehmrapMax + _vehlightMax + _vehheavyMax + _vehrandMax + SLACK;
+
+    // Get list of roads around the center
+    _roadList = [];
+    _roadList = _center nearRoads _radius;
+
+    // Now increase the search radius until we have found enough positions
+    if (count _roadList < _minPositions) then {
+    	_i = 0;
+    	_radExtension = 0;
+    	// If we exceed our max in iterations, abort and use random positions instead...
+    	while {(count _roadList < _minPositions) && (_i < MAX_SEARCH_ITS)} do {
+    		_radExtension = _radExtension + EXT_RADIUS;
+    		_roadList = _center nearRoads (_radius + _radExtension);
+    		_i = _i + 1;
+    	};
+    };
+
+    // If we still don't have enough positions, fill the remaining spots up with random positions
+    if (count _roadList < _minPositions) then {
+    	while {count _roadList < _minPositions} do {
+    		_rpos = [[[_center, _radius],[]],["water"]] call LR_fnc_SafePos;
+    		_roadList append [_rpos];
+    	};
+    };
+
+    // populate _waypoints with the positions of these roads
+    _waypoints resize (count _roadList);
+    for "_n" from 0 to (count _roadList) do {
+        _waypoints set [_n, getPos (_roadList select _n)];
+    };
+};
 
 // Simple protection for broken requests
 if (_center isEqualTo [0,0]) exitWith {};
@@ -182,10 +263,10 @@ if !(_infList isEqualTo []) then {
     if (_InfDif <0) then {_InfDif = 0};
 
     for "_x" from 1 to (_infMin + floor(random _InfDif)) do {
-        _rpos = [[[_center, _radius],[]],["water"]] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_EI;
         _g = [_rpos, _side, _confBase >> (selectRandom _infList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_inf%2", _grpPrefix, _x]];
-        [_g, _center, _radius/1.5, 3 + round (random 2), ["SAD", "MOVE"] select (random 1 > 0.33), ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+        [_g, _center, _radius, _waypoints] call _fnc_patrol_EI;
         [_g, _infSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
@@ -202,10 +283,10 @@ if !(_infaaList isEqualTo []) then {
     if (_InfaaDif <0) then {_InfaaDif = 0};
 
     for "_x" from 1 to (_InfaaMin + floor(random _InfaaDif)) do {
-        _rpos = [[[_center, _radius],[]],["water"]] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_EI;
         _g = [_rpos, _side, _confBase >> (selectRandom _infaaList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_infaa%2", _grpPrefix, _x]];
-        [_g, _center, _radius/1.5, 3 + round (random 2), "SAD", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+        [_g, _center, _radius, _waypoints] call _fnc_patrol_EI_spec;
         [_g, _infaaSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
@@ -222,10 +303,10 @@ if !(_infatList isEqualTo []) then {
     if (_InfatDif <0) then {_InfatDif = 0};
 
     for "_x" from 1 to (_InfatMin + floor(random _InfatDif)) do {
-        _rpos = [[[_center, _radius],[]],["water"]] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_EI;
         _g = [_rpos, _side, _confBase >> (selectRandom _infatList)] call BIS_fnc_spawnGroup;
         _g setGroupIdGlobal [format["%1_infat%2", _grpPrefix, _x]];
-        [_g, _center, _radius/1.5, 3 + round (random 2), "SAD", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+        [_g, _center, _radius, _waypoints] call _fnc_patrol_EI_spec;
         [_g, _infatSkill] call LR_fnc_SetUnitSkill;
         _units append (units _g);
     };
@@ -266,14 +347,14 @@ if !(_vehAAList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_VehAA%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_veh;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehAAList) createVehicle _rpos ;
             _v lock 2;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+            [_g, _center, _radius, _waypoints] call _fnc_patrol_veh;
             [_g, _vehaaSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -298,14 +379,14 @@ if !(_vehmrapList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehmrap%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_veh;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehmrapList) createVehicle _rpos ;
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+            [_g, _center, _radius, _waypoints] call _fnc_patrol_veh;
             [_g, _vehmrapSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -331,14 +412,14 @@ if !(_vehLightList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehLight%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_veh;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehLightList) createVehicle _rpos ;
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+            [_g, _center, _radius, _waypoints] call _fnc_patrol_veh;
             [_g, _vehLightSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -363,14 +444,14 @@ if !(_vehHeavyList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehHeavy%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_veh;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehHeavyList) createVehicle _rpos ;
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+            [_g, _center, _radius, _waypoints] call _fnc_patrol_veh;
             [_g, _vehHeavySkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
@@ -401,14 +482,14 @@ if !(_vehRandList isEqualTo []) then {
         _g = createGroup _side;
         _g setGroupIdGlobal [format ["%1_vehrand%2", _grpPrefix, _x]];
 
-        _rpos = [[[_center, _radius], []], ["water"], { !(_this isFlatEmpty [2,-1,0.5,1,0,false,objNull] isEqualTo []) }] call LR_fnc_SafePos;
+        _rpos = [_center, _radius, _waypoints] call _fnc_pos_veh;
 
         if !(_rpos isEqualTo [0,0]) then {
             _v = (selectRandom _vehRandList) createVehicle _rpos ;
             _v lock 3;
 
             [_v, _g] call BIS_fnc_spawnCrew;
-            [_g, _center, _radius / 2, 3 + round (random 2), "MOVE", ["AWARE", "SAFE"] select (random 1 > 0.5), ["red", "white"] select (random 1 > 0.2), ["limited", "normal"] select (random 1 > 0.5)] call CBA_fnc_taskPatrol;
+            [_g, _center, _radius, _waypoints] call _fnc_patrol_veh;
             [_g, _vehrandSkill] call LR_fnc_SetUnitSkill;
             if (random 1 >= 0.5) then { _v allowCrewInImmobile true; };
 
