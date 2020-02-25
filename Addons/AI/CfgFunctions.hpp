@@ -10,6 +10,7 @@ class LRG_AI {
 		class SetUnitSkill {};
 		class SpawnAI {};
 		class SpawnAIZeusWrapper {};
+		class RoadPatrol {};
 	};
 
 	class Civilian {

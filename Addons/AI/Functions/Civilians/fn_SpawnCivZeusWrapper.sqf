@@ -33,7 +33,7 @@ _availableFactions = CIV_FACTIONS;
 _lookup = CIV_FACTIONS_LOOKUP;
 
 private _dialogResult = [
-	"Spawn Civilians",
+	"Spawn AI - Civilian",
 	[
 		["Objective Name", "", "Objective Alpha"],
 		["Faction", _availableFactions],

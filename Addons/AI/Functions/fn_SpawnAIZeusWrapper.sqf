@@ -55,10 +55,11 @@ switch (toLower _side) do {
 };
 
 private _dialogResult = [
-	format ["Spawn AI (%1)", _side],
+	format ["Spawn AI - %1", _side],
 	[
 		["Objective Name", "", "Objective Alpha"],
 		["Faction", _availableFactions],
+		["Patrol Method", ["Random", "Along Roads"], "Random"],
 		["Spawn Radius", "", "500"],
 		["Min. Garrisoned Groups", "", "0"],
 		["Max. Garrisoned Groups", "", "0"],
@@ -97,8 +98,12 @@ _procDiagResults = [];
 		_value = _lookup select _x;
 	};
 
+	if (_forEachIndex == 2) then {
+		_value = ["RANDOM", "ROAD"] select _x;
+	};
+
 	// Process number inputs and make sure they're integers
-	if (_forEachIndex > 1) then {
+	if (_forEachIndex > 2) then {
 		_value = round (parseNumber _x);
 	};
 
@@ -108,6 +113,7 @@ _procDiagResults = [];
 _procDiagResults params [
 	"_grpPrefix",
 	"_faction",
+	"_patrolMethod",
 	"_radius",
 	"_garrisonsMin", "_garrisonsMax",
 	"_infMin", "_infMax",
@@ -133,5 +139,6 @@ _procDiagResults params [
 	[_vehmrapMin, _vehmrapMax],
 	[_vehlightMin, _vehlightMax],
 	[_vehheavyMin, _vehheavyMax],
-	[_vehrandMin, _vehrandMax]
+	[_vehrandMin, _vehrandMax],
+	_patrolMethod
 ] remoteExec ["LR_fnc_SpawnAI", 2];

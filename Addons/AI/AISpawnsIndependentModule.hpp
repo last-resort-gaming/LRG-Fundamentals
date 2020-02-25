@@ -64,6 +64,18 @@ class LRG_ModuleAISpawnsIndependent: Module_F
 
 				};				
 			};
+		class PatrolMethod: Combo
+  			{
+				property = "LR_AI_PatrolMethod";
+				displayName = "Patrol Method";
+				tooltip = "Method to use for plotting patrol paths";
+				defaultValue = """RANDOM""";
+				class values
+				{
+					class RANDOM 				{name = "Random";		value = "RANDOM";};
+					class ROAD	 				{name = "Along Roads";	value = "ROAD";};
+				};
+			};
 		class Radius: Edit
   			{
 				property = "LR_AI_Radius";

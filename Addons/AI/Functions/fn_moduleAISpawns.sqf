@@ -26,7 +26,7 @@ _VehHeavyMin  = _logic getVariable ["VehHeavyMin", 0];
 _VehHeavyMax = _logic getVariable ["VehHeavyMax", 0];
 _VehRandomMin = _logic getVariable ["VehRandomMin", 0];
 _VehRandomMax = _logic getVariable ["VehRandomMax", 0];
-
+_PatrolMethod = _logic getVariable ["PatrolMethod", "RANDOM"];
 
 _SpawnLocation = (getPos _logic);
 
@@ -42,5 +42,6 @@ _SpawnLocation = (getPos _logic);
     [_VehMRAPMin, _VehMRAPMax],
     [_VehLightMin, _VehLightMax],
     [_VehHeavyMin, _VehHeavyMax],
-    [_VehRandomMin, _VehRandomMax]
+    [_VehRandomMin, _VehRandomMax],
+    _PatrolMethod
 ] call LR_fnc_SpawnAI;
