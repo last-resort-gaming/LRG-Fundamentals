@@ -30,7 +30,7 @@ if (_Type isEqualto -1) exitwith {};
 
 call {
 	if (_Type isEqualto 0) exitwith {_Type = "Limited"};
-	if (_Type isEqualto 1) exitwith {_Type = "Standard"};	
+	if (_Type isEqualto 1) exitwith {_Type = "Standard"};
 	if (_Type isEqualto 2) exitwith {_Type = "MERT"};
 };
 
@@ -51,7 +51,7 @@ call {
 				["FirstAidKit", 20]
 			];
 		};
-	};	
+	};
 	if (_Type isEqualTo "Standard") exitwith {
 		if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 			_ContainerItems = [
@@ -69,7 +69,7 @@ call {
 				["Medikit", 2]
 			];
 		};
-	};	
+	};
 	if (_Type isEqualTo "MERT") exitwith {
 		if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 			_ContainerItems = [

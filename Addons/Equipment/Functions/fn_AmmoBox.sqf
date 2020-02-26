@@ -28,7 +28,7 @@ params [
 
 private _Type = _container getVariable ["LRG_LimitedAmmoSelect", -1];
 
-if (_Type isEqualto -1) exitwith {};
+if ((_Type isEqualto -1) || (_Type isEqualTo "None")) exitwith {};
 
 call {
 

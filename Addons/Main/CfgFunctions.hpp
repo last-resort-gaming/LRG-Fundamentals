@@ -62,5 +62,6 @@ class YAINA {
 		class showFPS {};
 		class log {};
 		class hintC {};
+		class hideTerrainObjects {};
     };
 };
