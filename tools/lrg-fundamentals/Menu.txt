@@ -92,7 +92,8 @@ Group: Functions  {
 
       File: LR_fnc_createPortableFOB  (Explosives\Functions\fn_createPortableFOB.sqf)
       File: LR_fnc_deployFOB  (Explosives\Functions\fn_deployFOB.sqf)
-      File: LR_fnc_FOBSpaceClear  (Explosives\Functions\fn_FOBSpaceClear.sqf)
+      File: LR_fnc_checkFOBDeploy  (Explosives\Functions\fn_checkFOBDeploy.sqf)
+      File: LR_fnc_checkFOBPackUp  (Explosives\Functions\fn_checkFOBPackUp.sqf)
       File: LR_fnc_packUpFOB  (Explosives\Functions\fn_packUpFOB.sqf)
       }  # Group: FOBs
 
@@ -115,6 +116,7 @@ Group: Functions  {
       File: YAINA_fnc_hideTerrainObjects (Main\Functions\YAINA\General\fn_hideTerrainObjects.sqf)
       File: LR_fnc_DynamicSim  (Main\Functions\LRG\fn_DynamicSim.sqf)
       File: LR_fnc_FindReplaceString  (Main\Functions\LRG\fn_FindReplaceString.sqf)
+      File: LR_fnc_FindInArrayMap  (Main\Functions\LRG\fn_FindInArrayMap.sqf)
       File: LR_fnc_SafePos  (Main\Functions\LRG\fn_SafePos.sqf)
       }  # Group: Main
 
@@ -125,6 +127,11 @@ Group: Functions  {
       File: LR_fnc_Sound3DFromPos  (Media\Functions\fn_Sound3DFromPos.sqf)
       File: LR_fnc_Sound3DOnObject  (Media\Functions\fn_Sound3DOnObject.sqf)
       }  # Group: Media
+
+   Group: Medical  {
+
+      File: LR_fnc_setMedicalFacility  (Medical\Functions\fn_setMedicalFacility.sqf)
+      }  # Group: Medical
 
    Group: Player  {
 

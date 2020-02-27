@@ -19,6 +19,7 @@ class LRG_Main {
 		class TFARSettings {};
 		class VanillaFatigue {};
 		class FindReplaceString {};
+		class FindInArrayMap {};
 		class voyagerCompass {};
 		class clientRepackMagazines {};
 		class SafePos {};
