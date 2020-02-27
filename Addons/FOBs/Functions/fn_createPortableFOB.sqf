@@ -7,6 +7,7 @@ Description:
 Arguments:
 	_object - Object to turn into a portable FOB
 	_type - Type of the FOB to create
+	_size - The size of the FOB
 
 Return Values:
 	Nothing.
@@ -23,57 +24,51 @@ Author:
 
 if (!isServer) exitWith {};
 params [
-	["_object", objNull, [objNull]],
-	["_type", "ANY"]
+	["_object"],
+	["_type"],
+	["_size"]
 ];
 
-private _size = -1;
 private _name = "";
 
 switch (_type) do {
-	case "ANY": {
-		_size = floor (random 4);
-		_type = selectRandom ([LR_FOBS_CAMPS, LR_FOBS_SMALL, LR_FOBS_MEDIUM, LR_FOBS_LARGE] select _size);
-		_name = _type select 1;
-		_type = _type select 0;
-	};
 	case "ANY_CAMP": {
-		_size = 0;
 		_type = selectRandom LR_FOBS_CAMPS;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
 	case "ANY_SMALL": {
-		_size = 1;
 		_type = selectRandom LR_FOBS_SMALL;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
 	case "ANY_MEDIUM": {
-		_size = 2;
 		_type = selectRandom LR_FOBS_MEDIUM;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
 	case "ANY_LARGE": {
-		_size = 3;
 		_type = selectRandom LR_FOBS_LARGE;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
-	default {
-		_size = _type call {
-			if (isNil {_name = [_this, LR_FOBS_CAMPS] call LR_fnc_findInArrayMap;}) exitWith {0};
-			if (isNil {_name = [_this, LR_FOBS_SMALL] call LR_fnc_findInArrayMap;}) exitWith {1};
-			if (isNil {_name = [_this, LR_FOBS_MEDIUM] call LR_fnc_findInArrayMap;}) exitWith {2};
-			if (isNil {_name = [_this, LR_FOBS_LARGE] call LR_fnc_findInArrayMap;}) exitWith {3};
-			-1
-		};
-	};
+	default {};
 };
 
-if (_size < 0) exitWith {
-	systemChat format ["Invalid FOB type: %1", _type];
+switch (_size) do {
+	case 0: {
+		_name = [_this, LR_FOBS_CAMPS] call LR_fnc_findInArrayMap;
+	};
+	case 1: {
+		_name = [_this, LR_FOBS_SMALL] call LR_fnc_findInArrayMap;
+	};
+	case 2: {
+		_name = [_this, LR_FOBS_MEDIUM] call LR_fnc_findInArrayMap;
+	};
+	case 3: {
+		_name = [_this, LR_FOBS_LARGE] call LR_fnc_findInArrayMap;
+	};
+	default {};
 };
 
 // addHoldAction stuff

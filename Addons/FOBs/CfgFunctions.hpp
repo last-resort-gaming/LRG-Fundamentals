@@ -5,7 +5,10 @@ class LRG_FOBs {
 
 		file = "z\LRG Fundamentals\Addons\FOBs\Functions";
 
-		class modulePortableFOB {};
+		class modulePortableFOB_Camp {};
+		class modulePortableFOB_Small {};
+		class modulePortableFOB_Medium {};
+		class modulePortableFOB_Large {};
 		class createPortableFOB {};
 		class deployFOB {};
 		class packUpFOB {};

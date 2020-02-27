@@ -13,5 +13,5 @@ private _objects = synchronizedObjects _logic;
 private _type = _logic getVariable ["Type", "ANY"];
 
 {
-	[_x, _type] call LR_fnc_createPortableFOB;
+	[_x, _type, 1] call LR_fnc_createPortableFOB;
 } forEach _objects;
