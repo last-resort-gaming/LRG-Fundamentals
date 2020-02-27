@@ -8,7 +8,7 @@ Using orientation of objects: yes
 */
 
 [
-	["CamoNet_BLUFOR_F",[-0.043457,-1.03564,0],180,1,0,[0,0],"","",true,false], 
+	["CamoNet_BLUFOR_F",[-0.043457,-1.03564,0],180,1,0,[0,0],"","_this allowDamage false;",true,false], 
 	["Land_BagFence_Short_F",[1.80371,2.04053,-0.000999928],90,1,0,[0,-0],"","",true,false], 
 	["Land_BagFence_Short_F",[-1.69629,2.16553,-0.000999928],90,1,0,[0,-0],"","",true,false], 
 	["Land_BagFence_Round_F",[-1.15283,4.27881,-0.00130129],135,1,0,[0,-0],"","",true,false], 

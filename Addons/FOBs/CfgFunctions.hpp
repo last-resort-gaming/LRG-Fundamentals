@@ -28,7 +28,25 @@ class LRG_FOBs {
 	class Compositions_Small {
 		file = "z\LRG Fundamentals\Addons\FOBs\Functions\Compositions\Small";
 
-		class Camp_1 {};
+		class Small_AA_Pos {};
+		class Small_AT_Pos {};
+		class Small_Bunker_1 {};
+		class Small_Bunker_2 {};
+		class Small_Bunker_3 {};
+		class Small_Bunker_4 {};
+		class Small_Bunker_5 {};
+		class Small_Bunker_Net_1 {};
+		class Small_Bunker_Net_2 {};
+		class Small_Bunker_Net_3 {};
+		class Small_Bunker_Urban_1 {};
+		class Small_Bunker_Wire_1 {};
+		class Small_Bunker_Wire_2 {};
+		class Small_Bunker_Wire_3 {};
+		class Small_LZ_1 {};
+		class Small_LZ_2 {};
+		class Small_LZ_3 {};
+		class Small_RoadCheckpoint {};
+		class Small_Tank_Pos {};
 	};
 
 	class Compositions_Medium {

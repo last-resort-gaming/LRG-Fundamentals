@@ -17,8 +17,8 @@ Examples:
 Author:
 	Mokka
 */
-#define CAMP_FOBS ["Camp_1", "Camp_2", "Camp_3", "Camp_CamoNet_1", "Camp_CamoNet_2", "Camp_CamoNet_3", "Camp_CamoNet_4"];
-#define SMALL_FOBS ["Bunker_Test"]
+#define CAMP_FOBS ["Camp_1", "Camp_2", "Camp_3", "Camp_CamoNet_1", "Camp_CamoNet_2", "Camp_CamoNet_3", "Camp_CamoNet_4"]
+#define SMALL_FOBS ["Small_AA_Pos", "Small_AT_Pos", "Small_Bunker_1", "Small_Bunker_2", "Small_Bunker_3", "Small_Bunker_4", "Small_Bunker_5", "Small_Bunker_Net_1", "Small_Bunker_Net_2", "Small_Bunker_Net_3", "Small_Bunker_Urban_1", "Small_Bunker_Wire_1", "Small_Bunker_Wire_2", "Small_Bunker_Wire_3", "Small_LZ_1", "Small_LZ_2", "Small_LZ_3", "Small_RoadCheckpoint", "Small_Tank_Pos"]
 #define MEDIUM_FOBS ["Bunker_Test"]
 #define LARGE_FOBS ["Bunker_Test"]
 
@@ -29,7 +29,6 @@ params [
 	["_type", "ANY"]
 ];
 
-_type = toUpper _type;
 private _size = -1;
 
 switch (_type) do {

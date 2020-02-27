@@ -33,23 +33,9 @@ if !(_object getVariable ["LR_PortableFOB_Deployed", false]) exitWith {
 	deleteVehicle _x;
 } forEach (_object getVariable ["LR_PortableFOB_Objects", []]);
 
-// set variables
+// reset variables
 _object setVariable ["LR_PortableFOB_Deployed", false, true];
 _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
-
-// we may not actually need to do that, instead we just disable packing up the FOB
-// if we are too far away.
-/*
-// re-enable the driver seat on vehicles
-if (_object isKindOf "AllVehicles") then {
-	_object lockDriver false;
-};
-
-
-// re-enable dragging and carrying
-[_object, true] call ACE_dragging_fnc_setCarryable;
-[_object, true] call ACE_dragging_fnc_setDraggable;
-*/
 
 // unhide terrain
 {
