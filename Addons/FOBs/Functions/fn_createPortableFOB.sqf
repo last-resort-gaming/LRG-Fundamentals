@@ -17,11 +17,9 @@ Examples:
 Author:
 	Mokka
 */
-#define CAMP_FOBS ["Camp_1", "Camp_2", "Camp_3", "Camp_CamoNet_1", "Camp_CamoNet_2", "Camp_CamoNet_3", "Camp_CamoNet_4"]
-#define SMALL_FOBS ["Small_AA_Pos", "Small_AT_Pos", "Small_Bunker_1", "Small_Bunker_2", "Small_Bunker_3", "Small_Bunker_4", "Small_Bunker_5", "Small_Bunker_Net_1", "Small_Bunker_Net_2", "Small_Bunker_Net_3", "Small_Bunker_Urban_1", "Small_Bunker_Wire_1", "Small_Bunker_Wire_2", "Small_Bunker_Wire_3", "Small_LZ_1", "Small_LZ_2", "Small_LZ_3", "Small_RoadCheckpoint", "Small_Tank_Pos"]
-#define MEDIUM_FOBS ["Bunker_Test"]
-#define LARGE_FOBS ["Bunker_Test"]
 
+
+#include "compositions.inc"
 
 if (!isServer) exitWith {};
 params [
@@ -30,34 +28,45 @@ params [
 ];
 
 private _size = -1;
+private _name = "";
 
 switch (_type) do {
 	case "ANY": {
 		_size = floor (random 4);
-		_type = selectRandom ([CAMP_FOBS, SMALL_FOBS, MEDIUM_FOBS, LARGE_FOBS] select _size);
+		_type = selectRandom ([LR_FOBS_CAMPS, LR_FOBS_SMALL, LR_FOBS_MEDIUM, LR_FOBS_LARGE] select _size);
+		_name = _type select 1;
+		_type = _type select 0;
 	};
 	case "ANY_CAMP": {
 		_size = 0;
-		_type = selectRandom SMALL_FOBS;
+		_type = selectRandom LR_FOBS_CAMPS;
+		_name = _type select 1;
+		_type = _type select 0;
 	};
 	case "ANY_SMALL": {
 		_size = 1;
-		_type = selectRandom SMALL_FOBS;
+		_type = selectRandom LR_FOBS_SMALL;
+		_name = _type select 1;
+		_type = _type select 0;
 	};
 	case "ANY_MEDIUM": {
 		_size = 2;
-		_type = selectRandom MEDIUM_FOBS;
+		_type = selectRandom LR_FOBS_MEDIUM;
+		_name = _type select 1;
+		_type = _type select 0;
 	};
 	case "ANY_LARGE": {
 		_size = 3;
-		_type = selectRandom LARGE_FOBS;
+		_type = selectRandom LR_FOBS_LARGE;
+		_name = _type select 1;
+		_type = _type select 0;
 	};
 	default {
 		_size = _type call {
-			if (_this in CAMP_FOBS) exitWith {0};
-			if (_this in SMALL_FOBS) exitWith {1};
-			if (_this in MEDIUM_FOBS) exitWith {2};
-			if (_this in LARGE_FOBS) exitWith {3};
+			if (isNil {_name = [_this, LR_FOBS_CAMPS] call LR_fnc_findInArrayMap;}) exitWith {0};
+			if (isNil {_name = [_this, LR_FOBS_SMALL] call LR_fnc_findInArrayMap;}) exitWith {1};
+			if (isNil {_name = [_this, LR_FOBS_MEDIUM] call LR_fnc_findInArrayMap;}) exitWith {2};
+			if (isNil {_name = [_this, LR_FOBS_LARGE] call LR_fnc_findInArrayMap;}) exitWith {3};
 			-1
 		};
 	};
@@ -76,7 +85,7 @@ _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
 [
 	_object,
 	format ["DeployFOB_%1", _object],
-	"Deploy FOB",
+	format ["Deploy %1", _name],
 	"",
 	"[_target] call LR_fnc_checkFOBDeploy",
 	"true",
@@ -94,7 +103,7 @@ _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
 [
 	_object,
 	format ["PackUpFOB_%1", _object],
-	"Pack Up FOB",
+	format ["Pack Up %1", _name],
 	"",
 	"[_target] call LR_fnc_checkFOBPackUp",
 	"true",

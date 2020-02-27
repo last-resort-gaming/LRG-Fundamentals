@@ -52,12 +52,59 @@ class LRG_FOBs {
 	class Compositions_Medium {
 		file = "z\LRG Fundamentals\Addons\FOBs\Functions\Compositions\Medium";
 
-		class Camp_1 {};
+		class Medium_Bunker_1 {};
+		class Medium_Bunker_2 {};
+		class Medium_Bunker_Dual_1 {};
+		class Medium_Bunker_HBarrier_1 {};
+		class Medium_Bunker_HBarrier_2 {};
+		class Medium_Bunker_HBarrier_3 {};
+		class Medium_Bunker_HBarrier_4 {};
+		class Medium_Bunker_HBarrier_5 {};
+		class Medium_Bunker_Tower_1 {};
+		class Medium_Bunker_Tower_2 {};
+		class Medium_Checkpoint_1 {};
+		class Medium_Checkpoint_2 {};
+		class Medium_Checkpoint_3 {};
+		class Medium_CommsTower_1 {};
+		class Medium_CommsTower_2 {};
+		class Medium_FieldCommand_1 {};
+		class Medium_FieldHospital_1 {};
+		class Medium_FieldHospital_2 {};
+		class Medium_FieldHospital_3 {};
+		class Medium_FieldLZ_1 {};
+		class Medium_Net_1 {};
+		class Medium_Net_2 {};
+		class Medium_Net_3 {};
+		class Medium_Net_4 {};
+		class Medium_VehicleWorkshop_1 {};
 	};
 
 	class Compositions_Large {
 		file = "z\LRG Fundamentals\Addons\FOBs\Functions\Compositions\Large";
 
-		class Camp_1 {};
+		class Large_Bunker_1 {};
+		class Large_Bunker_2 {};
+		class Large_Bunker_3 {};
+		class Large_Bunker_4 {};
+		class Large_Bunker_Tower_1 {};
+		class Large_Bunker_Vehicle_1 {};
+		class Large_Checkpoint_1 {};
+		class Large_Checkpoint_2 {};
+		class Large_Checkpoint_3 {};
+		class Large_Checkpoint_Vehicle_1 {};
+		class Large_CommsPost_1 {};
+		class Large_FieldHospital_1 {};
+		class Large_FieldHospital_2 {};
+		class Large_FieldHospital_3 {};
+		class Large_FieldHQ_1 {};
+		class Large_FieldHQ_2 {};
+		class Large_FieldHQ_3 {};
+		class Large_FieldHQ_4 {};
+		class Large_FieldHQ_5 {};
+		class Large_FieldHQ_6 {};
+		class Large_FieldHQ_LZ_1 {};
+		class Large_FieldHQ_Tent_1 {};
+		class Large_FieldLZ_1 {};
+		class Large_ReconPost_1 {};
 	};
 };
