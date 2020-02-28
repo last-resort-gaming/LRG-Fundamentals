@@ -17,8 +17,8 @@ Author:
 	Mokka
 */
 
-#define CIV_FACTIONS ["Default Civilians (Altis)"]
-#define CIV_FACTIONS_LOOKUP ["CIV_Default"]
+#define CIV_FACTIONS ["Default Civilians (Altis)", "@CFP - Civilians (Afghanistan)", "@CFP - Civilians (African Christian)", "@CFP - Civilians (African Islamic)", "@CFP - Civilians (Asian)", "@CUP - Civilians (Chernarus)", "@CUP - Civilians (Middle Eastern)", "@CUP - Civilians (Russian)", "@CUP - Civilians (Takistan)"]
+#define CIV_FACTIONS_LOOKUP ["CIV_Default", "CFP_C_AFG", "CFP_C_AFRCHRISTIAN", "CFP_C_AFRISLAMIC", "CFP_C_ASIA", "CUP_C_C", "CUP_C_ME", "CUP_C_R", "CUP_C_TK"]
 
 params [["_pos", [0, 0, 0]]];
 
