@@ -24,6 +24,12 @@ class LRG_AI {
 		class SpawnCivZeusWrapper {};
 	};
 
+	class Civ_Factions {
+
+		file = "z\LRG Fundamentals\addons\AI\Functions\Civilians\Factions";
+		class CIV_Default {};
+	};
+
 	class Factions {
 
 		file = "z\LRG Fundamentals\addons\AI\Functions\Factions";
@@ -78,7 +84,6 @@ class LRG_AI {
 		class CFP_O_SSREBELS {};
 		class CFP_O_SYARMY {};
 		class CFP_O_TBAN {};
-		class CIV_Default {};
 		class CUP_B_CZ {};
 		class CUP_B_GB {};
 		class CUP_B_GER {};
