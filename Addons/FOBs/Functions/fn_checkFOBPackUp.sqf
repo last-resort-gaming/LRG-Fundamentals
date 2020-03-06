@@ -22,10 +22,6 @@ _size = _object getVariable ["LR_PortableFOB_Size", -1];
 _fobPos = _object getVariable ["LR_PortableFOB_Pos", [0,0,0]];
 _pos = getPos _object;
 
-if (_size < 0) exitWith {
-	systemChat "Invalid size supplied!";
-};
-
 _tooFar = ((_pos distance2D _fobPos) > (5 + _size * 5));
 _deployed = (_object getVariable ["LR_PortableFOB_Deployed", false]);
 
