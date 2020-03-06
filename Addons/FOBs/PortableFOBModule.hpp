@@ -17,10 +17,10 @@ class LRG_ModulePortableFOB_Camp: Module_F
 				property = "LR_FOBs_Type";
 				displayName = "FOB Type";
 				tooltip = "Type of Portable FOB to create.";
-				defaultValue = """ANY""";
+				defaultValue = """ANY_CAMP""";
 				class values
 				{
-					class ANY							{name = "Any (Camp)";							value = "ANY_CAMP";};
+					class ANY_CAMP						{name = "Any (Camp)";							value = "ANY_CAMP";};
 					// Camps
 					class Camp_1 						{name = "Camp #1";								value = "Camp_1";};
 					class Camp_2 						{name = "Camp #2";								value = "Camp_2";};
@@ -66,10 +66,10 @@ class LRG_ModulePortableFOB_Small: Module_F
 				property = "LR_FOBs_Type";
 				displayName = "FOB Type";
 				tooltip = "Type of Portable FOB to create.";
-				defaultValue = """ANY""";
+				defaultValue = """ANY_SMALL""";
 				class values
 				{
-					class ANY							{name = "Any (Small)";							value = "ANY_SMALL";};
+					class ANY_SMALL						{name = "Any (Small)";							value = "ANY_SMALL";};
 					// Small
 					class Small_AA_Pos 					{name = "Small AA Position";					value = "Small_AA_Pos";};
 					class Small_AT_Pos 					{name = "Small AT Position";					value = "Small_AT_Pos";};
@@ -127,10 +127,10 @@ class LRG_ModulePortableFOB_Medium: Module_F
 				property = "LR_FOBs_Type";
 				displayName = "FOB Type";
 				tooltip = "Type of Portable FOB to create.";
-				defaultValue = """ANY""";
+				defaultValue = """ANY_MEDIUM""";
 				class values
 				{
-					class ANY							{name = "Any Medium";							value = "ANY_Medium";};
+					class ANY_MEDIUM					{name = "Any Medium";							value = "ANY_Medium";};
 					// Medium
 					class Medium_Bunker_1	 			{name = "Medium Bunker #1";						value = "Medium_Bunker_1";};
 					class Medium_Bunker_2	 			{name = "Medium Bunker #2";						value = "Medium_Bunker_2";};
@@ -194,10 +194,10 @@ class LRG_ModulePortableFOB_Large: Module_F
 				property = "LR_FOBs_Type";
 				displayName = "FOB Type";
 				tooltip = "Type of Portable FOB to create.";
-				defaultValue = """ANY""";
+				defaultValue = """ANY_LARGE""";
 				class values
 				{
-					class ANY							{name = "Any Large";							value = "ANY_LARGE";};
+					class ANY_LARGE						{name = "Any Large";							value = "ANY_LARGE";};
 					//Large
 					class Large_Bunker_1 				{name = "Large Bunker #1";						value = "Large_Bunker_1";};
 					class Large_Bunker_2 				{name = "Large Bunker #2";						value = "Large_Bunker_2";};

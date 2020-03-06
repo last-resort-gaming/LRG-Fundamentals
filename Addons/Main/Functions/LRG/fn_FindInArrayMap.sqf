@@ -24,4 +24,4 @@ params ["_map", "_id"];
 	if ((_x select 0) isEqualTo _id) exitWith {(_x select 1)};
 } forEach _map;
 
-nil
+nil;

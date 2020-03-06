@@ -1,3 +1,4 @@
+#include "compositions.inc"
 /*
 Function: LR_fnc_createPortableFOB
 
@@ -19,14 +20,12 @@ Author:
 	Mokka
 */
 
-
-#include "compositions.inc"
-
 if (!isServer) exitWith {};
+
 params [
-	["_object"],
-	["_type"],
-	["_size"]
+	"_object",
+	"_type",
+	"_size"
 ];
 
 private _name = "";
@@ -57,16 +56,16 @@ switch (_type) do {
 
 switch (_size) do {
 	case 0: {
-		_name = [_this, LR_FOBS_CAMPS] call LR_fnc_findInArrayMap;
+		_name = [LR_FOBS_CAMPS, _type] call LR_fnc_findInArrayMap;
 	};
 	case 1: {
-		_name = [_this, LR_FOBS_SMALL] call LR_fnc_findInArrayMap;
+		_name = [LR_FOBS_SMALL, _type] call LR_fnc_findInArrayMap;
 	};
 	case 2: {
-		_name = [_this, LR_FOBS_MEDIUM] call LR_fnc_findInArrayMap;
+		_name = [LR_FOBS_MEDIUM, _type] call LR_fnc_findInArrayMap;
 	};
 	case 3: {
-		_name = [_this, LR_FOBS_LARGE] call LR_fnc_findInArrayMap;
+		_name = [LR_FOBS_LARGE, _type] call LR_fnc_findInArrayMap;
 	};
 	default {};
 };
