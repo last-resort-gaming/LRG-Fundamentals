@@ -51,23 +51,23 @@ switch (_type) do {
 		_name = _type select 1;
 		_type = _type select 0;
 	};
-	default {};
-};
-
-switch (_size) do {
-	case 0: {
-		_name = [LR_FOBS_CAMPS, _type] call LR_fnc_findInArrayMap;
+	default {
+		switch (_size) do {
+			case 0: {
+				_name = [LR_FOBS_CAMPS, _type] call LR_fnc_findInArrayMap;
+			};
+			case 1: {
+				_name = [LR_FOBS_SMALL, _type] call LR_fnc_findInArrayMap;
+			};
+			case 2: {
+				_name = [LR_FOBS_MEDIUM, _type] call LR_fnc_findInArrayMap;
+			};
+			case 3: {
+				_name = [LR_FOBS_LARGE, _type] call LR_fnc_findInArrayMap;
+			};
+			default {};
+		};
 	};
-	case 1: {
-		_name = [LR_FOBS_SMALL, _type] call LR_fnc_findInArrayMap;
-	};
-	case 2: {
-		_name = [LR_FOBS_MEDIUM, _type] call LR_fnc_findInArrayMap;
-	};
-	case 3: {
-		_name = [LR_FOBS_LARGE, _type] call LR_fnc_findInArrayMap;
-	};
-	default {};
 };
 
 // addHoldAction stuff

@@ -40,7 +40,7 @@ class LRG_ModulePortableFOB_Camp: Module_F
 			"Make sure the size for the selected FOB is appropriate for the synchronized object.",
 			"The option to deploy the FOB will only appear if sufficient space is around the FOB."
 		};
-			position = 1; // Position is taken into effect
+			position = 0; // Position is taken into effect
 			direction = 0; // Direction is taken into effect
 			optional = 0; // Synced entity is optional
 			duplicate = 1; // Multiple entities of this type can be synced
@@ -101,7 +101,7 @@ class LRG_ModulePortableFOB_Small: Module_F
 			"Make sure the size for the selected FOB is appropriate for the synchronized object.",
 			"The option to deploy the FOB will only appear if sufficient space is around the FOB."
 		};
-			position = 1; // Position is taken into effect
+			position = 0; // Position is taken into effect
 			direction = 0; // Direction is taken into effect
 			optional = 0; // Synced entity is optional
 			duplicate = 1; // Multiple entities of this type can be synced
@@ -168,7 +168,7 @@ class LRG_ModulePortableFOB_Medium: Module_F
 			"Make sure the size for the selected FOB is appropriate for the synchronized object.",
 			"The option to deploy the FOB will only appear if sufficient space is around the FOB."
 		};
-			position = 1; // Position is taken into effect
+			position = 0; // Position is taken into effect
 			direction = 0; // Direction is taken into effect
 			optional = 0; // Synced entity is optional
 			duplicate = 1; // Multiple entities of this type can be synced
@@ -234,7 +234,7 @@ class LRG_ModulePortableFOB_Large: Module_F
 			"Make sure the size for the selected FOB is appropriate for the synchronized object.",
 			"The option to deploy the FOB will only appear if sufficient space is around the FOB."
 		};
-			position = 1; // Position is taken into effect
+			position = 0; // Position is taken into effect
 			direction = 0; // Direction is taken into effect
 			optional = 0; // Synced entity is optional
 			duplicate = 1; // Multiple entities of this type can be synced
