@@ -7,9 +7,10 @@ Description:
 Arguments:
 	_map - The map to find an entry in
 	_id - ID of the entry you want to find
+	_default - Default value to return if key not found
 
 Return Values:
-	The value of the entry or nil if element was not found
+	The value of the entry or _default if element was not found
 
 Examples:
     Nothing to see here
@@ -18,10 +19,16 @@ Author:
 	Mokka
 */
 
-params ["_map", "_id"];
+params ["_map", "_id", "_default"];
+
+private _value = nil;
 
 {
-	if ((_x select 0) isEqualTo _id) exitWith {(_x select 1)};
+	if ((_x select 0) isEqualTo _id) then {
+		_value = (_x select 1);
+	};
 } forEach _map;
 
-nil;
+if (isNil "_value") exitWith {_default;};
+
+_value;
