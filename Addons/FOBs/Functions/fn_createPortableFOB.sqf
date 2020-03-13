@@ -28,6 +28,10 @@ params [
 	"_size"
 ];
 
+if !((_object getVariable ["LR_PortableFOB_Type", "FOB_null"]) isEqualTo "FOB_null") exitWith {
+	systemChat format "You can only add one portable FOB to an object!";
+};
+
 private _name = "";
 
 switch (_type) do {
@@ -78,7 +82,7 @@ _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
 
 [
 	_object,
-	format ["DeployFOB_%1", _object],
+	format ["DeployFOB_%1_%2", _type, _object],
 	format ["Deploy %1", _name],
 	"",
 	"[_target] call LR_fnc_checkFOBDeploy",
@@ -96,7 +100,7 @@ _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
 
 [
 	_object,
-	format ["PackUpFOB_%1", _object],
+	format ["PackUpFOB_%1_%2", _type, _object],
 	format ["Pack Up %1", _name],
 	"",
 	"[_target] call LR_fnc_checkFOBPackUp",
