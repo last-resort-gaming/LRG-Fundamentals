@@ -1,5 +1,5 @@
 // Include file that contains the arrays for the different compositions
-LR_FOBS_CAMPS = [
+_LR_FOBS_CAMPS = [
 	["Camp_1", 			"Camp #1"],
 	["Camp_2", 			"Camp #2"],
 	["Camp_3", 			"Camp #3"],
@@ -9,7 +9,7 @@ LR_FOBS_CAMPS = [
 	["Camp_CamoNet_3",	"Camp (Net) #4"]
 ];
 
-LR_FOBS_SMALL = [
+_LR_FOBS_SMALL = [
 	["Small_AA_Pos", 			"Small AA Position"],
 	["Small_AT_Pos", 			"Small AT Position"],
 	["Small_Bunker_1", 			"Small Bunker #1"],
@@ -31,7 +31,7 @@ LR_FOBS_SMALL = [
 	["Small_Tank_Pos", 			"Small Tank Position"]
 ];
 
-LR_FOBS_MEDIUM = [
+_LR_FOBS_MEDIUM = [
 	["Medium_Bunker_1", 			"Medium Bunker #1"],
 	["Medium_Bunker_2", 			"Medium Bunker #2"],
 	["Medium_Bunker_Dual_1", 		"Medium Bunker (Dual) #1"],
@@ -58,7 +58,7 @@ LR_FOBS_MEDIUM = [
 	["Medium_Net_4", 				"Medium Net Emplacement #4"],
 	["Medium_VehicleWorkshop_1",	"Medium Vehicle Workshop #1"]
 ];
-LR_FOBS_LARGE = [
+_LR_FOBS_LARGE = [
 	["Large_Bunker_1", 				"Large Bunker #1"],
 	["Large_Bunker_2", 				"Large Bunker #2"],
 	["Large_Bunker_3", 				"Large Bunker #3"],

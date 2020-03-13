@@ -36,38 +36,38 @@ private _name = "";
 
 switch (_type) do {
 	case "ANY_CAMP": {
-		_type = selectRandom LR_FOBS_CAMPS;
+		_type = selectRandom _LR_FOBS_CAMPS;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
 	case "ANY_SMALL": {
-		_type = selectRandom LR_FOBS_SMALL;
+		_type = selectRandom _LR_FOBS_SMALL;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
 	case "ANY_MEDIUM": {
-		_type = selectRandom LR_FOBS_MEDIUM;
+		_type = selectRandom _LR_FOBS_MEDIUM;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
 	case "ANY_LARGE": {
-		_type = selectRandom LR_FOBS_LARGE;
+		_type = selectRandom _LR_FOBS_LARGE;
 		_name = _type select 1;
 		_type = _type select 0;
 	};
 	default {
 		switch (_size) do {
 			case 0: {
-				_name = [LR_FOBS_CAMPS, _type] call LR_fnc_findInArrayMap;
+				_name = [_LR_FOBS_CAMPS, _type, "Camp"] call LR_fnc_findInArrayMap;
 			};
 			case 1: {
-				_name = [LR_FOBS_SMALL, _type] call LR_fnc_findInArrayMap;
+				_name = [_LR_FOBS_SMALL, _type, "Small FOB"] call LR_fnc_findInArrayMap;
 			};
 			case 2: {
-				_name = [LR_FOBS_MEDIUM, _type] call LR_fnc_findInArrayMap;
+				_name = [_LR_FOBS_MEDIUM, _type, "Medium FOB"] call LR_fnc_findInArrayMap;
 			};
 			case 3: {
-				_name = [LR_FOBS_LARGE, _type] call LR_fnc_findInArrayMap;
+				_name = [_LR_FOBS_LARGE, _type, "Large FOB"] call LR_fnc_findInArrayMap;
 			};
 			default {};
 		};
