@@ -18,9 +18,9 @@ Description:
 
 	All the _codeX clocks have the following parameters available:
 
-	_target - The object to which the action is assigned to
-	_caller - The unit that activated the action
-	_args - The arguments passed through the function
+	_this select 0 - The object to which the action is assigned to <OBJECT>
+	_this select 1 - The unit that activated the action <OBJECT>
+	_this select 2 - The arguments passed through the function in _args <ARRAY of ANYTHING>
 
 Arguments:
 	_object - The object to which the action is added <OBJECT>
@@ -141,7 +141,7 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 
 			[
 				_duration,
-				[_args, _codeCompleted, _codeInterrupted, _remove, _target, _caller],
+				[_args, _codeCompleted, _codeInterrupted, _remove, _target, _caller, _id],
 				{
 					(_this select 0) params [
 						"_parameters",
@@ -149,8 +149,10 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 						"_codeInterrupted",
 						"_remove",
 						"_target",
-						"_caller"
+						"_caller",
+						"_id"
 					];
+
 
 					[_target, _caller, _parameters] call _codeCompleted;
 
@@ -165,10 +167,11 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 						"_codeInterrupted",
 						"_remove",
 						"_target",
-						"_caller"
+						"_caller",
+						"_id"
 					];
 
-					[_target, _caller, _parameters] call _codeCompleted;
+					[_target, _caller, _parameters] call _codeInterrupted;
 				},
 				_progressTitle,
 				compile format ["(_this select 0) params [""_parameters"",""_codeCompleted"",""_codeInterrupted"",""_remove"",""_target"",""_caller""]; _nul = [_target, _caller, _parameters] call %1; _bool = [_target, _caller, _parameters] call %2; _bool", _codeProgress, _conditionProgress]

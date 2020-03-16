@@ -64,11 +64,11 @@ Group: Functions  {
       File: derp_fnc_randomPos  (AI\Functions\fn_randomPos.sqf)
       File: LR_fnc_SetUnitSkill  (AI\Functions\fn_setUnitSkill.sqf)
       File: LR_fnc_SpawnAI  (AI\Functions\fn_SpawnAI.sqf)
+      File: derp_fnc_ZenOccupy  (AI\Functions\fn_ZenOccupy.sqf)
       File: LR_fnc_SpawnCivilian (AI\Functions\Civilians\fn_SpawnCivilians.sqf)
       File: LR_fnc_CivBreakPatrol (AI\Functions\Civilians\fn_CivBreakPatrol.sqf)
       File: LR_fnc_CivilianGarrison (AI\Functions\Civilians\fn_CivilianGarrison.sqf)
       File: LR_fnc_CivilianPatrol (AI\Functions\Civilians\fn_CivilianPatrol.sqf)
-      File: derp_fnc_ZenOccupy  (AI\Functions\fn_ZenOccupy.sqf)
       }  # Group: AI
 
    Group: Equipment  {
@@ -88,6 +88,15 @@ Group: Functions  {
       File: LR_fnc_SpawnExplosives  (Explosives\Functions\fn_SpawnExplosives.sqf)
       }  # Group: Explosives
 
+   Group: FOBs  {
+
+      File: LR_fnc_createPortableFOB  (Explosives\Functions\fn_createPortableFOB.sqf)
+      File: LR_fnc_deployFOB  (Explosives\Functions\fn_deployFOB.sqf)
+      File: LR_fnc_checkFOBDeploy  (Explosives\Functions\fn_checkFOBDeploy.sqf)
+      File: LR_fnc_checkFOBPackUp  (Explosives\Functions\fn_checkFOBPackUp.sqf)
+      File: LR_fnc_packUpFOB  (Explosives\Functions\fn_packUpFOB.sqf)
+      }  # Group: FOBs
+
    Group: Interaction  {
 
       File: LR_fnc_AddAction  (Interaction\Functions\fn_AddAction.sqf)
@@ -104,8 +113,10 @@ Group: Functions  {
       File: YAINA_fnc_formatDuration  (Main\Functions\YAINA\General\fn_formatDuration.sqf)
       File: YAINA_fnc_log  (Main\Functions\YAINA\General\fn_log.sqf)
       File: YAINA_fnc_hintC  (Main\Functions\YAINA\General\fn_hintC.sqf)
+      File: YAINA_fnc_hideTerrainObjects (Main\Functions\YAINA\General\fn_hideTerrainObjects.sqf)
       File: LR_fnc_DynamicSim  (Main\Functions\LRG\fn_DynamicSim.sqf)
       File: LR_fnc_FindReplaceString  (Main\Functions\LRG\fn_FindReplaceString.sqf)
+      File: LR_fnc_FindInArrayMap  (Main\Functions\LRG\fn_FindInArrayMap.sqf)
       File: LR_fnc_SafePos  (Main\Functions\LRG\fn_SafePos.sqf)
       }  # Group: Main
 
@@ -116,6 +127,11 @@ Group: Functions  {
       File: LR_fnc_Sound3DFromPos  (Media\Functions\fn_Sound3DFromPos.sqf)
       File: LR_fnc_Sound3DOnObject  (Media\Functions\fn_Sound3DOnObject.sqf)
       }  # Group: Media
+
+   Group: Medical  {
+
+      File: LR_fnc_setMedicalFacility  (Medical\Functions\fn_setMedicalFacility.sqf)
+      }  # Group: Medical
 
    Group: Player  {
 

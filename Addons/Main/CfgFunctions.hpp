@@ -19,6 +19,7 @@ class LRG_Main {
 		class TFARSettings {};
 		class VanillaFatigue {};
 		class FindReplaceString {};
+		class FindInArrayMap {};
 		class voyagerCompass {};
 		class clientRepackMagazines {};
 		class SafePos {};
@@ -62,5 +63,6 @@ class YAINA {
 		class showFPS {};
 		class log {};
 		class hintC {};
+		class hideTerrainObjects {};
     };
 };
