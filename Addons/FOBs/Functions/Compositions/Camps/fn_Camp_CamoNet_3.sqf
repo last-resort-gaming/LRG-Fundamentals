@@ -8,7 +8,7 @@ Using orientation of objects: yes
 */
 
 [
-	["FirePlace_burning_F",[0.288086,1.15259,-9.53674e-007],0,1,0,[0,0],"","",true,false], 
+	["Land_Campfire_F",[0.288086,1.15259,-9.53674e-007],0,1,0,[0,0],"","",true,false], 
 	["CamoNet_INDP_open_F",[0.136719,-0.0849609,0],0,1,0,[0,0],"","_this allowDamage false;",true,false], 
 	["Land_TentDome_F",[-3.53564,-3.4646,0],135,1,0,[0,-0],"","",true,false], 
 	["Land_TentDome_F",[1.74219,-5.71655,0],90,1,0,[0,-0],"","",true,false], 

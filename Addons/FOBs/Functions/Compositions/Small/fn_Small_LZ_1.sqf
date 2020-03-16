@@ -8,7 +8,6 @@ Using orientation of objects: yes
 */
 
 [
-	["PortableHelipadLight_01_green_F",[-0.228516,0.425537,-4.76837e-007],351.427,1,1,[-0.00594377,-0.0111174],"","",true,false], 
 	["Land_HelipadCircle_F",[-0.175293,0.48584,0],0,1,0,[0,0],"","",true,false], 
 	["PortableHelipadLight_01_yellow_F",[-0.128418,-6.63623,0],359.465,1,0,[-0.000768117,-0.000840664],"","",true,false], 
 	["PortableHelipadLight_01_yellow_F",[4.97217,-4.58643,0],0.00772979,1,0,[-0.000761776,-0.000837048],"","",true,false], 

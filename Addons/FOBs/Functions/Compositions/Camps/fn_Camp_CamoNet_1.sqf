@@ -10,7 +10,7 @@ Using orientation of objects: yes
 [
 	["Land_TinContainer_F",[0.751465,0.313965,0.00119734],229.582,1,0,[6.9305,2.27875],"","",true,false], 
 	["CamoNet_BLUFOR_open_F",[-0.215332,1.21582,0],220.137,1,0,[0,0],"","_this allowDamage false;",true,false], 
-	["Campfire_burning_F",[-1.50732,0.959717,0.0299988],26.909,1,0,[0,0],"","",true,false], 
+	["Land_Campfire_F",[-1.50732,0.959717,0.0299988],26.909,1,0,[0,0],"","",true,false], 
 	["Land_Sleeping_bag_brown_F",[0.396973,-2.64014,0],172.648,1,0,[0,-0],"","",true,false], 
 	["Land_PainKillers_F",[1.11816,-2.75146,-4.76837e-007],42.1536,1,0,[0.000986337,0.000806725],"","",true,false], 
 	["Land_Sleeping_bag_F",[2.35449,-2.35767,0],188.219,1,0,[0,0],"","",true,false], 

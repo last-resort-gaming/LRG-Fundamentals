@@ -8,7 +8,6 @@ Using orientation of objects: yes
 */
 
 [
-	["Land_HelipadCircle_F",[-0.130859,0.253174,0],0,1,0,[0,0],"","",true,false], 
 	["Land_HelicopterWheels_01_assembled_F",[5.11914,4.00146,-0.00153017],344.998,1,0,[0.386652,-0.000199341],"","",true,false], 
 	["Land_BagFence_Short_F",[6.74268,2.26367,-0.000999928],75,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Short_F",[2.12988,-6.87061,-0.000999928],165,1,0,[0,-0],"","",true,false], 

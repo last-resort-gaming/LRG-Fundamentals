@@ -9,7 +9,7 @@ Using orientation of objects: yes
 
 [
 	["CamoNet_BLUFOR_open_F",[0.887695,-0.995117,0],0,1,0,[0,0],"","_this allowDamage false;",true,false], 
-	["Campfire_burning_F",[1.78906,-1.50757,0.0299988],0,1,0,[0,0],"","",true,false], 
+	["Land_Campfire_F",[1.78906,-1.50757,0.0299988],0,1,0,[0,0],"","",true,false], 
 	["Land_TentDome_F",[-3.39941,0.904053,0],210,1,0,[0,0],"","",true,false], 
 	["Land_WoodPile_large_F",[2.49854,4.13208,0.0232067],315,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_End_F",[-3.63867,2.92139,-0.000999928],60,1,0,[0,0],"","",true,false], 
