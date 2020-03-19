@@ -6,6 +6,7 @@ Description:
 
 Arguments:
 	_object - FOB to pack up
+	_caller - Unit that packed up the FOB
 
 Return Values:
 	Nothing.
@@ -21,7 +22,7 @@ if (!isServer) exitWith {
 	_this remoteExec ["LR_fnc_packUpFOB", 2];
 };
 
-params ["_object"];
+params ["_object", "_caller"];
 
 // sanity checks
 if !(_object getVariable ["LR_PortableFOB_Deployed", false]) exitWith {
@@ -32,6 +33,10 @@ if !(_object getVariable ["LR_PortableFOB_Deployed", false]) exitWith {
 {
 	deleteVehicle _x;
 } forEach (_object getVariable ["LR_PortableFOB_Objects", []]);
+
+// remove respawn position
+_respawnPos = _object getVariable "LR_PortableFOB_RespawnPos";
+_respawnPos call BIS_fnc_removeRespawnPosition;
 
 // reset variables
 _object setVariable ["LR_PortableFOB_Deployed", false, true];

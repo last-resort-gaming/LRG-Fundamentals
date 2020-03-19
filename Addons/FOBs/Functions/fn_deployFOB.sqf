@@ -22,7 +22,7 @@ if (!isServer) exitWith {
 	_this remoteExec ["LR_fnc_deployFOB", 2];
 };
 
-params ["_object"];
+params ["_object", "_caller"];
 
 // sanity checks
 if (_object getVariable ["LR_PortableFOB_Deployed", false]) exitWith {
@@ -34,6 +34,8 @@ _type = _object getVariable ["LR_PortableFOB_Type", "NULL"];
 if (_type isEqualTo "NULL") exitWith {
 	systemChat "Invalid FOB type set!";
 };
+
+_name = _object getVariable ["LR_PortableFOB_Name", ""];
 
 _size = _object getVariable ["LR_PortableFOB_Size", -1];
 
@@ -62,11 +64,15 @@ if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
 	} forEach _objects;
 };
 
+// Add the FOB as a respawn position
+_respawnPos = [side _caller, _pos, _name] call BIS_fnc_addRespawnPosition;
+
 // Set the runtime variables for the FOB object
 _object setVariable ["LR_PortableFOB_Objects", _objects, true];
 _object setVariable ["LR_PortableFOB_HiddenObjects", _hiddenObjects, true];
 _object setVariable ["LR_PortableFOB_Deployed", true, true];
 _object setVariable ["LR_PortableFOB_Pos", _pos, true];
+_object setVariable ["LR_PortableFOB_RespawnPos", _respawnPos, true];
 
 // re-enable damage and hope nothing breaks
 _object allowDamage true;

@@ -76,6 +76,7 @@ switch (_type) do {
 
 // addHoldAction stuff
 _object setVariable ["LR_PortableFOB_Type", _type, true];
+_object setVariable ["LR_PortableFOB_Name", _name, true];
 _object setVariable ["LR_PortableFOB_Size", _size, true];
 _object setVariable ["LR_PortableFOB_Deployed", false, true];
 _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
@@ -89,7 +90,7 @@ _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
 	"true",
 	{hint "Deploying FOB!";},
 	{},
-	{hint "FOB deployed!"; [(_this select 0)] call LR_fnc_deployFOB;},
+	{hint "FOB deployed!"; [(_this select 0), (_this select 1)] call LR_fnc_deployFOB;},
 	{hint "Couldn't deploy FOB!";},
 	[],
 	5,
@@ -107,7 +108,7 @@ _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
 	"true",
 	{hint "Packing up FOB!";},
 	{},
-	{hint "FOB packed up!"; [(_this select 0)] call LR_fnc_packUpFOB;},
+	{hint "FOB packed up!"; [(_this select 0), (_this select 1)] call LR_fnc_packUpFOB;},
 	{hint "Couldn't pack up FOB!";},
 	[],
 	5,
