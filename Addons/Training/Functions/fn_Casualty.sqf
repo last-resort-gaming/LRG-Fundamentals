@@ -21,6 +21,7 @@ params ["_object"];
 if (isserver) then {
 	_object setVariable ["CasualtyHealed", True, True];
 	_object disableAI "MOVE";
+	_object disableAI "FSM";
 };
 
 
@@ -115,6 +116,7 @@ _object addAction
         params ["_target", "_caller", "_actionId", "_arguments"];
 		[_caller, _target] remoteExecCall ["ace_medical_treatment_fnc_fullHealLocal", 0];
 		_target disableAI "MOVE";
+		_target disableAI "FSM";
 		_target setVariable ["CasualtyHealed", true, True];
     },
     [],
