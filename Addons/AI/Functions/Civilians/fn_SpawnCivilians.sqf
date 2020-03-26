@@ -178,8 +178,11 @@ if !((_motPool isEqualTo []) || (_pedPool isEqualTo [])) then {
 
 		// Obtain direction stuff, bit of a pain...
 		if ((typeName _rpos) isEqualTo "OBJECT") then {
-			_adjRoad = (roadsConnectedTo _rpos) select 0;
-			_dir = [_rpos, _adjRoad] call BIS_fnc_dirTo;
+			private _connectedRoads = roadsConnectedTo _rpos;
+			if ((count _connectedRoads) > 0) then {
+				_adjRoad = _connectedRoads select 0;
+				_dir = [_rpos, _adjRoad] call BIS_fnc_dirTo;
+			};
 		};
 
 		private _g = createGroup [_side, true];

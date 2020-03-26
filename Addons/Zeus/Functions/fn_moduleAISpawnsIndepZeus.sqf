@@ -1,12 +1,7 @@
-// not documented: called by module
+params ["_pos"];
 
-#include "module_zeus_header.inc"
-
-private _pos = getPos _logic;
 if (_pos isEqualTo [0, 0, 0]) exitWith {
-	[format ["Error: Invalid position for module %1!", _logic], "ZeusLog"] call YAINA_F_fnc_log;
+	[format ["Error: Invalid position for module"], "ZeusLog"] call YAINA_fnc_log;
 };
 
 ["Independent", _pos] call LR_fnc_SpawnAIZeusWrapper;
-
-#include "module_zeus_footer.inc"

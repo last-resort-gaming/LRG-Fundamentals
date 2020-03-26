@@ -7,12 +7,7 @@ class CfgPatches
 		author = AUTHOR;
 		name = NAME;
 		url = URL;
-		units[] = {
-			"LRG_Module_AISpawnsEastZeus",
-			"LRG_Module_AISpawnsIndepZeus",
-			"LRG_Module_AISpawnsWestZeus",
-			"LRG_Module_CivilianSpawnsZeus"
-		};
+		units[] = {};
 		requiredVersion = REQUIRED_VERSION;
 		requiredAddons[] = {
 			"A3_UI_F",
@@ -42,3 +37,5 @@ class Extended_PreInit_EventHandlers {
         init = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Zeus\XEH_preInit.sqf'";
     };
 };
+
+#include "ZenActions.hpp"

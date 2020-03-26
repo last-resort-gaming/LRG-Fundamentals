@@ -23,6 +23,8 @@ class LRG_Main {
 		class voyagerCompass {};
 		class clientRepackMagazines {};
 		class SafePos {};
+		class GetKeys {};
+		class GetValues {};
 	};
 };
 

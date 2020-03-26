@@ -1,61 +1,47 @@
 // AISpawns Modules
+
 [
     "LRG_Zeus_Module_AISpawnsEast",
     "CHECKBOX",
-    ["Zeus Module - Spawn AI (East)", "Enable the Spawn AI (East) Zeus module for use with Achilles"],
+    ["Zeus Module - AI Spawn - East", "Enable the Spawn AI - East Zeus module for use with ZEN"],
     "LRG Zeus",
     true,
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")) exitWith {};
+        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
 
-        if (_value) then {
-            Achilles_var_availableModuleClasses pushBackUnique "LRG_Module_AISpawnsEastZeus";
-        } else {
-            Achilles_var_availableModuleClasses = Achilles_var_availableModuleClasses - ["LRG_Module_AISpawnsEastZeus"];
-        };
-        Achilles_var_reloadDisplay = true;
+        ["LRG Fundamentals", "AI Spawn - East", {_this call LR_fnc_moduleAISpawnsEastZeus}, "\z\LRG Fundamentals\addons\media\images\icons\AI EAST.paa"] call zen_custom_modules_fnc_register;
     }
 ] call CBA_Settings_fnc_init;
 
 [
     "LRG_Zeus_Module_AISpawnsIndep",
     "CHECKBOX",
-    ["Zeus Module - Spawn AI (Independent)", "Enable the Spawn AI (Independent) Zeus module for use with Achilles"],
+    ["Zeus Module - AI Spawn - Independent", "Enable the Spawn AI - Independent Zeus module for use with ZEN"],
     "LRG Zeus",
     true,
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")) exitWith {};
+        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
 
-        if (_value) then {
-            Achilles_var_availableModuleClasses pushBackUnique "LRG_Module_AISpawnsIndepZeus";
-        } else {
-            Achilles_var_availableModuleClasses = Achilles_var_availableModuleClasses - ["LRG_Module_AISpawnsIndepZeus"];
-        };
-        Achilles_var_reloadDisplay = true;
+        ["LRG Fundamentals", "AI Spawn - Independent", {_this call LR_fnc_moduleAISpawnsIndepZeus}, "\z\LRG Fundamentals\addons\media\images\icons\AI INDEP.paa"] call zen_custom_modules_fnc_register;
     }
 ] call CBA_Settings_fnc_init;
 
 [
     "LRG_Zeus_Module_AISpawnsWest",
     "CHECKBOX",
-    ["Zeus Module - Spawn AI (West)", "Enable the Spawn AI (West) Zeus module for use with Achilles"],
+    ["Zeus Module - AI Spawn - West", "Enable the Spawn AI - West Zeus module for use with ZEN"],
     "LRG Zeus",
     true,
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")) exitWith {};
+        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
 
-        if (_value) then {
-            Achilles_var_availableModuleClasses pushBackUnique "LRG_Module_AISpawnsWestZeus";
-        } else {
-            Achilles_var_availableModuleClasses = Achilles_var_availableModuleClasses - ["LRG_Module_AISpawnsWestZeus"];
-        };
-        Achilles_var_reloadDisplay = true;
+        ["LRG Fundamentals", "AI Spawn - West", {_this call LR_fnc_moduleAISpawnsWestZeus}, "\z\LRG Fundamentals\addons\media\images\icons\AI WEST.paa"] call zen_custom_modules_fnc_register;
     }
 ] call CBA_Settings_fnc_init;
 
@@ -63,19 +49,14 @@
 [
     "LRG_Zeus_Module_CivilianSpawns",
     "CHECKBOX",
-    ["Zeus Module - Spawn Civilians", "Enable the Spawn Civilians Zeus module for use with Achilles"],
+    ["Zeus Module - AI Spawn - Civilian", "Enable the Spawn AI Civilians Zeus module for use with ZEN"],
     "LRG Zeus",
     true,
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "achilles_modules_f_achilles")) exitWith {};
+        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
 
-        if (_value) then {
-            Achilles_var_availableModuleClasses pushBackUnique "LRG_Module_CivilianSpawnsZeus";
-        } else {
-            Achilles_var_availableModuleClasses = Achilles_var_availableModuleClasses - ["LRG_Module_CivilianSpawnsZeus"];
-        };
-        Achilles_var_reloadDisplay = true;
+        ["LRG Fundamentals", "AI Spawn - Civilian", {_this call LR_fnc_moduleCivilianSpawnsZeus}, "\z\LRG Fundamentals\addons\media\images\Icons\AI CIV.paa"] call zen_custom_modules_fnc_register;
     }
 ] call CBA_Settings_fnc_init;

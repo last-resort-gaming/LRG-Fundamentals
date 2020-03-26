@@ -14,6 +14,7 @@ class LRG_FOBs {
 		class packUpFOB {};
 		class checkFOBDeploy {};
 		class checkFOBPackUp {};
+		class FOBZeusWrapper {};
 	};
 
 	class Compositions_Camp {

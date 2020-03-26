@@ -27,7 +27,7 @@ if (_pos isEqualTo [0, 0, 0]) exitWith {
 };
 
 // Holds the array of factions that are available for selection, based on side
-_availableFactions = CIV_FACTIONS;
+_prettyNames = CIV_FACTIONS;
 
 // Is used to match the selected faction with the the internal name, by index
 _lookup = CIV_FACTIONS_LOOKUP;
@@ -35,61 +35,58 @@ _lookup = CIV_FACTIONS_LOOKUP;
 private _dialogResult = [
 	"Spawn AI - Civilian",
 	[
-		["Objective Name", "", "Objective Alpha"],
-		["Faction", _availableFactions],
-		["Side", ["Civilian"/*, "Blufor", "Opfor", "Independent"*/], "Civilian"], // TODO: fix this someday
-		["Spawn Radius", "", "500"],
-		["Min. Garrisoned Units", "", "0"],
-		["Max. Garrisoned Units", "", "0"],
-		["Min. Pedestrian Patrols", "", "0"],
-		["Max. Pedestrian Patrols", "", "0"],
-		["Min. Vehicle Patrols", "", "0"],
-		["Max. Vehicle Patrols", "", "0"],
-		["Min. Parked Vehicles", "", "0"],
-		["Max. Parked Vehicles", "", "0"]
-	]
-] call Ares_fnc_showChooseDialog;
+		["EDIT", "Objective Name", ["Objective Alpha"]],
+		["COMBO", "Faction", [_lookup, _prettyNames, 0]],
+		["COMBO", "Side", [[civilian/*, west, east, independent*/], ["Civilian"/*, "Blufor", "Opfor", "Independent"*/], 0]], // TODO: fix this someday
+		["EDIT", "Spawn Radius", ["500"]],
+		["EDIT", "Min. Garrisoned Units", ["0"]],
+		["EDIT", "Max. Garrisoned Units", ["0"]],
+		["EDIT", "Min. Pedestrian Patrols", ["0"]],
+		["EDIT", "Max. Pedestrian Patrols", ["0"]],
+		["EDIT", "Min. Vehicle Patrols", ["0"]],
+		["EDIT", "Max. Vehicle Patrols", ["0"]],
+		["EDIT", "Min. Parked Vehicles", ["0"]],
+		["EDIT", "Max. Parked Vehicles", ["0"]]
+	],
+	{
+		params ["_results", "_args"];
 
-if (_dialogResult isEqualTo []) exitWith {
-	["fn_ShowChooseDialog didn't return good results", "ErrorLog"] call YAINA_F_fnc_log;
+		_args params ["_pos"];
+
+		_procResults = [];
+
+		{
+			_value = _x;
+
+			// Process number inputs and make sure they're integers
+			if (_forEachIndex > 2) then {
+				_value = round (parseNumber _x);
+			};
+
+			_procResults pushBack _value;
+		} forEach _results;
+
+		_procResults params [
+			"_grpPrefix", "_faction", "_side", "_radius",
+			"_garrisonsMin", "_garrisonsMax",
+			"_pedMin", "_pedMax",
+			"_vehPatrolsMin", "_vehPatrolsMax",
+			"_vehParkedMin", "_vehParkedMax"
+		];
+
+		// Actually call SpawnCivilians, do it remotely so the server has the units and takes care of them c:
+		[
+			_grpPrefix, _pos, _radius, _faction, _side,
+			[_garrisonsMin, _garrisonsMax],
+			[_pedMin, _pedMin],
+			[_vehPatrolsMin, _vehPatrolsMax],
+			[_vehParkedMin, _vehParkedMax]
+		] remoteExec ["LR_fnc_SpawnCivilians", 2];
+	},
+	{},
+	[_pos]
+] call zen_dialog_fnc_create;
+
+if !(_dialogResult) exitWith {
+	["Failed to create zen dialog!", "ErrorLog"] call YAINA_fnc_log;
 };
-
-_procDiagResults = [];
-
-{
-	_value = _x;
-
-	// Look up the proper faction name in the lookup table
-	if (_forEachIndex == 1) then {
-		_value = _lookup select _x;
-	};
-
-	// Look up side
-	if (_forEachIndex == 2) then {
-		_value = [civilian, west, east, independent] select _x;
-	};
-
-	// Process number inputs and make sure they're integers
-	if (_forEachIndex > 2) then {
-		_value = round (parseNumber _x);
-	};
-
-	_procDiagResults pushBack _value;
-} forEach _dialogResult;
-
-_procDiagResults params [
-	"_grpPrefix", "_faction", "_side", "_radius",
-	"_garrisonsMin", "_garrisonsMax",
-	"_pedMin", "_pedMax",
-	"_vehPatrolsMin", "_vehPatrolsMax",
-	"_vehParkedMin", "_vehParkedMax"
-];
-
-// Actually call SpawnCivilians, do it remotely so the server has the units and takes care of them c:
-[
-	_grpPrefix, _pos, _radius, _faction, _side,
-	[_garrisonsMin, _garrisonsMax],
-	[_pedMin, _pedMin],
-	[_vehPatrolsMin, _vehPatrolsMax],
-	[_vehParkedMin, _vehParkedMax]
-] remoteExec ["LR_fnc_SpawnCivilians", 2];
