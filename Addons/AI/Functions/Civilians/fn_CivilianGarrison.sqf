@@ -29,7 +29,7 @@ Author:
 if (!isServer) exitWith {};
 
 params [
-	"_pos", "_radius",
+	"_pos", "_GarrRadius",
 	["_faction", "CIV_Default"],
 	["_side", civilian],
 	"_pedList",
@@ -49,7 +49,7 @@ for "_x" from 0 to _unitCount do {
 
 if (_units isEqualTo []) exitWith {};
 
-private _failed = [_pos, nil, _units, _radius, _AIOB_Positioning, true, _maxFill, _excludes] call DERP_fnc_AIOccupyBuilding;
+private _failed = [_pos, nil, _units, _GarrRadius, _AIOB_Positioning, true, _maxFill, _excludes] call DERP_fnc_AIOccupyBuilding;
 
 // Remove any non-garrisoned units
 { deleteVehicle _x; } forEach _failed;

@@ -48,7 +48,7 @@ Author:
 if (!isserver) exitwith {};
 
 params [
-	"_grpPrefix", "_center", "_radius",
+	"_grpPrefix", "_center", "_radius", "_GarrRadius",
 	["_faction", "CIV_Default"],
 	["_side", civilian],
 	["_garrisons", [0, 0]],
@@ -125,7 +125,7 @@ if !(_pedPool isEqualTo []) then {
         private _garrisonsExact = _garrisonsMin + floor (random _GarDif);
         private _garrisonedUnits = [
             _center,
-            [0, _radius],
+            [0, _GarrRadius],
             _faction, _side,
 			_pedPool, _garrisonsExact
         ] call LR_fnc_CivilianGarrison;

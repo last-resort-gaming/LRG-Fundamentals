@@ -52,14 +52,16 @@ class LRG_ModuleCivilianSpawns: Module_F
 					class INDEPENDENT  	{name = "Independent";							value = "independent";};*/ // TODO: make this work
 				};
 			};
-		class Radius: Edit
+
+		class GarrRadius: Edit
   			{
-				property = "LR_AI_Radius";
-				displayName = "Spawn Radius";
-				tooltip = "Civilian Spawn radius from this module.";
+				property = "LR_AI_GarRadius";
+				displayName = "Garrison Radius";
+				tooltip = "AI Garrison radius from this module.";
 				typeName = "NUMBER";
-				defaultValue = 500;
+				defaultValue = 200;
 			};
+
 		class GarrisonedUnitsMin: Edit
 		{
 			property = "LR_AI_GarrisonedUnitsMin";
@@ -76,6 +78,16 @@ class LRG_ModuleCivilianSpawns: Module_F
 			typeName = "Number";
 			defaultValue = 0;
 		};
+
+		class Radius: Edit
+  			{
+				property = "LR_AI_Radius";
+				displayName = "Patrol Radius";
+				tooltip = "Civilian Spawn radius from this module.";
+				typeName = "NUMBER";
+				defaultValue = 500;
+			};
+
 		class CivPedPatrolsMin: Edit
 		{
 			property = "LR_AI_CivPedPatrolsMin";

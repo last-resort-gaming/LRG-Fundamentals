@@ -70,19 +70,24 @@ Author:
 if (!isserver) exitwith {};
 
 params [
-	"_grpPrefix", "_center", "_radius",
-	["_faction", "CSAT"],
+	
+    "_center",
+    ["_grpPrefix","Obj 1"],
+    ["_faction", "OPF_T_F"],
+    ["_GarrRadius",100],
 	["_garrisons", [0,0]],
+    ["_patrolMethod", "RANDOM"],
+    ["_radius", 500],
 	["_inf", [0,0]],
 	["_infaa", [0,0]],
 	["_infat", [0,0]],
 	["_sniper", [0,0]],
 	["_vehaa", [0,0]],
-	["_vehmrap", [0,0]],
 	["_vehlight", [0,0]],
+	["_vehmrap", [0,0]],    
 	["_vehheavy", [0,0]],
-	["_vehrand", [0,0]],
-    ["_patrolMethod", "RANDOM"]
+	["_vehrand", [0,0]]
+    
 ];
 
 _typeNameCenter = typeName _center;
@@ -236,7 +241,7 @@ if !(_infList isEqualTo []) then {
         private _garrisonedUnits = (
             [
                 _center,
-                [0, _radius],
+                [0, _GarrRadius],
                 _side, _FactionSide,
                 _faction, _InfantryType,
                 _infList, _GarrisonedGroupsExact,

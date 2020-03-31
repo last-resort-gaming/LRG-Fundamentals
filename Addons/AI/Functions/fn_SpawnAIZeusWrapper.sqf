@@ -29,7 +29,7 @@ Author:
 params [["_side", ""], ["_pos", [0, 0, 0]]];
 
 if ((_side isEqualTo "") || (_pos isEqualTo [0, 0, 0])) exitWith {
-	["Couldn't process wrapper call", "ErrorLog"] call YAINA_fnc_log;
+	["Couldn't process wrapper call", "ErrorLog"] call YAINA_F_fnc_log;
 };
 
 // Holds the array of factions that are available for selection, based on side
@@ -59,10 +59,11 @@ private _dialogResult = [
 	[
 		["Objective Name", "", "Objective Alpha"],
 		["Faction", _availableFactions],
-		["Patrol Method", ["Random", "Along Roads"], "Random"],
-		["Spawn Radius", "", "500"],
+		["Garrison Radius", "", "100"],
 		["Min. Garrisoned Groups", "", "0"],
 		["Max. Garrisoned Groups", "", "0"],
+		["Spawn Radius", "", "500"],
+		["Patrol Method", ["Random", "Along Roads"], "Random"],
 		["Min. Infantry Patrols", "", "0"],
 		["Max. Infantry Patrols", "", "0"],
 		["Min. AA Infantry Squads", "", "0"],
@@ -73,10 +74,10 @@ private _dialogResult = [
 		["Max. Sniper Squads", "", "0"],
 		["Min. AA Vehicles", "", "0"],
 		["Max. AA Vehicles", "", "0"],
-		["Min. MRAPS", "", "0"],
-		["Max. MRAPS", "", "0"],
 		["Min. Light Vehicles", "", "0"],
 		["Max. Light Vehicles", "", "0"],
+		["Min. MRAPS", "", "0"],
+		["Max. MRAPS", "", "0"],		
 		["Min. Heavy Vehicles", "", "0"],
 		["Max. Heavy Vehicles", "", "0"],
 		["Min. Random Vehicles", "", "0"],
@@ -85,7 +86,7 @@ private _dialogResult = [
 ] call Ares_fnc_showChooseDialog;
 
 if (_dialogResult isEqualTo []) exitWith {
-	["fn_ShowChooseDialog didn't return good results", "ErrorLog"] call YAINA_fnc_log;
+	["fn_ShowChooseDialog didn't return good results", "ErrorLog"] call YAINA_F_fnc_log;
 };
 
 _procDiagResults = [];
@@ -113,32 +114,38 @@ _procDiagResults = [];
 _procDiagResults params [
 	"_grpPrefix",
 	"_faction",
+	"_GarrRadius",
+	"_garrisonsMin", "_garrisonsMax",
 	"_patrolMethod",
 	"_radius",
-	"_garrisonsMin", "_garrisonsMax",
 	"_infMin", "_infMax",
 	"_infaaMin", "_infaaMax",
 	"_infatMin", "_infatMax",
 	"_sniperMin", "_sniperMax",
 	"_vehaaMin", "_vehaaMax",
-	"_vehmrapMin", "_vehmrapMax",
 	"_vehlightMin", "_vehlightMax",
+	"_vehmrapMin", "_vehmrapMax",	
 	"_vehheavyMin", "_vehheavyMax",
 	"_vehrandMin", "_vehrandMax"
 ];
 
 // Actually call SpawnAI, do it remotely so the server has the units and takes care of them c:
 [
-	_grpPrefix, _pos, _radius, _faction,
+	_pos,
+	_grpPrefix,
+	_faction,	
+	_GarrRadius,
 	[_garrisonsMin, _garrisonsMax],
+	_patrolMethod,
+	_radius,
 	[_infMin, _infMax],
 	[_infaaMin, _infaaMax],
 	[_infatMin, _infatMax],
 	[_sniperMin, _sniperMax],
 	[_vehaaMin, _vehaaMax],
-	[_vehmrapMin, _vehmrapMax],
 	[_vehlightMin, _vehlightMax],
+	[_vehmrapMin, _vehmrapMax],	
 	[_vehheavyMin, _vehheavyMax],
-	[_vehrandMin, _vehrandMax],
-	_patrolMethod
+	[_vehrandMin, _vehrandMax]
+
 ] remoteExec ["LR_fnc_SpawnAI", 2];

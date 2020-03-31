@@ -7,6 +7,7 @@ _ObjName = _logic getVariable ["ObjName", "Objective 1"];
 _Faction = _logic getVariable ["Type", "CIV_Default"];
 _Side = _logic getVariable ["Side", "civilian"];
 _Radius = _logic getVariable ["Radius", 500];
+_GarrRadius = _logic getVariable ["GarrRadius", 200];
 _GarrisonedUnitsMin = _logic getVariable ["GarrisonedUnitsMin", 0];
 _GarrisonedUnitsMax = _logic getVariable ["GarrisonedUnitsMax", 0];
 _civPedPatrolsMin = _logic getVariable ["CivPedPatrolsMin", 0];
@@ -30,7 +31,7 @@ switch (_Side) do {
 };
 
 [
-    _ObjName,_SpawnLocation,_Radius,
+    _ObjName,_SpawnLocation,_Radius,_GarrRadius,
     _Faction,_Side,
     [_GarrisonedUnitsMin, _GarrisonedUnitsMax],
     [_civPedPatrolsMin, _civPedPatrolsMax],

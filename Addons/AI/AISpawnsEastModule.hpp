@@ -78,26 +78,16 @@ class LRG_ModuleAISpawns: Module_F
 					class OPF_T_F 					{name = "Vanilla - CSAT (Pacific)"; 						value = "OPF_T_F";};
 				};
 			};
-		class PatrolMethod: Combo
+
+		class GarrRadius: Edit
   			{
-				property = "LR_AI_PatrolMethod";
-				displayName = "Patrol Method";
-				tooltip = "Method to use for plotting patrol paths";
-				defaultValue = """RANDOM""";
-				class values
-				{
-					class RANDOM 				{name = "Random";		value = "RANDOM";};
-					class ROAD	 				{name = "Along Roads";	value = "ROAD";};
-				};
-			};
-		class Radius: Edit
-  			{
-				property = "LR_AI_Radius";
-				displayName = "Spawn Radius";
-				tooltip = "AI Spawn radius from this module.";
+				property = "LR_AI_GarRadius";
+				displayName = "Garrison Radius";
+				tooltip = "AI Garrison radius from this module.";
 				typeName = "NUMBER";
-				defaultValue = 500;
+				defaultValue = 100;
 			};
+
 		class GarrisonedGroupsMin: Edit
 		{
 			property = "LR_AI_GarrisonedGroupsMin";
@@ -114,6 +104,28 @@ class LRG_ModuleAISpawns: Module_F
 			typeName = "Number";
 			defaultValue = 0;
 		};
+		
+		class PatrolMethod: Combo
+  			{
+				property = "LR_AI_PatrolMethod";
+				displayName = "Patrol Method";
+				tooltip = "Method to use for plotting patrol paths";
+				defaultValue = """RANDOM""";
+				class values
+				{
+					class RANDOM 				{name = "Random";		value = "RANDOM";};
+					class ROAD	 				{name = "Along Roads";	value = "ROAD";};
+				};
+			};
+		class Radius: Edit
+  			{
+				property = "LR_AI_Radius";
+				displayName = "Patrol Radius";
+				tooltip = "AI Patrol radius from this module.";
+				typeName = "NUMBER";
+				defaultValue = 500;
+			};
+
 		class EIPatrolsMin: Edit
 		{
 			property = "LR_AI_EIPatrolsMin";
@@ -162,6 +174,22 @@ class LRG_ModuleAISpawns: Module_F
 			typeName = "Number";
 			defaultValue = 0;
 		};
+		class SniperMin: Edit
+		{
+			property = "LR_AI_SniperMin";
+			displayName = "Min Sniper Teams";
+			description = "Minimum Number of Sniper Teams to Spawn";
+			typeName = "Number";
+			defaultValue = 0;
+		};
+		class SniperMax: Edit
+		{
+			property = "LR_AI_SniperMax";
+			displayName = "Max Sniper Teams";
+			description = "Maximum Number of Sniper Teams to Spawn";
+			typeName = "Number";
+			defaultValue = 0;
+		};
 		class VehAAMin: Edit
 		{
 			property = "LR_AI_VehAAMin";
@@ -175,22 +203,6 @@ class LRG_ModuleAISpawns: Module_F
 			property = "LR_AI_VehAAMax";
 			displayName = "Max AA Vehicles";
 			description = "Maximum Number of AA Vehicles to Spawn";
-			typeName = "Number";
-			defaultValue = 0;
-		};
-		class VehMRAPMin: Edit
-		{
-			property = "LR_AI_VehMRAPMin";
-			displayName = "Min MRAPs";
-			description = "Minimum Number of MRAPs to Spawn";
-			typeName = "Number";
-			defaultValue = 0;
-		};
-		class VehMRAPMax: Edit
-		{
-			property = "LR_AI_VehMRAPMax";
-			displayName = "Max MRAPs";
-			description = "Maximum Number of MRAPs to Spawn";
 			typeName = "Number";
 			defaultValue = 0;
 		};
@@ -210,6 +222,22 @@ class LRG_ModuleAISpawns: Module_F
 			typeName = "Number";
 			defaultValue = 0;
 		};
+		class VehMRAPMin: Edit
+		{
+			property = "LR_AI_VehMRAPMin";
+			displayName = "Min MRAPs";
+			description = "Minimum Number of MRAPs to Spawn";
+			typeName = "Number";
+			defaultValue = 0;
+		};
+		class VehMRAPMax: Edit
+		{
+			property = "LR_AI_VehMRAPMax";
+			displayName = "Max MRAPs";
+			description = "Maximum Number of MRAPs to Spawn";
+			typeName = "Number";
+			defaultValue = 0;
+		};		
 		class VehHeavyMin: Edit
 		{
 			property = "LR_AI_VehHeavyMin";
