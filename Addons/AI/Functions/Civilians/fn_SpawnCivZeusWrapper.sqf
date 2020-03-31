@@ -23,7 +23,7 @@ Author:
 params [["_pos", [0, 0, 0]]];
 
 if (_pos isEqualTo [0, 0, 0]) exitWith {
-	["Couldn't process wrapper call", "ErrorLog"] call YAINA_fnc_log;
+	["Couldn't process wrapper call", "ErrorLog"] call YAINA_F_fnc_log;
 };
 
 // Holds the array of factions that are available for selection, based on side
@@ -51,7 +51,7 @@ private _dialogResult = [
 ] call Ares_fnc_showChooseDialog;
 
 if (_dialogResult isEqualTo []) exitWith {
-	["fn_ShowChooseDialog didn't return good results", "ErrorLog"] call YAINA_fnc_log;
+	["fn_ShowChooseDialog didn't return good results", "ErrorLog"] call YAINA_F_fnc_log;
 };
 
 _procDiagResults = [];
