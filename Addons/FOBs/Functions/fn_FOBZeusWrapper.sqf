@@ -59,5 +59,5 @@ private _dialogResult = [
 ] call zen_dialog_fnc_create;
 
 if !(_dialogResult) exitWith {
-	["Failed to create zen dialog!", "ErrorLog"] call YAINA_fnc_log;
+	["Failed to create zen dialog!", "ErrorLog"] call YAINA_F_fnc_log;
 };

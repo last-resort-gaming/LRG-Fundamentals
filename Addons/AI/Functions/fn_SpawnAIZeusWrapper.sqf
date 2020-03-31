@@ -59,10 +59,11 @@ private _dialogResult = [
 	[
 		["EDIT", "Objective Name", ["Objective Alpha"]],
 		["COMBO", "Faction", [_lookup, _prettyNames, 0]],
-		["COMBO", "Patrol Method", [["RANDOM", "ROAD"], ["Random", "Along Roads"], 1]],
-		["EDIT", "Spawn Radius", ["500"]],
+		["EDIT", "Garrison Radius", ["500"]],
 		["EDIT", "Min. Garrisoned Groups", ["0"]],
 		["EDIT", "Max. Garrisoned Groups", ["0"]],
+		["COMBO", "Patrol Method", [["RANDOM", "ROAD"], ["Random", "Along Roads"], 1]],
+		["EDIT", "Spawn Radius", ["500"]],
 		["EDIT", "Min. Infantry Patrols", ["0"]],
 		["EDIT", "Max. Infantry Patrols", ["0"]],
 		["EDIT", "Min. AA Infantry Squads", ["0"]],
@@ -73,10 +74,10 @@ private _dialogResult = [
 		["EDIT", "Max. Sniper Squads", ["0"]],
 		["EDIT", "Min. AA Vehicles", ["0"]],
 		["EDIT", "Max. AA Vehicles", ["0"]],
-		["EDIT", "Min. MRAPS", ["0"]],
-		["EDIT", "Max. MRAPS", ["0"]],
 		["EDIT", "Min. Light Vehicles", ["0"]],
 		["EDIT", "Max. Light Vehicles", ["0"]],
+		["EDIT", "Min. MRAPS", ["0"]],
+		["EDIT", "Max. MRAPS", ["0"]],
 		["EDIT", "Min. Heavy Vehicles", ["0"]],
 		["EDIT", "Max. Heavy Vehicles", ["0"]],
 		["EDIT", "Min. Random Vehicles", ["0"]],
@@ -93,7 +94,7 @@ private _dialogResult = [
 			_value = _x;
 
 			// Process number inputs and make sure they're integers
-			if (_forEachIndex > 2) then {
+			if !(_forEachIndex in [0, 1, 5]) then {
 				_value = round (parseNumber _x);
 			};
 
@@ -103,34 +104,39 @@ private _dialogResult = [
 		_procResults params [
 			"_grpPrefix",
 			"_faction",
+			"_garrRadius",
+			"_garrisonsMin", "_garrisonsMax",
 			"_patrolMethod",
 			"_radius",
-			"_garrisonsMin", "_garrisonsMax",
 			"_infMin", "_infMax",
 			"_infaaMin", "_infaaMax",
 			"_infatMin", "_infatMax",
 			"_sniperMin", "_sniperMax",
 			"_vehaaMin", "_vehaaMax",
-			"_vehmrapMin", "_vehmrapMax",
 			"_vehlightMin", "_vehlightMax",
+			"_vehmrapMin", "_vehmrapMax",
 			"_vehheavyMin", "_vehheavyMax",
 			"_vehrandMin", "_vehrandMax"
 		];
 
 		// Actually call SpawnAI, do it remotely so the server has the units and takes care of them c:
 		[
-			_grpPrefix, _pos, _radius, _faction,
+			_pos,
+			_grpPrefix,
+			_faction,
+			_garrRadius,
 			[_garrisonsMin, _garrisonsMax],
+			_patrolMethod,
+			_radius,
 			[_infMin, _infMax],
 			[_infaaMin, _infaaMax],
 			[_infatMin, _infatMax],
 			[_sniperMin, _sniperMax],
 			[_vehaaMin, _vehaaMax],
-			[_vehmrapMin, _vehmrapMax],
 			[_vehlightMin, _vehlightMax],
+			[_vehmrapMin, _vehmrapMax],
 			[_vehheavyMin, _vehheavyMax],
-			[_vehrandMin, _vehrandMax],
-			_patrolMethod
+			[_vehrandMin, _vehrandMax]
 		] remoteExec ["LR_fnc_SpawnAI", 2];
 	},
 	{},
@@ -138,5 +144,5 @@ private _dialogResult = [
 ] call zen_dialog_fnc_create;
 
 if !(_dialogResult) exitWith {
-	["Failed to create zen dialog!", "ErrorLog"] call YAINA_fnc_log;
+	["Failed to create zen dialog!", "ErrorLog"] call YAINA_F_fnc_log;
 };
