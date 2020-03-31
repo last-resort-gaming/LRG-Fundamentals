@@ -20,7 +20,7 @@
     false,
     true,
     {
-        if (_this && { hasinterface }) then  { call YAINA_fnc_crewNames};
+        if (_this && { hasinterface }) then  { call YAINA_F_fnc_crewNames};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -254,7 +254,7 @@
     false,
     true,
     {
-        if (_this) then { call YAINA_fnc_showFPS};
+        if (_this) then { call YAINA_F_fnc_showFPS};
     }
 ] call CBA_Settings_fnc_init;
 

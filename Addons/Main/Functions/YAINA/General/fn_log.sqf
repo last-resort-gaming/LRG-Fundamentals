@@ -1,5 +1,5 @@
 /*
-Function: YAINA_fnc_log
+Function: YAINA_F_fnc_log
 
 Description:
 	General purpose logging function, that logs the message either to
@@ -23,11 +23,11 @@ Author:
 
 params ["_message", ["_log", "GENERAL"]];
 
-if (isNil "YAINA_A3Log") then {
-    YAINA_A3Log = isClass(configFile >> "CfgPatches" >> "a3log");
+if (isNil "YAINA_F_A3Log") then {
+    YAINA_F_A3Log = isClass(configFile >> "CfgPatches" >> "a3log");
 };
 
-if (YAINA_A3Log) then {
+if (YAINA_F_A3Log) then {
     [_message, _log] call A3Log;
 } else {
     diag_log format ["%1 | %2", _log, _message];

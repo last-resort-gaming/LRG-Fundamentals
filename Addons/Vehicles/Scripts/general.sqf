@@ -42,7 +42,7 @@ if(_veh isKindOf _kind && !(_veh isKindOf "UAV")) then {
 
 	_type = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "DisplayName");
 
-    _msg = format ["Servicing %1, This will take at least %2", _type, _serviceTime call YAINA_fnc_formatDuration];
+    _msg = format ["Servicing %1, This will take at least %2", _type, _serviceTime call YAINA_F_fnc_formatDuration];
 
     if(_sideChat) then {
         _veh sideChat _msg;

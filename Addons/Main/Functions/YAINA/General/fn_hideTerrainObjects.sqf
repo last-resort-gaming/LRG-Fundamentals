@@ -1,5 +1,5 @@
 /*
-Function: YAINA_fnc_hideTerrainObjects
+Function: YAINA_F_fnc_hideTerrainObjects
 
 Description:
 	Hides terrain objects, similar to that of 3DEN's ModuleHideTerrain_F.

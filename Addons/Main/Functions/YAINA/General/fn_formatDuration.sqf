@@ -1,5 +1,5 @@
 /*
-Function: YAINA_fnc_formatDuration
+Function: YAINA_F_fnc_formatDuration
 
 Description:
     Formats given duration of time in seconds into a string with format hh:mm:ss

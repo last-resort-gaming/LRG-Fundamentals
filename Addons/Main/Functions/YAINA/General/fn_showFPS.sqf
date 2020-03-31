@@ -10,7 +10,7 @@ if ( isServer ) then {
 
     // if we have not got our map display yet, retry when we do
     if(isNull (findDisplay 12)) exitWith {
-        [{!isNull (findDisplay 12)}, {call YAINA_fnc_showFPS}, []] call CBA_fnc_waitUntilAndExecute;
+        [{!isNull (findDisplay 12)}, {call YAINA_F_fnc_showFPS}, []] call CBA_fnc_waitUntilAndExecute;
     };
 
     if (hasInterface) then {

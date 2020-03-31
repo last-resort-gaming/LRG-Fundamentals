@@ -1,5 +1,5 @@
 /*
-Function: YAINA_fnc_hintC
+Function: YAINA_F_fnc_hintC
 
 Description
 	Show a cadet hint (hintC) on the machine that called this function.
@@ -26,9 +26,9 @@ hintC _text;
 // And to stop it showing up on the right side as soon as we OK
 // the message for unload on 57, blat it from 0
 
-YAINA_hintC_EH = findDisplay 57 displayAddEventHandler ["unload", {
+YAINA_F_hintC_EH = findDisplay 57 displayAddEventHandler ["unload", {
     0 = _this spawn {
-        _this select 0 displayRemoveEventHandler ["unload", YAINA_hintC_EH];
+        _this select 0 displayRemoveEventHandler ["unload", YAINA_F_hintC_EH];
         hintSilent "";
     };
 }];
