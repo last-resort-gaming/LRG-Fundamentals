@@ -2,7 +2,8 @@
 if (isNil "LRG_Main_AISRevive") exitwith {};
 if (not LRG_Main_AISRevive) exitWith{};
 
-if (ais_ace_shutdown) exitWith {["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."] call BIS_fnc_logFormat};
+if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."] call BIS_fnc_logFormat};
+
 #include "..\AIS_SETUP.sqf"
 
 if (isServer) then {

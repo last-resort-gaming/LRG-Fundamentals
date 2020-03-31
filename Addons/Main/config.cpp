@@ -56,12 +56,7 @@ class CfgFactionClasses
 };
 
 class CfgFunctions {
-
     #include "cfgFunctions.hpp"
-	#include "Functions\AIS\Core\cfgFunctions.hpp"
-	#include "Functions\AIS\System\cfgFunctions.hpp"
-	#include "Functions\AIS\Effects\cfgFunctions.hpp"
-	#include "Functions\AIS\Damage\cfgFunctions.hpp"
 };
 
 #include "Functions\AIS\Effects\BarDlg.hpp"
