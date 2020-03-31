@@ -48,7 +48,7 @@ _pos = getPos _object;
 _dir = getDir _object;
 
 // hide nearby terrain objects
-_hiddenObjects = [_pos, 5 + _size * 5, [], ["WALLS", "VEGETATION", "MISC"]] call YAINA_fnc_hideTerrainObjects;
+_hiddenObjects = [_pos, 5 + _size * 5, [], ["WALLS", "VEGETATION", "MISC"]] call YAINA_F_fnc_hideTerrainObjects;
 
 // Get composition array and spawn it using the BIS_fnc_ObjectsMapper
 _compArray = call (compile format ["call LR_fnc_%1", _type]);

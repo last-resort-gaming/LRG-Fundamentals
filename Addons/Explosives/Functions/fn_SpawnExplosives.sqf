@@ -18,7 +18,7 @@ Examples:
     Nothing to see here
 
 Author:
-	Martin (original: YAINA_..._fnc_destroy), ported and adjusted by Mokka
+	Martin (original: YAINA_F_..._fnc_destroy), ported and adjusted by Mokka
 */
 
 if !(isServer) exitWith {};
