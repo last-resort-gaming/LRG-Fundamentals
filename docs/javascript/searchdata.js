@@ -1,5 +1,5 @@
 var indexSectionsWithContent = {
-   "General": {
+   "Functions": {
       "Symbols": false,
       "Numbers": false,
       "A": true,
@@ -8,7 +8,7 @@ var indexSectionsWithContent = {
       "D": true,
       "E": false,
       "F": true,
-      "G": false,
+      "G": true,
       "H": false,
       "I": true,
       "J": false,
@@ -16,7 +16,7 @@ var indexSectionsWithContent = {
       "L": true,
       "M": true,
       "N": false,
-      "O": true,
+      "O": false,
       "P": true,
       "Q": false,
       "R": true,
@@ -29,7 +29,7 @@ var indexSectionsWithContent = {
       "Y": true,
       "Z": false
       },
-   "Functions": {
+   "General": {
       "Symbols": false,
       "Numbers": false,
       "A": true,
@@ -38,7 +38,7 @@ var indexSectionsWithContent = {
       "D": true,
       "E": false,
       "F": true,
-      "G": false,
+      "G": true,
       "H": false,
       "I": true,
       "J": false,
@@ -46,7 +46,7 @@ var indexSectionsWithContent = {
       "L": true,
       "M": true,
       "N": false,
-      "O": false,
+      "O": true,
       "P": true,
       "Q": false,
       "R": true,
