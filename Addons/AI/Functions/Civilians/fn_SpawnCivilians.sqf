@@ -18,17 +18,17 @@ Arguments:
 
 Example:
 	(begin example)
-	    [
-            "Kavala",
-	        [2955.43,6010.11,0],
-	        500,
-	        "CIV_Default",
-			civilian,
-	        [5, 10],
-	        [13, 25],
-			[2,4],
-			[1,3]
-	        ] call LR_fnc_SpawnCivilians;
+		[
+		    "Kavala",
+		    "CIV_Default",
+		    civilian,
+		    100,    
+		    [5, 10],
+		    300,    
+		    [13, 25],
+		    [2, 4],
+		    [1, 3]
+		] call LR_fnc_SpawnCivilians;
 	(end)
 
 Author:
@@ -48,10 +48,13 @@ Author:
 if (!isserver) exitwith {};
 
 params [
-	"_grpPrefix", "_center", "_radius", "_GarrRadius",
+	"_center",
+	"_grpPrefix",
 	["_faction", "CIV_Default"],
 	["_side", civilian],
+	"_GarrRadius",
 	["_garrisons", [0, 0]],
+	"_radius",
 	["_ped", [0, 0]],
 	["_vehpatrol", [0, 0]],
 	["_vehparked", [0, 0]]

@@ -38,9 +38,10 @@ private _dialogResult = [
 		["EDIT", "Objective Name", ["Objective Alpha"]],
 		["COMBO", "Faction", [_lookup, _prettyNames, 0]],
 		["COMBO", "Side", [[civilian/*, west, east, independent*/], ["Civilian"/*, "Blufor", "Opfor", "Independent"*/], 0]], // TODO: fix this someday
-		["EDIT", "Spawn Radius", ["500"]],
+		["EDIT", "Garrison Radius", ["100"]],
 		["EDIT", "Min. Garrisoned Units", ["0"]],
 		["EDIT", "Max. Garrisoned Units", ["0"]],
+		["EDIT", "Spawn Radius", ["500"]],
 		["EDIT", "Min. Pedestrian Patrols", ["0"]],
 		["EDIT", "Max. Pedestrian Patrols", ["0"]],
 		["EDIT", "Min. Vehicle Patrols", ["0"]],
@@ -67,8 +68,12 @@ private _dialogResult = [
 		} forEach _results;
 
 		_procResults params [
-			"_grpPrefix", "_faction", "_side", "_radius",
+			"_grpPrefix",
+			"_faction",
+			"_side",
+			"_garrRadius",
 			"_garrisonsMin", "_garrisonsMax",
+			"radius",
 			"_pedMin", "_pedMax",
 			"_vehPatrolsMin", "_vehPatrolsMax",
 			"_vehParkedMin", "_vehParkedMax"
@@ -76,9 +81,14 @@ private _dialogResult = [
 
 		// Actually call SpawnCivilians, do it remotely so the server has the units and takes care of them c:
 		[
-			_grpPrefix, _pos, _radius, _faction, _side,
+			_pos,
+			_grpPrefix,
+			_faction,
+			_side,
+			_GarrRadius,
 			[_garrisonsMin, _garrisonsMax],
-			[_pedMin, _pedMin],
+			radius,
+			[_pedMin, _pedMax],
 			[_vehPatrolsMin, _vehPatrolsMax],
 			[_vehParkedMin, _vehParkedMax]
 		] remoteExec ["LR_fnc_SpawnCivilians", 2];
