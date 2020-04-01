@@ -73,7 +73,7 @@ private _dialogResult = [
 			"_side",
 			"_garrRadius",
 			"_garrisonsMin", "_garrisonsMax",
-			"radius",
+			"_radius",
 			"_pedMin", "_pedMax",
 			"_vehPatrolsMin", "_vehPatrolsMax",
 			"_vehParkedMin", "_vehParkedMax"
@@ -87,7 +87,7 @@ private _dialogResult = [
 			_side,
 			_GarrRadius,
 			[_garrisonsMin, _garrisonsMax],
-			radius,
+			_radius,
 			[_pedMin, _pedMax],
 			[_vehPatrolsMin, _vehPatrolsMax],
 			[_vehParkedMin, _vehParkedMax]
