@@ -14,6 +14,10 @@ private _LRG_Weather_MaxTime = uiNamespace getVariable ["LRG_Weather_MaxTime", 6
 private _LRG_Weather_DayTimeAcc = uiNamespace getVariable ["LRG_Weather_DayTimeAcc", 1];
 private _LRG_Weather_NightTimeAcc = uiNamespace getVariable ["LRG_Weather_NightTimeAcc", 1];
 
+// Convert to Minutes
+_LRG_Weather_MinTime = _LRG_Weather_MinTime * 60;
+_LRG_Weather_MaxTime = _LRG_Weather_MaxTime * 60;
+
 private _StartingWeather = call {
 	if (_LRG_Weather_StartWeather IsEqualTo 0) exitwith {SelectRandom ["CLEAR", "CLEAR", "CLOUDY", "CLOUDY", "RAIN"]};
 	if (_LRG_Weather_StartWeather IsEqualTo 1) exitwith {"CLEAR"};
@@ -139,5 +143,8 @@ private	_overcast = 0;
 		60 setOvercast (wcweather select 2);
 		setwind (wcweather select 3);
 
-	}, random (_LRG_Weather_MaxTime - _LRG_Weather_MinTime), [_lastrain, _rain, _overcast]
+		systemchat "Weather Change";
+
+	}, floor random [_LRG_Weather_MinTime, ((_LRG_Weather_MinTime + _LRG_Weather_MaxTime)/2)
+, _LRG_Weather_MaxTime], [_lastrain, _rain, _overcast]
 ] call CBA_fnc_addPerFrameHandler;
