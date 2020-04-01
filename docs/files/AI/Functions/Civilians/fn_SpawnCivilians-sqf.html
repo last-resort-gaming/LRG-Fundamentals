@@ -13,15 +13,15 @@ if (browserType) {document.write("<div class=" + browserType + ">");if (browserV
 
 <div id=Content><div class="CFunction"><div class=CTopic id=MainTopic><h1 class=CTitle><a name="LR_fnc_SpawnCivilians"></a>LR_fnc_SpawnCivilians</h1><div class=CBody><h4 class=CHeading>Description</h4><p>Used to populate an area with a certain type of civilians.&nbsp; Spawns pedestrian patrols, garrisoned peds, vehicle patrols and parked vehicles.</p><h4 class=CHeading>Arguments</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>_grpPrefix</td><td class=CDLDescription>The prefix for the group IDs &lt;STRING&gt;</td></tr><tr><td class=CDLEntry>_center</td><td class=CDLDescription>The center position of the area we want to populate &lt;POSITION 3D&gt;</td></tr><tr><td class=CDLEntry>_radius</td><td class=CDLDescription>The radius of the area we want to populate &lt;SCALAR&gt;</td></tr><tr><td class=CDLEntry>_faction</td><td class=CDLDescription>The faction which we want to use for populating the AO &lt;STRING&gt;</td></tr><tr><td class=CDLEntry>_side</td><td class=CDLDescription>The side of the civilians &lt;SIDE&gt;</td></tr><tr><td class=CDLEntry>_garrisons</td><td class=CDLDescription>Garrison Parameters &lt;ARRAY OF [Min Amount of Units, Random Upper Bound of Units]&gt;</td></tr><tr><td class=CDLEntry>_ped</td><td class=CDLDescription>Pedestrian Parameters &lt;ARRAY OF [Min Amount of Units, Random Upper Bound of Units]&gt;</td></tr><tr><td class=CDLEntry>_vehpatrol</td><td class=CDLDescription>Vehicle Patrol Parameters &lt;ARRAY OF [Min Amount of Vehicles, Random Upper Bound of Vehicles]&gt;</td></tr><tr><td class=CDLEntry>_vehparked</td><td class=CDLDescription>Parked Vehicles Parameters &lt;ARRAY OF [Min Amount of Vehicles, Random Upper Bound of Vehicles]&gt;</td></tr></table><h4 class=CHeading>Example</h4><blockquote><pre>[
     &quot;Kavala&quot;,
-    [2955.43,6010.11,0],
-    500,
     &quot;CIV_Default&quot;,
     civilian,
+    100,
     [5, 10],
+    300,
     [13, 25],
-    [2,4],
-    [1,3]
-    ] call LR_fnc_SpawnCivilians;</pre></blockquote><h4 class=CHeading>Author</h4><p>Mokka</p></div></div></div>
+    [2, 4],
+    [1, 3]
+] call LR_fnc_SpawnCivilians;</pre></blockquote><h4 class=CHeading>Author</h4><p>Mokka</p></div></div></div>
 
 </div><!--Content-->
 
