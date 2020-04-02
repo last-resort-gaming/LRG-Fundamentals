@@ -143,8 +143,6 @@ private	_overcast = 0;
 		60 setOvercast (wcweather select 2);
 		setwind (wcweather select 3);
 
-		systemchat "Weather Change";
-
 	}, floor random [_LRG_Weather_MinTime, ((_LRG_Weather_MinTime + _LRG_Weather_MaxTime)/2)
 , _LRG_Weather_MaxTime], [_lastrain, _rain, _overcast]
 ] call CBA_fnc_addPerFrameHandler;
