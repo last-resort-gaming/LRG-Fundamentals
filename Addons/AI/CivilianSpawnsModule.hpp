@@ -24,18 +24,18 @@ class LRG_ModuleCivilianSpawns: Module_F
 				property = "LR_AI_Type";
 				displayName = "Civilian Faction";
 				tooltip = "Civilian Faction Type for this Module.";
-				defaultValue = """CIV_Default""";
+				defaultValue = """CIV_F""";
 				class values
 				{
-					class CIV_Default			{name = "Default Civilians (Altis)";						value = "CIV_Default";};
+					class CIV_F					{name = "Default Civilians (Altis)";						value = "CIV_F";};
 					class CFP_C_AFG 			{name = "@CFP - Civilians (Afghanistan)";					value = "CFP_C_AFG";};
 					class CFP_C_AFRCHRISTIAN 	{name = "@CFP - Civilians (African Christian)";				value = "CFP_C_AFRCHRISTIAN";};
 					class CFP_C_AFRISLAMIC 		{name = "@CFP - Civilians (African Islamic)";				value = "CFP_C_AFRISLAMIC";};
 					class CFP_C_ASIA 			{name = "@CFP - Civilians (Asian)";							value = "CFP_C_ASIA";};
-					class CUP_C_C 				{name = "@CUP - Civilians (Chernarus)";						value = "CUP_C_C";};
-					class CUP_C_ME 				{name = "@CUP - Civilians (Middle Eastern)";				value = "CUP_C_ME";};
-					class CUP_C_R 				{name = "@CUP - Civilians (Russian)";						value = "CUP_C_R";};
-					class CUP_C_TK 				{name = "@CUP - Civilians (Takistan)";						value = "CUP_C_TK";};					
+					class CUP_C_CHERNARUS 		{name = "@CUP - Civilians (Chernarus)";						value = "CUP_C_CHERNARUS";};
+					class CUP_C_SAHRANI 		{name = "@CUP - Civilians (Middle Eastern)";				value = "CUP_C_SAHRANI";};
+					class CUP_C_RU 				{name = "@CUP - Civilians (Russian)";						value = "CUP_C_R";};
+					class CUP_C_TK 				{name = "@CUP - Civilians (Takistan)";						value = "CUP_C_TK";};
 				};
 			};
 		class Side: Combo

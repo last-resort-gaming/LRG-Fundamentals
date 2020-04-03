@@ -20,7 +20,7 @@ Example:
 	(begin example)
 		[
 		    "Kavala",
-		    "CIV_Default",
+		    "CIV_F",
 		    civilian,
 		    100,    
 		    [5, 10],
@@ -50,7 +50,7 @@ if (!isserver) exitwith {};
 params [
 	"_center",
 	"_grpPrefix",
-	["_faction", "CIV_Default"],
+	["_faction", "CIV_F"],
 	["_side", civilian],
 	"_GarrRadius",
 	["_garrisons", [0, 0]],

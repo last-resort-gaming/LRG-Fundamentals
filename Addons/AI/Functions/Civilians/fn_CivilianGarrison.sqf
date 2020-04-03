@@ -30,7 +30,7 @@ if (!isServer) exitWith {};
 
 params [
 	"_pos", "_GarrRadius",
-	["_faction", "CIV_Default"],
+	["_faction", "CIV_F"],
 	["_side", civilian],
 	"_pedList",
 	["_unitCount", 0],

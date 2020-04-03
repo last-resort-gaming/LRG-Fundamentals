@@ -5,7 +5,7 @@ _logic = param [0,objNull,[objNull]];
 
 _SpawnLocation = (getPos _logic);
 _ObjName = _logic getVariable ["ObjName", "Objective 1"];
-_Faction = _logic getVariable ["Type", "CIV_Default"];
+_Faction = _logic getVariable ["Type", "CIV_F"];
 _Side = _logic getVariable ["Side", "civilian"];
 _GarrRadius = _logic getVariable ["GarrRadius", 200];
 _GarrisonedUnitsMin = _logic getVariable ["GarrisonedUnitsMin", 0];

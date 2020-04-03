@@ -32,10 +32,10 @@ class LRG_AI {
 		class CFP_C_AFRCHRISTIAN {};
 		class CFP_C_AFRISLAMIC {};
 		class CFP_C_ASIA {};
-		class CIV_Default {};
-		class CUP_C_C {};
-		class CUP_C_ME {};
-		class CUP_C_R {};
+		class CIV_F {};
+		class CUP_C_CHERNARUS {};
+		class CUP_C_SAHRANI {};
+		class CUP_C_RU {};
 		class CUP_C_TK {};
 	};
 	
