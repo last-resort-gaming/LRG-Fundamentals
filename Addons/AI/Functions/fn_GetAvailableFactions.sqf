@@ -32,13 +32,16 @@ private _factions = [];
 		_sideFactions = missionNamespace getVariable _sideVar;
 		_factions append _sideFactions;
 	} else {
-		_sideFactions = ["", ["LRG_AI", format ["%1_Factions", _side]]] call YAINA_F_fnc_GetFunctions;
+		_sideFactions = [nil, ["LRG_AI", format ["%1_Factions", _side]]] call YAINA_F_fnc_GetFunctions;
 
-		{
-			if (isClass (configfile >> "CfgFactionClasses" >> _x)) then {
-				_factions pushBack _x;
+		for "_i" from (count _sideFactions) to 0 step -1 do {
+			if !(isClass (configFile >> "CfgFactionClasses" >> (_sideFactions select _i))) then {
+				_sideFactions deleteAt _i;
 			};
-		} forEach _sideFactions;
+		};
+
+		missionNamespace setVariable [_sideVar, _sideFactions];
+		_factions append _sideFactions;
 	};
 } forEach _sides;
 
