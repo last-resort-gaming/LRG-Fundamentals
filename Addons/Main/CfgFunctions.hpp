@@ -66,6 +66,7 @@ class YAINA_F {
 		class log {};
 		class hintC {};
 		class hideTerrainObjects {};
+		class GetFunctions {};
     };
 };
 class AIS_Core {

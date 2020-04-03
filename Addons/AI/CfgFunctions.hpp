@@ -11,6 +11,7 @@ class LRG_AI {
 		class SpawnAI {};
 		class SpawnAIZeusWrapper {};
 		class RoadPatrol {};
+		class GetAvailableFactions {};
 	};
 
 	class Civilian {
@@ -131,7 +132,7 @@ class LRG_AI {
 		class UK3CB_UN_I {};
 	};
 	
-	class Weast_Factions {
+	class West_Factions {
 
 		file = "z\LRG Fundamentals\addons\AI\Functions\Factions\West";
 		class BLU_F {};
