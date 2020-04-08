@@ -14,7 +14,7 @@
 params ["_unit", "_corpse"];
 
 // Restore Loadout ?
-if (AIS_RESTORE_LOADOUT) then {
+if (LRG_AIS_RESTORE_LOADOUT) then {
     _loadout = _unit getVariable "AIS_RespawnLoadout";
     if !(isNil "_loadout") then {
         _unit setUnitLoadout _loadout;
@@ -33,7 +33,7 @@ _unit setCaptive false;
 
 if (isPlayer _unit) then {
 	if (local player) then {showHud true};
-	if (AIS_TOGGLE_RADIO) then {
+	if (LRG_AIS_TOGGLE_RADIO) then {
 		[true] call AIS_Effects_fnc_toggleRadio;
 	};
 } else {

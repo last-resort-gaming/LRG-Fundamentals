@@ -63,7 +63,7 @@ if (!isServer && (count (units group player) > 1)) then {
 
 // add handleHeal local to the player for every unit and set the correct anim-state (local)
 private _allPlayers = allUnits select {isPlayer _x};	// doesn't use allPlayers at this point, cause it can be delayed in self-hosted env.
-private _ais_revive_units = toLower AIS_REVIVE_INIT_UNITS;
+private _ais_revive_units = toLower LRG_AIS_REVIVE_INIT_UNITS;
 private _init_units = call {
 	if (_ais_revive_units isEqualTo "allunits") exitWith {allUnits};
 	if (_ais_revive_units isEqualTo "allplayers") exitWith {_allPlayers};	// at this point only as a dummy. Cause everytime every player will auto-init, regardless what the setup will say.
@@ -91,7 +91,7 @@ private _init_units = call {
 
 
 ais_medequip_array = [];
-if (AIS_TOGGLE_RADIO) then {
+if (LRG_AIS_TOGGLE_RADIO) then {
 	[true] call AIS_Effects_fnc_toggleRadio;
 };
 

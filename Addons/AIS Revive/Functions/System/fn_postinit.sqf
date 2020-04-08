@@ -1,7 +1,7 @@
 if (isDedicated || !hasInterface) exitWith {};
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {diag_log ["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."]};
-if (isNil "LRG_Main_AISRevive") exitwith {};
-if (not LRG_Main_AISRevive) exitWith{};
+if (isNil "LRG_AIS_MASTER_ENABLE") exitwith {};
+if (not LRG_AIS_MASTER_ENABLE) exitWith{};
 /*
 // expample action
 _action = [

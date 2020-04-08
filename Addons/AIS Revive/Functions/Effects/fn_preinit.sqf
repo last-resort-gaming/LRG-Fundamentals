@@ -1,5 +1,5 @@
-﻿if (isNil "LRG_Main_AISRevive") exitwith {};
-if (not LRG_Main_AISRevive) exitWith{};
+﻿if (isNil "LRG_AIS_MASTER_ENABLE") exitwith {};
+if (not LRG_AIS_MASTER_ENABLE) exitWith{};
 
 // from domination
 ais_help_screaming = [

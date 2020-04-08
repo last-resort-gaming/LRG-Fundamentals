@@ -50,7 +50,7 @@ if (sunOrMoon isEqualTo 0) then {
 [_unit] call AIS_System_fnc_removeFaks;
 
 // disable radios
-if (AIS_TOGGLE_RADIO) then {
+if (LRG_AIS_TOGGLE_RADIO) then {
 	[false] call AIS_Effects_fnc_toggleRadio;
 };
 

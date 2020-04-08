@@ -25,7 +25,7 @@ if (_is_unoncsious) then {
 	
 	if (local player) then {
 		_condition = false;
-		_condition = switch (AIS_SHOW_UNC_MESSAGE_TO) do {
+		_condition = switch (LRG_AIS_SHOW_UNC_MESSAGE_TO) do {
 			case ("Group") : {_unit in units group player};
 			case ("Side") : {side _unit isEqualTo playerSide};
 			default {false};
@@ -35,7 +35,7 @@ if (_is_unoncsious) then {
 			[side _unit,"HQ"] sideChat format ["%1 is down and needs help at %2!",name _unit, mapGridPosition _unit];
 		};
 		
-		if (AIS_SHOW_UNC_MARKERS) then {
+		if (LRG_AIS_SHOW_UNC_MARKERS) then {
 			_unit call AIS_Effects_fnc_injuredMarker;
 		};
 	};
@@ -55,13 +55,13 @@ if (_is_unoncsious) then {
 	if (isPlayer _unit) then {
 		if (local player) then {
 			showHud true;
-			if (AIS_TOGGLE_RADIO) then {
+			if (LRG_AIS_TOGGLE_RADIO) then {
 				[true] call AIS_Effects_fnc_toggleRadio;
 			};
 		};
 	};
 	
-	if (AIS_SHOW_UNC_MARKERS && {local player}) then {
+	if (LRG_AIS_SHOW_UNC_MARKERS && {local player}) then {
 		_unit call AIS_Effects_fnc_removeinjuredMarker;
 	};
 };

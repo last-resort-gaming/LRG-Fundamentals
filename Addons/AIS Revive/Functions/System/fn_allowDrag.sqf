@@ -28,7 +28,7 @@ _return = if (
 	{_noHealer} &&
 	{_noDrag} &&
 	{_noDraging} &&
-	{player distance _target <= AIS_ACTION_DISTANCE}
+	{player distance _target <= LRG_AIS_ACTION_DISTANCE}
 ) then {true} else {false};
 
 

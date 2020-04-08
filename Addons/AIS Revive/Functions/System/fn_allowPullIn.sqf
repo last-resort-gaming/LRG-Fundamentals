@@ -15,4 +15,4 @@ private _targetVehicle = _this;
 _canload = [false, true] select (count ([_targetVehicle] call AIS_System_fnc_getCargoIndex) > 0);
 
 
-_canload && { player distance _targetVehicle <= AIS_ACTION_DISTANCE }
+_canload && { player distance _targetVehicle <= LRG_AIS_ACTION_DISTANCE }

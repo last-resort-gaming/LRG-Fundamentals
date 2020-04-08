@@ -25,4 +25,4 @@ if (count _crew > 0) then {
 };
 
 
-_isUncInside && { player distance _targetVehicle <= AIS_ACTION_DISTANCE }
+_isUncInside && { player distance _targetVehicle <= LRG_AIS_ACTION_DISTANCE }

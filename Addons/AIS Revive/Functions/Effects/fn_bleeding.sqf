@@ -55,7 +55,7 @@ if (_timeleft <= 0) exitWith {
 	[_unit] call AIS_Damage_fnc_goToDead;
 };
 
-if (AIS_SHOW_COUNTDOWN) then {
+if (LRG_AIS_SHOW_COUNTDOWN) then {
 	[titleText ["It's to late for you.","PLAIN DOWN",1], titleText [format ["Bleedout in %1 Seconds", floor _timeleft],"PLAIN DOWN",0.2]] select (_timeleft > 3);
 };
 

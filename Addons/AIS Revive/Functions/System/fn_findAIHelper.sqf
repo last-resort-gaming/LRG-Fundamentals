@@ -36,8 +36,8 @@ if (isNull _helper) then {
 	// if no valid AI group member was found looking for close AI units of the same side
 	if (isNull _helper) then {
 		private _allMenNear = [];
-		if (AIS_AI_HELP_RADIUS > 200) then {AIS_AI_HELP_RADIUS = 200};	// max 200 metres
-		_allMenNear = (position _injured) nearEntities ["CAManBase", AIS_AI_HELP_RADIUS];
+		if (LRG_AIS_AI_HELP_RADIUS > 200) then {LRG_AIS_AI_HELP_RADIUS = 200};	// max 200 metres
+		_allMenNear = (position _injured) nearEntities ["CAManBase", LRG_AIS_AI_HELP_RADIUS];
 		_allMenNear = _allMenNear - [_injured];
 		if (count _allMenNear > 0) then {
 			private _matching_side_array = [];

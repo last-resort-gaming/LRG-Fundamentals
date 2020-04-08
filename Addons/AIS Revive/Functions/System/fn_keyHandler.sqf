@@ -25,7 +25,7 @@ if (_keyDown isEqualTo 35) then {[player] call AIS_System_fnc_callHelp};	// key 
 
 {
    if (inputAction _x > 0) exitWith {
-		if (AIS_NO_CHAT && {inputAction 'Chat' > 0}) then {
+		if (LRG_AIS_NO_CHAT && {inputAction 'Chat' > 0}) then {
 			["Chat disabled."] call AIS_Core_fnc_dynamicText;
 		};
 		_return = true;

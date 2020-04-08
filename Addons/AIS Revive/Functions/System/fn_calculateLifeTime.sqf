@@ -12,7 +12,7 @@
 
 params ["_unit"];
 
-private _calculated_life_time = AIS_BLEEDOUT_TIME;
+private _calculated_life_time = LRG_AIS_BLEEDOUT_TIME;
 
 // A bigger factor mean we have a bigger deviation in revive time depending in our real damage deviation. (recommended values between 0.5 and 2.0)
 _ais_variation_factor = 1.0;
@@ -31,7 +31,7 @@ _summary_damage = _summary_damage + (damage _unit);
 _calculated_life_time = if (_unit getVariable ["AIS_noBleedOut", false]) then {
 	999999999
 } else {
-	(AIS_BLEEDOUT_TIME + ((_ais_variation_factor * (_ais_avg_damage_factor - _summary_damage)) * 10)) * AIS_BLEEDOUT_MULTIPLIER;
+	(LRG_AIS_BLEEDOUT_TIME + ((_ais_variation_factor * (_ais_avg_damage_factor - _summary_damage)) * 10)) * LRG_AIS_BLEEDOUT_MULTIPLIER;
 };
 
 

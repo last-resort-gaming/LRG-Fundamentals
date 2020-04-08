@@ -22,7 +22,7 @@ private _return = false;
 			if ([_obj, _radius] call AIS_Core_fnc_inRange) exitWith {_return = true};
 		};
 	};
-} count AIS_MEDEVAC_STATIONS;
+} count LRG_AIS_MEDEVAC_STATIONS;
 
 
 _return

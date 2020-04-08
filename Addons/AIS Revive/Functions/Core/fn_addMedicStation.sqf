@@ -11,7 +11,7 @@ private _cargo    = getItemCargo _station;
 private _mkCargo  = (_cargo select 0) find "Medikit";
 private _fakCargo = (_cargo select 0) find "FirstAidKit";
 
-if (_mkCargo isEqualTo -1 && _station getVariable["AIS_REQUIRE_MEDIKIT", true]) exitWith { false };
+if (_mkCargo isEqualTo -1 && _station getVariable["LRG_AIS_REQUIRE_MEDIKIT", true]) exitWith { false };
 if (_fakCargo isEqualTo -1 && !(_station getVariable["AIS_NO_CONSUME_FAKS", false])) exitWith { false };
 
 // And it's not already in the array

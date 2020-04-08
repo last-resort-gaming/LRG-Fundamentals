@@ -94,10 +94,10 @@ For some reason the engine won't handle the damage to the new(changed) body part
 So we have to set the damage by ourself to the wanted hitPartIndex.
 */
 _hitPart = [_unit, _hitSelection] call AIS_Damage_fnc_getHitIndexValue;
-_damage = (_hitPart select 2) + (_new_damage * AIS_DAMAGE_TOLLERANCE_FACTOR);
+_damage = (_hitPart select 2) + (_new_damage * LRG_AIS_DAMAGE_TOLLERANCE_FACTOR);
 
 // bullet/splitter impact post process effects
-if (AIS_IMPACT_EFFECTS) then {
+if (LRG_AIS_IMPACT_EFFECTS) then {
 	if (_damageType in ["grenade", "bullet"]) then {
 		if (isPlayer _unit) then {
 			[_unit, _damage] call AIS_Effects_fnc_bulletImpact;
@@ -106,7 +106,7 @@ if (AIS_IMPACT_EFFECTS) then {
 };
 
 // if there is no revive guarantee, handle a realistic mode. Now we have random chance to die. The risk is increasing with higer damage values and some type of damages. (explos and grenades)
-if !(AIS_REVIVE_GUARANTY) then {
+if !(LRG_AIS_REVIVE_GUARANTY) then {
 	private _critical_hit = false;
 	// vehicle blow-up is everytime critical. Set to dead...
 	if (!(isNull objectParent _unit)) then {
@@ -147,7 +147,7 @@ if ((diag_tickTime > _unit getVariable ["ais_protector_delay", 0]) && {_unit get
     // this case, we know what we're wanting to achieve and it'll be short lived and the limitations on insta-kill are below
     if (isNil "_damage") then { _damage = 1; };
 
-    if (_damage > 0.9 && !AIS_REVIVE_GUARANTY) then {[_unit] call AIS_Damage_fnc_goToDead};
+    if (_damage > 0.9 && !LRG_AIS_REVIVE_GUARANTY) then {[_unit] call AIS_Damage_fnc_goToDead};
     _damage = _damage min 0.89;
     _damage
 };

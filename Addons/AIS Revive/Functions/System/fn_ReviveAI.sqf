@@ -77,7 +77,7 @@ if (alive _injured) then {
 	_injured setVariable ["ais_unconscious", false, true];
 	
 	// healing if enabled
-	if (AIS_REVIVE_HEAL) then {
+	if (LRG_AIS_REVIVE_HEAL) then {
 		_injured setDamage 0;
 		_injured setVariable ["ais_fireDamage", 0];
 	} else {
@@ -91,7 +91,7 @@ if (alive _injured) then {
 	
 	if (isPlayer _injured) then {
 		[true] remoteExec ['showHud', _injured];
-		if (AIS_TOGGLE_RADIO) then {
+		if (LRG_AIS_TOGGLE_RADIO) then {
 			[true] remoteExecCall ["AIS_Effects_fnc_toggleRadio", _injured, false];
 		};
 	} else {

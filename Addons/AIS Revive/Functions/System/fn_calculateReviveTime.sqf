@@ -13,7 +13,7 @@
 
 params ["_unit", "_injured"];
 
-private _calculated_revive_time = AIS_REVIVETIME;
+private _calculated_revive_time = LRG_AIS_REVIVETIME;
 
 // A bigger factor mean we have a bigger deviation in revive time depending in our real damage deviation. (recommended values between 0.5 and 2.0)
 _ais_variation_factor = 0.7;
@@ -29,7 +29,7 @@ private _summary_damage = 0;
 _summary_damage = _summary_damage + (damage _injured);
 
 // calculate revive time
-_calculated_revive_time = (AIS_REVIVETIME + ((_ais_variation_factor * (_summary_damage - _ais_avg_damage_factor)) * 2)) max (AIS_REVIVETIME / 2);
+_calculated_revive_time = (LRG_AIS_REVIVETIME + ((_ais_variation_factor * (_summary_damage - _ais_avg_damage_factor)) * 2)) max (LRG_AIS_REVIVETIME / 2);
 
 // rezise the time if the helper is a medic
 if (_unit call AIS_System_fnc_isMedic) then {

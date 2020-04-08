@@ -13,7 +13,7 @@ disableSerialization;
 waitUntil {!(isNull (findDisplay 49))};
 
 _downTime = player getVariable ["ais_protector_delay", 0];
-private _delay = _downTime + AIS_DISABLE_RESPAWN_BUTTON - 6;
+private _delay = _downTime + LRG_AIS_DISABLE_RESPAWN_BUTTON - 6;
 private _ctrl = (findDisplay 49) displayCtrl 1010;
 
 while {!isNull (findDisplay 49) && {diag_tickTime < _delay}} do {

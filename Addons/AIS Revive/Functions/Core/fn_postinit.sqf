@@ -1,13 +1,13 @@
 
-if (isNil "LRG_Main_AISRevive") exitwith {};
-if (not LRG_Main_AISRevive) exitWith{};
+if (isNil "LRG_AIS_MASTER_ENABLE") exitwith {};
+if (not LRG_AIS_MASTER_ENABLE) exitWith{};
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."] call BIS_fnc_logFormat};
 
 if (isServer) then {
 	private _allPlayers = allUnits select {isPlayer _x};	// doesn't use allPlayers at this point, cause it can be delayed in self-hosted env.
 
-	private _ais_revive_units = toLower AIS_REVIVE_INIT_UNITS;
+	private _ais_revive_units = toLower LRG_AIS_REVIVE_INIT_UNITS;
 	private _init_units = call {
 		if (_ais_revive_units isEqualTo "allunits") exitWith {allUnits};
 		if (_ais_revive_units isEqualTo "allplayers") exitWith {_allPlayers};	// at this point only as a dummy. Cause everytime every player will auto-init, regardless what the setup will say.
@@ -32,12 +32,12 @@ if (isServer) then {
 	addMissionEventHandler ["HandleDisconnect", {_this call AIS_Core_fnc_handleDisconnect}];
 };
 
-if (isNil "AIS_MEDEVAC_STATIONS") then {
-	AIS_MEDEVAC_STATIONS = [];
+if (isNil "LRG_AIS_MEDEVAC_STATIONS") then {
+	LRG_AIS_MEDEVAC_STATIONS = [];
 } else {
-	if !(AIS_MEDEVAC_STATIONS isEqualType []) then {
-		AIS_MEDEVAC_STATIONS = [];
-		["AIS: AIS_MEDEVAC_STATIONS wasnt defined in the correct way."] call BIS_fnc_logFormat;
+	if !(LRG_AIS_MEDEVAC_STATIONS isEqualType []) then {
+		LRG_AIS_MEDEVAC_STATIONS = [];
+		["AIS: LRG_AIS_MEDEVAC_STATIONS wasnt defined in the correct way."] call BIS_fnc_logFormat;
 	};
 };
 
@@ -66,7 +66,7 @@ AIS_Core_realSide = getNumber (configfile >> "CfgVehicles" >> (typeOf AIS_Core_r
 
 true call AIS_Core_fnc_Interaction_loop;
 
-if (AIS_SHOW_DIARYINFO) then {
+if (LRG_AIS_SHOW_DIARYINFO) then {
 	call AIS_System_fnc_diary;
 };
 

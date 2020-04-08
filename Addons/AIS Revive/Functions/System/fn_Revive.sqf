@@ -45,12 +45,12 @@ if(_fakSource isEqualTo _healer) then {
 };
 
 // If no FAKs, Bail
-if((AIS_CONSUME_FAKS && !(_fakSource getVariable ["AIS_NO_CONSUME_FAKS", false])) && _fakCount isEqualTo 0) exitWith {
+if((LRG_AIS_CONSUME_FAKS && !(_fakSource getVariable ["AIS_NO_CONSUME_FAKS", false])) && _fakCount isEqualTo 0) exitWith {
     ["You have no First Aid Kits to administer"] remoteExecCall ["AIS_Core_fnc_dynamicText", _healer, false];
 };
 
 // If no MedKit Bail, unless excluded
-if(AIS_REQUIRE_MEDIKIT && (_medKitCount isEqualTo 0 && _fakSource getVariable ["AIS_REQUIRE_MEDIKIT", true])) exitWith {
+if(LRG_AIS_REQUIRE_MEDIKIT && (_medKitCount isEqualTo 0 && _fakSource getVariable ["LRG_AIS_REQUIRE_MEDIKIT", true])) exitWith {
     ["You have no Medi Kit"] remoteExecCall ["AIS_Core_fnc_dynamicText", _healer, false];
 };
 
@@ -107,7 +107,7 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
 		call AIS_Effects_fnc_garbage;
 		
 		// healing if enabled
-		if (AIS_REVIVE_HEAL) then {
+		if (LRG_AIS_REVIVE_HEAL) then {
 			_injured setDamage 0;
 			_injured setVariable ["ais_fireDamage", 0];
 		} else {
@@ -125,7 +125,7 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
 		[_injured, false] remoteExec ["setCaptive", 0, false];
 
 		// And lastly, remove a FAK from somewhere if required
-		if(AIS_CONSUME_FAKS && !(_fakSource getVariable ["AIS_NO_CONSUME_FAKS", false])) then {
+		if(LRG_AIS_CONSUME_FAKS && !(_fakSource getVariable ["AIS_NO_CONSUME_FAKS", false])) then {
 		    if (_fakSource isEqualTo _healer) then {
 		        _fakLoadout = [_healer] call AIS_System_fnc_getFAKs;
                 for "_i" from 0 to count _fakLoadout do {

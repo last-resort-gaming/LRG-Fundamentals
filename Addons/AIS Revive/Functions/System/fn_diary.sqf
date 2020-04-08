@@ -10,13 +10,13 @@
 	Bool
  */
 
-private _who_can_revive = switch (AIS_MEDICAL_EDUCATION) do {
+private _who_can_revive = switch (LRG_AIS_MEDICAL_EDUCATION) do {
 	case (0) : {"Everyone can revive"};
 	case (1) : {"Everybody with a First Aid Kit or Medkit"};
 	case (2) : {"Only medics can revive"};
 };
-private _revive_guaranty = if (AIS_REVIVE_GUARANTY) then {"You are protected from insta-death"} else {"Heavy damage can end in insta-death"};
-private _revive_heal = if (AIS_REVIVE_HEAL) then {"completely healed"} else {"separately healing action needed"};
+private _revive_guaranty = if (LRG_AIS_REVIVE_GUARANTY) then {"You are protected from insta-death"} else {"Heavy damage can end in insta-death"};
+private _revive_heal = if (LRG_AIS_REVIVE_HEAL) then {"completely healed"} else {"separately healing action needed"};
 
 _subject = player createDiarySubject ["ais_settings", "AIS Settings"];
 _log_briefing = player createDiaryRecord ["ais_settings", ["Medical Education", "
@@ -24,7 +24,7 @@ _log_briefing = player createDiaryRecord ["ais_settings", ["Medical Education", 
 _log_briefing = player createDiaryRecord ["ais_settings", ["Heavy Damage Handling", "
 <font face='PuristaMedium' size=15 color='#8E8E8E'>Revive Chance: </font>" + _revive_guaranty]];
 _log_briefing = player createDiaryRecord ["ais_settings", ["Bleedout Time",
-format ["<font face='PuristaMedium' size=15 color='#8E8E8E'>Average Bleedout Time: </font>%1", AIS_BLEEDOUT_TIME]]];
+format ["<font face='PuristaMedium' size=15 color='#8E8E8E'>Average Bleedout Time: </font>%1", LRG_AIS_BLEEDOUT_TIME]]];
 _log_briefing = player createDiaryRecord ["ais_settings", ["Healing Status", "
 <font face='PuristaMedium' size=15 color='#8E8E8E'>Damage status after revive: </font>" + _revive_heal]];
 

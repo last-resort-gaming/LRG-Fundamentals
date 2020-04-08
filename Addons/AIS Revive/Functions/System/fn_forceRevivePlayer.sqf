@@ -19,7 +19,7 @@ _injured setVariable ["ais_hasHelper", ObjNull, true];
 call AIS_Effects_fnc_garbage;
 
 // Do the healing
-if (AIS_REVIVE_HEAL) then {
+if (LRG_AIS_REVIVE_HEAL) then {
     _injured setDamage 0;
     _injured setVariable ["ais_fireDamage", 0];
 } else {
