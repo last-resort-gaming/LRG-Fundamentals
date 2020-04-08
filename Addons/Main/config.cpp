@@ -59,7 +59,6 @@ class CfgFunctions {
     #include "cfgFunctions.hpp"
 };
 
-#include "Functions\AIS\Effects\BarDlg.hpp"
 #include "Functions\CHVD\dialog.hpp"
 #include "Functions\YAINA\General\crewNamesTitles.hpp"
 

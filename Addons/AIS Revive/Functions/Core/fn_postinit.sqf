@@ -4,8 +4,6 @@ if (not LRG_Main_AISRevive) exitWith{};
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."] call BIS_fnc_logFormat};
 
-#include "..\AIS_SETUP.sqf"
-
 if (isServer) then {
 	private _allPlayers = allUnits select {isPlayer _x};	// doesn't use allPlayers at this point, cause it can be delayed in self-hosted env.
 

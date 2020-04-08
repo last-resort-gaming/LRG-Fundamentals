@@ -1,16 +1,3 @@
-// AIS Revive
-[
-    "LRG_Main_AISRevive",
-    "CHECKBOX",
-    ["AIS Revive", "Use AIS Revive System - Will not run with @ACE"],
-    "LRG Main",
-    false,
-    true,
-    {
-
-    }
-] call CBA_Settings_fnc_init;
-
 // Vehicle Crew List
 [
     "LRG_Main_VehicleCrewList",
