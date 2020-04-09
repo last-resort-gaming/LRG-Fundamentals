@@ -23,7 +23,7 @@ if (!(isNull (_unit getVariable ["ais_DragDrop_Player", objNull]))) then {
 	[_unit] remoteExecCall ["AIS_System_fnc_release", _dragger, false];
 };
 
-_unit call AIS_System_fnc_restoreFaks;
+_unit call LRG_AIS_System_fnc_restoreFaks;
 
 // dead... if some issues with the deadcam (shown killer) give the dead a deleay of 1 frame --> need testing
 _unit setDamage 1;

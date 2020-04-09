@@ -1,4 +1,4 @@
-﻿// ["my marker",  position player, "ICON", "ColorRed", [0.5,0.5]] call AIS_Core_fnc_createLocalMarker;
+﻿// ["my marker",  position player, "ICON", "ColorRed", [0.5,0.5]] call LRG_AIS_Core_fnc_createLocalMarker;
 
 params [
 	["_name","",[""]],

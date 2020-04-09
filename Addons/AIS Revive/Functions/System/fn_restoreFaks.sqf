@@ -8,7 +8,7 @@
 	0: Unit (Object)
 	
  * Example:
-	[player] call AIS_System_fnc_restoreFaks;
+	[player] call LRG_AIS_System_fnc_restoreFaks;
  
  * Return value:
 	-

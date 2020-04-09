@@ -32,7 +32,7 @@ _summary_damage = _summary_damage + (damage _injured);
 _calculated_stabilize_time = (LRG_AIS_STABILIZETIME + ((_ais_variation_factor * (_summary_damage - _ais_avg_damage_factor)) * 2)) max (LRG_AIS_STABILIZETIME / 2);
 
 // rezise the time if the helper is a medic
-if (_unit call AIS_System_fnc_isMedic) then {
+if (_unit call LRG_AIS_System_fnc_isMedic) then {
 	_calculated_stabilize_time = _calculated_stabilize_time / 1.5;
 };
 

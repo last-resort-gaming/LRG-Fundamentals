@@ -43,4 +43,4 @@ AIS_Core_lastCursorTarget = objNull;
     } count (missionNamespace getVariable ["AIS_Core_actionStorage", []]);
 
 	_cursorTarget setVariable ["AIS_Core_actionStorage", _objActions]; //@todo maybe init array and remove this line - this requires module dependencies
-}] call AIS_Core_fnc_onEachFrame;
+}] call LRG_AIS_Core_fnc_onEachFrame;

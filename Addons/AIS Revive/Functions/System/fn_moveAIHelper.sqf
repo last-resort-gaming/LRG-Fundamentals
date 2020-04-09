@@ -25,7 +25,7 @@ if (
 		_helper enableAI "AUTOCOMBAT";
 	} else {
 		if (alive _injured && {!isPlayer _injured}) then {
-			[_injured] call AIS_System_fnc_AIselfCheck;	// check if another helper is avalible
+			[_injured] call LRG_AIS_System_fnc_AIselfCheck;	// check if another helper is avalible
 		};
 	};
 };
@@ -47,13 +47,13 @@ if (_helper distance2D _injured < 3) exitWith {
 		[_helper, _injured] spawn AIS_System_fnc_ReviveAI;
 	} else {
 		_helper enableAI "AUTOCOMBAT";
-		[_injured] call AIS_System_fnc_AIselfCheck;
+		[_injured] call LRG_AIS_System_fnc_AIselfCheck;
 	};
 };
 
 // if not close enough start the function in a few seconds again
 private _acc_time = diag_tickTime + 5;
-[{diag_tickTime > (_this select 2)}, {_this call AIS_System_fnc_moveAIHelper}, [_injured, _helper, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+[{diag_tickTime > (_this select 2)}, {_this call LRG_AIS_System_fnc_moveAIHelper}, [_injured, _helper, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 
 
 true

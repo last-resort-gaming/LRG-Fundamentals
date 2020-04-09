@@ -22,9 +22,9 @@ _behaviour = behaviour _healer;
 
 // move the wounded out of the vehicle
 if (!isNull objectParent _injured) exitWith {
-	[_injured, vehicle _injured, 0] call AIS_System_fnc_moveCargoRemote;
+	[_injured, vehicle _injured, 0] call LRG_AIS_System_fnc_moveCargoRemote;
 	_acc_time = diag_tickTime + 1.382;
-	[{diag_tickTime > (_this select 2)}, {[_this select 0, _this select 1] spawn AIS_System_fnc_ReviveAI}, [_healer, _injured, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+	[{diag_tickTime > (_this select 2)}, {[_this select 0, _this select 1] spawn AIS_System_fnc_ReviveAI}, [_healer, _injured, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 };
 
 [_injured, "AinjPpneMstpSnonWrflDnon_rolltoback"] remoteExec ['playMove', 0];
@@ -49,7 +49,7 @@ if ((_relpos select 0) < 0) then {_offset = [-0.2,0.7,0]; _dir = 90} else {_offs
 _injured attachTo [_healer, _offset];
 [_injured, _dir] remoteExec ["setDir", 0, false];
 
-private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
+private _duration = [_healer, _injured] call LRG_AIS_System_fnc_calculateReviveTime;
 
 
 private _startTime = diag_tickTime + _duration;
@@ -83,7 +83,7 @@ if (alive _injured) then {
 	} else {
 		// make sure the unit can walk after revive
 		if ((_injured getHitIndex 10) > 0.49) then {
-			[{(_this select 0) setHitIndex [10, 0.49]}, [_injured]] call AIS_Core_fnc_onNextFrame;
+			[{(_this select 0) setHitIndex [10, 0.49]}, [_injured]] call LRG_AIS_Core_fnc_onNextFrame;
 		};
 	};
 

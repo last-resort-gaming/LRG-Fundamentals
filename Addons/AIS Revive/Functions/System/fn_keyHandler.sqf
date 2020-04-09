@@ -21,12 +21,12 @@ if !(player getVariable ['ais_unconscious', false]) exitWith {false};
 
 if (_keyDown isEqualTo 1) then {[] spawn AIS_System_fnc_disableRespawnButton};	// key "Esc" --> disable Respawn Button
 
-if (_keyDown isEqualTo 35) then {[player] call AIS_System_fnc_callHelp};	// key "H" --> call for Help
+if (_keyDown isEqualTo 35) then {[player] call LRG_AIS_System_fnc_callHelp};	// key "H" --> call for Help
 
 {
    if (inputAction _x > 0) exitWith {
 		if (LRG_AIS_NO_CHAT && {inputAction 'Chat' > 0}) then {
-			["Chat disabled."] call AIS_Core_fnc_dynamicText;
+			["Chat disabled."] call LRG_AIS_Core_fnc_dynamicText;
 		};
 		_return = true;
 	};

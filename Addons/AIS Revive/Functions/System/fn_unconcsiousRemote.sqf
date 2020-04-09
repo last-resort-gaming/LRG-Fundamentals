@@ -36,7 +36,7 @@ if (_is_unoncsious) then {
 		};
 		
 		if (LRG_AIS_SHOW_UNC_MARKERS) then {
-			_unit call AIS_Effects_fnc_injuredMarker;
+			_unit call LRG_AIS_Effects_fnc_injuredMarker;
 		};
 	};
 	
@@ -45,7 +45,7 @@ if (_is_unoncsious) then {
 	[_unit, "agonyStop"] remoteExec ["playActionNow", 0, false];
 	//_unit playActionNow "agonyStop";
 	
-	[_unit, 50] call AIS_system_fnc_reveal;
+	[_unit, 50] call LRG_AIS_system_fnc_reveal;
 	
 	addSwitchableUnit _unit;
 	if (ais_reenable_teamswitch) then {
@@ -56,13 +56,13 @@ if (_is_unoncsious) then {
 		if (local player) then {
 			showHud true;
 			if (LRG_AIS_TOGGLE_RADIO) then {
-				[true] call AIS_Effects_fnc_toggleRadio;
+				[true] call LRG_AIS_Effects_fnc_toggleRadio;
 			};
 		};
 	};
 	
 	if (LRG_AIS_SHOW_UNC_MARKERS && {local player}) then {
-		_unit call AIS_Effects_fnc_removeinjuredMarker;
+		_unit call LRG_AIS_Effects_fnc_removeinjuredMarker;
 	};
 };
 

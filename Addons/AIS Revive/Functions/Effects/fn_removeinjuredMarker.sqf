@@ -10,7 +10,7 @@
 	-
 	
 * Exapmle:
-	player call AIS_Effects_fnc_removeInjuredMarker;
+	player call LRG_AIS_Effects_fnc_removeInjuredMarker;
  */
  
 private _unit = _this;

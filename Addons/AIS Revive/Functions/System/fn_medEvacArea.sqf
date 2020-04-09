@@ -19,7 +19,7 @@ private _return = false;
 	if (_return) exitWith {true};
 	if (!isNull _obj) then {
 		if (_radius > 0) then {
-			if ([_obj, _radius] call AIS_Core_fnc_inRange) exitWith {_return = true};
+			if ([_obj, _radius] call LRG_AIS_Core_fnc_inRange) exitWith {_return = true};
 		};
 	};
 } count LRG_AIS_MEDEVAC_STATIONS;

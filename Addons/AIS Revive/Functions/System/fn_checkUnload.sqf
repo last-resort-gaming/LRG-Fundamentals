@@ -7,7 +7,7 @@
 		0: Unit (Object)
 
 	* Example:
-		[player] call AIS_System_fnc_checkUnload;
+		[player] call LRG_AIS_System_fnc_checkUnload;
  
 	* Return value:
 		Bool

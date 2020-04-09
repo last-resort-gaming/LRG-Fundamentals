@@ -31,15 +31,15 @@ if (!(_unit getVariable ["ais_stabilized", false])) exitWith {
 	addCamShake [15, 999, 0.7];
 	
 	// Function use disableSerialisation and can corrupt some other functions in the same frame. So it need a delay till next frame.
-	[{call AIS_Effects_fnc_bloodSplatterScreen}] call AIS_Core_fnc_onNextFrame;
+	[{call LRG_AIS_Effects_fnc_bloodSplatterScreen}] call LRG_AIS_Core_fnc_onNextFrame;
 	
 	// get the revive time
-	_revive_time = [_unit] call AIS_System_fnc_calculateLifeTime;
+	_revive_time = [_unit] call LRG_AIS_System_fnc_calculateLifeTime;
 	_unit setBleedingRemaining _revive_time;
 	
 	// loop
 	private _acc_time = diag_tickTime + 1;
-	[{diag_tickTime >= (_this select 2)}, {_this call AIS_Effects_fnc_bleeding}, [_unit, _revive_time, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+	[{diag_tickTime >= (_this select 2)}, {_this call LRG_AIS_Effects_fnc_bleeding}, [_unit, _revive_time, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 };
 
 
@@ -66,4 +66,4 @@ ais_ppEff = ppEffectCreate [["radialBlur", 17091], ["colorCorrections", 1580]];
 
 // loop
 private _acc_time = diag_tickTime + 1.5;
-[{diag_tickTime >= (_this select 1)}, {_this call AIS_Effects_fnc_stabil}, [_unit, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+[{diag_tickTime >= (_this select 1)}, {_this call LRG_AIS_Effects_fnc_stabil}, [_unit, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;

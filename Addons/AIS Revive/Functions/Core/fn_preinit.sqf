@@ -1,4 +1,5 @@
 
+LRG_AIS_MASTER_ENABLE = uiNamespace getVariable ["LRG_AIS_MASTER_ENABLE", false];
 if (isNil "LRG_AIS_MASTER_ENABLE") exitwith {};
 if (not LRG_AIS_MASTER_ENABLE) exitWith{};
 
@@ -14,7 +15,7 @@ if !(isClass (configFile >> "CfgPatches" >> "ace_main")) then {
     removeAllMissionEventHandlers "Draw3D";
     removeAllMissionEventHandlers "EachFrame";
 
-    call AIS_Core_fnc_initEvents;
+    call LRG_AIS_Core_fnc_initEvents;
     AIS_Core_Interaction_Actions = [];
 
 };

@@ -1,7 +1,7 @@
-class AIS_Core {
-	tag = "AIS_Core";
+class LRG_AIS_Core {
+	tag = "LRG_AIS_Core";
 	
-	class Core {
+	class LRG_AIS_Core {
 		file = "z\LRG Fundamentals\Addons\AIS Revive\Functions\Core";
 		class preInit { preInit = 1; };
 		class postInit { postInit = 1; };
@@ -29,8 +29,8 @@ class AIS_Core {
 		class addMedicStation;
 	};
 };	
-class AIS_Damage {
-	tag = "AIS_Damage";
+class LRG_AIS_Damage {
+	tag = "LRG_AIS_Damage";
 	
 	class Damage {
 		file = "z\LRG Fundamentals\Addons\AIS Revive\Functions\Damage";
@@ -42,8 +42,8 @@ class AIS_Damage {
 	};
 };
 
-class AIS_Effects {
-	tag = "AIS_Effects";
+class LRG_AIS_Effects {
+	tag = "LRG_AIS_Effects";
 	
 	class Effects {
 		file = "z\LRG Fundamentals\Addons\AIS Revive\Functions\Effects";
@@ -65,8 +65,8 @@ class AIS_Effects {
 	};
 };	
 
-class AIS_System {
-	tag = "AIS_System";
+class LRG_AIS_System {
+	tag = "LRG_AIS_System";
 	
 	class System {
 		file = "z\LRG Fundamentals\Addons\AIS Revive\Functions\System";

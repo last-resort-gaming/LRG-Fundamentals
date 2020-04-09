@@ -14,7 +14,7 @@
 
 params ["_injured", "_vehicle", "_handling"];
 
-private _VehicleIndex = [_vehicle] call AIS_System_fnc_getCargoIndex;
+private _VehicleIndex = [_vehicle] call LRG_AIS_System_fnc_getCargoIndex;
 
 
 if (_handling > 0) then {

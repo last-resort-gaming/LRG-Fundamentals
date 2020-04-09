@@ -10,7 +10,7 @@
 	Nothing
 	
 * Exapmle:
-	[player] call AIS_System_fnc_setUnconscious;
+	[player] call LRG_AIS_System_fnc_setUnconscious;
  */
 
 
@@ -19,15 +19,15 @@ params ["_unit"];
 if (time <= 0) exitWith {
 	[
 		{time > 0},
-		{_this call AIS_System_fnc_setUnconscious},
+		{_this call LRG_AIS_System_fnc_setUnconscious},
 		[_unit]
-	] call AIS_Core_fnc_waitUntilAndExecute;
+	] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 };
 
 if (isPlayer _unit) then {
-	[_unit] call AIS_System_fnc_unconsciousPlayer
+	[_unit] call LRG_AIS_System_fnc_unconsciousPlayer
 } else {
-	[_unit] call AIS_System_fnc_unconsciousAI
+	[_unit] call LRG_AIS_System_fnc_unconsciousAI
 };
 
 

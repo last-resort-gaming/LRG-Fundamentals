@@ -19,7 +19,7 @@ if (!(_injured_ai getVariable ["ais_unconscious", false])) exitWith {};
 // injured is in handling. check some seconds later if handlin was interrupted.
 if (!isNull (_injured_ai getVariable ["ais_hasHelper", objNull])) then {
 	private _acc_time = (diag_tickTime + 30);
-	[{diag_tickTime > (_this select 1)}, {[(_this select 0)] call AIS_System_fnc_AIselfCheck}, [_injured_ai, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+	[{diag_tickTime > (_this select 1)}, {[(_this select 0)] call LRG_AIS_System_fnc_AIselfCheck}, [_injured_ai, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 };
 
 
@@ -35,7 +35,7 @@ if (_group_with_player) exitWith {};
 
 // if no player is present call for help (with a short delay)
 private _acc_time = (diag_tickTime + 40);
-[{diag_tickTime > (_this select 2)}, {_this call AIS_System_fnc_findAIHelper}, [_injured_ai, objNull, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+[{diag_tickTime > (_this select 2)}, {_this call LRG_AIS_System_fnc_findAIHelper}, [_injured_ai, objNull, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 
 
 true

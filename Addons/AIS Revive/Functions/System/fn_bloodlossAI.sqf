@@ -16,10 +16,10 @@ if (!local _unit) exitWith {};
 
 
 // AI help AI
-[_unit] call AIS_System_fnc_AIselfCheck;
+[_unit] call LRG_AIS_System_fnc_AIselfCheck;
 
 // get the revive time
-_revive_time = [_unit] call AIS_System_fnc_calculateLifeTime;
+_revive_time = [_unit] call LRG_AIS_System_fnc_calculateLifeTime;
 _unit setBleedingRemaining _revive_time;
 
 // no reset of this variable until the unit fall in a completely new unconsciou state. 
@@ -34,13 +34,13 @@ waitUntil {
 };
 
 
-if (diag_tickTime > _ai_time_over) exitWith {[_unit] call AIS_Damage_fnc_goToDead};
+if (diag_tickTime > _ai_time_over) exitWith {[_unit] call LRG_AIS_Damage_fnc_goToDead};
 
 if (_unit getVariable ["ais_stabilized", false]) then {
 	waitUntil {!alive _unit || {!(_unit getVariable ["ais_unconscious", false])}};
 };
 
-if (!alive _unit) exitWith {_unit call AIS_System_fnc_restoreFaks};
+if (!alive _unit) exitWith {_unit call LRG_AIS_System_fnc_restoreFaks};
 
 _unit stop false;
 {_unit enableAI _x; nil} count ["MOVE","TARGET","AUTOTARGET","ANIM","AUTOCOMBAT"];

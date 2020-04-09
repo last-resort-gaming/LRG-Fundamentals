@@ -11,7 +11,7 @@
 	-
 	
 * Exapmle:
-	[player, 30] call AIS_Effects_fnc_helpScream;
+	[player, 30] call LRG_AIS_Effects_fnc_helpScream;
 */
 
 params [

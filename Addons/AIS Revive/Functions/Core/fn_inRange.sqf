@@ -12,7 +12,7 @@
 	- BOOL - true if the object in in range, false if not.
 
 	Example:
-	[object, 10] call AIS_Core_fnc_inRange;
+	[object, 10] call LRG_AIS_Core_fnc_inRange;
 */
 
 params [

@@ -24,7 +24,7 @@ if (_old_player getVariable ["ais_unconscious", false]) then {
 };
 
 if (_new_player getVariable ["ais_unconscious", false]) then {
-	[_new_player] call AIS_System_fnc_bloodloss;
+	[_new_player] call LRG_AIS_System_fnc_bloodloss;
 };
 
 

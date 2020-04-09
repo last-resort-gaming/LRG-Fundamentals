@@ -10,7 +10,7 @@
 	Nothing
 	
  * Example:
-	player call AIS_System_fnc_isMedic;
+	player call LRG_AIS_System_fnc_isMedic;
  */
 
 

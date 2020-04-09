@@ -15,7 +15,7 @@
 params ["_unit", "_target"];
 
 // Ensure we aren't going to attachTo a building etc. which can happen due to the addActions, so we reevaluate the statement that lead here
-if !(_target isKindOf 'CAManBase' && {_target getVariable ['ais_unconscious',false]} && {_target call AIS_System_fnc_allowDrag}) exitWith {};
+if !(_target isKindOf 'CAManBase' && {_target getVariable ['ais_unconscious',false]} && {_target call LRG_AIS_System_fnc_allowDrag}) exitWith {};
 
 _unit setVariable ["ais_DragDrop_Torso", _target];
 _target setVariable ["ais_DragDrop_Player", _unit, true];
@@ -37,6 +37,6 @@ _target attachTo [_unit, _attachPoint];
 // release the injured if the helper getin a vehicle
 [
 	{isNull ((_this select 1) getVariable ["ais_DragDrop_Player", objNull]) || {!(isNull objectParent (_this select 0))}},
-	{if (!(isNull objectParent (_this select 0))) then {[(_this select 0)] call AIS_System_fnc_release}},
+	{if (!(isNull objectParent (_this select 0))) then {[(_this select 0)] call LRG_AIS_System_fnc_release}},
 	[_unit,_target]
-] call AIS_Core_fnc_waitUntilAndExecute;
+] call LRG_AIS_Core_fnc_waitUntilAndExecute;

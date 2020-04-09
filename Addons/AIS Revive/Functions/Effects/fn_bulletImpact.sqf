@@ -8,7 +8,7 @@
 	1: Strength (Number)
 	
  * Example:
-	[player, 0.5] call AIS_Effects_fnc_bulletImpact;
+	[player, 0.5] call LRG_AIS_Effects_fnc_bulletImpact;
  
  * Return value:
 	-

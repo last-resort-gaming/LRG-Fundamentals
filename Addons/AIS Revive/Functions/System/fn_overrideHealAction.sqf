@@ -25,7 +25,7 @@ if (_action isEqualTo "HealSoldier") then {
 		} else {
 			"First you have to Stabilize the injured."
 		};
-		_txt call AIS_Core_fnc_dynamicText;
+		_txt call LRG_AIS_Core_fnc_dynamicText;
 		_back = true;
 	};
 

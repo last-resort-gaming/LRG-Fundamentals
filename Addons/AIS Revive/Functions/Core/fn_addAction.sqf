@@ -21,15 +21,15 @@
 	-
 
 	Example:
-	["Hint Hello!", player, 0, "true", { hint format ["Hello %1", name player]; }] call AIS_Core_fnc_addAction;
-	["Hint Hello!", "Man", 3, "true", { hint format ["Hello %1", name (_this select 0)]; }] call AIS_Core_fnc_addAction;
+	["Hint Hello!", player, 0, "true", { hint format ["Hello %1", name player]; }] call LRG_AIS_Core_fnc_addAction;
+	["Hint Hello!", "Man", 3, "true", { hint format ["Hello %1", name (_this select 0)]; }] call LRG_AIS_Core_fnc_addAction;
 */
 
 params ["_text", "_onObject", "_distance", "_condition", "_callback", ["_args", []], ["_formated", "", [""]]];
 
 /*
 if (_distance > 0) then {
-    _condition = format ["([cursorTarget, %1] call AIS_Core_fnc_inRange) && {%2}", _distance, _condition];
+    _condition = format ["([cursorTarget, %1] call LRG_AIS_Core_fnc_inRange) && {%2}", _distance, _condition];
 };
 */
 
@@ -63,7 +63,7 @@ if (_onObject isEqualType objNull && {_onObject isEqualTo AIS_Core_realPlayer}) 
 			};
 		},
 		[_text, _callback, _distance, _args, _condition, _formated]
-	] call AIS_Core_fnc_bindEventHandler;
+	] call LRG_AIS_Core_fnc_bindEventHandler;
 	
 };
 

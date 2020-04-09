@@ -22,11 +22,11 @@ if (!isNil "_marker") then {
 		_marker setMarkerPosLocal (getPos _unit);
 		
 		_acc_time = diag_tickTime + 5;
-		[{diag_tickTime > (_this select 1)}, {[_this select 0] call AIS_Effects_fnc_posUpdateInjuredMarker}, [_unit, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+		[{diag_tickTime > (_this select 1)}, {[_this select 0] call LRG_AIS_Effects_fnc_posUpdateInjuredMarker}, [_unit, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 	};
 	
 	if (!alive _unit) then {
-		_unit call AIS_Effects_fnc_removeInjuredMarker;
+		_unit call LRG_AIS_Effects_fnc_removeInjuredMarker;
 	};
 };
 

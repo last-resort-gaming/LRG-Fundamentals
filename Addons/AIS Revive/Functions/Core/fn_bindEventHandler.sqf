@@ -15,7 +15,7 @@
     -
     Example:
 	
-    ["playerChanged", { hint "Player has changed"; }] call AIS_Core_fnc_bindEventHandler;
+    ["playerChanged", { hint "Player has changed"; }] call LRG_AIS_Core_fnc_bindEventHandler;
 */
 
 

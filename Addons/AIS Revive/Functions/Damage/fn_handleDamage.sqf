@@ -36,19 +36,19 @@ params [
 
 // remote Units
 if !(local _unit) exitWith {false};
-if (_damage == 0) exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
+if (_damage == 0) exitWith {[_unit, _hitPartIndex] call LRG_AIS_Damage_fnc_exitDamageHandler};
 // dead unit
 if (_unit getVariable ["AIS_UnitIsDead", false]) exitWith {0.89};
 // unknown part selection
-if (_hitSelection == "?") exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
+if (_hitSelection == "?") exitWith {[_unit, _hitPartIndex] call LRG_AIS_Damage_fnc_exitDamageHandler};
 // new damage of the selected part
 private _new_damage = if (_hitPartIndex >= 0) then {_damage - (_unit getHitIndex _hitPartIndex)} else {_damage - (damage _unit)};
 
 // define where the damage come from --> possible outputs: "crash", "smallfire", "bigfire", "falling", "bullet", "grenade", "baaam"
-_damageType = [_unit, _hitSelection, _new_damage, _source, _projectile, _hitPartIndex] call AIS_Damage_fnc_verifyDamageType;
+_damageType = [_unit, _hitSelection, _new_damage, _source, _projectile, _hitPartIndex] call LRG_AIS_Damage_fnc_verifyDamageType;
 
 // handle the damage from a fire
-if (_damageType isEqualTo "smallfire") exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
+if (_damageType isEqualTo "smallfire") exitWith {[_unit, _hitPartIndex] call LRG_AIS_Damage_fnc_exitDamageHandler};
 if (_damageType isEqualTo "bigfire") then {
 	_fire_damage = _unit getVariable ["ais_fireDamage", 0];
 	// fire damage is everytime at index -1, part "" --> set the part to "body" and avoid real overall damage
@@ -59,7 +59,7 @@ if (_damageType isEqualTo "bigfire") then {
 };
 
 // exit if the damage is only minor or we have a negative hitpart index
-if (_new_damage < 0.05) exitWith {[_unit, _hitPartIndex] call AIS_Damage_fnc_exitDamageHandler};
+if (_new_damage < 0.05) exitWith {[_unit, _hitPartIndex] call LRG_AIS_Damage_fnc_exitDamageHandler};
 
 // handle the damage of falling (adapted from ACE3)
 if (_damageType isEqualTo "falling") then {
@@ -93,14 +93,14 @@ if (_damageType isEqualTo "crash") then {
 For some reason the engine won't handle the damage to the new(changed) body part. (Bug?) The damage will everytime go to the original part.
 So we have to set the damage by ourself to the wanted hitPartIndex.
 */
-_hitPart = [_unit, _hitSelection] call AIS_Damage_fnc_getHitIndexValue;
+_hitPart = [_unit, _hitSelection] call LRG_AIS_Damage_fnc_getHitIndexValue;
 _damage = (_hitPart select 2) + (_new_damage * LRG_AIS_DAMAGE_TOLLERANCE_FACTOR);
 
 // bullet/splitter impact post process effects
 if (LRG_AIS_IMPACT_EFFECTS) then {
 	if (_damageType in ["grenade", "bullet"]) then {
 		if (isPlayer _unit) then {
-			[_unit, _damage] call AIS_Effects_fnc_bulletImpact;
+			[_unit, _damage] call LRG_AIS_Effects_fnc_bulletImpact;
 		};
 	};
 };
@@ -111,7 +111,7 @@ if !(LRG_AIS_REVIVE_GUARANTY) then {
 	// vehicle blow-up is everytime critical. Set to dead...
 	if (!(isNull objectParent _unit)) then {
 		if (damage (vehicle _unit) >= 1) exitWith {
-			[_unit] call AIS_Damage_fnc_goToDead;
+			[_unit] call LRG_AIS_Damage_fnc_goToDead;
 		};
 	};
 	// critical hit trough explos?
@@ -128,7 +128,7 @@ if !(LRG_AIS_REVIVE_GUARANTY) then {
 	};
 	
 	// unit is instant death - no revive chance
-	if (_critical_hit) exitWith {[_unit] call AIS_Damage_fnc_goToDead};
+	if (_critical_hit) exitWith {[_unit] call LRG_AIS_Damage_fnc_goToDead};
 };
 
 // if a stabilized unit become new damage they won't be longer in the stbilized state
@@ -147,7 +147,7 @@ if ((diag_tickTime > _unit getVariable ["ais_protector_delay", 0]) && {_unit get
     // this case, we know what we're wanting to achieve and it'll be short lived and the limitations on insta-kill are below
     if (isNil "_damage") then { _damage = 1; };
 
-    if (_damage > 0.9 && !LRG_AIS_REVIVE_GUARANTY) then {[_unit] call AIS_Damage_fnc_goToDead};
+    if (_damage > 0.9 && !LRG_AIS_REVIVE_GUARANTY) then {[_unit] call LRG_AIS_Damage_fnc_goToDead};
     _damage = _damage min 0.89;
     _damage
 };
@@ -158,9 +158,9 @@ private _set_unconscious = false;
 // if the unit is in a exploding vehicle...
 if (!(isNull objectParent _unit)) then {
 	if (damage (vehicle _unit) >= 1) then {
-		[{_this call AIS_System_fnc_checkUnload}, {
-			[[_this select 0, _this select 1, 0], {_this call AIS_System_fnc_moveCargoRemote}] remoteExec ["call"]
-		}, [_unit, vehicle _unit]] call AIS_Core_fnc_waitUntilAndExecute;
+		[{_this call LRG_AIS_System_fnc_checkUnload}, {
+			[[_this select 0, _this select 1, 0], {_this call LRG_AIS_System_fnc_moveCargoRemote}] remoteExec ["call"]
+		}, [_unit, vehicle _unit]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 		_set_unconscious = true;
 	};
 };
@@ -177,7 +177,7 @@ if (_damage > 1 && _damageType isEqualTo "falling") then {
 };
 
 if (_set_unconscious && {!(_unit getVariable ["ais_unconscious", false])}) then {
-	[{[(_this select 0)] call AIS_System_fnc_setUnconscious}, [_unit]] call AIS_Core_fnc_onNextFrame;
+	[{[(_this select 0)] call LRG_AIS_System_fnc_setUnconscious}, [_unit]] call LRG_AIS_Core_fnc_onNextFrame;
 	// need this delay to prevent new damage for some seconds after the unit go unconscious. after the delay it is possible to kill the unit when they get to much new damage.
 	_unit setVariable ["ais_protector_delay", (diag_tickTime + 6)];
 

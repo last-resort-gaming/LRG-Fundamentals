@@ -17,7 +17,7 @@ Returns:
 
 Examples:
     (begin example)
-        [{(_this select 0) == vehicle (_this select 0)}, {(_this select 0) setDamage 1;}, [player]] call AIS_Core_fnc_waitUntilAndExecute;
+        [{(_this select 0) == vehicle (_this select 0)}, {(_this select 0) setDamage 1;}, [player]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
     (end)
 
 Author:

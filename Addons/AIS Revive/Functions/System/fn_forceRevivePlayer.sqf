@@ -16,7 +16,7 @@ if !(isPlayer _injured) exitWith {};
 // Remove any effects
 _injured setVariable ["ais_unconscious", false, true];
 _injured setVariable ["ais_hasHelper", ObjNull, true];
-call AIS_Effects_fnc_garbage;
+call LRG_AIS_Effects_fnc_garbage;
 
 // Do the healing
 if (LRG_AIS_REVIVE_HEAL) then {
@@ -25,7 +25,7 @@ if (LRG_AIS_REVIVE_HEAL) then {
 } else {
     // make sure the unit can walk after revive
     if ((_injured getHitIndex 10) > 0.49) then {
-        [{(_this select 0) setHitIndex [10, 0.49]}, [_injured]] call AIS_Core_fnc_onNextFrame;
+        [{(_this select 0) setHitIndex [10, 0.49]}, [_injured]] call LRG_AIS_Core_fnc_onNextFrame;
     };
 };
 

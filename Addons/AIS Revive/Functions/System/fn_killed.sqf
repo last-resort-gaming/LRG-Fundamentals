@@ -14,7 +14,7 @@
 params ["_unit", "_killer"];
 
 if (!(isNull (_unit getVariable ["ais_DragDrop_Torso", objNull]))) then {
-	[_unit] call AIS_System_fnc_release;
+	[_unit] call LRG_AIS_System_fnc_release;
 };
 
 // Save the respawn loadout in case we need to reestore, this

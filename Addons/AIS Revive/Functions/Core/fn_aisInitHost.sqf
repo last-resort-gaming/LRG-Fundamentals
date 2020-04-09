@@ -6,7 +6,7 @@ if (!isNil {_unit getVariable "ais_aisInit"}) then {
 	_unit removeAllEventHandlers "Killed";
 	_unit removeAllEventHandlers "Respawn";
 	_unit removeAllEventHandlers "HandleHeal";
-	[_unit] call AIS_Core_fnc_setVariables;
+	[_unit] call LRG_AIS_Core_fnc_setVariables;
 };
 _unit setVariable ["ais_aisInit", true];
 
@@ -20,14 +20,14 @@ if (local _unit && !(isPlayer _unit)) then {
 		waitUntil {!isNil {_unit getVariable "BIS_fnc_feedback_hitArrayHandler"} || {time > 0}};
 		_unit removeAllEventHandlers "handleDamage";
 		["%1 --- add damageEH to AI %2", diag_ticktime, _unit] call BIS_fnc_logFormat;
-		ais_hdEH = _unit addEventHandler ["HandleDamage", {_this call AIS_Damage_fnc_handleDamage}];
+		ais_hdEH = _unit addEventHandler ["HandleDamage", {_this call LRG_AIS_Damage_fnc_handleDamage}];
 		
-		ais_hkEH = _unit addEventHandler ["Killed", {_this call AIS_System_fnc_killed}];
+		ais_hkEH = _unit addEventHandler ["Killed", {_this call LRG_AIS_System_fnc_killed}];
 		
-		if ([_unit] call AIS_Core_fnc_isPlayable) then {
-			ais_hrEH = _unit addEventHandler ["Respawn", {_this call AIS_System_fnc_respawn}];
+		if ([_unit] call LRG_AIS_Core_fnc_isPlayable) then {
+			ais_hrEH = _unit addEventHandler ["Respawn", {_this call LRG_AIS_System_fnc_respawn}];
 		};
 		_unit removeAllEventHandlers "HandleHeal";
-		ais_hhEH = _unit addEventHandler ["HandleHeal", {_this call AIS_System_fnc_handleHeal}];
+		ais_hhEH = _unit addEventHandler ["HandleHeal", {_this call LRG_AIS_System_fnc_handleHeal}];
 	};
 };

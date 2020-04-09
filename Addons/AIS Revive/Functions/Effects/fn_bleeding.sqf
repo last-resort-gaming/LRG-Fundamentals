@@ -33,12 +33,12 @@ if (_unit getVariable ["ais_stabilized", false]) exitWith {
 	
 	// loop
 	private _acc_time = diag_tickTime + 1.5;
-	[{diag_tickTime >= (_this select 1)}, {_this call AIS_Effects_fnc_stabil}, [_unit, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+	[{diag_tickTime >= (_this select 1)}, {_this call LRG_AIS_Effects_fnc_stabil}, [_unit, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 };
 
 
 // get the revive time
-_revive_time = [_unit] call AIS_System_fnc_calculateLifeTime;
+_revive_time = [_unit] call LRG_AIS_System_fnc_calculateLifeTime;
 _unit setBleedingRemaining _revive_time;
 
 private _timeleft = (ais_start_unc_time + _revive_time) - diag_tickTime;
@@ -52,7 +52,7 @@ if (_timeleft <= 0) exitWith {
 	{_x ppEffectEnable false; true} count ais_ppEff;
 	ppEffectDestroy ais_ppEff;
 	
-	[_unit] call AIS_Damage_fnc_goToDead;
+	[_unit] call LRG_AIS_Damage_fnc_goToDead;
 };
 
 if (LRG_AIS_SHOW_COUNTDOWN) then {
@@ -81,4 +81,4 @@ _brightness = (_timeleft / _revive_time) + (random 0.1);
 
 // loop
 private _acc_time = diag_tickTime + 1;
-[{diag_tickTime >= (_this select 2)}, {_this call AIS_Effects_fnc_bleeding}, [_unit, _revive_time, _acc_time]] call AIS_Core_fnc_waitUntilAndExecute;
+[{diag_tickTime >= (_this select 2)}, {_this call LRG_AIS_Effects_fnc_bleeding}, [_unit, _revive_time, _acc_time]] call LRG_AIS_Core_fnc_waitUntilAndExecute;

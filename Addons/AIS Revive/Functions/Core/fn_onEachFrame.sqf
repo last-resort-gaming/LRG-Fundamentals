@@ -15,7 +15,7 @@
     -
 	
     Example:
-    [{ hint (str diagFrameNo); }] call AIS_Core_fnc_onEachFrame;
+    [{ hint (str diagFrameNo); }] call LRG_AIS_Core_fnc_onEachFrame;
 */
 
 

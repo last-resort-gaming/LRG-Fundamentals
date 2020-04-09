@@ -20,7 +20,7 @@ if (LRG_AIS_RESTORE_LOADOUT) then {
         _unit setUnitLoadout _loadout;
 
         // If we respawned from unconsious, then we'll need to restore FAKs
-        _unit call AIS_System_fnc_restoreFaks;
+        _unit call LRG_AIS_System_fnc_restoreFaks;
     };
 };
 
@@ -34,7 +34,7 @@ _unit setCaptive false;
 if (isPlayer _unit) then {
 	if (local player) then {showHud true};
 	if (LRG_AIS_TOGGLE_RADIO) then {
-		[true] call AIS_Effects_fnc_toggleRadio;
+		[true] call LRG_AIS_Effects_fnc_toggleRadio;
 	};
 } else {
 	_unit stop false;

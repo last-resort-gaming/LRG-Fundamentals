@@ -17,7 +17,7 @@ params [
 ];
 
 // Ensure we aren't going to attachTo a building etc. which can happen due to the addActions, so we reevaluate the statement that lead here
-if !(_injured isKindOf 'CAManBase' && {_injured getVariable ['ais_unconscious',false]} && {_injured call AIS_System_fnc_allowRevive}) exitWith {};
+if !(_injured isKindOf 'CAManBase' && {_injured getVariable ['ais_unconscious',false]} && {_injured call LRG_AIS_System_fnc_allowRevive}) exitWith {};
 
 // Before we start, if expecting to consume FAKs, make sure we have some,
 // If we have one left in our BP and someone takes it during the heal, then
@@ -29,7 +29,7 @@ _fakCount    = 0;
 _medKitCount = 0;
 
 // If in range of mobile medic station, this becomes the source of FAK consumption
-_mobileStation = [_healer] call AIS_System_fnc_mobileMedicStation;
+_mobileStation = [_healer] call LRG_AIS_System_fnc_mobileMedicStation;
 
 if !(_mobileStation isEqualTo objNull) then {
     _fakSource = _mobileStation;
@@ -85,8 +85,8 @@ if (((_healer getDir _injured) - (_injured getDir _healer)) < 0) then {_offset =
 _injured attachTo [_healer, _offset];
 [_injured, _dir] remoteExec ["setDir", 0, false];
 
-[_healer, _injured] call AIS_Effects_fnc_medEquip;
-private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
+[_healer, _injured] call LRG_AIS_Effects_fnc_medEquip;
+private _duration = [_healer, _injured] call LRG_AIS_System_fnc_calculateReviveTime;
 //hint format ["Revive Time Duration: %1", _duration];	// debug
 
 [
@@ -104,7 +104,7 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
 		_healer playAction "medicStop";
 
 		_injured setVariable ["ais_hasHelper", ObjNull, true];
-		call AIS_Effects_fnc_garbage;
+		call LRG_AIS_Effects_fnc_garbage;
 		
 		// healing if enabled
 		if (LRG_AIS_REVIVE_HEAL) then {
@@ -113,7 +113,7 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
 		} else {
 			// make sure the unit can walk after revive
 			if ((_injured getHitIndex 10) > 0.49) then {
-				[{(_this select 0) setHitIndex [10, 0.49]}, [_injured]] call AIS_Core_fnc_onNextFrame;
+				[{(_this select 0) setHitIndex [10, 0.49]}, [_injured]] call LRG_AIS_Core_fnc_onNextFrame;
 			};
 		};
 		
@@ -127,7 +127,7 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
 		// And lastly, remove a FAK from somewhere if required
 		if(LRG_AIS_CONSUME_FAKS && !(_fakSource getVariable ["AIS_NO_CONSUME_FAKS", false])) then {
 		    if (_fakSource isEqualTo _healer) then {
-		        _fakLoadout = [_healer] call AIS_System_fnc_getFAKs;
+		        _fakLoadout = [_healer] call LRG_AIS_System_fnc_getFAKs;
                 for "_i" from 0 to count _fakLoadout do {
                     _c = _fakLoadout select _i;
                     if (!(_c isEqualTo 0)) exitWith {
@@ -166,12 +166,12 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateReviveTime;
 		detach _healer;
 		detach _injured;
 		
-		call AIS_Effects_fnc_garbage;
+		call LRG_AIS_Effects_fnc_garbage;
 		
 		if (alive _healer) then {
 			_healer playActionNow "medicStop";
 		};
-		if (!alive _injured) then {["He is not with us anymore."] call AIS_Core_fnc_dynamicText};
+		if (!alive _injured) then {["He is not with us anymore."] call LRG_AIS_Core_fnc_dynamicText};
 	},
 	(!alive _injured || _healer getVariable ["ais_unconscious",false])
-] call AIS_Core_fnc_Progress_ShowBar;
+] call LRG_AIS_Core_fnc_Progress_ShowBar;

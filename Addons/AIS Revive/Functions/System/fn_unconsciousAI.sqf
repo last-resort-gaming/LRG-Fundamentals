@@ -10,7 +10,7 @@
 	Nothing
 	
 * Exapmle:
-	[unit] call AIS_System_fnc_unconsciousAI;
+	[unit] call LRG_AIS_System_fnc_unconsciousAI;
  */
 
 
@@ -21,7 +21,7 @@ _unit setVariable ["ais_unconscious", true, true];
 
 // if player drag or carry someone release the body
 if (!(isNull (_unit getVariable ["ais_DragDrop_Torso", objNull]))) then {
-	[_unit] call AIS_System_fnc_release;
+	[_unit] call LRG_AIS_System_fnc_release;
 };
 
 // do some actions for some special situations...
@@ -36,7 +36,7 @@ if (animationState _unit in ["ladderriflestatic", "laddercivilstatic"]) then {
 //[_unit, true] remoteExecCall ["AIS_System_fnc_unconcsiousRemote", [-2,0] select hasInterface, false];
 [[_unit, true], {
     if (!isDedicated) then {
-        _this call AIS_System_fnc_unconcsiousRemote;
+        _this call LRG_AIS_System_fnc_unconcsiousRemote;
     };
 }] remoteExec ["call"];
 
@@ -45,10 +45,10 @@ _unit stop true;
 {_unit disableAI _x; nil} count ["MOVE","TARGET","AUTOTARGET","ANIM","AUTOCOMBAT"];
 
 // remove medic euqipment from unconscious unit
-[_unit] call AIS_System_fnc_removeFaks;
+[_unit] call LRG_AIS_System_fnc_removeFaks;
 
 // random screaming
-[_unit, 50] call AIS_Effects_fnc_Scream;
+[_unit, 50] call LRG_AIS_Effects_fnc_Scream;
 
 // set unit as captive
 [_unit, true] remoteExec ["setCaptive", 0, false];
@@ -57,7 +57,7 @@ _unit stop true;
 [_unit] spawn AIS_System_fnc_bloodlossAI;
 
 // correkt animation if unit get pushed out of a vehicle on other ways except the pull-out action
-_unit addEventHandler ["getOutMan", {_this call AIS_System_fnc_getOutMan}];
+_unit addEventHandler ["getOutMan", {_this call LRG_AIS_System_fnc_getOutMan}];
 
 // avoid to switching in while unc
 removeSwitchableUnit _unit;

@@ -7,7 +7,7 @@
 	0: Unit (Object)
 	
  * Example:
-	[player] call AIS_System_fnc_removeFaks;
+	[player] call LRG_AIS_System_fnc_removeFaks;
  
  * Return value:
 	BOOL - false if items already stored

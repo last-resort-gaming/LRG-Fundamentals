@@ -58,7 +58,7 @@ _texUpper ctrlcommit 0.2;
 	{!alive player || {!(player getVariable ["ais_unconscious", false])} || {(player getVariable ["ais_stabilized", false])}},
 	{_this spawn AIS_Effects_fnc_deleteBloodSplatterScreen},
 	[_texLower,_texMiddle,_texUpper]
-] call AIS_Core_fnc_waitUntilAndExecute;
+] call LRG_AIS_Core_fnc_waitUntilAndExecute;
 
 
 true

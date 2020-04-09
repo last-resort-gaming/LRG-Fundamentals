@@ -14,7 +14,7 @@
     -
 
     Example:
-    ["myEvent", [1, 2, 3]] call AIS_Core_fnc_triggerEvent;
+    ["myEvent", [1, 2, 3]] call LRG_AIS_Core_fnc_triggerEvent;
 */
 
 

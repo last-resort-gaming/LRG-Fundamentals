@@ -14,7 +14,7 @@
 params ["_healer", "_injured"];
 
 // Ensure we aren't going to attachTo a building etc. which can happen due to the addActions, so we reevaluate the statement that lead here
-if !(_injured isKindOf 'CAManBase' && {_injured getVariable ['ais_unconscious',false]} && {_injured call AIS_System_fnc_allowStabilize}) exitWith {};
+if !(_injured isKindOf 'CAManBase' && {_injured getVariable ['ais_unconscious',false]} && {_injured call LRG_AIS_System_fnc_allowStabilize}) exitWith {};
 
 _injured setVariable ["ais_hasHelper", _healer, true];
 
@@ -46,8 +46,8 @@ if (((_healer getDir _injured) - (_injured getDir _healer)) < 0) then {_offset =
 _injured attachTo [_healer, _offset];
 [_injured, _dir] remoteExec ["setDir", 0, false];
 
-[_healer, _injured] call AIS_Effects_fnc_medEquip;
-private _duration = [_healer, _injured] call AIS_System_fnc_calculateStabilizeTime;
+[_healer, _injured] call LRG_AIS_Effects_fnc_medEquip;
+private _duration = [_healer, _injured] call LRG_AIS_System_fnc_calculateStabilizeTime;
 //hint format ["Stabilize Time Duration: %1", _duration];	// debug
 
 
@@ -66,7 +66,7 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateStabilizeTi
 		_healer playAction "medicStop";
 
 		_injured setVariable ["ais_hasHelper", ObjNull, true];
-		call AIS_Effects_fnc_garbage;
+		call LRG_AIS_Effects_fnc_garbage;
     },
     [_injured, _healer],
 	{
@@ -78,15 +78,15 @@ private _duration = [_healer, _injured] call AIS_System_fnc_calculateStabilizeTi
 		detach _healer;
 		detach _injured;
 		
-		call AIS_Effects_fnc_garbage;
+		call LRG_AIS_Effects_fnc_garbage;
 		
 		if (alive _healer) then {
 			_healer playActionNow "medicStop";
 		};
-		if (!alive _injured) then {["He is not with us anymore."] call AIS_Core_fnc_dynamicText};
+		if (!alive _injured) then {["He is not with us anymore."] call LRG_AIS_Core_fnc_dynamicText};
 	},
 	(!alive _injured || _healer getVariable ["ais_unconscious", false])
-] call AIS_Core_fnc_Progress_ShowBar;
+] call LRG_AIS_Core_fnc_Progress_ShowBar;
 
 
 true

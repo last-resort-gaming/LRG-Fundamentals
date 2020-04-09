@@ -18,7 +18,7 @@ private _ctrl = (findDisplay 49) displayCtrl 1010;
 
 while {!isNull (findDisplay 49) && {diag_tickTime < _delay}} do {
 	_ctrl ctrlEnable false;
-	_ctrl ctrlSetText format ["Respawn Disabled (%1 sec)", [(_delay - diag_tickTime)] call AIS_System_fnc_secondsToString];
+	_ctrl ctrlSetText format ["Respawn Disabled (%1 sec)", [(_delay - diag_tickTime)] call LRG_AIS_System_fnc_secondsToString];
 	uisleep 0.08;
 };
 

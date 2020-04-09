@@ -13,7 +13,7 @@
     -
 	
     Example:
-    _id call AIS_Core_fnc_removeOnEachFrame;
+    _id call LRG_AIS_Core_fnc_removeOnEachFrame;
 */
 
 

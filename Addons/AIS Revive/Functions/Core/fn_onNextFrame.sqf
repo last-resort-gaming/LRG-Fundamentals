@@ -12,7 +12,7 @@ Returns:
 	
 Examples:
     (begin example)
-        [{player sideChat format ["This is frame %1, not %2", diag_frameno, _this select 0];}, [diag_frameno]] call AIS_Core_fnc_onNextFrame;
+        [{player sideChat format ["This is frame %1, not %2", diag_frameno, _this select 0];}, [diag_frameno]] call LRG_AIS_Core_fnc_onNextFrame;
     (end)
 	
 Author:

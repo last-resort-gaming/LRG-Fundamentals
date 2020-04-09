@@ -16,7 +16,7 @@ private _target = _unit getVariable ["ais_DragDrop_Torso", objNull];
 
 // switch to primary weapon, exit if no primary weapon is present (animation cant be played without a primary :(    )
 if (primaryWeapon _unit isEqualTo "") exitWith {
-	["This action is only with a primary Weapon possible."] call AIS_Core_fnc_dynamicText;
+	["This action is only with a primary Weapon possible."] call LRG_AIS_Core_fnc_dynamicText;
 };
 
 if (primaryWeapon _unit != "") then {
@@ -24,8 +24,8 @@ if (primaryWeapon _unit != "") then {
 	_unit selectWeapon (primaryWeapon _unit);
 };
 
-if (_unit call AIS_System_fnc_checkLauncher) exitWith {
-	["You are not able to carry anyone else while carrying a launcher on your back."] call AIS_Core_fnc_dynamicText;
+if (_unit call LRG_AIS_System_fnc_checkLauncher) exitWith {
+	["You are not able to carry anyone else while carrying a launcher on your back."] call LRG_AIS_Core_fnc_dynamicText;
 };
 _unit setVariable ["ais_CarryDrop_Torso", true];
 
