@@ -20,8 +20,9 @@
     "LIST",
     ["Revivable Units", "Units which AIS Revive is enabled on."],
     "LRG AIS Revive",
-    [[0, 1, 2, 3, 4, 5], [
+    [[0, 1, 2, 3, 4, 5, 6], [
         ["Players Only", "Players Only."],
+        ["Playable Units", "Playable Units."],        
         ["All Units", "All Units."],
         ["BLUFOR Only", "BLUFOR Only."],
         ["OPFOR Only", "OPFOR Only."],
@@ -30,7 +31,18 @@
     ], 0],
     true,
     {  
-       uiNamespace setVariable ["LRG_AIS_REVIVE_INIT_UNITS", _this];
+        private _LRG_AIS_REVIVE_INIT_UNITS = call {
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 0) exitwith {"allPlayers"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 1) exitwith {"allPlayables"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 2) exitwith {"allUnits"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 3) exitwith {"allUnitsBLUFOR"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 4) exitwith {"allUnitsOPFOR"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 5) exitwith {"allUnitsINDFOR"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 6) exitwith {"allUnitsCIVILIAN"};                        
+        	"allPlayables";
+        };
+
+       uiNamespace setVariable ["LRG_AIS_REVIVE_INIT_UNITS", _LRG_AIS_REVIVE_INIT_UNITS];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -81,7 +93,7 @@
 [
     "LRG_AIS_BLEEDOUT_MULTIPLIER",
     "SLIDER",
-    ["Bleedout Multiplier", "Used to multiply the Bleedout Time defined above. AIS ¯\_(ツ)_/¯ "],
+    ["Bleedout Multiplier", "Used to multiply the Bleedout Time defined above. ¯\_(ツ)_/¯ "],
     "LRG AIS Revive",
     [0, 5, 1, 0],
     true,
@@ -273,7 +285,14 @@
     ], 0],
     true,
     {  
-       uiNamespace setVariable ["LRG_AIS_SHOW_UNC_MESSAGE_TO", _this];
+        private _LRG_AIS_SHOW_UNC_MESSAGE_TO = call {
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 0) exitwith {"allPlayers"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 1) exitwith {"Group"};
+        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 2) exitwith {"Side"};
+        	"None";
+        };
+
+       uiNamespace setVariable ["LRG_AIS_SHOW_UNC_MESSAGE_TO", _LRG_AIS_SHOW_UNC_MESSAGE_TO];
     }
 ] call CBA_Settings_fnc_init;
 
