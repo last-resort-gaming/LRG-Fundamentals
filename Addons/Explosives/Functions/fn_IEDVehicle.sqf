@@ -24,6 +24,7 @@ Arguments:
 	_secondaries - Set to true to have the detonation of the IED also produce a random amount of secondary explosions around the main detonation <BOOLEAN>
 	_announce - Set to true to enable announcements about the state of the IED <BOOLEAN>
 	_announceInterval - The interval in seconds in which players should be informed about the time left <SCALAR>
+	_engineOn - If true, the vehicle's engine needs to be running in order to set off the explosive <BOOLEAN>
 
 Return Values:
 	None
@@ -37,7 +38,8 @@ Examples:
 			20,
 			true,
 			true,
-			30
+			30,
+			false
 		] call LR_fnc_IEDVehicle;
 	(end)
 
@@ -51,7 +53,8 @@ params [
 	["_proximityRadius", 20],
 	["_secondaries", true],
 	["_announce", true],
-	["_announceInterval", 30]
+	["_announceInterval", 30],
+	["_engineOn", false]
 ];
 
 if (!isServer) exitWith {};
@@ -61,14 +64,22 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 	systemChat "LR_fnc_IEDVehicle: Invalid vehicle passed, needs to be a land vehicle!";
 };
 
+private ["_fnc_engineCheck"];
+
+if (_engineOn) then {
+	_fnc_engineCheck = {isEngineOn _this;};
+} else {
+	_fnc_engineCheck = {true;};
+};
+
 // Add PFH for proximity checking
-[
+_proxCheck = [
 	{
-		(_this select 0) params ["_vehicle", "_proximityRadius", "_detonationTime", "_announce"];
+		(_this select 0) params ["_vehicle", "_proximityRadius", "_detonationTime", "_announce", "_fnc_engineCheck"];
 		_armed = _vehicle getVariable ["IEDarmed", false];
 		_disarmed = _vehicle getVariable ["IEDdisarmed", false];
 		{
-			if ((_vehicle distance2D _x) < _proximityRadius && (not _disarmed) && (not _armed)) then {
+			if ((_vehicle distance2D _x) < _proximityRadius && {(not _disarmed) && (not _armed) && (_vehicle call _fnc_engineCheck)}) then {
 				_vehicle setVariable ["IEDarmed", true];
 
 				if (_announce) then {
@@ -82,19 +93,23 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 		} forEach allPlayers;
 	},
 	5,
-	[_vehicle, _proximityRadius, _detonationTime, _announce]
+	[_vehicle, _proximityRadius, _detonationTime, _announce, _fnc_engineCheck]
 ] call CBA_fnc_addPerFrameHandler;
 
 // Add PFH to check for explosives armed
 [
 	{
-		(_this select 0) params ["_vehicle", "_detonationTime", "_secondaries", "_announce", "_announceInterval"];
+		(_this select 0) params ["_vehicle", "_detonationTime", "_secondaries", "_announce", "_announceInterval", "_proxCheck"];
 
 		_armed = _vehicle getVariable ["IEDarmed", false];
 		_disarmed = _vehicle getVariable ["IEDdisarmed", false];
 		_destroyed = _vehicle getVariable ["IEDdetonated",false];
 
+		// Check if armed
 		if ((not _armed) || _disarmed || _destroyed) exitWith {};
+
+		// Destroy old PFH
+		[_proxCheck] call CBA_fnc_removePerFrameHandler;
 
 		_startTime = _vehicle getVariable ["startTime", 0];
 
@@ -150,10 +165,11 @@ if (not (_vehicle isKindOf "LandVehicle")) exitWith {
 		};
 	},
 	1,
-	[_vehicle, _detonationTime, _secondaries, _announce, _announceInterval]
+	[_vehicle, _detonationTime, _secondaries, _announce, _announceInterval, _proxCheck]
 ] call CBA_fnc_addPerFrameHandler;
 
 // Add a holdAction for disarming the bomb.
+// TODO: Actually use the Fundamentals holdAction system for ACE compat...
 [
 	 _vehicle
 	,"Disarm IED"
