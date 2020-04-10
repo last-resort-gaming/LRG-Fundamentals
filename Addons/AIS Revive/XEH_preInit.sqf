@@ -10,7 +10,7 @@
     true,
     false,
     {  
-       uiNamespace setVariable ["LRG_AIS_REVIVE_GUARANTY", _this];
+       uiNamespace setVariable ["LRG_AIS_MASTER_ENABLE", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -31,18 +31,7 @@
     ], 0],
     true,
     {  
-        private _LRG_AIS_REVIVE_INIT_UNITS = call {
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 0) exitwith {"allPlayers"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 1) exitwith {"allPlayables"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 2) exitwith {"allUnits"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 3) exitwith {"allUnitsBLUFOR"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 4) exitwith {"allUnitsOPFOR"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 5) exitwith {"allUnitsINDFOR"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 6) exitwith {"allUnitsCIVILIAN"};                        
-        	"allPlayables";
-        };
-
-       uiNamespace setVariable ["LRG_AIS_REVIVE_INIT_UNITS", _LRG_AIS_REVIVE_INIT_UNITS];
+       uiNamespace setVariable ["LRG_AIS_REVIVE_INIT_UNITS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -285,13 +274,6 @@
     ], 0],
     true,
     {  
-        private _LRG_AIS_SHOW_UNC_MESSAGE_TO = call {
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 0) exitwith {"allPlayers"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 1) exitwith {"Group"};
-        	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 2) exitwith {"Side"};
-        	"None";
-        };
-
        uiNamespace setVariable ["LRG_AIS_SHOW_UNC_MESSAGE_TO", _LRG_AIS_SHOW_UNC_MESSAGE_TO];
     }
 ] call CBA_Settings_fnc_init;

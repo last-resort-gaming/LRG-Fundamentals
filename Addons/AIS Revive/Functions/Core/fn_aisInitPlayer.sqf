@@ -60,20 +60,18 @@ if (!isServer && (count (units group player) > 1)) then {
 	};
 };
 
-
 // add handleHeal local to the player for every unit and set the correct anim-state (local)
 private _allPlayers = allUnits select {isPlayer _x};	// doesn't use allPlayers at this point, cause it can be delayed in self-hosted env.
-private _ais_revive_units = toLower LRG_AIS_REVIVE_INIT_UNITS;
-private _init_units = call {
-	if (_ais_revive_units isEqualTo "allunits") exitWith {allUnits};
-	if (_ais_revive_units isEqualTo "allplayers") exitWith {_allPlayers};	// at this point only as a dummy. Cause everytime every player will auto-init, regardless what the setup will say.
-	if (_ais_revive_units isEqualTo "allplayables") exitWith {if (isMultiplayer) then {playableUnits} else {switchableUnits}};
-	if (_ais_revive_units isEqualTo "allunitsblufor") exitWith {allUnits select {(side _x) isEqualTo blufor}};
-	if (_ais_revive_units isEqualTo "allunitsopfor") exitWith {allUnits select {(side _x) isEqualTo opfor}};
-	if (_ais_revive_units isEqualTo "allunitsindfor") exitWith {allUnits select {(side _x) isEqualTo resistance}};
-	if (_ais_revive_units isEqualTo "allunitscivilian") exitWith {allUnits select {(side _x) isEqualTo civilian}};
-	diag_log "AIS ERROR: Issue in Setup-File found! Parameter AIS_REVIVE_UNITS wrong defined."; []
-};
+    private _init_units = call {
+    	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 0) exitwith {_allPlayers};
+    	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 1) exitwith {if (isMultiplayer) then {playableUnits} else {switchableUnits}};
+    	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 2) exitwith {allUnits};
+    	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 3) exitwith {allUnits select {(side _x) isEqualTo blufor}};
+    	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 4) exitwith {allUnits select {(side _x) isEqualTo opfor}};
+    	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 5) exitwith {allUnits select {(side _x) isEqualTo resistance}};
+    	if (LRG_AIS_REVIVE_INIT_UNITS IsEqualTo 6) exitwith {allUnits select {(side _x) isEqualTo civilian}};                        
+    	_allPlayers;
+    };
 {
 	_x removeAllEventHandlers "HandleHeal";
 	_x addEventHandler ["HandleHeal", {_this call LRG_AIS_System_fnc_handleHeal}];

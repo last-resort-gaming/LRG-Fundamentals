@@ -25,11 +25,13 @@ if (_is_unoncsious) then {
 	
 	if (local player) then {
 		_condition = false;
-		_condition = switch (LRG_AIS_SHOW_UNC_MESSAGE_TO) do {
-			case ("Group") : {_unit in units group player};
-			case ("Side") : {side _unit isEqualTo playerSide};
-			default {false};
-		};
+
+        _condition = call {
+        	if (LRG_AIS_SHOW_UNC_MESSAGE_TO IsEqualTo 0) exitwith {false};
+        	if (LRG_AIS_SHOW_UNC_MESSAGE_TO IsEqualTo 1) exitwith {_unit in units group player};
+        	if (LRG_AIS_SHOW_UNC_MESSAGE_TO IsEqualTo 2) exitwith {side _unit isEqualTo playerSide};
+        	false;
+        };
 		
 		if (_condition) then {
 			[side _unit,"HQ"] sideChat format ["%1 is down and needs help at %2!",name _unit, mapGridPosition _unit];
