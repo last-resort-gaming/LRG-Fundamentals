@@ -18,6 +18,7 @@ if ( isServer ) then {
         _source = "local";
         _markerLocal = true;
     } else {
+        // TODO: Get rid of this shit...
         if ((profileName select [0,2]) isEqualTo "HC") then {
             _position = floor(parseNumber(profileName select [2])) + 1;
             _source = profileName;
