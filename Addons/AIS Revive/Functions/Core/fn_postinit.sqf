@@ -1,32 +1,32 @@
-LRG_AIS_MASTER_ENABLE = uiNamespace getVariable ["LRG_AIS_MASTER_ENABLE", false];
+LRG_AIS_MASTER_ENABLE = missionNamespace getVariable ["LRG_AIS_MASTER_ENABLE", false];
 
 if (isNil "LRG_AIS_MASTER_ENABLE") exitwith {};
 if (not LRG_AIS_MASTER_ENABLE) exitWith{};
 
-LRG_AIS_REVIVE_INIT_UNITS = uiNamespace getVariable ["LRG_AIS_REVIVE_INIT_UNITS", 0];
-LRG_AIS_MEDICAL_EDUCATION = uiNamespace getVariable ["LRG_AIS_MEDICAL_EDUCATION", 2];
-LRG_AIS_DAMAGE_TOLLERANCE_FACTOR = uiNamespace getVariable ["LRG_AIS_DAMAGE_TOLLERANCE_FACTOR", 1];
-LRG_AIS_BLEEDOUT_TIME = uiNamespace getVariable ["LRG_AIS_BLEEDOUT_TIME", 400];
-LRG_AIS_BLEEDOUT_MULTIPLIER = uiNamespace getVariable ["LRG_AIS_BLEEDOUT_MULTIPLIER", 1];
-LRG_AIS_REVIVETIME = uiNamespace getVariable ["LRG_AIS_REVIVETIME", 20];
-LRG_AIS_STABILIZETIME = uiNamespace getVariable ["LRG_AIS_STABILIZETIME", 15];
-LRG_AIS_REVIVE_HEAL = uiNamespace getVariable ["LRG_AIS_REVIVE_HEAL", true];
-LRG_AIS_AI_HELP_RADIUS = uiNamespace getVariable ["LRG_AIS_AI_HELP_RADIUS", 100];
-LRG_AIS_DISABLE_RESPAWN_BUTTON = uiNamespace getVariable ["LRG_AIS_DISABLE_RESPAWN_BUTTON", 30];
-LRG_AIS_CONSUME_FAKS = uiNamespace getVariable ["LRG_AIS_CONSUME_FAKS", true];
-LRG_AIS_REQUIRE_MEDIKIT = uiNamespace getVariable ["LRG_AIS_REQUIRE_MEDIKIT", true];
-LRG_AIS_RESTORE_LOADOUT = uiNamespace getVariable ["LRG_AIS_RESTORE_LOADOUT", true];
-LRG_AIS_ACTION_DISTANCE = uiNamespace getVariable ["LRG_AIS_ACTION_DISTANCE", 6];
-LRG_AIS_REVIVE_GUARANTY = uiNamespace getVariable ["LRG_AIS_REVIVE_GUARANTY", true];
-LRG_AIS_TOGGLE_RADIO = uiNamespace getVariable ["LRG_AIS_TOGGLE_RADIO", true];
-LRG_AIS_NO_CHAT = uiNamespace getVariable ["LRG_AIS_NO_CHAT", true];
-LRG_AIS_SHOW_UNC_MARKERS = uiNamespace getVariable ["LRG_AIS_SHOW_UNC_MARKERS", false];
-LRG_AIS_SHOW_UNC_MESSAGE_TO = uiNamespace getVariable ["LRG_AIS_SHOW_UNC_MESSAGE_TO", 0];
-LRG_AIS_SHOW_UNC_3D_MARKERS = uiNamespace getVariable ["LRG_AIS_SHOW_UNC_3D_MARKERS", true];
-LRG_AIS_IMPACT_EFFECTS = uiNamespace getVariable ["LRG_AIS_IMPACT_EFFECTS", true];
-LRG_AIS_SHOW_COUNTDOWN = uiNamespace getVariable ["LRG_AIS_SHOW_COUNTDOWN", true];
-LRG_AIS_SHOW_DIARYINFO = uiNamespace getVariable ["LRG_AIS_SHOW_DIARYINFO", true];
-LRG_AIS_MEDEVAC_STATIONS = uiNamespace getVariable ["LRG_AIS_MEDEVAC_STATIONS", []];
+LRG_AIS_REVIVE_INIT_UNITS = missionNamespace getVariable ["LRG_AIS_REVIVE_INIT_UNITS", 0];
+LRG_AIS_MEDICAL_EDUCATION = missionNamespace getVariable ["LRG_AIS_MEDICAL_EDUCATION", 2];
+LRG_AIS_DAMAGE_TOLLERANCE_FACTOR = missionNamespace getVariable ["LRG_AIS_DAMAGE_TOLLERANCE_FACTOR", 1];
+LRG_AIS_BLEEDOUT_TIME = missionNamespace getVariable ["LRG_AIS_BLEEDOUT_TIME", 400];
+LRG_AIS_BLEEDOUT_MULTIPLIER = missionNamespace getVariable ["LRG_AIS_BLEEDOUT_MULTIPLIER", 1];
+LRG_AIS_REVIVETIME = missionNamespace getVariable ["LRG_AIS_REVIVETIME", 20];
+LRG_AIS_STABILIZETIME = missionNamespace getVariable ["LRG_AIS_STABILIZETIME", 15];
+LRG_AIS_REVIVE_HEAL = missionNamespace getVariable ["LRG_AIS_REVIVE_HEAL", true];
+LRG_AIS_AI_HELP_RADIUS = missionNamespace getVariable ["LRG_AIS_AI_HELP_RADIUS", 100];
+LRG_AIS_DISABLE_RESPAWN_BUTTON = missionNamespace getVariable ["LRG_AIS_DISABLE_RESPAWN_BUTTON", 30];
+LRG_AIS_CONSUME_FAKS = missionNamespace getVariable ["LRG_AIS_CONSUME_FAKS", true];
+LRG_AIS_REQUIRE_MEDIKIT = missionNamespace getVariable ["LRG_AIS_REQUIRE_MEDIKIT", true];
+LRG_AIS_RESTORE_LOADOUT = missionNamespace getVariable ["LRG_AIS_RESTORE_LOADOUT", true];
+LRG_AIS_ACTION_DISTANCE = missionNamespace getVariable ["LRG_AIS_ACTION_DISTANCE", 6];
+LRG_AIS_REVIVE_GUARANTY = missionNamespace getVariable ["LRG_AIS_REVIVE_GUARANTY", true];
+LRG_AIS_TOGGLE_RADIO = missionNamespace getVariable ["LRG_AIS_TOGGLE_RADIO", true];
+LRG_AIS_NO_CHAT = missionNamespace getVariable ["LRG_AIS_NO_CHAT", true];
+LRG_AIS_SHOW_UNC_MARKERS = missionNamespace getVariable ["LRG_AIS_SHOW_UNC_MARKERS", false];
+LRG_AIS_SHOW_UNC_MESSAGE_TO = missionNamespace getVariable ["LRG_AIS_SHOW_UNC_MESSAGE_TO", 0];
+LRG_AIS_SHOW_UNC_3D_MARKERS = missionNamespace getVariable ["LRG_AIS_SHOW_UNC_3D_MARKERS", true];
+LRG_AIS_IMPACT_EFFECTS = missionNamespace getVariable ["LRG_AIS_IMPACT_EFFECTS", true];
+LRG_AIS_SHOW_COUNTDOWN = missionNamespace getVariable ["LRG_AIS_SHOW_COUNTDOWN", true];
+LRG_AIS_SHOW_DIARYINFO = missionNamespace getVariable ["LRG_AIS_SHOW_DIARYINFO", true];
+LRG_AIS_MEDEVAC_STATIONS = missionNamespace getVariable ["LRG_AIS_MEDEVAC_STATIONS", []];
 
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {["AIS: AIS shutdown itself cause ACE mod was detected. ACE and AIS cant work at the same time."] call BIS_fnc_logFormat};
 
