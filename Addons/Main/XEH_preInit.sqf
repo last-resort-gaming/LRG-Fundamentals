@@ -160,7 +160,7 @@
     "SLIDER",
     ["TFAR - Range Multiplyer", "Increase or decrease max Transmit Range. 0.1 = poor range, 3.5 = All of Altis"],
     "LRG Main",
-    [0, 5, 2.5, 1],
+    [0, 10, 2.5, 1],
     true,
     {
 
