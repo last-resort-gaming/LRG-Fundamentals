@@ -9,8 +9,8 @@
     "LRG AIS Revive",
     true,
     false,
-    {  
-       uiNamespace setVariable ["LRG_AIS_MASTER_ENABLE", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_MASTER_ENABLE", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -22,7 +22,7 @@
     "LRG AIS Revive",
     [[0, 1, 2, 3, 4, 5, 6], [
         ["Players Only", "Players Only."],
-        ["Playable Units", "Playable Units."],        
+        ["Playable Units", "Playable Units."],
         ["All Units", "All Units."],
         ["BLUFOR Only", "BLUFOR Only."],
         ["OPFOR Only", "OPFOR Only."],
@@ -30,8 +30,8 @@
         ["Civilians Only", "Civilians Only."]
     ], 0],
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_REVIVE_INIT_UNITS", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_REVIVE_INIT_UNITS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -47,8 +47,8 @@
         ["Medics Only", "Medics Only."]
     ], 2],
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_MEDICAL_EDUCATION", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_MEDICAL_EDUCATION", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -61,7 +61,7 @@
     [0.1, 5, 1, 2],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_DAMAGE_TOLLERANCE_FACTOR", _this];
+       missionNamespace setVariable ["LRG_AIS_DAMAGE_TOLLERANCE_FACTOR", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -74,7 +74,7 @@
     [30, 1200, 400, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_BLEEDOUT_TIME", _this];
+       missionNamespace setVariable ["LRG_AIS_BLEEDOUT_TIME", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -87,7 +87,7 @@
     [0, 5, 1, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_BLEEDOUT_MULTIPLIER", _this];
+       missionNamespace setVariable ["LRG_AIS_BLEEDOUT_MULTIPLIER", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -100,7 +100,7 @@
     [1, 120, 20, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_REVIVETIME", _this];
+       missionNamespace setVariable ["LRG_AIS_REVIVETIME", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -113,7 +113,7 @@
     [1, 120, 15, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_STABILIZETIME", _this];
+       missionNamespace setVariable ["LRG_AIS_STABILIZETIME", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -125,8 +125,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_REVIVE_HEAL", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_REVIVE_HEAL", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -139,7 +139,7 @@
     [0, 200, 100, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_AI_HELP_RADIUS", _this];
+       missionNamespace setVariable ["LRG_AIS_AI_HELP_RADIUS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -152,7 +152,7 @@
     [0, 1200, 30, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_DISABLE_RESPAWN_BUTTON", _this];
+       missionNamespace setVariable ["LRG_AIS_DISABLE_RESPAWN_BUTTON", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -164,8 +164,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_CONSUME_FAKS", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_CONSUME_FAKS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -177,8 +177,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_REQUIRE_MEDIKIT", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_REQUIRE_MEDIKIT", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -190,8 +190,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_RESTORE_LOADOUT", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_RESTORE_LOADOUT", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -204,7 +204,7 @@
     [0, 20, 6, 0],
     true,
     {
-       uiNamespace setVariable ["LRG_AIS_ACTION_DISTANCE", _this];
+       missionNamespace setVariable ["LRG_AIS_ACTION_DISTANCE", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -216,8 +216,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_REVIVE_GUARANTY", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_REVIVE_GUARANTY", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -229,8 +229,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_TOGGLE_RADIO", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_TOGGLE_RADIO", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -242,8 +242,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_NO_CHAT", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_NO_CHAT", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -256,8 +256,8 @@
     "LRG AIS Revive",
     true,
     false,
-    {  
-       uiNamespace setVariable ["LRG_AIS_SHOW_UNC_MARKERS", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_SHOW_UNC_MARKERS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -273,8 +273,8 @@
         ["Side", "Side."]
     ], 0],
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_SHOW_UNC_MESSAGE_TO", _LRG_AIS_SHOW_UNC_MESSAGE_TO];
+    {
+       missionNamespace setVariable ["LRG_AIS_SHOW_UNC_MESSAGE_TO", _LRG_AIS_SHOW_UNC_MESSAGE_TO];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -286,8 +286,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_SHOW_UNC_3D_MARKERS", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_SHOW_UNC_3D_MARKERS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -299,8 +299,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_SHOW_COUNTDOWN", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_SHOW_COUNTDOWN", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -312,8 +312,8 @@
     "LRG AIS Revive",
     true,
     true,
-    {  
-       uiNamespace setVariable ["LRG_AIS_IMPACT_EFFECTS", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_IMPACT_EFFECTS", _this];
     }
 ] call CBA_Settings_fnc_init;
 
@@ -325,7 +325,7 @@
     "LRG AIS Revive",
     true,
     false,
-    {  
-       uiNamespace setVariable ["LRG_AIS_SHOW_DIARYINFO", _this];
+    {
+       missionNamespace setVariable ["LRG_AIS_SHOW_DIARYINFO", _this];
     }
 ] call CBA_Settings_fnc_init;

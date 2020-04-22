@@ -35,7 +35,7 @@ class zen_context_menu_actions {
     class MedFacility {
         displayName = "Set Medical Facility";
         icon = "z\LRG Fundamentals\addons\Media\images\icons\Medical Area.paa";
-        statement = "[_hoveredEntity] call LR_fnc_setMedicalFacility";
+        statement = "[_hoveredEntity] remoteExec [""LR_fnc_setMedicalFacility"", 0, true]";
         condition = "_hoveredEntity call LR_fnc_canBeMedFacility";
         priority = 51;
     };
