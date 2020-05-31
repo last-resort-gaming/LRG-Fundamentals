@@ -24,7 +24,7 @@ if !(local _player) exitWith {
 	systemChat "LR_fnc_FacilityHeal: player unit needs to be local";
 };
 
-if (player getVariable ["ACE_isUnconscious", false]) then {
+if (_player getVariable ["ACE_isUnconscious", false]) then {
 	[format ["%1<br />is being revived at the LRG Medical Facility.", profileName], [1,-0.2], "#ed1b2e", 0.4] call LR_fnc_dynamicText;
 };
 
@@ -38,7 +38,7 @@ if (player getVariable ["ACE_isUnconscious", false]) then {
 
 [
     {
-        [player] call ACE_medical_treatment_fnc_fullHealLocal;
+        [_player] call ACE_medical_treatment_fnc_fullHealLocal;
         [
             "Treatment Complete",
             [-1, 0.8],
