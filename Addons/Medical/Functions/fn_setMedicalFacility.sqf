@@ -29,6 +29,9 @@ if !(_object isKindOf "EmptyDetector") then {
     private _Height = ((_GetObjectSize select 1) select 2) *2;
     _object = createTrigger ["EmptyDetector",_SpawnLocation, true];
     _object setTriggerArea [_Width, _Length, getdir _object, false, _Height];
+
+    [format ["_object was not a trigger: %1", _object]] call LR_fnc_DLog; //DEBUG
+
 };
 
 _object setTriggerActivation ["ANYPLAYER", "PRESENT", true];
@@ -37,6 +40,7 @@ _object setTriggerStatements [
     "
     {
         [_x] call LR_fnc_FacilityHeal;
+        [format[""running facilityheal for %1"", _x]] call LR_fnc_DLog;
     } forEach thisList;",
     ""
 ];

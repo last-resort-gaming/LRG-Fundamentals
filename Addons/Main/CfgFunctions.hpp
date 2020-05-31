@@ -25,6 +25,7 @@ class LRG_Main {
 		class SafePos {};
 		class GetKeys {};
 		class GetValues {};
+		class DLog {};
 	};
 };
 
