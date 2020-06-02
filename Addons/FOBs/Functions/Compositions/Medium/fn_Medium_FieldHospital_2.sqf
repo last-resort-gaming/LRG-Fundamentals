@@ -9,7 +9,7 @@ Using orientation of objects: yes
 
 [
 	["Land_BagFence_Round_F",[-3.29199,4.18506,-0.00130129],315,1,0,[0,0],"","",true,false], 
-	["Land_Medevac_house_V1_F",[0.175293,7.01294,0],0,1,0,[0,0],"","[_this] call LR_fnc_setMedicalFacility",true,false], 
+	["Land_Medevac_house_V1_F",[0.175293,7.01294,0],0,1,0,[0,0],""," _this setVariable [""ACE_medical_isMedicalFacility"", true, true];",true,false], 
 	["Land_BagFence_Long_F",[-6.07715,3.8457,-0.000999928],0,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Round_F",[-8.82227,4.25073,-0.00130129],45,1,0,[0,0],"","",true,false], 
 	["Land_TTowerSmall_1_F",[-5.80566,6.04614,0],0,1,0,[0,0],"","",true,false], 

@@ -23,7 +23,7 @@ Using orientation of objects: yes
 	["Land_IntravenStand_01_1bag_F",[-6.08594,11.0417,3.29018e-005],165,1,0,[0.00288668,0.00668603],"","",true,false], 
 	["CamoNet_BLUFOR_big_F",[-12.2886,3.10278,0],270,1,0,[0,0],"","_this allowDamage false;",true,false], 
 	["Land_Stretcher_01_olive_F",[-6.80273,12.5229,4.76837e-007],105,1,0,[4.21252e-006,-0.00013765],"","",true,false], 
-	["CamoNet_BLUFOR_big_F",[-1.04346,13.8508,0],0,1,0,[0,0],"","_this allowDamage false; [_this] call LR_fnc_setMedicalFacility;",true,false], 
+	["CamoNet_BLUFOR_big_F",[-1.04346,13.8508,0],0,1,0,[0,0],"","_this allowDamage false; _this setVariable [""ACE_medical_isMedicalFacility"", true, true];",true,false], 
 	["BloodSpray_01_New_F",[-6.55273,14.0261,0],0,1,0,[0,0],"","",true,false], 
 	["Land_Stretcher_01_olive_F",[-6.92773,14.3979,4.76837e-007],90,1,0,[4.2152e-006,-0.000137347],"","",true,false], 
 	["Land_IntravenStand_01_1bag_F",[-8.1001,15.5459,3.09944e-005],210.005,1,0,[0.00669682,0.00192285],"","",true,false], 

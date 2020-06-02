@@ -11,7 +11,7 @@ Using orientation of objects: yes
 	["Land_BagFence_Long_F",[-5.6499,-0.866699,-0.000999928],330,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Long_F",[7.89209,-1.9541,-0.000999928],180,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Round_F",[-8.16406,-1.79443,-0.00130129],15,1,0,[0,0],"","",true,false], 
-	["Land_Medevac_house_V1_F",[-7.72754,5.11328,0],330,1,0,[0,0],"","",true,false], 
+	["Land_Medevac_house_V1_F",[-7.72754,5.11328,0],330,1,0,[0,0],""," _this setVariable [""ACE_medical_isMedicalFacility"", true, true];",true,false], 
 	["Land_PortableLight_double_F",[6.70166,5.42261,0],30,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Long_F",[-9.8501,0.447754,-0.000999928],60,1,0,[0,0],"","",true,false], 
 	["Land_HBarrier_5_F",[1.81787,8.05884,0],330,1,0,[0,0],"","",true,false], 

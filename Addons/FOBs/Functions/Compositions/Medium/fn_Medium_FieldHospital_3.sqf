@@ -17,7 +17,7 @@ Using orientation of objects: yes
 	["Land_ToiletBox_F",[-4.4585,6.54932,1.90735e-006],0.00182539,1,0,[-0.000103471,-2.55393e-005],"","",true,false], 
 	["Land_BagFence_Long_F",[8.93213,4.22485,-0.000999928],90,1,0,[0,-0],"","",true,false], 
 	["Land_BagFence_Long_F",[8.90088,7.04541,-0.000999928],270,1,0,[0,0],"","",true,false], 
-	["Land_Medevac_house_V1_F",[-2.68701,11.2993,0],270,1,0,[0,0],"","[_this] call LR_fnc_setMedicalFacility;",true,false], 
+	["Land_Medevac_house_V1_F",[-2.68701,11.2993,0],270,1,0,[0,0],""," _this setVariable [""ACE_medical_isMedicalFacility"", true, true];",true,false], 
 	["Land_HBarrier_3_F",[8.93945,8.9353,0],270,1,0,[0,0],"","",true,false], 
 	["Land_HBarrier_Big_F",[-7.50098,12.3892,0],270,1,0,[0,0],"","",true,false], 
 	["Land_HBarrier_3_F",[2.58447,15.3154,0],15,1,0,[0,0],"","",true,false], 

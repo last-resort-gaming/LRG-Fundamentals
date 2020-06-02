@@ -9,7 +9,7 @@ Using orientation of objects: yes
 
 [
 	["Land_PaperBox_closed_F",[-5.40332,0.0109863,0],285,1,0,[0,0],"","",true,false], 
-	["Land_Medevac_house_V1_F",[-7.95947,1.93408,0],285,1,0,[0,0],"","",true,false], 
+	["Land_Medevac_house_V1_F",[-7.95947,1.93408,0],285,1,0,[0,0],""," _this setVariable [""ACE_medical_isMedicalFacility"", true, true];",true,false], 
 	["Land_PortableLight_double_F",[-6.87646,-3.8042,0],240,1,0,[0,0],"","",true,false], 
 	["Land_HelipadRescue_F",[10.2344,-0.614746,0],0,1,0,[0,0],"","",true,false], 
 	["Land_Medevac_house_V1_F",[-2.33105,10.8728,0],315,1,0,[0,0],"","",true,false], 
