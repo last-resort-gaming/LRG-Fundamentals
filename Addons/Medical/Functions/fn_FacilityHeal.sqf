@@ -39,8 +39,8 @@ if (_player getVariable ["ACE_isUnconscious", false]) then {
 
 [
     {
-        [_player] call ACE_medical_treatment_fnc_fullHealLocal;
-		["running fhlocal on player: %1", _player] call LR_fnc_DLog; //DEBUG
+		[format ["running fhlocal on player: %1", profileName]] call LR_fnc_DLog; //DEBUG
+        [player] call ACE_medical_treatment_fnc_fullHealLocal;
         [
             "Treatment Complete",
             [-1, 0.8],
