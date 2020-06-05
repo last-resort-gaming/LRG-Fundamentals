@@ -35,7 +35,7 @@ _object setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 _object setTriggerStatements [
     "player in thisList",
     "
-    [format[""running facilityheal for %1"", profileName]] call LR_fnc_DLog;
+    [player] call LR_fnc_FacilityHeal;
     ",
     ""
 ];
