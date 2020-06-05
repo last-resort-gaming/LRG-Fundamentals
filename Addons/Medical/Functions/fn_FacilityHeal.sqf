@@ -22,7 +22,6 @@ params ["_player"];
 
 if !(local _player) exitWith {
 	systemChat "LR_fnc_FacilityHeal: player unit needs to be local";
-	[format ["player unit was not local: %1", _player]] call LR_fnc_DLog; //DEBUG
 };
 
 if (_player getVariable ["ACE_isUnconscious", false]) then {
@@ -39,7 +38,6 @@ if (_player getVariable ["ACE_isUnconscious", false]) then {
 
 [
     {
-		[format ["running fhlocal on player: %1", profileName]] call LR_fnc_DLog; //DEBUG
         [player] call ACE_medical_treatment_fnc_fullHealLocal;
         [
             "Treatment Complete",

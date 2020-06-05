@@ -21,7 +21,6 @@ params ["_object"];
 
 // If the object is not a trigger, create one based on bounding boxes
 if !(_object isKindOf "EmptyDetector") then {
-    [format ["_object was not a trigger: %1", _object]] call LR_fnc_DLog; //DEBUG
 
     private _SpawnLocation = getPosATL _object;
     private _GetObjectSize = boundingBoxReal _object;
@@ -37,7 +36,6 @@ _object setTriggerStatements [
     "player in thisList",
     "
     [format[""running facilityheal for %1"", profileName]] call LR_fnc_DLog;
-    [player] call LR_fnc_FacilityHeal;
     ",
     ""
 ];
