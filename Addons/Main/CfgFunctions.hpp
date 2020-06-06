@@ -16,7 +16,7 @@ class LRG_Main {
 		class Logs {};
 		class PilotCheck {};
 		class QSRepackMags {};
-		class TFARSettings {};
+		class TFARSettings {PostInit = 1;};
 		class VanillaFatigue {};
 		class FindReplaceString {};
 		class FindInArrayMap {};
