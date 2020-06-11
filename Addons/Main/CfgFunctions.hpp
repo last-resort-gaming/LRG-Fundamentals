@@ -26,6 +26,7 @@ class LRG_Main {
 		class GetKeys {};
 		class GetValues {};
 		class DLog {};
+		class ObjectsMapper {};
 	};
 };
 

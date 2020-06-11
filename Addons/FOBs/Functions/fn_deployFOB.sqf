@@ -55,7 +55,7 @@ _hiddenObjects = [_pos, 5 + _size * 5, [], ["WALLS", "VEGETATION", "MISC"]] call
 // Get composition array and spawn it using the BIS_fnc_ObjectsMapper
 _compArray = call (compile format ["call LR_fnc_%1", _type]);
 
-_objects = [_pos, _dir, _compArray, 0] call BIS_fnc_objectsMapper;
+_objects = [_pos, _dir, _compArray, 0, false] call LR_fnc_objectsMapper;
 
 // Properly align the objects with the ground etc, only works with ACE for now...
 if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {

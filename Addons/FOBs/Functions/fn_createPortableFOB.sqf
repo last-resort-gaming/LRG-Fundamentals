@@ -101,6 +101,18 @@ _object setVariable ["LR_PortableFOB_Pos", [0, 0, 0], true];
 
 [
 	_object,
+	format ["CheckFOB_%1_%2", _type, _object],
+	format ["Check Position (%1)", _name],
+	{[(_this select 0)] call LR_fnc_checkFOBPos;},
+	[],
+	"!(_target getVariable [""LR_PortableFOB_Deployed"", false])",
+	false,
+	5,
+	true
+] call LR_fnc_AddAction;
+
+[
+	_object,
 	format ["PackUpFOB_%1_%2", _type, _object],
 	format ["Pack Up %1", _name],
 	"",
