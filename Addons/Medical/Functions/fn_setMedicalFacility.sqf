@@ -5,7 +5,7 @@ Description:
 	Turns the given object or trigger into a medical facility.
 
 Arguments:
-	_object - Object to turn into a portable FOB
+	_object - Object to turn into a medical facility
 
 Return Values:
 	Nothing.
