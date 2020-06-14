@@ -7,7 +7,7 @@ class CfgPatches
 		author = AUTHOR;
 		name = NAME;
 		url = URL;
-		units[] = {};
+		units[] = {"LRG_Flag_White", "LRG_Flag_Black"};
 		requiredVersion = REQUIRED_VERSION;
 		requiredAddons[] = {"A3_UI_F","cba_main","cba_xeh"};
 		version = VERSION;
@@ -16,6 +16,7 @@ class CfgPatches
 	};
 };
 
+#include "CfgVehicles.hpp"
 #include "CfgMusic.hpp"
 #include "CfgSounds.hpp"
 #include "CfgUnitInsignia.hpp"
