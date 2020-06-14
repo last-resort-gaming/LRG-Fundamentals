@@ -43,6 +43,8 @@ Don't Index: Files
 # --------------------------------------------------------------------------
 
 
+File: AIS_Core_fnc_onNextFrame  (AIS Revive\Functions\Core\fn_onNextFrame.sqf)
+File: AIS_Core_fnc_waitUntilAndExecute  (AIS Revive\Functions\Core\fn_waitUntilAndExecute.sqf)
 File: Overview  (no auto-title, overview.txt)
 Index: Index (Everything)
 Function Index: Index (Functions)
@@ -53,6 +55,7 @@ Group: Project  {
    Link: Issues  (https://github.com/last-resort-gaming/LRG-Fundamentals/issues)
    Link: Download  (https://steamcommunity.com/sharedfiles/filedetails/?id=1448755472)
    Link: Reference  (https://last-resort-gaming.github.io/LRG-Fundamentals/docs)
+   Link: Discord  (http://discord.lastresortgaming.net)
    }  # Group: Project
 
 Group: Functions  {
@@ -62,13 +65,22 @@ Group: Functions  {
       File: derp_fnc_AIOccupyBuilding  (AI\Functions\fn_AIOccupyBuilding.sqf)
       File: LR_fnc_infantryGarrison  (AI\Functions\fn_infantryGarrison.sqf)
       File: derp_fnc_randomPos  (AI\Functions\fn_randomPos.sqf)
+      File: LR_fnc_RoadPatrol  (AI\Functions\fn_RoadPatrol.sqf)
       File: LR_fnc_SetUnitSkill  (AI\Functions\fn_setUnitSkill.sqf)
       File: LR_fnc_SpawnAI  (AI\Functions\fn_SpawnAI.sqf)
       File: derp_fnc_ZenOccupy  (AI\Functions\fn_ZenOccupy.sqf)
-      File: LR_fnc_SpawnCivilian (AI\Functions\Civilians\fn_SpawnCivilians.sqf)
-      File: LR_fnc_CivBreakPatrol (AI\Functions\Civilians\fn_CivBreakPatrol.sqf)
-      File: LR_fnc_CivilianGarrison (AI\Functions\Civilians\fn_CivilianGarrison.sqf)
-      File: LR_fnc_CivilianPatrol (AI\Functions\Civilians\fn_CivilianPatrol.sqf)
+
+      Group: Civilians  {
+
+         File: LR_fnc_CivBreakPatrol  (AI\Functions\Civilians\fn_CivBreakPatrol.sqf)
+         File: LR_fnc_CivilianGarrison  (AI\Functions\Civilians\fn_CivilianGarrison.sqf)
+         File: LR_fnc_CivilianPatrol  (AI\Functions\Civilians\fn_CivilianPatrol.sqf)
+         File: LR_fnc_SpawnCivilians  (AI\Functions\Civilians\fn_SpawnCivilians.sqf)
+         File: LR_fnc_SpawnCivZeusWrapper  (AI\Functions\Civilians\fn_SpawnCivZeusWrapper.sqf)
+         }  # Group: Civilians
+
+      File: LR_fnc_GetAvailableFactions  (AI\Functions\fn_GetAvailableFactions.sqf)
+      File: LR_fnc_SpawnAIZeusWrapper  (AI\Functions\fn_SpawnAIZeusWrapper.sqf)
       }  # Group: AI
 
    Group: Equipment  {
@@ -84,17 +96,18 @@ Group: Functions  {
 
       File: LR_fnc_CrashSite  (Explosives\Functions\fn_CrashSite.sqf)
       File: LR_fnc_IEDVehicle  (Explosives\Functions\fn_IEDVehicle.sqf)
-      File: LR_fnc_MakeIED  (Explosives\Functions\fn_MakeIED.sqf)
+      File: LR_fnc_MakeIED  (no auto-title, Explosives\Functions\fn_MakeIED.sqf)
       File: LR_fnc_SpawnExplosives  (Explosives\Functions\fn_SpawnExplosives.sqf)
       }  # Group: Explosives
 
    Group: FOBs  {
 
-      File: LR_fnc_createPortableFOB  (Explosives\Functions\fn_createPortableFOB.sqf)
-      File: LR_fnc_deployFOB  (Explosives\Functions\fn_deployFOB.sqf)
-      File: LR_fnc_checkFOBDeploy  (Explosives\Functions\fn_checkFOBDeploy.sqf)
-      File: LR_fnc_checkFOBPackUp  (Explosives\Functions\fn_checkFOBPackUp.sqf)
-      File: LR_fnc_packUpFOB  (Explosives\Functions\fn_packUpFOB.sqf)
+      File: LR_fnc_checkFOBDeploy  (FOBs\Functions\fn_checkFOBDeploy.sqf)
+      File: LR_fnc_checkFOBPackUp  (FOBs\Functions\fn_checkFOBPackUp.sqf)
+      File: LR_fnc_checkFOBPos  (FOBs\Functions\fn_checkFOBPos.sqf)
+      File: LR_fnc_createPortableFOB  (FOBs\Functions\fn_createPortableFOB.sqf)
+      File: LR_fnc_deployFOB  (FOBs\Functions\fn_deployFOB.sqf)
+      File: LR_fnc_packUpFOB  (FOBs\Functions\fn_packUpFOB.sqf)
       }  # Group: FOBs
 
    Group: Interaction  {
@@ -110,15 +123,37 @@ Group: Functions  {
 
    Group: Main  {
 
-      File: YAINA_fnc_formatDuration  (Main\Functions\YAINA\General\fn_formatDuration.sqf)
-      File: YAINA_fnc_log  (Main\Functions\YAINA\General\fn_log.sqf)
-      File: YAINA_fnc_hintC  (Main\Functions\YAINA\General\fn_hintC.sqf)
-      File: YAINA_fnc_hideTerrainObjects (Main\Functions\YAINA\General\fn_hideTerrainObjects.sqf)
+      File: YAINA_F_fnc_formatDuration  (Main\Functions\YAINA\General\fn_formatDuration.sqf)
+      File: YAINA_F_fnc_getFunctions  (Main\Functions\YAINA\General\fn_GetFunctions.sqf)
+      File: YAINA_F_fnc_hideTerrainObjects  (Main\Functions\YAINA\General\fn_hideTerrainObjects.sqf)
+      File: YAINA_F_fnc_hintC  (Main\Functions\YAINA\General\fn_hintC.sqf)
+      File: YAINA_F_fnc_log  (Main\Functions\YAINA\General\fn_log.sqf)
       File: LR_fnc_DynamicSim  (Main\Functions\LRG\fn_DynamicSim.sqf)
+      File: LR_fnc_findInArrayMap  (Main\Functions\LRG\fn_FindInArrayMap.sqf)
       File: LR_fnc_FindReplaceString  (Main\Functions\LRG\fn_FindReplaceString.sqf)
-      File: LR_fnc_FindInArrayMap  (Main\Functions\LRG\fn_FindInArrayMap.sqf)
+      File: LR_fnc_GetKeys  (Main\Functions\LRG\fn_GetKeys.sqf)
+      File: LR_fnc_GetValues  (Main\Functions\LRG\fn_GetValues.sqf)
+      File: LR_fnc_objectsMapper  (Main\Functions\LRG\fn_objectsMapper.sqf)
       File: LR_fnc_SafePos  (Main\Functions\LRG\fn_SafePos.sqf)
       }  # Group: Main
+
+   Group: Map Icons  {
+
+      File: LR_MI_fnc_allMarkers  (Map Icons\Functions\fn_allMarkers.sqf)
+      File: LR_MI_fnc_createMarkerPreview  (Map Icons\Functions\fn_createMarkerPreview.sqf)
+      File: LR_MI_fnc_findSaveInList  (Map Icons\Functions\fn_findSaveInList.sqf)
+      File: LR_MI_fnc_getMarkerChannel  (Map Icons\Functions\fn_getMarkerChannel.sqf)
+      File: LR_MI_fnc_getMarkersInArea  (Map Icons\Functions\fn_getMarkersInArea.sqf)
+      File: LR_MI_fnc_loadDisplay  (Map Icons\Functions\fn_loadDisplay.sqf)
+      File: LR_MI_fnc_loadHelp  (Map Icons\Functions\fn_loadHelp.sqf)
+      File: LR_MI_fnc_loadMarkers  (Map Icons\Functions\fn_loadMarkers.sqf)
+      File: LR_MI_fnc_loadNotification  (Map Icons\Functions\fn_loadNotification.sqf)
+      File: LR_MI_fnc_openDialog  (Map Icons\Functions\fn_openDialog.sqf)
+      File: LR_MI_fnc_saveMarkers  (Map Icons\Functions\fn_saveMarkers.sqf)
+      File: LR_MI_fnc_setButtonEnabled  (Map Icons\Functions\fn_setButtonEnabled.sqf)
+      File: LR_MI_fnc_setListSelected  (Map Icons\Functions\fn_setListSelected.sqf)
+      File: LR_MI_fnc_toggleHelp  (Map Icons\Functions\fn_toggleHelp.sqf)
+      }  # Group: Map Icons
 
    Group: Media  {
 
@@ -130,6 +165,7 @@ Group: Functions  {
 
    Group: Medical  {
 
+      File: LR_fnc_FacilityHeal  (Medical\Functions\fn_FacilityHeal.sqf)
       File: LR_fnc_setMedicalFacility  (Medical\Functions\fn_setMedicalFacility.sqf)
       }  # Group: Medical
 
@@ -151,7 +187,7 @@ Group: Functions  {
 
    Group: Vehicles  {
 
-      File: LR_fnc_ServiceVehicle  (Vehicles\Functions\fn_ServiceVehicle.sqf)
+      File: LR_fnc_setRepairFacility  (Vehicles\Functions\fn_setRepairFacility.sqf)
       File: general.sqf  (Vehicles\Scripts\general.sqf)
       File: uav.sqf  (Vehicles\Scripts\uav.sqf)
       }  # Group: Vehicles
