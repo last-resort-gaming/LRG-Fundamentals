@@ -36,17 +36,17 @@ params [
 	["_timeout", 25]
 ];
 
-_pos = [0,0];
+_pos = [0,0,0];
 
-if (_pos isEqualTo [0, 0]) then {
+if (_pos isEqualTo [0,0,0]) then {
 	for [{_i = 0}, {_i < _timeout}, {_i = _i + 1}] do {
 		_pos = [_whitelist, _blacklist, _code] call BIS_fnc_randomPos;
 
-		if (not (_pos isEqualTo [0,0])) then {_i = _timeout};
+		if (not (_pos isEqualTo [0,0,0])) then {_i = _timeout};
 	};
 };
 
-if (_pos isEqualTo [0,0]) then {
+if (_pos isEqualTo [0,0,0]) then {
 	systemChat "Could not find a valid position!";
 };
 
