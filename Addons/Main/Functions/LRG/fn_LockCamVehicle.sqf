@@ -7,7 +7,6 @@ _getInEHId = player addEventHandler ["GetInMan", {
 		
 		_handle = [
 			{
-				// todo
 				if ((toUpper cameraView) isEqualTo "EXTERNAL" && {player != vehicle player}) then {
 					player switchCamera "INTERNAL";
 				};

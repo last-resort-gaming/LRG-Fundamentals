@@ -9,7 +9,7 @@ params [
 
 [
 	_object,
-	"intel" + str (floor (random 360)),
+	"intel_" + str (floor (random 360)),
 	_actionTitle,
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_search_ca.paa",
 	"_player distance _target < 2 &&

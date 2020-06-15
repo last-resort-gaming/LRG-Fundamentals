@@ -53,7 +53,6 @@ Author:
 	MitchJC
 */
 
-// TODO: Change action for picking up to a hold action (pretty much done)
 // TODO: Allow sharing the intel with specific groups, units and whatnot (needs
 // 		 testing, sharing with side and one specific LRG group works though)
 
