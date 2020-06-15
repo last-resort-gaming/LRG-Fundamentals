@@ -15,7 +15,7 @@
 
 ## Explosives
 
-* Use LR_fnc_addHoldAction for IEDVehicle actions instead of vanilla
+* ~~Use LR_fnc_addHoldAction for IEDVehicle actions instead of vanilla~~
 
 ## Interaction
 

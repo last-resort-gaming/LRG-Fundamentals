@@ -169,14 +169,13 @@ _proxCheck = [
 ] call CBA_fnc_addPerFrameHandler;
 
 // Add a holdAction for disarming the bomb.
-// TODO: Actually use the Fundamentals holdAction system for ACE compat...
 [
 	 _vehicle
+	,format ["disarm_ied_%1", time]
 	,"Disarm IED"
 	,"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa"
-	,"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_hack_ca.paa"
-	,"isplayer _this
-	&& {_this distance _target < 5}
+	,"isplayer _player
+	&& {_player distance _target < 5}
 	&& {_target getVariable [""IEDarmed"",false]}
 	&& {not (_target getVariable [""IEDdetonated"",false])}"
 	,"true"
@@ -189,7 +188,7 @@ _proxCheck = [
 	{["You've stopped disarming the IED.", [-1, 0.8], "#cc3232"] call LR_fnc_dynamicText;}
 	,[]
 	,random [5, 7.5, 10]
-	,-92
 	,true
-	,false
-] remoteExec ["BIS_fnc_holdActionAdd", 0, true];
+	,"Disarming IED"
+	,true
+] call LR_fnc_AddHoldAction;
