@@ -29,12 +29,12 @@
 
 ## Medical
 
-* Test locality issues with fn_setMedicalFacility
+* ~~Test locality issues with fn_setMedicalFacility~~
 
 ## Zeus
 
-* Test the FOB ZEN Context Actions in mp
-* Test the Medical Facility ZEN Context Action in mp
+* ~~Test the FOB ZEN Context Actions in mp~~
+* ~~Test the Medical Facility ZEN Context Action in mp~~
   * Especially test for some border cases with fn_canBeMedFacility
-* Test the new ZEN modules
+* ~~Test the new ZEN modules~~
 * Icons for the FOB Context Actions
