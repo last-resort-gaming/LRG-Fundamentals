@@ -9,6 +9,7 @@ class LRG_Zeus {
 		class moduleAISpawnsIndepZeus {};
 		class moduleAISpawnsWestZeus {};
 		class moduleCivilianSpawnsZeus {};
+		class moduleSafeZoneZeus {};
 		class canBeFOB {};
 		class canBeMedFacility {};
 	};

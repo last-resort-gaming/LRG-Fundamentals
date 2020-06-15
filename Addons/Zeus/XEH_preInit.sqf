@@ -45,7 +45,7 @@
     }
 ] call CBA_Settings_fnc_init;
 
-// CivilianSpawns Modules
+// CivilianSpawns Module
 [
     "LRG_Zeus_Module_CivilianSpawns",
     "CHECKBOX",
@@ -58,5 +58,21 @@
         if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
 
         ["LRG Fundamentals", "AI Spawn - Civilian", {_this call LR_fnc_moduleCivilianSpawnsZeus}, "\z\LRG Fundamentals\addons\media\images\Icons\AI CIV.paa"] call zen_custom_modules_fnc_register;
+    }
+] call CBA_Settings_fnc_init;
+
+// SafeZone Module
+[
+    "LRG_Zeus_Module_SafeZone",
+    "CHECKBOX",
+    ["Zeus Module - Safe Zone", "Enable the Safe Zone Zeus module for use with ZEN"],
+    "LRG Zeus",
+    true,
+    true,
+    {
+        params ["_value"];
+        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
+
+        ["LRG Fundamentals", "Safe Zone", {_this call LR_fnc_moduleSafeZoneZeus}, "\z\LRG Fundamentals\addons\media\images\Icons\Safe Zone.paa"] call zen_custom_modules_fnc_register;
     }
 ] call CBA_Settings_fnc_init;
