@@ -9,7 +9,7 @@
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
+        if ((!isClass (configFile >> "CfgPatches" >> "zen_main")) || (!_value)) exitWith {};
 
         ["LRG Fundamentals", "AI Spawn - East", {_this call LR_fnc_moduleAISpawnsEastZeus}, "\z\LRG Fundamentals\addons\media\images\icons\AI EAST.paa"] call zen_custom_modules_fnc_register;
     }
@@ -24,7 +24,7 @@
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
+        if ((!isClass (configFile >> "CfgPatches" >> "zen_main")) || (!_value)) exitWith {};
 
         ["LRG Fundamentals", "AI Spawn - Independent", {_this call LR_fnc_moduleAISpawnsIndepZeus}, "\z\LRG Fundamentals\addons\media\images\icons\AI INDEP.paa"] call zen_custom_modules_fnc_register;
     }
@@ -39,7 +39,7 @@
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
+        if ((!isClass (configFile >> "CfgPatches" >> "zen_main")) || (!_value)) exitWith {};
 
         ["LRG Fundamentals", "AI Spawn - West", {_this call LR_fnc_moduleAISpawnsWestZeus}, "\z\LRG Fundamentals\addons\media\images\icons\AI WEST.paa"] call zen_custom_modules_fnc_register;
     }
@@ -55,7 +55,7 @@
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
+        if ((!isClass (configFile >> "CfgPatches" >> "zen_main")) || (!_value)) exitWith {};
 
         ["LRG Fundamentals", "AI Spawn - Civilian", {_this call LR_fnc_moduleCivilianSpawnsZeus}, "\z\LRG Fundamentals\addons\media\images\Icons\AI CIV.paa"] call zen_custom_modules_fnc_register;
     }
@@ -71,7 +71,7 @@
     true,
     {
         params ["_value"];
-        if (!isClass (configFile >> "CfgPatches" >> "zen_main")) exitWith {};
+        if ((!isClass (configFile >> "CfgPatches" >> "zen_main")) || (!_value)) exitWith {};
 
         ["LRG Fundamentals", "Safe Zone", {_this call LR_fnc_moduleSafeZoneZeus}, "\z\LRG Fundamentals\addons\media\images\Icons\Safe Zone.paa"] call zen_custom_modules_fnc_register;
     }
