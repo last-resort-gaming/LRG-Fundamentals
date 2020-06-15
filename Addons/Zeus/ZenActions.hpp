@@ -37,6 +37,14 @@ class zen_context_menu_actions {
         icon = "z\LRG Fundamentals\addons\Media\images\icons\Medical Area.paa";
         statement = "[_hoveredEntity] remoteExec [""LR_fnc_setMedicalFacility"", 0, true]";
         condition = "_hoveredEntity call LR_fnc_canBeMedFacility";
+        priority = 52;
+    };
+
+    class RepFacility {
+        displayName = "Set Repair Facility";
+        icon = "z\LRG Fundamentals\addons\Media\images\icons\Vehicle Service.paa";
+        statement = "[_hoveredEntity] remoteExec [""LR_fnc_setRepairFacility"", 0, true]";
+        condition = "_hoveredEntity call LR_fnc_canBeMedFacility";
         priority = 51;
     };
 };
