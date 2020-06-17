@@ -20,6 +20,10 @@ Author:
 
 params ["_sides"];
 
+if !(_sides isEqualType []) then {
+	_sides = _this;
+};
+
 private _factions = [];
 
 {
