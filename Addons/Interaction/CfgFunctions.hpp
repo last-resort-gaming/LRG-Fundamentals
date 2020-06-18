@@ -16,5 +16,6 @@ class LRG_Interaction {
 		class InitCreatorActions {PostInit = 1;};
 		class RunIntelAction {};
 		class SetIntelAction {};
+		class RegisterCreatorActions {};
 	};
 };

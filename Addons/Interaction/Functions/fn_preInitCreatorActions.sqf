@@ -1,2 +1,5 @@
 // not documented: preInit
-CreatorActions = [];
+
+if (isNil "CreatorActions") then {
+	CreatorActions = [];
+};

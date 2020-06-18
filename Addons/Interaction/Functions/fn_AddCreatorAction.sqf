@@ -34,5 +34,9 @@ if (!isServer) exitWith {
 
 params ["_title", "_name", "_statement", "_args"];
 
+if (isNil "CreatorActions") then {
+	CreatorActions = [];
+};
+
 CreatorActions pushBackUnique [_title, _name, _statement, _args];
 publicVariable "CreatorActions";
