@@ -4,7 +4,7 @@ class CfgVehicles {
     {
         author="Mokka";
 
-        editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Flag_White_F.jpg";
+        editorPreview="\z\LRG Fundamentals\addons\media\images\LRG_Flag_White.paa";
         _generalMacro="LRG_Flag_White";
         displayName="Flag (Last Resort Gaming, White)";
         class EventHandlers
@@ -16,7 +16,7 @@ class CfgVehicles {
     {
         author="Mokka";
 
-        editorPreview="\A3\EditorPreviews_F\Data\CfgVehicles\Flag_White_F.jpg";
+        editorPreview="\z\LRG Fundamentals\addons\media\images\LRG_Flag_Black.paa";
         _generalMacro="LRG_Flag_Black";
         displayName="Flag (Last Resort Gaming, Black)";
         class EventHandlers
