@@ -19,7 +19,13 @@
 
 ## Interaction
 
-* Finally fix the creatorActions more reliably in SP testing (publicVar shenanigans)
+* ~~Finally fix the creatorActions more reliably in SP testing (publicVar shenanigans)~~
+* Completely rework the CreatorActions system
+* Add some default CreatorActions to control various aspects of Fundamentals in the mission
+  * Enable/Disable channels
+  * Trigger explosives
+  * Trigger AI Spawns
+  * Save Map Markers
 
 ## Main
 
