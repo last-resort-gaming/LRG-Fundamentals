@@ -22,7 +22,7 @@ params ["_object"];
 // If the object is not a trigger, create one based on bounding boxes
 if !(_object isKindOf "EmptyDetector") then {
 
-    private _SpawnLocation = getPosATL _object;
+    private _SpawnLocation = getPos _object;
     private _GetObjectSize = boundingBoxReal _object;
     private _Width = (_GetObjectSize select 1) select 0;
     private _Length = (_GetObjectSize select 1) select 1;
