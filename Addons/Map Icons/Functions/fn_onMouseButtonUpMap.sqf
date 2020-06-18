@@ -1,4 +1,3 @@
-#include "script_component.hpp"
 // event handler
 
 params ["_mapCtrl","_mouseButton","_mouseX","_mouseY","_shiftDown","_ctrlDown","_altDown"];

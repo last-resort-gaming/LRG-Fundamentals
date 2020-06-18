@@ -1,4 +1,3 @@
-#include "script_component.hpp"
 /*
 Function: LR_MI_fnc_allMarkers
 

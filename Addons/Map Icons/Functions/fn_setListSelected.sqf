@@ -1,5 +1,4 @@
-#include "script_component.hpp"
-#include "..\ui\defines.hpp"
+#include "..\ui\defines.inc"
 /*
 Function: LR_MI_fnc_setListSelected
 

@@ -1,4 +1,3 @@
-#include "script_component.hpp"
 #define HIGHLIGHT_COLOR "#2eea54"
 /*
 Function: LR_MI_fnc_loadHelp

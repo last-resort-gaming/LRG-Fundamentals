@@ -1,4 +1,3 @@
-#include "script_component.hpp"
 // event handler
 
 [] call LR_MI_fnc_createMarkerPreview;

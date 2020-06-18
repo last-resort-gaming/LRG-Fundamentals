@@ -1,4 +1,3 @@
-#include "script_component.hpp"
 // event handler
 
 params ["_mapCtrl"];

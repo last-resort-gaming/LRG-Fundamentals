@@ -1,5 +1,4 @@
-#include "script_component.hpp"
-#include "..\ui\defines.hpp"
+#include "..\ui\defines.inc"
 // event handler
 
 params ["_display",["_selID",-1]];
