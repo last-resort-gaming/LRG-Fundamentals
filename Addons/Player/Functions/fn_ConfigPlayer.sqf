@@ -44,7 +44,14 @@ call {
 if (local _unit) then {
 
 	//========== Section Config
+	// todo: replace this check with a check for tfar_core path if legacy TFAR reaches EOL
+	// and gets fully deprecated
 	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
+
+		// TFAR Beta now uses tfar_core as its main patch, task_force_radio patch is only supplied
+		// for legacy compatibility, so we can use this to check if the beta is currently loaded,
+		// or not
+		_beta = isClass (configFile >> "CfgPatches" >> "tfar_core");
 
 		private ["_ShortRange", "_LongRange"];
 
@@ -75,8 +82,15 @@ if (local _unit) then {
 			};
 		};
 
-		_unit setVariable ["TFAR_freq_sr", _ShortRange, true];
-		_unit setVariable ["TFAR_freq_lr", _LongRange, true];
+		// TFAR Beta and Legacy use different way to set the frequency, so we have to check which version
+		// is loaded to support both
+		if (_beta) then {
+			_unit setVariable ["TFAR_freq_sr", _ShortRange, true];
+			_unit setVariable ["TFAR_freq_lr", _LongRange, true];
+		} else {
+			group _unit setVariable ["tf_sw_frequency", [0,9,_ShortRange,0,nil,-1,0,false], true];
+			group _unit setVariable ["tf_lr_frequency", [0,9,_LongRange,0,nil,-1,0,false], true];
+		};
 	};
 	//========== Trait Config
 	private _TraitsArray = call {
