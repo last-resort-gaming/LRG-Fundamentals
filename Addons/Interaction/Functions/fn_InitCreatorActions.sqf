@@ -1,33 +1,20 @@
 // not documented: postInit
+if !(hasInterface && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
 
-CreatorActions = [];
-if !(hasInterface && (player getUnitTrait "Mission Maker")) exitWith {};
+_action = [
+	"CreatorActions",
+	"Mission Creator Actions",
+	"",
+	{diag_log "running parent action"},
+	{_player getUnitTrait "Mission Maker"}
+] call ace_interact_menu_fnc_createAction;
 
-if (isClass (configFile >> "CfgPatches" >> "ace_main")) then {
+[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+[["ACE_ZeusActions"], _action] call ACE_interact_menu_fnc_addActionToZeus;
 
-	_action = [
-		"CreatorAction",
-		"Mission Creator Actions",
-		"",
-		{diag_log "running parent action"},
-		{true}
-	] call ace_interact_menu_fnc_createAction;
+["LRG_RegisterCreatorAction", {
+	params ["_action", "_actionPath"];
 
-	[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-	"CreatorActions" addPublicVariableEventHandler {
-		params ["_variable", "_actions"];
-
-		[_actions] call LR_fnc_RegisterCreatorActions;
-	};
-} else {
-	"CreatorActions" addPublicVariableEventHandler {
-		params ["_variable", "_actions"];
-
-		[_actions] call LR_fnc_RegisterCreatorActions;
-	};
-};
-
-[CreatorActions] call LR_fnc_RegisterCreatorActions;
-
-publicVariable "CreatorActions";
+	[player, 1, ["ACE_SelfActions", "CreatorActions"] + _actionPath, _action] call ace_interact_menu_fnc_addActionToObject;
+	[["ACE_ZeusActions", "CreatorActions"] + _actionPath, _action] call ACE_interact_menu_fnc_addActionToZeus;
+}] call CBA_fnc_addEventHandler;

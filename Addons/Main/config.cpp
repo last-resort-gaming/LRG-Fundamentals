@@ -14,6 +14,15 @@ class CfgPatches
 		authors[] = {"MitchJC"};
 		weapons[] = {};
 	};
+	class LRG_Fundamentals
+	{
+		author = AUTHOR;
+		name = NAME;
+		units[] = {};
+		weapons[] = {};
+		requiredVersion = REQUIRED_VERSION;
+		requiredAddons[] = {};
+	};
 };
 
 class CfgMods {

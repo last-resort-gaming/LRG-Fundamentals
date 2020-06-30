@@ -20,3 +20,8 @@ class CfgFunctions {
     #include "cfgFunctions.hpp"
 };
 
+class Extended_PreInit_EventHandlers {
+    class LRGFundamentals_Interaction_Event {
+        init = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Interaction\XEH_preInit.sqf'";
+    };
+};

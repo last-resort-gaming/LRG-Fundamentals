@@ -206,16 +206,20 @@
     }
 ] call CBA_Settings_fnc_init;
 
-// Creator Actions
+// MapIcons
 [
-    "LRG_Main_CreatorActions",
+    "LRG_Main_MapIcons",
     "CHECKBOX",
-    ["Creator Actions", "Show/Hide Creator Actions in ACE Self Interaction Menu"],
+    ["Enable Save/Load Markers", "Enable the MapIcons system to save/load markers"],
     "LRG Main",
     true,
     true,
     {
-        if (_this && { hasinterface }) then  { call LR_fnc_InitCreatorActions};
+		["lrg-saveMarkers",{
+            [] call LR_MI_fnc_openDialog;
+        },"all"] call CBA_fnc_registerChatCommand;
+
+        [] call LR_MI_fnc_loadNotification;
     }
 ] call CBA_Settings_fnc_init;
 
