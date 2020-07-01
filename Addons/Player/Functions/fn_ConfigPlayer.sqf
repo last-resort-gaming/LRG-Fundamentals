@@ -44,39 +44,53 @@ call {
 if (local _unit) then {
 
 	//========== Section Config
+	// todo: replace this check with a check for tfar_core path if legacy TFAR reaches EOL
+	// and gets fully deprecated
 	if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
+
+		// TFAR Beta now uses tfar_core as its main patch, task_force_radio patch is only supplied
+		// for legacy compatibility, so we can use this to check if the beta is currently loaded,
+		// or not
+		_beta = isClass (configFile >> "CfgPatches" >> "tfar_core");
 
 		private ["_ShortRange", "_LongRange"];
 
 		call {
 			if (_Section == "Command") exitwith {
-				_ShortRange = [0,9,["475","500","425","100","200","300","400","82"],0,nil,-1,0,false];
-				_LongRange = [0,9,["30","32","40","60","50","82","82","82","82"],0,nil,-1,0,false];
+				_ShortRange = ["475", "500", "425", "100", "200", "300", "400", "82"];
+				_LongRange = ["30", "32", "40", "60", "50", "82", "82", "82"];
 			};
 			if (_Section == "1 Section") exitwith {
-				_ShortRange = [0,9,["100","125","150","425","82","82","82","82"],0,nil,-1,0,false];
-				_LongRange = [0,9,["30","32","60","61","62","63","64","65","66"],0,nil,-1,0,false];
+				_ShortRange = ["100", "125", "150", "425", "82", "82", "82", "82"];
+				_LongRange = ["30", "32", "60", "61", "62", "63", "64", "65", "66"];
 			};
 			if (_Section == "2 Section") exitwith {
-				_ShortRange = [0,9,["200","225","250","425","82","82","82","82"],0,nil,-1,0,false];
-				_LongRange = [0,9,["30","32","60","61","62","63","64","65","66"],0,nil,-1,0,false];
+				_ShortRange = ["200", "225", "250", "425", "82", "82", "82", "82"];
+				_LongRange = ["30", "32", "60", "61", "62", "63", "64", "65", "66"];
 			};
 			if (_Section == "3 Section") exitwith {
-				_ShortRange = [0,9,["300","325","350","425","82","82","82","82"],0,nil,-1,0,false];
-				_LongRange = [0,9,["30","32","60","61","62","63","64","65","66"],0,nil,-1,0,false];
+				_ShortRange = ["300", "325", "350", "425", "82", "82", "82", "82"];
+				_LongRange = ["30", "32", "60", "61", "62", "63", "64", "65", "66"];
 			};
 			if (_Section == "909 EAW") exitwith {
-				_ShortRange = [0,9,["401","402","403","404","405","406","407","425"],0,nil,-1,0,false];
-				_LongRange = [0,9,["50","60","40","82","82","82","82","82","82"],0,nil,-1,0,false];
+				_ShortRange = ["401", "402", "403", "404", "405", "406", "407", "425"];
+				_LongRange = ["50", "60", "40", "82", "82", "82", "82", "82"];
 			};
 			if (_Section == "Support") exitwith {
-				_ShortRange = [0,9,["100","200","300","425","82","82","82","82"],0,nil,-1,0,false];
-				_LongRange = [0,9,["30","32","60","61","62","63","64","65","66"],0,nil,-1,0,false];
+				_ShortRange = ["100", "200", "300", "425", "82", "82", "82", "82"];
+				_LongRange = ["30", "32", "60", "61", "62", "63", "64", "65", "66"];
 			};
 		};
 
-		group _unit setVariable ["tf_sw_frequency", _ShortRange, true];
-		group _unit setVariable ["tf_lr_frequency", _LongRange, true];
+		// TFAR Beta and Legacy use different way to set the frequency, so we have to check which version
+		// is loaded to support both
+		if (_beta) then {
+			_unit setVariable ["TFAR_freq_sr", _ShortRange, true];
+			_unit setVariable ["TFAR_freq_lr", _LongRange, true];
+		} else {
+			group _unit setVariable ["tf_sw_frequency", [0,9,_ShortRange,0,nil,-1,0,false], true];
+			group _unit setVariable ["tf_lr_frequency", [0,9,_LongRange,0,nil,-1,0,false], true];
+		};
 	};
 	//========== Trait Config
 	private _TraitsArray = call {
