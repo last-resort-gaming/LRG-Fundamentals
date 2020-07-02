@@ -58,5 +58,5 @@ _action = [
 ] call ACE_interact_menu_fnc_createAction;
 
 [
-	"LRG_RegisterCreatorAction", [_action, _actionPath], format["LR_CAJIP_%1", _actionName]
+	"LRG_RegisterCreatorAction", [_action, _actionPath], format["LRG_CAJIP_%1", _actionName]
 ] call CBA_fnc_globalEventJIP;
