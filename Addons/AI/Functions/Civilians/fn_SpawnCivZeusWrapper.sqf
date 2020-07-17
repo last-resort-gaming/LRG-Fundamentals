@@ -17,8 +17,8 @@ Author:
 	Mokka
 */
 
-#define CIV_FACTIONS ["Default Civilians (Altis)", "@CFP - Civilians (Afghanistan)", "@CFP - Civilians (African Christian)", "@CFP - Civilians (African Islamic)", "@CFP - Civilians (Asian)", "@CUP - Civilians (Chernarus)", "@CUP - Civilians (Middle Eastern)", "@CUP - Civilians (Russian)", "@CUP - Civilians (Takistan)"]
-#define CIV_FACTIONS_LOOKUP ["CIV_F", "CFP_C_AFG", "CFP_C_AFRCHRISTIAN", "CFP_C_AFRISLAMIC", "CFP_C_ASIA", "CUP_C_CHERNARUS", "CUP_C_SAHRANI", "CUP_C_RU", "CUP_C_TK"]
+#define CIV_FACTIONS ["Default Civilians (Altis)", "@3CB Factions - Civilians (Chernarus)", "@3CB Factions - Civilians (Takistan)", "@CFP - Civilians (Afghanistan)", "@CFP - Civilians (African Christian)", "@CFP - Civilians (African Islamic)", "@CFP - Civilians (Asian)", "@CUP - Civilians (Chernarus)", "@CUP - Civilians (Middle Eastern)", "@CUP - Civilians (Russian)", "@CUP - Civilians (Takistan)"]
+#define CIV_FACTIONS_LOOKUP ["CIV_F", "UK3CB_CHC_C", "UK3CB_TKC_C", "CFP_C_AFG", "CFP_C_AFRCHRISTIAN", "CFP_C_AFRISLAMIC", "CFP_C_ASIA", "CUP_C_CHERNARUS", "CUP_C_SAHRANI", "CUP_C_RU", "CUP_C_TK"]
 
 params [["_pos", [0, 0, 0]]];
 
