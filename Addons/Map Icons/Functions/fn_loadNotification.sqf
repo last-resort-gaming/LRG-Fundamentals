@@ -25,6 +25,6 @@ if (_hasWorldSaveData < 0) exitWith {};
 
 [{!isNull (findDisplay 46)},{
     [{
-        ["LR_MI_notification",["GRAD SAVE MARKERS","You have markers that can now be loaded."]] call bis_fnc_showNotification;
+        ["LR_MI_notification",["LRG SAVE MARKERS","You have markers that can now be loaded."]] call bis_fnc_showNotification;
     },[],10] call CBA_fnc_waitAndExecute;
 },[]] call CBA_fnc_waitUntilAndExecute;

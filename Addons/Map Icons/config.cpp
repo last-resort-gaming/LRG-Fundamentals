@@ -16,12 +16,6 @@ class CfgPatches
 	};
 };
 
-class Extended_PreInit_EventHandlers {
-    class LRG_MapIcons_Event {
-        clientInit = "call compile preprocessFileLineNumbers 'z\LRG Fundamentals\Addons\Map Icons\XEH_preClientInit.sqf'";
-    };
-};
-
 class CfgFunctions {
     #include "cfgFunctions.hpp"
 };

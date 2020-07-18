@@ -12,10 +12,9 @@ class LRG_Interaction {
 		class InitInspectableIntel {};
 		class LaptopHoldActions {};
 		class PlayerAddActions {};
-		class preInitCreatorActions {preInit = 1;};
-		class InitCreatorActions {PostInit = 1;};
+		class InitCreatorActions {};
+		class InitChannelActions {};
 		class RunIntelAction {};
 		class SetIntelAction {};
-		class RegisterCreatorActions {};
 	};
 };

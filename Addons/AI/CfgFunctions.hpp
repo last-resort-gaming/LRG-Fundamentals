@@ -92,6 +92,7 @@ class LRG_AI {
 		class UK3CB_TKM_O {};
 		class UK3CB_TKP_O {};
 		class UNSUNG_E_NVA {};
+		class TBan_Group {};
 	};
 	
 	class Indep_Factions {

@@ -6,37 +6,57 @@ Description:
 	during the live mission.
 
 Arguments:
-	_title - The globally unique identifier of the action <STRING>
-	_name - The name of the action as shown to players <STRING>
-	_statement - The code executed upon calling the action, the following params are available: [_target, _caller, _args] <CODE>
-	_args - Arguments for the statement script <ARRAY OF ANYTHING>
+	_actionName - Action name <STRING>
+	_displayName - Name of the action shown in the menu <STRING>
+	_icon - Icon file path or Array of icon file path and hex color ("" for default icon) <STRING|ARRAY>
+	_statement - Statement <CODE>
+	_condition - Condition <CODE>
+	_actionPath - Path for the action, subpath of CreatorActions <ARRAY> (Optional)
+	_insertChildren - Insert children code <CODE> (Optional)
+	_customParams - Action parameters <ANY> (Optional)
+	_params - Other parameters [showDisabled,enableInside,canCollapse,runOnHover,doNotCheckLOS] <ARRAY> (Optional)
+	_modifierFunction -: Modifier function <CODE> (Optional)
 
 Return Values:
 	None
 
 Examples:
     (begin example)
-		[
-			"MissionStart",
-			"Start Mission",
-			{hint "Mission started!";},
-			[]
-		] call LR_fnc_AddCreatorAction;
+[
+	"MissionStart",
+	"Start Mission",
+	"",
+	{hint "Mission started!";},
+	{true},
+	["ExampleActions"]
+] call LR_fnc_AddCreatorAction;
 	(end)
 
 Author:
 	Mokka
 */
 
-if (!isServer) exitWith {
-	_this remoteExec ["LR_fnc_AddCreatorAction", 2];
-};
+if !(hasInterface && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
+if (!LRG_CreatorActions_Master) exitWith {};
 
-params ["_title", "_name", "_statement", "_args"];
+params [
+    "_actionName",
+    "_displayName",
+    "_icon",
+    "_statement",
+    "_condition",
+	["_actionPath", []],
+    ["_insertChildren", {}],
+    ["_customParams", []],
+    ["_params", [false, false, false, false, false]],
+    ["_modifierFunction", {}]
+];
 
-if (isNil "CreatorActions") then {
-	CreatorActions = [];
-};
+_action = [
+	_actionName, _displayName, _icon, _statement, _condition, _insertChildren,
+	_customParams, nil, nil, _params, _modifierFunction
+] call ACE_interact_menu_fnc_createAction;
 
-CreatorActions pushBackUnique [_title, _name, _statement, _args];
-publicVariable "CreatorActions";
+[
+	"LRG_RegisterCreatorAction", [_action, _actionPath], format["LRG_CAJIP_%1", _actionName]
+] call CBA_fnc_globalEventJIP;

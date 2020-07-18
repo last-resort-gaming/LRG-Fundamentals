@@ -25,7 +25,7 @@ if (isserver) then {
 };
 
 
-_RandomBodyPart = ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"];
+_RandomBodyPart = ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"];
 _RandomInjuryType = ["bullet", "grenade", "explosive", "shell", "vehiclecrash"];
 
 if (!hasinterface) exitwith {};
@@ -114,7 +114,7 @@ _object addAction
     "<t color='#666666'>Reset Casualty</t>",
     {
         params ["_target", "_caller", "_actionId", "_arguments"];
-		[_caller, _target] remoteExecCall ["ace_medical_treatment_fnc_fullHealLocal", 0];
+		[_target] remoteExecCall ["ace_medical_treatment_fnc_fullHealLocal", _target];
 		_target disableAI "MOVE";
 		_target disableAI "FSM";
 		_target setVariable ["CasualtyHealed", true, True];
