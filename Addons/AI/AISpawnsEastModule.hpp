@@ -74,6 +74,7 @@ class LRG_ModuleAISpawns: Module_F
 					class rhs_faction_vmf 			{name = "@RHS AFRF - Russia - VMF"; 						value = "rhs_faction_vmf";};
 					class rhsgref_faction_chdkz		{name = "@RHS GREF - ChDKZ Insurgents";						value = "rhsgref_faction_chdkz";};
 					class UNSUNG_E_NVA 				{name = "@UNSUNG - NVA"; 									value = "UNSUNG_E_NVA";};
+					class TBan_Group				{name = "@Taliban RHS Config - Taliban"; 					value = "TBan_Group";};
 					class OPF_F						{name = "Vanilla - CSAT"; 									value = "OPF_F";};
 					class OPF_T_F 					{name = "Vanilla - CSAT (Pacific)"; 						value = "OPF_T_F";};
 				};
