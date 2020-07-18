@@ -46,7 +46,7 @@
 		};
     }
 ] call CBA_Settings_fnc_init;
-*/
+*/ // broken as fuck, crashes the game...
 
 [
     "LRG_CreatorActions_EndMission",

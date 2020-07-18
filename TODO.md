@@ -2,11 +2,11 @@
 
 ## AI
 
-* (!) Find a better way to find suitable spawn location for RANDOM
+* (!) Find a better way to find suitable spawn location for RANDOM (kind of done? needs testing)
 * (!) Delete SpawnAI/Civ modules after spawning complete
 * Space out the spawns to reduce strain
 * Different behaviours for newly spawned AI
-* Allow SpawnAI modules to be "cocked" and activated by script
+* Allow SpawnAI modules to be "cocked" and activated by script (see CreatorActions)
 * Side selection for SpawnCivilians
 
 ## AIS Revive
@@ -20,12 +20,17 @@
 ## Interaction
 
 * ~~Finally fix the creatorActions more reliably in SP testing (publicVar shenanigans)~~
-* Completely rework the CreatorActions system
+* ~~Completely rework the CreatorActions system~~
 * Add some default CreatorActions to control various aspects of Fundamentals in the mission
-  * Enable/Disable channels
+  * ~~Enable/Disable channels~~
   * Trigger explosives
   * Trigger AI Spawns
-  * Save Map Markers
+  * ~~Save Map Markers (scrapped)~~
+
+## FOBs
+
+* Add Service Areas to LZs (fuel/repair)
+* More LRG-specific FOBs?
 
 ## Main
 
@@ -36,6 +41,11 @@
 ## Medical
 
 * ~~Test locality issues with fn_setMedicalFacility~~
+
+## Training
+
+* ~~Fix up Casualty system~~
+* ~~Fix up ACE Settings for Training mission~~
 
 ## Zeus
 
