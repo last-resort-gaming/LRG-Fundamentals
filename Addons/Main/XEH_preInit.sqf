@@ -50,6 +50,19 @@
     }
 ] call CBA_Settings_fnc_init;
 
+// PilotCheck
+[
+    "LRG_Main_MaydayAccess",
+    "LIST",
+    ["Aircraft Emergency Access", "Restrict access to the emergency pilot takeover for helicopters (requires Pilot Check Enabled)"],
+    "LRG Main",
+    [[0,1,2],["No One", "909 Only", "Everyone"], 2],
+    true,
+    {
+
+    }
+] call CBA_Settings_fnc_init;
+
 // Voyager Compass
 [
     "LRG_Main_VoyagerCompass",

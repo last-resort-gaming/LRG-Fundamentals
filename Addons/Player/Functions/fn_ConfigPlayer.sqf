@@ -120,7 +120,10 @@ if (local _unit) then {
 	};
 
 	//=========== Patches
-		[_unit, _Section] call LR_fnc_Patches;
+	[_unit, _Section] call LR_fnc_Patches;
+
+	//=========== Set Section
+	_unit setVariable ["LRG_Section", _Section, true];
 };
 
 //========== SideChat Config
