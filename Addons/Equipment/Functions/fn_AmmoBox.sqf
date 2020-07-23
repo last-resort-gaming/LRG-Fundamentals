@@ -51,7 +51,7 @@ call {
 				["3Rnd_HE_Grenade_shell",6],
 				["Titan_AT",4]
 			];
-	};	
+	};
 	if (_Type isEqualTo "3CB") exitwith {
 			_ContainerItems = [
 				["UK3CB_BAF_AT4_CS_AT_Launcher", 4],
@@ -75,8 +75,6 @@ call {
 				["rhs_200rnd_556x45_M_SAW", 10],
 				["rhsusf_100Rnd_762x51", 6],
 				["rhsusf_m112_mag", 8]
-				
-				
 		];
 	};
 };
