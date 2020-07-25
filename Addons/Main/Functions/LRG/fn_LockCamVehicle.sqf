@@ -4,7 +4,7 @@ player setVariable ["LR_VehCamLockHandle", -1];
 
 _getInEHId = player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle", "_turret"];
-		
+
 		_handle = [
 			{
 				if ((toUpper cameraView) isEqualTo "EXTERNAL" && {player != vehicle player}) then {
@@ -13,7 +13,7 @@ _getInEHId = player addEventHandler ["GetInMan", {
 			},
 			0, []
 		] call CBA_fnc_addPerFrameHandler;
-		
+
 		player setVariable ["LR_VehCamLockHandle", _handle];
 	}
 ];

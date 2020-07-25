@@ -27,7 +27,7 @@ switch (LRG_Main_MaydayAccess) do {
 			if (not _HeliActions) then {
 				[_vehicle, false] remoteExec ["enableCopilot", 0];
 				_vehicle addAction ["<t color='#00FFFF'>Authorise Co-Pilot</t>", {params ["_target", "_caller", "_actionId", "_arguments"]; [_target, true] remoteExec ["enableCopilot", 0]}, "", 9, false, true, "", '(driver _target isEqualTo _this) && (not isCopilotEnabled _target)'];
-				_vehicle addAction [ "<t color='#B33A3A'>Unauthorise Co-Pilot</t>"   , {params ["_target", "_caller", "_actionId", "_arguments"]; [_target, false] remoteExec ["enableCopilot", 0]}, "", 10, false, true, "", '(driver _target isEqualTo _this) && (isCopilotEnabled _target)'];
+				_vehicle addAction ["<t color='#B33A3A'>Unauthorise Co-Pilot</t>", {params ["_target", "_caller", "_actionId", "_arguments"]; [_target, false] remoteExec ["enableCopilot", 0]}, "", 10, false, true, "", '(driver _target isEqualTo _this) && (isCopilotEnabled _target)'];
 
 				_vehicle setVariable ["HeliAddActions", true, false];
 			};
@@ -43,11 +43,14 @@ switch (LRG_Main_MaydayAccess) do {
 						// check if pilot still active
 						if ([_vehicle] call LR_fnc_isPilotDown) exitWith {
 							// check if vehicle moving/on the ground
-							if ((round (speed _vehicle) != 0) || (((getPos _vehicle) select 2) > 1)) then {
+							if ((round (speed _vehicle) != 0) || (not isTouchingGround _vehicle)) then {
 								// check if player is copilot
 								if (_unit in ([_vehicle] call LR_fnc_getCopilots)) then {
 									_unit action ["TakeVehicleControl", _vehicle];
-									[_vehicle, true] remoteExec ["enableCopilot", 0];
+
+									if (not isCopilotEnabled _vehicle) then {
+										[_vehicle, true] remoteExec ["enableCopilot", 0];
+									};
 
 									[
 										"<t color='#ff0000' size='0.5'>Emergency Controls Enabled!</t>",
