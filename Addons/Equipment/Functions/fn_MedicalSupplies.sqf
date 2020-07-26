@@ -7,11 +7,12 @@ Description:
 Arguments:
 	_container - Container the setup is applied to. <OBJECT>
 	_Type - Equipment setup to add. <STRING>
+	_purge - Clear the container's inventory before adding supplies? <BOOLEAN>
 
 Examples:
 	(begin example)
 		[this] call LR_fnc_MedicalSupplies;
-		[this, "MERT"] call LR_fnc_MedicalSupplies;
+		[this, "MERT", true] call LR_fnc_MedicalSupplies;
 	(end)
 
 Author:
@@ -21,17 +22,16 @@ if (!isServer) exitwith {};
 
 params [
 	"_container",
-	["_Type", "Standard"]
+	["_Type", "Standard"],
+	["_purge", false]
 ];
 
-private _Type = _container getVariable ["LRG_Equipment_Select", -1];
-
-if (_Type isEqualto -1) exitwith {};
+private _VarType = _container getVariable ["LRG_Equipment_Select", -1];
 
 call {
-	if (_Type isEqualto 0) exitwith {_Type = "Limited"};
-	if (_Type isEqualto 1) exitwith {_Type = "Standard"};
-	if (_Type isEqualto 2) exitwith {_Type = "MERT"};
+	if (_VarType isEqualto 0) exitwith {_Type = "Limited"};
+	if (_VarType isEqualto 1) exitwith {_Type = "Standard"};
+	if (_VarType isEqualto 2) exitwith {_Type = "MERT"};
 };
 
 private ["_ContainerItems"];
@@ -90,6 +90,10 @@ call {
 			];
 		};
 	};
+};
+
+if (_purge) then {
+	clearItemCargoGlobal _container;
 };
 
 {_container addItemCargoGlobal _x} foreach _ContainerItems;

@@ -7,5 +7,7 @@ class LRG_Vehicles {
 		class moduleServicing {};
 		class ServiceVehicle {};
 		class setRepairFacility {};
+		class getCopilots {};
+		class isPilotDown {};
 	};
 };

@@ -8,7 +8,9 @@ Using orientation of objects: yes
 */
 
 [
-	["Land_HelicopterWheels_01_assembled_F",[5.11914,4.00146,-0.00153017],344.998,1,0,[0.386652,-0.000199341],"","",true,false], 
+	["Land_HelipadCircle_F",[-0.130859,0.253174,0],0,1,0,[0,0],"","_this setVariable [""ACE_isRepairFacility"", 1, true]",true,false], 
+	["FlexibleTank_01_sand_F",[-6.56445,-1.23755,4.76837e-006],105.004,1,0.00960283,[0.0154027,7.62781e-005],"","[_this, true, [0,1,0]] call ACE_dragging_fnc_setDraggable",true,false], 
+	["FlexibleTank_01_sand_F",[-6.95557,1.19604,-1.19209e-005],181.865,1,0.00966831,[-0.000232478,-0.00222577],"","[_this, true, [0,1,0]] call ACE_dragging_fnc_setDraggable",true,false], 
 	["Land_BagFence_Short_F",[6.74268,2.26367,-0.000999928],75,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Short_F",[2.12988,-6.87061,-0.000999928],165,1,0,[0,-0],"","",true,false], 
 	["Land_BagFence_Short_F",[6.11523,3.88794,-0.000999928],60,1,0,[0,0],"","",true,false], 
@@ -35,5 +37,7 @@ Using orientation of objects: yes
 	["Land_BagFence_Short_F",[-6.38721,4.11987,-0.000999928],300,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_Short_F",[-5.38916,5.37183,-0.000999928],315,1,0,[0,0],"","",true,false], 
 	["Land_BagFence_End_F",[-7.80762,1.02661,-0.000999928],120,1,0,[0,-0],"","",true,false], 
+	["Land_WeldingTrolley_01_F",[8.20068,-1.24976,0],2.65844,1,0,[-0.000259762,7.92339e-006],"","",true,false], 
+	["Land_ToolTrolley_02_F",[8.57129,1.45068,9.53674e-007],292.52,1,0,[0.000124839,-7.81433e-005],"","",true,false], 
 	["Windsock_01_F",[-6.50586,7.12817,0],0,1,0,[0,0],"","",true,false]
 ]
