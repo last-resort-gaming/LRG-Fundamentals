@@ -17,7 +17,7 @@ Using orientation of objects: yes
 	["Land_MetalBarrel_F",[-4.36816,9.29346,1.43051e-006],359.956,1,0.00528196,[0.000568709,0.000469933],"","",true,false], 
 	["Land_ClutterCutter_large_F",[-0.666016,11.2109,0],0,1,0,[0,0],"","",true,false], 
 	["Land_MetalBarrel_F",[-4.30469,10.3687,1.43051e-006],359.94,1,0.00988407,[0.000536712,0.000509984],"","",true,false], 
-	["CamoNet_INDP_big_Curator_F",[-0.757324,10.9585,0],10.1089,1,0,[0,0],"","_this allowDamage false",true,false], 
+	["CamoNet_INDP_big_Curator_F",[-0.757324,10.9585,0],10.1089,1,0,[0,0],"","_this allowDamage false; _this setVariable [""ACE_isRepairFacility"", 1, true]",true,false], 
 	["Land_Tyre_F",[3.57178,11.1426,-0.00430298],0.947449,1,0,[-0.842892,-0.374475],"","",true,false], 
 	["Land_Tyre_F",[-4.03564,11.645,-0.00430298],0.0441213,1,0,[-0.85213,-0.368694],"","",true,false], 
 	["Land_GasTank_02_F",[3.64893,11.7871,3.8147e-005],359.231,1,0,[0.00091164,-0.0200684],"","",true,false], 
