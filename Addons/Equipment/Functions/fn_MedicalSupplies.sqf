@@ -29,7 +29,6 @@ params [
 private _VarType = _container getVariable ["LRG_Equipment_Select", -1];
 
 call {
-	if (_VarType isEqualto -1) exitwith {_Type = "NONE"};
 	if (_VarType isEqualto 0) exitwith {_Type = "Limited"};
 	if (_VarType isEqualto 1) exitwith {_Type = "Standard"};
 	if (_VarType isEqualto 2) exitwith {_Type = "MERT"};
