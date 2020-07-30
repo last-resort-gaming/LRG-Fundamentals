@@ -1,4 +1,4 @@
-if !(hasInterface && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
+if !(isServer && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
 
 [
 	"ChannelActions",
@@ -10,7 +10,8 @@ if !(hasInterface && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitW
 ] call LR_fnc_AddCreatorAction;
 
 {
-	_x params ["_channelID", "_channelName"];
+	_channelID = _forEachIndex;
+	_channelName = _x;
 
 	_enableStatement = compile format ["[%1, [true, false]] remoteExec [""enablechannel"",0,true];", _channelID];
 	_disableStatement = compile format ["[%1, [false, false]] remoteExec [""enablechannel"",0,true];", _channelID];
@@ -36,10 +37,10 @@ if !(hasInterface && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitW
 		["ChannelActions"]
 	] call LR_fnc_AddCreatorAction;
 } forEach [
-	[0, "Global"],
-	[1, "Side"],
-	[2, "Command"],
-	[3, "Group"],
-	[4, "Vehicle"],
-	[5, "Direct"]
+	"Global",
+	"Side",
+	"Command",
+	"Group",
+	"Vehicle",
+	"Direct"
 ];
