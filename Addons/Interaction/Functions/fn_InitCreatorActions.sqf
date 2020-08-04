@@ -8,7 +8,7 @@ _action = [
 	"Mission Creator Actions",
 	"",
 	{diag_log "running parent action"},
-	{_player getUnitTrait "Mission Maker"}
+	{(_player getUnitTrait "Mission Maker") || (serverCommandAvailable '#kick')}
 ] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
