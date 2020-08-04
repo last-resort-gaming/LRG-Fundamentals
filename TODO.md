@@ -16,7 +16,7 @@
 ## Explosives
 
 * ~~Use LR_fnc_addHoldAction for IEDVehicle actions instead of vanilla~~
-* Add 3den Modules and ZEN Context Actions for the IEDs
+* ~~Add 3den Modules and ZEN Context Actions for the IEDs~~
   * Icons for these modules...
 
 ## Interaction
