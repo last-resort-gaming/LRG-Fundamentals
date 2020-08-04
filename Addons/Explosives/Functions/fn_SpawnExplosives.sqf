@@ -32,9 +32,6 @@ if !(isServer) exitWith {};
 	    	["_method", "Bo_mk82"]
 	    ];
 
-        // Bail if we are requested to
-        if (!(isNil "_r") && { _r isEqualTo false }) exitWith {};
-
         createVehicle [_method, _pos, [], 0, "CAN_COLLIDE"];
 
         private _csleep = _sub select 1;
