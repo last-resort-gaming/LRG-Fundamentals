@@ -50,7 +50,7 @@ class zen_context_menu_actions {
 
     class MakeIED {
         displayName = "Make IED";
-        icon = ""; //todo: icon
+        icon = "a3\ui_f\data\GUI\Cfg\Hints\IEDs_CA.paa"; //todo: icon
         statement = "call LR_fnc_MakeIEDZeusWrapper";
         condition = "(not (isNull _hoveredEntity)) && {alive _hoveredEntity}";
         priority = 53;

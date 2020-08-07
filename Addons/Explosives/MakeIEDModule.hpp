@@ -2,7 +2,7 @@ class LRG_ModuleIED: Module_F
 {
 	scope = 2;
 	displayName = "Create IED";
-	icon = "\z\LRG Fundamentals\addons\media\images\Icons\AI CIV.paa"; //todo: find better icon
+	icon = "a3\ui_f\data\GUI\Cfg\Hints\IEDs_CA.paa"; //todo: find better icon
 	category = "LRG_Modules";
 	function = "LR_fnc_moduleMakeIED";
 	functionPriority = 2;
