@@ -16,6 +16,8 @@
 ## Explosives
 
 * ~~Use LR_fnc_addHoldAction for IEDVehicle actions instead of vanilla~~
+* ~~Add 3den Modules and ZEN Context Actions for the IEDs~~
+  * Icons for these modules...
 
 ## Interaction
 
@@ -29,8 +31,11 @@
 
 ## FOBs
 
-* Add Service Areas to LZs (fuel/repair)
-* More LRG-specific FOBs?
+* Allow Camps to be deployed from Backpacks (using the AssembleTo system from Vanilla)
+* ~~Add Zeus Modules to create portable FOBs on the fly~~
+* Distance checking to other FOBs and Vehicles
+* Add an option to choose FOB on deployment
+* ~~Show where FOB would be deployed to allow better positioning~~
 
 ## Main
 

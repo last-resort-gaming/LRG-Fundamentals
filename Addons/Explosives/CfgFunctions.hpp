@@ -8,5 +8,7 @@ class LRG_Explosives {
 		class IEDVehicle {};
 		class MakeIED {};
 		class SpawnExplosives {};
+		class ModuleMakeIED {};
+		class MakeIEDZeusWrapper {};
 	};
 };

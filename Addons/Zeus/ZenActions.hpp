@@ -47,4 +47,12 @@ class zen_context_menu_actions {
         condition = "_hoveredEntity call LR_fnc_canBeMedFacility";
         priority = 51;
     };
+
+    class MakeIED {
+        displayName = "Make IED";
+        icon = "a3\ui_f\data\GUI\Cfg\Hints\IEDs_CA.paa"; //todo: icon
+        statement = "call LR_fnc_MakeIEDZeusWrapper";
+        condition = "(not (isNull _hoveredEntity)) && {alive _hoveredEntity}";
+        priority = 53;
+    };
 };

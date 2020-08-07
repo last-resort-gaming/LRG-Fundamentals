@@ -20,3 +20,5 @@ class CfgFunctions {
 
     #include "cfgFunctions.hpp"
 };
+
+#include "CfgVehicles.hpp"

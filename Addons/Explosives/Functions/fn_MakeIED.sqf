@@ -160,6 +160,7 @@ hideObjectGlobal _explosive;
 		_destroyed = _object getVariable ["IEDdetonated",false];
 
 		if (_disarmed || _destroyed) exitWith {
+			deleteVehicle _explosive;
 			[_pfhID] call CBA_fnc_removePerFrameHandler;
 		};
 		if ((not _armed)) exitWith {};
