@@ -28,6 +28,8 @@
   * Trigger explosives
   * Trigger AI Spawns
   * ~~Save Map Markers (scrapped)~~
+  * End Mission
+    * Confirmation dialog if the mission really should be ended
 
 ## FOBs
 
