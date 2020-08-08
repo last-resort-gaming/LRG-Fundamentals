@@ -1,4 +1,4 @@
-if !(isServer && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
+if !(hasinterface && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
 
 [
 	"ChannelActions",

@@ -36,7 +36,7 @@ Author:
 	Mokka
 */
 
-if !(isServer && (isClass (configFile >> "CfgPatches" >> "ace_main"))) exitWith {};
+if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {};
 if (!LRG_CreatorActions_Master) exitWith {};
 
 params [

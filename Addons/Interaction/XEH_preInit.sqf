@@ -21,7 +21,7 @@
     true,
     {
 		if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {};
-        if (_this && { isServer }) then  {call LR_fnc_InitChannelActions};
+        if (_this && { hasinterface }) then  {call LR_fnc_InitChannelActions};
     }
 ] call CBA_Settings_fnc_init;
 
@@ -57,7 +57,7 @@
     true,
     {
 		if !(isClass (configFile >> "CfgPatches" >> "ace_main")) exitWith {};
-        if (_this && { isServer }) then  {
+        if (_this && { hasinterface }) then  {
 			[
 				"EndMissionSuccess",
 				"<t color='#00ff00'>Mission Success</t>",
