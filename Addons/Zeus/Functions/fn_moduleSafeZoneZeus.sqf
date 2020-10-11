@@ -5,7 +5,7 @@ if (_pos isEqualTo [0, 0, 0]) exitWith {
 };
 
 private _dialogResult = [
-	"Spawn AI - Civilian",
+	"Create Safe Zone",
 	[
 		["EDIT", "Size", "150"],
 		["EDIT", "Duration", "0"]
