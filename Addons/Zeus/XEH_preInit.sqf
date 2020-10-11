@@ -76,3 +76,19 @@
         ["LRG Fundamentals", "Safe Zone", {_this call LR_fnc_moduleSafeZoneZeus}, "\z\LRG Fundamentals\addons\media\images\Icons\Safe Zone.paa"] call zen_custom_modules_fnc_register;
     }
 ] call CBA_Settings_fnc_init;
+
+// MedicalDummy Module
+[
+    "LRG_Zeus_Module_MedicalDummy",
+    "CHECKBOX",
+    ["Zeus Module - Medical Dummy", "Enable the Medical Dummy Zeus module for use with ZEN"],
+    "LRG Zeus",
+    false,
+    true,
+    {
+        params ["_value"];
+        if ((!isClass (configFile >> "CfgPatches" >> "zen_main")) || (!_value)) exitWith {};
+
+        ["LRG Fundamentals", "Medical Dummy", {_this call LR_fnc_moduleCasualty}, "z\LRG Fundamentals\addons\Media\images\icons\Medical Area.paa"] call zen_custom_modules_fnc_register;
+    }
+] call CBA_Settings_fnc_init;
