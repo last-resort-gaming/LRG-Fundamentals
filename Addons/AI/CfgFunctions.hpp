@@ -37,8 +37,10 @@ class LRG_AI {
 		class CUP_C_SAHRANI {};
 		class CUP_C_RU {};
 		class CUP_C_TK {};
+		class UK3CB_CHC_C {};
+		class UK3CB_TKC_C {};
 	};
-	
+
 	class East_Factions {
 
 		file = "z\LRG Fundamentals\addons\AI\Functions\Factions\East";

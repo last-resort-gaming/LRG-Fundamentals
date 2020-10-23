@@ -31,6 +31,8 @@ params [
 
 private ["_Targets", "_SwivelTargets"];
 
+nopop = true;
+
 LR_fnc_SetTargets = {
 
 	params [

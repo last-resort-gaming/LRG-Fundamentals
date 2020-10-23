@@ -8,6 +8,8 @@
 * Different behaviours for newly spawned AI
 * Allow SpawnAI modules to be "cocked" and activated by script (see CreatorActions)
 * Side selection for SpawnCivilians
+* Civilian Issues
+  * ~~TK civilians error~~
 
 ## AIS Revive
 
@@ -30,6 +32,10 @@
   * ~~Save Map Markers (scrapped)~~
   * End Mission
     * Confirmation dialog if the mission really should be ended
+* Add PiP live video screens for a command centre
+  * Of helmet cams?
+  * Of unit map?
+  * UAV cam?
 
 ## FOBs
 
@@ -51,7 +57,9 @@
 
 ## Training
 
-* ~~Fix up Casualty system~~
+* Fix up Casualty system
+  * T1 can't be reset...
+* ~~Make the Casualty actions ACE ones~~
 * ~~Fix up ACE Settings for Training mission~~
 
 ## Zeus
@@ -61,3 +69,5 @@
   * Especially test for some border cases with fn_canBeMedFacility
 * ~~Test the new ZEN modules~~
 * Icons for the FOB Context Actions
+* ~~Add Zeus Support for Casualty System (Module)~~
+* CBA Settings Entries for Context Actions
