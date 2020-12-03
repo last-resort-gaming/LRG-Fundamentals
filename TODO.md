@@ -51,6 +51,10 @@
 
 * Fix up the positioning hack for fn_showFPS
 
+### LRG
+
+* ~~Fix the co-pilot authorization script, stop reset every time someone gets in~~
+
 ## Medical
 
 * ~~Test locality issues with fn_setMedicalFacility~~

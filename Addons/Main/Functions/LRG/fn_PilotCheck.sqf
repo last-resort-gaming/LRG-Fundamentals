@@ -25,7 +25,6 @@ switch (LRG_Main_MaydayAccess) do {
 			_HeliActions =  _vehicle getVariable ["HeliAddActions", false];
 
 			if (not _HeliActions) then {
-				[_vehicle, false] remoteExec ["enableCopilot", 0];
 				_vehicle addAction ["<t color='#00FFFF'>Authorise Co-Pilot</t>", {params ["_target", "_caller", "_actionId", "_arguments"]; [_target, true] remoteExec ["enableCopilot", 0]}, "", 9, false, true, "", '(driver _target isEqualTo _this) && (not isCopilotEnabled _target)'];
 				_vehicle addAction ["<t color='#B33A3A'>Unauthorise Co-Pilot</t>", {params ["_target", "_caller", "_actionId", "_arguments"]; [_target, false] remoteExec ["enableCopilot", 0]}, "", 10, false, true, "", '(driver _target isEqualTo _this) && (isCopilotEnabled _target)'];
 
