@@ -17,12 +17,12 @@ private _configAction = [
 	"",
 	{
 		params ["_target", "_player", "_params"];
-		_params params ["_radio"];
-		[_target, _player, _radio] call LR_fnc_configureRadio;
+		_params params ["_object", "_radio"];
+		[_object, _player, _radio] call LR_fnc_configureRadio;
 	},
 	{ true },
 	nil,
-	[_radio]
+	[_object,_radio]
 ] call ACE_interact_menu_fnc_createAction;
 
 private _turnOnAction = [
@@ -31,15 +31,15 @@ private _turnOnAction = [
 	"",
 	{
 		params ["_target", "_player", "_params"];
-		_params params ["_radio"];
-		[_target, _radio, true] remoteExec ["LR_fnc_turnOnRadio", 2];
+		_params params ["_object", "_radio"];
+		[_object, _radio, true] call LR_fnc_turnOnRadio;
 	},
 	{
 		params ["_target", "_player", "_params"];
-		!([(_params select 0), "radio_settings"] call TFAR_fnc_getLrSpeakers);
+		!((_params select 1) call TFAR_fnc_getLrSpeakers);
 	},
 	nil,
-	[_radio]
+	[_object, _radio]
 ] call ACE_interact_menu_fnc_createAction;
 
 private _turnOffAction = [
@@ -48,15 +48,15 @@ private _turnOffAction = [
 	"",
 	{
 		params ["_target", "_player", "_params"];
-		_params params ["_radio"];
-		[_target, _radio, false] remoteExec ["LR_fnc_turnOnRadio", 2];
+		_params params ["_object", "_radio"];
+		[_object, _radio, false] call LR_fnc_turnOnRadio;
 	},
 	{
 		params ["_target", "_player", "_params"];
-		[(_params select 0), "radio_settings"] call TFAR_fnc_getLrSpeakers;
+		(_params select 1) call TFAR_fnc_getLrSpeakers;
 	},
 	nil,
-	[_radio]
+	[_object, _radio]
 ] call ACE_interact_menu_fnc_createAction;
 
 [_object, 0, ["ACE_MainActions"], _parentAction] call ACE_interact_menu_fnc_addActionToObject;

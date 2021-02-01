@@ -69,7 +69,7 @@ class RadioConfigDialog {
         };
         class ButtonCancel: LRG_CC_RscButton
         {
-			idc = 1100;
+			idc = 1101;
         	x = 25 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
         	y = 16.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
         	w = 5 * GUI_GRID_CENTER_W;
@@ -102,13 +102,15 @@ class RadioConfigDialog {
         	h = 1 * GUI_GRID_CENTER_H;
         	tooltip = "Set Channel 2 of the radio to this frequency. -1 disables the channel.";
         };
-        class VolSlider: LRG_CC_RscSlider // todo - make this an XSlider for nice looks
+        class VolEdit: LRG_CC_RscEdit
         {
-        	idc = 1900;
-        	x = 23 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+        	idc = 1402;
+        	text = "7";
+        	x = 26 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
         	y = 14 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
-        	w = 6 * GUI_GRID_CENTER_W;
+        	w = 3 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
+        	tooltip = "Set the volume of the radio. Value between 1 and 10.";
         };
     };
 };
