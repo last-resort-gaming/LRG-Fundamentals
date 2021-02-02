@@ -52,12 +52,20 @@ class ScreenConfigDialog {
         	w = 10 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
         };
-        class ButtonCancel: LRG_CC_RscButtonMenuCancel
+        class ButtonCancel: LRG_CC_RscButton
         {
+			idc = 1101;
         	x = 27 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
         	y = 18.5 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
         	w = 5 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
+			text = "Cancel";
+			soundPush[] = 
+			{
+				"\A3\ui_f\data\sound\RscButtonMenuOK\soundPush",
+				0.09,
+				1
+			};
         };
         class CamSelectText: LRG_CC_RscText
         {
@@ -110,31 +118,40 @@ class ScreenConfigDialog {
         	w = 11 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
         };
-        class CamViewButton: LRG_CC_RscButtonMenu
+        class CamViewButton: LRG_CC_RscButton
         {
         	idc = 2400;
         	text = "View";
-        	x = 28 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+        	x = 27.9 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
         	y = 8 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
-        	w = 3 * GUI_GRID_CENTER_W;
+        	w = 3.1 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
         };
-        class DroneViewButton: LRG_CC_RscButtonMenu
+        class DroneViewPltButton: LRG_CC_RscButton
         {
         	idc = 2401;
-        	text = "View";
-        	x = 28 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+        	text = "PLT";
+        	x = 27.9 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
         	y = 12 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
-        	w = 3 * GUI_GRID_CENTER_W;
+        	w = 1.5 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
         };
-        class SatViewButton: LRG_CC_RscButtonMenu
+        class DroneViewGnrButton: LRG_CC_RscButton
+        {
+        	idc = 2403;
+        	text = "GNR";
+        	x = 29.5 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+        	y = 12 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
+        	w = 1.5 * GUI_GRID_CENTER_W;
+        	h = 1 * GUI_GRID_CENTER_H;
+        };
+        class SatViewButton: LRG_CC_RscButton
         {
         	idc = 2402;
         	text = "View";
-        	x = 28 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
+        	x = 27.9 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
         	y = 16 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
-        	w = 3 * GUI_GRID_CENTER_W;
+        	w = 3.1 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
         };
     };

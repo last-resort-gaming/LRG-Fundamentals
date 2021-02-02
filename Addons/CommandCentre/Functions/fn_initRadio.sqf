@@ -39,7 +39,7 @@ private _radioContainer = createVehicle ["GroundWeaponHolder_Scripted", (getPosA
 _radioContainer allowDamage false;
 hideObjectGlobal _radioContainer;
 
-_radioContainer addBackpackCargo [_radioClass, 1];
+_radioContainer addBackpackCargoGlobal [_radioClass, 1];
 
 // Instanciate radio
 private _radio = _radioContainer call TFAR_static_radios_fnc_instanciatedRadio;
@@ -49,6 +49,8 @@ _radio = [_radio, "radio_settings"];
 private _settings = [0,(_radioVol - 1),[(str _radioCh1),(str _radioCh2)],0,_radioCode,1,0,nil,_radioOn,true];
 //_radio setVariable ["radio_settings", _settings, true];
 [_radio, _settings] call TFAR_fnc_setLrSettings;
+
+(_radio select 0) setVariable ["TFAR_LRSpeakersEnabled", _radioOn, true];
 
 _object setVariable ["LRG_CC_radioObject", _radio, true];
 

@@ -6,6 +6,7 @@ class LRG_CommandCentre {
 		file = "z\LRG Fundamentals\Addons\CommandCentre\Functions";
 		class addRadioActions {};
 		class configureRadio {};
+		class configureScreen {};
 		class handleRadioConfig {};
 		class initRadio {};
 		class initScreen {};
@@ -13,5 +14,9 @@ class LRG_CommandCentre {
 		class moduleSingleScreen {};
 		class moduleStationaryRadio {};
 		class turnOnRadio {};
+		class turnOnScreen {};
+		class viewDroneCam {};
+		class viewHelmetCam {};
+		class viewSatImage {};
 	};
 };

@@ -44,6 +44,14 @@ class LRG_ModuleSingleScreen: Module_F
 				typeName = "BOOL";
 				defaultValue = true;
 		};
+		class SingleScreenSelection: Edit
+  		{
+				property = "LR_SingleScreenSelection";
+				displayName = "Screen Texture Selection";
+				tooltip = "Texture Selection of the screen, usually '0', at least for vanilla screens.";
+				typeName = "NUMBER";
+				defaultValue = 0;
+		};
 		class ModuleDescription: ModuleDescription{};
 	};
 	class ModuleDescription: ModuleDescription

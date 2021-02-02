@@ -44,13 +44,12 @@ class LRG_ModuleMultiScreen: Module_F
 				typeName = "BOOL";
 				defaultValue = true;
 		};
-		class MultiScreenCount: Edit
+		class MultiScreenSelections: Edit
   		{
-				property = "LR_MultiScreenCount";
-				displayName = "Screen Count";
-				tooltip = "Number of Screens on the Multi-Screen Object.";
-				typeName = "NUMBER";
-				defaultValue = 3;
+				property = "LR_MultiScreenSelections";
+				displayName = "Screen Texture Selections";
+				tooltip = "Texture Selections of the multiple screens. Enter as comma-separated list, eg: '1,2,3'";
+				defaultValue = """1,2,3""";
 		};
 		class ModuleDescription: ModuleDescription{};
 	};
