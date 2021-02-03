@@ -2,7 +2,7 @@ class LRG_ModuleStationaryRadio: Module_F
 {
 	scope = 2;
 	displayName = "Setup Stationary Radio";
-	icon = "\z\LRG Fundamentals\addons\media\images\icons\Safe Zone.paa"; //todo: proper icon
+	icon = "\z\LRG Fundamentals\addons\media\images\icons\StationaryRadio.paa"; //todo: proper icon
 	category = "LRG_CommandCentre";
 	function = "LR_fnc_moduleStationaryRadio";
 	functionPriority = 4;

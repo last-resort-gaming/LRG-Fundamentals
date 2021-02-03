@@ -2,7 +2,7 @@ class LRG_ModuleSingleScreen: Module_F
 {
 	scope = 2;
 	displayName = "Setup Single Screen";
-	icon = "\z\LRG Fundamentals\addons\media\images\icons\Safe Zone.paa"; //todo: proper icon
+	icon = "\z\LRG Fundamentals\addons\media\images\icons\SingleScreen.paa";
 	category = "LRG_CommandCentre";
 	function = "LR_fnc_moduleSingleScreen";
 	functionPriority = 4;
@@ -33,14 +33,6 @@ class LRG_ModuleSingleScreen: Module_F
 				property = "LR_SingleScreenSat";
 				displayName = "Allow Satellite View";
 				tooltip = "Allow/Disallow viewing Satellite Imagery through the screen.";
-				typeName = "BOOL";
-				defaultValue = true;
-		};
-		class SingleScreenMap: Checkbox
-  		{
-				property = "LR_SingleScreenMap";
-				displayName = "Allow Tactical Map";
-				tooltip = "Allow/Disallow viewing Tactical Map through the screen.";
 				typeName = "BOOL";
 				defaultValue = true;
 		};

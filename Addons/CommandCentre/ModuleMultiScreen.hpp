@@ -2,7 +2,7 @@ class LRG_ModuleMultiScreen: Module_F
 {
 	scope = 2;
 	displayName = "Setup Multi Screen";
-	icon = "\z\LRG Fundamentals\addons\media\images\icons\Safe Zone.paa"; //todo: proper icon
+	icon = "\z\LRG Fundamentals\addons\media\images\icons\MultiScreen.paa";
 	category = "LRG_CommandCentre";
 	function = "LR_fnc_moduleMultiScreen";
 	functionPriority = 4;
@@ -33,14 +33,6 @@ class LRG_ModuleMultiScreen: Module_F
 				property = "LR_MultiScreenSat";
 				displayName = "Allow Satellite View";
 				tooltip = "Allow/Disallow viewing Satellite Imagery through the screen.";
-				typeName = "BOOL";
-				defaultValue = true;
-		};
-		class MultiScreenMap: Checkbox
-  		{
-				property = "LR_MultiScreenMap";
-				displayName = "Allow Tactical Map";
-				tooltip = "Allow/Disallow viewing Tactical Map through the screen.";
 				typeName = "BOOL";
 				defaultValue = true;
 		};

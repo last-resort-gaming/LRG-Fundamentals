@@ -73,9 +73,9 @@ private _configAction = [
 	"",
 	{
 		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection"];
+		_params params ["_object", "_selection", "_args"];
 
-		[_object, _selection] call LR_fnc_configureScreen;
+		[_object, _selection, _args] call LR_fnc_configureScreen;
 	},
 	{
 		params ["_target", "_player", "_params"];
@@ -84,7 +84,31 @@ private _configAction = [
 		_object getVariable [format ["LRG_CC_screen_%1_on", _selection], false];
 	},
 	nil,
-	[_object, _selection]
+	[_object, _selection, [_allowCam, _allowDrone, _allowSat, _allowMap]],
+	nil,
+	nil,
+	nil,
+	{
+		params ["_target", "_player", "_params", "_actionData"];
+		_params params ["_object", "_selection"];
+
+		private _screenMode = _object getVariable [format ["LRG_CC_screen_%1_mode", _selection], ""];
+		private _screenTarget = _object getVariable [format ["LRG_CC_screen_%1_target", _selection], ""];
+		private "_modeName";
+
+		if ((!(_screenMode isEqualTo "")) && (!(_screenTarget isEqualTo ""))) then {
+			switch (_screenMode) do {
+				case "HCAM": { _modeName = "Viewing Helmet Cam"; };
+				case "DCAM": { _modeName = "Viewing Drone Cam"; };
+				case "SAT": { _modeName = "Viewing Satellite Footage"; };
+				default { _modeName = "Error, invalid mode!"; };
+			};
+
+			_actionData set [1, format["Configure Screen - %1: %2", _modeName, _screenTarget]];
+		} else {
+			_actionData set [1, "Configure Screen"]
+		};
+}
 ] call ACE_interact_menu_fnc_createAction;
 
 private _turnOnAction = [
@@ -93,9 +117,9 @@ private _turnOnAction = [
 	"",
 	{
 		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection"];
+		_params params ["_object", "_selection", "_args"];
 
-		[_object, _selection, true] call LR_fnc_turnOnScreen;
+		[_object, _selection, true, _args] call LR_fnc_turnOnScreen;
 	},
 	{
 		params ["_target", "_player", "_params"];
@@ -104,7 +128,7 @@ private _turnOnAction = [
 		!(_object getVariable [format ["LRG_CC_screen_%1_on", _selection], false]);
 	},
 	nil,
-	[_object, _selection]
+	[_object, _selection, [_allowCam, _allowDrone, _allowSat, _allowMap]]
 ] call ACE_interact_menu_fnc_createAction;
 
 private _turnOffAction = [
@@ -113,9 +137,9 @@ private _turnOffAction = [
 	"",
 	{
 		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection"];
+		_params params ["_object", "_selection", "_args"];
 
-		[_object, _selection, false] call LR_fnc_turnOnScreen;
+		[_object, _selection, false, _args] call LR_fnc_turnOnScreen;
 	},
 	{
 		params ["_target", "_player", "_params"];
@@ -124,7 +148,7 @@ private _turnOffAction = [
 		_object getVariable [format ["LRG_CC_screen_%1_on", _selection], false];
 	},
 	nil,
-	[_object, _selection]
+	[_object, _selection, [_allowCam, _allowDrone, _allowSat, _allowMap]]
 ] call ACE_interact_menu_fnc_createAction;
 
 [_object, 0, ["ACE_MainActions"], _parentAction] call ACE_interact_menu_fnc_addActionToObject;

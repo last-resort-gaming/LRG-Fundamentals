@@ -1,12 +1,13 @@
 disableSerialization;
 
-params ["_object", "_selection"];
+params ["_object", "_selection", "_args"];
+_args params ["_allowCam", "_allowDrone", "_allowSat", "_allowMap"];
 
-systemChat str _object;
-systemChat str _selection;
+LRG_CC_currentScreenObject = _object;
+LRG_CC_currentScreenSelection = _selection;
 
-missionNamespace setVariable ["LRG_CC_currentScreenObject", _object];
-missionNamespace setVariable ["LRG_CC_currentScreenSelection", _selection];
+systemChat (str _object);
+systemChat (str _selection);
 
 if !(createDialog "ScreenConfigDialog") exitWith {systemChat "Couldn't create dialog!"};
 
@@ -18,6 +19,20 @@ private _display = findDisplay 21822;
 (_display displayCtrl 2402) ctrlSetEventHandler ["ButtonClick", "[] call LR_fnc_viewSatImage"];
 (_display displayCtrl 2403) ctrlSetEventHandler ["ButtonClick", "[1] call LR_fnc_viewDroneCam"];
 (_display displayCtrl 1101) ctrlSetEventHandler ["ButtonClick", "closeDialog 2;"];
+
+// set up allowed actions
+// hcams
+ctrlEnable [2400, _allowCam];
+ctrlEnable [2100, _allowCam];
+
+//dcams
+ctrlEnable [2401, _allowDrone];
+ctrlEnable [2402, _allowDrone];
+ctrlEnable [2101, _allowDrone];
+
+// sat
+ctrlEnable [2403, _allowSat];
+ctrlEnable [2102, _allowSat];
 
 // set title
 private _screenMode = _object getVariable [format ["LRG_CC_screen_%1_mode", _selection], ""];
@@ -68,8 +83,8 @@ _satList = _display displayCtrl 2102;
 lbClear _satList;
 _satList lbSetCurSel -1;
 {
-	_index = _satList lbAdd format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
+	_index = _satList lbAdd format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
 	_satList lbSetData [_index, str _x];
-} forEach allPlayers;
+} forEach (allPlayers + cTabUAVlist);
 lbSort [_satList, "ASC"];
 _satList lbSetCurSel 0;

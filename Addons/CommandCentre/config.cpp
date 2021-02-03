@@ -37,6 +37,8 @@ class CfgVehicles
 			class AnyBrain;
 		};
 	};
+
+	#include "ModuleCommsTower.hpp"
 	#include "ModuleSingleScreen.hpp"
 	#include "ModuleMultiScreen.hpp"
 	#include "ModuleStationaryRadio.hpp"
