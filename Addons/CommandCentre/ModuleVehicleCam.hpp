@@ -2,7 +2,7 @@ class LRG_ModuleVehicleCam: Module_F
 {
 	scope = 2;
 	displayName = "Add Vehicle Camera";
-	icon = "\z\LRG Fundamentals\addons\media\images\icons\RadioTower.paa"; //todo: icon
+	icon = "\z\LRG Fundamentals\addons\media\images\icons\Camera.paa";
 	category = "LRG_CommandCentre";
 	function = "LR_fnc_moduleVehicleCam";
 	functionPriority = 4;
