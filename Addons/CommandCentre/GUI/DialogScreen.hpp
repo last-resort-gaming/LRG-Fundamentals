@@ -60,12 +60,6 @@ class ScreenConfigDialog {
         	w = 5 * GUI_GRID_CENTER_W;
         	h = 1 * GUI_GRID_CENTER_H;
 			text = "Cancel";
-			soundPush[] = 
-			{
-				"\A3\ui_f\data\sound\RscButtonMenuOK\soundPush",
-				0.09,
-				1
-			};
         };
         class CamSelectText: LRG_CC_RscText
         {

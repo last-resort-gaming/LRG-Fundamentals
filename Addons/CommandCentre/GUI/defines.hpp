@@ -437,24 +437,6 @@ class LRG_CC_RscCombo
 		0,
 		0.65
 	};
-	soundSelect[] = 
-	{
-		"\A3\ui_f\data\sound\RscCombo\soundSelect",
-		0.1,
-		1
-	};
-	soundExpand[] = 
-	{
-		"\A3\ui_f\data\sound\RscCombo\soundExpand",
-		0.1,
-		1
-	};
-	soundCollapse[] = 
-	{
-		"\A3\ui_f\data\sound\RscCombo\soundCollapse",
-		0.1,
-		1
-	};
 	maxHistoryDelay = 1;
 	class ComboScrollBar
 	{
@@ -553,12 +535,6 @@ class LRG_CC_RscListBox
 		0,
 		0,
 		0.3
-	};
-	soundSelect[] = 
-	{
-		"\A3\ui_f\data\sound\RscListbox\soundSelect",
-		0.09,
-		1
 	};
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
@@ -740,30 +716,6 @@ class LRG_CC_RscButton
 		0,
 		1
 	};
-	soundEnter[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundEnter",
-		0.09,
-		1
-	};
-	soundPush[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundPush",
-		0.09,
-		1
-	};
-	soundClick[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundClick",
-		0.09,
-		1
-	};
-	soundEscape[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundEscape",
-		0.09,
-		1
-	};
 	idc = -1;
 	style = 2;
 	x = 0;
@@ -859,30 +811,6 @@ class LRG_CC_RscShortcutButton
 		1,
 		1,
 		1,
-		1
-	};
-	soundEnter[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundEnter",
-		0.09,
-		1
-	};
-	soundPush[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundPush",
-		0.09,
-		1
-	};
-	soundClick[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundClick",
-		0.09,
-		1
-	};
-	soundEscape[] = 
-	{
-		"\A3\ui_f\data\sound\RscButton\soundEscape",
-		0.09,
 		1
 	};
 	class Attributes
@@ -1489,30 +1417,6 @@ class LRG_CC_RscButtonMenu
 		w = "1 * (((safezoneW / safezoneH) min 1.2) / 40)";
 		h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 	};
-	soundEnter[] = 
-	{
-		"\A3\ui_f\data\sound\RscButtonMenu\soundEnter",
-		0.09,
-		1
-	};
-	soundPush[] = 
-	{
-		"\A3\ui_f\data\sound\RscButtonMenu\soundPush",
-		0.09,
-		1
-	};
-	soundClick[] = 
-	{
-		"\A3\ui_f\data\sound\RscButtonMenu\soundClick",
-		0.09,
-		1
-	};
-	soundEscape[] = 
-	{
-		"\A3\ui_f\data\sound\RscButtonMenu\soundEscape",
-		0.09,
-		1
-	};
 };
 class LRG_CC_RscButtonMenuOK
 {
@@ -1526,12 +1430,6 @@ class LRG_CC_RscButtonMenuOK
 	};
 	default = 1;
 	text = "OK";
-	soundPush[] = 
-	{
-		"\A3\ui_f\data\sound\RscButtonMenuOK\soundPush",
-		0.09,
-		1
-	};
 };
 class LRG_CC_RscButtonMenuCancel
 {
