@@ -2,22 +2,33 @@ params ["_object", "_selection", "_rendertarget", "_data"];
 
 private ["_targetOffSet", "_camOffSet"];
 private _host = objNull;
+private _isMan = false;
 
 call cTab_fnc_updateLists;
 
 {
 	if (_data isEqualTo (str _x)) exitWith {_host = _x;};
-} forEach (cTabHcamlist + LRG_CC_vehicleCamList);
+} forEach cTabHcamlist;
+
+if (isNull _host) then {
+	{
+		if (_data isEqualTo (str _x)) exitWith {_host = _x;};
+	} forEach LRG_CC_vehicleCamList;
+} else {
+	_isMan = true;
+};
 
 call {
 
-	if (isPlayer _host) then {
+	if (_isMan) exitWith {
 		// should unit not be in a vehicle
 		if (vehicle _host isKindOf "CAManBase") exitWith {
 			_camOffSet = [0.12,0,0.15];
 			_targetOffSet = [0,8,1];
 		};
 		_host = vehicle _host;
+		_camOffSet = [0,-8,4];
+		_targetOffSet = [0,8,2];
 	};
 
 	// Might want to calculate offsets based on the actual vehicle dimensions in the future
@@ -26,7 +37,7 @@ call {
 };
 
 if (isNull _host) exitWith {
-	systemChat "Could not find camera host.";
+	// systemChat "Could not find camera host.";
 };
 
 private _cam = objNull;

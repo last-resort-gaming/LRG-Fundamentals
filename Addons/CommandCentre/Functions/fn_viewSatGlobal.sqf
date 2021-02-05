@@ -9,7 +9,7 @@ call cTab_fnc_updateLists;
 } forEach (cTabHcamlist + LRG_CC_vehicleCamList);
 
 if (isNull _host) exitWith {
-	systemChat "Could not find camera host.";
+	// systemChat "Could not find camera host.";
 };
 
 private _cam = objNull;

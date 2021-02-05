@@ -7,11 +7,7 @@ params [
     "_logic"
 ];
 
-if !(isServer) exitWith {};
-
 private _objects = synchronizedObjects _logic;
 {
     LRG_CC_vehicleCamList pushBackUnique [_x];
 } foreach _objects;
-
-publicVariable "LRG_CC_vehicleCamList";
