@@ -3,25 +3,26 @@ params ["_object", "_selection", "_rendertarget", "_data"];
 private ["_targetOffSet", "_camOffSet"];
 private _host = objNull;
 
+call cTab_fnc_updateLists;
+
 {
 	if (_data isEqualTo (str _x)) exitWith {_host = _x;};
-} forEach cTabHcamlist;
+} forEach (cTabHcamlist + LRG_CC_vehicleCamList);
 
 call {
-	// should unit not be in a vehicle
-	if (vehicle _host isKindOf "CAManBase") exitWith {
-		_camOffSet = [0.12,0,0.15];
-		_targetOffSet = [0,8,1];
-	};
-	// if unit is in a vehicle, see if 3rd person view is allowed
-	if (difficultyEnabled "3rdPersonView") exitWith {
+
+	if (isPlayer _host) then {
+		// should unit not be in a vehicle
+		if (vehicle _host isKindOf "CAManBase") exitWith {
+			_camOffSet = [0.12,0,0.15];
+			_targetOffSet = [0,8,1];
+		};
 		_host = vehicle _host;
-		// Might want to calculate offsets based on the actual vehicle dimensions in the future
-		_camOffSet = [0,-8,4];
-		_targetOffSet = [0,8,2];
 	};
-	// if unit is in a vehicle and 3rd person view is not allowed
-	_host = objNull;
+
+	// Might want to calculate offsets based on the actual vehicle dimensions in the future
+	_camOffSet = [0,-8,4];
+	_targetOffSet = [0,8,2];
 };
 
 if (isNull _host) exitWith {

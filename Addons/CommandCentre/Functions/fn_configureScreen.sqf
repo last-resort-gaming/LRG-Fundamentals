@@ -6,9 +6,6 @@ _args params ["_allowCam", "_allowDrone", "_allowSat", "_allowMap"];
 LRG_CC_currentScreenObject = _object;
 LRG_CC_currentScreenSelection = _selection;
 
-systemChat (str _object);
-systemChat (str _selection);
-
 if !(createDialog "ScreenConfigDialog") exitWith {systemChat "Couldn't create dialog!"};
 
 private _display = findDisplay 21822;
@@ -59,9 +56,23 @@ _hCamList = _display displayCtrl 2100;
 lbClear _hCamList;
 _hCamList lbSetCurSel -1;
 {
-	_index = _hCamList lbAdd format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
+	private _name = "";
+
+	if (isPlayer _x) then {
+		private _section = _x getVariable "LRG_Section";
+
+		if (isNil "_section") then {
+			_name = format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
+		} else {
+			_name = format ["%1:%2 (%3)", _section, [_x] call CBA_fnc_getGroupIndex, name _x];
+		};
+	} else {
+		_name = format ["Vehicle: %1", getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
+	};
+
+	_index = _hCamList lbAdd _name;
 	_hCamList lbSetData [_index, str _x];
-} forEach cTabHcamlist;
+} forEach (cTabHcamlist + LRG_CC_vehicleCamList);
 lbSort [_hCamList, "ASC"];
 _hCamList lbSetCurSel 0;
 
@@ -83,8 +94,22 @@ _satList = _display displayCtrl 2102;
 lbClear _satList;
 _satList lbSetCurSel -1;
 {
-	_index = _satList lbAdd format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
+	private _name = "";
+
+	if (isPlayer _x) then {
+		private _section = _x getVariable "LRG_Section";
+
+		if (isNil "_section") then {
+			_name = format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
+		} else {
+			_name = format ["%1:%2 (%3)", _section, [_x] call CBA_fnc_getGroupIndex, name _x];
+		};
+	} else {
+		_name = format ["Vehicle: %1", getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
+	};
+
+	_index = _satList lbAdd _name;
 	_satList lbSetData [_index, str _x];
-} forEach (allPlayers + cTabUAVlist);
+} forEach (cTabHcamlist + LRG_CC_vehicleCamList);
 lbSort [_satList, "ASC"];
 _satList lbSetCurSel 0;

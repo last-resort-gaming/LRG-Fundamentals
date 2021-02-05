@@ -3,9 +3,6 @@ if (not hasInterface) exitWith {};
 private _object = LRG_CC_currentScreenObject;
 private _selection = LRG_CC_currentScreenSelection;
 
-systemChat (str _object);
-systemChat (str _selection);
-
 if ((_object isEqualTo objNull)) exitWith {systemChat "Couldn't init Sat View: object."};
 if ((_selection < 0)) exitWith {systemChat "Couldn't init Sat View: selection."};
 
@@ -30,5 +27,6 @@ LRG_CC_currentScreenObject = nil;
 LRG_CC_currentScreenSelection = nil;
 
 _object setVariable [format ["LRG_CC_screen_%1_on", _selection], true, true];
+_object setVariable [format ["LRG_CC_screen_%1_visionMode", _selection], 0, true];
 
 closeDialog 1;

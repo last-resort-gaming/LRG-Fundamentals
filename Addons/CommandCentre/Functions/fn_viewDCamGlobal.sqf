@@ -1,10 +1,8 @@
 params ["_object", "_selection", "_rendertarget", "_data", "_seat"];
 
-if (isNil "LRG_CC_allDCams") then {
-	LRG_CC_allDCams = [];
-};
-
 private _uav = objNull;
+
+call cTab_fnc_updateLists;
 
 {
 	if (_data == str _x) exitWith {_uav = _x;};
@@ -41,7 +39,6 @@ if ((_camPosMemPt != "") && (_camDirMemPt != "")) then {
 	_object setObjectTexture [_selection, format ["#(argb,512,512,1)r2t(%1,1.3096153846)", _renderTarget]];
 	call {
 		if (_seat == 1) exitWith {
-			_renderTarget setPiPEffect [2]; // IR mode
 			_cam camSetFov 0.1; // set zoom
 		};
 		_cam camSetFov 0.5; // set default zoom

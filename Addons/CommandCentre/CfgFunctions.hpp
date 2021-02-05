@@ -5,6 +5,7 @@ class LRG_CommandCentre {
 
 		file = "z\LRG Fundamentals\Addons\CommandCentre\Functions";
 		class addRadioActions {};
+		class addScreenActions {};
 		class configureRadio {};
 		class configureScreen {};
 		class deleteCamera {};
@@ -15,6 +16,9 @@ class LRG_CommandCentre {
 		class moduleMultiScreen {};
 		class moduleSingleScreen {};
 		class moduleStationaryRadio {};
+		class moduleVehicleCam {};
+		class preInitCC { preInit = 1; };
+		class toggleVisualMode {};
 		class turnOnRadio {};
 		class turnOnScreen {};
 		class viewDCamGlobal {};

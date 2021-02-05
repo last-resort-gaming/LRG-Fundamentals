@@ -33,125 +33,23 @@ params [
 	["_selection", 0]
 ];
 
+if !(isServer) exitWith {};
 if !(isClass (configFile >> "CfgPatches" >> "cTab")) exitWith {};
 
-// server-side setup stuffs
-if (isServer) then {
-	// register screen, important to properly assign the render targets later down the line
-	if (isNil "LRG_CC_nextScreenID") then {
-		LRG_CC_nextScreenID = 0;
-	};
-
-	_object setVariable [format ["LRG_CC_screen_%1_ID", _selection], LRG_CC_nextScreenID, true];
-
-	LRG_CC_nextScreenID = LRG_CC_nextScreenID + 1;
-
-	_object setVariable [format ["LRG_CC_screen_%1_on", _selection], false, true];
-	_object setVariable [format ["LRG_CC_screen_%1_mode", _selection], "", true];
-	_object setVariable [format ["LRG_CC_screen_%1_target", _selection], "", true];
-
-	// set default screen texture
-	_object setObjectTextureGlobal [_selection, "z\LRG Fundamentals\Addons\Media\images\cc_screen_standby.paa"];
+// register screen, important to properly assign the render targets later down the line
+if (isNil "LRG_CC_nextScreenID") then {
+	LRG_CC_nextScreenID = 0;
 };
 
-// add actions
-if !(hasInterface) exitWith {};
+_object setVariable [format ["LRG_CC_screen_%1_ID", _selection], LRG_CC_nextScreenID, true];
 
-private _parentAction = [
-	format ["screen%1_parent", _selection],
-	format ["%1", _name],
-	"",
-	{ diag_log "hi" },
-	{ true },
-	nil,
-	[]
-] call ACE_interact_menu_fnc_createAction;
+LRG_CC_nextScreenID = LRG_CC_nextScreenID + 1;
 
-private _configAction = [
-	format ["screen%1_config", _selection],
-	"Configure Screen",
-	"",
-	{
-		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection", "_args"];
+_object setVariable [format ["LRG_CC_screen_%1_on", _selection], false, true];
+_object setVariable [format ["LRG_CC_screen_%1_mode", _selection], "", true];
+_object setVariable [format ["LRG_CC_screen_%1_target", _selection], "", true];
 
-		[_object, _selection, _args] call LR_fnc_configureScreen;
-	},
-	{
-		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection"];
+// set default screen texture
+_object setObjectTextureGlobal [_selection, "z\LRG Fundamentals\Addons\Media\images\cc_screen_standby.paa"];
 
-		_object getVariable [format ["LRG_CC_screen_%1_on", _selection], false];
-	},
-	nil,
-	[_object, _selection, [_allowCam, _allowDrone, _allowSat, _allowMap]],
-	nil,
-	nil,
-	nil,
-	{
-		params ["_target", "_player", "_params", "_actionData"];
-		_params params ["_object", "_selection"];
-
-		private _screenMode = _object getVariable [format ["LRG_CC_screen_%1_mode", _selection], ""];
-		private _screenTarget = _object getVariable [format ["LRG_CC_screen_%1_target", _selection], ""];
-		private "_modeName";
-
-		if ((!(_screenMode isEqualTo "")) && (!(_screenTarget isEqualTo ""))) then {
-			switch (_screenMode) do {
-				case "HCAM": { _modeName = "Viewing Helmet Cam"; };
-				case "DCAM": { _modeName = "Viewing Drone Cam"; };
-				case "SAT": { _modeName = "Viewing Satellite Footage"; };
-				default { _modeName = "Error, invalid mode!"; };
-			};
-
-			_actionData set [1, format["Configure Screen - %1: %2", _modeName, _screenTarget]];
-		} else {
-			_actionData set [1, "Configure Screen"]
-		};
-}
-] call ACE_interact_menu_fnc_createAction;
-
-private _turnOnAction = [
-	format ["screen%1_turnOn", _selection],
-	"Turn On",
-	"",
-	{
-		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection", "_args"];
-
-		[_object, _selection, true, _args] call LR_fnc_turnOnScreen;
-	},
-	{
-		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection"];
-
-		!(_object getVariable [format ["LRG_CC_screen_%1_on", _selection], false]);
-	},
-	nil,
-	[_object, _selection, [_allowCam, _allowDrone, _allowSat, _allowMap]]
-] call ACE_interact_menu_fnc_createAction;
-
-private _turnOffAction = [
-	format ["screen%1_turnOff", _selection],
-	"Turn Off",
-	"",
-	{
-		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection", "_args"];
-
-		[_object, _selection, false, _args] call LR_fnc_turnOnScreen;
-	},
-	{
-		params ["_target", "_player", "_params"];
-		_params params ["_object", "_selection"];
-
-		_object getVariable [format ["LRG_CC_screen_%1_on", _selection], false];
-	},
-	nil,
-	[_object, _selection, [_allowCam, _allowDrone, _allowSat, _allowMap]]
-] call ACE_interact_menu_fnc_createAction;
-
-[_object, 0, ["ACE_MainActions"], _parentAction] call ACE_interact_menu_fnc_addActionToObject;
-[_object, 0, ["ACE_MainActions", format ["screen%1_parent", _selection]], _configAction] call ACE_interact_menu_fnc_addActionToObject;
-[_object, 0, ["ACE_MainActions", format ["screen%1_parent", _selection]], _turnOnAction] call ACE_interact_menu_fnc_addActionToObject;
-[_object, 0, ["ACE_MainActions", format ["screen%1_parent", _selection]], _turnOffAction] call ACE_interact_menu_fnc_addActionToObject;
+[_object, _selection, _name, [_allowCam, _allowDrone, _allowSat, _allowMap]] remoteExec ["LR_fnc_addScreenActions", 0, true];

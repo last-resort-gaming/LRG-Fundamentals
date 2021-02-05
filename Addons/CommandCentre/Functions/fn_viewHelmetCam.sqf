@@ -3,9 +3,6 @@ if (not hasInterface) exitWith {};
 private _object = LRG_CC_currentScreenObject;
 private _selection = LRG_CC_currentScreenSelection;
 
-systemChat (str _object);
-systemChat (str _selection);
-
 if ((_object isEqualTo objNull)) exitWith {systemChat "Couldn't init Helmet Cam: object."};
 if ((_selection < 0)) exitWith {systemChat "Couldn't init Helmet Cam: selection."};
 

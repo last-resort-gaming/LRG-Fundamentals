@@ -42,6 +42,7 @@ class CfgVehicles
 	#include "ModuleSingleScreen.hpp"
 	#include "ModuleMultiScreen.hpp"
 	#include "ModuleStationaryRadio.hpp"
+	#include "ModuleVehicleCam.hpp"
 };
 
 class CfgFactionClasses

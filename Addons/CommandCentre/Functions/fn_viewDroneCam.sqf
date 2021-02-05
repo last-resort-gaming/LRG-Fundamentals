@@ -3,9 +3,6 @@ params ["_seat"]; //0 - pilot, 1 - gunner
 private _object = LRG_CC_currentScreenObject;
 private _selection = LRG_CC_currentScreenSelection;
 
-systemChat (str _object);
-systemChat (str _selection);
-
 if ((_object isEqualTo objNull)) exitWith {systemChat "Couldn't init Drone Cam: object."};
 if ((_selection < 0)) exitWith {systemChat "Couldn't init Drone Cam: selection."};
 

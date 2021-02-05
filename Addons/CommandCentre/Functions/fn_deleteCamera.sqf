@@ -1,7 +1,5 @@
 params ["_object", "_selection"];
 
-systemchat (str _object);
-
 // delete cameras
 private _cam = _object getVariable format ["LRG_CC_screen_%1_Cam", _selection];
 

@@ -2,9 +2,11 @@ params ["_object", "_selection", "_rendertarget", "_data"];
 
 private _host = objNull;
 
+call cTab_fnc_updateLists;
+
 {
 	if (_data isEqualTo (str _x)) exitWith {_host = _x;};
-} forEach (allPlayers + cTabUAVlist);
+} forEach (cTabHcamlist + LRG_CC_vehicleCamList);
 
 if (isNull _host) exitWith {
 	systemChat "Could not find camera host.";
@@ -29,6 +31,5 @@ _cam camCommitPrepared 0;
 
 _cam cameraEffect ["INTERNAL", "BACK", _renderTarget];
 _object setObjectTexture [_selection, format ["#(argb,512,512,1)r2t(%1,1.3096153846)", _renderTarget]];
-_renderTarget setPiPEffect [8]; // IR green
 
 _object setVariable [format ["LRG_CC_screen_%1_Cam", _selection], [_cam, objNull, _host]];
