@@ -57,22 +57,25 @@ lbClear _hCamList;
 _hCamList lbSetCurSel -1;
 {
 	private _name = "";
+	private _section = _x getVariable "LRG_Section";
 
-	if (isPlayer _x) then {
-		private _section = _x getVariable "LRG_Section";
-
-		if (isNil "_section") then {
-			_name = format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
-		} else {
-			_name = format ["%1:%2 (%3)", _section, [_x] call CBA_fnc_getGroupIndex, name _x];
-		};
+	if (isNil "_section") then {
+		_name = format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
 	} else {
-		_name = format ["Vehicle: %1", getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
+		_name = format ["%1:%2 (%3)", _section, [_x] call CBA_fnc_getGroupIndex, name _x];
 	};
 
 	_index = _hCamList lbAdd _name;
 	_hCamList lbSetData [_index, str _x];
-} forEach (cTabHcamlist + LRG_CC_vehicleCamList);
+} forEach cTabHcamlist;
+
+{
+	private _name = format ["Vehicle: %1", getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
+
+	_index = _hCamList lbAdd _name;
+	_hCamList lbSetData [_index, str _x];
+} forEach LRG_CC_vehicleCamList;
+
 lbSort [_hCamList, "ASC"];
 _hCamList lbSetCurSel 0;
 
@@ -95,21 +98,24 @@ lbClear _satList;
 _satList lbSetCurSel -1;
 {
 	private _name = "";
+	private _section = _x getVariable "LRG_Section";
 
-	if (isPlayer _x) then {
-		private _section = _x getVariable "LRG_Section";
-
-		if (isNil "_section") then {
-			_name = format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
-		} else {
-			_name = format ["%1:%2 (%3)", _section, [_x] call CBA_fnc_getGroupIndex, name _x];
-		};
+	if (isNil "_section") then {
+		_name = format ["%1:%2 (%3)", groupId group _x,[_x] call CBA_fnc_getGroupIndex,name _x];
 	} else {
-		_name = format ["Vehicle: %1", getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
+		_name = format ["%1:%2 (%3)", _section, [_x] call CBA_fnc_getGroupIndex, name _x];
 	};
 
 	_index = _satList lbAdd _name;
 	_satList lbSetData [_index, str _x];
-} forEach (cTabHcamlist + LRG_CC_vehicleCamList);
+} forEach cTabHcamlist;
+
+{
+	private _name = format ["Vehicle: %1", getText (configfile >> "cfgVehicles" >> typeOf _x >> "displayname")];
+
+	_index = _satList lbAdd _name;
+	_satList lbSetData [_index, str _x];
+} forEach LRG_CC_vehicleCamList;
+
 lbSort [_satList, "ASC"];
 _satList lbSetCurSel 0;

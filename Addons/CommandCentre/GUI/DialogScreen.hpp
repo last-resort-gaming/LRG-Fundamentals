@@ -70,7 +70,7 @@ class ScreenConfigDialog {
         class CamSelectText: LRG_CC_RscText
         {
         	idc = 1006;
-        	text = "Player:";
+        	text = "Target:";
         	x = 10 * GUI_GRID_CENTER_W + GUI_GRID_CENTER_X;
         	y = 8 * GUI_GRID_CENTER_H + GUI_GRID_CENTER_Y;
         	w = 4 * GUI_GRID_CENTER_W;

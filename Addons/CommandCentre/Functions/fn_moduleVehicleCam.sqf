@@ -9,5 +9,5 @@ params [
 
 private _objects = synchronizedObjects _logic;
 {
-    LRG_CC_vehicleCamList pushBackUnique [_x];
+    LRG_CC_vehicleCamList pushBackUnique _x;
 } foreach _objects;
