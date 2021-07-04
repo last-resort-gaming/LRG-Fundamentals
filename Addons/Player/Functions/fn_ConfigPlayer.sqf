@@ -129,7 +129,7 @@ if (local _unit) then {
 //========== SideChat Config
 if (hasinterface) then {
 	if ((isClass (configFile >> "CfgPatches" >> "task_force_radio")) && (EnableSideChat)) then {
-		if ((_Section == "Command") || (_Section == "909 EAW")) then {
+		if ((_Section == "Command") || (_Section == "909 EAW") || (_Section == "Support")) then {
 			1 enablechannel [true, false];
 		};
 	};
