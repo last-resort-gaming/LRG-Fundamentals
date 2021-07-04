@@ -40,6 +40,14 @@ class CfgUnitInsignia
 		textureVehicle = "";
 	};
 
+	class Support
+	{
+		displayName = "Support";
+		author = "Last Resort Gaming";
+		texture = "z\LRG Fundamentals\addons\Media\images\Patches\Support.paa";
+		textureVehicle = "";
+	};
+
 	class LRGLogo
 	{
 		displayName = "LRG Logo";

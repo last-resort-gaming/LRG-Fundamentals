@@ -39,6 +39,9 @@ call {
 	if (_Section == "909 EAW") exitwith {
 		_PatchClass = "909EAW";
 	};
+	if (_Section == "Support") exitwith {
+		_PatchClass = "Support";
+	};
 	_PatchClass = "LRGLogo";
 };
 
