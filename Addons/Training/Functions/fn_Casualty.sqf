@@ -106,7 +106,7 @@ if (!hasinterface) exitwith {};
     "<t color='#666666'>Reset Casualty</t>",
     {
         params ["_target", "_caller", "_arguments"];
-		[_target] remoteExecCall ["ace_medical_treatment_fnc_fullHealLocal", _target];
+		["ace_medical_treatment_fullHeal", _target, _target] call CBA_fnc_targetEvent;
 		_target disableAI "MOVE";
 		_target disableAI "FSM";
 		_target setVariable ["CasualtyHealed", true, True];
