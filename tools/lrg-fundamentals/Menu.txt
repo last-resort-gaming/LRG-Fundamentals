@@ -83,6 +83,12 @@ Group: Functions  {
       File: LR_fnc_SpawnAIZeusWrapper  (AI\Functions\fn_SpawnAIZeusWrapper.sqf)
       }  # Group: AI
 
+   Group: CommandCentre {
+      
+	  File: LR_fnc_initRadio (CommandCentre\Functions\fn_initRadio.sqf)
+	  File: LR_fnc_initScreen (CommandCentre\Functions\fn_initScreen.sqf)
+      }  # Group: CommandCentre
+
    Group: Equipment  {
 
       File: LR_fnc_Ammobox  (Equipment\Functions\fn_AmmoBox.sqf)
@@ -120,6 +126,11 @@ Group: Functions  {
       File: LR_fnc_initInspectableIntel  (Interaction\Functions\fn_InitInspectableIntel.sqf)
       File: LR_fnc_LaptopHoldActions  (Interaction\Functions\fn_LaptopHoldActions.sqf)
       }  # Group: Interaction
+	  
+   Group: Logistics  {
+
+      File: LR_fnc_findTrunk  (Logistics\Functions\fn_findTrunk.sqf)
+      }  # Group: Logistics
 
    Group: Main  {
 
@@ -187,6 +198,8 @@ Group: Functions  {
 
    Group: Vehicles  {
 
+      File: LR_fnc_getCopilots  (Vehicles\Functions\fn_getCopilots.sqf)
+      File: LR_fnc_isPilotDown  (Vehicles\Functions\fn_isPilotDown.sqf)
       File: LR_fnc_setRepairFacility  (Vehicles\Functions\fn_setRepairFacility.sqf)
       File: general.sqf  (Vehicles\Scripts\general.sqf)
       File: uav.sqf  (Vehicles\Scripts\uav.sqf)
