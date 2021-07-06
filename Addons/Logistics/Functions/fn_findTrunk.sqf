@@ -1,3 +1,24 @@
+/*
+Function: LR_fnc_findTrunk
+
+Description:
+    Returns the position of a tree's trunk. Used to attach the "Cut Down" interactions to the appropriate positions.
+
+Arguments:
+    _tree - The tree object which trunk position we want to obtain
+
+Return Value:
+    The position of the tree's trunk, about 1,5m off the ground.
+
+Example:
+    (begin example)
+        [myTree] call LR_fnc_findTrunk;
+    (end)
+
+Author:
+	McDiod, modified by Mokka
+*/
+
 scopeName "main";
 
 params [["_tree", objNull]];

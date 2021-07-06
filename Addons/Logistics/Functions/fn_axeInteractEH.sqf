@@ -29,7 +29,7 @@ if (!("LRG_axe" in (items ace_player))) exitWith {};
 
             private _fncStatement = {
                 params ["", "_player", "_attachedTree"];
-                [_player, _attachedTree] call LRG_fnc_cutDownTree;
+                [_player, _attachedTree] call LR_fnc_cutDownTree;
             };
 
             private _fncCondition = {
@@ -48,7 +48,7 @@ if (!("LRG_axe" in (items ace_player))) exitWith {};
             {
                 _treesHelped pushBack _x;
                 private _helper = "ACE_LogicDummy" createVehicleLocal [0,0,0];
-                private _action = ["LRG_cutDownTree","Cut Down","LRG Fundamentals\addons\Logistics\ui\action_axe_ca.paa", _fncStatement, _fncCondition, {}, _x, {[0,0,0]}, 5.5, [false, false, false, false, true]] call ace_interact_menu_fnc_createAction;
+                private _action = ["LRG_cutDownTree","Cut Down","z\LRG Fundamentals\addons\Logistics\ui\action_axe_ca.paa", _fncStatement, _fncCondition, {}, _x, {[0,0,0]}, 5.5, [false, false, false, false, true]] call ace_interact_menu_fnc_createAction;
                 [_helper, 0, [],_action] call ace_interact_menu_fnc_addActionToObject;
                 _addedHelpers pushBack _helper;
                 _helperQueue pushBack [_helper,_x];
@@ -63,7 +63,7 @@ if (!("LRG_axe" in (items ace_player))) exitWith {};
                 params ["_helperQueue","_PFHID"];
                 if (count _helperQueue == 0) exitWith {[_PFHID] call CBA_fnc_removePerFrameHandler};
                 (_helperQueue deleteAt 0) params ["_helper","_tree"];
-                _helper setPosASL ([_tree] call LRG_fnc_findTrunk);
+                _helper setPosASL ([_tree] call LR_fnc_findTrunk);
             },0.1,_helperQueue] call CBA_fnc_addPerFrameHandler;
 
             _args set [0, (getPosASL ace_player)];
