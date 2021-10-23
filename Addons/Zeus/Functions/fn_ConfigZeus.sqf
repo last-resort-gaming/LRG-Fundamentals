@@ -20,6 +20,12 @@ params [
 "_object"
 ];
 
+
+_object setVariable ["showNotification", false];
+_object setVariable ["birdType", "", true];
+
+if !(LRG_AI_InitialAI) exitWith {};
+
 _object addEventHandler [
 	"CuratorObjectPlaced", {
 		params ["_curator", "_entity"];
@@ -35,19 +41,22 @@ _object addEventHandler [
 				};
 
 				[_Group, "LRG Default"] remoteExec ["LR_fnc_SetUnitSkill",2];
-				[_Group, true] remoteExec ["enableDynamicSimulation",2];
+				if (LRG_AI_DynSim) then {
+					[_Group, true] remoteExec ["enableDynamicSimulation",2];
+				};
 			};
 
 			if (_class isKindOf "AllVehicles") exitWith {
 				{
 					[_x, "LRG Default"] remoteExec ["LR_fnc_SetUnitSkill",2];
 				} forEach crew _entity;
-				[group _entity , true] remoteExec ["enableDynamicSimulation",2];
+
+				if (LRG_AI_DynSim) then {
+					[group _entity , true] remoteExec ["enableDynamicSimulation",2];
+				};
 			};
 		};
 	}
 ];
-_object setVariable ["showNotification", false];
-_object setVariable ["birdType", "", true];
 
 

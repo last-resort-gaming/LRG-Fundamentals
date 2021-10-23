@@ -11,11 +11,22 @@
     }
 ] call CBA_Settings_fnc_init;
 
+// Set DynSim
+[
+    "LRG_AI_DynSim",
+    "CHECKBOX",
+    ["Set Dynamic Simulation", "If enabled, all units in the mission file and all new units placed by Zeus and Spawn AI will automatically have Dynamic Simulation turned on."],
+    "LRG AI",
+    true,
+    true,
+    {}
+] call CBA_Settings_fnc_init;
+
 // Initial AI
 [
     "LRG_AI_InitialAI",
     "CHECKBOX",
-    ["Include Initial AI", "This will automatically apply to AI Spawns and Zeus placed AI. If enabled it will also apply to any Editor placed AI at mission start."],
+    ["Apply AI Skill", "This will automatically apply the below skills to AI Spawns and Zeus-placed AI. If enabled, it will also apply them to any Editor placed AI at mission start."],
     "LRG AI",
     true,
     true,
@@ -30,7 +41,7 @@
     "SLIDER",
     ["Min Aiming Accuracy", "Higher value means the AI will be more likely to hit the target."],
     "LRG AI",
-    [0, 1, 0.10, 2],
+    [0, 1, 0.10, 2, true],
     true,
     {
 
@@ -43,7 +54,7 @@
     "SLIDER",
     ["Min Aiming Shake", "Higher value means the AI will be more precise."],
     "LRG AI",
-    [0, 1, 0.45, 2],
+    [0, 1, 0.45, 2, true],
     true,
     {
 
@@ -56,7 +67,7 @@
     "SLIDER",
     ["Min Aiming Speed", "Higher value means the AI can rotate and stabilize its aim faster."],
     "LRG AI",
-    [0, 1, 0.30, 2],
+    [0, 1, 0.30, 2, true],
     true,
     {
 
@@ -69,7 +80,7 @@
     "SLIDER",
     ["Commanding", "Higher value means the AI can report targets faster."],
     "LRG AI",
-    [0, 1, 1.00, 2],
+    [0, 1, 1.00, 2, true],
     true,
     {
 
@@ -80,9 +91,9 @@
 [
     "LRG_AI_Courage",
     "SLIDER",
-    ["Courage", "Higher value means the AI can report targets faster."],
+    ["Courage", "Higher value means the AI is less likely to flee."],
     "LRG AI",
-    [0, 1, 1.00, 2],
+    [0, 1, 1.00, 2, true],
     true,
     {
 
@@ -93,9 +104,9 @@
 [
     "LRG_AI_General",
     "SLIDER",
-    ["General", "Higher value improves the AI's decision making."],
+    ["General", "Higher value improves the AI's decision making and general ability."],
     "LRG AI",
-    [0, 1, 1.00, 2],
+    [0, 1, 1.00, 2, true],
     true,
     {
 
@@ -108,7 +119,7 @@
     "SLIDER",
     ["Min Reload Speed", "Higher value means the AI can switch or reload weapons faster."],
     "LRG AI",
-    [0, 1, 0.50, 2],
+    [0, 1, 0.50, 2, true],
     true,
     {
 
@@ -121,7 +132,7 @@
     "SLIDER",
     ["Min Spot Distance", "Higher value means the AI is better at spotting targets."],
     "LRG AI",
-    [0, 1, 0.40, 2],
+    [0, 1, 0.40, 2, true],
     true,
     {
 
@@ -134,7 +145,33 @@
     "SLIDER",
     ["Min Spot Time", "Higher value means the AI will react faster to death, damage or enemies."],
     "LRG AI",
-    [0, 1, 0.20, 2],
+    [0, 1, 0.20, 2, true],
+    true,
+    {
+
+    }
+] call CBA_Settings_fnc_init;
+
+// CivAI Courage
+[
+    "LRG_AI_CivCourage",
+    "SLIDER",
+    ["Civilian Courage", "Higher value means the AI is less likely to flee. Only applies to Civilian units!"],
+    "LRG AI",
+    [0, 1,1, 2, true],
+    true,
+    {
+
+    }
+] call CBA_Settings_fnc_init;
+
+// CivAI Fleeing
+[
+    "LRG_AI_CivFleeing",
+    "CHECKBOX",
+    ["Civilian Fleeing", "Prevent Civilian units from fleeing."],
+    "LRG AI",
+    false,
     true,
     {
 

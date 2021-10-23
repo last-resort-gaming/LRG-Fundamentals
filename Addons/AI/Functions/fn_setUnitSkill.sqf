@@ -47,15 +47,15 @@ private _skillv = [
 
 if !(isNil "LRG_AI_AimingAccuracy") then {
     _skillv = [
-        (LRG_AI_AimingAccuracy + random 0.20),
-        (LRG_AI_AimingShake + random 0.20),
-        (LRG_AI_AimingSpeed + random 0.20),
+        (LRG_AI_AimingAccuracy - 0.05 + random 0.1),
+        (LRG_AI_AimingShake - 0.05 + random 0.1),
+        (LRG_AI_AimingSpeed - 0.05 + random 0.1),
         (LRG_AI_Commanding),
         (LRG_AI_Courage), 1,
         (LRG_AI_General),
-        (LRG_AI_ReloadSpeed + random 0.50),
-        (LRG_AI_SpotDistance + random 0.30),
-        (LRG_AI_SpotTime + random 0.40)
+        (LRG_AI_ReloadSpeed - 0.1 + random 0.30),
+        (LRG_AI_SpotDistance - 0.1 + random 0.15),
+        (LRG_AI_SpotTime - 0.1 + random 0.15)
     ];
 };
 
@@ -74,5 +74,15 @@ private _units = call {
 {
     _a = _x;
     _b = _skillv select _forEachIndex;
-    {_x setSkill [_a, _b]; true } count _units;
+    {[_x, [_a, _b]] remoteExec ["setSkill", _x]; true } count _units;
 } forEach _skillt;
+
+if (side _target == civilian) then {
+    {_x setSkill [courage, LRG_AI_CivCourage]; true } count _units;
+
+    if (LRG_AI_CivFleeing) then {
+        {
+            [_x, 0] remoteExec ["allowFleeing", _x]; true
+        } count _units;
+    };
+};
