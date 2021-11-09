@@ -32,6 +32,12 @@ _cueCardsData = [
 	[
 		"z\LRG Fundamentals\addons\Media\images\Cue Cards\reorg_gascard_CA.paa",
 		"Reorg (GASCARD) Card"
+	],
+
+	// 	5 - Artillery 4-Line Card
+	[
+		"z\LRG Fundamentals\addons\Media\images\Cue Cards\arty_4line_CA.paa",
+		"Artillery 4-Line Card"
 	]
 ];
 

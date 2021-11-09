@@ -29,7 +29,7 @@ switch _mode do {
 		_ctrlTexture ctrlEnable true;
 		_ctrlNotepadIn ctrlEnable true;
 
-		_notepadContents = uiNamespace getVariable ["LRG_Notepad_Content", ""];
+		_notepadContents = missionNamespace getVariable ["LRG_Notepad_Content", ""];
 
 		_ctrlNotepadIn ctrlSetText _notepadContents;
 
